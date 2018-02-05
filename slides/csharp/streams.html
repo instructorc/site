@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>C# Files, Directory and Streams (I/0 operations)</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="#eee">
+				    <h2>C# - I/O Files, Directory and Streams</h2>
+				    <img src="images/csharplogo.png" width="320" style="box-shadow: none; border: none;"alt="c sharp logo">
+				    <h3>Instructor: Chris Fulton</h3>
+				</section>
+				<section data-background="#eee">
+				    <h2>Learning Objectives</h2>
+				    <ul>
+						<li>Brief overview of <code>System.IO Namespace</code></li>
+				        <li>Evaluating the File and Directory classes</li>
+                        <li>Understanding file data organization</li>
+                        <li>Understanding streams</li>
+                        <li>Write to and read from a sequential access text file</li>
+                        <li>Search a sequential access text file</li>
+                        <li>Understand serialization and deserialization</li>
+				    </ul>
+				</section>
+				<section data-background="#eee">
+						<h2>Overview of <code>System.IO Namespace</code></h2>
+						<p>The System.IO namespace contains types that allow reading and writing to 
+							files and data streams, and types that provide basic file and directory 
+							support.</p>
+						
+						<ul>
+							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io?view=netframework-4.7.1">Click here to navigte to <code>System.IO Namespace</code></a></li>
+						</ul>
+				</section>
+				<section data-background="#eee">
+				    <h2>File and Directory Classes</h2>
+				    <ul>
+						<li>C# provides built-in classes named File and Directory</li>
+						
+						<li>Contain methods to help you manipulate files and their directories</li> 
+						<ul style="font-size: 22px;">
+							<li>Access information about files</li>
+							<li>Create, delete or move files</li>
+						</ul>
+						  
+                        <li>Your file structure must be transferable</li>
+						<li>Use relative paths to indicate file locations</li>
+						<li><code>File Class</code></li>
+						<ul style="font-size: 22px;">
+							<li>Contians methods to access information about files</li>
+						</ul>
+						<li><code>Directory Class</code></li>
+						<ul style="font-size: 22px;">
+							<li>Provides information about directories or folders</li>
+						</ul>
+               
+				    </ul>
+				</section>
+				<section data-background="#fff">
+						<h2>Common Methods in File Class</h2>
+						<ul>
+							
+							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.file?view=netframework-4.7.1">Click here to navigte to <code>File Class</code></a></li>		   
+						</ul>
+						<img src="images/filemethods.png" style="box-shadow: none;" alt="Common methods in File class"/>
+				</section>
+				<section data-background="#fff">
+						<h2>File Class - code and output</h2>
+
+						<img src="images/filepic1.png" width="420" style="box-shadow: none; float: left;" alt="File picture example one"/>
+						<img src="images/filepic2.png" width="420" style="box-shadow: none; float: left;" alt="File Picture example two"/>
+				</section>
+				<section data-background="#fff">
+						<h2>Common Methods in Directory Class</h2>
+						<ul>
+
+							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.directory?view=netframework-4.7.1">Click here to navigte to <code>Directory Class</code></a></li>		   
+						</ul>
+						<img src="images/directorymethods.png" style="box-shadow: none;" alt="Common methods in directory class"/>
+				</section>
+				<section data-background="#fff">
+						<h2>Directory Class - code and output</h2>
+
+						<img src="images/directorypic1.png" width="420" style="box-shadow: none; float: left;" alt="directory picture example one"/>
+						<img src="images/directorypic2.png" width="420" style="box-shadow: none; float: left;" alt="directory Picture example two"/>
+				</section>
+				<section data-background="#eee">
+						<h2>Understanding File Data Organization</h2>
+						<ul>
+							<li>Businesses store data in a relationship known as the <b>data hierarchy</b></li>
+							
+							<li><b>Character</b></li> 
+							<ul style="font-size: 22px;">
+								<li>Any of the letters, numbers, or other special symbols (such as punctuation marks) that comprise data</li>
+								<li>Characters are made up of bytes containing eight (8) bits</li>
+									<ul style="font-size: 22px;">
+										<li>ASCII characters contain one (1) byte</li>
+										<li>Unicode characters contain two (2) bytes</li>				
+									</ul>
+							</ul>
+
+				   
+						</ul>
+				</section>
+				<section data-background="#fff">
+						<h2>Understanding File Data Organization Diagram</h2>
+						<img src="images/dataorg.png" width="750" style="box-shadow: none;" alt="File Data organization diagram"/>
+				</section>
+				<section data-background="#eee">
+						<h2>Understanding File Data Organization</h2>
+						<ul>
+							<li><b>Field</b></li>
+							<ul style="font-size: 22px;">
+								<li>A character or group of characters that has some meaning</li>
+				
+							</ul>
+							
+							<li><b>Record</b></li> 
+							<ul style="font-size: 22px;">
+								<li>A collection of related fields that contain data about an entity</li>
+								<li>Characters are made up of bytes containing eight (8) bits</li>
+
+							</ul>
+							<li><b>Sequential access file</b></li> 
+							<ul style="font-size: 22px;">
+								<li>Each record is read in order based on its relative position</li>
+								<li>Records can be stored in order based on a value in the record</li>
+								<li>The field used to uniquely identify each record in a sequential file is the<b> key field</b></li>
+							</ul>
+							<li><b>Random access file</b></li>
+							<ul style="font-size: 22px;">
+								<li>Records are not in any sequence and  can be accessed in any order</li>
+				
+							</ul>
+						</ul>
+				</section>
+				<section data-background="#fff">
+						<h2>Understanding File Data Organization cont.</h2>
+						<ul>
+							<li>A C# application <b>opens a file</b> by creating an object and associating a stream of bytes with that object</li>
+							<li>When you finish using a file, the program should <b>close the file</b></li>
+									
+							<ul style="font-size: 22px;">
+								<li>Not closing a file may make it inaccessible</li>
+								<li>Not closing an output file can result in data not being written to the file</li>
+				
+							</ul>
+
+						</ul>
+				</section>
+				<section data-background="#fff">
+						<h2>Understanding Streams</h2>
+						<ul>
+							<li><b>Stream</b></li>
+							<ul style="font-size: 22px;">
+								<li>Stream is a class that simulates a stream of bytes to be lined up in a row. Such as the transmission of data on the network, data transmited are contiguous stream of bytes from the first byte to the last byte.</li>
+								<li>Functions as a pipeline or channel between an input device and an application, and potentially an output device</li>
+
+				
+							</ul>
+
+						</ul>
+						<img src="images/streampic.png"  width="700" style="box-shadow: none;" alt="Stream class diagram"/>
+				</section>
+				<section data-background="#fff">
+						<h2>Stream Overview</h2>
+
+						<img src="images/streamoverview.png"  width="700" style="box-shadow: none;" alt="Stream class overview diagram"/>
+				</section>
+				<section data-background="#fff">
+						<h2>Stream classes</h2>
+						<ul style="font-size: 24px;">
+							<li><b>Stream</b> is an abstract class, it can not initialize an object by itself, you can initialize a Stream object from the Constructors of the subclass. <b>Stream</b> class provides the basic methods of working with data streams, namely the method of read/write a byte or an array of bytes.</li>
+							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.stream?view=netframework-4.7.1">Click here to navigte to <code>Stream Class</code></a></li>
+						</ul>
+						
+						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
+								<tbody> 
+								 <tr> 
+								  <td><strong>Class</strong></td> 
+								  <td><strong>Description</strong></td> 
+								 </tr> 
+								 <tr> 
+								  <td>BufferedStream</td> 
+								  <td>A utility stream, it wrapped another stream, which helps improve performance</td> 
+								 </tr> 
+								 <tr> 
+								  <td>FileStream</td> 
+								  <td>Stream used to read and write data to the file.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>MemoryStream</td> 
+								  <td>Creates a stream whose backing store is memory.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>UnmanagedMemoryStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								 <tr> 
+								  <td>IsolatedStorageFileStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								 <tr> 
+								  <td>PipeStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								 <tr> 
+								  <td>NetworkStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								 <tr> 
+								  <td>CryptoStream</td> 
+								  <td>Defines a stream that links data streams to cryptographic transformations.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>DeflateStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								 <tr> 
+								  <td>GZipStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								</tbody> 
+						</table>
+				</section>
+				<section data-background="#fff">
+						<h2>Properties of Stream</h2>
+						<ul style="font-size: 24px;">
+							<li>Depending on the stream, there are the stream that supports both read and write, and seek by moving the cursor on the stream, read and write data at the cursor position.</li>
+							
+						</ul>
+						
+						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
+								<tbody> 
+								 <tr> 
+								  <td><strong>Attribute</strong></td> 
+								  <td><strong>Description</strong></td> 
+								 </tr> 
+								 <tr> 
+								  <td>CanRead</td> 
+								  <td>Gets a value indicating whether the current stream supports reading.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>CanSeek</td> 
+								  <td>Gets a value indicating whether the current stream supports seeking.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>CanWrite</td> 
+								  <td>Gets a value indicating whether the current stream supports writing.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Length</td> 
+								  <td>Gets the length in bytes of the stream.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Position</td> 
+								  <td>Gets or sets the current position of this stream.</td> 
+								 </tr> 
+								</tbody> 
+						</table>
+				</section>
+				<section data-background="#fff">
+						<h2>Understanding Streams</h2>
+						<ul>
+							<li>Most streams flow in only one direction</li>
+							<li>File processing classes include:</li>
+							<ul style="font-size: 22px;">
+								<li><code>StreamReader</code> for text input from a file</li>
+								<li><code>StreamWriter</code> for text output to a file</li>
+								<li><code>FileStream</code> is used alone for bytes and with either StreamReader and StreamWriter for text, for either input from and output to a file</li>
+				
+							</ul>
+
+						</ul>
+						
+				</section>
+				<section data-background="#fff">
+						<h2>FileStream Class</h2>
+						<ul>
+							<li><b>Filestream</b> is a class which extends from the  <b>Stream</b> class, <b>FileStream</b> is used to read and write data to file, it inherits the properties, methods of Stream, and has additional functions for reading and recording data on the file.</li>
+							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.filestream?view=netframework-4.7.1">Click here to navigte to <code>FileStream Class</code></a></li>
+						</ul>
+						
+				</section>
+				<section data-background="#fff">
+						<h2>FileStream Overloaded Constructor</h2>
+
+						<img src="images/filestreamconstructor.png"  width="700" style="box-shadow: none;" alt="Stream class overview diagram"/>
+						
+				</section>
+				<section data-background="#fff">
+						<h2>FileMode Enumeration</h2>
+						<ul>
+							<li>A constant that determines how to open or create the file</li>
+						</ul>
+
+						
+						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
+								<tbody> 
+								 <tr> 
+								  <td><strong>FileMode</strong></td> 
+								  <td><strong>Description</strong></td> 
+								 </tr> 
+								 <tr> 
+								  <td>Append</td> 
+								  <td>Opens the file if it exists and seeks to the end of the file, or creates a new file</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Create</td> 
+								  <td>Specifies that the operating system should create a new file. If the file already exists, it will be overwritten.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>CreateNew</td> 
+								  <td>Specifies that the operating system should create a new file.If the file already exists, an <strong>IOException</strong> exception is thrown. This mode requires <strong>FileIOPermissionAccess.Write</strong> permission.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Open</td> 
+								  <td>Specifies that the operating system should open an existing file. A <strong>System.IO.FileNotFoundException</strong> exception is thrown if the file does not exist.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>OpenOrCreate</td> 
+								  <td>Specifies that the operating system should open a file if it exists; otherwise, a new file should be created</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Truncate</td> 
+								  <td>Specifies that the operating system should open an existing file. When the file is opened, it should be truncated so that its size is zero bytes.</td> 
+								 </tr> 
+								</tbody> 
+							   </table>
+				</section>
+				<section data-background="#fff">
+						<h2>FileAccess Enumeration</h2>
+						<ul>
+							<li>A constant that determines how the file can be accessed by the FileStream object. This also determines the values returned by the CanRead and CanWrite properties of the FileStream object. CanSeek is true if path specifies a disk file.</li>
+						</ul>
+
+						
+						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
+								<tbody> 
+								 <tr> 
+								  <td><strong>FileAccess</strong></td> 
+								  <td><strong>Description</strong></td> 
+								 </tr> 
+								 <tr> 
+								  <td>Read</td> 
+								  <td>Data can be read from the file.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>ReadWrite</td> 
+								  <td>Data can be read from and written to the file.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Write</td> 
+								  <td>Data can be written to the file.</td> 
+								 </tr>  
+								</tbody> 
+							   </table>
+				</section>
+				
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
