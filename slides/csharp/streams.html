@@ -395,7 +395,7 @@
 					
 				</section>
 				<section data-background="#fff">
-					<h2 style="font-size: 24px;">Writing Data to a Sequential Access Text File Example</h2>
+					<h2 style="font-size: 36px;">Writing Data to a Sequential Access Text File Example</h2>
 					<ul>
 						
 						<li><b>Token</b></li>
@@ -418,7 +418,7 @@
 					
 				</section>
 				<section data-background="#fff">
-					<h2 style="font-size: 24px;">Writing Data to Sequential Access Text File </h2>
+					<h2 style="font-size: 36px;">Writing Data to Sequential Access Text File </h2>
 
 					<img src="images/sequentialcode.png"  width="350" style="box-shadow: none; float: left; margin-top:-10px;" alt="Sequential file access code"/>
 					<img src="images/sequentialconsole.png"  width="300" style="box-shadow: none; float: left; margin-top: -10px;" alt="Sequential file access console view"/>
@@ -429,8 +429,90 @@
 				<section data-background="#fff">
 					<h2>Reading from a Sequential Access Text File </h2>
 
-					<img src="images/readingcode.png"  width="400" style="box-shadow: none; float: left; margin-top: -10px;" alt="Reading Sequential access code"/>
-					<img src="images/readingconsole.png"  width="400" style="box-shadow: none; float: left; margin-top: -10px;" alt="Reading Sequential file access console view"/>
+					<img src="images/readingcode.png"  width="500" style="box-shadow: none; float: left; margin-top: -10px;" alt="Reading Sequential access code"/>
+					<img src="images/readingconsole.png"  width="500" style="box-shadow: none; float: left; margin-top: -10px;" alt="Reading Sequential file access console view"/>
+
+				</section>
+				<section data-background="#fff">
+					<h2>Search a Sequential Text File</h2>
+					<ul>
+						<li><b>File position pointer</b></li>
+						<ul style="font-size: 22px;">
+							<li>Holds the byte number of the next byte to be read</li>
+						</ul>
+						<li>Reposition the file pointer using the <code>Seek()</code> method and the <code>SeekOrigin</code> enumeration: <br/> <code style=" font-size: 28px; font-weight: 100;">inFile.Seek(0, SeekOrigin.Begin);</code></li>
+
+					</ul>
+					<img src="images/seekimg.png"  width="700" style="box-shadow: none; font-size: 28px; font-weight: 100;" alt="File Position Searching Sequential"/>
+				</section>
+				<section data-background="#fff">
+					<h2>Search a Sequential Text File cont.</h2>
+					<img src="images/seekex.png"  width="700" style="box-shadow: none;" alt="seek example code picture"/>
+					
+				</section>
+				<section data-background="#fff">
+					<h2>Search a Sequential Text File cont.</h2>
+					<img src="images/seekoutput.png"  width="600" style="box-shadow: none;" alt="seek example output"/>
+					
+				</section>
+				<section data-background="#fff">
+					<h2>Understanding Serialization and Deserialization</h2>
+					<ul>
+						<li>Disadvantages to writing to a text file:</li>
+						<ul style="font-size: 22px;">
+							<li>Data in a text file is easily readable in a text editor such as Notepad, which means it is not secure</li>
+							<li>It is cumbersome to convert each field to text and combine the fields with delimiters</li>	
+						</ul>
+						<li>You can write objects to and read objects from files</li>
+						<li><b>Serialization</b></li>
+						<ul style="font-size: 22px;">
+							<li>The process of converting objects into streams of bytes</li>
+						</ul>
+						<li><b>Deserialization</b></li>
+						<ul style="font-size: 22px;">
+							<li>Converts streams of bytes back into objects</li>
+						</ul>
+					</ul>
+					
+				</section>
+				<section data-background="#fff">
+					<h2>Understanding Serialization and Deserialization</h2>
+					<ul>
+						<li style="font-size: 32px">In a class marked with the [Serializable] attribute, every instance variable must also be Serializable</li>
+
+						<li style="font-size: 32px">By default, all C# simple data types are serializable, including strings</li>
+						<li style="font-size: 32px">If your class contains fields that are more complex data types, you must check the declaration of those classes to ensure they are serializable</li>
+
+					</ul>
+					<img src="images/serializableclassimg.png"  width="400" style="box-shadow: none; font-size: 28px; font-weight: 100;" alt="Serializable class image"/>
+				</section>
+				<section data-background="#fff">
+					<h2>Understanding Serialization and Deserialization</h2>
+					<ul>
+						<li>To create a class that can be serialized:</li>
+						<ul style="font-size: 22px;">
+							<li>Mark it with the <code>[Serializable]</code> attribute</li>	
+						</ul>
+						<li>Namespaces included in programs that employ serialization:</li>
+						<ul style="font-size: 22px;">
+							<li><code>System.Runtime.Serialization.Formatters.Binary;</code></li>
+							<li><code>System.Runtime.Serialization;</code></li>
+						</ul>
+					</ul>
+					
+				</section>
+				<section data-background="#fff">
+					<h2>Serilization Code Example </h2>
+
+					<img src="images/serialcode1.png"  width="425" style="box-shadow: none; float: left; margin-top: -10px;" alt="Serialization Code example one"/>
+					<img src="images/serialcode2.png"  width="425" style="box-shadow: none; float: left; margin-top: -10px;" alt="Serialization Code example two"/>
+
+				</section>
+				<section data-background="#fff">
+					<h2>Serilization Code Example Output </h2>
+
+					<img src="images/serialoutput2.png"  width="470" style="box-shadow: none; margin-top: -10px;" alt="Serialization Code example one"/>
+
 
 				</section>
 
