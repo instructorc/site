@@ -1,0 +1,48 @@
+.box{
+    
+      flex:  1 0 150px;
+     
+      width: 200px;
+      height: 200px;
+      float:  left;
+      border:  solid 2px #333;
+      margin: 2%;
+    
+    
+    }
+
+#flexcontain{
+    margin:auto;
+    width: 599px;
+    display:  flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    align-content: space-around;
+    
+}
+
+.green{
+    background-color: red;
+    color: white;
+    font-size: 2%;
+}
+.red{
+    background-color: green;
+    color: white;
+}
+.blue{
+    background-color: rgb(4, 149, 185);
+    color: white;
+}
+.yellow{
+    background-color: yellow;
+    color: white;
+}
+.orange{
+    background-color: orangered;
+    color: white;
+}
+.aquamarine{
+    background-color: aquamarine;
+    color: white;
+}
