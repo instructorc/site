@@ -1,19 +1,19 @@
 .box{
     
-      flex:  1 0 150px;
+      flex:  1 0 300px;
      
       width: 200px;
       height: 200px;
       float:  left;
       border:  solid 2px #333;
-      margin: 2%;
+      margin: 10px;
+      font-size: 24px;
     
     
     }
 
 #flexcontain{
     margin:auto;
-    width: 599px;
     display:  flex;
     flex-wrap:wrap;
     justify-content: space-between;
@@ -24,7 +24,7 @@
 .green{
     background-color: red;
     color: white;
-    font-size: 2%;
+    
 }
 .red{
     background-color: green;
@@ -35,7 +35,7 @@
     color: white;
 }
 .yellow{
-    background-color: yellow;
+    background-color: #f6aa01;
     color: white;
 }
 .orange{
@@ -43,6 +43,6 @@
     color: white;
 }
 .aquamarine{
-    background-color: aquamarine;
+    background-color: #00c080;
     color: white;
 }
