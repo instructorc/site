@@ -8,6 +8,7 @@
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/mystyle.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -116,16 +117,16 @@
 
 				</section>
 				<section data-background="#fff">
-						<h2>Purposely Generating a <code>SystemException</code></h2>
-						<ul>
+					<h2>Purposely Generating a <code>SystemException</code></h2>
+					<ul>
 
-							<li>Programs that can handle exceptions appropriately are said to be more fault tolerant and robust than those that do not</li>	
-							<ul style="font-size: 22px;">
-								<li>- <b>Fault-tolerant</b> applications are designed so that they continue to operate, possibly at a reduced level, when some part of the system fails</li>
-								<li>- <b>Robustness</b> represents the degree to which a system is resilient to stress, maintaining correct functioning</li>
-							</ul>
-
+						<li>Programs that can handle exceptions appropriately are said to be more fault tolerant and robust than those that do not</li>	
+						<ul style="font-size: 22px;">
+							<li>- <b>Fault-tolerant</b> applications are designed so that they continue to operate, possibly at a reduced level, when some part of the system fails</li>
+							<li>- <b>Robustness</b> represents the degree to which a system is resilient to stress, maintaining correct functioning</li>
 						</ul>
+
+					</ul>
 						
 				</section>
 				<section data-background="#fff">
@@ -135,29 +136,48 @@
 						<img src="images/exception/milesgallonexoutput.png" width="450" style="box-shadow: none; float: left;" alt="c# code miles per gallon example output"/>
 				</section>
 
-				<!--<section data-background="#eee">
-						<h2>Understanding File Data Organization</h2>
-						<ul>
-							<li>Businesses store data in a relationship known as the <b>data hierarchy</b></li>
-							
-							<li><b>Character</b></li> 
-							<ul style="font-size: 22px;">
-								<li>Any of the letters, numbers, or other special symbols (such as punctuation marks) that comprise data</li>
-								<li>Characters are made up of bytes containing eight (8) bits</li>
-									<ul style="font-size: 22px;">
-										<li>ASCII characters contain one (1) byte</li>
-										<li>Unicode characters contain two (2) bytes</li>				
-									</ul>
-							</ul>
 
-				   
+				<section data-background="#eee">
+					<h3>Traditional and Object-Oriened Error-Handling Methods</h3>
+					<ul>
+						<li>Check a variable’s value with an if statement before attempting to divide it into another number</li>
+						<ul style="font-size: 24px;">
+							<li> - Prevents division by zero</li>
+							<ul style="font-size: 22px;">
+								<li>   However, it does not really "handle an exception"</li>			
+							</ul>
+							<li> - Is efficient if you think it will be a frequent problem</li>
+							<ul style="font-size: 22px;">
+								<li>   Has little "overhead"</li>		
+								<li>   Otherwise, create an <code>Exception</code> object</li>		
+							</ul>
 						</ul>
+
+				
+					</ul>
+				</section>
+				<section data-background="#eee">
+					
+					<h4>Object-oriented exception handling uses three unique terms: try, catch, throw, finally</h4>
+					</ul>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 22px; margin: 10px;"><p><b><code><em>try</em></code> block</b> Contains statements that can produce an error <br> Code at least one catch block or finally block immediately following a <code>try</code> block</code></p></div>
+						<div class="box blue" style="font-size: 22px; margin: 10px;"><p>Share code with any npm user, any where</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px;"><p>Form virtual teams (orgs)</p></div>
+						<div class="box yellow" style="font-size: 22px; margin: 10px;"><p>Manage multiple versions of code and code dependencies.</p></div>
+						<div class="box orange" style="font-size: 22px; margin: 10px;"><p>Update applications easily when underlying code is updated.</p></div>
+						<div class="box aquamarine" style="font-size: 22px; margin: 10px;"><p>Discover multiple ways to solve the same puzzle.</p></div>
+					</div>
+					<section data-background="#fff">
+						<h2></h2>
+						<img src="images/tryex.png" width="750" style="box-shadow: none;" alt="Try example code"/>
+					</section>
 				</section>
 				<section data-background="#fff">
 						<h2>Understanding File Data Organization Diagram</h2>
 						<img src="images/dataorg.png" width="750" style="box-shadow: none;" alt="File Data organization diagram"/>
 				</section>
-				<section data-background="#eee">
+				<!--<section data-background="#eee">
 						<h2>Understanding File Data Organization</h2>
 						<ul>
 							<li><b>Field</b></li>
