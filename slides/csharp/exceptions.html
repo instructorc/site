@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>C# Files, Directory and Streams (I/0 operations)</title>
+		<title>Exception Handling </title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -26,68 +26,76 @@
 			<div class="slides">
 				<section data-background="#eee">
 				    <h2>C# - Exception Handling</h2>
-				    <img src="images/csharplogo.png" width="320" style="box-shadow: none; border: none;"alt="c sharp logo">
+				    <img src="images/io/csharplogo.png" width="320" style="box-shadow: none; border: none;"alt="c sharp logo">
 				    <h3>Instructor: Chris Fulton</h3>
 				</section>
 				<section data-background="#eee">
 				    <h2>Learning Objectives</h2>
 				    <ul>
-						<li>Brief overview of <code>System.IO Namespace</code></li>
-				        <li>Evaluating the File and Directory classes</li>
-                        <li>Understanding file data organization</li>
-                        <li>Understanding streams</li>
-                        <li>Write to and read from a sequential access text file</li>
-                        <li>Search a sequential access text file</li>
-                        <li>Understand serialization and deserialization</li>
+						<li>Understanding the difference between bugs, user errors and exceptions </li>
+				        <li>Learn about exceptions, the <code>Exception</code> class, and generating <code>SystemExceptions</code></li>
+                        <li>Learn about traditional and object-oriented error-handling methods</li>
+
 				    </ul>
-				</section>
-				<section data-background="#eee">
-						<h2>Overview of <code>System.IO Namespace</code></h2>
-						<p>The System.IO namespace contains types that allow reading and writing to 
-							files and data streams, and types that provide basic file and directory 
-							support.</p>
-						
-						<ul>
-							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io?view=netframework-4.7.1">Click here to navigte to <code>System.IO Namespace</code></a></li>
-						</ul>
-				</section>
-				<section data-background="#eee">
-				    <h2>File and Directory Classes</h2>
-				    <ul>
-						<li>C# provides built-in classes named File and Directory</li>
-						
-						<li>Contain methods to help you manipulate files and their directories</li> 
-						<ul style="font-size: 22px;">
-							<li>Access information about files</li>
-							<li>Create, delete or move files</li>
-						</ul>
-						  
-                        <li>Your file structure must be transferable</li>
-						<li>Use relative paths to indicate file locations</li>
-						<li><code>File Class</code></li>
-						<ul style="font-size: 22px;">
-							<li>Contians methods to access information about files</li>
-						</ul>
-						<li><code>Directory Class</code></li>
-						<ul style="font-size: 22px;">
-							<li>Provides information about directories or folders</li>
-						</ul>
-               
-				    </ul>
-				</section>
-				<section data-background="#fff">
-						<h2>Common Methods in File Class</h2>
-						<ul>
-							
-							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.file?view=netframework-4.7.1">Click here to navigte to <code>File Class</code></a></li>		   
-						</ul>
-						<img src="images/filemethods.png" style="box-shadow: none;" alt="Common methods in File class"/>
 				</section>
 				<section data-background="#fff">
 						<h2>File Class - code and output</h2>
 
-						<img src="images/filepic1.png" width="420" style="box-shadow: none; float: left;" alt="File picture example one"/>
-						<img src="images/filepic2.png" width="420" style="box-shadow: none; float: left;" alt="File Picture example two"/>
+						<img src="images/exception/dilbert-minivan.png" width="600" style="box-shadow: none; float: left;" alt="File Picture example two"/>
+				</section>
+				<section data-background="#eee">
+						<h2>Bugs, User Errors and Exceptions</h2>
+						
+						<ul>
+							<li>Bugs - errors the programmer caused</li>
+							<ul style="font-size: 22px;">
+								<li>Ex. Wrong calculation, not properly handling memory alocation, variable access permission, etc..</li>
+							</ul>
+							<li>User Errors - errors the user caused</li>
+							<ul style="font-size: 22px;">
+								<li>Ex. Improperly formatted string text </li>
+							</ul>
+							<li>Exceptions - unexpected errors that are caused during runtime, Terminates the program unless exceptions are handled</li>
+							<ul style="font-size: 22px;">
+								<li>Cannot connect to a database, not able to open or read a file, etc.. </li>
+							</ul>
+							<li><a href="https://stackify.com/application-exception-vs-error-difference/">Ex. of Error vs. Exception</a></li>
+						</ul>
+				</section>
+				<section data-background="#eee">
+				    <h2>Understanding Exceptions</h2>
+				    <ul>
+						<li><b>Exception Handling</b></li>
+						
+						<ul style="font-size: 22px;">
+							<li>- Object-oriented techniques used to manage such errors</li>
+						
+						</ul>
+						  
+                        <li>Exceptions are objects of the Exception class or one of its derived classes</li>
+						<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.exception?view=netframework-4.7.1">Exception Class</a></li>
+               
+				    </ul>
+				</section>
+				<section data-background="#fff">
+						<h2>Exception Subclasses</h2>
+						
+						<img src="images/exception/exceptionsubclasses1.png" width="420" style="box-shadow: none; float: left;" alt="Exception Sub Class example one"/>
+						<img src="images/exception/exceptionsubclasses2.png" width="420" style="box-shadow: none; float: left;" alt="Exception Sub Class example two"/>
+				</section>
+				<section data-background="#fff">
+					<h2>Exception Derived clsses:</h2>
+					<ul>
+						<li>Most exceptions derive from three classes</li>
+						<ul style="font-size: 22px;">
+								<li>- Predefined Common Language Runtime exception classes derived from SystemException</li>
+								<li>User-defined application exception classes you derive from ApplicationException</li>
+								<li>The <code>Exception </code> class which is the parent of SystemException and ApplicationException </li>
+								
+							
+						</ul>
+					</ul>
+						
 				</section>
 				<section data-background="#fff">
 						<h2>Common Methods in Directory Class</h2>
