@@ -63,7 +63,7 @@
 						</ul>
 				</section>
 				<section data-background="#eee">
-				    <h2>Understanding Exceptions</h2>
+				    <h2>Understanding Structured Exception Handling</h2>
 				    <ul>
 						<li><b>Exception Handling</b></li>
 						
@@ -87,10 +87,10 @@
 					<h2>Exception Derived clsses:</h2>
 					<ul>
 						<li>Most exceptions derive from three classes</li>
-						<ul style="font-size: 22px;">
-								<li>- Predefined Common Language Runtime exception classes derived from SystemException</li>
-								<li>User-defined application exception classes you derive from ApplicationException</li>
-								<li>The <code>Exception </code> class which is the parent of SystemException and ApplicationException </li>
+						<ul style="font-size: 28px;">
+								<li>- Predefined Common Language Runtime exception classes derived from <code>SystemException</code></li>
+								<li>User-defined application exception classes you derive from <code>ApplicationException</code></li>
+								<li>The <code>Exception </code> class which is the parent of <code>SystemException</code> and <code>ApplicationException</code> </li>
 								
 							
 						</ul>
@@ -98,20 +98,44 @@
 						
 				</section>
 				<section data-background="#fff">
-						<h2>Common Methods in Directory Class</h2>
+						<h2>Purposely Generating a <code>SystemException</code></h2>
 						<ul>
 
-							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.directory?view=netframework-4.7.1">Click here to navigte to <code>Directory Class</code></a></li>		   
+							<li style="font-size: 30px;">You can deliberately generate a SystemException by forcing a program to contain an error</li>	
+							<ul style="font-size: 22px;">
+									<li>- Example: Dividing an integer by zero</li>
+							</ul>
+							<li style="font-size: 30px;">Termination of the program is abrupt and unforgiving</li>	
+							<li style="font-size: 30px;">Object-oriented error handling techniques provide more elegant solutions</li>  
+							<li style="font-size: 30px;">With exception handling,a program can continue after dealing with a problem</li> 
+							<ul style="font-size: 22px;">
+									<li>- Especially important in <b>mission-critical</b> applications - any process that is crucial to an organization</li>
+							</ul>
+
 						</ul>
-						<img src="images/directorymethods.png" style="box-shadow: none;" alt="Common methods in directory class"/>
+
 				</section>
 				<section data-background="#fff">
-						<h2>Directory Class - code and output</h2>
+						<h2>Purposely Generating a <code>SystemException</code></h2>
+						<ul>
 
-						<img src="images/directorypic1.png" width="420" style="box-shadow: none; float: left;" alt="directory picture example one"/>
-						<img src="images/directorypic2.png" width="420" style="box-shadow: none; float: left;" alt="directory Picture example two"/>
+							<li>Programs that can handle exceptions appropriately are said to be more fault tolerant and robust than those that do not</li>	
+							<ul style="font-size: 22px;">
+								<li>- <b>Fault-tolerant</b> applications are designed so that they continue to operate, possibly at a reduced level, when some part of the system fails</li>
+								<li>- <b>Robustness</b> represents the degree to which a system is resilient to stress, maintaining correct functioning</li>
+							</ul>
+
+						</ul>
+						
 				</section>
-				<section data-background="#eee">
+				<section data-background="#fff">
+						<h2>Exception Subclasses</h2>
+						
+						<img src="images/exception/milesgallonexcode.png" width="450" style="box-shadow: none; float: left;" alt="c# code miles per gallon example code"/>
+						<img src="images/exception/milesgallonexoutput.png" width="450" style="box-shadow: none; float: left;" alt="c# code miles per gallon example output"/>
+				</section>
+
+				<!--<section data-background="#eee">
 						<h2>Understanding File Data Organization</h2>
 						<ul>
 							<li>Businesses store data in a relationship known as the <b>data hierarchy</b></li>
@@ -194,98 +218,7 @@
 
 						<img src="images/streamoverview.png"  width="700" style="box-shadow: none;" alt="Stream class overview diagram"/>
 				</section>
-				<section data-background="#fff">
-						<h2>Stream classes</h2>
-						<ul style="font-size: 24px;">
-							<li><b>Stream</b> is an abstract class, it can not initialize an object by itself, you can initialize a Stream object from the Constructors of the subclass. <b>Stream</b> class provides the basic methods of working with data streams, namely the method of read/write a byte or an array of bytes.</li>
-							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.stream?view=netframework-4.7.1">Click here to navigte to <code>Stream Class</code></a></li>
-						</ul>
-						
-						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
-								<tbody> 
-								 <tr> 
-								  <td><strong>Class</strong></td> 
-								  <td><strong>Description</strong></td> 
-								 </tr> 
-								 <tr> 
-								  <td>BufferedStream</td> 
-								  <td>A utility stream, it wrapped another stream, which helps improve performance</td> 
-								 </tr> 
-								 <tr> 
-								  <td>FileStream</td> 
-								  <td>Stream used to read and write data to the file.</td> 
-								 </tr> 
-								 <tr> 
-								  <td>MemoryStream</td> 
-								  <td>Creates a stream whose backing store is memory.</td> 
-								 </tr> 
-								 <tr> 
-								  <td>UnmanagedMemoryStream</td> 
-								  <td>&nbsp;</td> 
-								 </tr> 
-								 <tr> 
-								  <td>IsolatedStorageFileStream</td> 
-								  <td>&nbsp;</td> 
-								 </tr> 
-								 <tr> 
-								  <td>PipeStream</td> 
-								  <td>&nbsp;</td> 
-								 </tr> 
-								 <tr> 
-								  <td>NetworkStream</td> 
-								  <td>&nbsp;</td> 
-								 </tr> 
-								 <tr> 
-								  <td>CryptoStream</td> 
-								  <td>Defines a stream that links data streams to cryptographic transformations.</td> 
-								 </tr> 
-								 <tr> 
-								  <td>DeflateStream</td> 
-								  <td>&nbsp;</td> 
-								 </tr> 
-								 <tr> 
-								  <td>GZipStream</td> 
-								  <td>&nbsp;</td> 
-								 </tr> 
-								</tbody> 
-						</table>
-				</section>
-				<section data-background="#fff">
-						<h2>Properties of Stream</h2>
-						<ul style="font-size: 24px;">
-							<li>Depending on the stream, there are the stream that supports both read and write, and seek by moving the cursor on the stream, read and write data at the cursor position.</li>
-							
-						</ul>
-						
-						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
-								<tbody> 
-								 <tr> 
-								  <td><strong>Attribute</strong></td> 
-								  <td><strong>Description</strong></td> 
-								 </tr> 
-								 <tr> 
-								  <td>CanRead</td> 
-								  <td>Gets a value indicating whether the current stream supports reading.</td> 
-								 </tr> 
-								 <tr> 
-								  <td>CanSeek</td> 
-								  <td>Gets a value indicating whether the current stream supports seeking.</td> 
-								 </tr> 
-								 <tr> 
-								  <td>CanWrite</td> 
-								  <td>Gets a value indicating whether the current stream supports writing.</td> 
-								 </tr> 
-								 <tr> 
-								  <td>Length</td> 
-								  <td>Gets the length in bytes of the stream.</td> 
-								 </tr> 
-								 <tr> 
-								  <td>Position</td> 
-								  <td>Gets or sets the current position of this stream.</td> 
-								 </tr> 
-								</tbody> 
-						</table>
-				</section>
+
 				<section data-background="#fff">
 						<h2>Understanding Streams</h2>
 						<ul>
@@ -392,7 +325,7 @@
 
 					
 
-				</section>
+				</section>-->
 				
 			</div>
 		</div>
