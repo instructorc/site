@@ -12,6 +12,19 @@
     
     }
 
+.box_three{
+    
+        flex:  1 0 600px;
+        
+
+        float:  left;
+        border:  solid 2px #333;
+        margin: 10px;
+        font-size: 24px;
+    
+    
+    }
+
 #flexcontain{
     margin:auto;
     display:  flex;

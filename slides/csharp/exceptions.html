@@ -157,25 +157,51 @@
 					</ul>
 				</section>
 				<section data-background="#eee">
-					
-					<h4>Object-oriented exception handling uses three unique terms: try, catch, throw, finally</h4>
-					</ul>
-					<div id="flexcontain">
-						<div class="box red" style="font-size: 22px; margin: 10px;"><p><b><code><em>try</em></code> block</b> Contains statements that can produce an error <br> Code at least one catch block or finally block immediately following a <code>try</code> block</code></p></div>
-						<div class="box blue" style="font-size: 22px; margin: 10px;"><p>Share code with any npm user, any where</p></div>
-						<div class="box green" style="font-size: 22px; margin: 10px;"><p>Form virtual teams (orgs)</p></div>
-						<div class="box yellow" style="font-size: 22px; margin: 10px;"><p>Manage multiple versions of code and code dependencies.</p></div>
-						<div class="box orange" style="font-size: 22px; margin: 10px;"><p>Update applications easily when underlying code is updated.</p></div>
-						<div class="box aquamarine" style="font-size: 22px; margin: 10px;"><p>Discover multiple ways to solve the same puzzle.</p></div>
-					</div>
+					<section>
+						<h4>Object-oriented exception handling uses three unique terms: try, catch, throw, finally</h4>
+						</ul>
+						<div id="flexcontain">
+							<div class="box_three red" style="font-size: 22px; margin: 10px;"><p><b><code style="font-size: 30px;"><em>try</em></code> block</b><br/> Contains statements that can produce an error <br> Code at least one catch block or finally block immediately following a <code>try</code> block</code></p></div>
+							<div class="box_three blue" style="font-size: 22px; margin: 10px;"><p><b><code style="font-size: 30px;"><em>catch</em></code> block</b><br/> Can "catch" one type of Exception <br> You must code at least one <code>catch</code> block or <code>finally</code> block immediately following a <code>try</code> block</code></p></div>
+							<div class="box_three green" style="font-size: 22px; margin: 10px;"><p><b><code style="font-size: 30px;"><em>finally</em></code> block</b><br/> Contains actions to perform at the end of a <code>try…catch</code> sequence<br> Executes whether the try block identifies any Exceptions or not <br /> Used to perform clean-up tasks<br /> A <code>finally</code> block executes after 1) the <code>try</code> ends normally. 2) the <code>catch</code> executes and 3) the <code>try</code> ends abnormally and the <code>catch</code> does not execute </p></div>
+
+						</div>
+					</section>
 					<section data-background="#fff">
-						<h2></h2>
-						<img src="images/tryex.png" width="750" style="box-shadow: none;" alt="Try example code"/>
+						<h3>Try/Catch block</h3>
+						<img src="images/exception/tryex.png" width="750" style="box-shadow: none;" alt="Try example code"/>
+					</section>
+					<section data-background="#fff">
+						<h3>Try/Catch block example</h3>
+						<img src="images/exception/catchex.png" width="600" style="box-shadow: none;" alt="Try catch example code"/>
+					</section>
+					<section data-background="#fff">
+						<h3>Try/Catch/Finally block example</h3>
+						<img src="images/exception/trycatchfinallyex.png" width="600" style="box-shadow: none;" alt="Try catch finally example code"/>
 					</section>
 				</section>
 				<section data-background="#fff">
-						<h2>Understanding File Data Organization Diagram</h2>
-						<img src="images/dataorg.png" width="750" style="box-shadow: none;" alt="File Data organization diagram"/>
+					<h3>Using the  <code>Exception</code>Class's <code>ToString()</code> Method and Message  property</h3>
+					<ul>
+						<li>The <code>Exception</code> class overrides <code>ToString()</code></li>	
+						<ul style="font-size: 22px;">
+							<li>- Provides a descriptive error message</li>
+							<li>- The user can receive percise information about the nature of any Exception that is thrown</li>
+						</ul>
+					</ul>	
+				</section>
+				<section data-background="#fff">
+					<h3>Using the  <code>Exception</code>Class's <code>ToString()</code> Method and Message  property</h3>
+					<ul>
+						<li><code>Exception</code> class <code>Message</code> property</li>	
+						<ul style="font-size: 22px;">
+							<li>- Contains useful information about an <code>Exception</code></li>
+						</ul>
+						<li><code>getType()</code> method</li>	
+						<ul style="font-size: 22px;">
+							<li>- Indicates the name of the class</li>
+						</ul>
+					</ul>	
 				</section>
 				<!--<section data-background="#eee">
 						<h2>Understanding File Data Organization</h2>
