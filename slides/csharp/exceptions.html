@@ -21,6 +21,11 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+		<style>
+			ul li{
+				font-size: 80%;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
@@ -180,6 +185,44 @@
 						<img src="images/exception/trycatchfinallyex.png" width="600" style="box-shadow: none;" alt="Try catch finally example code"/>
 					</section>
 				</section>
+				<section data-background="#eee">
+					<section>
+						<h3>Catching Multiple <code>Exceptions</code></h3>
+						<ul>
+							<li>You can place as many statements as you need within a try block</li>	
+							<ul style="font-size: 22px;">
+								<li>- Only the first error-generating statement throws an Exception</li>
+							</ul>
+							<li>Multiple catch blocks are examined in sequence until a match is found for the Exception that occurred</li>
+							<li>Various <code>Exceptions</code> can be handled by the same <code>catch</code> block</li>
+						</ul>
+					</section>	
+					<section data-background="#fff">
+							<h3>Catching Multiple <code>Exceptions</code></h3>
+							<img src="images/exception/multicatchblock.png" width="450" style="box-shadow: none; float: left;" alt="Multiple catch block first eample code"/>
+							<img src="images/exception/multicatchblocktwo.png" width="450" style="box-shadow: none; float: left;" alt="Multiple catch blocks second example code"/>
+					</section>
+				</section>
+				<section>
+					<section>
+					<h3>Handling Exceptions Thrown from Outside Methods</h3>
+						<ul>
+							<li>An advantage of using object-oriented exception-handling techniques:</li>	
+							<ul style="font-size: 22px;">
+								<li>- The ability to deal with Exceptions appropriately as you decide how to handle them</li>
+							</ul>
+							<li>When methods from other classes throw Exceptions, methods do not have to catch them</li>
+							<ul style="font-size: 22px;">
+								<li>- Your calling program can catch them, and you can decide what to do</li>
+							</ul>
+						</ul>
+					</section>
+					<section data-background="#fff">
+							<h4>Handling Exceptions Thrown from outside methods</h4>
+							<img src="images/exception/insideexceptionone.png" width="450" style="box-shadow: none; float: left;" alt="eample one code handled exception called from method"/>
+							<img src="images/exception/insideexceptiontwo.png" width="450" style="box-shadow: none; float: left;" alt="example two code handled exception called from method"/>
+					</section>
+				</section>
 				<section data-background="#fff">
 					<h3>Using the  <code>Exception</code>Class's <code>ToString()</code> Method and Message  property</h3>
 					<ul>
@@ -200,6 +243,20 @@
 						<li><code>getType()</code> method</li>	
 						<ul style="font-size: 22px;">
 							<li>- Indicates the name of the class</li>
+						</ul>
+					</ul>	
+				</section>
+				<section data-background="#fff">
+					<h3>Tracing <code>Exception</code> Objects Through the Call Stack</h3>
+					<ul>
+						<li><b>Call Stack</b></li>	
+						<ul style="font-size: 22px;">
+							<li>-The memory location where the computer stores the list of locations to which the system must return</li>
+							<li>If a method throws an Exception and does not catch it, the Exception is thrown to the next method “up” the call stack</li>
+						</ul>
+						<li><code>StackTrace</code> property</li>	
+						<ul style="font-size: 22px;">
+							<li>- Contains a list of methods in the call stack so you can determine the location of the Exception</li>
 						</ul>
 					</ul>	
 				</section>
