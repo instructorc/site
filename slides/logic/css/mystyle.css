@@ -11,6 +11,19 @@
     
     
     }
+.box_two{
+    
+        flex:  1 0 400px;
+       
+        width: 400px;
+       
+        float:  left;
+        border:  solid 2px #333;
+        margin: 20px;
+        font-size: 24px;
+      
+      
+      }
 
 #flexcontain{
     margin:auto;
