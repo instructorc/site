@@ -3,7 +3,11 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="description" content="Instructor Fulton's Introduction to NodeJs">
+		<meta name="author" content="C. Fulton">
 
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 		<title>Introduction to Nodejs and ES6</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
@@ -41,9 +45,9 @@
 						<li>What is NodeJs?</li>
 						<li>Asynchronous Programming</li>
 				        <li>Installation of NodeJS</li>
-                        <li>Asynchronous Programming</li>
-                        <li>Getting Started with NPM</li>
-                        <li>File Structure - nodes_modules and package.json</li>
+						<li>Asynchronous Programming</li>
+                        <li>Creating and using modules</li>
+                        <li>Practice with Core Modules</li>
                         <li>Key Commands</li>
                         <li>NPM summary</li>
 				    </ul>
@@ -67,7 +71,7 @@
 								<li style="font-size: 26px;"><b>NodeJs</b> - pushes it to a queue and continues with the next statement. If the server returns something, it callback to whatever triggered the event.</li>	   
 							</ul>
 						</div>
-						<div class="box_tw0" style="font-size: 22px; margin: 10px;">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
 							<img src="images/node/eventloop.png" width="500" style="box-shadow: none;" alt="Nodejs event loop queue"/>
 						</div>
 					</div>
@@ -80,7 +84,7 @@
 						<li><a href="https://nodejs.org/en/">Click here to navigte to <code>Nodejs website</code></a></li>	
 						<li>Click on the LTS version that is recommended for most users.</li>	   
 					</ul>
-					<img src="images/io/filemethods.png" style="box-shadow: none;" alt="Common methods in File class"/>
+					
 				</section>
 
 				<section data-background="#eee">
@@ -95,10 +99,105 @@
 					</div>
 
 				</section>
-				<section data-background-color="#000000">
-					<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-						<iframe width="850" height="700" src="https://www.youtube.com/embed/x03fjb2VlGY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				<section>
+					<section>
+						<h3>Node Modules</h3>
+						<p> Core/Built-in Modules   &#10022;    Third-Party Modules </p>
+						<div id="flexcontain">
+							<div class="box_two" style="font-size: 22px; margin: 10px;">
+								<ul>
+									<li style="font-size: 26px;"><b>File Module</b> Including the path of file in require method</li>
+									<li style="font-size: 26px;"><b>Core modules</b> are modules that come with NodeJs.  You do not have to install them.  <a href="https://nodejs.org/api/modules.html"> Click here to see a list of core modules</a></li><br>
+									<li style="font-size: 26px;"><b>Third-Party modules</b> - pushes it to a queue and continues with the next statement. If the server returns something, it callback to whatever triggered the event.</li>	   
+								</ul>
+							</div>
+							<pre>
+								<code style="font-size: 16px;" class="hljs" data-trim contenteditable>
+								const welcome = require('./welcome'); //including a module that is a file within your program
+								const http = require('http'); //including a core module example
+								const app = require('express'); //including third-party module example
+
+
+								</code>
+							</pre>
+
+						</div>	
+					</section>
+					<section>
+						<h3>Creating your own Module</h3>
+						<ul>
+							<li>Create a file called welcome.js</li>
+							<li>Add the code snippet below to your welcome.js file:</li>
+						</ul>
+						<pre><code class="hljs" data-trim contenteditable>
+								exports.welcome = function(){    
+									console.log("You called the welcome method");
+								}
+
+								exports.conclude = ()=>{
+									console.log("You called the conclude method");
+								}
+						</code></pre>
+						
+					</section>
+					<section>
+						<h3>Using a Core/Built-in Module</h3>
+						<ul>
+							<li>This example will utilize both the core http module to create a server</li>
+							<li>Create a file called server.js</li>
+							<li>Copy and add the code snippet below to your server.js file: </li>
+						</ul>
+						<pre><code class="hljs" data-trim contenteditable>
+								exports.welcome = function(){    
+									console.log("You called the welcome method");
+								}
+
+								exports.conclude = ()=>{
+									console.log("You called the conclude method");
+								}
+						</code></pre>
+						
+					</section>
+				</section>
+				<section data-background="#fff">
+					<h3>Including Modules into your Application</h3>
+					<p> Core/Built-in Modules   &#10022;    Third-Party Modules </p>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;"><b>Most Languages</b> - Once an event is triggered to perform a task, most languages wait until the task is complete to move onto the next statement </li><br>
+								<li style="font-size: 26px;"><b>NodeJs</b> - pushes it to a queue and continues with the next statement. If the server returns something, it callback to whatever triggered the event.</li>	   
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<!--<img src="images/node/eventloop.png" width="500" style="box-shadow: none;" alt="Nodejs event loop queue"/>-->
+						</div>
 					</div>
+
+					
+				</section>
+				<section data-background="#fff">
+					<h3>Creating your own Module </h3>
+					<p> Core/Built-in Modules   &#10022;    Third-Party Modules </p>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;"><b>Most Languages</b> - Once an event is triggered to perform a task, most languages wait until the task is complete to move onto the next statement </li><br>
+								<li style="font-size: 26px;"><b>NodeJs</b> - pushes it to a queue and continues with the next statement. If the server returns something, it callback to whatever triggered the event.</li>	   
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<!--<img src="images/node/eventloop.png" width="500" style="box-shadow: none;" alt="Nodejs event loop queue"/>-->
+						</div>
+					</div>
+
+					
+				</section>
+				<section data-background-color="#fff">
+					<iframe height="600" src="https://embed.polleverywhere.com/multiple_choice_polls/QdwqUEsc6vjDWi3?controls=none&short_poll=true" width="100%" height="100%" frameBorder="0"></iframe>
+				</section>
+				<section data-background-color="#fff">
+					<iframe height="600" src="https://embed.polleverywhere.com/free_text_polls/njYHOn4wxYZfpDV?controls=none&short_poll=true" width="100%" height="100%" frameBorder="0"></iframe>
 				</section>
 				<!--<section data-background="#eee">
 				    <h2>File and Directory Classes</h2>
