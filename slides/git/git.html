@@ -8,7 +8,7 @@
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
-
+		<link rel="stylesheet" href="css/mystyle.css">
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
@@ -20,13 +20,30 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+		<style>
+
+			.reveal section img {
+				margin: 15px 0px;
+				background: rgba(255, 255, 255, 0.12);
+				border: none;
+				box-shadow: none; 
+			}
+			#entryslidecontain{
+				clear: both;
+				height: 290px;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
 				<section data-background="#eee">
-				    <h2>Getting Started with Git</h2>
-				    <img src="images/gitlogo.png" alt="git logo">
+					<h2>Getting Started with Git</h2>
+					<div id="entryslidecontain">
+						<img src="images/gitlogo.png" width="390" style="float: left;" alt="git logo">
+						<span style="float: left; font-size: 2.7em; margin: .1em .4em 0em .4em;"> + </span>
+						<img src="images/github_logo.png" width="420" style="float: left;" alt="github logo">
+					</div>
 				    <h3>Instructor: Chris Fulton</h3>
 				</section>
 				<section data-background="#eee">
@@ -34,7 +51,8 @@
 				    <ul>
 				        <li>Download and install Git</li>
                         <li>What is Git</li>
-                        <li>How does Git and Github interact and What's the difference</li>
+						<li>How does Git and Github interact and What's the difference</li>
+						<li>Workflow</li>
 				    </ul>
 				</section>
 				<section data-background="#eee">
@@ -63,6 +81,10 @@
 				    <h2>What is Git cont. </h2>
 				    <img src="images/githubworkflow.png" alt="git logo">
 				</section>
+				<section data-background="#F1F1EE">
+						
+						<img src="images/workflow.PNG" alt="github workflow image" style="margin-top: -1em;">
+					</section>
 			</div>
 		</div>
 
