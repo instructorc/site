@@ -29,41 +29,132 @@
 			ul li{
 				font-size: 80%;
 			}
+			p{
+				font-size: .7em;
+			}
 		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
 				<section data-background="#eee">
-				    <h2>Introduction to Web Components</h2>
-				    <img src="images/web_comp/wc.png" width="320" style="box-shadow: none; border: none;"alt="Node js logo">
+				    <h3>Introduction to Web Components</h3>
+				    <img src="images/web_comp/wc.png" width="420" style="box-shadow: none; border: none;"alt="Node js logo">
 				    <h3>Instructor: Chris Fulton</h3>
 				</section>
 				<section data-background="#eee">
 				    <h2>Learning Objectives</h2>
 				    <ul>
-						<li>What is Web Components?</li>
-						<li>Asynchronous Programming</li>
-				        <li>Installation of NodeJS</li>
-						<li>Asynchronous Programming</li>
-                        <li>Creating and using modules</li>
-                        <li>Practice with Core Modules</li>
-                        <!--<li>Key Commands</li>-->
-                        <!--<li>NPM summary</li>-->
+						<li>What are Web Components?</li>
+						<li> Web Component Break-down</li>
+				        <li>Popular web component frameworks</li>
+						<li>Benefits of Web Components</li>
+
 				    </ul>
 				</section>
 				<section data-background="#eee">
-						<h2>What is  <code>nodejs</code> ?</h2>
-						<p>Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world.</p>
+						<h2>What are Web components ?</h2>
+						<p style="text-align: left"> A collection of web standards that makes it easy to create reusable objects with regular HTML and JavaScript</p>
 						
 						<ul>
-							<li><b>Simple description</b> - NodeJs is javascript on the server</li>
-						
+							<li style="font-size: 26px;">We already use them in Standard HTML but natively</li>
+							<li style="font-size: 26px;">A lot of popular GUI tools are build in a component based structure</li>
+
 						</ul>
 				</section>
+				<section>
+					<section data-background="#fff">
+						<h3>Web Component Break-down</h3>
+						<p style="font-size: .7em;"> Custom Elements  &#10022;    HTML Templates &#10022;    HTML Imports  &#10022;    Shadow DOM </p>
+						<div id="flexcontain">
+
+							<div class="box_two" style="font-size: 22px; margin: 10px;">
+								<img src="images/web_comp/b_support.PNG"  style="box-shadow: none;" alt="web component browser support"/>
+							</div>
+						</div>
+	
+						
+					</section>
+					<section data-background="#fff">
+						<h2>Custom Elements</h2>
+						<p>Creating new custom elements that have propierties, behavior and attributes</p>
+						<div id="flexcontain">
+							<div class="box_two" style="font-size: 22px; margin: 10px;">
+								<ul>
+									<li style="font-size: 26px; list-style-type: none;"><a href="https://developers.google.com/web/fundamentals/web-components/customelements">Google Web Fundamentals Write-up</a></li>
+	   
+								</ul>
+							</div>
+							<div class="box_two" style="font-size: 22px; margin: 10px; width: 540px;">
+								<pre>
+									<code style="font-size: 16px;" class="hljs" data-trim contenteditable>
+										class AppDrawer extends HTMLElement {...}
+										window.customElements.define('app-drawer', AppDrawer);
+										
+										// Or use an anonymous class if you don't want a named constructor in current scope.
+										window.customElements.define('app-drawer', class extends HTMLElement {...});
+
+
+									</code>
+								</pre>
+							</div>
+
+						</div>
+					</section>
+					<section data-background="#eee">
+						<h2>HTML Templates</h2>
+						<p style="font-size: 21px;"> Defines how to declare fragment of markup that go unused at page load, but can be instantiated later at runtime. A bunch of mark-up code that you don
+							want the browser to use right away.
+						</p>
+						<div id="flexcontain">
+							<div class="box_two" style="font-size: 22px; margin: 10px;">
+								<ul>
+									<li style="font-size: 26px; list-style-type: none;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template">Mozilla Write-up</a></li>
+	   
+								</ul>
+							</div>
+			
+							<div class="box_two" style="font-size: 22px; margin: 10px; width: 540px">
+								<pre>
+									<code style="font-size: 16px;" class="hljs" data-trim contenteditable>
+										<table id="producttable">
+											<thead>
+											<tr>
+												<td>UPC_Code</td>
+												<td>Product_Name</td>
+											</tr>
+											</thead>
+											<tbody>
+											<!-- existing data could optionally be included here -->
+											</tbody>
+										</table>
+										
+										<template id="productrow">
+											<tr>
+											<td class="record"></td>
+											<td></td>
+											</tr>
+										</template>
+									</code>
+								</pre>
+							</div>
+
+						</div>
+					</section>
+					<section data-background="#eee">
+						<h2>HTML Imports</h2>
+						<p style="font-size: 22px;"> Allows HTML markup content to be defined as an external file and then included into other webpages.  Things are still moving with this standard</p>
+						
+						<ul>
+							<li>HTML Imports</li>
+
+						</ul>
+					</section>
+
+				</section>
 				<section data-background="#fff">
-					<h3>Asynchronous Programming</h3>
-					<p> Event-driven    &#10022;    Non-blocking I/O </p>
+					<h3>Web Component Break-down</h3>
+					<p> 4 Standards</p>
 					<div id="flexcontain">
 						<div class="box_two" style="font-size: 22px; margin: 10px;">
 							<ul>	
