@@ -25,34 +25,101 @@
 		<div class="reveal">
 			<div class="slides">
 				<section data-background="#eee">
-				    <h2>Principles of Web Design Lecture</h2>
-				    <img src="images/frontendlogo.png" alt="html 5 logo">
+				    <h2>Introduction to HTML</h2>
+				    <img src="images/html/html5.png" alt="html 5 logo">
 				    <h3>Instructor: Chris Fulton</h3>
 				</section>
 				<section data-background="#eee">
 				    <h2>Learning Objectives</h2>
 				    <ul>
-				        <li>Set a directory structure</li>
-                        <li>Create web pages with HTML</li>
-                        <li>Add style with CSS</li>
-                        <li>Describe the history of HTML</li>
-                        <li>Work with HTML5</li>
-                        <li>Use good coding practices</li>
-				    </ul>
-				</section>
-				<section data-background="#eee">
-				    <h2>Setting a Directory Structure</h2>
-				    <ul>
-				        <li>You build a site on a development computer but host it on a different computer</li>
-                        <li>The files for your web site must be transferred from the development computer to the hosting computer</li>   
-                        <li>Your file structure must be transferable</li>
-                        <li>Use relative paths to indicate file locations</li>
-               
+				        <li>Explore the history of the Web and HTML</li>
+                        <li>Discuss World Wide Web Consortium and purpose</li>
+                        <li>Compare and Explain the versions of HTML</li>
+                        <li>Explain the Categories of HTML5 elements</li>
+                        <li>Creating the structuring of a basic HTML document</li>
+                        <li>Validating HTML documents</li>
+                        <li>Implementing good coding practices</li>
 				    </ul>
 				</section>
 				<section data-background="#fff">
-				    <h2>Single Folder Structure</h2>
-				    <img src="images/folderstructure.PNG" alt="picture of folder structure">
+					<h3>Introducting HTML</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 28px;">a <b>network</b> is a structure in which infomation and services are shared among devices known as nodes or hosts</li><br>
+   								<li style="font-size: 28px;">a <b>client-server network</b> allows clients to access information provided by one or more servers. <br> <br> <em style="font-size: .7em">For example, you used a client-side browser to access the html documents of this lecture from a server hosted by amazon somewhere in the world.</em> </li><br>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/html/originalproposal.gif" alt="Tim Berners Original proposal for hypertext markup">
+							<p style="font-size: .5em">picture of Tim Berners proposal concening the management of general information about accelerators and experiments at CERN. It discusses the problems of loss of information about complex evolving systems and derives a solution based on a distributed hypertext system </p>
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Intoducting HTML Cont.</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/html/client_server.png" alt="Clients and Server and Internet exist in middle picture">
+							<p style="font-size: .5em">multiple clients can connect to server(s) - this is what makes up the internet. <br>The largest WAN in existence is the Internet. </p>
+
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 28px;">a network confined to a small geographic area, such as within a building or department, is referred to as a <b>local area network</b> or <b>LAN</b></b></li><br>
+	   							<li style="font-size: 28px;">a network that covers a wider area, such as serveral buildings or cities is called a <b>wide area network</b> or <b> WAN</b></b></b></li><br>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section data-background="#eee">
+					<h2>What does LAN and WAN has to do with the history of HTML?</h2>
+				</section>
+				<section data-background="#fff">
+					<h3>History of HTML</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/Y-q7k-Lf2po?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+							<p style="font-size: .5em">He did not invent the internet, but gave provided context and usability for the Internet.  The fact that the Internet and the World Wide Web are synonymous is many users' minds is a testament to the success of the hypertext approach.</p>
+
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 28px;">in 1989, Timonthy Berners-Lee and other researches needed an information system that would make it easy to locate and share data on the CERN network.  <br> <br> The solution: develop a system of <b>hypertext</b> documents.</b></li><br>
+	   							<li style="font-size: 28px;"><b>Hypertext</b> is a method of organization in which data sources are interconnected through a series of links or hyperlinks</li><br>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section data-background="#eee">
+				    <h2>What does <b>HTML</b> Mean?</h2><br>
+				    <p>A web page is a simple text file written in <b>HTML (Hypertext Markup Language)</b> A <b> markup language</b> is a language that describes the content and structure of a document by "marking up" or tagging, different document elements.</p>
+				</section>
+				<section data-background="#fff">
+					<h3>Adopted Standards</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 24px;">No single organization defined the rules or <b>syntax</b> of HTML, which led to problems as different browser supported different flavors of HTML.</li><br>
+   								<li style="font-size: 24px;">The <b>World Wide Web Consortium(W3C)</b> was born.  The W3C is an international community where Member organizations, a full-time staff, and the public work together to develop Web standards. Led by Web inventor and Director Tim Berners-Lee and CEO Jeffrey Jaffe, W3C's mission is to lead the Web to its full potential.</li><br>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<video controls>
+								<source src="https://media.w3.org/2011/11/w3c_video_small.mp4" type="video/mp4">
+								<source src="https://media.w3.org/2011/11/w3c_video_small.webm" type="video/webm">
+								<text lang="en" type="application/ttaf+xml" src="w3c_video_captions.ttml"></text>
+								<div style="width: 640px; height: 360px;">
+								  <p>No Video Support.</p>
+								</div>
+							 </video>
+							
+						</div>
+					</div>
 				</section>
 			</div>
 		</div>

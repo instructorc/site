@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Web Development Tools and Project structure</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/dope.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<!-- Google Font -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="#eee">
+				    <h2>Intro. to Web Tooling</h2>
+				    <img src="images/webtool/webgraphic.png" width="400" alt="web tooling logo">
+				    <h3>Instructor: Chris Fulton</h3>
+				</section>
+				<section data-background="#eee" style="top: 0;">
+				    <h2>Learning Objectives</h2>
+				    <ul>
+				        <li>Development Tools and Environments</li>
+				        <ul>
+				        	<li style="font-size: .6em">Discuss and Compare Text Editors and IDE's (Integrated Development Environments)</li>
+				        	<li style="font-size: .6em"> Explain the benefits of Local vs. Cloud Dev. Environments</li>
+				        </ul>
+                        <li>Understanding File Structure</li>
+                        <ul>
+				        	<li style="font-size: .6em">Compare Relative vs. Absolute file paths</li>
+				        	<li style="font-size: .6em"> Discuss File Structure best practices</li>
+				        </ul>
+                        <!--<li>Git/Github</li>
+                        <li>CI/CD</li>
+                        <li>Hosting</li>-->
+                        
+
+				    </ul>
+				</section>
+				<section data-background="#fff">
+					<h3>Development Tools</h3>
+					<p> Text Editors    &#10022;    Integrated Dev. Environments</p>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 20px;"><b>Text Editor</b> - a software program that allows users to input and edit text.  Allows you to create and edit a range of programming language files </li><br>
+								<li style="font-size: 20px;"><b>Integrated Development Environment (IDE)</b> - a software suite that consolidates the basic tools developers need to write and test software. Typically, an IDE contains a code editor, a compiler or interpreter and a debugger that the developer accesses through a single graphical user interface (GUI).</li>	   
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/webtool/texteditors.png" width="500" style="box-shadow: none;" alt="ide and text editor logos"/>
+						</div>
+					</div>
+
+					
+				</section>
+				<section data-background="#fff">
+					<h3>Development Tools</h3>
+					<p style="font-size: 24px;"> Local Development    &#10022;    Cloud Development</p>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 20px;"><b>Local Development</b> - hosting your site’s files locally (on your computer) rather than externally (like on a hosting company’s servers). </li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 20px;"><b>Cloud Development</b> - a web-based integrated development platform where your files are hosted externally.  Web-based development examples include Cloud9(now apart of Amazon), codeenvy, shiftedit, Orion, codeeverywhere.</li>	   
+							</ul>
+						</div>
+						
+					</div>
+				</section>
+				<section data-background="#fff">
+				    
+				    <img src="images/webtool/devenv.png"  alt="Picture of moving from local to development environment">
+				    
+				</section>
+				<section data-background="#fff">
+					<h3>Folder Paths</h3>
+					<p> Absolute Paths   &#10022;    Relative Paths</p>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 20px;"><b>Absolute Paths</b> - a path that starts from the root folder and processes down the entire folder structure </li><br>
+								<li style="font-size: 20px;"><b>Relative Paths</b> - a path is expressed relative to the location of the current document.</li>	
+								<li style="font-size: 20px;"><b>File Path Location:</b><br> <b>/ </b> - means the root of the current drive <br> <b>./</b> - means the current directory <br> <b>../</b> - means the parent of the current directory</li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/webtool/relativeabsolute.jpg" alt="picture of absolute versus relative file structure">
+						</div>
+					</div>
+
+					
+				</section>
+				<section data-background="#eee">
+				    <h2>Setting a Directory Structure</h2>
+				    <ul>
+				        <li>You build a site in a local/cloud environment but typically host it on a different computer</li>
+                        <li>The files for your web site must be transferred from the development environment to the hosting computer</li>   
+                        <li>Your file structure must be transferable</li>
+                        <li>Use <b>relative paths</b> to indicate file locations</li>
+               
+				    </ul>
+				</section>
+
+				<section data-background="#fff">
+					<h3>Single Folder Structure</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 28px;">files are placed in the root folder.  Images, JS files, css files all exist in root folder.</li><br>
+   
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/folderstructure.PNG" alt="picture of folder structure">
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Hierarchical Folder Structure</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 28px;">additional folders are created within the root folder to categorize the different type of files.  Images, JS files, css files will exist within their respective folder.</li><br>
+   
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/webtool/hierarcialstructure.PNG" alt="picture of folder structure">
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>File Structure Best Practice</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 28px;">Basic structure we'll use is similar to picture on the left.</li>
+								<li style="font-size: 28px;">Different file structures will look different based on technology stack and type of project.</li>
+   								<li style="font-size: 28px;">The idea is to have order and structure to your files</li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/webtool/basicstructure.png" alt="picture of folder structure">
+						</div>
+					</div>
+				</section>
+				<section data-background="#eee">
+				    <h2>References</h2>
+				    <ul>
+				        <li>https://searchsoftwarequality.techtarget.com/definition/integrated-development-environment</li>
+                        <li>http://duspviz.mit.edu/tutorials/localhost-servers/</li>   
+                        <li>https://readwrite.com/2013/04/16/why-cloud-development-environments-are-better-than-desktop-development/</li>
+                        <li>https://automatetheboringstuff.com/chapter8/</li>
+               
+				    </ul>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
