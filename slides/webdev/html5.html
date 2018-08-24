@@ -11,6 +11,7 @@
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -181,6 +182,34 @@
 					</div>
 				</section>
 				<section data-background="#eee">
+					<h3>The Structure of basic html page</h3>
+					
+					<div id="flexcontain">
+						<pre>
+							<code style="font-size: 16px;" class="codebox code-example__codebox"  data-trim contenteditable>
+								&lt;!DOCTYPE html&gt;
+								&lt;html&gt;
+									&lt;head&gt;
+										&lt;title&gt;Basic Structure &lt;/title&gt;
+									&lt;/head&gt;
+									&lt;body&gt;
+										&lt;header&gt;
+										
+										&lt;/header&gt;
+										<!--Typically content that will change from
+										page to page is put in-between header and footer-->
+										&lt;footer&gt;
+										
+										&lt;/footer&gt;
+									&lt;/body&gt;
+								&lt;/html&gt;
+
+
+							</code>
+						</pre>
+					</div>
+				</section>
+				<section data-background="#eee">
 				    <h2>Helpful HTML Resources</h2>
 				    <ul>
 				        <li><a href="https://htmlreference.io">htmlreference.io</a> - Good site for understanding how to apply the tag.</li>
@@ -207,5 +236,6 @@
 				]
 			});
 		</script>
+		<script>hljs.initHighlightingOnLoad();</script>
 	</body>
 </html>
