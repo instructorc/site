@@ -28,44 +28,128 @@
 			<div class="slides">
 				<section data-background="#eee">
 				    <h2>Intro. to CSS</h2>
-				    <img src="images/css/CSS3.png" width="400" alt="CSS3 logo">
+				    <img src="images/css/CSS3.png" width="300" alt="CSS3 logo">
 				    <h3>Instructor: Chris Fulton</h3>
 				</section>
 				<section data-background="#eee" style="top: 0;">
 				    <h2>Learning Objectives</h2>
 				    <ul>
-
-                        <li>Discuss the history and various versions of CSS</li>
-                        <li>Study the different types of style sheets</li>
+                        <li>Understanding CSS (Cascading Style Sheet)</li>
 				        <li>Understanding the CSS Style Rules</li>
+				        <li>Study the different types of style sheets</li>
 				        <li>Exploring Selectors and Attribute Selectors</li>
 				        <li>Effective Inheritance in CSS </li>
 				        <li>Implementing Pseudo-classes and pseudo-elements</li>
 
-
-                        <!--<li>Git/Github</li>
-                        <li>CI/CD</li>
-                        <li>Hosting</li>-->
-                        
-
 				    </ul>
 				</section>
 				<section data-background="#fff">
-					<h3>Development Tools</h3>
-					<p> Text Editors    &#10022;    Integrated Dev. Environments</p>
+					<h3>Understanding CSS</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/css/chickenstrip.gif" width="650" alt="CSS comic image">
+
+						</div>
+					
+					</div>
+				</section>
+				<section data-background="#fff" style="top: 0;">
+				    <h3>Understanding CSS</h3>
+					
+						<img src="images/css/css_taxonomy.png" width="500" alt="CSS taxonomy image">
+						
+
+				
+				
+	   				<p style="font-size: 26px; margin-top: -10px;">CSS3 is built upon several modules, where each module is focused on a separate design topic</p>
+				
+				</section>
+				<section data-background="#fff">
+					<h3>Understanding CSS</h3>
+
 					<div id="flexcontain">
 						<div class="box_two" style="font-size: 22px; margin: 10px;">
 							<ul>	
-								<li style="font-size: 26px;"><b>Text Editor</b> - a software program that allows users to input and edit text.  Allows you to create and edit a range of programming language files </li><br>
-								<li style="font-size: 26px;"><b>Integrated Development Environment (IDE)</b> - a software suite that consolidates the basic tools developers need to write and test software. Typically, an IDE contains a code editor, a compiler or interpreter and a debugger that the developer accesses through a single graphical user interface (GUI).</li>	   
+								<li style="font-size: 26px;">CSS includes a wide variety of different properties, each with a specific number of values.</li><br>
+								<li style="font-size: 26px;"><a href="https://www.w3schools.com/cssref/default.asp">W3 Schools list of CSS properties</a></li>	   
 							</ul>
 						</div>
 						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<img src="images/node/eventloop.png" width="500" style="box-shadow: none;" alt="Nodejs event loop queue"/>
+							<a href="pdf/CSS3-Cheat-Sheet.pdf"><img src="images/css/cheatsheet_image.PNG" width="500" style="box-shadow: none;" alt="CSS cheatsheet"/></a>
 						</div>
 					</div>
 
 					
+				</section>
+				<section data-background="#fff">
+					<h3>Understanding CSS </h3>
+					
+
+					<img src="images/css/house_css.png" alt="House, HTML, CSS analogy graphic">
+
+			
+					<p style="font-size: .7em;"><b>HTML</b> is the framing and structure of the house, while <b>CSS</b> is the paint, shingles and siding.</p>
+		
+				</section>
+
+				<section data-background="#fff" style="top: 0;">
+				    <h2>CSS Style Rules</h2>
+				    	<img src="images/css/css-selectors-lrg.png" alt="overview of style rule">
+						<ul>	
+							<li style="font-size: 28px;">In CSS, <b>style rules</b> express the style characteristics of an HTML element; The appearance of the page is determined by one or more style rules.</li>
+	   						<li style="font-size: 28px;">A set of style rules is called a <b>style sheet</b></li>
+						</ul>
+				</section>
+				<section data-background="#fff">
+					<h3>CSS Style Rules </h3>
+					
+					<div id="flexcontain">
+						
+						<img src="images/css/declaration.PNG" style="margin: auto;" width="600" alt="CSS Style Rule">
+
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 24px;">Style rules are composed of two parts: a <b>selector</b> and a <b>declaration</b></li>
+	   							<li style="font-size: 24px;">The selector determines the element to which the rule is applied</li>
+	   							<li style="font-size: 24px;">The declaration details the exact property values</li>						
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>CSS Style Rules </h3>
+					
+					<div id="flexcontain">
+						
+						<img src="images/css/property_value.PNG" style="margin: auto;" width="600" alt="Property and Value of CSS declaration image">
+
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 24px;">The declaration contains a <b>property</b> and a <b>value</b></li>
+	   							<li style="font-size: 24px;">The property is a quality or characteristic</li>
+	   							<li style="font-size: 24px;">The precise specifications of the property is contained in a value.</li>						
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="#6dc6cc">
+					
+					<div id="flexcontain" style="text-shadow: 1px 1px 3px #333;">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/css/cssmethods.jpg" alt="Picture of CSS methods." width="600">
+							
+
+						</div>
+						<p style="color: white; margin:auto;">3 Ways of Implementing CSS</p>
+
+						<ul style="color: white;">	
+							<li style="font-size: 28px;"><b>Internal</b> - uses the &lt;style&gt; tag and applies CSS to an HTML document.</li>
+   							<li style="font-size: 28px;"><b>External</b> - uses the &lt;link&gt; tag to link multiple HTML documents to CSS file. </li>
+							<li style="font-size: 28px;"><b>Inline</b> - uses the style attribute and is tag specific and applies CSS to a tag.</li>
+						</ul>
+					</div>
 				</section>
 				<section data-background="#eee">
 				    <h2>Setting a Directory Structure</h2>
