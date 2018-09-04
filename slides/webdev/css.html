@@ -79,8 +79,6 @@
 							<a href="pdf/CSS3-Cheat-Sheet.pdf"><img src="images/css/cheatsheet_image.PNG" width="500" style="box-shadow: none;" alt="CSS cheatsheet"/></a>
 						</div>
 					</div>
-
-					
 				</section>
 				<section data-background="#fff">
 					<h3>Understanding CSS </h3>
@@ -203,6 +201,146 @@
 			
 					<p style="font-size: .7em;">Type Selectors | Grouping Selectors | Combining declarations | Using descendant Selectors</p>
 		
+				</section>
+				<section data-background="#fff">
+					<h3>Type Selector</h3>
+
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;">Type selectors are the simplest form of selector</li>
+								<li style="font-size: 26px;">They select every element in the document that matches the style rule </li>	   
+								<li style="font-size: 26px;">In the following example, all h1 elements are red </li>							
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/css/typeselector.PNG" width="400" style="box-shadow: none;" alt="type selector image"/>
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Grouping Selector </h3>
+					
+					<div id="flexcontain">
+						
+						<pre>
+							<code style="font-size: 26px;" class="codebox code-example__codebox"  data-trim contenteditable>
+								/**Specific style rules**/
+								h1 {color: red;}
+								h2 {color: red;}
+								
+								/**Grouping selectors:**/
+								h1, h2 {color: red;}
+								
+							</code>
+						</pre>
+
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 24px;">You can group selectors to which the same rules apply</li>
+	   													
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Combining Declarations </h3>
+					
+					<div id="flexcontain">
+						
+						<pre>
+							<code style="font-size: 26px;" class="codebox code-example__codebox"  data-trim contenteditable>
+								/**Specific style rules**/
+								p {color: blue;}
+								p {font-size: 125%;}
+								
+								/**Combining declarations**/
+								p {
+								   color: blue;
+								   font-size: 125%;
+								   }
+								   
+							</code>
+						</pre>
+
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 24px;">You can state multiple property declarations for the same selector</li>
+	   													
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Using Descendant Selectors</h3>
+					
+					<div id="flexcontain">
+						
+						<pre>
+							<code style="font-size: 26px;" class="codebox code-example__codebox"  data-trim contenteditable>
+								/**Selecting only &lt;em&gt; elements that are contained 
+								within &lt;p&gt; elements**/
+								
+								p em {
+								
+								     color: blue;
+								   
+								   }
+								   
+							</code>
+						</pre>
+
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 24px;">You can select elements that are descendents of other elements</li>
+	   													
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Using Universal Selectors</h3>
+					
+					<div id="flexcontain">
+						
+						<pre>
+							<code style="font-size: 26px;" class="codebox code-example__codebox"  data-trim contenteditable>
+								/**Selecting all children of the div element:**/
+								div * {
+								   font-family: sans-serif;
+								   
+								   }
+								   
+							</code>
+						</pre>
+
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+								
+						<p>Universal selector lets you select groups of elements</p>
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Using class and id Selectors</h3>
+
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;">The class attribute lets you apply the style rule name to an element</li>
+								<li style="font-size: 26px;">The period (.) flag character indicates the selector is a class selector </li>	   
+								<br>
+								<hr>
+								<br>
+								<li style="font-size: 26px;">The difference between id and class is that idrefers to only one instance of the id attribute value within a document</li>
+								<li style="font-size: 26px;">The ID attribute uses a pound sign (#) flag character </li>	   
+							
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/css/classselector.PNG" width="400" style="box-shadow: none; margin-bottom: 7em" alt="class selector image"/><br>
+							<img src="images/css/idselector.PNG" width="400" style="box-shadow: none;" alt="id selector image"/>
+						</div>
+					</div>
 				</section>
 				<!--<section data-background="#eee">
 				    <h2>Setting a Directory Structure</h2>
