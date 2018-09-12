@@ -11,12 +11,13 @@
 		<title>Introduction to User Experience (UX)</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/dope.css">
 		<link rel="stylesheet" href="css/mystyle.css">
 		<link rel="icon" sizes="32x32" type="image/png" href="images/node/favicon.png">
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="css/zenburn.css">
-
+		<!-- Google Font -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -43,15 +44,18 @@
 				    <h2>Learning Objectives</h2>
 				    <ul style="font-size: 28px;">
 						<li>Understanding what is User Experience?</li>
-						<li>Identifying Key Terms</li>
 						<li>User Research</li>
 						<ul>
-							<li>Card Sorting, Focus Groups, Surveys, Use Cases</li>
+							<li>Observations, Interviews, Task Analysis, Focus Groups, Surveys</li>
 						</ul>
 				        <li>Applying Information Architecture</li>
 				        <ul>
 							<li>Identifying Various Content Strategies</li>
 							<li>Tools and Techniques</li>
+							<ul>
+								<li>Card Sorting</li>
+								<li>Use Cases and User Stories</li>
+							</ul>
 						</ul>
 						<li>Site Performance</li>
 				        <ul>
@@ -73,7 +77,7 @@
 				    </ul>
 				</section>
 				<section data-background="#eee">
-					<h2>What is User Experience(UX) ?</h2>
+					<h3>What is User Experience(UX)?</h3>
 					<p> focuses on having a deep understanding of users, what they need, what they value, their abilities, and also their limitations. UX best practices promote improving the quality of the user’s interaction with and perceptions of your product and any related services.</p>
 				</section>
 				<section data-background="#eee">
@@ -97,15 +101,38 @@
 
 				</section>
 				<section data-background="#fff">
-					<h3>Installing NodeJs</h3>
-					<ul>		
-						<li><a href="https://nodejs.org/en/">Click here to navigte to <code>Nodejs website</code></a></li>	
-						<li>Click on the LTS version that is recommended for most users.</li>	   
+					<h3>User Research</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #216869;"><p><b style="font-size: 30px;">Observations</b> <br> Give people tasks or instructions and watch them use your design, without help. </p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #49A078;"><p><b style="font-size: 30px;">Interviews</b> <br> Ask prospective users questions about their expectations of your design.</p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; background-color: #9CC5A1;"><p><b style="font-size: 30px;">Task Analysis</b> <br>   learning about user goals, and understand the tasks users will perform on your site.</p></div>
+						<div class="box orange" style="font-size: 24px; margin: 10px;"><p><b style="font-size: 30px;">Focus Groups</b> <br> a moderated discussion where you can learn about users’ attitudes, beliefs, desires, and reactions to concepts.</p></div>
+						<div class="box aquamarine" style="font-size: 24px; margin: 10px; background-color: #333;"><p><b style="font-size: 30px;">Surveys</b> <br>  a structured questionnaire that your target audience completes over the internet generally through a filling out a form</p></div>
+					</div>
+					<a href="https://www.usability.gov/what-and-why/user-research.html" style="font-size: .4em;">Click here for more information about user research</a> </a>
+				</section>
+				<section data-background="#fff">
+					
+					<img src="images/ux/ia_pic.gif" width="800" style="box-shadow: none; border: none;"alt="Information Architecture graphic">
+				</section>
+				<section data-background="green">
+					<h3>Use Cases</h3>
+					<ul>
+						<li>Describes one specific interaction between the user and the software</li>
+						<li>The use cases are gathered from the clients requirements which defines the scope requirements.</li>
+						
+						<li><a href="https://nodejs.org/en/">Usability.gov - Explanation of Use cases</a></li>	
+							   
 					</ul>
 					
 				</section>
-
-				<section>
+				<section data-background="green">
+					<h3>Example Use case</h3>
+					<img src="images/ux/use_case.PNG" alt="example of use case"/>
+					
+				</section>
+				
+				<!--<section>
 					<section>
 						<h3>Node Modules</h3>
 						<p> Core/Built-in Modules   &#10022;    Third-Party Modules </p>
@@ -176,7 +203,7 @@
 							</ul>
 						</div>
 						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<!--<img src="images/node/eventloop.png" width="500" style="box-shadow: none;" alt="Nodejs event loop queue"/>-->
+							<img src="images/node/eventloop.png" width="500" style="box-shadow: none;" alt="Nodejs event loop queue"/>
 						</div>
 					</div>
 
@@ -193,7 +220,7 @@
 							</ul>
 						</div>
 						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<!--<img src="images/node/eventloop.png" width="500" style="box-shadow: none;" alt="Nodejs event loop queue"/>-->
+							<img src="images/node/eventloop.png" width="500" style="box-shadow: none;" alt="Nodejs event loop queue"/>
 						</div>
 					</div>
 
@@ -204,7 +231,7 @@
 				</section>
 				<section data-background-color="#fff">
 					<iframe height="600" src="https://embed.polleverywhere.com/free_text_polls/njYHOn4wxYZfpDV?controls=none&short_poll=true" width="100%" height="100%" frameBorder="0"></iframe>
-				</section>
+				</section>-->
 				<section data-background="#eee">
 				    <h2>References</h2>
 				    <ul style="font-size: 28px;">
