@@ -39,6 +39,13 @@
 			    background-color: rgba(255,255, 255, .9);
 			    border-radius: 14px;
 			}
+			#boxstyle2{
+				color: white;
+			    padding: 1em;
+			    background-color: rgba(0,0, 0, .5);
+			    border-radius: 14px;
+			    background-size: 80%;
+			}
 		</style>
 	</head>
 	<body>
@@ -232,6 +239,33 @@
 							</ul>
 				
 
+				</section>
+				<section data-background="#fff">
+					<h2>Traditional Float layout Considerations</h2>
+
+					<img src="images/layout/considerations.PNG" width="350" style="box-shadow: none; border: none;"alt="Dropped columns with floating elements">
+
+					<ul>	
+						<li style="font-size: 22px;">If you are floating an element within another element, the order of the elements is important</li>
+						<li style="font-size: 22px;">Column drops occur when the total width of the columnar elements in a page layout exceeds the width of their containing element</li>
+						<li style="font-size: 22px;">Containers help to format and center box elements.  Use margin auto to your advantage.</li>
+
+					</ul>
+
+				</section>
+				<section data-background="images/layout/comp_bg.jpg">
+					<h1 id="boxstyle2"> CSS Flexbox</h1>
+				</section>
+				<section data-background="#eee">
+					<h3>Understanding Flexbox</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #BDD358;"><p>aims at providing a more efficient way to lay out, align and distribute space among items in a container</p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #2E933C;"><p>flexbox layout is direction-agnostic as opposed to the regular layouts</p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; background-color: #297045;"><p>flex container expands items to fill available free space, or shrinks them to prevent overflow</p></div>
+						<div class="box orange" style="font-size: 24px; margin: 10px; background-color: #204E4A;"><p>the main idea behind the flex layout is to give the container the ability to alter its items' width/height (and order) to best fill the available space</p></div>
+						<div class="box aquamarine" style="font-size: 24px; margin: 10px; background-color: #38726C;"><p> Flexbox layout is most appropriate to the components of an application, and small-scale layouts</p></div>
+					</div>
+					<a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" style="font-size: .4em;">Chris Coyier's CSS tricks tutorial on using Flexbox</a> 
 				</section>
 				<!--<section data-background="#eee">
 					<h2>Why User Research?</h2>
@@ -521,6 +555,7 @@
 				    <h2>References</h2>
 				    <ul style="font-size: 28px;">
 						<li>http://www.liquidapsive.com/</li>
+						<li>https://css-tricks.com/snippets/css/a-guide-to-flexbox/</li>
 
 
 				    </ul>
