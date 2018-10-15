@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<meta name="description" content="Instructor Fulton's Introduction to User Experience">
+		<meta name="description" content="Instructor Fulton's Introduction to Color, Graphics and Typography">
 		<meta name="author" content="C. Fulton">
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -51,10 +51,10 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section data-background="#17c5cc">
-				    <h3 style="color: white; text-shadow: 2px 2px 10px #333;">Page layout and Design Strategy</h3>
-				    <img src="images/layout/homepage.jpg" width="720" style="box-shadow: none; border: none;"alt="layout image for layout presentation">
-				    <h3 style="color: white; text-shadow: 2px 2px 10px #333;">Instructor: Chris Fulton</h3>
+				<section data-background="#efe6d5">
+				    <h3 style="color: #333;">Intro. to Color, Graphics and Typography</h3>
+				    <img src="images/cgt/cgt.jpg" width="720" style="box-shadow: none; border: none;"alt="Entry picture for color, graphics and Typography presentation">
+				    <h3 style="color: #333;">Instructor: Chris Fulton</h3>
 				</section>
 				<section data-background="#eee">
 				    <h3>Learning Objectives</h3>
@@ -267,7 +267,7 @@
 					</div>
 					<a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" style="font-size: .4em;">Chris Coyier's CSS tricks tutorial on using Flexbox</a> 
 				</section>
-				<section data-background="#fff">
+								<section data-background="#fff">
 					<h4>In-Class Activity </h4>
 					
 					<div id="flexcontain">
@@ -303,141 +303,6 @@
 								</ul>
 						</div>
 					</div>
-				</section>
-				<section data-background="images/layout/css_grid.jpg">
-					<h1 id="boxstyle2"> CSS Grid</h1>
-				</section>
-				<section data-background="#fff">
-					<h3>CSS Grid Steps</h3>
-					<div id="flexcontain">
-						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #32E875; color: #333;"><p><b>Step 1</b><br> Define a container element as a grid with <em>display: grid</em></p></div>
-						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #2E933C;"><p><b>Step 2</b><br> Set the column and row sizes with grid-template-columns and grid-template-rows</p></div>
-						<div class="box green" style="font-size: 24px; margin: 10px; background-color: #297045;"><p><b>Step 3</b><br> Place child elements into the grid with grid-column and grid-row</p></div>
-
-					</div>
-					<a href="https://css-tricks.com/snippets/css/complete-guide-grid/" style="font-size: .4em;">Chris Coyier's CSS tricks tutorial on using CSS Grid</a> 
-				</section>
-				<section data-background="#f1f1f1">
-					<h4>Defining the Grid</h4>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<pre>
-								<code style="font-size: 18px; line-height: 1em;" class="css hljs"  data-trim contenteditable>
-									.grid {
-									 display: grid;
-									 grid-template-columns: repeat(4, 1fr);
-									 grid-template-rows: repeat(4, 75px);
-									}
-	
-	
-								</code>
-							</pre>
-						</div>
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<img src="images/layout/define_grid.jpg" width="525" style="box-shadow: none; border: none;"alt="Defining CSS Grid">
-						</div>
-
-					</div>
-
-				</section>
-				<section data-background="#f1f1f1">
-					<h4>Defining a Complex Grid</h4>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<pre>
-								<code style="font-size: 18px; line-height: 1em;" class="codebox code-example__codebox"  data-trim contenteditable>
-									.grid {
-									 display: grid;
-									 grid-template-columns: repeat(4, 1fr);
-									 grid-template-rows: 40px 2fr repeat(2, minmax(75px, 1fr));
-									}
-	
-	
-								</code>
-							</pre>
-						</div>
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<img src="images/layout/grid_columns_rows.jpg" width="525" style="box-shadow: none; border: none;"alt="Complex Grid layout">
-						</div>
-
-					</div>
-
-				</section>
-				<section data-background="#f1f1f1">
-					<h4>Positioning items in the Grid using line numbers</h4>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<pre>
-								<code style="font-size: 18px; line-height: 1em;" class="codebox code-example__codebox"  data-trim contenteditable>
-									.grid {
-									 	display: grid;
-									 	grid-template-columns: repeat(4, 1fr);
-									 	grid-template-rows: 40px 2fr repeat(2, minmax(75px, 1fr));
-									}
-									
-									#item1{
-										grid-column-start: 2;
-										gird-column-end: 4;
-										grid-row-start: 3;
-										grid-row-end: -1;
-										background-color: red;
-									}
-									
-									#item2{
-										grid-column: 3;
-										grid-row: 1;
-										background-color: red;
-									}
-	
-	
-								</code>
-							</pre>
-						</div>
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<img src="images/layout/grid_template_lines.jpg" width="525" style="box-shadow: none; border: none;"alt="Position in Grid using lines">
-						</div>
-
-					</div>
-
-				</section>
-				<section data-background="#f1f1f1">
-					<h4>Positioning items in the Grid using area names</h4>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<pre>
-								<code style="font-size: 18px; line-height: 1em;" class="codebox code-example__codebox"  data-trim contenteditable>
-									.grid {
-									 	display: grid;
-									 	grid-template-columns: repeat(4, 1fr);
-									 	grid-template-rows: 40px 2fr repeat(2, minmax(75px, 1fr));
-									 	grid-template-areas: "...." 
-									 					     "...item1" 
-									 					     "item2 item2 item2 item1" 
-									 					     "item2 item2 item2 . ";
-									}
-									
-									#item1{
-										grid-area: item1;
-									}
-									
-									#item2{
-										grid-area: item2;
-									}
-	
-	
-								</code>
-							</pre>
-						</div>
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<img src="images/layout/grid_template_areas.jpg" width="525" style="box-shadow: none; border: none;"alt="Position in Grid using template areas">
-						</div>
-
-					</div>
-
 				</section>
 				<!--<section data-background="#eee">
 					<h2>Why User Research?</h2>
