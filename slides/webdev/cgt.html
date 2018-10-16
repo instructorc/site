@@ -56,58 +56,63 @@
 				    <img src="images/cgt/cgt.jpg" width="720" style="box-shadow: none; border: none;"alt="Entry picture for color, graphics and Typography presentation">
 				    <h3 style="color: #333;">Instructor: Chris Fulton</h3>
 				</section>
-				<section data-background="#eee">
+				<section data-background="#efe6d5" style="color: #333;">
 				    <h3>Learning Objectives</h3>
 				    <ul style="font-size: 28px;">
-						<li>Understanding Fixed, Fluid, Adapative and Responsive Layouts</li>
-						<li>Box Modeling</li>
+						<li>Understanding Color, Comparing color schemes, Working with Color</li>
 						<ul>
-							<li>Padding | Margin | Border | Width | Height | Max-Width | Max-Height</li>
-							<li>Box-shadow | Border-radius</li>
-							<li>Display Property | Float Property</li>
-							<li>Negative Margin | Active and Passive whitespace</li>
-						</ul>
-				        <li>Traditional Float Layout</li>
-				        <ul>
-				        	<li>Normal Flow</li>
-							<li>Clear Property | Overflow Property</li>
-						</ul>
-						<li>CSS Flexbox</li>
-				        <!--<ul>
-							<li>Usability Testing | A/B testing | Site Peformance testing: tools, server/hosting | CDN</li>
+							<li>Color Schemes</li>
+							<li>Complementary Colors | Analagous Colors | Monochromatic Colors</li>
+							<li>Specifying color values</li>
+							<li>Creating linear and radical gradients</li>
 
-						</ul>-->
-						<li>CSS Grid</li>
-						<!--<ul>
-							<li>Standards - Section 508 | WCAG | ISO 9660 | Aria Roles</li>
-						</ul>-->
-						<li>Positioning</li>
-                       	<!--<ul>
-							<li>Low-Fidelity | High-Fidelity | Tools </li>
-						</ul>-->
+						</ul>
+						<li>Explaining graphic file formats</li>
+						<ul>
+							<li>PNG | GIF | JPEG/JPG | SVG</li>
+							<li>Chossing the right format</li>
+
+						</ul>
+				        <li>Using the Image &lt;img&gt; element</li>
+				        <ul>
+				        	<li>Associated attributes</li>
+				        	<li>Image Map</li>
+							
+						</ul>
+						<li>Measurement units</li>
+						<ul>
+							<li>Absolute vs Relative measurement units</li>
+						</ul>
+				        <li>Reviewing Background</li>
+				        <ul>
+				        	<li>Background-color | Background-image | Background-size | Background-position</li>
+				        	<li>Background repeat properties</li>
+				        	<li>Adding multiple Backgrounds</li>
+							<li>Element Layers</li>
+						</ul>
 				    </ul>
 				</section>
-				<section data-background="#fff">
-					<h4>What type of layout will you choose?</h4>
-					
+				<section data-background="#eee">
+					<h3>Creating Web Site Color Schemes</h3>
 					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<ul>	
-								<li style="font-size: 20px;"><b>Fixed/Static layout</b> – Size of the page and page elements are fixed, usually using pixels as the unit of measure</li>
-								<li style="font-size: 20px;"><b>Fluid/Flexible/liquid layout</b> – The width of the page elements are set as a percent of the available screen width</li>
-								<li style="font-size: 20px;"><b>Adapative layout</b> – Characterized by having defined layouts for different resolutions. Within each layout, resizing the window does not change the layout.  You can think of Adaptive as a series of Static layouts.</li>
-								<li style="font-size: 20px;"><b>Responsive layout</b> – Characterized by having defined layouts for different resolutions. Within each layout, the design is liquid and resizes the width of elements relative to the changing window size.  You can think of Responsive as a series of Liquid layouts</li>
-							</ul>
-						</div>
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<a href="http://www.liquidapsive.com/"><img src="images/layout/layoutsite.PNG" width="500" alt="Example layout picture"></a>
-							<p style="font-size: .5em">Click the picture for example of three layouts. </p>
-						</div>
-
+						<div class="box red" style="font-size: 24px; margin: 10px; color: black; background-color: #B8D8BA;"><p>Many factors affect a web site’s color scheme</p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; color: black; background-color: #D9DBBC;"><p>Colors convey important meaning to the user</p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; color: black; background-color: #FCDDBC;"><p>Colors set the tone for the site</p></div>
+						<div class="box orange" style="font-size: 24px; margin: 10px; color: black; background-color: #1BE7FF;"><p>Color can enhance the presentation of information</p></div>
+						<div class="box aquamarine" style="font-size: 24px; margin: 10px; color: black; background-color: #FF5714;"><p> Poor use of color distracts from your content</p></div>
 					</div>
-
+					<a href="https://coolors.co/" style="font-size: .4em;">Website that helps generate Color palettes</a> 
 				</section>
-				<section data-background="#ffffff">
+				<section data-background="#fff">
+					<h3>Color Schemes</h3>
+					<img src="images/cgt/color_schemes.PNG" width="550" style="box-shadow: none; border: none;"alt="Color Schemes graphic">
+					
+				</section>
+				<section data-background="#eee">
+						<h4>Introduction to Color </h4>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/_2LLXnUdUIc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</section>
+				<!--<section data-background="#ffffff">
 						<h4>Fluid vs. Fixed Layout</h4>
 						<img src="images/layout/fixed_fluid.PNG" width="820" alt="Fluid vs Fixed layout picture">
 				</section>
@@ -141,7 +146,7 @@
 								&lt;!DOCTYPE html&gt;
 								&lt;html&gt;
 							        &lt;head&gt;
-										<!--The head tag communicates information about the html document -->
+										
 										&lt;title&gt;Basic Structure &lt;/title&gt;
 									&lt;/head&gt;
 									&lt;body&gt;
@@ -176,7 +181,7 @@
 								&lt;!DOCTYPE html&gt;
 								&lt;html&gt;
 							        &lt;head&gt;
-										<!--The head tag communicates information about the html document -->
+										
 										&lt;title&gt;Basic Structure &lt;/title&gt;
 									&lt;/head&gt;
 									&lt;body&gt;
@@ -256,18 +261,8 @@
 				<section data-background="images/layout/comp_bg.jpg">
 					<h1 id="boxstyle2"> CSS Flexbox</h1>
 				</section>
-				<section data-background="#eee">
-					<h3>Understanding Flexbox</h3>
-					<div id="flexcontain">
-						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #BDD358;"><p>aims at providing a more efficient way to lay out, align and distribute space among items in a container</p></div>
-						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #2E933C;"><p>flexbox layout is direction-agnostic as opposed to the regular layouts</p></div>
-						<div class="box green" style="font-size: 24px; margin: 10px; background-color: #297045;"><p>flex container expands items to fill available free space, or shrinks them to prevent overflow</p></div>
-						<div class="box orange" style="font-size: 24px; margin: 10px; background-color: #204E4A;"><p>the main idea behind the flex layout is to give the container the ability to alter its items' width/height (and order) to best fill the available space</p></div>
-						<div class="box aquamarine" style="font-size: 24px; margin: 10px; background-color: #38726C;"><p> Flexbox layout is most appropriate to the components of an application, and small-scale layouts</p></div>
-					</div>
-					<a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" style="font-size: .4em;">Chris Coyier's CSS tricks tutorial on using Flexbox</a> 
-				</section>
-								<section data-background="#fff">
+
+				<section data-background="#fff">
 					<h4>In-Class Activity </h4>
 					
 					<div id="flexcontain">
@@ -277,7 +272,7 @@
 								&lt;!DOCTYPE html&gt;
 								&lt;html&gt;
 							        &lt;head&gt;
-										<!--The head tag communicates information about the html document -->
+										
 										&lt;title&gt;CSS Flexbox &lt;/title&gt;
 									&lt;/head&gt;
 									&lt;body&gt;
