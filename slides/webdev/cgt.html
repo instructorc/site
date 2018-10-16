@@ -46,6 +46,17 @@
 			    border-radius: 14px;
 			    background-size: 80%;
 			}
+			/* Standard syntax */
+			@keyframes example {
+			    0%   {background-color: red;}
+			    25%  {background-color: yellow;}
+			    50%  {background-color: blue;}
+			    100% {background-color: #B8D8BA;}
+			}
+			
+			section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6{
+				color: #333;
+			}
 		</style>
 	</head>
 	<body>
@@ -92,25 +103,48 @@
 						</ul>
 				    </ul>
 				</section>
-				<section data-background="#eee">
+				<section data-background="images/cgt/colorbg.jpg">
 					<h3>Creating Web Site Color Schemes</h3>
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 24px; margin: 10px; color: black; background-color: #B8D8BA;"><p>Many factors affect a web site’s color scheme</p></div>
-						<div class="box blue" style="font-size: 24px; margin: 10px; color: black; background-color: #D9DBBC;"><p>Colors convey important meaning to the user</p></div>
-						<div class="box green" style="font-size: 24px; margin: 10px; color: black; background-color: #FCDDBC;"><p>Colors set the tone for the site</p></div>
-						<div class="box orange" style="font-size: 24px; margin: 10px; color: black; background-color: #1BE7FF;"><p>Color can enhance the presentation of information</p></div>
-						<div class="box aquamarine" style="font-size: 24px; margin: 10px; color: black; background-color: #FF5714;"><p> Poor use of color distracts from your content</p></div>
+						<div class="box red" style="font-size: 24px; margin: 10px;  background-color: #898d4a;"><p>Many factors affect a web site’s color scheme</p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #284d5f;"><p>Colors convey important meaning to the user</p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px;  background-color: #fec633;"><p>Colors set the tone for the site</p></div>
+						<div class="box orange" style="font-size: 24px; margin: 10px;  background-color: #52af83;"><p>Color can enhance the presentation of information</p></div>
+						<div class="box aquamarine" style="font-size: 24px; margin: 10px; background-color: #FF5714;"><p> Poor use of color distracts from your content</p></div>
 					</div>
 					<a href="https://coolors.co/" style="font-size: .4em;">Website that helps generate Color palettes</a> 
 				</section>
 				<section data-background="#fff">
-					<h3>Color Schemes</h3>
-					<img src="images/cgt/color_schemes.PNG" width="550" style="box-shadow: none; border: none;"alt="Color Schemes graphic">
+					<h3>Color Wheel</h3>
+					<img src="images/cgt/color_wheel.jpeg" width="650" style="box-shadow: none; border: none;"alt="Color wheel graphic">
 					
 				</section>
+				<section data-background="#fff">
+					<h4>Color Schemes</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 20px;"><b>Monochromatic</b> – Different shades and depths of a single color</li>
+								<li style="font-size: 20px;"><b>Analagous /Adjacent</b> – The main color and the colors from either side of it on the color wheel</li>
+								<li style="font-size: 20px;"><b>Complementary</b> – Complementary or opposite colors from the color wheel</li>
+								<li style="font-size: 20px;"><b>Split Complementary</b> – Three colors—the main color and colors from either side of its complement</li>
+								<li style="font-size: 20px;"><b>Triad</b> – Three colors from equidistant points on the color wheel</li>
+								<li style="font-size: 20px;"><b>Tetradic/ Double-Complementary</b> – Four colors— colors from either side of its complement(bi-directional)</li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<a href="http://paletton.com"><img src="images/cgt/color_schemes.PNG" width="550" style="box-shadow: none; border: none;"alt="Color Schemes graphic"></a>
+							<p style="font-size: .5em">Click the picture to experiment with color schemes </p>
+						</div>
+
+					</div>
+
+				</section>
+
 				<section data-background="#eee">
 						<h4>Introduction to Color </h4>
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/_2LLXnUdUIc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+						<iframe width="760" height="515" src="https://www.youtube.com/embed/_2LLXnUdUIc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 				</section>
 				<!--<section data-background="#ffffff">
 						<h4>Fluid vs. Fixed Layout</h4>
@@ -586,7 +620,7 @@
 				<section data-background="#eee">
 				    <h2>References</h2>
 				    <ul style="font-size: 28px;">
-						<li>http://www.liquidapsive.com/</li>
+						<li>http://www.chromaflo.com/en-US/Industry-Leadership/Color-Theory/Basic-Color-Schemes.aspx</li>
 						<li>https://css-tricks.com/snippets/css/a-guide-to-flexbox/</li>
 
 
