@@ -81,7 +81,7 @@
 						<li>Understanding Graphics </li>
 						<ul>
 							<li>File Format's - PNG, GIF, JPEG/JPG,SVG</li>
-							<li>Choosing the right format</li>]
+							<li>Choosing the right format</li>
 							<li>Where to find Images</li>
 
 						</ul>
@@ -147,29 +147,74 @@
 						<h4>Introduction to Color </h4>
 						<iframe width="760" height="515" src="https://www.youtube.com/embed/_2LLXnUdUIc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 				</section>
-				<!--<section data-background="#ffffff">
-						<h4>Fluid vs. Fixed Layout</h4>
-						<img src="images/layout/fixed_fluid.PNG" width="820" alt="Fluid vs Fixed layout picture">
-				</section>
-				<section data-background="#eee">
-						<h4>Fluid &#10022; Fixed &#10022; Adaptive &#10022; Responsive</h4>
-						<iframe width="760" height="515" src="https://www.youtube.com/embed/T6MCkGWSXa0?rel=0&amp;start=10" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-				</section>
-				<section data-background="images/layout/box.jpg">
-					<h2 id="boxstyle"> Box Modeling</h2>
-				</section>
-				<section data-background="#2e2e2e">
-					<h3>Box Model and Properties</h3>
-					<img src="images/layout/box2.png" width="875" style="box-shadow: none; border: none;"alt="Box Model properties example">
-				</section>
 				<section data-background="#fff">
-					<h3>Box Model - Another View</h3>
-					<img src="images/layout/box_alternative.PNG" width="775" style="box-shadow: none; border: none;"alt="Box Model alternative view example">
+					<h4>Specifying Color</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 20px;"><b>Color Names</b> – Limited to small range of colors</li>
+								<li style="font-size: 20px;"><b>RGB Color Values</b> – Numerical values that specify the blending of the red, green, and blue color channels</li>
+								<ul>
+									<li>Range: 0-100% (zero color to max color)</li>
+									<li>Also: 0-255 (integer)</li>
+									<li>Ex. P {color: rgb(0, 255, 255);}</li>
+								</ul>
+								<li style="font-size: 20px;"><b>Hexadecimal Color Values</b> – Numerical values that specify the blending of the red, green, and blue color channels</li>
+								<ul>
+									<li>Base 16 number system (0-9, A-F)</li>
+									<li>Range: 00-FF (zero color to max color)</li>
+									<li>Ex. P {color: #00FFFF;}</li>
+								</ul>
+								<li style="font-size: 20px;"><b>HSL Color Values</b> – Numerical values that specify hue, saturation and lightness</li>
+								<ul>
+									<li>The hue value represents a color on the color wheel</li>
+									<li>Saturation and lightness values are percentages</li>
+									<li>Ex. P {color: hsl(120, 100%, 50%);}</li>
+								</ul>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/cgt/hexcode.gif" width="250" style="box-shadow: none; border: none;"alt="hexicode graphic">
+							<iframe width="320" height="300" src="https://www.youtube.com/embed/c56x1aj2CPA?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+						</div>
+
+					</div>
+
 				</section>
-				<section data-background="#e7e7e7">
-					<h3>Box Model - Targeting Sides</h3>
-					<img src="images/layout/box_target.PNG" width="875" style="box-shadow: none; border: none;"alt="Box Model target example">
+				<section data-background="images/cgt/gradient_bg.png">
+					<h4>Creating linear and radical gradients</h4>
+					<div id="flexcontain">
+						
+							<pre>
+							<code style="font-size: 16px; background-color: rgba(0,0, 0, 0.6)" class="codebox code-example__codebox"  data-trim contenteditable>
+								/** Style rule for the button below**/
+								#buttton{
+								
+									background-image:linear-gradient(#1B998B, #0a206d); 
+									border-radius: 12px; 
+									height: 85px; 
+									width: 75%; 
+									margin: auto; 
+									color: white; 
+									text-align: center; 
+									padding-top: 40px; 
+									font-size: 1.2em;
+								}
+
+
+							</code>
+						</pre>
+						
+
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+								
+							<a href="https://www.w3schools.com/css/css3_gradients.asp"><div id="button" style="background-image:linear-gradient(#1B998B, #0a206d); border-radius: 12px; height: 85px; width: 75%; margin: auto; color: white; text-align: center; padding-top: 40px; font-size: 1.2em;">Click here to learn more aout linear and radical gradients</div></a>
+						</div>
+					</div>
+					
 				</section>
+				<!--
 
 				<section data-background="#fff">
 					<h3>Activity Part A </h3>
