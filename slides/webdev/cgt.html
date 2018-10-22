@@ -26,6 +26,10 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.3.0/snap.svg-min.js"></script>
+		<script src="https://use.typekit.net/ffm0dmn.js"></script>
+		<script>try{Typekit.load();}catch(e){}</script>
 		<style>
 			ul li{
 				font-size: 80%;
@@ -57,6 +61,17 @@
 			section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6{
 				color: #333;
 			}
+			
+			svg {
+			    display: block;
+			    margin: 60px auto;
+			    width: 80%;
+			    max-width: 320px;
+			    cursor: pointer;
+			}
+			#all-items {
+			  opacity: 0;
+			}
 		</style>
 	</head>
 	<body>
@@ -81,7 +96,6 @@
 						<li>Understanding Graphics </li>
 						<ul>
 							<li>Choosing File Format's - PNG, GIF, JPEG/JPG,SVG </li>
-			
 							<li>Where to find Images</li>
 							<li>Using the Image &lt;img&gt; element</li>
 				        	<ul>
@@ -90,7 +104,7 @@
 						</ul>
 				       	<li>Reviewing Background</li>
 				        <ul>
-				        	<li>Background-color | Background-image | Background-size | Background-position</li>
+				        	<li>Background-color | Background-image | Background-size | Background-position | background-attachment</li>
 				        	<li>Background repeat properties</li>
 				        	<li>Adding multiple Backgrounds</li>
 							<li>Element Layers</li>
@@ -214,6 +228,63 @@
 					</div>
 					
 				</section>
+				<section data-background="images/cgt/image_format.png">
+					<h3 id="boxstyle">Understanding Graphics</h3>
+					
+				</section>
+				<section data-background="#6e6e6e">
+					<h3>File Formats</h3>
+					
+					<div id="flexcontain">
+						<img src="images/cgt/all_formats.png" width="1200"  style="box-shadow: none; border: none; margin: auto;"alt="file formats graphic">
+					</div>
+				</section>
+				<section data-background="#f9f9f9">
+					<h3>PNG File Format</h3>
+					<div id="flexcontain">
+						<img src="images/cgt/moviepass.png" width="600" style="box-shadow: none; margin: auto; border: none;"alt="Movie pass example of PNG file formats graphic">
+
+					</div>
+					<p style="font-size: .6em;">A royalty-free format that is intended to replace GIF.  Supports transparency and interlacing but not animation.  Ideal for logos or phot cut-outs on your website.</p> 
+				</section>
+				<section data-background="#f9f9f9">
+					<h3>JPG File Format</h3>
+					<div id="flexcontain">
+						<img src="images/cgt/woman_using_phone.jpg" width="400" style="box-shadow: none; margin: auto; border: none;"alt="Woman using phone jpg file formats graphic">
+
+					</div>
+					<p style="font-size: .6em; margin-top: -29px;">Best for photographs or continous tone images; are 24-bit RGB images that allow millions of colors; the higher the compression, the lower the image quality.</p> 
+				</section>
+				<section data-background="white">
+					<h3>GIF File Format</h3>
+					<div id="flexcontain">
+						<img src="images/cgt/giphy.gif"  style="box-shadow: none; margin: auto; border: none; margin-top: -10px;"alt="funny gif file formats graphic">
+
+					</div>
+					<p style="font-size: .6em;">8-bit allowing a palette of no more than 256 colors; GIF lets you store multiple images and timing information about the images in a single file which allows you to create animations</p> 
+					<a href="https://ezgif.com/maker" style="font-size: .6em;">Tool for making gifs</a>
+				</section>
+				<section data-background="white">
+					<h3>SVG File Format</h3>
+					<div id="flexcontain">
+						<svg version="1.1" id="svg-animation" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 354 354" xml:space="preserve"><style type="text/css"> .st0{fill:#63BEDD;} .st1{fill:#A0AFB5;} .st2{fill:#A0AFB5;stroke:#737F84;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;} .st3{fill:#FFFFFF;} .st4{fill:none;stroke:#A0AFB5;stroke-width:2;stroke-miterlimit:10;} .st5{fill:#37A0E5;} .st6{fill:#4AD3AC;} .st7{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;} .st8{fill:#FBB03B;} .st9{fill:none;stroke:#F96155;stroke-width:2;stroke-miterlimit:10;} .st10{fill:#F96155;} .st11{fill:#F9F9F9;stroke:#737F84;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;} .st12{fill:#E2E6E8;stroke:#737F84;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;} </style><circle id="bg-circle" class="st0" cx="177" cy="177" r="177"/><g id="all-items"><polygon id="envelope-bg" class="st1" points="89 117 91 115 261 115 262 116 264 118 264 236 88 236 88 118 "/><polygon id="envelope-lip" class="st2" points="265 116 176 56 87 116"/><g id="screens"><g id="screen3"><path class="st3" d="M45 270c-2.8 0-5-2.2-5-5V165c0-2.8 2.2-5 5-5h144c2.8 0 5 2.2 5 5v100c0 2.8-2.2 5-5 5H45z"/><path class="st1" d="M189 161c2.2 0 4 1.8 4 4v100c0 2.2-1.8 4-4 4H45c-2.2 0-4-1.8-4-4V165c0-2.2 1.8-4 4-4H189M189 159H45c-3.3 0-6 2.7-6 6v100c0 3.3 2.7 6 6 6h144c3.3 0 6-2.7 6-6V165C195 161.7 192.3 159 189 159L189 159z"/><line class="st4" x1="108" y1="184" x2="171" y2="184"/><line class="st4" x1="108" y1="192" x2="171" y2="192"/><line class="st4" x1="108" y1="200" x2="171" y2="200"/><line class="st4" x1="108" y1="208" x2="171" y2="208"/><line class="st4" x1="108" y1="216" x2="171" y2="216"/><line class="st4" x1="108" y1="224" x2="171" y2="224"/><line class="st4" x1="108" y1="232" x2="171" y2="232"/><line class="st4" x1="108" y1="240" x2="171" y2="240"/><line class="st4" x1="108" y1="248" x2="148" y2="248"/><rect x="61.5" y="182.5" class="st5" width="41" height="43"/><path class="st5" d="M102 183v42H62v-42H102M103 182H61v44h42V182L103 182z"/><polygon class="st3" points="77 197 88 204 77 211 "/></g><g id="screen2"><path class="st3" d="M104 231c-2.8 0-5-2.2-5-5V126c0-2.8 2.2-5 5-5h144c2.8 0 5 2.2 5 5v100c0 2.8-2.2 5-5 5H104z"/><path class="st1" d="M248 122c2.2 0 4 1.8 4 4v100c0 2.2-1.8 4-4 4H104c-2.2 0-4-1.8-4-4V126c0-2.2 1.8-4 4-4H248M248 120H104c-3.3 0-6 2.7-6 6v100c0 3.3 2.7 6 6 6h144c3.3 0 6-2.7 6-6V126C254 122.7 251.3 120 248 120L248 120z"/><rect x="121" y="144" class="st6" width="39" height="41"/><path class="st6" d="M159 145v39h-37v-39H159M161 143h-41v43h41V143L161 143z"/><polyline class="st7" points="117.7 186.2 133.7 170.3 151.2 187.8 "/><polyline class="st7" points="137.2 173.7 147.5 163.4 161.1 176.9 "/><path class="st3" d="M134.6 154.7c2.1 0 3.7 1.7 3.7 3.7s-1.7 3.7-3.7 3.7 -3.7-1.7-3.7-3.7S132.5 154.7 134.6 154.7M134.6 152.7c-3.2 0-5.7 2.6-5.7 5.7s2.6 5.7 5.7 5.7 5.7-2.6 5.7-5.7S137.7 152.7 134.6 152.7L134.6 152.7z"/><rect x="168.5" y="143.5" class="st5" width="63" height="42"/><path class="st5" d="M231 144v41h-62v-41H231M232 143h-64v43h64V143L232 143z"/><polygon class="st3" points="195 158 206 165 195 172 "/><line class="st4" x1="120" y1="194" x2="232" y2="194"/><line class="st4" x1="120" y1="202" x2="232" y2="202"/><line class="st4" x1="120" y1="210" x2="189" y2="210"/></g><g id="screen1"><path class="st3" d="M163 194c-2.8 0-5-2.2-5-5V89c0-2.8 2.2-5 5-5h144c2.8 0 5 2.2 5 5v100c0 2.8-2.2 5-5 5H163z"/><path class="st1" d="M307 85c2.2 0 4 1.8 4 4v100c0 2.2-1.8 4-4 4H163c-2.2 0-4-1.8-4-4V89c0-2.2 1.8-4 4-4H307M307 83H163c-3.3 0-6 2.7-6 6v100c0 3.3 2.7 6 6 6h144c3.3 0 6-2.7 6-6V89C313 85.7 310.3 83 307 83L307 83z"/><g id="screen2sim_1_"><rect x="250.5" y="107.5" class="st8" width="40" height="41"/><path class="st8" d="M290 108v40h-39v-40H290M291 107h-41v42h41V107L291 107z"/></g><path class="st7" d="M279.4 124.6c2 4.5-0.1 9.8-4.7 11.8s-9.8-0.1-11.8-4.7c-2-4.5 0.1-9.8 4.7-11.8C272.2 117.9 277.4 120 279.4 124.6z"/><path class="st3" d="M280 129.7c-0.1 0.6-0.3 1.2-0.5 1.7 1.4 1.1 2.1 2.1 1.9 2.6 -0.3 0.7-1.5 0.9-3.8 0.4 -1.8-0.4-4.3-1.2-7.7-2.5 -3.5-1.4-6-2.8-7.6-4 -1.7-1.3-2.4-2.3-2.1-2.9 0.3-0.5 1.3-0.6 2.8-0.4 0.2-0.5 0.5-1.1 0.9-1.5 -5.2-1.4-9.1-1.7-9.8-0.5 -0.8 1.4 2 4.5 8.5 7.8 2 1 4.2 2.1 6.9 3.1 2.4 0.9 4.5 1.7 6.4 2.4 7.7 2.6 11.1 2.7 11.8 1.1C288.2 135.6 285.2 132.7 280 129.7z"/><line class="st4" x1="181" y1="108" x2="244" y2="108"/><line class="st4" x1="181" y1="116" x2="244" y2="116"/><line class="st4" x1="181" y1="124" x2="244" y2="124"/><line class="st4" x1="181" y1="132" x2="244" y2="132"/><line class="st4" x1="181" y1="140" x2="244" y2="140"/><line class="st4" x1="181" y1="148" x2="220" y2="148"/><line class="st9" x1="181" y1="165" x2="291" y2="165"/><path class="st3" d="M199 170c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5S201.8 170 199 170z"/><path class="st10" d="M199 161c2.2 0 4 1.8 4 4s-1.8 4-4 4 -4-1.8-4-4S196.8 161 199 161M199 159c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6S202.3 159 199 159L199 159z"/></g></g><g id="envelope-fg"><polygon class="st11" points="265 235 87 235 87 117 "/><polygon class="st12" points="265 117 265 235 176 176 "/></g></g></svg>
+
+						
+
+					</div>
+					<p style="font-size: .6em;">A language for describing two-dimensional graphics using XML; SVG graphics are scalable to different resolutions and are printable.</p> 
+					<a href="http://snapsvg.io/" style="font-size: .6em;">Library for incorporating SVG into website</a>
+				</section>
+				<section data-background="images/cgt/images_where.jpg">
+					<h3 style="text-shadow: 4px 7px 10px #333;">Free stock photo resources?</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>PEXELS.COM</p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>UNSPLASH.COM</p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>BURST.SHOPIFY.COM</p></div>
+
+					</div>
+					<p style="text-shadow: 4px 7px 10px #333;">There are lots of paid sites, but the ones above are my personal go-to sites for stock photos</p> 
+				</section>
 				<!--
 
 				<section data-background="#fff">
@@ -251,134 +322,7 @@
 						</div>
 					</div>
 				</section>
-				<section data-background="#fff">
-					<h3>Activity Part B </h3>
-					
-					<div id="flexcontain">
-						
-							<pre>
-							<code style="font-size: 16px;" class="codebox code-example__codebox"  data-trim contenteditable>
-								&lt;!DOCTYPE html&gt;
-								&lt;html&gt;
-							        &lt;head&gt;
-										
-										&lt;title&gt;Basic Structure &lt;/title&gt;
-									&lt;/head&gt;
-									&lt;body&gt;
-										&lt;div&gt; #1 &lt;/div&gt;
-										&lt;div&gt; #2 &lt;/div&gt;
-										&lt;div&gt; #3 &lt;/div&gt;
-									&lt;/body&gt;
-								&lt;/html&gt;
 
-
-							</code>
-						</pre>
-						
-
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-								
-								<p style="font-size: 24px; margin-top: -12px;">Apply the following bullet points to the HTML code below.</p>
-								<ul>
-									<li style="font-size: 18px;">Add a container to the webpage that is a width of 900px and center everything that displays in the browser. </li>
-									<li style="font-size: 18px;">Change the content to the color white, center the text in each box and change the font size to 4em.</li>
-									<li style="font-size: 18px;">Apply 14% padding to the top of each box elements.</li>
-								</ul>
-						</div>
-					</div>
-				</section>
-				<section data-background="#fff">
-					<h3>Traditional Float Layout</h3>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<ul>	
-								<li style="font-size: 22px;">Primarily Involves the float and clear property</li>
-								<li style="font-size: 22px;">When you <b>float</b> an element, you take it out of the normal flow</li>
-								<li style="font-size: 22px;">The <b>float</b> property lets you build columnar layouts</li>
-								<li style="font-size: 22px;">You can align content elements to either the right or left </li>
-								<li style="font-size: 22px;">A typical Web page design can contain both floating and non-floating elements </li>
-								<li style="font-size: 22px;">Remember to always use a width property for floating elements</li>
-							</ul>
-						</div>
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<ul>	
-								<img src="images/layout/layout_traditional.PNG" width="575" style="box-shadow: none; border: none;"alt="Traditional Float layout image">
-							</ul>
-						</div>
-					</div>
-
-				</section>
-				<section data-background="#fff">
-					<h3>Using the Clear Property</h3>
-
-
-						<img src="images/layout/clear_property.PNG" width="525" style="box-shadow: none; border: none;"alt="Clear Property Image">
-
-					
-							<ul>	
-								<li style="font-size: 22px;">The clear property specifies on which sides of an element floating elements are not allowed to float</li>
-								<li style="font-size: 22px;">The most used values for the clear property are left, right and both</li>
-								<li style="font-size: 22px;">Typically used for the footer section of your site.</li>
-
-							</ul>
-				
-
-				</section>
-				<section data-background="#fff">
-					<h2>Traditional Float layout Considerations</h2>
-
-					<img src="images/layout/considerations.PNG" width="350" style="box-shadow: none; border: none;"alt="Dropped columns with floating elements">
-
-					<ul>	
-						<li style="font-size: 22px;">If you are floating an element within another element, the order of the elements is important</li>
-						<li style="font-size: 22px;">Column drops occur when the total width of the columnar elements in a page layout exceeds the width of their containing element</li>
-						<li style="font-size: 22px;">Containers help to format and center box elements.  Use margin auto to your advantage.</li>
-
-					</ul>
-
-				</section>
-				<section data-background="images/layout/comp_bg.jpg">
-					<h1 id="boxstyle2"> CSS Flexbox</h1>
-				</section>
-
-				<section data-background="#fff">
-					<h4>In-Class Activity </h4>
-					
-					<div id="flexcontain">
-						
-							<pre>
-							<code style="font-size: 16px;" class="codebox code-example__codebox"  data-trim contenteditable>
-								&lt;!DOCTYPE html&gt;
-								&lt;html&gt;
-							        &lt;head&gt;
-										
-										&lt;title&gt;CSS Flexbox &lt;/title&gt;
-									&lt;/head&gt;
-									&lt;body&gt;
-										&lt;aside&gt; #1 &lt;/aside&gt;
-										&lt;aside&gt; #2 &lt;/aside&gt;
-										&lt;aside&gt; #3 &lt;/aside&gt;
-									&lt;/body&gt;
-								&lt;/html&gt;
-
-
-							</code>
-						</pre>
-						
-
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-								
-								<p style="font-size: 22px; margin-top: -12px;">Apply the following bullet points to the HTML code below.</p>
-								<ul>
-									<li style="font-size: 16px;">Add a container to the webpage that has a width of 80% and center everything that displays in the browser. </li>
-									<li style="font-size: 16px;">Apply a 3px solid orangedred border to the container and a 3px solid green border to the immediate children of the container. </li>
-									<li style="font-size: 16px;">Create flex items of all the immediate children of the container.  Each aside box element should have a flex-grow of 1, a flex-shrink of 0 and flex basis of auto and a height of 325px. Apply 10px of margin around each flex item. </li>
-									<li style="font-size: 16px;">Justify the content for each box to space evenly.</li>
-								</ul>
-						</div>
-					</div>
-				</section>
 				<!--<section data-background="#eee">
 					<h2>Why User Research?</h2>
 					
@@ -667,9 +611,8 @@
 				    <h2>References</h2>
 				    <ul style="font-size: 28px;">
 						<li>http://www.chromaflo.com/en-US/Industry-Leadership/Color-Theory/Basic-Color-Schemes.aspx</li>
-						<li>https://css-tricks.com/snippets/css/a-guide-to-flexbox/</li>
-
-
+						<li>https://www.creativelive.com/blog/handy-guide-file-formats-designers-photographers/</li>
+						<li>https://codepen.io/HamishMW/pen/XJogMg?editors=1111</li>
 				    </ul>
 				</section>
 
@@ -677,7 +620,7 @@
 				
 			</div>
 		</div>
-
+		<script src="js/svg_ex.js"></script>
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
 
