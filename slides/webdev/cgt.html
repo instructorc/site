@@ -72,6 +72,17 @@
 			#all-items {
 			  opacity: 0;
 			}
+			
+			#multiple_bg{
+				width: 100%;
+				height: 100%;
+				background-image: url(images/cgt/angry_bear.png), url(images/cgt/vikings_crying.png);
+				background-repeat: no-repeat, no-repeat;
+				background-size: 50%, 30%;
+				background-position: top  left, bottom center;
+				display: none;
+			}
+			
 		</style>
 	</head>
 	<body>
@@ -321,29 +332,48 @@
 					</div>
 
 				</section>
-				<!--<section data-background="#eee">
+				<section data-background="#eee">
 					<h4>Background Properties Continued</h4>
 					
 					<div id="flexcontain">
 						<div class="box_two" style="font-size: 22px; margin: 10px;">
 							<ul>	
-								<li style="font-size: 20px;">You can specify multiple backgrounds</li>
-								<li style="font-size: 20px;"><b>background-image</b> – <input type="checkbox" id="bg_image"> - Click the checkbox to change the background-image: url(images/cgt/chicago_bears_logo.png), url(;</li>
-								<li style="font-size: 20px;"><b>background-repeat-x</b> – <input type="checkbox" id="bg_repeat_x"> - Click the checkbox to change the background-repeat-x: repeat-x;</li>
-								<li style="font-size: 20px;"><b>background-repeat-y</b> – <input type="checkbox" id="bg_repeat_y"> - Click the checkbox to change the background-repeat-y: repeat-y;</li>
-								<li style="font-size: 20px;"><b>background-position</b> – <input type="checkbox" id="bg_position"> - Click the checkbox to change the background-position: center;</li>
-								<li style="font-size: 20px;"><b>background-size</b> – <input type="checkbox" id="bg_size_cover"> - Click the checkbox to change the background-size: cover; (</li>
-								<li style="font-size: 20px;"><b>background-size</b> – <input type="checkbox" id="bg_size_contain"> - Click the checkbox to change the background-size: contain;</li>
+								<li style="font-size: 20px;">You can specify multiple backgrounds by implementing the style rule below</li>
+								<li style="font-size: 20px;"><b>background-color</b> – <input type="checkbox" id="bg_multiple"> - Click the checkbox to add both backgrounds</li>
 							</ul>
+							<pre>
+								<code style="font-size: 12px;" class="codebox code-example__codebox"  data-trim contenteditable>
+									#multiple_bg{
+									
+								  	width: 100%;
+									height: 100%;
+									background-image: url(images/cgt/angry_bear.png), 
+									                  url(images/cgt/vikings_crying.png);
+								    background-repeat: no-repeat, no-repeat;
+					                background-size: 50%, 30%;
+					                background-position: top  left, bottom center;
+					                display: none;
+									}
+							
+	
+								</code>
+							</pre>
 						</div>
 						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<div id="bgbox" style="border: 6px solid #333; width: 100%; height: 90%; border-radius: 12px;"></div>
+							<div id="bgbox" style="border: 6px solid #333; width: 100%; height: 90%; border-radius: 12px;">
+								<div id="multiple_bg">
+									
+								</div>
+							</div>
 						
 						</div>
 
 					</div>
 
-				</section>-->
+				</section>
+				<section data-background="images/cgt/font_bg.jpg">
+					<h3 id="boxstyle">Font/Typography</h3>
+				</section>
 				<section data-background="#eee">
 						<h4>Introduction to Typography</h4>
 						<iframe width="760" height="515" src="https://www.youtube.com/embed/sByzHoiYFX0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

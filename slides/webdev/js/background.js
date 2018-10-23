@@ -51,3 +51,11 @@ document.getElementById('bg_size_contain').addEventListener('click', function(){
   }
 });
 
+document.getElementById('bg_multiple').addEventListener('click', function(){
+  if(document.getElementById('bg_multiple').checked){
+    document.getElementById("multiple_bg").style.display = "block";
+  }else{
+    document.getElementById("multiple_bg").style.display= "none";
+  }
+});
+
