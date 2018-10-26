@@ -8,7 +8,7 @@
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-		<title>Introduction to Responsive Web Design(RWD)</title>
+		<title>Introduction to Programming Logic</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/dope.css">
@@ -88,318 +88,63 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section data-background="rgb(231, 231, 207)">
-				    <h3 style="color: #333;">Implementing Responsive Design</h3>
-				    <img src="images/responsive/responsive_home.png" width="720" style="box-shadow: none; border: none;"alt="Responsive graphic for presentation">
+				<section data-background="rgb(246, 246, 246)">
+				    <h3 style="color: #333;">Intro. Programming Logic</h3>
+				    <img src="images/fundamentals/intro_prog.jpg" width="500" style="box-shadow: none; border: none;"alt="Entry picture for programming logic presentation">
 				    <h3 style="color: #333;">Instructor: Chris Fulton</h3>
 				</section>
-				<section data-background="rgb(231, 231, 207)" style="color: #333;">
+				<section data-background="rgb(246, 246, 246)" style="color: #333;">
 				    <h3>Learning Objectives</h3>
 				    <ul style="font-size: 28px;">
-						<li>Recognizing the need for responsive design</li>
+						<li>Understanding a computer programming language </li>
 						<ul>
-							<li>Responsive vs. Adaptive</li>
-							<li>Mobile First Design</li>
-							<li>Responsive Design Example and Process</li>
-						</ul>
-						<li>Elements of Responsive Design</li>
-				        <ul>
-				        	<li>CSS Media Queries - Breakpoints and Media Types</li>
-				        	<ul>
-				        		<li>Implementing Media Queries</li>
-							</ul>
-				        	<li>Flexible Images</li>
-				        	<ul>
-				        		<li>Responsive Images</li>
-								<li>&lt;picture&gt; tag</li>
-							</ul>
-				        	<li>Flexible Layouts</li>
-				        	<ul>
-				        		<li>CSS Flexbox</li>
-								<li>Converting to relative measurement units</li>
-							</ul>
+							<li>What are the various languages?</li>
+							<li>Compiler and Interpreter</li>
+							<li>Programming Syntax</li>
+							<ul>
+								<li>Syntax Errors | Runtime Errors</li>
 							
+							</ul>
 						</ul>
-						<li>Responsive Design Considerations </li>
+						<li>Programming Paradigms</li>
 						<ul>
-							<li>Add/Removing Columns | Changing Navigation | Stacking Columns</li>
-							<li>Making Site Responsive Ready</li>
-							<li>Viewport Scale Meta Tag</li>
-							
+							<li>Procedural | Object-oriented | Event-Driven Programming </li>
+							<li>Where to find Images</li>
 						</ul>
+						<li>Development Environments and Planning Tools </li>
+						<ul>
+							<li>Flowcharts | Pseudocode</li>
+							<li>Text Editors | Integrated Development Environments (IDE's)</li>
+							<li>Local Development vs Cloud Development</li>
 
-						<li>How far will Responsive Design go?</li>
+						</ul>
+						<li>Initial Steps to a program</li>
+						<ul>
+							<li>Determining what type of program you want to build</li>
+							<li>Asking what do you need to run this program</li>
+							<li>Declaring and Initializing Variables</li>
+							<ul>
+								<li>Camel Casing | Constants</li>
+							</ul>
+							<li>Modularization</li>
+
+						</ul>
 
 
 				    </ul>
 				</section>
-				<section data-background="rgb(231, 231, 207)">
-					<h4>The Need for responsive design </h4>
-					<iframe width="760" height="515" src="https://www.youtube.com/embed/snQp757_Rr0?end=62" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-				</section>
-				<section data-background="rgb(231, 231, 207)">
-					<h4>Adaptive vs. Responsive</h4>
-					
+				<!--<section data-background="images/cgt/colorbg.jpg">
+					<h3>The wide array of programming languages</h3>
 					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<a href="http://mediumwell.com/responsive-adaptive-mobile/"><img src="images/responsive/responsive_adaptive.png" width="720" style="box-shadow: none; border: none;"alt="Adaptive vs. Responsive graphic"></a>
-						</div>
-						<p style="font-size: 20px; text-align: left;"><b>Responsive Web Design (RWD)</b> – Responsive Web Design is about using HTML and CSS to automatically resize, hide, shrink, or enlarge, a website, to make it look good on all devices (desktops, tablets, and phones)</p>
-						<p style="font-size: 20px; text-align: left;"><b>Adaptive Design</b> –Adaptive web design is different from responsive design in that there isn’t one layout that always changes. Instead, there are several distinct layouts for multiple screen sizes. And the layout used depends on the screen size used.</p>
-
-
+						<div class="box red" style="font-size: 24px; margin: 10px;  background-color: #898d4a;"><p>Many factors affect a web site’s color scheme</p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #284d5f;"><p>Colors convey important meaning to the user</p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px;  background-color: #fec633;"><p>Colors set the tone for the site</p></div>
+						<div class="box orange" style="font-size: 24px; margin: 10px;  background-color: #52af83;"><p>Color can enhance the presentation of information</p></div>
+						<div class="box aquamarine" style="font-size: 24px; margin: 10px; background-color: #FF5714;"><p> Poor use of color distracts from your content</p></div>
 					</div>
-
+					<a href="https://coolors.co/" style="font-size: .4em;">Website that helps generate Color palettes</a> 
 				</section>
-				<section data-background="rgb(231, 231, 207)">
-					<h4>Mobile First Web Design</h4>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<img src="images/responsive/mobile_first.png" width="600" style="box-shadow: none; border: none;"alt="mobile first graphic">
-						</div>
-						<ul>
-							<li style="font-size: 24px;">Think carefully about your content and users’ needs when building responsive designs</li>
-							<li style="font-size: 24px;">Which content is valuable to the user of a smaller device?</li>
-						
-						</ul>
-
-					</div>
-
-				</section>
-				<section data-background="rgb(231, 231, 207)">
-					<h4>Responsive Design Example</h4>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<img src="images/responsive/responsive_ex.PNG" width="720" style="box-shadow: none; border: none;"alt="Responsive example graphic">
-						</div>
-						<p style="font-size: 20px; text-align: left;">The image above shows the responsive design of the World Wildlife Fund web site at five screen resolutions</p>
-						<p style="font-size: 20px; margin-top: -10px; text-align: left;">Both page designs are flexible to adapt to sizes above or below the 768-pixel threshold.  This threshold is called the <b>breakpoint</b>—the point at which design layouts change in responsive design schemes </p>
-
-
-					</div>
-
-				</section>
-				<section data-background="white">
-					<h4>Responsive Design Example</h4>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<img src="images/responsive/breakpoints.PNG" width="720" style="box-shadow: none; border: none;"alt="Responsive breakpoint example graphic">
-						</div>
-						<p style="font-size: 24px; text-align: left;">The image above shows the range of sizes and the breakpoint used in the style of the World Wildlife site.  The web site design adapts to larger screen sizes, expanding and adding more content and navigation as the browser widths increase</p>
-						<p style="font-size: 24px; margin-top: -10px; text-align: left;">In the example above, the breakpoint is set to 768 pixels </p>
-
-
-					</div>
-
-				</section>
-				
-				<section data-background="rgb(231, 231, 207)">
-					<h3>Responsive Design Process</h3>
-					<div id="flexcontain">
-						<div class="box red" style="font-size: 22px; margin: 10px; color: white;  background-color: #50312f"><p>Use CSS style rules to change the order, positioning, and other display characteristics of your page elements</p></div>
-						<div class="box blue" style="font-size: 22px; margin: 10px; background-color: #cb0000;"><p>Build one basic layout and then use style rules targeted to different screen sizes</p></div>
-						<div class="box green" style="font-size: 24px; margin: 10px;  background-color: #fec633;"><p>Choose a breakpoint and then design for the devices above and below that point</p></div>
-						<div class="box orange" style="font-size: 24px; margin: 10px;  background-color: #52af83;"><p>Adapt your design for optimal viewing in each range of screen sizes</p></div>
-						<div class="box aquamarine" style="font-size: 24px; margin: 10px; background-color: #3F6C45;"><p> Content, not the device needs, should dictate when you choose breakpoints</p></div>
-					</div>
-					
-				</section>
-				<section data-background="images/responsive/breakpoint_d.jpg">
-					<h3 id="boxstyle">How do you set a breakpoint?</h3>
-					<p style="background-color:rgba(0,0,0,0.7); padding: 10px;" class="fragment"> <b>You need a Media Query</b> <br><span style="font-size: .7em;  font-style: italic;">A media query is composed of an optional media type and zero or more expressions that check for the conditions of particular media features. Among the media features that can be used in media queries are ' width ', ' height ', and ' color '.</span></p>
-		
-				</section>
-				<section data-background="white">
-					<h3>Media Queries consist of 3 parts</h3>
-					<div id="flexcontain">
-						<div class="box red" style="font-size: 24px; margin: 8px; padding-top: 35px; border-radius: 135px; border: 2px solid #333; height: 110px; background-color: white; color: #333; font-weight: 900;"><p>THE MEDIA TYPE</p></div>
-						<div class="box blue" style="font-size: 24px; margin: 8px; padding-top: 35px; border-radius: 135px; border: 2px solid #333; height: 110px; background-color: white; color: #333; font-weight: 900;"><p>THE EXPRESSION(S)</p></div>
-						<div class="box green" style="font-size: 24px; margin: 8px; padding-top: 35px; border-radius: 135px; border: 2px solid #333; height: 110px; background-color: white; color: #333; font-weight: 900;"><p>CONDITIONAL CSS</p></div>
-
-					</div>
-					<img src="images/responsive/definingmobile-mediaquery.jpg" width="620" style="box-shadow: none; border: none;"alt="Media query breakdown ">
-					
-				</section>
-				<section data-background="white">
-						<h4>Variety of Media Types</h4>
-						<img src="images/responsive/media_types.PNG" width="720" style="box-shadow: none; border: none;"alt="Media Type graphic ">
-				</section>
-				<section data-background="rgb(231, 231, 207)">
-					<h4>Media Query Breakdown</h4>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-						<pre>
-							<code style="font-size: 22px;" class="codebox code-example__codebox"  data-trim contenteditable>
-								@media screen and (max-width: 480px) {
-								
-                                 header {width: 90%;}
-                                 
-                                 }
-
-
-							</code>
-						</pre>
-						</div>
-						<p style="font-size: 24px; text-align: center;">With the addition of the following style rule, the browser will detect the maximum width of the screen. If it is 480 pixels or less, the header element will have a width of 90%</p>
-
-					</div>
-
-				</section>
-				<section data-background="rgb(231, 231, 207)">
-					<h4>Media Query Breakdown</h4>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-						<pre>
-							<code style="font-size: 24px;" class="codebox code-example__codebox"  data-trim contenteditable>
-							
-								@media screen and (min-width: 480px) and (max-width: 768px}
-
-							</code>
-						</pre>
-						</div>
-						<p style="font-size: 24px; ">You can add multiple media features with the and keyword</p>
-
-					</div>
-
-				</section>
-				<section data-background="rgb(231, 231, 207)">
-					<h4>Implementing Media Queries</h4>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<p style="font-size: 24px;">You have three options for applying media queries to specify style rules</p>
-							<p style="font-size: 24px;">In the following three examples, the styles are applied if the device screen has a maximum width of 480 pixels</p><br>
-							<ul>	
-								
-								<li style="font-size: 20px;"><b>Linking to an External File</b> – Using the link element or the @import css rule</li>
-								<li style="font-size: 20px;"><b>Implementing into exsisting CSS</b> – Apply them within the style tags or withing external style sheet.</li>
-
-							</ul>
-						</div>
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<img src="images/responsive/responsivediagram.png" width="550" style="box-shadow: none; border: none;"alt="Color Schemes graphic">
-						</div>
-
-					</div>
-
-				</section>
-				<section data-background="rgb(231, 231, 207)">
-					<h4>Apply Media Query using the Link tag</h4>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-						<pre>
-							<code style="font-size: 28px; line-height: 32px; height: 100px; word-wrap: break-word;" class="codebox code-example__codebox"  data-trim contenteditable>
-								&lt;link rel="stylesheet" media="screen and
-								(max-width: 480px)” href="mobiledevice.css"&gt;
-
-
-							</code>
-						</pre>
-						</div>
-						<p style="font-size: 24px; text-align: center;">The link element applies an external style sheet named mobiledevice.css if the device screen has a maximum width of 480 pixels</p>
-
-					</div>
-
-				</section>
-				<section data-background="rgb(231, 231, 207)">
-					<h4>Apply Media Query using the @import css rule</h4>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-						<pre>
-							<code style="font-size: 28px; line-height: 32px; height: 100px; word-wrap: break-word;" class="codebox code-example__codebox"  data-trim contenteditable>
-								@import url("mobiledevice.css") screen and
-								(max-width: 480px);
-
-
-							</code>
-						</pre>
-						</div>
-						<p style="font-size: 24px; text-align: center;">Using an @import rule to apply an external style sheet named mobiledevice.css if the device has a screen with a maximum width of 480 pixels:</p>
-
-					</div>
-
-				</section>
-				<section data-background="rgb(231, 231, 207)">
-					<h4>Apply Media Query within style tag</h4>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-						<pre>
-							<code style="font-size: 28px; line-height: 32px;   word-wrap: break-word;" class="codebox code-example__codebox"  data-trim contenteditable>
-							&lt;style&gt;
-							@media screen and (max-width: 480px) {
-								#headstruct{
-									background-color: #cd0000;
-								}
-							}
-							&lt;/style&gt;
-
-
-							</code>
-						</pre>
-						</div>
-						<p style="font-size: 24px; text-align: center;">Using the @media rule within a &lt;style&gt; element</p>
-
-					</div>
-
-				</section>
-				<section data-background="rgb(231, 231, 207)">
-					<h4>Multiple Style Rules for Three Breakpoints</h4>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-						<pre>
-							<code style="font-size: 20px; line-height: 32px; word-wrap: break-word;" class="codebox code-example__codebox"  data-trim contenteditable>
-							/* smaller than 1024 pixels */
-							@media screen and (max-width: 1024px) {
-								#headstruct{
-									background-color: #cd0000;
-								}
-							}
-							/* smaller than 768 pixels */
-							@media screen and (max-width: 768px) {
-								#headstruct{
-									background-color: #eeff22;
-								}
-							}
-							/* smaller than 480 pixels */
-							@media screen and (max-width: 480px) {
-								#headstruct{
-									background-color: #ffee00;
-								}
-							}
-
-
-							</code>
-						</pre>
-						</div>
-					
-
-					</div>
-
-				</section>
-				<!--<section data-background="white">
-					<h4>Responsive Design Example</h4>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<img src="images/responsive/breakpoints.PNG" width="720" style="box-shadow: none; border: none;"alt="Responsive breakpoint example graphic">
-						</div>
-						<p style="font-size: 24px; text-align: left;">The image above shows the range of sizes and the breakpoint used in the style of the World Wildlife site.  The web site design adapts to larger screen sizes, expanding and adding more content and navigation as the browser widths increase</p>
-						<p style="font-size: 24px; margin-top: -10px; text-align: left;">In the example above, the breakpoint is set to 768 pixels </p>
-
-
-					</div>
-
-				</section>
-				<section data-background="#fff">
+				<!--<section data-background="#fff">
 					<h3>Color Wheel</h3>
 					<img src="images/cgt/color_wheel.jpeg" width="650" style="box-shadow: none; border: none;"alt="Color wheel graphic">
 					
@@ -420,7 +165,7 @@
 						</div>
 						<div class="box_two" style="font-size: 22px; margin: 10px;">
 							<a href="http://paletton.com"><img src="images/cgt/color_schemes.PNG" width="550" style="box-shadow: none; border: none;"alt="Color Schemes graphic"></a>
-							<p style="font-size: .5em">Click the picture to experiment with color schemes </p>
+							<a href="https://www.canva.com/learn/100-color-combinations/"><p style="font-size: .5em">Click the picture to experiment with color schemes and click this link to view good color schemes</p></a>
 						</div>
 
 					</div>
@@ -429,7 +174,7 @@
 
 				<section data-background="#eee">
 						<h4>Introduction to Color </h4>
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/snQp757_Rr0?stop=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+						<iframe width="760" height="515" src="https://www.youtube.com/embed/_2LLXnUdUIc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 				</section>
 				<section data-background="#fff">
 					<h4>Specifying Color</h4>
@@ -672,7 +417,7 @@
 						</div>
 					</div>
 				</section>
-				<section data-background="#eee">
+				<!--<section data-background="#eee">
 					<h4>Measurement Values</h4>
 					
 					<div id="flexcontain">
@@ -982,11 +727,11 @@
 				</section>-->
 				<section data-background="#eee">
 				    <h2>References</h2>
-				    <ul style="font-size: 28px;">
-						<li>mediumwell.com/responsive-adaptive-mobile/</li>
-						<li>https://www.w3schools.com/html/html_responsive.asp</li>
-						<li>litmus.com</li>
-				    </ul>
+				    <!--<ul style="font-size: 28px;">
+						<li>http://www.chromaflo.com/en-US/Industry-Leadership/Color-Theory/Basic-Color-Schemes.aspx</li>
+						<li>https://www.creativelive.com/blog/handy-guide-file-formats-designers-photographers/</li>
+						<li>https://codepen.io/HamishMW/pen/XJogMg?editors=1111</li>
+				    </ul>-->
 				</section>
 
 
