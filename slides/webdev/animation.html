@@ -117,6 +117,37 @@
 			    background-color: green;
 			    
 			}
+			
+			#animation_diff{
+				width: 70%; 
+				padding: 2%; 
+				background-color: green; 
+				margin: auto;
+				transition: all 3s;
+				color: white;
+			}
+			
+			#animation_diff:hover{
+				color: white;
+				background-color: #92B6B1;
+				padding: 4%;
+				transform: rotate(360deg);
+			}
+			
+			@keyframes movingbox {
+			    0%   {top: 0px; left: 0px; background: red;}
+			    25%  {top: 0px; left: 500px; background: blue;}
+			    50%  {top: 300px; left: 300px; background: yellow;}
+			    75%  {top: 300px; left: 0px; background: green;}
+			    100% {top: 0px; left: 0px; background: red;}
+			}
+			#box_animate {
+			    width: 100px;
+			    height: 100px;
+			    background: red;
+			    position: relative;
+			    -webkit-animation: movingbox 5s infinite; 
+			}
 		</style>
 	</head>
 	<body>
@@ -139,7 +170,7 @@
 						<li>Animation and Keyframes</li>
 				        <ul>
 				        	<li>@Keyframes rule</li>
-				        	<li>Animation Properties</li>
+				        	<li>Animation Property</li>
 
 							
 						</ul>
@@ -189,8 +220,8 @@
 				<section data-background="white">
 					<h3>Steps to Implementing CSS Transition</h3>
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 22px; margin: 10px;  background-color: #EB8A44;"><p><b>Step 1</b><br>Define what's going to trigger the transition - (most common), scroll, click</p></div>
-						<div class="box blue" style="font-size: 22px; margin: 10px; background-color: #F9DC24;"><p><b>Step 2</b><br>Select an element you would like to implement a transition</p></div>
+												<div class="box blue" style="font-size: 22px; margin: 10px; background-color: #F9DC24;"><p><b>Step 1</b><br>Select an element you would like to implement a transition</p></div>
+						<div class="box red" style="font-size: 22px; margin: 10px;  background-color: #EB8A44;"><p><b>Step 2</b><br>Define what's going to trigger the transition - pseudo class hover(most common), scroll, click</p></div>
 						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #4b7447"><p><b>Step 3</b><br>Select the <b>property/properties</b> you would like to transition</p></div>
 						<div class="box orange" style="font-size: 22px; margin: 10px;  background-color: #8eb437"><p><b>Step 4</b><br>Give each selected property a <b>transition duration</b></p></div>
 						<div class="box aquamarine" style="font-size: 22px; margin: 10px; background-color: #FF5714;"><p><b>Step 5</b><br>Specify the timing function - specifies the speed curve of the transition effect  </p></div>
@@ -220,6 +251,58 @@
 						</div>
 					</div>
 				</section>
+				<section data-background="images/animate/animated_boat.gif" style="background-size: 60%;">
+					<h1 style="color: white; text-shadow: 2px 2px 10px #333;">Animation</h1>
+					
+				</section>
+				<section data-background="images/animate/animated_boat.gif" style="background-size: 60%;">
+					<h3 style="color: white; text-shadow: 2px 2px 10px #333;">How is Animation different from the Transition Property?</h3>
+					<a href="https://cssanimation.rocks/transition-vs-animation/"><div id="animation_diff">Click here for explanation</div></a>
+				</section>
+				<section data-background="#ffe73b">
+					<h3>@Keyframes rule</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two">
+							<p style="font-size: 20px; text-align: left;">The @keyframes CSS at-rule controls the intermediate steps in a CSS animation sequence by defining styles for keyframes (or waypoints) along the animation sequence</p>
+							<pre>
+								<code style="font-size: 12px;" class=""  data-trim contenteditable>
+									@keyframes movingbox {
+									    0%   {top: 0px; left: 0px; background: red;}
+									    25%  {top: 0px; left: 500px; background: blue;}
+									    50%  {top: 500px; left: 500px; background: yellow;}
+									    75%  {top: 500px; left: 0px; background: green;}
+									    100% {top: 0px; left: 0px; background: red;}
+									}
+									div {
+									    width: 100px;
+									    height: 100px;
+									    background: red;
+									    position: relative;
+									    -webkit-animation: movingbox 5s infinite; 
+									}
+	
+	
+								</code>
+							</pre>
+						</div>
+						<div class="box_two">
+							<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #8AEA92;"><p><b>Step 1</b><br>Select an element to animate, define default state.</p></div>
+							<div class="box red" style="font-size: 20px; margin: 10px;  background-color: #80ADA0;"><p><b>Step 2</b><br>Add the @keyframes rule and give name</p></div>
+							<div class="box green" style="font-size: 20px; margin: 10px; background-color: #38618C"><p><b>Step 3</b><br>Define various keyframes</p></div>
+							<div class="box green" style="font-size: 20px; margin: 10px; background-color: #cd0000"><p><b>Step 3</b><br>Add keyframe name and duration to default state using animation property</p></div>
+						</div>
+					</div>
+				
+				</section>
+				<section data-background="images/animate/tenor.gif" style="background-size: 100%;">
+					<div id="box_animate"></div>
+					
+				</section>
+			<!--<section data-background="rgb(231, 231, 207)" style="background-size: 100%;">
+					<h2>Top Animation Libraries</h2>
+					
+				</section>00>
 				<!--<section data-background="rgb(231, 231, 233)">
 					<h4>Responsive Design Example</h4>
 					
