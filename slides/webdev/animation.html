@@ -135,16 +135,17 @@
 			}
 			
 			@keyframes movingbox {
-			    0%   {top: 0px; left: 0px; background: red;}
-			    25%  {top: 0px; left: 500px; background: blue;}
-			    50%  {top: 300px; left: 300px; background: yellow;}
-			    75%  {top: 300px; left: 0px; background: green;}
-			    100% {top: 0px; left: 0px; background: red;}
+			    0%   {top: 0px; left: 0px; }
+			    25%  {top: 0px; left: 500px; }
+			    50%  {top: 300px; left: 300px; }
+			    75%  {top: 300px; left: 0px; }
+			    100% {top: 0px; left: 0px; }
 			}
 			#box_animate {
+				background-image: url(images/animate/spaceship.png);
 			    width: 100px;
 			    height: 100px;
-			    background: red;
+			    background-size: contain;
 			    position: relative;
 			    -webkit-animation: movingbox 5s infinite; 
 			}
@@ -295,7 +296,7 @@
 					</div>
 				
 				</section>
-				<section data-background="images/animate/tenor.gif" style="background-size: 100%;">
+				<section data-background="images/animate/moving_galaxy.gif" style="background-size: 100%;">
 					<div id="box_animate"></div>
 					
 				</section>
