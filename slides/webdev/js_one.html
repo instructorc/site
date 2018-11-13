@@ -58,7 +58,7 @@
 				</section>
 				<section data-background="black">
 				    <h3>Learning Objectives</h3>
-				    <ul style="font-size: 28px;">
+				    <ul style="font-size: 26px;">
 						<li>What is JavaScript</li>
 						<ul>
 							<li>Brief history of JavaScript</li>
@@ -79,9 +79,10 @@
 							<li>Async | Strict | Defer</li>
 							<li>Commenting - Block Comments | Single Line  </li>
 						</ul>
-						<li>Declaring and Initializing Variables</li>
+						<li>Writting a Program</li>
 				        <ul>
-							<li>Data Stypes | Reserved Keywords</li>
+				        	<li>Writting a command</li>
+							<li>Data Stypes | Reserved Keywords | Declaring and Initializing Variables</li>
 
 						</ul>
 						<li>Debugging JavaScript</li>
@@ -195,7 +196,73 @@
 					<img src="images/js/event_attributes.PNG" width="600" alt="event attribute graphic">
 					
 				</section>
+				<section data-background="white">
+					<h4>Incorporating JavaScript - Internal</h4>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 8px; padding-top: 15px; border-radius: 135px; border: 2px solid #333; height: 85px; background-color: white; color: #333; font-weight: 900;"><p>INLINE</p></div>
+						<div class="box blue" style="font-size: 24px; margin: 8px; padding-top: 15px; border-radius: 135px;  height: 85px; background-color: #cd0000; color: white; font-weight: 900;"><p>INTERNAL</p></div>
+						<div class="box green" style="font-size: 24px; margin: 8px; padding-top: 15px; border-radius: 135px; border: 2px solid #333; height: 85px; background-color: white; color: #333; font-weight: 900;"><p>EXTERNAL</p></div>
 
+					</div>
+						<pre>
+							<code style="font-size: 18px;" class="codebox code-example__codebox hljs xml"  data-trim contenteditable>
+
+										<!--Internal JS -->
+										&lt;script&gt; 
+											document.getElementsByTagName('div')[0].addEventListener('click', function(){
+										 		document.getElementsByTagName('div')[0].innerHTML ="Triggered by internal JS";
+										 	});
+										 &lt;/script&gt; 
+							</code>
+						</pre>
+						<ul>
+							<li style="font-size: 24px;">&lt;script&gt; tags can be placed in the body or head. </li>
+							<li style="font-size: 24px;"> Typically placed prior to the closing body tag so that DOM can load</li>
+							<li style="font-size: 24px;"> Multiple &lt;script&gt; tags can be placed in a document.  Tells the browser that the scripting engine must interpret the commands it contains </li>
+						</ul>
+					
+					
+				</section>
+				<section data-background="white">
+					<h4>Incorporating JavaScript - External</h4>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 8px; padding-top: 15px; border-radius: 135px; border: 2px solid #333; height: 85px; background-color: white; color: #333; font-weight: 900;"><p>INLINE</p></div>
+						<div class="box green" style="font-size: 24px; margin: 8px; padding-top: 15px; border-radius: 135px; border: 2px solid #333; height: 85px; background-color: white; color: #333; font-weight: 900;"><p>INTERNAL</p></div>
+						<div class="box blue" style="font-size: 24px; margin: 8px; padding-top: 15px; border-radius: 135px;  height: 85px; background-color: #cd0000; color: white; font-weight: 900;"><p>EXTERNAL</p></div>
+
+
+					</div>
+						<pre>
+							<code style="font-size: 20px;" class="codebox code-example__codebox hljs xml"  data-trim contenteditable>
+										<!--Linking to external js -->
+										&lt;script src="script.js"&gt; &lt;/script&gt;
+							</code>
+						</pre>
+						<ul>
+							<li style="font-size: 24px;"> Uses the &lt;script&gt; tag to link to an external js file.  Must include the src attribute and path to js file.  For example src="script.js". </li>
+							<li style="font-size: 24px;"> You can link to multiple source files.  External linking is for organizing and breaking up js source code.</li>
+							<li style="font-size: 24px;"> The scripting engine sees the referenceds files as one.  </li>
+						</ul>
+					
+					
+				</section>
+				<section data-background="#fff">
+					<h3>Loading the &lt;script&gt; element</h3>
+						<pre>
+							<code style="font-size: 20px;" class="codebox code-example__codebox hljs xml"  data-trim contenteditable>
+										<!--Linking to external js -->
+										&lt;script src="script.js" defer&gt; &lt;/script&gt;
+							</code>
+						</pre>
+						<ul>	
+							<li style="font-size: 22px;"><code>async</code> and <code>defer</code> attributes can be added to script element to modify its sequence of processing</li>
+							<li style="font-size: 22px;"><code>async</code> attribute tells a browser to parse the HTML and JavaScript code together</li>
+							<li style="font-size: 22px;"><code>defer</code> attribute defers script processing until after the page has been completely parsed and loaded</li>
+
+						</ul>
+				
+
+				</section>
 				<section data-background="#fff">
 					<h3>Activity Part A </h3>
 					
@@ -230,7 +297,89 @@
 						</div>
 					</div>
 				</section>
+				<section data-background="#eee">
+					<h3>Adding Comments in JS</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 30px; margin: 10px; background-color: #353D2F;"><p>Comments help understand the design and purpose of programs</p></div>
+						<div class="box blue" style="font-size: 30px; margin: 10px; background-color: #353D2F;"><p>JavaScript comments can be entered on single or multiple lines</p></div>
+
+					</div>
+					<pre>
+						<code style="font-size: 26px;" class="codebox code-example__codebox"  data-trim contenteditable>
+								// This is example of single line text
+	
+								/* This is an example of a comment block
+								   that can span multiple lines.   
+								   
+	       */
+						</code>
+					</pre>
+				</section>
 				<section data-background="#fff">
+					<h3>Writing a Program</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 22px;">JavaScript is case sensitive </li>
+								<li style="font-size: 22px;">A command indicates an action for a browser to take</li>
+								<li style="font-size: 22px;">A series of commands creates a script</li>
+								<li style="font-size: 22px;">A command should end in a semicolon</li>
+								<li style="font-size: 22px;">There are reserved keywords that cannot be used as variables</li>
+								<ul>
+									<li>The reserved keywords to the right are designated for the JS lauguage.</li>
+								</ul>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<img src="images/js/reserved.PNG" width="575" style="box-shadow: none; border: none;"alt="Reserved keywords image">
+							</ul>
+						</div>
+					</div>
+
+				</section>
+				<section data-background="#eee">
+					<h3>JavaScript Data Types</h3>
+
+
+						<img src="images/js/data_types_graphic.png" width="800" style="box-shadow: none; border: none;"alt="Various Data Types Image">
+
+					
+							<ul>	
+								<li style="font-size: 22px;">JavaScript interpreter automatically determines data type stored in a variable</li>
+								<li style="font-size: 22px;">In JavaScript there are 5 primitive types: undefined , null , boolean , string and number . Everything else is an object. The primitive types boolean, string and number can be wrapped by their object counterparts.</li>
+
+
+							</ul>
+				
+
+				</section>
+				<section data-background="#fff">
+					<h3>JavaScript Data Types</h3>
+
+
+					<img src="images/js/data_types.PNG" width="800" style="box-shadow: none; border: none;"alt="Various Data Types Image">
+
+				</section>
+				<section data-background="#eee">
+					<h3>Declaring and initializing a variable</h3>
+
+
+						<img src="images/js/data_type_structure.jpg" width="800" style="box-shadow: none; border: none;"alt="Declaring and Initializing a variable graphic">
+
+					
+							<ul>	
+								<li style="font-size: 22px;">The keywords, let, var and const are used to declare a variable</li>
+								<li style="font-size: 22px;"><a href="https://medium.com/podiihq/javascript-variables-should-you-use-let-var-or-const-394f7645c88f">Click here to read more about let, var and const</a></li>
+
+
+							</ul>
+				
+
+				</section>
+				<section data-background="#fff">
+					
 					<h3>Activity Part B </h3>
 					
 					<div id="flexcontain">
@@ -241,12 +390,11 @@
 								&lt;html&gt;
 							        &lt;head&gt;
 										
-										&lt;title&gt;Basic Structure &lt;/title&gt;
+										&lt;title&gt;Simple JS program &lt;/title&gt;
 									&lt;/head&gt;
 									&lt;body&gt;
-										&lt;div&gt; #1 &lt;/div&gt;
-										&lt;div&gt; #2 &lt;/div&gt;
-										&lt;div&gt; #3 &lt;/div&gt;
+										<!--Internal script tags-->
+										&lt;script&gt; //JS statements go here &lt;/script&gt;
 									&lt;/body&gt;
 								&lt;/html&gt;
 
@@ -259,52 +407,16 @@
 								
 								<p style="font-size: 24px; margin-top: -12px;">Apply the following bullet points to the HTML code below.</p>
 								<ul>
-									<li style="font-size: 18px;">Add a container to the webpage that is a width of 900px and center everything that displays in the browser. </li>
-									<li style="font-size: 18px;">Change the content to the color white, center the text in each box and change the font size to 4em.</li>
-									<li style="font-size: 18px;">Apply 14% padding to the top of each box elements.</li>
+									<li style="font-size: 18px;">Declare variables for your name, the number credits you are taking next semester and program name. </li>
+									<li style="font-size: 18px;">Output the information using a window.alert() statement.</li>
+
 								</ul>
 						</div>
 					</div>
 				</section>
+
+
 				<!--<section data-background="#fff">
-					<h3>Traditional Float Layout</h3>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<ul>	
-								<li style="font-size: 22px;">Primarily Involves the float and clear property</li>
-								<li style="font-size: 22px;">When you <b>float</b> an element, you take it out of the normal flow</li>
-								<li style="font-size: 22px;">The <b>float</b> property lets you build columnar layouts</li>
-								<li style="font-size: 22px;">You can align content elements to either the right or left </li>
-								<li style="font-size: 22px;">A typical Web page design can contain both floating and non-floating elements </li>
-								<li style="font-size: 22px;">Remember to always use a width property for floating elements</li>
-							</ul>
-						</div>
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<ul>	
-								<img src="images/layout/layout_traditional.PNG" width="575" style="box-shadow: none; border: none;"alt="Traditional Float layout image">
-							</ul>
-						</div>
-					</div>
-
-				</section>
-				<section data-background="#fff">
-					<h3>Using the Clear Property</h3>
-
-
-						<img src="images/layout/clear_property.PNG" width="525" style="box-shadow: none; border: none;"alt="Clear Property Image">
-
-					
-							<ul>	
-								<li style="font-size: 22px;">The clear property specifies on which sides of an element floating elements are not allowed to float</li>
-								<li style="font-size: 22px;">The most used values for the clear property are left, right and both</li>
-								<li style="font-size: 22px;">Typically used for the footer section of your site.</li>
-
-							</ul>
-				
-
-				</section>
-				<section data-background="#fff">
 					<h2>Traditional Float layout Considerations</h2>
 
 					<img src="images/layout/considerations.PNG" width="350" style="box-shadow: none; border: none;"alt="Dropped columns with floating elements">
