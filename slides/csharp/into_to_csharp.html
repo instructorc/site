@@ -48,16 +48,21 @@
 				    <ul style="font-size: 28px;">
 						<li>Understanding C# (c-sharp)</li>
 						<ul>
-							<li>History | Popularity | Nuances | Developer Usability</li>
+							<li>Context | architecture | Nuances | Developer Usability</li>
 							<li>Helpful resources</li>
 						</ul>
-						<li>Installation</li>
+						<!--<li>Installation</li>
 						<ul>
 							<li> Binary's | Workloads</li>
 						</ul>
 						<li>Project Breakdown</li>
 						<ul>
 							<li>Folder Hierarchal Structure | Third Party Resources | Application Variety </li>
+						</ul>-->
+						<li>Compiling and Executing a Progam</li>
+				        <ul>
+							<li>.net framework vs .net core | namespaces | using statments </li>				        	
+							<li>Data Types | Variable declaration and initialization | methods - user defined and main | Class Structure </li>
 						</ul>
 						<li>Program Breakdown</li>
 				        <ul>
@@ -77,40 +82,159 @@
 				    </ul>
 				</section>
 				<section data-background="#eee">
-					<h3>What is User Experience(UX)?</h3>
-					<p> focuses on having a deep understanding of users, what they need, what they value, their abilities, and also their limitations. UX best practices promote improving the quality of the user’s interaction with and perceptions of your product and any related services.</p>
-				</section>
-				<section data-background="#c8c8c8">
-						<h4>UX vs. UI</h4>
-						<img src="images/ux/ux_vs_ui.jpg" width="800" alt="The difference between user experience and user interface design">
+					<h3>Context</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 22px; margin: 10px; background-color: #2d4650; height: 320px;"><p><b style="font-size: 32px;">c#</b> <br> is a simple, modern, object-oriented, and type-safe programming language </p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 320px;"><p><b style="font-size: 32px;">.NET Core</b> <br> is a cross-platform .NET implementation for websites, servers, and console apps on Windows, Linux, and macOS.</p></div>
+
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 320px;"><p><b style="font-size: 32px;">.NET Framework</b> <br> A programming infrastructure created by Microsoft for building, deploying, and running applications and services that use .NET technologies, such as desktop applications and Web services.</p></div>
+					</div>
 				</section>
 				<section data-background="#eee">
-						<h4>The Echo Silver</h4>
-						<iframe width="1000" height="585" src="https://www.youtube.com/embed/YvT_gqs5ETk?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+					<h3>The .NET Framework contains three major parts </h3>
+					<ul>	
+						<li style="font-size: 26px;">The Common Language Runtime</li>
+						<ul>
+							<li>converts compiled code into machine instructions which the computer's CPU then executes</li>
+						</ul>
+						<li style="font-size: 26px;">The base class library</li>
+						<ul>
+							<li>a collection of reusable classes, interfaces and value types</li>
+							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/?view=netcore-2.2">.NET Core API Reference</a> </li>
+							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/?view=netframework-4.7.2">.NET Framework API Reference</a> </li>
+						</ul>
+						<li style="font-size: 26px;">Other managed libraries suchs as ASP.NET</li>
+
+					</ul>
 				</section>
-				<section data-background="#fff">
-					<img src="images/ux/uxdesign.PNG" width="820" style="box-shadow: none; border: none;"alt="ux design stages"><br>
-					<q> User experience is more than data collection.  It's about understanding the motivation behind user needs and striking a strategic balance between expectations and business needs.</q>
+				<section data-background="white">
+						<h4>.NET framework Architecture</h4>
+						<img src="images/intro/better_framework.png" width="800" alt=".NET framework visual">
 				</section>
 				<section data-background="#fff">
 						<h4>UX Honeycomb</h4>
 						<img src="images/ux/honeycomb.jpg" width="520" style="box-shadow: none; border: none;"alt="usability honeycomb">
 				</section>
-		
 				<section data-background="#fff">
+					<h3>Compiling and Executing a C# Program</h3>
+					
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Useful</b> <br> Your content should be original and fulfill a need </p></div>
-						<div class="box blue" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Usable</b> <br> Site must be easy to use.</p></div>
-						<div class="box green" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Desirable</b> <br> Image, identity, brand, and other design elements are used to evoke emotion and appreciation</p></div>
-						<div class="box yellow" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Findable</b> <br> Content needs to be navigable and locatable onsite and offsite</p></div>
-						<div class="box orange" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Accessible</b> <br> Content needs to be accessible to people with disabilities</p></div>
-						<div class="box aquamarine" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Credible</b> <br> Users must trust and believe what you tell them</p></div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;">Steps for viewing a program's output</li>
+								<ul>
+									<li style="font-size: 22px;">Compile source code into <b>intermediate language(IL)</b></li>
+									<li style="font-size: 22px;">The C# <b>just in time(JIT)</b> compiler translates the intermediate code into executable statements</li>
+								</ul>
+								<li style="font-size: 26px;">You can either of two ways to compile</li>
+								<ul>
+									<li style="font-size: 22px;">The <b>command line</b></li>
+									<li style="font-size: 22px;">The <b>Integrated Development Environment (IDE)</b></li>
+								</ul>
+
+							</ul>
+						</div>
+
 					</div>
 
 				</section>
 				<section data-background="#eee">
-					<h2>Why User Research?</h2>
+					<h3>Sample Program to Compile</h3>
+					<ul>
+						<li>Use any text editor to write the following code and save as tuition.cs</li>
+						<li>Why string[] args?</li>
+					</ul>
+					<div id="flexcontain">
+						<pre>
+							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+								using System;
+								using System.Text;
+								
+								class Program{
+									static void Main(string[] args)
+									{
+									
+									/**first name and credit hours should be provided 
+									as command line arguments**/
+										
+									  const double TUITION = 985.00;
+									  double tuitionCost;
+										
+									  tuitionCost = TUITION * Convert.ToDouble(args[1]);
+										
+									  Console.WriteLine(args[0] + " your tuition cost is " + tuitionCost.ToString("c"));
+										
+										
+									}
+								}
+
+
+							</code>
+						</pre>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Steps to compile via command line</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 1</b> <br>Open the <b>Developer Command Prompt VS 2017</b> </p></div>
+						<div class="box blue" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 2</b> <br>Change to the directory where program is located</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 3</b> <br>Type the <code>csc tuition.cs </code> command to compile</p></div>
+						<div class="box yellow" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 4</b> <br>type the <code> Dir</code> command to view files (this step is not necessary)</p></div>
+						<div class="box orange" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 5</b> <br>Type <code> tuition</code> and press Enter to run the program</p></div>
+					</div>
+
+				</section>
+				<section data-background="#eee">
+					<h2>Using the API</h2>
 					
+				</section>
+				<section data-background="#eee">
+					<h3>Console Class Example</h3>
+					<ul>
+						<li style="font-size: 22px;">Our first two projects will be console applications, feel free to be creative and experiment with the properties and methods associated with Console class.</li>
+						<li style="font-size: 22px;">https://docs.microsoft.com/en-us/dotnet/api/system.console?view=netframework-4.7.2</li>
+					</ul>
+					<div id="flexcontain">
+						<pre>
+							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+								using System;
+								using System.Text;
+								
+								class Program{
+									static void Main(string[] args)
+									{
+									
+										string name;
+										
+										Console.WriteLine("Enter your name: ");
+										name = Console.ReadLine();
+										Console.WriteLine("Welcome {0}", name);
+										int nameLength = name.Length;
+										
+										for(int x = 0; x < nameLength; x++){
+											Console.Bee();
+										}
+										Console.BackgroundColor = ConsoleColor.Red;
+										
+										
+									}
+								}
+
+
+							</code>
+						</pre>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<ul>
+						<li style="font-size: 26px;">Navigate to <a href="https://dot.net">Dot.net website</a></li>
+					</ul>
+					
+				</section>
+				<section data-background="#fff">
+					<h4>C# Breakdown</h4>
+					<img src="images/intro/program_structure.PNG" width="750" alt="program break-down structure">
 				</section>
 				<section data-background="#fff">
 					<h3>User Research</h3>
