@@ -48,46 +48,48 @@
 				    <ul style="font-size: 28px;">
 						<li>Understanding C# (c-sharp)</li>
 						<ul>
-							<li>Context | architecture | Nuances | Developer Usability</li>
-							<li>Helpful resources</li>
+							<li>Context - .net framework vs .net core  | architecture | Popularity</li>
+							
 						</ul>
 						<!--<li>Installation</li>
 						<ul>
 							<li> Binary's | Workloads</li>
-						</ul>
-						<li>Project Breakdown</li>
-						<ul>
-							<li>Folder Hierarchal Structure | Third Party Resources | Application Variety </li>
 						</ul>-->
+						<li>Project Breakdown</li>
+
 						<li>Compiling and Executing a Progam</li>
 				        <ul>
-							<li>.net framework vs .net core | namespaces | using statments </li>				        	
+							<li> Program breakdown | namespaces | using statments </li>				        	
 							<li>Data Types | Variable declaration and initialization | methods - user defined and main | Class Structure </li>
 						</ul>
-						<li>Program Breakdown</li>
-				        <ul>
-							<li>.net framework vs .net core | namespaces | using statments </li>				        	
-							<li>Data Types | Variable declaration and initialization | methods - user defined and main | Class Structure </li>
+						<li>Console Applications</li>
+						<ul>
+							<li> System namespace - Console API</li>				        	
+							<li> Converting Data  </li>
 						</ul>
-						<li>Brief Overview of design Patterns</li>
+
+						<!--<li>Brief Overview of design Patterns</li>
 				        <ul>
 							<li>What are design patterns and why use them?</li>
 							<li>Thinking through the logic - Flow charts/Psuedocode</li>
-							<!--<li>Automated testing</li>-->
-						</ul>
-						<li>Compiling, Executing and Packaging an application</li>
+							<li>Automated testing</li>
+						</ul>-->
+						<li>Resources and Tools </li>
                        	<ul>
-							<li>Resources and Tools | IDE's | Keyboard Shortcuts  </li>
+                       		<li>Debugging Tools in VS 2017</li>
+							<li>Helpful IDE's functionality | Keyboard Shortcuts  </li>
+							<li>Helpful resources</li>
+	
 						</ul>
 				    </ul>
 				</section>
 				<section data-background="#eee">
 					<h3>Context</h3>
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 22px; margin: 10px; background-color: #2d4650; height: 320px;"><p><b style="font-size: 32px;">c#</b> <br> is a simple, modern, object-oriented, and type-safe programming language </p></div>
-						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 320px;"><p><b style="font-size: 32px;">.NET Core</b> <br> is a cross-platform .NET implementation for websites, servers, and console apps on Windows, Linux, and macOS.</p></div>
+						<div class="box red" style="font-size: 22px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">c#</b> <br> is a simple, modern, object-oriented, and type-safe programming language </p> <p> Developed as an object-oriented and component-oriented language</p> <p>Modeled after the C++ programming language</p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">.NET Core</b> <br> is a cross-platform .NET implementation for websites, servers, and console apps on Windows, Linux, and macOS.</p><p><a href="https://docs.microsoft.com/en-us/dotnet/core/">Dot.net core Guide</a></p><p>Includes easy-to-use command-line tools that can be used for local development and in continuous-integration scenarios.</p></div>
 
-						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 320px;"><p><b style="font-size: 32px;">.NET Framework</b> <br> A programming infrastructure created by Microsoft for building, deploying, and running applications and services that use .NET technologies, such as desktop applications and Web services.</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">.NET Framework</b> <br> A programming infrastructure created by Microsoft for building, deploying, and running applications and services that use .NET technologies, such as desktop applications and Web services.</p></div>
 					</div>
 				</section>
 				<section data-background="#eee">
@@ -112,9 +114,64 @@
 						<h4>.NET framework Architecture</h4>
 						<img src="images/intro/better_framework.png" width="800" alt=".NET framework visual">
 				</section>
+				<section data-background="images/intro/c_bg.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Sample Program Break-down</h1>
+				</section>
 				<section data-background="#fff">
-						<h4>UX Honeycomb</h4>
-						<img src="images/ux/honeycomb.jpg" width="520" style="box-shadow: none; border: none;"alt="usability honeycomb">
+					<h4>Sample Program Breakdown</h4>
+					<img src="images/intro/program_structure.PNG" width="750" alt="program break-down structure">
+				</section>
+				<section data-background="#fff">
+					<h4>Program Components</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;"><b>Namespace</b></li>
+								<ul>
+									<li>Provides a way to group similar classes</li>
+									<li>Can be used to avoid naming conflicts in large projects</li>
+								</ul>
+								<li style="font-size: 26px;">C# method parts</li>
+								<ul>
+									<li><b>Method header</b></li>
+									<ul>
+										<li>Includes the method name and information about what will pass into and be returned from a method</li>
+									</ul>
+									<li><b>Method body</b></li>
+									<ul>
+										<li>Contained within a pair of curly braces and includes all the instructions executed by the method</li>
+									</ul>
+								</ul>
+								<li style="font-size: 26px;">Access Modifier</li>
+								<ul>
+									<li>Defines the circumstances under which the method can be accessed</li>
+									<li>Public, private, protected, internal, readonly, etc..</li>
+								</ul>
+
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;"><b>Keywords</b></li>
+								<ul>
+									<li>Predefined and reserved identifiers that have special meaning to the compiler</li>
+								</ul>
+								<li style="font-size: 26px;">The name of the method is <code>Main()</code></li>
+								<ul>
+									<li>Every application must have a <code>Main()</code> method</li>
+									<li>Classes with a Main()method are called <b>application classes</b>; others are <b>non-application classes</b></li>
+								</ul>
+								<li style="font-size: 26px;">The method returns nothing as indicated by the keyword <b>void</b></li>
+
+							</ul>
+						</div>
+					</div>
+
+				</section>
+				<section data-background="#fff">
+					<h4>C# Breakdown</h4>
+					<img src="images/intro/program_structure.PNG" width="750" alt="program break-down structure">
 				</section>
 				<section data-background="#fff">
 					<h3>Compiling and Executing a C# Program</h3>
@@ -165,7 +222,6 @@
 										
 									  Console.WriteLine(args[0] + " your tuition cost is " + tuitionCost.ToString("c"));
 										
-										
 									}
 								}
 
@@ -185,6 +241,7 @@
 					</div>
 
 				</section>
+				
 				<section data-background="#eee">
 					<h2>Using the API</h2>
 					
@@ -216,8 +273,7 @@
 											Console.Bee();
 										}
 										Console.BackgroundColor = ConsoleColor.Red;
-										
-										
+	
 									}
 								}
 
@@ -226,16 +282,13 @@
 						</pre>
 					</div>
 				</section>
-				<section data-background="#fff">
+				<!--<section data-background="#fff">
 					<ul>
 						<li style="font-size: 26px;">Navigate to <a href="https://dot.net">Dot.net website</a></li>
 					</ul>
 					
 				</section>
-				<section data-background="#fff">
-					<h4>C# Breakdown</h4>
-					<img src="images/intro/program_structure.PNG" width="750" alt="program break-down structure">
-				</section>
+
 				<section data-background="#fff">
 					<h3>User Research</h3>
 					<div id="flexcontain">
@@ -487,10 +540,10 @@
 				<section data-background="#eee">
 				    <h2>References</h2>
 				    <ul style="font-size: 28px;">
-						<li>https://www.interaction-design.org/literature/topics/ux-design</li>
-						<li>Identifying Key Terms</li>
-						<li>User Research</li>
-				        <li>Applying Information Architecture</li>
+						<li>https://stackify.com/net-core-vs-net-framework/</li>
+						<li>https://blogs.msdn.microsoft.com/cesardelatorre/2016/06/27/net-core-1-0-net-framework-xamarin-the-whatand-when-to-use-it/</li>
+						<li>https://docs.microsoft.com/en-us/dotnet/api/system?view=netframework-4.7.2</li>
+				   
 
 				    </ul>
 				</section>
