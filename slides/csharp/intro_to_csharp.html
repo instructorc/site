@@ -67,10 +67,15 @@
 						<li>Console Applications</li>
 						<ul>
 							<li> System namespace - Console API</li>				        	
-							<li> Accepting and Converting Data from Console  </li>
-							<li> Parsing and Casting</li>
+							<li> Accepting and Converting Data from Console | Parsing and Casting </li>
 						</ul>
-
+						<li>Methods</li>
+						<ul>
+							<li> Understanding Methods - Implementation hiding | Method Structure and Break-down</li>				        	
+							<li> Defining and Calling a method | Passing data to and Returning data from a method </li>
+							<li> Understanding Parameter Types - Out, ref and params modifier</li>
+							<li> Method Overloading</li>
+						</ul>
 						<!--<li>Brief Overview of design Patterns</li>
 				        <ul>
 							<li>What are design patterns and why use them?</li>
@@ -466,9 +471,161 @@
 
 						</ul>
 
+				</section>
+				<section data-background="images/intro/compartment.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Methods</h1>
+				</section>
+				<section data-background="#fff">
+					<h4>Understanding Methods</h4>
+						
+						<ul>	
+							<li style="font-size: 26px;"><b>Methods</b></li>
+							<ul>
+								<li style="font-size: 20px;">An encapsulated series of statements that perform a task</li>
+								<li style="font-size: 20px;">Using a method is called <b>invoking</b> or <b>calling</b> the method</li>	
+								<li style="font-size: 20px;"><b>Two Step Process</b> - Every Method should be defined then called/invoked</li>
+							</ul>
+							<li style="font-size: 26px;"><b>Implementation Hiding</b></li>
+							<ul>
+								<li style="font-size: 20px;">keeps the details of a methods operations hidden.</li>
+								<li style="font-size: 20px;">the only concern is the way you <b>interface</b>, or interact with the method</li>
+								<li style="font-size: 20px;">methods exist in a black box - a virtual device you can use without knowing how it works internally.</li>
+							</ul>
+
+						</ul>
+
+				</section>
+				<section data-background="#2d4650">
+					<h1 style="color: white;">Why Modularize a program</h1>
+				</section>
+				<section data-background="#eee">
+					<h3>Why Methods?</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 22px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">Easier to Debug and Test</b> <br> Each discrete task has its own discrete section of code if a program is designed with modularity in mind</p><p>If there is a problem in a particular method, the programmer knows where to look and can manage a smaller portion of code.</p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">Reusable Code</b> <br> Modular code allows programmers to easily reuse code. If particular tasks are sectioned off to certain functions or classes, this means that the programmer can reuse that particular code whenever she needs to perform that task again.</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">Readability and Reliability</b> <br> Modular code is code that is highly organized. To organize code based on task means that the programmer can organize each piece of code based on what it does.</p><p>Code that is easier to read, easier to debug, easier to maintain and easier to share will always run smoother with less errors.</p></div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h4>Method Breakdown</h4>
+					<img src="images/intro/method_break_down.PNG" width="770" alt="method break-down diagram">
+					<p style="font-size: 22px;">The method header describes access permission, if it's an instance or class based method, if something will be returned from the method, the name of the method and what will possibly be passed into the method.</p>
+				</section>
+				<section data-background="#fff">
+					<h4>Access Modifiers</h4>
+					<img src="images/intro/access_modifiers.PNG" width="770" alt="method break-down diagram">
+					<p style="font-size: 22px;">Visible to the package, the default. No modifiers are needed | Visible to the class only (modifier private) | Visible to the world (modifier public) | Visible to the package and all subclasses (modifier protected)</p>
+				</section>
+				<section data-background="#fff">
+					<h4>Static vs. Non-static methods</h4>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px; background-color: #2d4650; color: white;"><b>Static</b></li>
+								<ul>
+									<li style="font-size: 20px;">lets a method run without any instance of the class. A static method belongs to the class, so there’s no need to create an instance of the class to access it. </li>
+									<li style="font-size: 20px;">belongs to the class, so there’s no need to create an instance of the class to access it.  A static method is called using the class (className.methodName) as opposed to to an instance reference (new instanceOfClass = class; instanceOfClass.methodName.) </li>								
+								</ul>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>
+								<li style="font-size: 26px; background-color: #2d4650; color: white;"><b>Non-Static</b></li>
+								<ul>
+									<li style="font-size: 20px;">A non-static method belongs to an object of the class and you have to create an instance of the class to access it.</li>
+									<li style="font-size: 20px;">Non-static methods can access any static method and any static variable without creating an instance of the class.</li>
+								</ul>
+							</ul>
 							
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>In-Class Activity and Walk through </h3>
+					<ul style="font-size: 26px;">
+						<li>Modularize the program according to comments listed in code</li>
+					</ul>
+					<pre><code class="hljs" style="font-size: 20px;" data-trim contenteditable>
+class Program
+    {
+        static void Main(string[] args)
+        {
+            string[,] product = {
+                                    {"Snickers", "Almond Joy", "Reeses"},
+                                    {"Skittles", "Starburst", "Jolly Ranchers"},
+                                    {"Juicy Fruit", "Winter Fresh", "Big Red"}
+                                };
+
+            double[,] cost = {
+                                {1.80, 1.50, 1.45},
+                                {1.30, 1.45, 1.20},
+                                {1.10, 1.15, 1.10}
+                            };
+            ConsoleKey sentinel;
+            double priceAccum = 0;
+            int row, column;
+			//Create a welcome message
+            Console.WriteLine("Welcome, to simple Vending Machine");
+            Console.WriteLine("Press any key to add a product or press the 'X' key to exit the vending machine and receive total");
+            sentinel = Console.ReadKey().Key;
+            while (sentinel != ConsoleKey.X)
+            {
+                //clear console
+                Console.Clear();
+                //Create a Module to display products
+                Console.WriteLine($"\t 0 \t\t 1  \t\t 2");
+                for(var i = 0; i < product.GetLength(0); i++)
+                {
+                    Console.Write($"{i} \t");
+                    for(var x = 0; x < product.GetLength(1); x++)
+                    {
+                        Console.Write($"{product[i,x]} \t");
+                    }
+                    Console.WriteLine("");
+                }
+                //Create a Module
+                Console.WriteLine("Please enter the row of the product you would like to enter");
+                row = Convert.ToInt32(Console.ReadLine());
+                
+                //Create a module that defensively program
+                while((row < 0) || (row > 3)){
+                    Console.WriteLine("Invalid row entry, please enter a number between 0 and 2");
+                    row = Convert.ToInt32(Console.ReadLine());
+                }
+
+                //Create a Module to get column
+                Console.WriteLine("Please enter the column of the product you would like to enter");
+                column = Convert.ToInt32(Console.ReadLine());
+
+                //Create a module that defensively program
+                while ((column < 0) || (column > 3))
+                {
+                    Console.WriteLine("Invalid column entry, please enter a number between 0 and 2");
+                    column = Convert.ToInt32(Console.ReadLine());
+                }
+
+                //Create a module that output selection and accumulates the price
+                Console.WriteLine($"You have selected {product[row,column]} for {cost[row,column].ToString("c")}");
+                priceAccum += cost[row, column];
 
 
+                //module that ask for sentinel value
+                Console.WriteLine("Press any key to add a product or press the 'X' key to exit the vending machine and recieve total");
+                sentinel = Console.ReadKey(true).Key;
+
+
+            }
+
+            //Create a module that will output total
+            Console.WriteLine("Based on your selections, you owe {0}", priceAccum.ToString("c"));
+
+        }
+    }
+					</code></pre>
+					
+				</section>
+				<section data-background="images/intro/parameters_mandatory.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Understanding Mandatory Parameters</h1>
 				</section>
 				<section data-background="images/intro/oldbooks.jpg">
 					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Resources and Tools</h1>
@@ -496,9 +653,7 @@
 				</section>
 				<section data-background="#fff">
 					<h4>Resources</h4>
-					
-						
-						
+		
 						<ul>	
 
 							<li style="font-size: 26px;"><b>Resources</b></li>
@@ -796,7 +951,8 @@
 						<li>https://stackify.com/net-core-vs-net-framework/</li>
 						<li>https://blogs.msdn.microsoft.com/cesardelatorre/2016/06/27/net-core-1-0-net-framework-xamarin-the-whatand-when-to-use-it/</li>
 						<li>https://docs.microsoft.com/en-us/dotnet/api/system?view=netframework-4.7.2</li>
-				   
+				   		<li>https://www.c-sharpcorner.com/article/encapsulation-in-C-Sharp/</li>
+				   		<li>https://www.techwalla.com/articles/the-advantages-of-modularization-in-programming</li>
 
 				    </ul>
 				</section>
