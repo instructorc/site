@@ -16,6 +16,7 @@
 		<link rel="icon" sizes="32x32" type="image/png" href="images/node/favicon.png">
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="css/zenburn.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dark.min.css">
 		<!-- Google Font -->
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
 		<!-- Printing and PDF exports -->
@@ -73,7 +74,7 @@
 						<ul>
 							<li> Understanding Methods - Implementation hiding | Method Structure and Break-down</li>				        	
 							<li> Defining and Calling a method | Passing data to and Returning data from a method </li>
-							<li> Understanding Parameter Types - Out, ref and params modifier</li>
+							<li> Parameter Types - Out, ref and params modifier</li>
 							<li> Method Overloading</li>
 						</ul>
 						<!--<li>Brief Overview of design Patterns</li>
@@ -625,7 +626,83 @@ class Program
 					
 				</section>
 				<section data-background="images/intro/parameters_mandatory.jpg">
-					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Understanding Mandatory Parameters</h1>
+					<h3 style="background-color: rgba(0,0,0,.5); padding: .5em;">Using Reference Parameters, Output Parameters, and Parameter Arrays</h3>
+				</section>
+				<section data-background="images/intro/outdoors.jpg">
+					<h3 style="text-shadow: 4px 7px 10px #333;">Using Reference Parameters, Output Parameters, and Parameter Arrays</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>REFERENCE PARAMETERS <br>ref modifier</p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>OUTPUT <br> PARAMETERS <br>out modifier</p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>PARAMETER ARRAYS<br> params modifier</p></div>
+
+					</div>
+					<p style="text-shadow: 4px 7px 10px #333;">Each has memory addresses that are passed to a method, allowing the method to alter the original variables</p> 
+				</section>
+				<section data-background="#fff">
+					<h4>Ref parameters</h4>
+					<pre>
+						<code class="lang-csharp" data-interactive="csharp">
+	void Method(ref int refArgument)
+	{
+	    refArgument = refArgument + 44;
+	}
+	
+	int number = 1;
+	Method(ref number);
+	Console.WriteLine(number);
+	// Output: 45
+						</code>
+					</pre>
+					<p style="font-size: 26px;">Reference parameters need to contain a value before calling the method</p>
+				</section>
+				<section data-background="#fff">
+					<h4>Out parameters</h4>
+					<pre>
+						<code class="lang-csharp" data-interactive="csharp">
+	int initializeInMethod;
+	OutArgExample(out initializeInMethod);
+	Console.WriteLine(initializeInMethod); // now 44
+	
+	void OutArgExample(out int number)
+	{
+	    number = 44;
+	}
+						</code>
+					</pre>
+					<p style="font-size: 22px;">Output parameters do not need to contain a value </p>
+				</section>
+				<section data-background="#fff">
+					<h4>Params Parameter</h4>
+					<pre>
+						<code class="lang-csharp" style="font-size: 20px;" data-interactive="csharp">
+    public static void UseParams(params int[] list)
+    {
+        for (int i = 0; i < list.Length; i++)
+        {
+            Console.Write(list[i] + " ");
+        }
+        Console.WriteLine();
+    }
+
+    public static void UseParams2(params object[] list)
+    {
+        for (int i = 0; i < list.Length; i++)
+        {
+            Console.Write(list[i] + " ");
+        }
+        Console.WriteLine();
+    }
+
+    static void Main()
+    {
+        // You can send a comma-separated list of arguments of the 
+        // specified type.
+        UseParams(1, 2, 3, 4);
+        UseParams2(1, 'a', "test");
+    }
+						</code>
+					</pre>
+					<p style="font-size: 18px;">By using the params keyword, you can specify a method parameter that takes a variable number of arguments. <br> You can send a comma-separated list of arguments of the type specified in the parameter declaration or an array of arguments of the specified type. You also can send no arguments. If you send no arguments, the length of the params list is zero.</p>
 				</section>
 				<section data-background="images/intro/oldbooks.jpg">
 					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Resources and Tools</h1>

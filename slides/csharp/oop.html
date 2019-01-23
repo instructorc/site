@@ -62,45 +62,45 @@
 
 						<li>Generic's and Collections</li>
                        	<ul>
-                       		<li>...</li>
-							<li>....</li>
-							<li>.....</li>
+                       		<li>Understanding collections and generics in c#</li>
+							<li>Strongly Typed vs. Loosely Typed</li>
+							<li>Systems.Collections.Generic namespace</li>
+							<li>List&lt;T&gt;class | Stacks&lt;T&gt; class | Queues&lt;T&gt;class | Dictionary&lt;Tkey, Tvalue&gt; class</li>
 	
 						</ul>
 						<li>Exception Handling</li>
-					    <ul>
+					    <!--<ul>
 							<li>..</li>				        	
 							<li>..</li>
 							<li>..</li>
-						</ul>
+						</ul>-->
 				    </ul>
 				</section>
 				<section data-background="#eee">
 					<h3>Terminology</h3>
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 22px; margin: 10px; background-color: #2d4650; height: 250px;"><p><b style="font-size: 32px;">Polymorphism</b> <br> is a simple, modern, object-oriented, and type-safe programming </p></div>
-						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 250px;"><p><b style="font-size: 32px;">Encapsulation</b> <br> is the procedure of covering up of data and functions into a single unit (called class).</p> <p>Encapsulation provides a way to protect data from accidental corruption.</p></div>
-						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 250px;"><p><b style="font-size: 32px;">Instantiation</b> <br> A programming infrastructure created by Microsoft</p></div>
-						<div class="box red" style="font-size: 22px; margin: 10px; background-color: #2d4650; height: 250px;"><p><b style="font-size: 32px;">Abstraction</b> <br> is a simple, modern, object-oriented, and type-safe programming </p></div>
-						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 250px;"><p><b style="font-size: 32px;">Encapsulation</b> <br> is a cross-platform .NET implementation for websites, </p></div>
-						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 250px;"><p><b style="font-size: 32px;">Instantiation</b> <br> A programming infrastructure created by Microsoft</p></div>
+
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: white; height: 250px;"><p style="color: black;"><b style="font-size: 22px;">Encapsulation</b> <br> is the procedure of covering up of data and functions into a single unit (called class).</p> <p>Encapsulation provides a way to protect data from accidental corruption.</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: white; height: 250px;"><p style="color: black;"><b style="font-size: 22px;">Instantiation</b> <br> is used to create an object from a class (instantiate).</p></div>
+						<div class="box red" style="font-size: 22px; margin: 10px; background-color: white; height: 250px;"><p style="color: black;"><b style="font-size: 22px;">Abstraction</b> <br> can be achieved using abstract classes in C#. C# allows you to create abstract classes that are used to provide a partial class implementation of an interface.</p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: white; height: 250px;"><p style="color: black;"><b style="font-size: 22px;">Polymorphism</b> <br> the ability of objects of different types to provide a unique interface for different implementations of methods. It is usually used in the context of late binding, where the behavior of an object to respond to a call to its method members is determined based on object type at run time. </p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: white; height: 250px;"><p style="color: black;"><b style="font-size: 22px;">Inheritance</b> <br> allows you to define a child class that reuses (inherits), extends, or modifies the behavior of a parent class. The class whose members are inherited is called the base class. The class that inherits the members of the base class is called the derived class.</p></div>
 					</div>
 				</section>
 				<section data-background="#eee">
 
-					<h3>The .NET Framework contains three major parts </h3>
+					<h3>Sample Problem</h3>
 					<ul>	
-						<li style="font-size: 26px;">The Common Language Runtime</li>
+						<li style="font-size: 26px;">MPLS Renters</li>
 						<ul>
-							<li>converts compiled code into machine instructions which the computer's CPU then executes</li>
-						</ul>
-						<li style="font-size: 26px;">The base class library</li>
+							<li>Construct an console application that 
+						<li style="font-size: 26px;">Create an application that takes in data for an Apartment.  The data collected for an apartment include name, address, floor count, region,</li>
 						<ul>
-							<li>a collection of reusable classes, interfaces and value types</li>
-							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/?view=netcore-2.2">.NET Core API Reference</a> </li>
-							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/?view=netframework-4.7.2">.NET Framework API Reference</a> </li>
+							<li>A class or struct declaration is like a blueprint that is used to create instances or objects at run time.</li>
+							<li>A class is a reference type | A struct is a value type.</li>
+							<li><a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/">C# Classes and Structs</a> </li>
 						</ul>
-						<li style="font-size: 26px;">Other managed libraries suchs as ASP.NET</li>
+
 
 					</ul>
 				</section>
@@ -108,7 +108,7 @@
 						<h4>.NET framework Architecture</h4>
 						<img src="images/intro/better_framework.png" width="800" alt=".NET framework visual">
 				</section>
-				<section data-background="images/intro/c_bg.jpg">
+				<!--<section data-background="images/intro/c_bg.jpg">
 					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Sample Program Break-down</h1>
 				</section>
 				<section data-background="#fff">
@@ -1018,35 +1018,8 @@
 								</tbody> 
 						</table>
 				</section>
-				<section data-background="#fff">
-						<h2>Understanding Streams</h2>
-						<ul>
-							<li>Most streams flow in only one direction</li>
-							<li>File processing classes include:</li>
-							<ul style="font-size: 22px;">
-								<li><code>StreamReader</code> for text input from a file</li>
-								<li><code>StreamWriter</code> for text output to a file</li>
-								<li><code>FileStream</code> is used alone for bytes and with either StreamReader and StreamWriter for text, for either input from and output to a file</li>
-				
-							</ul>
 
-						</ul>
-						
-				</section>
-				<section data-background="#fff">
-						<h2>FileStream Class</h2>
-						<ul>
-							<li><b>Filestream</b> is a class which extends from the  <b>Stream</b> class, <b>FileStream</b> is used to read and write data to file, it inherits the properties, methods of Stream, and has additional functions for reading and recording data on the file.</li>
-							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.filestream?view=netframework-4.7.1">Click here to navigte to <code>FileStream Class</code></a></li>
-						</ul>
-						
-				</section>
-				<section data-background="#fff">
-						<h2>FileStream Overloaded Constructor</h2>
 
-						<img src="images/io/filestreamconstructor.PNG"  width="700" style="box-shadow: none;" alt="Stream class overview diagram"/>
-						
-				</section>
 				<section data-background="#fff">
 						<h2>FileMode Enumeration</h2>
 						<ul>
@@ -1125,15 +1098,7 @@
 					
 
 				</section>
-				<section data-background="#fff">
-					<h2>Writing and Reading a Sequential Access File</h2>
-					<ul>
-						<li>C# uses files only as streams of bytes</li>
-						<li>When you write a program to store a data file, you must dictate the form the file will take</li>
-						<li>Whether you are writing data to a file or reading data from one, you create a <code>FileStream </code>object</li>
-					</ul>
-					
-				</section>
+
 				<section data-background="#fff">
 					<h2 style="font-size: 36px;">Writing Data to a Sequential Access Text File Example</h2>
 					<ul>
