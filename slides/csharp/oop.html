@@ -48,16 +48,20 @@
 				    <ul style="font-size: 28px;">
 						<li>Understanding Object Oriented Principles</li>
 						<ul>
+							<li>What is OOP?</li>
 							<li>Terminology - Polymorphism, Encapsulation, Instantiation, Abstraction, Inheritance</li>
-							<li>Class Structure and Breakdown</li>
-							<li>Structs</li>
-							<li>Partial Classes</li>
-							
+							<li>Classes and Struct - Class Structure and Breakdown</li>
+							<ul>
+								<li> Constructors | ToString Method | Working Methods | Getters Setters | Auto Implemented Properties </li>
+								<li>Partial Classes</li>
+							</ul>
+		
 						</ul>
 						<li>Inheritance</li>
 						<ul>
 							<li> Base Class | Child Classes | Abstract Classes</li>
 							<li>Interfaces</li>
+							<li>UML Modeling | UML Diagrams</li>
 						</ul>
 
 						<li>Generic's and Collections</li>
@@ -77,6 +81,14 @@
 				    </ul>
 				</section>
 				<section data-background="#eee">
+				    <h3>What is <b>OOP</b>?</h3><br>
+				    <p>A way of organizing your code to focus on real world nouns (Person,  place, thing or idea)</p>
+				</section>
+				<section data-background="white">
+					<h2>What is <b>OOP</b>?</h2><br>
+					<iframe width="760" height="515" src="https://www.youtube.com/embed/SS-9y0H3Si8?start=4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</section>
+				<section data-background="#eee">
 					<h3>Terminology</h3>
 					<div id="flexcontain">
 
@@ -87,27 +99,38 @@
 						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: white; height: 250px;"><p style="color: black;"><b style="font-size: 22px;">Inheritance</b> <br> allows you to define a child class that reuses (inherits), extends, or modifies the behavior of a parent class. The class whose members are inherited is called the base class. The class that inherits the members of the base class is called the derived class.</p></div>
 					</div>
 				</section>
+					<section data-background="#eee">
+					<h4>Class and Object Relation</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/intro/class_img.png" width="690" style="box-shadow: none; border: none;"alt="class object image">
+							<ul>	
+								<li style="font-size: 20px;">A class is a blueprint of an object.</li>
+								<li style="font-size: 20px;">Once we have a blueprint, we can create multiple instances.</li>
+								<li style="font-size: 20px;">All Classes inherit from System.Object.</li>
+							</ul>
+						
+						</div>
+
+					</div>
+
+				</section>
 				<section data-background="#eee">
 
-					<h3>Sample Problem</h3>
+					<h3>Sample Problem Walk through</h3>
 					<ul>	
 						<li style="font-size: 26px;">MPLS Renters</li>
 						<ul>
-							<li>Construct an console application that 
-						<li style="font-size: 26px;">Create an application that takes in data for an Apartment.  The data collected for an apartment include name, address, floor count, region,</li>
-						<ul>
-							<li>A class or struct declaration is like a blueprint that is used to create instances or objects at run time.</li>
-							<li>A class is a reference type | A struct is a value type.</li>
-							<li><a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/">C# Classes and Structs</a> </li>
-						</ul>
-
-
+							<li>Construct an console application that allows a prospective renter to search for Luxury apartments downtown and add apartments to thier profile.</li>
+							<ul>
+								<li style="font-size: 26px;">The data you may wish to collect for an apartment includes name, address, floor count, region of city estimated rent for 1 bedroom, 2- bedroom and 3 - bedroom</li>
+								<li style="font-size: 26px;">The data you may wish to collect for a prospective renter includes name, email, move-in date, preferred region of city, preferred number of bedrooms and baths.</li>
+							</ul>
 					</ul>
 				</section>
-				<section data-background="white">
-						<h4>.NET framework Architecture</h4>
-						<img src="images/intro/better_framework.png" width="800" alt=".NET framework visual">
-				</section>
+
+
 				<!--<section data-background="images/intro/c_bg.jpg">
 					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Sample Program Break-down</h1>
 				</section>
@@ -784,10 +807,9 @@
 				<section data-background="#eee">
 				    <h2>References</h2>
 				    <ul style="font-size: 28px;">
-						<li>EEncapsulation slides - https://www.c-sharpcorner.com/article/encapsulation-in-C-Sharp/</li>
-						<li>https://blogs.msdn.microsoft.com/cesardelatorre/2016/06/27/net-core-1-0-net-framework-xamarin-the-whatand-when-to-use-it/</li>
-						<li>https://docs.microsoft.com/en-us/dotnet/api/system?view=netframework-4.7.2</li>
-				   
+						<li>https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/</li>
+						<li>https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/polymorphism</li>
+						<li>https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/inheritance</li>
 
 				    </ul>
 				</section>
