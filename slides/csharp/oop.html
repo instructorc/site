@@ -357,9 +357,9 @@
 									<li>In C#, constructors are called using the new keyword.  And can be <b>overloaded</b> as seen below</li>
 							
 								</ul>
-								<li style="font-size: 22px;"><b>Destructors</b></li>
+								<li style="font-size: 20px;"><b>Destructors</b></li>
 								<ul>
-									<li>Destructors are used to clean up after objects.  In general, you don't have to provide code for a destructor method; instead the default operation does the work for you.</li>
+									<li> are used to clean up after objects.  In general, you don't have to provide code for a destructor method; instead the default operation does the work for you.</li>
 								</ul>
 							</ul>
 
@@ -461,6 +461,46 @@
 
 				</section>
 				<section data-background="#fff">
+					<h3>Object Initializer</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px; width: 300px;">
+							<ul>
+								<li style="font-size: 22px;"><b>Object Initializer</b></li>
+								<ul>
+									<li>Allows you to assign values to any accessible members or properties of a class at the time of instantiation without calling a constructor with parameters</li>
+									<li>You can write an object initializer in either of the following ways listed below:</li>
+									<li>Create multiple objects with different initial assignments without having to provide multiple constructors to cover every possible situation</li>
+								</ul>
+							</ul>
+
+							
+							<pre>
+								<code style="font-size: 16px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
+									
+    class Person
+    {
+       static void Main(string[] args)
+       {
+    
+	      Person personOne = new Person(){ Age = 23, Gender = "Male" };
+          Person personTwo = new Person { Interest="Programming C#", Name="Bugs Bunion"};
+          Console.WriteLine(personOne.ToString());
+          Console.WriteLine(personTwo.ToString());
+       }
+
+
+
+    }
+							
+	
+								</code>
+							</pre>
+					
+					</div>
+
+				</section>
+				<section data-background="#fff">
 					<h3>ToString Method</h3>
 					
 					<div id="flexcontain">
@@ -521,7 +561,7 @@
 								<li><b>System.Object - derived methods</b></li>
 								<ul>
 									<li>The <code>ToString()</code> method is derived from <b>System.Object</b></li>
-									<li>The <code>ToString()</code> can be use as the string representation of the the class.</li>
+									<li>The <code>ToString()</code> can be use as the string representation of the the class, but must <b>override</b> the System.Object class <code>ToString()</code></li>
 							
 								</ul>
 			
