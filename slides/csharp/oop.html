@@ -53,15 +53,16 @@
 							<li>Terminology - Polymorphism, Encapsulation, Instantiation, Abstraction, Inheritance</li>
 							<li>Classes and Struct - Class Structure and Breakdown</li>
 							<ul>
-								<li> Constructors | Getters Setters | Auto Implemented Properties | ToString Method | Working Methods </li>
-								<li>Partial Classes</li>
+								<li> Getters Setters | Auto Implemented Properties | Constructors | ToString Method | Working Methods </li>
+								<li> Constructor and Object Initializer</li>
+								<li> Structs | Partial Classes</li>
 							</ul>
 		
 						</ul>
 						<li>Inheritance</li>
 						<ul>
 							<li>UML Modeling | UML Diagrams</li>
-							<li> Base Class | Child Classes | Abstract Classes | Interfaces</li>
+							<li> Base Class | Child Classes | Abstract Classes | Interfaces | Virtual and Override keywords</li>
 						</ul>
 
 						<li>Generic's and Collections</li>
@@ -93,7 +94,7 @@
 					<div id="flexcontain">
 
 						<div class="box green" style="font-size: 20px; margin: 10px; background-color: white; height: 250px;"><p style="color: black;"><b style="font-size: 22px;">Encapsulation</b> <br> enables a group of properties, methods and other members to be considered a single unit or object.<br> Encapsulation provides a way to protect data from accidental corruption.</p></div>
-						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: white; height: 250px;"><p style="color: black;"><b style="font-size: 22px;">Instantiation</b> <br> is used to create an object from a class (instantiate).</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: white; height: 250px;"><p style="color: black;"><b style="font-size: 22px;">Instantiation</b> <br> is used to create an object from a class (instantiate).</p><p style="color: black;"><b style="font-size: 22px;">Composition</b><br>Using an object within another object - defines a <b>has-a-relationship</b></p></div>
 						<div class="box red" style="font-size: 20px; margin: 10px; background-color: white; height: 250px;"><p style="color: black;"><b style="font-size: 22px;">Abstraction</b> <br> can be achieved using abstract classes in C#. C# allows you to create abstract classes that are used to provide a partial class implementation of an interface.</p></div>
 						<div class="box green" style="font-size: 20px; margin: 10px; background-color: white; height: 250px;"><p style="color: black;"><b style="font-size: 22px;">Polymorphism</b> <br> the ability of objects of different types to provide a unique interface for different implementations of methods. It is usually used in the context of late binding, where the behavior of an object to respond to a call to its method members is determined based on object type at run time. </p></div>
 						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: white; height: 250px;"><p style="color: black;"><b style="font-size: 22px;">Inheritance</b> <br> allows you to define a child class that reuses (inherits), extends, or modifies the behavior of a parent class. The class whose members are inherited is called the base class. The class that inherits the members of the base class is called the derived class.</p></div>
@@ -122,8 +123,7 @@
 								<li style="font-size: 22px;">The <b>attributes</b> hold data for each object instance.</li>
 								<li style="font-size: 22px;">the <b>methods</b> are verbs that take action against the data for each instance.</li>
 							</ul>
-						</div>
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
+
 															<pre>
 								<code style="font-size: 16px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
 									
@@ -149,19 +149,20 @@
 	
 								</code>
 							</pre>
-						</div>
+						
 					</div>
 
 				</section>
 				<section data-background="images/intro/capsule_img.jpg">
 					<h3 style="text-shadow: 4px 7px 10px #333;">Data Encapsulation</h3>
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>GETTERS/SETTERS <br>old and new way</p></div>
-						<div class="box blue" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>AUTO IMPLEMENTED PROPERTIES</p></div>
+						<div class="box red" style="font-size: 32px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: rgba(0,0,0, .7); color: white; font-weight: 900;"><p>GETTERS/SETTERS <br>old and new way</p></div>
+						<div class="box blue" style="font-size: 32px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: rgba(0,0,0, .7); color: white; font-weight: 900;"><p>AUTO IMPLEMENTED PROPERTIES</p></div>
 						
 
 					</div>
-					<p style="text-shadow: 4px 7px 10px #333;">Only methods from within the class can get and set data.  Auto-Implemented properties is c# syntactical sugar.</p> 
+					<p style="text-shadow: 4px 7px 10px #333;">Only methods from within the class can get and set data.  Auto-Implemented properties is c# syntactical sugar.  You can create a public data field when you want all objects of a class to contain the same value
+</p> 
 				</section>
 				<section data-background="#fff">
 					<h3>Getter and Setters</h3>
@@ -175,10 +176,9 @@
 									<li>The <code>value</code> keyword is used to define the value being assigned by the set accessor.</li>
 								</ul>
 							</ul>
-						</div>
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
+
 							
-														<pre>
+							<pre>
 								<code style="font-size: 16px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
 									
     class Person
@@ -254,7 +254,7 @@
 	
 								</code>
 							</pre>
-						</div>
+						
 					</div>
 
 				</section>
@@ -268,13 +268,12 @@
 								<ul>
 									<li>The implementation is created for you automatically.  You cannot use auto-implemented property if you need to include customized statements within one of your accessors.</li>
 									<li>The cooresponding backing field is generated by the compiler and has an internal name that would not match the field's name if you code it yourself.</li>
-									<li></li>
+									<li>When a property only has a 'get' you should use a <b>readonly access modifier</b></li>							
 								</ul>
 							</ul>
-						</div>
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
+
 							
-														<pre>
+							<pre>
 								<code style="font-size: 16px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
 									
     class Person
@@ -299,7 +298,7 @@
 	
 								</code>
 							</pre>
-						</div>
+					
 					</div>
 
 				</section>
@@ -311,7 +310,7 @@
 							<img src="images/intro/class_img.png" width="590" style="box-shadow: none; border: none;"alt="class object image">
 							<ul>	
 								<li style="font-size: 20px;">A class is a blueprint of an object.</li>
-								<li style="font-size: 20px;">Once we have a blueprint, we can create multiple instances.</li>
+								<li style="font-size: 20px;">Once we have a blueprint, we can create multiple instances. When you create an object, you call its constructor.</li>
 								<li style="font-size: 20px;">All Classes inherit from System.Object.</li>
 							</ul>
 						
@@ -345,6 +344,190 @@
 								<li style="font-size: 26px;">The data you may wish to collect for a prospective renter includes name, email, move-in date, preferred region of city, preferred number of bedrooms and baths.</li>
 							</ul>
 					</ul>
+				</section>
+				<section data-background="#fff">
+					<h3>Constructors</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px; width: 300px;">
+							<ul>
+								<li style="font-size: 20px;"><b>All class definitions contain at least one constructor</b></li>
+								<ul>
+									<li>A class definition can include several constructor methods with parameters, known as <em>nondefault constructors</em></li>
+									<li>In C#, constructors are called using the new keyword.  And can be <b>overloaded</b> as seen below</li>
+							
+								</ul>
+								<li style="font-size: 22px;"><b>Destructors</b></li>
+								<ul>
+									<li>Destructors are used to clean up after objects.  In general, you don't have to provide code for a destructor method; instead the default operation does the work for you.</li>
+								</ul>
+							</ul>
+
+							
+							<pre>
+								<code style="font-size: 16px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
+									
+    class Person
+    {
+        /**Auto-Implemented Properties**/
+        public string Interest { get; set; }
+        public string Gender { get; set; }
+        public int Age { get; set; }
+        public string Name { get; set; }
+        
+        /**Default Constructor**/
+        public Person(){
+        	this.Interest = "Forth Coming"
+        }
+		
+        /**Constructor with Parameters**/
+        public Person(string Interest, string Gender, int Age, string Name)
+        {
+            this.Interest = Interest;
+            this.Gender = Gender;
+            this.Age = Age;
+            this.Name = Name;
+        }
+
+        public Person(string Name, int Age, string Interst)
+        {
+            this.Name = Name;
+            this.Age = Age;
+            this.Interest = Interest;
+        }
+        public void bio()
+        {
+            Console.WriteLine($"{Name} is {Age} years old.  They like {Interest}");
+        }
+
+        public void Greeting()
+        {
+            Console.WriteLine($"Hi! I'm {Name}");
+        }
+    }
+							
+	
+								</code>
+							</pre>
+					
+					</div>
+
+				</section>
+				<section data-background="#fff">
+					<h3>Constructor Initializer</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px; width: 300px;">
+							<ul>
+								<li style="font-size: 22px;"><b>Constructor Initializer Example</b></li>
+								<ul>
+									<li>A clause that indicates another instance of a class constructor should be executed before any statements in the current constructor body</li>
+								</ul>
+							</ul>
+
+							
+							<pre>
+								<code style="font-size: 16px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
+									
+    class Person
+    {
+        /**Auto-Implemented Properties**/
+        public string Interest { get; set; }
+        public string Gender { get; set; }
+        public int Age { get; set; }
+        public string Name { get; set; }
+        
+        /**Object Initializer**/
+        public Person() : this("Web Development", "Male", 28, "John Doe")
+        {
+        	
+        }
+		
+        /**Another Example of Object Initializer**/
+        public Person(int age , string name) : this("Web Development", "Male", age, name)
+        {
+          Age = age;
+          Name = name;
+        }
+
+
+    }
+							
+	
+								</code>
+							</pre>
+					
+					</div>
+
+				</section>
+				<section data-background="#fff">
+					<h3>ToString Method</h3>
+					
+					<div id="flexcontain">
+
+							
+							<pre>
+								<code style="font-size: 14px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
+									
+    class Person
+    {
+        /**Auto-Implemented Properties**/
+        public string Interest { get; set; }
+        public string Gender { get; set; }
+        public int Age { get; set; }
+        public string Name { get; set; }
+        
+        /**Default Constructor**/
+        public Person(){
+        	this.Interest = "Forth Coming"
+        }
+		
+        /**Constructor with Parameters**/
+        public Person(string Interest, string Gender, int Age, string Name)
+        {
+            this.Interest = Interest;
+            this.Gender = Gender;
+            this.Age = Age;
+            this.Name = Name;
+        }
+
+        public Person(string Name, int Age, string Interst)
+        {
+            this.Name = Name;
+            this.Age = Age;
+            this.Interest = Interest;
+        }
+        public void bio()
+        {
+            Console.WriteLine($"{Name} is {Age} years old.  They like {Interest}");
+        }
+
+        public void Greeting()
+        {
+            Console.WriteLine($"Hi! I'm {Name}");
+        }
+        
+        public override String ToString()
+        {
+           return String.Format("Name: {0}, Age: {1}, Gender: {2}, Interest: {3}", Name, Age, Gender, Interest);
+        }
+    }
+							
+	
+								</code>
+							</pre>
+
+							<ul style="font-size: 24px; margin-top: -16px;">
+								<li><b>System.Object - derived methods</b></li>
+								<ul>
+									<li>The <code>ToString()</code> method is derived from <b>System.Object</b></li>
+									<li>The <code>ToString()</code> can be use as the string representation of the the class.</li>
+							
+								</ul>
+			
+							</ul>
+					</div>
+
 				</section>
 
 
