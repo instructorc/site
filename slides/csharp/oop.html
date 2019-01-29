@@ -569,7 +569,63 @@
 					</div>
 
 				</section>
+				<section data-background="#fff">
+					<h3>Working Methods</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px; width: 300px;">
+							<ul>
+								<li style="font-size: 22px;"><b>Working Methods</b></li>
+								<ul>
+									<li>Typically, perform some operation on the data that has been set for each object instance.</li>
+									<li>You can set these methods to private if only used within the class to perform an operation.</li>
+									<li>Create multiple objects with different initial assignments without having to provide multiple constructors to cover every possible situation</li>
+								</ul>
+							</ul>
 
+							
+							<pre>
+								<code style="font-size: 16px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
+									
+    class Person
+    {
+        /**Auto-Implemented Properties**/
+        public string Interest { get; set; }
+        public string Gender { get; set; }
+        public int Age { get; set; }
+        public string Name { get; set; }
+        public int RetirementAge { get; }
+        
+
+        /**Working Method**/
+        private void getEstimatedRetirementYear(){
+        	RetirementAge = 65 + Age;
+        }
+		
+        /**Class Methods**/
+        public void bio()
+        {
+            Console.WriteLine($"{Name} is {Age} years old.  They like {Interest}");
+        }
+
+        public void Greeting()
+        {
+            Console.WriteLine($"Hi! I'm {Name}");
+        }
+        
+        public override String ToString()
+        {
+           return String.Format("Name: {0}, Age: {1}, Gender: {2}, Interest: {3}", Name, Age, Gender, Interest);
+        }
+    }
+							
+	
+								</code>
+							</pre>
+					
+					</div>
+
+				</section>
 
 				<!--<section data-background="images/intro/c_bg.jpg">
 					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Sample Program Break-down</h1>
