@@ -638,25 +638,28 @@
 					<div id="flexcontain">
 						<pre>
 							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
-								using System;
-								using System.Text;
-								
-								class Program{
-									static void Main(string[] args)
-									{
-									
-									/**first name and credit hours should be provided 
-									as command line arguments**/
-										
-									  const double TUITION = 985.00;
-									  double tuitionCost;
-										
-									  tuitionCost = TUITION * Convert.ToDouble(args[1]);
-										
-									  Console.WriteLine(args[0] + " your tuition cost is " + tuitionCost.ToString("c"));
-										
-									}
-								}
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // DateTime is a struct.
+        DateTime date = new DateTime(2000, 1, 1);
+
+        // When you assign a DateTime, a separate copy is created.
+        DateTime dateCopy = date;
+
+        // The two structs have the same values.
+        Console.WriteLine(date);
+        Console.WriteLine(dateCopy);
+
+        // The copy is not affected when the original changes.
+        date = DateTime.MinValue;
+        Console.WriteLine(dateCopy);
+    }
+}
+
 
 
 							</code>
@@ -701,44 +704,45 @@
 					<ul>	
 						<li style="font-size: 26px; font-weight: 900;">MPLS Renters</li>
 						<ul>
-							<li style="font-size: 22px;">Construct an application that allows that allows you to enter prospective renter's, agents and apartment data.  The application user will be able to search for agents, existing prospective users and apartments.   The end-user will also be able to add apartment's to a prospective renters profile.</li>
+							<li style="font-size: 22px;">Construct an desktop application that allows you to enter prospective renter's, agents and apartment data.  The end-user of the application will be able to search for agents, existing prospective users and apartment properties.   The end-user will also be able to add new agents, apartment's and prospective renters. The end-user will also be able to add Apartments to a profile.</li>
 							<ul>
-								<li style="font-size: 18px;">The data you may wish to collect for an apartment includes name, address, floor count, region of city estimated rent for 1 bedroom, 2- bedroom and 3 - bedroom</li>
-								<li style="font-size: 18px;">The data you may wish to collect for a prospective renter includes name, email, move-in date, preferred region of city, preferred number of bedrooms and baths.</li>
+								<li style="font-size: 18px;"><b>Apartment</b>The data you may wish to collect for an apartment includes name, address, floor count, region of city estimated rent for 1 bedroom, 2- bedroom and 3 - bedroom</li>
+								<li style="font-size: 18px;"><b>Prospective Renter</b>The data you may wish to collect for a prospective renter includes first name, last name, phone, email, move-in date, preferred region of city, preferred number of bedrooms and baths.</li>
+								<li style="font-size: 18px;"><b>Agent</b>The data you may wish to collect for an agent includes first name, last name, email, phone, agent status and the agents company name.</li>
 							</ul>
 					</ul>
 				</section>
-				<!--<section data-background="#fff">
+				<section data-background="#fff">
 					<h4>MPLS Renters Basic UML Diagram</h4>
-					<img src="images/intro/uml_ultimate.png" width="850" alt="great example of UML breakdown">
+					<h5>Image forthcoming...should be here by Monday.</h5>
+					<!--<img src="images/intro/uml_ultimate.png" width="850" alt="great example of UML breakdown">-->
 				</section>
 				<section data-background="#eee">
-					<h3>Structs</h3>
+					<h3>C# Inheritance</h3>
 					<ul>
-						<li style="font-size: 20px;">Structs share most of the same syntax as classes.</li>
-						<li style="font-size: 20px;"></li>
+						<li style="font-size: 20px;">Base class and child-class in C#</li>
+						
 					</ul>
 					<div id="flexcontain">
 						<pre>
 							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
-								using System;
-								using System.Text;
 								
-								class Program{
-									static void Main(string[] args)
-									{
+								class User{
+									public string FirstName;
+									public string LastName;
+									public string Email;
+									public int Phone;
 									
-									/**first name and credit hours should be provided 
-									as command line arguments**/
+									private void formatPhone(){
 										
-									  const double TUITION = 985.00;
-									  double tuitionCost;
-										
-									  tuitionCost = TUITION * Convert.ToDouble(args[1]);
-										
-									  Console.WriteLine(args[0] + " your tuition cost is " + tuitionCost.ToString("c"));
-										
+										//Logic to format phone
+									
 									}
+								}
+								
+								class Profile : User{
+									public string AgentStatus;
+									public string AgentCompanyName;
 								}
 
 
