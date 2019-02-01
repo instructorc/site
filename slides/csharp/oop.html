@@ -61,8 +61,11 @@
 						</ul>
 						<li>Inheritance</li>
 						<ul>
+							<li> Understanding Inheritance </li>
 							<li>UML Modeling | UML Diagrams</li>
-							<li> Base Class | Child Classes | Abstract Classes | Interfaces | Virtual and Override keywords</li>
+							<li>Base Class | Child Classes | Abstract Classes | Interfaces | Virtual & Override keywords</li>
+							
+							
 						</ul>
 
 						<li>Generic's and Collections</li>
@@ -626,7 +629,123 @@
 					</div>
 
 				</section>
+				<section data-background="#eee">
+					<h3>Structs</h3>
+					<ul>
+						<li style="font-size: 20px;">Structs share most of the same syntax as classes.</li>
+						<li style="font-size: 20px;"></li>
+					</ul>
+					<div id="flexcontain">
+						<pre>
+							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+								using System;
+								using System.Text;
+								
+								class Program{
+									static void Main(string[] args)
+									{
+									
+									/**first name and credit hours should be provided 
+									as command line arguments**/
+										
+									  const double TUITION = 985.00;
+									  double tuitionCost;
+										
+									  tuitionCost = TUITION * Convert.ToDouble(args[1]);
+										
+									  Console.WriteLine(args[0] + " your tuition cost is " + tuitionCost.ToString("c"));
+										
+									}
+								}
 
+
+							</code>
+						</pre>
+					</div>
+				</section>
+				<section data-background="images/intro/inheritance.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Inheritance</h1>
+				</section>
+				<section data-background="#eee">
+					<h3>Understanding Inheritance</h3>
+					<p style="font-size: 22px;">The principle that you can apply knowledge of a general category to more specific objects.  Inheritance allows you to define a child class that reuses (inherits), extends, or modifies the behavior of a parent class.</p>
+					<div id="flexcontain">
+
+						<div class="box green" style="font-size: 20px; margin: 10px; height: 90px; background-color: white;"><p style="color: black;"><b style="font-size: 22px;">Scalability and Saves Time</b> </p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; height: 90px; background-color: white;"><p style="color: black;"><b style="font-size: 22px;">Reduces the chance of errors</b></p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 90px; background-color: white;"><p style="color: black;"><b style="font-size: 22px;">Easier to Understand and Write</b></p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; height: 200px; background-color: white;">
+							<h4 style="font-size: 22px;">Terminology</h4>
+							<ul style="color: black;text-align: left;">
+								<li><b>Base class</b> - a class used as a basis for inheritance</li>
+								<li><b>Derived/extended class</b> - a class that inherits from a base class. Also known as a <b>subclass or child class</b></li>
+								<li><b>Abstract class</b> - a class that you create only to extend from, but not to instantiate from</li>
+								<li><b>Virtual</b> - </li>
+								<li><b>Override</b> - </li>
+							</ul>
+						</div>
+
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h2>Let's understand a little UML before coding...</h2>
+					
+				</section>
+				<section data-background="#fff">
+					<h4>Example UML Class Diagram</h4>
+					<img src="images/intro/uml_ultimate.png" width="850" alt="great example of UML breakdown">
+				</section>
+				<section data-background="#eee">
+
+					<h3>Sample Problem Walk through</h3>
+					<ul>	
+						<li style="font-size: 26px; font-weight: 900;">MPLS Renters</li>
+						<ul>
+							<li style="font-size: 22px;">Construct an application that allows that allows you to enter prospective renter's, agents and apartment data.  The application user will be able to search for agents, existing prospective users and apartments.   The end-user will also be able to add apartment's to a prospective renters profile.</li>
+							<ul>
+								<li style="font-size: 18px;">The data you may wish to collect for an apartment includes name, address, floor count, region of city estimated rent for 1 bedroom, 2- bedroom and 3 - bedroom</li>
+								<li style="font-size: 18px;">The data you may wish to collect for a prospective renter includes name, email, move-in date, preferred region of city, preferred number of bedrooms and baths.</li>
+							</ul>
+					</ul>
+				</section>
+				<!--<section data-background="#fff">
+					<h4>MPLS Renters Basic UML Diagram</h4>
+					<img src="images/intro/uml_ultimate.png" width="850" alt="great example of UML breakdown">
+				</section>
+				<section data-background="#eee">
+					<h3>Structs</h3>
+					<ul>
+						<li style="font-size: 20px;">Structs share most of the same syntax as classes.</li>
+						<li style="font-size: 20px;"></li>
+					</ul>
+					<div id="flexcontain">
+						<pre>
+							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+								using System;
+								using System.Text;
+								
+								class Program{
+									static void Main(string[] args)
+									{
+									
+									/**first name and credit hours should be provided 
+									as command line arguments**/
+										
+									  const double TUITION = 985.00;
+									  double tuitionCost;
+										
+									  tuitionCost = TUITION * Convert.ToDouble(args[1]);
+										
+									  Console.WriteLine(args[0] + " your tuition cost is " + tuitionCost.ToString("c"));
+										
+									}
+								}
+
+
+							</code>
+						</pre>
+					</div>
+				</section>
 				<!--<section data-background="images/intro/c_bg.jpg">
 					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Sample Program Break-down</h1>
 				</section>
@@ -682,10 +801,7 @@
 					</div>
 
 				</section>
-				<section data-background="#fff">
-					<h4>C# Breakdown</h4>
-					<img src="images/intro/program_structure.PNG" width="750" alt="program break-down structure">
-				</section>
+
 				<section data-background="#fff">
 					<h3>Compiling and Executing a C# Program</h3>
 					
@@ -709,40 +825,7 @@
 					</div>
 
 				</section>
-				<section data-background="#eee">
-					<h3>Sample Program to Compile</h3>
-					<ul>
-						<li>Use any text editor to write the following code and save as tuition.cs</li>
-						<li>Why string[] args?</li>
-					</ul>
-					<div id="flexcontain">
-						<pre>
-							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
-								using System;
-								using System.Text;
-								
-								class Program{
-									static void Main(string[] args)
-									{
-									
-									/**first name and credit hours should be provided 
-									as command line arguments**/
-										
-									  const double TUITION = 985.00;
-									  double tuitionCost;
-										
-									  tuitionCost = TUITION * Convert.ToDouble(args[1]);
-										
-									  Console.WriteLine(args[0] + " your tuition cost is " + tuitionCost.ToString("c"));
-										
-									}
-								}
 
-
-							</code>
-						</pre>
-					</div>
-				</section>
 				<section data-background="#fff">
 					<h3>Steps to compile via command line</h3>
 					<div id="flexcontain">
@@ -754,9 +837,7 @@
 					</div>
 
 				</section>
-				<section data-background="images/intro/chrome.jpg">
-					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Declaring Variables</h1>
-				</section>
+
 				<section data-background="#fff">
 					<h3>Terms</h3>
 					<div id="flexcontain">
@@ -1306,6 +1387,7 @@
 						<li>https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/</li>
 						<li>https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/polymorphism</li>
 						<li>https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/inheritance</li>
+						<li>https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-class-diagram-tutorial/</li>
 
 				    </ul>
 				</section>
