@@ -785,14 +785,174 @@ class Program
 								<li style="font-size: 18px;">Has no method statements | Derived classes must override it using the keyword override</li>
 
 							</ul>
-							
-
+						
 						</ul>
+				</section>
 
+				<section data-background="#eee">
+					<h3>Using Base Class Constructors </h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">Base Class Constructor</b><br> <br> Instantiating an object of a derived class calls the constructor for both the base class and the derived class</p> <p>The base class constructor must execute first</p> <p>When you create a base class and a derived class, and instantiate a derived class object, you call three constructors:</p><p>One from the Object class, one from the base class, and one from the derived class</p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">Base Class Constructor that require arguments</b> <br>When a base class constructor requires arguments, include a constructor for each derived class you create</p><p>The derived class constructor can contain any number of statements</p><p>Within the header, provide values for any arguments required by the base class constructor.</p><p>Use the keyword <b>base</b></p></div>
+
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h4>Using Base Class Constructors That Require Arguments</h4>
+					
+						<pre>
+							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+								
+								class User{
+									public string Fname;
+									public string Lname;
+									public string Email;
+									public int Phone;
+									
+									/**Constructor**/
+									public User(string Fname, string Lname, string Email, string Phone)
+									{
+										this.Fname = Fname;
+										this.Lname = Lname;
+										this.Email = Email;
+										this.Phone = Phone;
+									
+									}
+								}
+								
+								class Agent : User{
+									public string AgentStatus;
+									public string AgentCompanyName;
+									
+									public Agent(string Fname, string Lname, string Email, string Phone, string AgentStatus, string AgentCompanyName) : base(Fname, Lname, Email, Phone)
+									{
+										this.Fname = Fname;
+										this.Lname = Lname;
+										this.Email = Email;
+										this.Phone = Phone;
+										this.AgentStatus = AgentStatus;
+										this.AgentCompanyName = AgentCompanyName;
+									
+									}
+								}
+
+
+							</code>
+						</pre>
+
+				</section>
+				<section data-background="#ffffff">
+					<h4>Interfaces</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/intro/interface_definition.PNG"  width="280" alt="c# interface definition">
+							<ul>	
+								<li style="font-size: 26px;"><b>Interfaces</b></li>
+								<ul>
+									<li style="font-size: 20px;">An alternative to <b>multiple inheritance</b></li>
+									<li style="font-size: 20px;">A collection of public instance (that is, nonstatic) methods and properties that are grouped together to encapsulate specific functionality</li>
+									<li style="font-size: 20px;">You cannot instantiate concrete objects from either <b>abstract classes</b> or <b>interfaces</b></li>
+									<li style="font-size: 20px;">Interfaces provide you with a way to exhibit <b>polymorphic behavior</b></li>
+								</ul>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/intro/interface_implementation.PNG"  width="300" alt="c# interface implementation">
+						</div>
+					</div>
 
 				</section>
 				<section data-background="images/intro/abstract_collections.jpg">
-					<h1 style="color: black; background-color: rgba(255,255,255,.8); padding: .5em;">Generics and Collections</h1>
+					<h1 style="color: black; background-color: rgba(255,255,255,.8); padding: .5em;">Collections and Generics</h1>
+				</section>
+				<section data-background="#fff">
+				    
+				    <p style="font-size: 32px;"><b>Collections</b> enable you to maintain groups of objects.  Unlike arrays, collections can include more advanced functionality.</p>
+				     <br>
+				     <p style="font-size: 32px;">A<b> generic class </b>is built around whatever type, or types, you supply during instantiation, enabling you to strongly type an object with hardly any effort at all.</p>
+				     	<p style="font-size: 18px;">Namespace - using System.Collections.Generic;</p>
+				</section>
+				<section data-background="#fff">
+					<h3>Frequently Used Collections</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 28px;">List&lt;T&gt;</b> <br>Represents a list of objects that can be accessed by index. Provides methods to search, sort, and modify lists.</p><p style="font-size:16px; margin-top: -9px;"><a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=netcore-2.2">Link API</a></p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 28px;">Stacks&lt;T&gt;</b> <br>Represents a last in, first out (LIFO) collection of objects.</p><p style="font-size:16px; margin-top: -9px; "><a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.linkedlist-1?view=netcore-2.2">Stacks API</a></p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 28px;">Queues&lt;T&gt;</b> <br>Represents a first in, first out (FIFO) collection of objects.</p><p style="font-size:16px; margin-top: -9px;"><a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1?view=netcore-2.2">Queues API</a></p></div>
+						<div class="box yellow" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 28px;">Dictionary&lt;TKey, TValue&gt;</b> <br>Represents a collection of key/value pairs that are organized based on the key.</p><p style="font-size:16px; margin-top: -9px;"><a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2?view=netcore-2.2">Dictionary API</a></p></div>
+						<div class="box orange" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 28px;">SortedList&lt;TKey, TValue&gt;</b> <br>Represents a collection of key/value pairs that are sorted by key based on the associated IComparer&lt;T&gt; implementation.</p><p style="font-size:16px; margin-top: -11px;"><a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.sortedlist-2?view=netcore-2.2">SortedList API</a></p></div>
+					</div>
+				
+				</section>
+				<section data-background="#fff">
+					<h4>Example of using the List&lt;T&gt;</h4>
+					
+						<pre>
+							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+								
+class Program
+    {
+        static void Main(string[] args)
+        {
+            //Two dimensional array
+            double[,] price = {
+                                 {350, 390, 435},
+                                 {400, 440, 480},
+                                 {475, 530, 575}
+                              };
+
+            string[,] selection = {
+                                     {"Snickers", "Twix", "Mars"},
+                                     {"Skittles", "Starburst", "Sour Patch Kids"},
+                                     {"Big Red", "Winter fresh", "Trident"}
+                                  };
+            List&lt;Candy&gt; candyList = new List&lt;Candy&gt;();
+
+            //Iterate through the multi-Array and populate the list
+            for (var i = 0; i < 3; i++)
+            {
+                for (var x = 0; x < 3; x++)
+                {
+                    Candy aCandy = new Candy(selection[i, x], price[i, x]);
+                    candyList.Add(aCandy);
+                    Console.WriteLine("{0} goes for {1}", selection[i, x], price[i, x].ToString("c"));
+                }
+            }
+            
+            //Decrement through the list and find the object with value "Snickers" for the name property
+            for(var i = candyList.Count -1; i >= 0; i--)
+            {
+                if (candyList[i].name.Contains("Snickers"))
+                {
+                    candyList.RemoveAt(i);    
+                }     
+            }
+            //Output the list using lambda Expression
+            candyList.ForEach(x => Console.WriteLine(x.ToString()));
+        }
+    }
+    public class Candy
+    {
+        public string name { get; set; }
+        public double price { get; set; }
+
+        public Candy(string name, double price)
+        {
+            this.name = name;
+            this.price = price;
+        }
+
+        public override string ToString()
+        {
+            return String.Format("The name of the candy is " + name + " the price for this candy " + price);
+        }
+
+    }
+
+
+							</code>
+						</pre>
+
 				</section>
 				<!--<section data-background="images/intro/c_bg.jpg">
 					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Sample Program Break-down</h1>
