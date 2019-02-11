@@ -64,10 +64,10 @@
 
 						<li>Working with LINQ and Lambda Function</li>
                        	<ul>
-                       		<li></li>
-							<li>Strongly Typed vs. Loosely Typed</li>
-							<li>Systems.Collections.Generic namespace</li>
-							<li>List&lt;T&gt;class | Stacks&lt;T&gt; class | Queues&lt;T&gt;class | Dictionary&lt;Tkey, Tvalue&gt; class</li>
+                       	
+							<li>What is Linq</li>
+							<li>What can you query with Linq</li>
+							<li>What is needed for Linq</li>
 
 						</ul>
 
@@ -86,15 +86,15 @@
 						
 						<ul>
 							<li>Bugs - errors the programmer caused</li>
-							<ul style="font-size: 22px;">
+							<ul>
 								<li>Ex. Wrong calculation, not properly handling memory alocation, variable access permission, etc..</li>
 							</ul>
 							<li>User Errors - errors the user caused</li>
-							<ul style="font-size: 22px;">
+							<ul>
 								<li>Ex. Improperly formatted string text </li>
 							</ul>
 							<li>Exceptions - unexpected errors that are caused during runtime, Terminates the program unless exceptions are handled</li>
-							<ul style="font-size: 22px;">
+							<ul>
 								<li>Cannot connect to a database, not able to open or read a file, etc.. </li>
 							</ul>
 							<li><a href="https://stackify.com/application-exception-vs-error-difference/">Ex. of Error vs. Exception</a></li>
@@ -105,7 +105,7 @@
 				    <ul>
 						<li><b>Exception Handling</b></li>
 						
-						<ul style="font-size: 22px;">
+						<ul>
 							<li>- Object-oriented techniques used to manage such errors</li>
 						
 						</ul>
@@ -125,7 +125,7 @@
 					<h2>Exception Derived clsses:</h2>
 					<ul>
 						<li>Most exceptions derive from three classes</li>
-						<ul style="font-size: 28px;">
+						<ul>
 								<li>- Predefined Common Language Runtime exception classes derived from <code>SystemException</code></li>
 								<li>User-defined application exception classes you derive from <code>ApplicationException</code></li>
 								<li>The <code>Exception </code> class which is the parent of <code>SystemException</code> and <code>ApplicationException</code> </li>
@@ -140,13 +140,13 @@
 						<ul>
 
 							<li style="font-size: 30px;">You can deliberately generate a SystemException by forcing a program to contain an error</li>	
-							<ul style="font-size: 22px;">
+							<ul>
 									<li>- Example: Dividing an integer by zero</li>
 							</ul>
 							<li style="font-size: 30px;">Termination of the program is abrupt and unforgiving</li>	
 							<li style="font-size: 30px;">Object-oriented error handling techniques provide more elegant solutions</li>  
 							<li style="font-size: 30px;">With exception handling,a program can continue after dealing with a problem</li> 
-							<ul style="font-size: 22px;">
+							<ul>
 									<li>- Especially important in <b>mission-critical</b> applications - any process that is crucial to an organization</li>
 							</ul>
 
@@ -158,7 +158,7 @@
 					<ul>
 
 						<li>Programs that can handle exceptions appropriately are said to be more fault tolerant and robust than those that do not</li>	
-						<ul style="font-size: 22px;">
+						<ul>
 							<li>- <b>Fault-tolerant</b> applications are designed so that they continue to operate, possibly at a reduced level, when some part of the system fails</li>
 							<li>- <b>Robustness</b> represents the degree to which a system is resilient to stress, maintaining correct functioning</li>
 						</ul>
@@ -178,13 +178,13 @@
 					<h3>Traditional and Object-Oriened Error-Handling Methods</h3>
 					<ul>
 						<li>Check a variable’s value with an if statement before attempting to divide it into another number</li>
-						<ul style="font-size: 24px;">
+						<ul>
 							<li> - Prevents division by zero</li>
-							<ul style="font-size: 22px;">
+							<ul>
 								<li>   However, it does not really "handle an exception"</li>			
 							</ul>
 							<li> - Is efficient if you think it will be a frequent problem</li>
-							<ul style="font-size: 22px;">
+							<ul>
 								<li>   Has little "overhead"</li>		
 								<li>   Otherwise, create an <code>Exception</code> object</li>		
 							</ul>
@@ -195,12 +195,12 @@
 				</section>
 				<section data-background="#eee">
 					<section>
-						<h4>Object-oriented exception handling uses three unique terms: try, catch, throw, finally</h4>
+						<h5>Exception handling uses three terms: try, catch, throw, finally</h5>
 						</ul>
 						<div id="flexcontain">
-							<div class="box_three red" style="font-size: 22px; margin: 10px;"><p><b><code style="font-size: 30px;"><em>try</em></code> block</b><br/> Contains statements that can produce an error <br> Code at least one catch block or finally block immediately following a <code>try</code> block</code></p></div>
-							<div class="box_three blue" style="font-size: 22px; margin: 10px;"><p><b><code style="font-size: 30px;"><em>catch</em></code> block</b><br/> Can "catch" one type of Exception <br> You must code at least one <code>catch</code> block or <code>finally</code> block immediately following a <code>try</code> block</code></p></div>
-							<div class="box_three green" style="font-size: 22px; margin: 10px;"><p><b><code style="font-size: 30px;"><em>finally</em></code> block</b><br/> Contains actions to perform at the end of a <code>try…catch</code> sequence<br> Executes whether the try block identifies any Exceptions or not <br /> Used to perform clean-up tasks<br /> A <code>finally</code> block executes after 1) the <code>try</code> ends normally. 2) the <code>catch</code> executes and 3) the <code>try</code> ends abnormally and the <code>catch</code> does not execute </p></div>
+							<div class="box_three red" style="font-size: 22px; margin: 10px; border-radius: 10px;"><p><b><code style="font-size: 30px;"><em>try</em></code> block</b><br/> Contains statements that can produce an error <br> Code at least one catch block or finally block immediately following a <code>try</code> block</code></p></div>
+							<div class="box_three blue" style="font-size: 22px; margin: 10px; border-radius: 10px;"><p><b><code style="font-size: 30px;"><em>catch</em></code> block</b><br/> Can "catch" one type of Exception <br> You must code at least one <code>catch</code> block or <code>finally</code> block immediately following a <code>try</code> block</code></p></div>
+							<div class="box_three green" style="font-size: 22px; margin: 10px; border-radius: 10px;"><p><b><code style="font-size: 30px;"><em>finally</em></code> block</b><br/> Contains actions to perform at the end of a <code>try…catch</code> sequence<br> Executes whether the try block identifies any Exceptions or not <br /> Used to perform clean-up tasks<br /> A <code>finally</code> block executes after 1) the <code>try</code> ends normally. 2) the <code>catch</code> executes and 3) the <code>try</code> ends abnormally and the <code>catch</code> does not execute </p></div>
 
 						</div>
 					</section>
@@ -222,7 +222,7 @@
 						<h3>Catching Multiple <code>Exceptions</code></h3>
 						<ul>
 							<li>You can place as many statements as you need within a try block</li>	
-							<ul style="font-size: 22px;">
+							<ul>
 								<li>- Only the first error-generating statement throws an Exception</li>
 							</ul>
 							<li>Multiple catch blocks are examined in sequence until a match is found for the Exception that occurred</li>
@@ -240,11 +240,11 @@
 					<h3>Handling Exceptions Thrown from Outside Methods</h3>
 						<ul>
 							<li>An advantage of using object-oriented exception-handling techniques:</li>	
-							<ul style="font-size: 22px;">
+							<ul>
 								<li>- The ability to deal with Exceptions appropriately as you decide how to handle them</li>
 							</ul>
 							<li>When methods from other classes throw Exceptions, methods do not have to catch them</li>
-							<ul style="font-size: 22px;">
+							<ul>
 								<li>- Your calling program can catch them, and you can decide what to do</li>
 							</ul>
 						</ul>
@@ -256,10 +256,10 @@
 					</section>
 				</section>
 				<section data-background="#fff">
-					<h3>Using the  <code>Exception</code>Class's <code>ToString()</code> Method and Message  property</h3>
+					<h3>Using the  <code>Exception</code> Class's <code>ToString()</code> Method and Message  property</h3>
 					<ul>
 						<li>The <code>Exception</code> class overrides <code>ToString()</code></li>	
-						<ul style="font-size: 22px;">
+						<ul>
 							<li>- Provides a descriptive error message</li>
 							<li>- The user can receive percise information about the nature of any Exception that is thrown</li>
 						</ul>
@@ -269,11 +269,11 @@
 					<h3>Using the  <code>Exception</code>Class's <code>ToString()</code> Method and Message  property</h3>
 					<ul>
 						<li><code>Exception</code> class <code>Message</code> property</li>	
-						<ul style="font-size: 22px;">
+						<ul>
 							<li>- Contains useful information about an <code>Exception</code></li>
 						</ul>
 						<li><code>getType()</code> method</li>	
-						<ul style="font-size: 22px;">
+						<ul>
 							<li>- Indicates the name of the class</li>
 						</ul>
 					</ul>	
@@ -282,12 +282,12 @@
 					<h3>Tracing <code>Exception</code> Objects Through the Call Stack</h3>
 					<ul>
 						<li><b>Call Stack</b></li>	
-						<ul style="font-size: 22px;">
+						<ul>
 							<li>-The memory location where the computer stores the list of locations to which the system must return</li>
 							<li>If a method throws an Exception and does not catch it, the Exception is thrown to the next method “up” the call stack</li>
 						</ul>
 						<li><code>StackTrace</code> property</li>	
-						<ul style="font-size: 22px;">
+						<ul>
 							<li>- Contains a list of methods in the call stack so you can determine the location of the Exception</li>
 						</ul>
 					</ul>	
