@@ -359,6 +359,9 @@
 						<img src="images/io/directorypic1.png" width="420" style="box-shadow: none; float: left;" alt="directory picture example one"/>
 						<img src="images/io/directorypic2.png" width="420" style="box-shadow: none; float: left;" alt="directory Picture example two"/>
 				</section>
+				<section data-background="images/io/data_org.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Data Organization</h1>
+				</section>
 				<section data-background="#eee">
 						<h2>Understanding File Data Organization</h2>
 						<ul>
@@ -383,7 +386,7 @@
 				</section>
 				<section data-background="#eee">
 						<h2>Understanding File Data Organization</h2>
-						<ul>
+						<ul style="font-size: .7em;">
 							<li><b>Field</b></li>
 							<ul>
 								<li>A character or group of characters that has some meaning</li>
@@ -423,6 +426,24 @@
 
 						</ul>
 				</section>
+				<section data-background="#eee">
+					<h3>The "@" notation or thingy</h3>
+					<p style="font-size: 20px;">It means interpret the following string as literal. Meaning, the \ in the string will actually be a "\" in the output, rather than having to put "\\" to mean the literal character</p>
+
+					
+						<pre>
+							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+								string user_name = "itsme";
+								string path = $@"C:\Users\{user_name}\Desktop\myapp
+
+
+							</code>
+						</pre>
+					
+				</section>
+				<section data-background="images/io/streams.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Streams</h1>
+				</section>
 				<section data-background="#fff">
 						<h2>Understanding Streams</h2>
 						<ul>
@@ -435,7 +456,7 @@
 							</ul>
 
 						</ul>
-						<img src="images/io/streampic.png"  width="700" style="box-shadow: none;" alt="Stream class diagram"/>
+						<img src="images/io/streampic.png"  width="500" style="box-shadow: none;" alt="Stream class diagram"/>
 				</section>
 				<section data-background="#fff">
 						<h2>Stream Overview</h2>
@@ -443,13 +464,13 @@
 						<img src="images/io/streamoverview.png"  width="700" style="box-shadow: none;" alt="Stream class overview diagram"/>
 				</section>
 				<section data-background="#fff">
-						<h2>Stream classes</h2>
-						<ul>
+						<h4>Stream classes</h4>
+						<ul style="font-size: .7em;">
 							<li><b>Stream</b> is an abstract class, it can not initialize an object by itself, you can initialize a Stream object from the Constructors of the subclass. <b>Stream</b> class provides the basic methods of working with data streams, namely the method of read/write a byte or an array of bytes.</li>
-							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.stream?view=netframework-4.7.1">Click here to navigte to <code>Stream Class</code></a></li>
+							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.stream?view=netcore-2.2">Click here to navigte to <code>Stream Class</code></a></li>
 						</ul>
 						
-						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
+						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 18px; margin-top: 18px;"> 
 								<tbody> 
 								 <tr> 
 								  <td><strong>Class</strong></td> 
