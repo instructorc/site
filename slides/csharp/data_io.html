@@ -714,7 +714,7 @@
 					<h2>Search a Sequential Text File</h2>
 					<ul>
 						<li><b>File position pointer</b></li>
-						<ul style="font-size: 22px;">
+						<ul>
 							<li>Holds the byte number of the next byte to be read</li>
 						</ul>
 						<li>Reposition the file pointer using the <code>Seek()</code> method and the <code>SeekOrigin</code> enumeration: <br/> <code style=" font-size: 28px; font-weight: 100;">inFile.Seek(0, SeekOrigin.Begin);</code></li>
@@ -736,17 +736,17 @@
 					<h2>Understanding Serialization and Deserialization</h2>
 					<ul>
 						<li>Disadvantages to writing to a text file:</li>
-						<ul style="font-size: 22px;">
+						<ul style="font-size: 28px;">
 							<li>Data in a text file is easily readable in a text editor such as Notepad, which means it is not secure</li>
 							<li>It is cumbersome to convert each field to text and combine the fields with delimiters</li>	
 						</ul>
 						<li>You can write objects to and read objects from files</li>
 						<li><b>Serialization</b></li>
-						<ul style="font-size: 22px;">
+						<ul>
 							<li>The process of converting objects into streams of bytes</li>
 						</ul>
 						<li><b>Deserialization</b></li>
-						<ul style="font-size: 22px;">
+						<ul>
 							<li>Converts streams of bytes back into objects</li>
 						</ul>
 					</ul>
@@ -754,14 +754,20 @@
 				</section>
 				<section data-background="#fff">
 					<h2>Understanding Serialization and Deserialization</h2>
-					<ul>
-						<li style="font-size: 32px">In a class marked with the [Serializable] attribute, every instance variable must also be Serializable</li>
-
-						<li style="font-size: 32px">By default, all C# simple data types are serializable, including strings</li>
-						<li style="font-size: 32px">If your class contains fields that are more complex data types, you must check the declaration of those classes to ensure they are serializable</li>
-
-					</ul>
-					<img src="images/io/serializableclassimg.png"  width="400" style="box-shadow: none; font-size: 28px; font-weight: 100;" alt="Serializable class image"/>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>
+								<li style="font-size: 26px">In a class marked with the [Serializable] attribute, every instance variable must also be Serializable</li>
+		
+								<li style="font-size: 26px">By default, all C# simple data types are serializable, including strings</li>
+								<li style="font-size: 26px">If your class contains fields that are more complex data types, you must check the declaration of those classes to ensure they are serializable</li>
+		
+							</ul>
+						</div>
+						
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/io/serializableclassimg.png"  width="400" style="box-shadow: none; font-size: 28px; font-weight: 100;" alt="Serializable class image"/>
+						</div>
 				</section>
 				<section data-background="#fff">
 					<h2>Understanding Serialization and Deserialization</h2>
@@ -791,6 +797,69 @@
 					<img src="images/io/serialoutput2.png"  width="470" style="box-shadow: none; margin-top: -10px;" alt="Serialization Code example one"/>
 
 
+				</section>
+				<section data-background="images/io/query.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Streams</h1>
+				</section>
+				<section data-background="#eee">
+						<h2 class="blue">What is Linq?</h2>
+						<p>Linq stands for Language Integrated Query. Linq provides methods to easily query data sets including objects, relational databases, XML and other data sources</p>
+						<ul>
+							<li>Linq can query a variety of data sets that are connected to your application</li>
+						</ul>
+				</section>
+				<section data-background="#fff">
+						<h3 style="color: orangeRed">What can you query?</h3>
+						<p>Arrays, Characters, List of Objects, XML, etc.</p>
+						<img src="images/io/linqarchitecture.gif" width="650" style="box-shadow: none; float: left; margin-left: 2em;" alt="Linq architecture image"/>
+
+				</section>
+				<section data-background="#eee">
+						<h3>Link provides extension methods to IEnumerable</h3>
+						<ul>
+							<li>Where, Order, Group, Select, GetEnumerator</li>
+							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ienumerable-1?view=netcore-2.2">Click here to navigate to IEnumerable Interface</a></li>
+						</ul>
+				</section>
+				<section data-background="#eee">
+				    <h3>What's Needed for a Linq Query</h3>
+				    <ol>
+						<li>The IEnumerable Interface - utilizing properties and methods from Interface</li>
+						<li>A dataset/datasource - <code><em>"from acct in accounts"</em></code></li>
+						<li>The formated query - <code><em>"where acct.acctBalance > 8000.00"</em></code></li>
+						<li>The Execution of the query - <code><em>"Iterating over data using foreach"</em></code></li>
+				    </ol>
+				</section>
+				<section data-background="#eee">
+					<h3>C# Inheritance</h3>
+
+					<div id="flexcontain">
+						<pre>
+							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+								
+						        public static IEnumerable&lt;Account&gt; getHighAccounts(List&lt;Account&gt; accounts)
+						        {
+						
+						            var highAccounts =  //Query name
+						                from acct in accounts //Data set
+						                where acct.acctBalance > 8000.0  //formatted query
+						                orderby acct.lname;
+						                
+						            return highAccounts;
+						        }
+						        
+						        
+						        //Processing or Iterating through a Query using foreach loop.
+						        foreach (var acct in highAccounts)
+					            {
+					                Console.WriteLine($"First Name: {acct.fname}  Last Name: {acct.lname}  
+					                Account Balance: {acct.acctBalance} ");
+					            }
+
+
+							</code>
+						</pre>
+					</div>
 				</section>
 				
 			</div>
