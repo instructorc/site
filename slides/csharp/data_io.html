@@ -68,7 +68,7 @@
 							<li>What is Linq</li>
 							<li>What can you query with Linq</li>
 							<li>What is needed for Linq</li>
-							<li>Brief overview of Lambda Expressions</li>
+							<li>Brief overview of Lambda Expressions | Query vs. Method Syntax</li>
 
 						</ul>
 
@@ -809,57 +809,156 @@
 						</ul>
 				</section>
 				<section data-background="#fff">
-						<h3 style="color: orangeRed">What can you query?</h3>
-						<p>Arrays, Characters, List of Objects, XML, etc.</p>
-						<img src="images/io/linqarchitecture.gif" width="650" style="box-shadow: none; float: left; margin-left: 2em;" alt="Linq architecture image"/>
+					<h3 style="color: orangeRed">What can you query?</h3>
+					<p>Arrays, Characters, List of Objects, XML, etc.</p>
+					<img src="images/io/linqarchitecture.gif" width="650" style="box-shadow: none; float: left; margin-left: 2em;" alt="Linq architecture image"/>
 
 				</section>
 				<section data-background="#eee">
-						<h3>Link provides extension methods to IEnumerable</h3>
+						<h3>LinQ provides extension methods to IEnumerable</h3>
 						<ul>
 							<li>Where, Order, Group, Select, GetEnumerator</li>
 							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ienumerable-1?view=netcore-2.2">Click here to navigate to IEnumerable Interface</a></li>
 						</ul>
 				</section>
 				<section data-background="#eee">
-				    <h3>What's Needed for a Linq Query</h3>
-				    <ol>
-						<li>The IEnumerable Interface - utilizing properties and methods from Interface</li>
-						<li>A dataset/datasource - <code><em>"from acct in accounts"</em></code></li>
-						<li>The formated query - <code><em>"where acct.acctBalance > 8000.00"</em></code></li>
-						<li>The Execution of the query - <code><em>"Iterating over data using foreach"</em></code></li>
-				    </ol>
+					<h3>Query and Method Syntax</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 22px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">Query Syntax</b> <br> Many people find query syntax simpler and easier to read.</p> <p> Some queries must be expressed as method calls.</p> </div>
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">Method Syntax</b> <br> If you have never used a query language like SQL before, but you have some C# experience, then you might find the method syntax easier to read</p><p>uses extension methods included in the Enumerable or Queryable static class, similar to how you would call the extension method of any class.</p><p>Method syntax comprises of extension methods and Lambda expression. The extension method Where() is defined in the Enumerable class</p></div>
+						
+					</div>
+					<a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq" style="font-size: 24px;">Query Syntax and Method Syntax in LINQ (C#)</a>
 				</section>
 				<section data-background="#eee">
-					<h3>C# Inheritance</h3>
+				    <h3>What's Needed for a Linq Query</h3>
+				    <ol>
+						<li>The <strong>IEnumerable Interface</strong> - utilizing properties and methods from Interface</li>
+						<li>A <strong>dataset/datasource</strong> - <code><em>"from acct in accounts"</em></code></li>
+						<li>The <strong>formated query</strong> - <code><em>"where acct.acctBalance > 8000.00"</em></code></li>
+						<li>The <strong>Execution of the query</strong> - <code><em>"Iterating over data using foreach"</em></code></li>
+				    </ol>
+				</section>
+				<section data-background="#fff">
+				    
+				    <p style="font-size: 32px;"><strong>Lambda Expressions</strong>is an anonymous function that you can use to create delegates or expression tree types.</p>
+				     <br>
+				     <p style="font-size: 32px;">By using <strong>lambda expressions</strong>, you can write local functions that can be passed as arguments or returned as the value of function calls</p>
 
-					<div id="flexcontain">
-						<pre>
+				     <pre>
 							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
-								
-						        public static IEnumerable&lt;Account&gt; getHighAccounts(List&lt;Account&gt; accounts)
-						        {
-						
-						            var highAccounts =  //Query name
-						                from acct in accounts //Data set
-						                where acct.acctBalance > 8000.0  //formatted query
-						                orderby acct.lname;
-						                
-						            return highAccounts;
-						        }
-						        
-						        
-						        //Processing or Iterating through a Query using foreach loop.
-						        foreach (var acct in highAccounts)
-					            {
-					                Console.WriteLine($"First Name: {acct.fname}  Last Name: {acct.lname}  
-					                Account Balance: {acct.acctBalance} ");
-					            }
+
+            List&lt;string&gt; candyList = new List&lt;string&gt;(){
+            
+                "Snickers", "Twix", "Mars", "Skittles", "Starburst", "Sour Patch Kids",
+                "Big Red", "Winter fresh", "Trident"
+            };
+
+            //Three examples of using Lambda Expressions
+            candyList.ForEach(x => Console.WriteLine(x));  //Example outputing items within list
+
 
 
 							</code>
 						</pre>
-					</div>
+				</section>
+				<section data-background="#fff">
+					<h4>Example using Query and Method Syntax</h4>
+					
+						<pre>
+							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+								
+class Program
+    {
+        static void Main(string[] args)
+        {
+            //Two dimensional array
+            double[,] price = {
+                                 {350, 390, 435},
+                                 {400, 440, 480},
+                                 {475, 530, 575}
+                              };
+
+            string[,] selection = {
+                                     {"Snickers", "Twix", "Mars"},
+                                     {"Skittles", "Starburst", "Sour Patch Kids"},
+                                     {"Big Red", "Winter fresh", "Trident"}
+                                  };
+            List&lt;Candy&gt; candyList = new List&lt;Candy&gt;();
+            //LINQ Query Syntax to select all candies greater than 450 using query syntax
+            var candyOverQuery = from candy in candyList
+                             where candy.price > 450
+                             orderby candy.name
+                             select candy;
+
+
+            //LINQ Query syntax to select all candies greater than 450 using method syntax
+            var candyOverMethod = candyList.Where&lt;Candy&gt;(x => x.price > 450).Select(x => x.name).ToArray();
+
+            //Iterate through the multi-Array and populate the list
+            for (var i = 0; i < 3; i++)
+            {
+                for (var x = 0; x < 3; x++)
+                {
+                    Candy aCandy = new Candy(selection[i, x], price[i, x]);
+                    candyList.Add(aCandy);
+                    Console.WriteLine("{0} goes for {1}", selection[i, x], price[i, x].ToString("c"));
+                }
+            }
+            
+            //Decrement through the list and find the object with value "Snickers" for the name property
+            for(var i = candyList.Count -1; i >= 0; i--)
+            {
+                if (candyList[i].name.Contains("Snickers"))
+                {
+                    candyList.RemoveAt(i);    
+                }     
+            }
+            //Output the list using lambda Expression
+            candyList.ForEach(x => Console.WriteLine(x.ToString()));
+        }
+    }
+    public class Candy
+    {
+        public string name { get; set; }
+        public double price { get; set; }
+
+        public Candy(string name, double price)
+        {
+            this.name = name;
+            this.price = price;
+        }
+
+        public override string ToString()
+        {
+            return String.Format("The name of the candy is " + name + " the price for this candy " + price);
+        }
+
+    }
+
+
+							</code>
+						</pre>
+
+				</section>
+				<section data-background="#fff">
+					<h4>Query and Method Syntax Activity</h4>
+				    <p>Using the program on the previous slide - write a Linq query using query and method syntax</p>
+				    <br>
+				    <ol style="font-size: 26px;">
+						<li>Provide both queries for candies that cost between 400 and 500.  Order the candy alpabetically.</li>
+						<li>Provide both queries for candies that cost more than 415 and start with the letter 'S'</li>
+
+				    </ol>
+				</section>
+				<section data-background="#eee">
+				    <h2>References</h2>
+				    <ul style="font-size: 22px;">
+						<li>https://csharp.net-tutorials.com/linq/linq-query-syntax-vs-method-syntax/</li>
+						<li>https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods</li>
+						<li>https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq</li>
+				    	<li>https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions</li>
+				    </ul>
 				</section>
 				
 			</div>
