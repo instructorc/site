@@ -885,15 +885,7 @@ class Program
                                      {"Big Red", "Winter fresh", "Trident"}
                                   };
             List&lt;Candy&gt; candyList = new List&lt;Candy&gt;();
-            //LINQ Query Syntax to select all candies greater than 450 using query syntax
-            var candyOverQuery = from candy in candyList
-                             where candy.price > 450
-                             orderby candy.name
-                             select candy;
 
-
-            //LINQ Query syntax to select all candies greater than 450 using method syntax
-            var candyOverMethod = candyList.Where&lt;Candy&gt;(x => x.price > 450).Select(x => x.name).ToArray();
 
             //Iterate through the multi-Array and populate the list
             for (var i = 0; i < 3; i++)
@@ -905,6 +897,21 @@ class Program
                     Console.WriteLine("{0} goes for {1}", selection[i, x], price[i, x].ToString("c"));
                 }
             }
+            
+            //LINQ Query Syntax to select all candies greater than 450 using query syntax
+            IEnumerable&lt;Candy&gt; candyOverQuery = from candy in candyList
+                                 where candy.price > 450
+                                 orderby candy.name
+                                 select candy;
+                                 
+
+
+            //LINQ Query syntax to select all candies greater than 450 using method syntax
+            var candyOverMethod = candyList.Where&lt;Candy&gt;(x => x.price > 450).Select(x => x).ToList();
+
+           
+
+            candyOverQuery.ToList&lt;Candy&gt;().ForEach(x => Console.WriteLine(x.ToString()));
             
             //Decrement through the list and find the object with value "Snickers" for the name property
             for(var i = candyList.Count -1; i >= 0; i--)
