@@ -973,7 +973,7 @@ class Program
 						<pre>
 							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
 								
-class Program
+    class Program
     {
         static void Main(string[] args)
         {
@@ -982,7 +982,7 @@ class Program
 
             string[,] selection = {{"Snickers", "Twix", "Mars"},{"Skittles", "Mars", "Sour Patch Kids"},{"Mars", "Mars", "Trident"}};
 
-            List&lt;Candy&gt; candyList = new List&lt;Candy&gt;();
+            List<Candy> candyList = new List<Candy>();
             //Iterate through the multi-Array and populate the list
             for (var i = 0; i < 3; i++)
             {
@@ -995,19 +995,19 @@ class Program
             }
             //LINQ Query Syntax to select all candies greater than 450 using query syntax
             var candyOverQuery = from candy in candyList
-                                 
                                  group candy by candy.name into candyGroup
-                                 select new { aGroup = candyGroup.Key, Count = candyGroup.Count() };
-
+                                 select new { aGroup = candyGroup.Key, Count = candyGroup.Count() }; //Creates new Object instance
+    
+          //Iterate through each instance and output candy group along with count
           foreach(var i in candyOverQuery)
             {
                 Console.WriteLine($"Group { i.aGroup} and Count is {i.Count}");
             }
             //LINQ Query syntax to select all candies greater than 415 and starts with 'S' and order
-            var newQueriedList = candyList.Where&lt;Candy&gt;(x => x.price > 415).Where&lt;Candy&gt;(x=>x.name.StartsWith('S')).Select(x => x).OrderBy(x=>x.name).ToList();
+            var newQueriedList = candyList.Where<Candy>(x => x.price > 415).Where<Candy>(x=>x.name.StartsWith('S')).Select(x => x).OrderBy(x=>x.name).ToList();
 
             //LINQ Query syntax to select all candies greater than 450 using method syntax
-            var candyOverMethod = candyList.Where&lt;Candy&gt;(x => x.price > 450).Select(x => x).OrderBy(x=>x.name).ToList();
+            var candyOverMethod = candyList.Where<Candy>(x => x.price > 450).Select(x => x).OrderBy(x=>x.name).ToList();
             //Outputing the LINQ Method Syntax
             //candyOverMethod.ForEach(x => Console.WriteLine(x.ToString()));
 
