@@ -47,23 +47,21 @@
 				<section data-background="#eee">
 				    <h3>Learning Agenda</h3>
 				    <ul style="font-size: 28px;">
-						<li>Desktop Programming</li>
-
-						<li>Understanding XAML</li>
+						<li>Desktop Programming with C#</li>
+						<li>Understanding WPF</li>
 					    <ul>
-							<li> Separation of Concerns </li>				        	
-							<li>Namespaces </li>
-							<li>Code-Behind Files</li>
+							<li>Separation of Concerns | XAML | Code-Behind Files </li>				        	
+							<li>WPF Infrastructure</li>
+							<li>Tools</li>
 						</ul>
 
 						<li>WPF Controls</li>
 					    <ul>
 							<li>Properties</li>				        	
-
 						</ul>
 						<li>Events</li>
 						<ul>
-							<li>Routed Events | Routed Commands</li>				        	
+							<li> Understanding Event Methods | Routed Events | Routed Commands</li>				        	
 		
 						</ul>
 						<li>Layout Panels</li>
@@ -87,15 +85,52 @@
 						</ul>
 				    </ul>
 				</section>
-				<section data-background="#eee">
-					<h3>Desktop Programming using c#</h3>
+				<section data-background="images/wpf/desktop_app.jpg">
+					<h3 style="text-shadow: 4px 7px 10px #333;">Types of Desktop Applications with C#</h3>
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 22px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">c#</b> <br> is a simple, modern, object-oriented, and type-safe programming language </p> <p> Developed as an object-oriented and component-oriented language</p> <p>Modeled after the C++ programming language</p></div>
-						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">.NET Core</b> <br> is a cross-platform .NET implementation for websites, servers, and console apps on Windows, Linux, and macOS.</p><p><a href="https://docs.microsoft.com/en-us/dotnet/core/">Dot.net core Guide</a></p><p>Includes easy-to-use command-line tools that can be used for local development and in continuous-integration scenarios.</p></div>
-						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">.NET Framework</b> <br> A programming infrastructure created by Microsoft for building, deploying, and running applications and services that use .NET technologies, such as desktop applications and Web services.</p></div>
+						<div class="box red" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: rgba(0,0,0,.6); color: #333; font-weight: 900;"><p><a href="https://docs.microsoft.com/en-us/windows/uwp/" style="color: white;">Universal Windows Platform(UWP)</a></p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: rgba(0,0,0,.6); color: #333; font-weight: 900;"><p><a href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/getting-started/introduction-to-wpf-in-vs" style="color: white;">Windows Presentation Foundation (WFP)</a></p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: rgba(0,0,0,.6); color: #333; font-weight: 900;"><p><a href="https://docs.microsoft.com/en-us/dotnet/framework/winforms/" style="color: white;">WinForms</a></p></div>
+
 					</div>
+					<p style="text-shadow: 4px 7px 10px #333;">Microsoft based desktop applications - Click on the links above to discover more.</p> 
 				</section>
 				<section data-background="#eee">
+					<h3>Desktop Programming using WPF</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">XAML</b> <br>a language that uses XML syntax and enables controls to be added to a user interface in a declarative, hierarchical way. </p> <p>You can add controls in the form of XML elements, and specify control properties with XML attributes.</p> <p>XAML is designed with today's powerful graphic's cards in mind, and as such it enables you to use all </p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">Seperation of Concern</b> <br> XAML can be rendered without any code.  The interaction logic (C# code) is placed in a different file than you place the GUI code. </p><p></p><p>The UI is not generated using c# code but rather XML.  The UI can developed totally separate for the c# code.</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">Code-Behind Files</b> <br>C# files that are dynamically linked to the XAML files. </p><p> The application's logic layer</p></div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h4>Conneting Presentation and Code-Behind files</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;"><b>Interactive program</b></li>
+								<ul>
+									<li style="font-size: 20px;">The root element in a XAML file can have an x:Class attribute that specifies how to find the code-behind associated with the class being defined in the markup.</li>
+									
+								</ul>
+								<li style="font-size: 26px;"><code>ReadLine() method</code></li>
+								<ul>
+									<li style="font-size: 20px;">Accepts all of the characters entered by a user input from the keyboard until the user presses Enter</li>
+									<li style="font-size: 20px;">Characters can be assigned to a string</li>
+									<li style="font-size: 20px;">Must use a conversion method to convert the input string to the proper type</li>
+								</ul>
+								
+
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/intro/convert_program.PNG" alt="simple convert program">
+						</div>
+					</div>
+
+				</section>
+				<!--<section data-background="#eee">
 
 					<h3>The .NET Framework contains three major parts </h3>
 					<ul>	
@@ -396,33 +431,7 @@
 						</pre>
 					</div>
 				</section>
-				<section data-background="#fff">
-					<h4>Accepting Console Input</h4>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<ul>	
-								<li style="font-size: 26px;"><b>Interactive program</b></li>
-								<ul>
-									<li style="font-size: 20px;">A Program that allows user input</li>
-									
-								</ul>
-								<li style="font-size: 26px;"><code>ReadLine() method</code></li>
-								<ul>
-									<li style="font-size: 20px;">Accepts all of the characters entered by a user input from the keyboard until the user presses Enter</li>
-									<li style="font-size: 20px;">Characters can be assigned to a string</li>
-									<li style="font-size: 20px;">Must use a conversion method to convert the input string to the proper type</li>
-								</ul>
-								
 
-							</ul>
-						</div>
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<img src="images/intro/convert_program.PNG" alt="simple convert program">
-						</div>
-					</div>
-
-				</section>
 				<section data-background="#fff">
 					<h4>Convert Class Methods</h4>
 					<img src="images/intro/converting_strings.PNG" width="570" alt="converting strings diagram">
@@ -1019,11 +1028,9 @@ class Program
 				<section data-background="#eee">
 				    <h2>References</h2>
 				    <ul style="font-size: 28px;">
-						<li>https://stackify.com/net-core-vs-net-framework/</li>
-						<li>https://blogs.msdn.microsoft.com/cesardelatorre/2016/06/27/net-core-1-0-net-framework-xamarin-the-whatand-when-to-use-it/</li>
-						<li>https://docs.microsoft.com/en-us/dotnet/api/system?view=netframework-4.7.2</li>
-				   		<li>https://www.c-sharpcorner.com/article/encapsulation-in-C-Sharp/</li>
-				   		<li>https://www.techwalla.com/articles/the-advantages-of-modularization-in-programming</li>
+						<li>https://wpf.2000things.com/tag/code-behind/</li>
+
+				   		<li>https://michaelscodingspot.com/9-must-decisions-in-desktop-application-development-for-windows/</li>
 
 				    </ul>
 				</section>
