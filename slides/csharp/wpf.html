@@ -441,7 +441,7 @@ Click="Button_Click"/&gt;
 					<p>Data binding allows you to <strong>connect properties</strong> of controls to the value of other controls.  You can also define resources and use code defined in classes outside your views as a data source for both values of properties and as content for controls.</p>
 
 				</section>
-				<section data-background="#eee">
+				<section data-background="White">
 					<h3>4 - Components of Data Binding</h3>
 					<p>Data binding is a way of declaratively connecting controls with data</p>
 					<div id="flexcontain">
@@ -450,6 +450,16 @@ Click="Button_Click"/&gt;
 						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 200px; flex: 1 0 100px;"><p><b style="font-size: 26px;">Binding Source</b> <br>specifies the object used by the binding</p></div>
 						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 200px; flex: 1 0 100px;"><p><b style="font-size: 26px;">Source Property</b> <br>specifies which property holds the data</p></div>
 					</div>
+						<pre>
+							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+<!--Binding Target is the Label, The Target Property is the Background, 
+The Binding Source is the Element name, The Source Property is the Path-->
+&lt;Label x:Name="output_lb" Content="Hello!!" 
+		Background ="{Binding ElementName=submit_btn, Path=Background}"/&gt;
+
+&lt;Button x:Name="submit_btn" Background="Blue"/&gt;
+							</code>
+						</pre>
 				</section>
 				<section data-background="#fff">
 					<h4>Binding to Local Objects</h4>
