@@ -11,6 +11,17 @@
     
     
     }
+
+.reveal{
+    font-family: 'Bitter', serif;
+    color: #636465;
+    
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6{
+       font-family: 'Bitter', serif;
+       color: #636465;
+}
 .box_two{
     
         flex:  1 0 400px;
