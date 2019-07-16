@@ -31,89 +31,120 @@
 				    <img src="images/structures/logiccomic.png" width="400" alt="web tooling logo">
 				    <h3>Instructor: Chris Fulton</h3>
 				</section>
-				<section data-background="#eee" style="top: 0;">
-				    <h2>Learning Objectives</h2>
-				    <ul>
-				        <li>The Three Basic Structures - Sequence, Selection and Loop</li>
-				        <ul>
-				        	<li style="font-size: .6em">Sequence</li>
-				        	<li style="font-size: .6em">Selection</li>
-				        	<li style="font-size: .6em">Looping</li>
-				        </ul>
+				<section data-background="images/structures/bridge.jpg" style="top: 0; color: white;">
+				    <h2 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">Learning Objectives</h2>
+				  
+				        <h3 style=" font-weight: 900;  background-color: rgba(0,0,0, .6); padding: 3px;">Understanding the three Basic Structures - Sequence, Selection and Loop</h3>
+
 
                         <!--<li>Git/Github</li>
                         <li>CI/CD</li>
                         <li>Hosting</li>-->
                         
 
-				    </ul>
+				   
+				</section>
+
+				<section data-background="black">
+					<img src="images/structures/understand.jpg"  style="box-shadow: none;" alt="ide and text editor logos"/>
+				</section>
+
+				<section data-background="images/structures/tools.jpg">
+					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">Why Structure?</h1>
 				</section>
 				<section data-background="#fff">
-					<h3>Development Tools</h3>
-					<p> Text Editors    &#10022;    Integrated Dev. Environments</p>
+					<h3>The Three Structures</h3>
+					<p> Sequence   &#10022;    Selection    &#10022;  Looping</p>
 					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
+						<div class="box_two" style="margin: 10px;">
+					        <ul>
+					        	<li><strong>Sequence</strong></li>
+					        	<ul>
+					        		<li>Perform actions or tasks in order</li>
+					        		<li>No branching or skipping any task</li>
+					        		<li>Input/Output, Calculations, assignment</li>
+					        	</ul>
+					        	<li><strong>Selection</strong></li>
+					        	<ul>
+					        		<li>Ask a question, take one of two actions</li>
+					        		<li>Often called if-then-else</li>
+					        		<li>Dual-alternativeifsor single-alternativeifs</li>
+					        	</ul>
+					        	<li><strong>Looping</strong></li>
+					        	<ul>
+					        		<li>Repeat actions while a condition remains true</li>
+					        	</ul>
+					        </ul>
+						</div>
+	
+					</div>
+
+					
+				</section>
+				<section data-background="#fff">
+					<h3>Sequence</h3>
+					<p style="font-size: 24px;"> Input/Output   &#10022;    Calculation  &#10022;  Declaring/Initializing Variables</p>
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px;">
 							<ul>	
-								<li style="font-size: 20px;"><b>Text Editor</b> - a software program that allows users to input and edit text.  Allows you to create and edit a range of programming language files </li><br>
-								<li style="font-size: 20px;"><b>Integrated Development Environment (IDE)</b> - a software suite that consolidates the basic tools developers need to write and test software. Typically, an IDE contains a code editor, a compiler or interpreter and a debugger that the developer accesses through a single graphical user interface (GUI).</li>	   
+								<li><b>Do</b> one process</li><br>
+								<li><b>Do</b> two process</li>	
+								<li><b>Do</b> three process</li>
 							</ul>
 						</div>
 						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<img src="images/webtool/texteditors.png" width="500" style="box-shadow: none;" alt="ide and text editor logos"/>
+							<img src="images/structures/Sequence.PNG" alt="picture of absolute versus relative file structure">
 						</div>
 					</div>
 
 					
 				</section>
 				<section data-background="#fff">
-					<h3>Development Tools</h3>
-					<p style="font-size: 24px;"> Local Development    &#10022;    Cloud Development</p>
+					<h3>Selection (Decison Making)</h3>
+					<p style="font-size: 28px;"> Dual Alternatives  &#10022;    Single Alternatives  </p>
 					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
+						<div class="box_two" style="margin: 10px;">
 							<ul>	
-								<li style="font-size: 20px;"><b>Local Development</b> - hosting your site’s files locally (on your computer) rather than externally (like on a hosting company’s servers). </li>
+								<li><b>Decison Making Time</b> - the juncture in your program where you go right or left</li><br>
 							</ul>
+							<code style="font-size: 28px;">
+								<b>IF</b> some condition is true <b>THEN</b><br>
+								<b>DO</b> one process
+								<b>ELSE</b><br>
+								<b>DO</b> the other process<br>
+								<b>ENDIF</b>
+							</code>
 						</div>
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<ul>	
-								<li style="font-size: 20px;"><b>Cloud Development</b> - a web-based integrated development platform where your files are hosted externally.  Web-based development examples include Cloud9(now apart of Amazon), codeenvy, shiftedit, Orion, codeeverywhere.</li>	   
-							</ul>
-						</div>
-						
-					</div>
-				</section>
-				<section data-background="#fff">
-				    
-				    <img src="images/webtool/devenv.png"  alt="Picture of moving from local to development environment">
-				    
-				</section>
-				<section data-background="#fff">
-					<h3>Folder Paths</h3>
-					<p> Absolute Paths   &#10022;    Relative Paths</p>
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<ul>	
-								<li style="font-size: 20px;"><b>Absolute Paths</b> - a path that starts from the root folder and processes down the entire folder structure </li><br>
-								<li style="font-size: 20px;"><b>Relative Paths</b> - a path is expressed relative to the location of the current document.</li>	
-								<li style="font-size: 20px;"><b>File Path Location:</b><br> <b>/ </b> - means the root of the current drive <br> <b>./</b> - means the current directory <br> <b>../</b> - means the parent of the current directory</li>
-							</ul>
-						</div>
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<img src="images/webtool/relativeabsolute.jpg" alt="picture of absolute versus relative file structure">
+						<div class="box_two" style=" margin: 10px;">
+							<img src="images/structures/Selection.PNG" alt="">
 						</div>
 					</div>
 
 					
 				</section>
-				<section data-background="#eee">
-				    <h2>Setting a Directory Structure</h2>
-				    <ul>
-				        <li>You build a site in a local/cloud environment but typically host it on a different computer</li>
-                        <li>The files for your web site must be transferred from the development environment to the hosting computer</li>   
-                        <li>Your file structure must be transferable</li>
-                        <li>Use <b>relative paths</b> to indicate file locations</li>
-               
-				    </ul>
+				<section data-background="#fff">
+					<h3>Looping Structure </h3>
+					<p style="font-size: 28px;"> Iterations  &#10022;    Repetition  </p>
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px;">
+							<ul>	
+								<li><b>Do something repetitively</b> - Do this until I tell you to stop</li>
+								<li>Good for counting and iterating through list</li>
+							</ul>
+							<!--<code style="font-size: 24px;">
+								<p><b>IF</b> some condition is true <b>THEN</b></p>
+								&nbsp;&nbsp;<p><b>DO</b> one process</p>
+								<p><b>ELSE</b></p>
+								&nbsp;&nbsp;<p><b>DO</b> the other process</p>
+								<p><b>ENDIF</b></p>
+							</code>-->
+						</div>
+						<div class="box_two" style=" margin: 10px;">
+							<img src="images/structures/looping.PNG" alt="">
+						</div>
+					</div>
+
+					
 				</section>
 
 				<section data-background="#fff">
