@@ -260,14 +260,13 @@
 					<div id="flexcontain">
 						<div class="box_two" style="margin: 10px;">
 							<pre style="box-shadow: none;">
-								<code style="font-size: 16px;" class="codebox code-example__codebox"  data-trim contenteditable>
+								<code style="font-size: 14px;" class="codebox code-example__codebox"  data-trim contenteditable>
 									int numOne = 2; int numTwo = 5;
 									
 									if(numOne >= numTwo){
-									
+									   Console.WriteLine("2 is greater than 5");
 									}else{
-									
-									
+									   Console.WriteLine("2 is not greater than 5");
 									}
 	
 								</code>
@@ -276,11 +275,11 @@
 						</div>
 						<div class="box_two" style=" margin: 10px;">
 							<pre style="box-shadow: none;">
-								<code style="font-size: 16px;" class="codebox code-example__codebox"  data-trim contenteditable>
+								<code style="font-size: 14px;" class="codebox code-example__codebox"  data-trim contenteditable>
 									int numOne = 2; int numTwo = 5;
 									
-									if(numOne >= numTwo){
-									
+									if(numOne <= numTwo){
+								       Console.WriteLine("5 is greater than 2");
 									}
 	
 								</code>
@@ -341,7 +340,7 @@
 
 						</div>-->
 						<div class="box_two" style=" margin: 10px;">
-							<img src="images/structures/and_logic.png" width="600" alt="and logic diagram">
+							<img src="images/structures/and_logic.png" width="500" alt="and logic diagram">
 						</div>
 					</div>
 
@@ -403,6 +402,77 @@
 					<p style="font-size: 22px; margin-bottom: -2px;">Complete the following activity using the diagram below</p>
 					<img src="images/structures/activity_three_1.png" width="550" alt="activity three">
 					<img src="images/structures/activity_three_2.png" style="margin-top: -10px;" width="550" alt="activity three cropping">
+				</section>
+				<section data-background="images/structures/range_bg.jpg">
+					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">Selections within Range</h1>
+				</section>
+				<section data-background="#fff">
+				
+					<p><b>Range Check</b> - Compare a variable to a series of values between limits</p>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 28px; margin: 10px; height: 235px; background-color: #2d4650;"><p>Use the lowest or highest value in each range</p></div>
+						<div class="box blue" style="font-size: 28px; margin: 10px; height: 235px; background-color: #2d4650;"><p>Adjust the question logic when using highest versus lowest values</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; height: 235px; background-color: #2d4650;"><p>Consider if end points of the range should be included <br><br> Yes: use >=or <= <br><br> No: use < or ></p></div>
+						<div class="box yellow" style="font-size: 22px; margin: 10px; background-color: #ffffff;">
+							<pre style="box-shadow: none;">
+								<code style="font-size: 18px;" class="codebox code-example__codebox"  data-trim contenteditable>
+										int LOWER_DRIVER_AGE = 16, UPPER_DRIVER_AGE = 120, age = 22; 
+										
+										
+										if(age >= LOWER_DRIVER_AGE && age <= UPPER_DRIVER_AGE){
+										
+									      Console.WriteLine("Able to rent car for Harvey Car Rental");
+									       
+										}else{
+										
+										  Console.WriteLine("Not able to rent car from Harvey Car Rental");
+										}
+									 
+									 
+	
+								</code>
+							</pre>
+						</div>
+
+					</div>
+				
+				</section>
+				<section data-background="#fff">
+					<h3>Selections within ranges</h3>
+				
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px; max-width: 270px;" >
+							<img src="images/structures/range_chart.png" alt="decision range chart diagram">
+						
+						</div>
+						<div class="box_two" style=" margin: 10px;">
+							<img src="images/structures/range_logic_code.png"  alt="smultiple decision structure diagram">
+						
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Common Errors When Using Range Checks</h3>
+					<ul>
+						<li>Avoid a <b>dead</b> or <b>unreachable path</b>.</li>
+						<ul>
+							<li>Don't check for values that can never occur</li>
+							<li>Requires some prior knowledge of the data</li>
+						</ul>
+						<li>Never ask a question if there is only one possible outcome</li>
+						<li>Avoid asking a question when the logic has already determined the outcome</li>
+						<li>Avoid testing the same range limit multiple times</li>
+					</ul>
+		
+				</section>
+				<section data-background="#fff">
+					<h3>In-Class Activity 3</h3>
+					<p style="font-size: 28px;">MetLife Insurance company wants several lists of salesperson data. Design the flowchart and write pseudocode for the following:</p>
+					<ol>
+						<li style="font-size: 20px;">A program that accepts one salesperson’s <b>ID number</b> and <b>number of polices sold</b> in the last month, and displays the data only if the salesperson is a high performer –a person who sells more than 25 policies in the month.</li>
+						<li style="font-size: 20px;">A program that accepts salesperson data <b>continuously</b> until a sentinel value is entered and displays a list of high performers.</li>
+						<li style="font-size: 20px;">A program that accepts salesperson data <b>continuously</b> until a sentinel value is entered and displays a list of salespeople who sold <b>between 5 and 10 policies</b> in the month.</li>
+					</ol>
 				</section>
 				<!--<section data-background="#fff">
 					<h3>Single Folder Structure</h3>
