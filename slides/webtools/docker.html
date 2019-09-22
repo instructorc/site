@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="description" content="Instructor Fulton's Introduction to Continuous Integratio and Deployment">
+		<meta name="author" content="C. Fulton">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<title>Introduction to Docker</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/dope.css">
+		<link rel="stylesheet" href="css/mystyle.css">
+		<link rel="icon" sizes="32x32" type="image/png" href="images/node/favicon.png">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="css/zenburn.css">
+		<!-- Google Font -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<style>
+			ul li{
+				font-size: 80%;
+			}
+			section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
+			    color: #2d4650;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="white">
+				    <h3>Introduction to Docker</h3>
+				    <img src="images/docker/docker_graphic.png" width="520" style="box-shadow: none; border: none;"alt="docker graphic">
+				    <h3>Instructor: Chris Fulton</h3>
+				</section>
+				<section data-background="#eee">
+				    <h3>Learning Objectives</h3>
+				    <ul style="font-size: 28px;">
+						<li>Understanding what is User Experience?</li>
+						<ul>
+							<li>UX vs. UI</li>
+							<li>UX components</li>
+						</ul>
+						<li>User Research</li>
+						<ul>
+							<li>Observations | Interviews | Task Analysis | Focus Groups | Surveys | Web Analytics</li>
+						</ul>
+				        <li>Understanding Information Architecture and navigation</li>
+				        <ul>
+							<li>Identifying Various Content Strategies</li>
+							<li>Tools and Techniques - Card Sorting | Use Cases,User Stories, User Personas</li>
+						</ul>
+						<li>Usability</li>
+				        <ul>
+							<li>Usability Testing | A/B testing | Site Peformance testing: tools, server/hosting | CDN</li>
+							<li>Compatibility Testing - Visual Factors | Browsers | device | print</li>
+							<!--<li>Automated testing</li>-->
+						</ul>
+						<li>Accessibility</li>
+						<ul>
+							<li>Standards - Section 508 | WCAG | ISO 9660 | Aria Roles</li>
+						</ul>
+						<li>Wireframes and Prototyping</li>
+                       	<ul>
+							<li>Low-Fidelity | High-Fidelity | Tools </li>
+						</ul>
+				    </ul>
+				</section>
+				<section data-background="images/ux/uxvsdesing.png" style="background-size: 80%;">
+					<h3 style="background-color:rgba(0,0,0,0.7);">What is User Experience(UX)?</h3>
+					<p style="background-color:rgba(0,0,0,0.7);" class="fragment"> User experience focuses on having a deep understanding of users, what they need, what they value, their abilities, and also their limitations. UX best practices promote improving the quality of the user’s interaction with and perceptions of your product and any related services.</p>
+				</section>
+				<section data-background="#c8c8c8">
+						<h4>UX vs. UI</h4>
+						<img src="images/ux/ux_vs_ui.jpg" width="800" alt="The difference between user experience and user interface design">
+				</section>
+				<section data-background="#fff">
+					<img src="images/ux/ui_ux.jpg" width="670" style="box-shadow: none; border: none;"alt="user experience slide picture">
+				</section>
+				<section data-background="#eee">
+						<h4>The Echo Silver</h4>
+						<iframe width="1000" height="585" src="https://www.youtube.com/embed/YvT_gqs5ETk?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</section>
+
+				<section data-background="#fff">
+					<img src="images/ux/uxdesign.PNG" width="820" style="box-shadow: none; border: none;"alt="ux design stages"><br>
+					<q> User experience is more than data collection.  It's about understanding the motivation behind user needs and striking a strategic balance between expectations and business needs.</q>
+				</section>
+				<section data-background="#fff">
+						<h4>UX Honeycomb</h4>
+						<img src="images/ux/honeycomb.jpg" width="520" style="box-shadow: none; border: none;"alt="usability honeycomb">
+				</section>
+		
+				<section data-background="#fff">
+					<h4 style="color: black;">UX Desired Outcome</h4>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Useful</b> <br> Your content should be original and fulfill a need </p></div>
+						<div class="box blue" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Usable</b> <br> Site must be easy to use.</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Desirable</b> <br> Image, identity, brand, and other design elements are used to evoke emotion and appreciation</p></div>
+						<div class="box yellow" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Findable</b> <br> Content needs to be navigable and locatable onsite and offsite</p></div>
+						<div class="box orange" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Accessible</b> <br> Content needs to be accessible to people with disabilities</p></div>
+						<div class="box aquamarine" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Credible</b> <br> Users must trust and believe what you tell them</p></div>
+					</div>
+
+				</section>
+				<section data-background="#fff">
+					<h3>Activity </h3>
+					
+					<div id="flexcontain">
+
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ol>	
+								<li style="font-size: 30px;">Conduct research on User experience job descriptions and find common commonalities between the descriptions</li>
+	   							<li style="font-size: 30px;">Make a list of of requirements, skills and tools listed for the job descriptions you researched.</li>
+	   							
+							</ol>
+							
+						</div>
+						<h5>Job board sites: Dice.com, indeed.com, simplyhired.com, etc.</h5>
+					</div>
+				</section>
+				<section data-background="images/ux/user_experience_bg.jpg">
+					<h2 style="color: black;">Why User Research?</h2>
+					
+				</section>
+				<section data-background="white">
+					<h4 style="color: black;">Why User research?</h4>
+					<iframe width="760" height="515" src="https://www.youtube.com/embed/1hbnPCdM4ls?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</section>
+				<section data-background="#fff">
+					<h3>User Research</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #216869;"><p><b style="font-size: 30px;">Observations</b> <br> Give people tasks or instructions and watch them use your design, without help. </p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #49A078;"><p><b style="font-size: 30px;">Interviews</b> <br> Ask prospective users questions about their expectations of your design.</p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; background-color: #9CC5A1;"><p><b style="font-size: 30px;">Task Analysis</b> <br>   learning about user goals, and understand the tasks users will perform on your site.</p></div>
+						<div class="box orange" style="font-size: 24px; margin: 10px;"><p><b style="font-size: 30px;">Focus Groups</b> <br> a moderated discussion where you can learn about users’ attitudes, beliefs, desires, and reactions to concepts.</p></div>
+						<div class="box aquamarine" style="font-size: 24px; margin: 10px; background-color: #333;"><p><b style="font-size: 30px;">Surveys</b> <br>  a structured questionnaire that your target audience completes over the internet generally through a filling out a form</p></div>
+					</div>
+					<a href="https://www.usability.gov/what-and-why/user-research.html" style="font-size: .4em;">Click here for more information about user research</a> </a>
+				</section>
+				<section data-background="#fff">
+					<a href="https://www.nngroup.com/articles/ux-research-cheat-sheet/" style="font-size: 20px;"><h3>Nielsen Norman Group Research</h3></a>
+					<img src="images/ux/frequentuxmethods.png" width="550" style="box-shadow: none; border: none;"alt="Frequent UX method graphic">
+					
+				</section>
+				<section data-background="#eee">
+						<h4>When to use which UX research method</h4>
+						<iframe width="760" height="515" src="https://www.youtube.com/embed/OtUWbsvCujM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</section>
+				<section data-background="images/ux/ia_bg.jpg">
+				    <h1 style="color: black;">Information Architecture (IA)</h1>
+				   
+				</section>
+				<section data-background="white">
+					<h4 style="color: black;">Understanding Navigation</h4>
+					<iframe width="760" height="515" src="https://www.youtube.com/embed/zJLQdMmYWFQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</section>
+				<section data-background="#fff">
+					
+					<img src="images/ux/louisrosenfeld.gif" width="870" style="box-shadow: none; border: none;"alt="Information Architecture diagram">
+				</section>
+				<section data-background="#fff">
+					<h4 style="color: black;">Information Architecture and navigation considerations</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; color: black; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;">Information design is the most important factor in the success of your site</li>
+								<li style="font-size: 26px;">What do users want when they get to your site?</li>
+								<li style="font-size: 26px;">Anticipate and plan for user actions</li>
+			
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; color: black; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;">Do not make users navigate through too many layers of information</li>
+								<li style="font-size: 26px;">Follow the three clicks rule</li>
+								<li style="font-size: 26px;">Use consistent navigation</li>
+								<li style="font-size: 26px;">Provide direct links to your most popular pages</li>
+							</ul>
+						</div>
+					</div>
+
+				</section>
+				<section data-background="#eee">
+				    <h5>Navigation Considerations - Orient the User</h5>
+				    <p style="font-size: 28px;">Provide enough location information to let the user answer the following navigation questions:</p>
+				    <ul style="text-align: center; list-style-type: none; text-shadow: 1px 1px 5px #333;">
+						<li style="color: #82C09A;">Where am I?</li>
+						<li style="color: #8C001A;">Where can I go?</li>
+						<li style="color: #456990;">How did I get there?</li>
+						<li style="color: #636940;">How do I get back to where I started?</li>
+				
+				    </ul>
+				</section>
+				<section data-background="#fff">
+					<h3>Sample Website Architecture</h3>
+					<img src="images/ux/sitearchdiagram.gif" width="700" style="box-shadow: none; border: none;"alt="Sample Website Architecture Diagram">
+				</section>
+				<section data-background="#000">
+					<h3>Understanding Card Sorting</h3>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/6RhFN6cul3w?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</section>
+				<!--<section data-background="000">
+					<h3>Use Cases</h3>
+					<ul>
+						<li>Describes one specific interaction between the user and the software</li>
+						<li>The use cases are gathered from the clients requirements which defines the scope requirements.</li>
+						<li><a href="https://www.usability.gov/how-to-and-tools/methods/use-cases.html">Usability.gov - Explanation of Use cases</a></li>
+					</ul>
+					
+				</section>
+				<section data-background="000">
+					<h3>Example Use case</h3>
+					<img src="images/ux/use_case.PNG" alt="example of use case"/>
+					
+				</section>-->
+				<section data-background="white">
+					<h3>User Personas</h3>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<iframe width="760" height="515" src="https://www.youtube.com/embed/khLWLtxmMGM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<iframe width="760" height="515" src="https://www.youtube.com/embed/fal4Wylyt3M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					
+				</section>
+				<section data-background="#fff">
+					<h3> Sitemap Activity </h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+								<img src="images/ux/gatarode.png" width="600" style="box-shadow: none; border: none;"alt="Sample Website Architecture Diagram">
+							
+						</div>
+						
+							<ul>	
+								<li style="font-size: 26px;">Navigate to Gatorade.com and construct a sitemap based on the site's content using <a href="http://draw.io">Draw.io</a>.  Make sure to include the following within your sitemap.</li>
+	   							<ul>
+	   								<li style="font-size: 22px;">The site-maps key/legend that describes each shape represented in your sitemap.  Your key/legend should have a minimum of 3 different shapes.</li>
+	   								<li style="font-size: 22px;">The persistent global navigation which defines the page names and order of pages.</li>
+	   								<li style="font-size: 22px;">The page components or sub-pages that stem from your global navigation.</li>
+	   								<li style="font-size: 22px;">The static footer content that will be persistent on each page.</li>
+	   							</ul>
+	   							
+							</ul>
+							
+					
+
+					</div>
+				</section>
+				<section data-background="#fff">
+				    
+				    <img src="images/ux/ketchup.jpg" width="550" style="box-shadow: none; border: none;"alt="usability ketchup image">
+				    <h3 style="color: black; font-size: 2em;">Why Usability?</h3>
+				</section>
+				<section data-background="#eee">
+				    <iframe width="560" height="315" src="https://www.youtube.com/embed/lhQOx6OxA0E?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>	
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/Ml92QEqE-RQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				
+				</section>
+				<section data-background="#fff">
+				    <h3>Usability Components</h3>
+				    <img src="images/ux/Usability_Components.png" width="750" style="box-shadow: none; border: none;"alt="usability components">
+				    
+				</section>
+				<section data-background="#fff">
+					<img src="images/ux/uxdesign.PNG" width="820" style="box-shadow: none; border: none;"alt="ux design stages"><br>
+					<q> Usability refers to the ease of access and/or use of a product or website.</q>
+				</section>
+				<section data-background="#fff">
+					<h3>Website Usability</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<h4>Website usability considerations</h4>
+							<ul>	
+								<li style="font-size: 26px;">Speed, Uptime</li>
+								<li style="font-size: 26px;">Site errors - broken links</li>
+								<li style="font-size: 26px;">Visual Factors  </li>
+								<ul>
+									<li style="font-size: 22px;">Color Choice</li>
+									<li style="font-size: 22px;">Presentation of Content - https://www.webpagefx.com</li>
+									<li style="font-size: 22px;">Accessibility related maters</li>
+								</ul>
+								<li style="font-size: 26px;">Browser and device compatibility</li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+						<h4>A few tools</h4>
+							<ul>	
+								<li style="font-size: 26px;"><a href="https://tools.pingdom.com">Pingdom.com</a></li>
+								<li style="font-size: 26px;"><a href="http://Hotjar.com">Hotjar.com</a></li>
+								<li style="font-size: 26px;"><a href="https://fivesecondtest.com/">fivesecondtest.com</a></li>
+								<li style="font-size: 26px;"><a href="https://developers.google.com/speed/pagespeed/insights/">Google Page Speed Tool</a></li>
+								<li style="font-size: 26px;"><a href="https://fivesecondtest.com/">fivesecondtest.com</a></li>
+								<li style="font-size: 26px;"><a href="https://www.webpagetest.org/">Webpagetest.org</a></li>
+							<li style="font-size: 26px;"><a href="https://www.browserling.com/">browserling.com</a></li>
+							</ul>
+						</div>
+					</div>
+
+				</section>
+				<section data-background="images/ux/accessibilitypic.jpg">
+				    <h1>Accessibility</h1>
+				   
+				</section>
+				<section data-background="#eee">
+				   <h3>Introduction to Web Accessibility</h3>
+				   <iframe width="860" height="515" src="https://www.youtube.com/embed/20SHvU2PKsM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				
+				</section>
+				<section data-background="#fff">
+					<h3>Accessibility Principles</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #9AD1D4;"><p><b style="font-size: 30px;">Perceivable</b> <br>People can see the content or hear it </p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #80CED7;"><p><b style="font-size: 30px;">Operable</b> <br>people can typing or by voice </p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; background-color: #007EA7;"><p><b style="font-size: 30px;">Understandable information</b> <br>people get clear and simple language  </p></div>
+						<div class="box orange" style="font-size: 24px; margin: 10px; background-color: #003249;"><p><b style="font-size: 30px;">Robust content </b> <br>people can use different assistive technology</p></div>
+					
+					</div>
+					<a href="https://www.w3.org/WAI/fundamentals/accessibility-principles/" style="font-size: .4em;">Click here for more information about accessibility principles</a>
+				</section>
+				<section data-background="images/ux/wireframebg.jpg">
+				    <h1 style="background-color:rgba(0,0,0,0.7);">Wireframing and Prototyping</h1>
+				   
+				</section>
+				<section data-background="#eee">
+						<h4>Prototypes vs Wireframes</h4>
+						<iframe width="760" height="515" src="https://www.youtube.com/embed/miVcrftnhzM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</section>
+				<section data-background="#fff">
+					<img src="images/ux/uxdesign.PNG" width="820" style="box-shadow: none; border: none;"alt="ux design stages"><br>
+					<q> A wireframe is a two-dimensional illustration of a page’s interface that specifically focuses on space allocation and prioritization of content, functionalities available, and intended behaviors.</q>
+				</section>
+				<section data-background="#fff">
+					<h3>Benefits of wireframing</h3>
+					<div id="flexcontain">
+						<div class="box red" class="fragment" style="font-size: 24px; margin: 10px; background-color: #9CEC5B;"><p><b style="font-size: 30px;">Visualizing</b> <br> Visualize structure and formation of how content will be presented. </p></div>
+						<div class="box blue" class="fragment" style="font-size: 24px; margin: 10px; background-color: #4E6766;"><p><b style="font-size: 30px;">Error Prevention</b> <br> allows you to catch mistakes and issues that can occur</p></div>
+						<div class="box green" class="fragment" style="font-size: 24px; margin: 10px; background-color: #5AB1BB;"><p><b style="font-size: 30px;">Experimenation</b> <br>   allows for trying out more than one layout design.</p></div>
+						<div class="box orange" class="fragment" style="font-size: 24px; margin: 10px; background-color: #A5C882;"><p><b style="font-size: 30px;">Prioritizing</b> <br> determination of how much space to allocate to a given item and where that item is located.</p></div>
+						<div class="box aquamarine" class="fragment" style="font-size: 24px; margin: 10px; background-color: #F7DD72;"><p><b style="font-size: 30px;">IA Clarity</b> <br>  consistent ways for displaying particular types of information on the user interface</p></div>
+						
+					</div>
+					<a href="https://www.usability.gov/how-to-and-tools/methods/wireframing.html" style="font-size: .4em;">Click here for more information about wireframing</a> </a>
+				</section>
+				<section data-background="#fff">
+					<h3>Wireframing Process</h3>
+					<p>Many processes you can take</p>
+					<img src="images/ux/wireframes-process.png" width="680" style="box-shadow: none; border: none;"alt="wireframe process"><br>
+					
+				</section>
+				<section data-background="#fff">
+					<h3>Wireframing</h3>
+					<p> Low Fidelity  &#10022;  High Fidelity </p>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 24px;"><b>Low Fidelity</b> - help facilitate project team communication and are relatively quick to develop.  They tend to be more abstract because they often use simple images to block off space and implement mock content, or Latin (lorem ipsum) text as filler for content and labels. </li><br>
+								<li style="font-size: 24px;"><b>Can be a sketch, general outline of box elements (header, logo, footer, columns, navigation), descriptive text</b>  </li>	   
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 24px;"><b>High Fidelity</b> - are better for documentation because of their increased level of detail. These wireframes often include information about each particular item on the page, including dimensions, behavior, and/ or actions related to any interactive element.</li>
+								<li style="font-size: 24px;"><b>Detailed, precise measurement, every box element is outlined,   </b> </li>	   
+							</ul>
+						</div>
+					</div>
+
+					
+				</section>
+				<section data-background="#fff">
+					
+					<img src="images/ux/low_fidelity.png" width="650" style="box-shadow: none; margin: 0px; border: none;"alt="low fidelity wireframe"><br>
+					<h5 style="font-size: 20px;">Low Fidelity Example</h5>
+				</section>
+				<section data-background="#fff">
+					<img src="images/ux/high_fidelity.png" width="620" style="box-shadow: none; margin: 0px; border: none;"alt="high fidelity wireframe"><br>
+					<h5 style="font-size: 20px;">High Fidelity Example</h5>
+				</section>
+				<section data-background="#fff">
+					<h3>Activity </h3>
+					
+					<div id="flexcontain">
+
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ol>	
+								<li style="font-size: 30px;">Create a low-fidelity wireframe of <a href="https://www.czs.org/Brookfield-ZOO/Home">Brookfield Zoo</a> homepage using <a href="https://draw.io">draw.io</a></li>
+	   							<li style="font-size: 30px;">Make sure to provide descriptive text for each box element, logo, navigation, header, footer, columns and images.</li>						
+							</ol>
+						</div>
+					</div>
+				</section>
+				<!--<section>
+					<section>
+						<h3>Node Modules</h3>
+						<p> Core/Built-in Modules   &#10022;    Third-Party Modules </p>
+						<div id="flexcontain">
+							<div class="box_two" style="font-size: 22px; margin: 10px;">
+								<ul>
+									<li style="font-size: 26px;"><b>File Module</b> Including the path of file in require method</li>
+									<li style="font-size: 26px;"><b>Core modules</b> are modules that come with NodeJs.  You do not have to install them.  <a href="https://nodejs.org/api/modules.html"> Click here to see a list of core modules</a></li><br>
+									<li style="font-size: 26px;"><b>Third-Party modules</b> - pushes it to a queue and continues with the next statement. If the server returns something, it callback to whatever triggered the event.</li>	   
+								</ul>
+							</div>
+							<pre>
+								<code style="font-size: 16px;" class="hljs" data-trim contenteditable>
+								const welcome = require('./welcome'); //including a module that is a file within your program
+								const http = require('http'); //including a core module example
+								const app = require('express'); //including third-party module example
+
+
+								</code>
+							</pre>
+
+						</div>	
+					</section>
+
+				<section data-background="#fff">
+					<h3>Understanding Card Sorting</h3>
+						<iframe width="760" height="315" src="https://www.youtube.com/embed/TNvdgXCqEvM?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</section>
+				<section data-background="#fff">
+					<h3>Creating your own Module </h3>
+					<p> Core/Built-in Modules   &#10022;    Third-Party Modules </p>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;"><b>Most Languages</b> - Once an event is triggered to perform a task, most languages wait until the task is complete to move onto the next statement </li><br>
+								<li style="font-size: 26px;"><b>NodeJs</b> - pushes it to a queue and continues with the next statement. If the server returns something, it callback to whatever triggered the event.</li>	   
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/node/eventloop.png" width="500" style="box-shadow: none;" alt="Nodejs event loop queue"/>
+						</div>
+					</div>
+
+					
+				</section>
+				<section data-background-color="#fff">
+					<iframe height="600" src="https://embed.polleverywhere.com/multiple_choice_polls/QdwqUEsc6vjDWi3?controls=none&short_poll=true" width="100%" height="100%" frameBorder="0"></iframe>
+				</section>
+				<section data-background-color="#fff">
+					<iframe height="600" src="https://embed.polleverywhere.com/free_text_polls/njYHOn4wxYZfpDV?controls=none&short_poll=true" width="100%" height="100%" frameBorder="0"></iframe>
+				</section>-->
+				<section data-background="#eee">
+				    <h2>References</h2>
+				    <ul style="font-size: 28px;">
+						<li>https://dzone.com/articles/the-3-fast-and-furious-agile-cs</li>
+
+
+				    </ul>
+				</section>
+				<!--<section data-background="#eee">
+				    <h2>File and Directory Classes</h2>
+				    <ul>
+						<li>C# provides built-in classes named File and Directory</li>
+						
+						<li>Contain methods to help you manipulate files and their directories</li> 
+						<ul style="font-size: 22px;">
+							<li>Access information about files</li>
+							<li>Create, delete or move files</li>
+						</ul>
+						  
+                        <li>Your file structure must be transferable</li>
+						<li>Use relative paths to indicate file locations</li>
+						<li><code>File Class</code></li>
+						<ul style="font-size: 22px;">
+							<li>Contians methods to access information about files</li>
+						</ul>
+						<li><code>Directory Class</code></li>
+						<ul style="font-size: 22px;">
+							<li>Provides information about directories or folders</li>
+						</ul>
+               
+				    </ul>
+				</section>
+				<section data-background="#fff">
+						<h2>Common Methods in File Class</h2>
+						<ul>
+							
+							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.file?view=netframework-4.7.1">Click here to navigte to <code>File Class</code></a></li>		   
+						</ul>
+						<img src="images/io/filemethods.png" style="box-shadow: none;" alt="Common methods in File class"/>
+				</section>
+				<section data-background="#fff">
+						<h2>File Class - code and output</h2>
+
+						<img src="images/io/filepic1.png" width="420" style="box-shadow: none; float: left;" alt="File picture example one"/>
+						<img src="images/io/filepic2.png" width="420" style="box-shadow: none; float: left;" alt="File Picture example two"/>
+				</section>
+				<section data-background="#fff">
+						<h2>Common Methods in Directory Class</h2>
+						<ul>
+
+							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.directory?view=netframework-4.7.1">Click here to navigte to <code>Directory Class</code></a></li>		   
+						</ul>
+						<img src="images/io/directorymethods.png" style="box-shadow: none;" alt="Common methods in directory class"/>
+				</section>
+				<section data-background="#fff">
+						<h2>Directory Class - code and output</h2>
+
+						<img src="images/io/directorypic1.png" width="420" style="box-shadow: none; float: left;" alt="directory picture example one"/>
+						<img src="images/io/directorypic2.png" width="420" style="box-shadow: none; float: left;" alt="directory Picture example two"/>
+				</section>
+				<section data-background="#eee">
+						<h2>Understanding File Data Organization</h2>
+						<ul>
+							<li>Businesses store data in a relationship known as the <b>data hierarchy</b></li>
+							
+							<li><b>Character</b></li> 
+							<ul style="font-size: 22px;">
+								<li>Any of the letters, numbers, or other special symbols (such as punctuation marks) that comprise data</li>
+								<li>Characters are made up of bytes containing eight (8) bits</li>
+									<ul style="font-size: 22px;">
+										<li>ASCII characters contain one (1) byte</li>
+										<li>Unicode characters contain two (2) bytes</li>				
+									</ul>
+							</ul>
+
+				   
+						</ul>
+				</section>
+				<section data-background="#fff">
+						<h2>Understanding File Data Organization Diagram</h2>
+						<img src="images/io/dataorg.png" width="750" style="box-shadow: none;" alt="File Data organization diagram"/>
+				</section>
+				<section data-background="#eee">
+						<h2>Understanding File Data Organization</h2>
+						<ul>
+							<li><b>Field</b></li>
+							<ul style="font-size: 22px;">
+								<li>A character or group of characters that has some meaning</li>
+				
+							</ul>
+							
+							<li><b>Record</b></li> 
+							<ul style="font-size: 22px;">
+								<li>A collection of related fields that contain data about an entity</li>
+								<li>Characters are made up of bytes containing eight (8) bits</li>
+
+							</ul>
+							<li><b>Sequential access file</b></li> 
+							<ul style="font-size: 22px;">
+								<li>Each record is read in order based on its relative position</li>
+								<li>Records can be stored in order based on a value in the record</li>
+								<li>The field used to uniquely identify each record in a sequential file is the<b> key field</b></li>
+							</ul>
+							<li><b>Random access file</b></li>
+							<ul style="font-size: 22px;">
+								<li>Records are not in any sequence and  can be accessed in any order</li>
+				
+							</ul>
+						</ul>
+				</section>
+				<section data-background="#fff">
+						<h2>Understanding File Data Organization cont.</h2>
+						<ul>
+							<li>A C# application <b>opens a file</b> by creating an object and associating a stream of bytes with that object</li>
+							<li>When you finish using a file, the program should <b>close the file</b></li>
+									
+							<ul style="font-size: 22px;">
+								<li>Not closing a file may make it inaccessible</li>
+								<li>Not closing an output file can result in data not being written to the file</li>
+				
+							</ul>
+
+						</ul>
+				</section>
+				<section data-background="#fff">
+						<h2>Understanding Streams</h2>
+						<ul>
+							<li><b>Stream</b></li>
+							<ul style="font-size: 22px;">
+								<li>Stream is a class that simulates a stream of bytes to be lined up in a row. Such as the transmission of data on the network, data transmited are contiguous stream of bytes from the first byte to the last byte.</li>
+								<li>Functions as a pipeline or channel between an input device and an application, and potentially an output device</li>
+
+				
+							</ul>
+
+						</ul>
+						<img src="images/io/streampic.png"  width="700" style="box-shadow: none;" alt="Stream class diagram"/>
+				</section>
+				<section data-background="#fff">
+						<h2>Stream Overview</h2>
+
+						<img src="images/io/streamoverview.png"  width="700" style="box-shadow: none;" alt="Stream class overview diagram"/>
+				</section>
+				<section data-background="#fff">
+						<h2>Stream classes</h2>
+						<ul style="font-size: 24px;">
+							<li><b>Stream</b> is an abstract class, it can not initialize an object by itself, you can initialize a Stream object from the Constructors of the subclass. <b>Stream</b> class provides the basic methods of working with data streams, namely the method of read/write a byte or an array of bytes.</li>
+							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.stream?view=netframework-4.7.1">Click here to navigte to <code>Stream Class</code></a></li>
+						</ul>
+						
+						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
+								<tbody> 
+								 <tr> 
+								  <td><strong>Class</strong></td> 
+								  <td><strong>Description</strong></td> 
+								 </tr> 
+								 <tr> 
+								  <td>BufferedStream</td> 
+								  <td>A utility stream, it wrapped another stream, which helps improve performance</td> 
+								 </tr> 
+								 <tr> 
+								  <td>FileStream</td> 
+								  <td>Stream used to read and write data to the file.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>MemoryStream</td> 
+								  <td>Creates a stream whose backing store is memory.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>UnmanagedMemoryStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								 <tr> 
+								  <td>IsolatedStorageFileStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								 <tr> 
+								  <td>PipeStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								 <tr> 
+								  <td>NetworkStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								 <tr> 
+								  <td>CryptoStream</td> 
+								  <td>Defines a stream that links data streams to cryptographic transformations.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>DeflateStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								 <tr> 
+								  <td>GZipStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								</tbody> 
+						</table>
+				</section>
+				<section data-background="#fff">
+						<h2>Properties of Stream</h2>
+						<ul style="font-size: 24px;">
+							<li>Depending on the stream, there are the stream that supports both read and write, and seek by moving the cursor on the stream, read and write data at the cursor position.</li>
+							
+						</ul>
+						
+						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
+								<tbody> 
+								 <tr> 
+								  <td><strong>Attribute</strong></td> 
+								  <td><strong>Description</strong></td> 
+								 </tr> 
+								 <tr> 
+								  <td>CanRead</td> 
+								  <td>Gets a value indicating whether the current stream supports reading.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>CanSeek</td> 
+								  <td>Gets a value indicating whether the current stream supports seeking.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>CanWrite</td> 
+								  <td>Gets a value indicating whether the current stream supports writing.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Length</td> 
+								  <td>Gets the length in bytes of the stream.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Position</td> 
+								  <td>Gets or sets the current position of this stream.</td> 
+								 </tr> 
+								</tbody> 
+						</table>
+				</section>
+				<section data-background="#fff">
+						<h2>Understanding Streams</h2>
+						<ul>
+							<li>Most streams flow in only one direction</li>
+							<li>File processing classes include:</li>
+							<ul style="font-size: 22px;">
+								<li><code>StreamReader</code> for text input from a file</li>
+								<li><code>StreamWriter</code> for text output to a file</li>
+								<li><code>FileStream</code> is used alone for bytes and with either StreamReader and StreamWriter for text, for either input from and output to a file</li>
+				
+							</ul>
+
+						</ul>
+						
+				</section>
+				<section data-background="#fff">
+						<h2>FileStream Class</h2>
+						<ul>
+							<li><b>Filestream</b> is a class which extends from the  <b>Stream</b> class, <b>FileStream</b> is used to read and write data to file, it inherits the properties, methods of Stream, and has additional functions for reading and recording data on the file.</li>
+							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.filestream?view=netframework-4.7.1">Click here to navigte to <code>FileStream Class</code></a></li>
+						</ul>
+						
+				</section>
+				<section data-background="#fff">
+						<h2>FileStream Overloaded Constructor</h2>
+
+						<img src="images/io/filestreamconstructor.PNG"  width="700" style="box-shadow: none;" alt="Stream class overview diagram"/>
+						
+				</section>
+				<section data-background="#fff">
+						<h2>FileMode Enumeration</h2>
+						<ul>
+							<li>A constant that determines how to open or create the file</li>
+						</ul>
+
+						
+						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
+								<tbody> 
+								 <tr> 
+								  <td><strong>FileMode</strong></td> 
+								  <td><strong>Description</strong></td> 
+								 </tr> 
+								 <tr> 
+								  <td>Append</td> 
+								  <td>Opens the file if it exists and seeks to the end of the file, or creates a new file</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Create</td> 
+								  <td>Specifies that the operating system should create a new file. If the file already exists, it will be overwritten.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>CreateNew</td> 
+								  <td>Specifies that the operating system should create a new file.If the file already exists, an <strong>IOException</strong> exception is thrown. This mode requires <strong>FileIOPermissionAccess.Write</strong> permission.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Open</td> 
+								  <td>Specifies that the operating system should open an existing file. A <strong>System.IO.FileNotFoundException</strong> exception is thrown if the file does not exist.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>OpenOrCreate</td> 
+								  <td>Specifies that the operating system should open a file if it exists; otherwise, a new file should be created</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Truncate</td> 
+								  <td>Specifies that the operating system should open an existing file. When the file is opened, it should be truncated so that its size is zero bytes.</td> 
+								 </tr> 
+								</tbody> 
+							   </table>
+				</section>
+				<section data-background="#fff">
+						<h2>FileAccess Enumeration</h2>
+						<ul>
+							<li>A constant that determines how the file can be accessed by the FileStream object. This also determines the values returned by the CanRead and CanWrite properties of the FileStream object. CanSeek is true if path specifies a disk file.</li>
+						</ul>
+
+						
+						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
+								<tbody> 
+								 <tr> 
+								  <td><strong>FileAccess</strong></td> 
+								  <td><strong>Description</strong></td> 
+								 </tr> 
+								 <tr> 
+								  <td>Read</td> 
+								  <td>Data can be read from the file.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>ReadWrite</td> 
+								  <td>Data can be read from and written to the file.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Write</td> 
+								  <td>Data can be written to the file.</td> 
+								 </tr>  
+								</tbody> 
+						 </table>
+				</section>
+				<section data-background="#fff">
+					<h2>Stream Example</h2>
+
+					<img src="images/io/writerexcode.png"  width="500" style="box-shadow: none; float: left;" alt="Writing to file code"/>
+					<img src="images/io/writerexconsole.png"  width="400" style="box-shadow: none; float: left;" alt="Writing to file console view"/>
+					<img src="images/io/writerextextfile.png"  width="400" style="box-shadow: none; float: left;" alt="Writing to file text output"/>
+
+					
+
+				</section>
+				<section data-background="#fff">
+					<h2>Writing and Reading a Sequential Access File</h2>
+					<ul>
+						<li>C# uses files only as streams of bytes</li>
+						<li>When you write a program to store a data file, you must dictate the form the file will take</li>
+						<li>Whether you are writing data to a file or reading data from one, you create a <code>FileStream </code>object</li>
+					</ul>
+					
+				</section>
+				<section data-background="#fff">
+					<h2 style="font-size: 36px;">Writing Data to a Sequential Access Text File Example</h2>
+					<ul>
+						
+						<li><b>Token</b></li>
+						<ul style="font-size: 22px;">
+							<li>A block of text within a string that represents an entity or field </li>
+
+						</ul>
+						<li><b>Delimiter</b></li>
+						<ul style="font-size: 22px;">
+							<li>A character used to specify the boundary between records and, potentially, fields in text files</li>
+						</ul>
+						<li>When you write data to a text file:</li>
+						<ul style="font-size: 22px;">
+							<li>You can separate the fields with a delimiter</li>
+							<li>Delimiters are needed when fields are not fixed in size and position - field size varies</li>
+							<li><b>CSV files</b> (comma-separated value files) are delimited files</li>
+						</ul>
+
+					</ul>
+					
+				</section>
+				<section data-background="#fff">
+					<h2 style="font-size: 36px;">Writing Data to Sequential Access Text File </h2>
+
+					<img src="images/io/sequentialcode.png"  width="350" style="box-shadow: none; float: left; margin-top:-10px;" alt="Sequential file access code"/>
+					<img src="images/io/sequentialconsole.png"  width="300" style="box-shadow: none; float: left; margin-top: -10px;" alt="Sequential file access console view"/>
+					<img src="images/io/sequentialoutput.png"  width="300" style="box-shadow: none; float: left; margin-top: -10px;" alt="Sequential output"/>
+					<img src="images/io/employeeclass.png"  width="300" style="box-shadow: none; float: left; margin-top: -26px;" alt="Employee class"/>
+
+				</section>
+				<section data-background="#fff">
+					<h2>Reading from a Sequential Access Text File </h2>
+
+					<img src="images/io/readingcode.png"  width="500" style="box-shadow: none; float: left; margin-top: -10px;" alt="Reading Sequential access code"/>
+					<img src="images/io/readingconsole.png"  width="500" style="box-shadow: none; float: left; margin-top: -10px;" alt="Reading Sequential file access console view"/>
+
+				</section>
+				<section data-background="#fff">
+					<h2>Search a Sequential Text File</h2>
+					<ul>
+						<li><b>File position pointer</b></li>
+						<ul style="font-size: 22px;">
+							<li>Holds the byte number of the next byte to be read</li>
+						</ul>
+						<li>Reposition the file pointer using the <code>Seek()</code> method and the <code>SeekOrigin</code> enumeration: <br/> <code style=" font-size: 28px; font-weight: 100;">inFile.Seek(0, SeekOrigin.Begin);</code></li>
+
+					</ul>
+					<img src="images/io/seekimg.png"  width="700" style="box-shadow: none; font-size: 28px; font-weight: 100;" alt="File Position Searching Sequential"/>
+				</section>
+				<section data-background="#fff">
+					<h2>Search a Sequential Text File cont.</h2>
+					<img src="images/io/seekex.png"  width="700" style="box-shadow: none;" alt="seek example code picture"/>
+					
+				</section>
+				<section data-background="#fff">
+					<h2>Search a Sequential Text File cont.</h2>
+					<img src="images/io/seekoutput.png"  width="600" style="box-shadow: none;" alt="seek example output"/>
+					
+				</section>
+				<section data-background="#fff">
+					<h2>Understanding Serialization and Deserialization</h2>
+					<ul>
+						<li>Disadvantages to writing to a text file:</li>
+						<ul style="font-size: 22px;">
+							<li>Data in a text file is easily readable in a text editor such as Notepad, which means it is not secure</li>
+							<li>It is cumbersome to convert each field to text and combine the fields with delimiters</li>	
+						</ul>
+						<li>You can write objects to and read objects from files</li>
+						<li><b>Serialization</b></li>
+						<ul style="font-size: 22px;">
+							<li>The process of converting objects into streams of bytes</li>
+						</ul>
+						<li><b>Deserialization</b></li>
+						<ul style="font-size: 22px;">
+							<li>Converts streams of bytes back into objects</li>
+						</ul>
+					</ul>
+					
+				</section>
+				<section data-background="#fff">
+					<h2>Understanding Serialization and Deserialization</h2>
+					<ul>
+						<li style="font-size: 32px">In a class marked with the [Serializable] attribute, every instance variable must also be Serializable</li>
+
+						<li style="font-size: 32px">By default, all C# simple data types are serializable, including strings</li>
+						<li style="font-size: 32px">If your class contains fields that are more complex data types, you must check the declaration of those classes to ensure they are serializable</li>
+
+					</ul>
+					<img src="images/io/serializableclassimg.png"  width="400" style="box-shadow: none; font-size: 28px; font-weight: 100;" alt="Serializable class image"/>
+				</section>
+				<section data-background="#fff">
+					<h2>Understanding Serialization and Deserialization</h2>
+					<ul>
+						<li>To create a class that can be serialized:</li>
+						<ul style="font-size: 22px;">
+							<li>Mark it with the <code>[Serializable]</code> attribute</li>	
+						</ul>
+						<li>Namespaces included in programs that employ serialization:</li>
+						<ul style="font-size: 22px;">
+							<li><code>System.Runtime.Serialization.Formatters.Binary;</code></li>
+							<li><code>System.Runtime.Serialization;</code></li>
+						</ul>
+					</ul>
+					
+				</section>
+				<section data-background="#fff">
+					<h2>Serilization Code Example </h2>
+
+					<img src="images/io/serialcode1.png"  width="425" style="box-shadow: none; float: left; margin-top: -10px;" alt="Serialization Code example one"/>
+					<img src="images/io/serialcode2.png"  width="425" style="box-shadow: none; float: left; margin-top: -10px;" alt="Serialization Code example two"/>
+
+				</section>
+				<section data-background="#fff">
+					<h2>Serilization Code Example Output </h2>
+
+					<img src="images/io/serialoutput2.png"  width="470" style="box-shadow: none; margin-top: -10px;" alt="Serialization Code example one"/>
+
+
+				</section>-->
+
+				
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
