@@ -477,6 +477,55 @@
 				<section data-background="images/structures/looping_bg.jpg">
 					<h1 style="color: #111111;  padding: 3px;">Looping Structure</h1>
 				</section>
+				<section data-background="#fff">
+					<h3>Looping/Iteration</h3>
+					<ul>
+						<li><b>Loop:</b> a structure that repeats actions while some condition continues</li>
+						<ul>
+							<li>As long as a condition(s) remains true, the statements in a while loop’s body execute</li>
+						</ul>
+						<li><b>Use Cases:</b></li>
+						<ul>
+							<li>Validating Data by Defensive Programming | Outputing Structure Data | Reprompting | Repetitive Output(Such as counting, using math, or general text ouput) </li>
+						</ul>
+					</ul>
+					<img src="images/structures/fox-loop.jpg" alt="looping comic graphic">
+		
+				</section>
+				<section data-background="#fff">
+				
+					<h4>Control number of repetitions</h4>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 28px; margin: 10px; height: 235px; background-color: #2d4650;"><p>Initial loop <b>control variable</b> initialized before entering loop</p></div>
+						<div class="box blue" style="font-size: 28px; margin: 10px; height: 235px; background-color: #2d4650;"><p>Loop control <b>variable tested</b></p></div>
+						<div class="box green" style="font-size: 28px; margin: 10px; height: 235px; background-color: #2d4650;"><p>Body of loop must <b>alter value</b> of loop control variable</p></div>
+						<div class="box yellow" style="font-size: 22px; margin: 10px; background-color: #ffffff;">
+							<pre style="box-shadow: none;">
+								<code style="font-size: 18px;" class="codebox code-example__codebox"  data-trim contenteditable>
+										int initialWeekValue = 0, endWeekValue = 7;
+										
+										string [] topics = { "Structures", "Decision Making", "Looping",
+										
+											"Arrays", "Modularization", "Object-Oriented Design", "UML"};
+										
+										while(initialWeekValue < endWeekValue){
+										
+									      Console.WriteLine("Week " + initialWeekValue + " is " + topics[0]);
+									      
+									      initialWeekValue++;
+									       
+										}
+										Console.WriteLine("Finished");
+									 
+									 
+	
+								</code>
+							</pre>
+						</div>
+
+					</div>
+				
+				</section>
 				<!--<section data-background="#fff">
 					<h3>Single Folder Structure</h3>
 					
