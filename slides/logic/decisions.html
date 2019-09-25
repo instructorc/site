@@ -502,19 +502,20 @@
 						<div class="box yellow" style="font-size: 22px; margin: 10px; background-color: #ffffff;">
 							<pre style="box-shadow: none;">
 								<code style="font-size: 18px;" class="codebox code-example__codebox"  data-trim contenteditable>
-										int initialWeekValue = 0, endWeekValue = 7;
+										int initialValue = 0, endValue = 7;
 										
 										string [] topics = { "Structures", "Decision Making", "Looping",
 										
 											"Arrays", "Modularization", "Object-Oriented Design", "UML"};
 										
-										while(initialWeekValue < endWeekValue){
+										while(initialValue < endValue){
 										
-									      Console.WriteLine("Week " + initialWeekValue + " is " + topics[0]);
+									    Console.WriteLine("Week " + (initialValue + 1) + " is " + topics[initialValue]);
 									      
-									      initialWeekValue++;
+									    initialValue++;
 									       
 										}
+										
 										Console.WriteLine("Finished");
 									 
 									 
