@@ -494,25 +494,26 @@
 				</section>
 				<section data-background="#fff">
 				
-					<h4>Control number of repetitions</h4>
+					<h4>Three statements needed for Looping</h4>
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 28px; margin: 10px; height: 235px; background-color: #2d4650;"><p>Initial loop <b>control variable</b> initialized before entering loop</p></div>
-						<div class="box blue" style="font-size: 28px; margin: 10px; height: 235px; background-color: #2d4650;"><p>Loop control <b>variable tested</b></p></div>
-						<div class="box green" style="font-size: 28px; margin: 10px; height: 235px; background-color: #2d4650;"><p>Body of loop must <b>alter value</b> of loop control variable</p></div>
+						<div class="box red" style="font-size: 28px; margin: 10px; height: 235px; background-color: #ddd; color: #111;"><p>Initial loop <b>control variable</b> initialized before entering loop</p></div>
+						<div class="box blue" style="font-size: 28px; margin: 10px; height: 235px; background-color: #ddd; color: #111;"><p>Loop control <b>variable tested</b></p></div>
+						<div class="box green" style="font-size: 28px; margin: 10px; height: 235px; background-color: #ddd; color: #111;"><p>Body of loop must <b>alter value</b> of loop control variable</p></div>
 						<div class="box yellow" style="font-size: 22px; margin: 10px; background-color: #ffffff;">
 							<pre style="box-shadow: none;">
 								<code style="font-size: 18px;" class="codebox code-example__codebox"  data-trim contenteditable>
-										int initialValue = 0, endValue = 7;
+										int initialValue = 0, //Initial Value for Control variable
+										int endValue = 7;
 										
 										string [] topics = { "Structures", "Decision Making", "Looping",
 										
 											"Arrays", "Modularization", "Object-Oriented Design", "UML"};
 										
-										while(initialValue < endValue){
+										while(initialValue < endValue){ //Control variable tested
 										
 									    Console.WriteLine("Week " + (initialValue + 1) + " is " + topics[initialValue]);
 									      
-									    initialValue++;
+									    initialValue++; //Control Variable altered
 									       
 										}
 										
@@ -526,6 +527,51 @@
 
 					</div>
 				
+				</section>
+				<section data-background="#fff">
+					<h3>Definite Loop with Counter</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px;">
+							<ul>
+								<li><b>Definite Loop</b> - Executes a predetermined number of times</li>
+								<li><b>Counter-controlled Loop</b> - Program counts loop repetitions</li>
+								<li>Loop control variables altered by:</li>
+								<ul>
+									<li>Incrementing</li>
+									<li>Decrementing</li>
+								</ul>
+							</ul>
+						</div>
+						<div class="box_two" style=" margin: 10px;">
+							<img src="images/structures/loop_control.png" width="500" alt="Definite loop with counter diagram">
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Loop with Sentinel Value</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px;">
+							<ul style="font-size: 26px;">
+
+								<li><b>Indefinite Loop</b></li>
+								<ul>
+									<li>Performed a different number of times each time the program executes</li>
+									<li>The user decides how many times the loop executes</li>
+								</ul>
+								<li><b>Three steps should occur in every properly functioning loop</b></li>
+								<ul>
+									<li style="background-color: yellow;">Provide a starting value for the variable that will control the loop</li>
+									<li style="background-color: green;">Test the loop control variable to determine whether the loop body executes</li>
+									<li style="background-color: blue;">Alter the loop control variable</li>
+								</ul>
+							</ul>
+						</div>
+						<div class="box_two" style=" margin: 10px;">
+							<img src="images/structures/loop_sentinel.png" width="500" alt="Loop with sentinel value diagram">
+						</div>
+					</div>
 				</section>
 				<!--<section data-background="#fff">
 					<h3>Single Folder Structure</h3>
