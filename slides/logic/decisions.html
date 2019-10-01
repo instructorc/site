@@ -696,6 +696,89 @@ Console.WriteLine("Weekly Menu has been outputted");
 					
 				
 				</section>
+				<section data-background="#fff">
+					<h3>Loop Use Cases</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px;">
+							<ul style="font-size: 30px;">
+
+								<li><b>Using a loop to accumulate totals</b></li>
+								<ul>
+									<li>- Examples</li>
+									<ul>
+										<li>Business reports often include totals</li>
+										<li>List of real estate sold and total value</li>
+									</ul>
+								</ul>
+								<li><b>Accumulator:</b> variable that gathers values</li>
+								<ul>
+									<li>- Similar to a counter</li>
+									<ul>
+										<li>Counter increments by 1</li>
+										<li>Accumulator increments by some value</li>
+									</ul>
+								</ul>
+								<li><b>Accumulators require three actions</b></li>
+								<ul>
+									<li style="background-color: #ffe600;">Initialize the accumulator to 0</li>
+									<li style="background-color: #26e600;">Accumulators are altered: once for every data set processed</li>
+									<li style="background-color: #44c8f5;">At the end of processing, accumulators are output</li>
+								</ul>
+							</ul>
+						</div>
+						<div class="box_two" style=" margin: 10px;">
+							<img src="images/structures/accum_loop.PNG" width="500" alt="Accumulator Loop diagram">
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Using loops to validate data</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style=" margin: 10px;">
+							<img src="images/structures/loop_validation.png" width="500" alt="Loop validation diagram">
+						</div>
+						<div class="box_two" style="margin: 10px;">
+							<ul style="font-size: 30px;">
+
+								<li><b>Defensive programming:</b> preparing for all possible errors before they occur</li>
+								<ul>
+									<li>When prompting a user for data, no guarantee that data is valid</li>
+								</ul>
+								<li>Good defensive programs try to foresee all possible inconsistencies and errors</li>
+								<li><b>Validate data:</b> make sure data falls in acceptable ranges (month values between 1 and 12)</li>
+								<li><b>GIGO:</b> Garbage in, garbage out</li>
+								<ul>
+									<li>Unvalidatedinput will result in erroneous output</li>
+								</ul>
+							</ul>
+						</div>
+
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Limiting a reprompting Loop</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style=" margin: 10px;">
+							<img src="images/structures/limiting_loop.png" width="500" alt="Limiting Loop Reprompt diagram">
+						</div>
+						<div class="box_two" style="margin: 10px;">
+							<ul style="font-size: 30px;">
+
+								<li><b>Reprompting can be frustrating to a user if it continues indefinitely</b></li>
+
+								<li><b>Maintain a count of the number of reprompts</b> </li>
+								<li><b>Forcing</b> a data item means:</li>
+								<ul>
+									<li>Override incorrect data by setting the variable to a specific value</li>
+								</ul>
+							</ul>
+						</div>
+
+					</div>
+				</section>
 				<!--<section data-background="#fff">
 					<h3>Single Folder Structure</h3>
 					
