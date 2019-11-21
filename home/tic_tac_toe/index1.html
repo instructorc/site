@@ -1,0 +1,298 @@
+<!DOCtype html>
+<html lang="en">
+    <head> 
+        <title>Tic Tac Toe by DLC</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="My first JS experience">
+        <meta name="keywords" content="tic,tac,toe">
+        <meta name="author" content="D.L. Clark">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            
+            /*css reset start*/
+            html, body, div, span, applet, object, iframe,
+            h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+            a, abbr, acronym, address, big, cite, code,
+            del, dfn, em, font, img, ins, kbd, q, s, samp,
+            small, strike, strong, sub, sup, tt, var,
+            dl, dt, dd, ol, ul, li,
+            fieldset, form, label, legend,
+            table, caption, tbody, tfoot, thead, tr, th, td {
+            	margin: 0;
+            	padding: 0;
+            	border: 0;
+            	outline: 0;
+            	font-weight: inherit;
+            	font-style: inherit;
+            	font-size: 100%;
+            	font-family: inherit;
+            	vertical-align: baseline;
+            }
+            /* remember to define focus styles! */
+            :focus {
+            	outline: 0;
+            }
+            body {
+            	line-height: 1.5;
+            }
+            
+            /*end of css reset*/
+            #title1, #result1{
+                display : none;
+            }
+            
+            body{
+                background-image: url("images/background1.jpg");
+                background-size: cover;
+                font-family: 'Rhodium Libre', serif, sans-serif;
+                text-align: center;
+            }
+            main{
+                width: 100%;
+                padding-top: 1em;
+                margin-bottom: 1em;
+            }
+            header img{
+                width: 100%;
+                height:auto;
+                object-fit: cover;
+            }
+            
+            
+            #title, #title1{
+                margin: auto;
+                text-shadow: 1px 1px 1px #000,-1px -1px 1px #000,-1px 1px 1px #000,1px -1px 1px #000;
+                font-family: 'Fontdiner Swanky', 'Arial Narrow Bold', sans-serif;
+                width:100%;
+                font-size:3em;
+                color: peachpuff;
+            }
+            #names{
+                margin: auto;
+                line-height: 1.2;    
+            }
+            input[type=text] {
+                font-family: 'Rhodium Libre', serif, sans-serif;
+                font-weight: bold;
+                box-shadow: 1px 1px 15px maroon,-1px -1px 15px maroon,-1px 1px 15px maroon,1px -1px 15px maroon;
+                width: 50%;
+                padding: 12px 20px;
+                margin: 20px;
+                box-sizing: border-box;
+                border: none;
+                border-radius: 45px;
+                background-color: peachpuff;
+                color: maroon;
+            }
+            #bgselect{
+                margin: auto;
+                width:auto;
+            }
+            #result, #result1{
+                font-size: 1.5em;
+                height: 25px;;
+                margin: auto;
+            }
+            h2{
+                margin-bottom: 1em;    
+            }
+            #board{
+                display: inline-flex;
+                flex-wrap: nowrap; 
+                width: 100%;
+            }
+            #newgame, #submit{
+                text-shadow:0px 0px 1px peachpuff,0px 0px 1px peachpuff,0px 0px 1px peachpuff,0px 0px 1px peachpuff;
+                flex: 1 0 auto;
+                box-sizing: border-box;
+                border: 2px solid maroon;
+                text-shadow: 0px 0px 2px maroon;
+                box-shadow: 0px 0px 25px maroon;
+                border-radius: 45px;
+                background-color: pink;
+                background-size: cover;
+                margin-top: .5em;
+                font-size: 1.2em;
+            }
+            #newgame{
+                margin-top: .5em;
+            }
+            #submit{
+                margin: .5em 0 .3em 0;
+            }
+            #newgame:hover, #submit:hover{
+                border: 2px solid maroon;
+                text-shadow: 0px 0px 2px pink;
+                box-shadow: inset 0px 0px 25px maroon;
+                
+            }
+            #boxes{
+                line-height: 0;
+                display: inline-block;
+                flex: 0 0 auto;   
+            }
+            canvas{
+                background-color: white;
+                border: 2px solid maroon; 
+                box-shadow: 7px 7px 2px #000;
+            }
+            .rules{
+                text-shadow:0px 0px 1px pink,0px 0px 1px pink,0px 0px 1px pink,0px 0px 1px pink;
+                margin: auto;
+                width:25%;
+                color:maroon;
+                font-weight: bold;  
+            }
+            .rules p{
+                font-size: 1em;
+            }
+            p{
+                font-size: .9em;
+                margin: 1em;
+            }
+            canvas:hover{
+                background-color: palevioletred;
+            }
+            footer{
+                display: flex;
+                flex-flow: row wrap;
+                width: 50%;
+                margin: auto;
+                justify-content: center;
+            }
+            #result{
+                margin: auto;
+                width: 100%;
+                height: auto;
+                color: maroon;
+            }
+            #fb, #yt, #twit{
+            
+                width: 59px;
+                height: 59px;
+                margin: 5px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            #fb{
+                background-image: url("images/fb.png");
+            }
+            #twit{
+                background-image: url("images/twit.png");
+            }
+            #yt{
+                background-image: url("images/yt.png");
+            }
+            #fb:hover{
+                border-radius: 10px;
+                z-index: -1;
+                box-shadow: 0px 0px 10px 10px #3B5998;
+                background-image: url("images/fbbig.png");
+            }
+            #twit:hover{
+                border-radius: 10px;
+                z-index: -1;
+                box-shadow: 0px 0px 10px 10px #00aced;
+                background-image: url("images/twitbig.png");
+            }
+            #yt:hover{
+                border-radius: 10px;
+                z-index: -1;
+                box-shadow:0px 0px 10px 10px #f10000;
+                background-image: url("images/ytbig.png");
+            }
+            #social{
+                display: inline-flex;
+            }
+            @media only screen and (max-width: 839px){
+                #title, #result{
+                    display: none;
+                }
+                #title1, #result1{
+                    display: block;
+                }
+                input[type=text]{
+                    padding: 5px 15px;
+                }
+                
+                body{
+                    line-height: 1.1;
+                }
+                #title1{
+                    font-size: 1.5em;
+                }
+                #board{
+                    display: flex;
+                    flex-direction: column-reverse;
+                }
+                .rules{
+                    margin-top: 15px;
+                    width: 100%;
+                }
+                #newgame, #submit{
+                    margin:7.5px;
+                    width: 40%;
+                }
+            }
+
+        </style>
+        <link href="https://fonts.googleapis.com/css?family=Fontdiner+Swanky|Rhodium+Libre" rel="stylesheet">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        
+        <header>
+            <img src="images/title.png" alt="Tic Tac Toe">
+
+        </header>
+        <main>
+            <h1 id="title">Enter names and hit Start Game!</h1>
+            <div id="result">Names can be left blank! Just hit Start Game</div>
+
+        
+        <!--Section tag used for the Game Board area-->
+            <section id="board">
+                <!--Rules Div-->  
+                <div class="rules">
+
+                    <h2>Rule List</h2> 
+                    <p>1. Enter your names.<br>
+                        (if left blank X and O will be used)<br>
+                    2. Hit Start button.
+                    3. 1 person goes first, just click on a box and it will draw your mark.<br>
+                    4. First to get three X's or O's in a row wins!<br>
+                    5. Click new game to  start over at any time!</p>
+                </div>
+            
+                <!--Canvas areas for drawing X's and O's-->
+                <div id="boxes">
+                    <canvas id="b1" width="120" height="120"></canvas><canvas id="b2" width="120" height="120"></canvas><canvas id="b3" width="120" height="120"></canvas><br>
+                    <canvas id="b4" width="120" height="120"></canvas><canvas id="b5" width="120" height="120"></canvas><canvas id="b6" width="120" height="120"></canvas><br>
+                    <canvas id="b7" width="120" height="120"></canvas><canvas id="b8" width="120" height="120"></canvas><canvas id="b9" width="120" height="120"></canvas><br>
+                </div>
+                <div class="rules">
+                    <div id="names">
+                        <h4>Player #1 Enter your name<br>(letters only please!):</h4><input id="p1" type="text" name="Player 1">
+                        <h4>Player #2 Enter your name:</h4><input id="p2" type="text" name="Player 2"><br>
+                        <button type="submit" id="submit">Start Game</button><br><button type="submit" id="newgame">New Game</button>
+                        <h1 id="title1">Enter names or just hit start!</h1>
+                        <div id="result1">Works without names also.</div>
+                    </div>
+                             
+                </div>
+            </section>
+        </main>
+        <!--LOGIC RESULTS OUTPUT AREA. Mostly error reporting-->      
+        <footer>
+            <p>Created By Daniel Lee Clark<br>
+                First experience in javascript
+            </p>
+            <div id="social">
+                <a href="https://www.facebook.com"><div id="fb"></div></a>
+                <a href="https://www.twitter.com"><div id="twit"></div></a>
+                <a href="https://www.youtube.com"><div id="yt"></div></a> 
+            </div> 
+        </footer>
+    </body>
+</html>

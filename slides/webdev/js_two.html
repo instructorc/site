@@ -171,6 +171,65 @@
 				<section data-background="images/js/js_objects.jpg">
 					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">JS Objects</h1>
 				</section>
+				<section data-background="white">
+				    <h3>What is <b>OOP</b>?</h3><br>
+				    <p>A way of organizing your code to focus on real world nouns (Person,  place, thing or idea)</p>
+				</section>
+				<section data-background="white">
+					<h2>What is <b>OOP</b>?</h2><br>
+					<iframe width="760" height="515" src="https://www.youtube.com/embed/SS-9y0H3Si8?start=4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</section>
+				<section data-background="#eee">
+					<h4>Abstraction</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/js/person-diagram.png" width="690" style="box-shadow: none; border: none;"alt="person object image"> 
+							<p>Creating a simple model of a more complex thing, which represents its most important aspects in a way that is easy to work with for our program's purposes</p>
+
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#fff">
+					<h3>Object Structure and Break-down</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>
+								<li style="font-size: 22px;">A JavaScript object is a collection of named values</li>
+								<li style="font-size: 22px;">When you create an object, you define both its attributes and its methods.</li>
+								<li style="font-size: 22px;">The <b>attributes</b> hold data for each object instance.</li>
+								<li style="font-size: 22px;">the <b>methods</b> are verbs that take action against the data for each instance.</li>
+							</ul>
+
+															<pre>
+								<code style="font-size: 16px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
+									
+    var person = {
+        name: "Benjamin Sampson",
+        age: 29,
+        gender: male,
+        interest: "everything",
+        
+        bio: function(){ 
+           console.log(` ${this.name} is ${this.age} years old.  
+                         They like ${this.interest}`);
+       },
+        greeting: function() {
+           console.log(`Hi! I'm ${this.name}`);
+       }
+       
+    }
+							
+	
+								</code>
+							</pre>
+						
+					</div>
+
+				</section>
 
 
 
