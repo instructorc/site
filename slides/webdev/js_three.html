@@ -59,59 +59,65 @@
 				<section data-background="#252523">
 				    <h3>Learning Objectives</h3>
 				    <ul style="font-size: 26px;">
-						<li>Understanding and Implementing JS Functions</li>
+						<li>Arrays</li>
 						<ul>
-							<li>What is a function | Function Syntax | Defining and Calling a Function | Function Parameters</li>
-							<li>Types of function</li>
+							<li>What is an Array | Array Syntax </li>
+							<li>Array Use Case Scenarios</li>
 							<ul>
-								<li>Named | Anonymous | Arrow | Self-Involking</li>
+								<li>Storing Single dimension data | Storing data in a program | Select Options List </li>
 							</ul>
-							<li>Variable Scope - Local and Global variables</li>
-							<li>Returning values from a function</li>
+							<li>Processing an Array</li>
+							<ul>
+								<li>Array Helper Methods - forEach | map | reduce | filter | every | some</li>
+							</ul>
+							<li>Notable Methods that store data in arrays</li>
 
 						</ul>
-						<li>Understanding and Implementing JS Objects</li>
+						<li>Flow Control</li>
 						<ul>
-							<li>Why use Objects</li>
-							<li>User Defined Objects</li>
-							<li>Types of Objects</li>
+							<li>Looping/Iteration</li>
 							<ul>
-								<li>Object Literal | Anonymous | Arrow | Self-Involking</li>
-							</ul>				
+								<li>while | do/while | for statements  </li>
+							</ul>
+							<li>Decision Making Logic</li>
+							<ul>
+								<li>if statements | if/else statements | switch statements | ternary </li>
+							</ul>
+
+							<li>JavaScript Ayschronous Functionality</li>
+				
 						</ul>
-				        <li>Practice with Functions using Goople Maps API</li>
-				        <ul>
-							<li>Practice with calling and involking functions</li>
-				        	<li>Passing arguments to Google Map API</li>
-							
-						</ul>
+				        <li>Examining Final Exam Study Guide Site Logic and Flow</li>
+
 
 
 				    </ul>
 				</section>
-				<section data-background="images/js/code_bg.png">
-					<h3>Types of Functions</h3>
+				<section data-background="images/js/array_bg.jpg">
+					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">JS Arrays</h1>
+				</section>
+				<section data-background="#eee">
+					<h3 style="color: black;">What is an Array?</h3>
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 28px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>Named and Anonymous Functions</p></div>
-						<div class="box blue" style="font-size: 28px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>Arrow Functions</p></div>
-						<div class="box green" style="font-size: 28px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>Self Involking Functions</p></div>
-
+						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #000;"><p><b style="font-weight: 900; ">Definition</b><br>Set of data represented by a single variable name</p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #000;"><p><b style="font-weight: 900; ">Index/Position</b><br>flexbox layout is direction-agnostic as opposed to the regular layouts</p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; background-color: #000;"><p><b style="font-weight: 900; ">Element/Value</b><br>flex container expands items to fill available free space, or shrinks them to prevent overflow</p></div>
+						<div class="box orange" style="font-size: 24px; margin: 10px; background-color: #000;"><p><b style="font-weight: 900; ">Array Literal</b><br>most common way to create an array<br>declares a variable and specifies array as content</p></div>
+						<div class="box aquamarine" style="font-size: 24px; margin: 10px; background-color: #000;"><p><b style="font-weight: 900; ">Array Object</b><br> Flexbox layout is most appropriate to the components of an application, and small-scale layouts</p></div>
 					</div>
-					<p>Each type have specific use cases </p> 
+					<a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" style="font-size: .4em;">Chris Coyier's CSS tricks tutorial on using Flexbox</a> 
 				</section>
 				<section data-background="#131313">
-					<h4> Named Function</h4>
+					<h4>Array Syntax</h4>
 					
 					<div id="flexcontain" style="margin-top: -15px;">
 						
 						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<img src="images/js/function.png" width="580" alt="function breakdown image">
-						
-	
-							
+							<img src="images/js/function_diagram_twob.png" width="620" alt="arrow function example image">
+				
 							<ul>	
-								<li style="font-size: 18px;">The above diagram displays a named function called displayGreeting.  Two steps, 1) First define the function and 2) call the function.</li>
-								<li style="font-size: 18px;">You can pass and return information from functions</li>
+								<li style="font-size: 18px;">Arrow functions allows a short syntax for writing function expressions. You don't need the function keyword, the return keyword, and the curly brackets.</li>
+								<li style="font-size: 18px;">You can only omit the return keyword and the curly brackets if the function is a single statement.</li>
 								<!--<li style="font-size: 18px;"></a></li>-->
 							</ul>
 						</div>
@@ -152,22 +158,7 @@
 						</div>
 					</div>
 				</section>
-				<section data-background="#131313">
-					<h4>Arrow Function</h4>
-					
-					<div id="flexcontain" style="margin-top: -15px;">
-						
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<img src="images/js/function_diagram_twob.png" width="620" alt="arrow function example image">
-				
-							<ul>	
-								<li style="font-size: 18px;">Arrow functions allows a short syntax for writing function expressions. You don't need the function keyword, the return keyword, and the curly brackets.</li>
-								<li style="font-size: 18px;">You can only omit the return keyword and the curly brackets if the function is a single statement.</li>
-								<!--<li style="font-size: 18px;"></a></li>-->
-							</ul>
-						</div>
-					</div>
-				</section>
+
 
 
 
@@ -187,17 +178,7 @@
 				<section data-background="images/layout/comp_bg.jpg">
 					<h1 id="boxstyle2"> CSS Flexbox</h1>
 				</section>
-				<section data-background="#eee">
-					<h3>Understanding Flexbox</h3>
-					<div id="flexcontain">
-						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #BDD358;"><p>aims at providing a more efficient way to lay out, align and distribute space among items in a container</p></div>
-						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #2E933C;"><p>flexbox layout is direction-agnostic as opposed to the regular layouts</p></div>
-						<div class="box green" style="font-size: 24px; margin: 10px; background-color: #297045;"><p>flex container expands items to fill available free space, or shrinks them to prevent overflow</p></div>
-						<div class="box orange" style="font-size: 24px; margin: 10px; background-color: #204E4A;"><p>the main idea behind the flex layout is to give the container the ability to alter its items' width/height (and order) to best fill the available space</p></div>
-						<div class="box aquamarine" style="font-size: 24px; margin: 10px; background-color: #38726C;"><p> Flexbox layout is most appropriate to the components of an application, and small-scale layouts</p></div>
-					</div>
-					<a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" style="font-size: .4em;">Chris Coyier's CSS tricks tutorial on using Flexbox</a> 
-				</section>
+
 				<section data-background="#fff">
 					<h4>In-Class Activity </h4>
 					
