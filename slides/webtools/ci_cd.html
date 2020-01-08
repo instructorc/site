@@ -47,33 +47,36 @@
 				    <h3>Learning Objectives</h3>
 				    <ul style="font-size: 28px;">
 						<li>Understanding what is CI and CD?</li>
-						<ul>
-							<li>Working Definition</li>
-							<li>Case Studies</li>
-							<li>CI components</li>
-						</ul>
-						<li>Tools</li>
+							<ul>
+								<li>Working Definition of CI | Working Definition of CD</li>
+								<li>Case Studies</li>
+							</ul>
+						<li>Implementing Continuous Integration(CI)</li>
 						<ul>
 							<li><b> CI Tools: </b>Jenkins | Github Actions | Azure DevOps | Focus Groups | Surveys | Web Analytics</li>
 							<li><b> Communication Tools:</b> Trello | AirTable | Azure DevOps | Focus Groups | Surveys | Web Analytics</li>
+							<li><b></b>Pipeline Configuration:</b> </li>
+							<ul>
+								<li><b>Automation:</b> Unit Test | Dev Environments</li>
+								<li>Team Processes and Software Quality Assurance</li>
+							</ul>
 						</ul>
-				        <li>Pipeline Configuration</li>
-				        <ul>
-							<li><b>Automation:</b> Unit Test | Dev Environments</li>
-							<li>Team Processes and Software Quality Assurance</li>
-						</ul>
-						<li>Usability</li>
-				        <ul>
-							<li>Usability Testing | A/B testing | Site Peformance testing: tools, server/hosting | CDN</li>
-							<li>Compatibility Testing - Visual Factors | Browsers | device | print</li>
-							<!--<li>Automated testing</li>-->
+						<li>Implementing Continuous Delivery(CD)</li>
+						<ul>
+							<li>Traditional Delivery Process and shortcomings</li>
+							<li>...</li>
+							<li>...</li>
 						</ul>
 
 				    </ul>
 				</section>
-				<section data-background="images/ux/uxvsdesing.png" style="background-size: 80%;">
-					<h3 style="background-color:rgba(0,0,0,0.7);">What is User Experience(UX)?</h3>
-					<p style="background-color:rgba(0,0,0,0.7);" class="fragment"> User experience focuses on having a deep understanding of users, what they need, what they value, their abilities, and also their limitations. UX best practices promote improving the quality of the user’s interaction with and perceptions of your product and any related services.</p>
+				<section data-background="images/ci_cd/ci_bg.jpg" style="background-size: 80%;">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">What is Continuous Integration (CI)?</h3>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black;" class="fragment"> Continuous Integration (CI) is the process of automating the build and testing of code every time a team member commits changes to version control.</p>
+				</section>
+				<section data-background="images/ci_cd/cd_bg.jpg" style="background-size: 80%;">
+					<h3 style="background-color:rgba(255, 255, 255, 0.8); color: black;">What is Continuous Delivery (CD)?</h3>
+					<p style="background-color:rgba(255, 255, 255, 0.8); color:black;" class="fragment"> "Continuous Delivery (CD) is the ability to get changes of all types including new features, configuration changes, bug fixes, and experiments into production, or into the hands of users, safely and quickly in a sustainable way." <br><br>-Jez Humble</p>
 				</section>
 				<section data-background="#c8c8c8">
 						<h4>UX vs. UI</h4>
@@ -97,14 +100,25 @@
 				</section>
 		
 				<section data-background="#fff">
-					<h4 style="color: black;">UX Desired Outcome</h4>
+					<h4 style="color: black;">Downfalls of Traditional Delivery Process</h4>
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Useful</b> <br> Your content should be original and fulfill a need </p></div>
-						<div class="box blue" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Usable</b> <br> Site must be easy to use.</p></div>
-						<div class="box green" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Desirable</b> <br> Image, identity, brand, and other design elements are used to evoke emotion and appreciation</p></div>
-						<div class="box yellow" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Findable</b> <br> Content needs to be navigable and locatable onsite and offsite</p></div>
-						<div class="box orange" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Accessible</b> <br> Content needs to be accessible to people with disabilities</p></div>
+						<div class="box red" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Slow Delivery</b> <br> ... </p></div>
+						<div class="box blue" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Long Feedback cycle</b> <br> ...</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Lack of automation</b> <br> ...</p></div>
+						<div class="box yellow" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Risky Hotfixes</b> <br> ...</p></div>
+						<div class="box orange" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Stress</b> <br> ...</p></div>
 						<div class="box aquamarine" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Credible</b> <br> Users must trust and believe what you tell them</p></div>
+					</div>
+
+				</section>
+				<section data-background="#fff">
+					<h4 style="color: black;">Benefits  of Continuous Delivery</h4>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Fast Delivery</b> <br> ... </p></div>
+						<div class="box blue" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Fast Feedback cycle</b> <br> ...</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Low-Risk release</b> <br> ...</p></div>
+						<div class="box yellow" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Flexible release options</b> <br> ...</p></div>
+					
 					</div>
 
 				</section>

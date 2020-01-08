@@ -82,6 +82,31 @@
 					
 				</section>
 				<section data-background="#fff">
+					<h3>Asynchronous Example</h3>
+
+						<pre style="box-shadow: none;">
+							<code style="font-size: 16px;" class="language-javascript" data-trim contenteditable>
+								var fs = require('fs');
+
+								fs.readFile('subejects.txt', 'utf8', function(err, contents) {
+								    console.log(contents);
+								});
+								 
+								console.log('after calling readFile');
+
+
+							</code>
+						</pre>
+					
+						<ul>	
+							<li><b>What is Non-Blocking??</b> - Guess the output of above example </li>
+							<li><b>Callback Issues</b> - What are potential issues and benefits of asynchronous</li>	   
+						</ul>
+				
+
+					
+				</section>
+				<section data-background="#fff">
 					<h3>Installing NodeJs</h3>
 					<ul>		
 						<li><a href="https://nodejs.org/en/">Click here to navigte to <code>Nodejs website</code></a></li>	
