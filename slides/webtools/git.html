@@ -11,6 +11,7 @@
 		<link rel="stylesheet" href="css/mystyle.css">
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/gruvbox-dark.min.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -33,7 +34,16 @@
 				height: 290px;
 			}
 			#gitbutton{
-				
+				background-color: orangered;
+			    color: white;
+			    width: auto;
+			    margin: auto;
+			    padding: 20px;
+			    transition: 1s all;
+			}
+			#gitbutton:hover{
+				background-color: #ff0c00;
+				box-shadow: 2px 2px 10px #333;
 			}
 		</style>
 	</head>
@@ -77,9 +87,9 @@
 				    </ul>
 				</section>
 				<section data-background="#fff">
-				    <h2>What is Version Control?</h2>
+				    <h3>What is Version Control?</h3>
 					<p>The task of keeping a software system consisting of many versions and configurations well organized </p>
-					<iframe src="https://player.vimeo.com/video/41027679"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					<iframe src="https://player.vimeo.com/video/41027679" width="760"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 				</section>
 				<!--<section data-background="#fff">
 				    <h2>What is Git?</h2>
@@ -114,26 +124,24 @@
 					
 					<div id="flexcontain">
 						
-						<pre>
+						<pre style="box-shadow: none;">
 							<code style="font-size: 12px;" class="codebox code-example__codebox"  data-trim contenteditable>
-								&lt;!DOCTYPE html&gt;
-								&lt;html&gt;
-									&lt;head&gt;
-										<!--The head tag communicates information about the html document -->
-										&lt;title&gt;Basic Structure &lt;/title&gt;
-									&lt;/head&gt;
-									&lt;body&gt;
-										<!-- Place path between the qoutation marks of the src attribute-->
-										&lt;img src="" alt="" />
-	
-									&lt;/body&gt;
-								&lt;/html&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		<!--The head tag communicates information about the html document -->
+		&lt;title&gt;Basic Structure &lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		<!-- Place path between the qoutation marks of the src attribute-->
+		&lt;img src="" alt="" />
 
-
+	&lt;/body&gt;
+&lt;/html&gt;
 							</code>
 						</pre>
 
-						<div class="box_two" style="font-size: 20px; ">
+						<div class="box_two" style="font-size: 20px; margin-top: -20px; ">
 							<ol>	
 								<li style="font-size: 20px;">Create a new web project open project in editor and initialize git into the the project</li>
 	   							<li style="font-size: 20px;">Create a file and name it git.html </li>
@@ -192,6 +200,7 @@
 							</ul>
 						</div>
 					</div>
+										<a href="https://education.github.com/pack"><div id="gitbutton">Github Student Developer Pack - free stuff!!</div></a>
 				</section>
 				<section data-background="#fff">
 					<h3>.gitIgnore File </h3>

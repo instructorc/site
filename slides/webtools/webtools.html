@@ -8,9 +8,11 @@
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/dope.css">
+		<link rel="stylesheet" href="css/mystyle.css">		
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/gruvbox-dark.min.css">
 		<!-- Google Font -->
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
 
@@ -22,6 +24,22 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+		<style>
+			#animation_diff{
+				width: 70%; 
+				padding: 2%; 
+				background-color: green; 
+				margin: auto;
+				transition: all 3s;
+				color: white;
+			}
+			
+			#animation_diff:hover{
+				color: white;
+				background-color: #92B6B1;
+				padding: 4%;
+				transform: rotate(360deg);
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
@@ -43,6 +61,16 @@
                         <ul>
 				        	<li style="font-size: .6em">Compare Relative vs. Absolute file paths</li>
 				        	<li style="font-size: .6em"> Discuss File Structure best practices</li>
+				        </ul>
+                        <li>DevOps Tools </li>
+                        <ul>
+				        	<li style="font-size: .6em">What is DevOps?</li>
+				        	<li style="font-size: .6em"> Survery of Tools and processes</li>
+				        </ul>
+                        <li>Application Tools </li>
+                        <ul>
+				        	<li style="font-size: .6em">Frameworks | Compiler/Compression Tools</li>
+				        	
 				        </ul>
                         <!--<li>Git/Github</li>
                         <li>CI/CD</li>
@@ -172,24 +200,22 @@
 						
 						<pre>
 							<code style="font-size: 16px;" class="codebox code-example__codebox"  data-trim contenteditable>
-								&lt;!DOCTYPE html&gt;
-								&lt;html&gt;
-									&lt;head&gt;
-										<!--The head tag communicates information about the html document -->
-										&lt;title&gt;Basic Structure &lt;/title&gt;
-									&lt;/head&gt;
-									&lt;body&gt;
-										<!-- Place path between the qoutation marks of the src attribute-->
-										&lt;img src="" alt="" />
-	
-									&lt;/body&gt;
-								&lt;/html&gt;
+	&lt;!DOCTYPE html&gt;
+	&lt;html&gt;
+		&lt;head&gt;
+			<!--The head tag communicates information about the html document -->
+			&lt;title&gt;Basic Structure &lt;/title&gt;
+		&lt;/head&gt;
+		&lt;body&gt;
+			<!-- Place path between the qoutation marks of the src attribute-->
+			&lt;img src="" alt="" />
 
-
+		&lt;/body&gt;
+	&lt;/html&gt;
 							</code>
 						</pre>
 
-						<div class="box_two" style="font-size: 22px; ">
+						<div class="box_two" style="font-size: 22px; margin-top: -20px; ">
 							<ol>	
 								<li style="font-size: 20px;">Create a new web project and replicate the file structure from the previous slide.</li>
 	   							<li style="font-size: 20px;">Within the index.html file, copy the code from above and save the file </li>
@@ -200,6 +226,50 @@
 						</div>
 					</div>
 				</section>
+				<section data-background="images/webtool/devops.jpg">
+					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">What is DevOps</h1>
+				</section>
+				<section data-background="#fff">
+					<h3>What is DevOps?</h3>
+					<p style="font-size: .8em;">DevOps is a <strong>set of practices that automates the processes</strong> between software development and IT teams, in order that they can <strong>build</strong>, <strong>test</strong>, and <strong>release</strong> software faster and more reliably.</p>
+					<img src="images/webtool/devops_process.png" width="700" alt="DevOps cyclical graphic">
+		
+				</section>
+				<section data-background="#fff">
+					<h3>What is DevOps?</h3>
+					<iframe width="760" height="515" src="https://www.youtube.com/embed/_I94-tJlovg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+					
+				</section>
+				<section data-background="#fff">
+					<h3>JAMF Case Study</h3>
+					<a href="http://atlassian.wpengine.netdna-cdn.com/wp-content/uploads/ebook-JAMF_DevOps-2.pdf" target="_blank"><div id="animation_diff">Click here for case study</div></a>					
+
+					
+				</section>
+				<section data-background="#fff">
+					<h3>Survey of DevOp Tools</h3>
+					<p style="font-size: 24px;"> Versioning Tools    &#10022;  CI/CD Tools &#10022;  Automation Tools &#10022;  Monitoring Tools</p>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 20px;"><b>Git and Github Version Control</b>  </li>
+								<li style="font-size: 20px;"><b>Docker and Kubernetes</b>  </li>
+								<li style="font-size: 20px;"><b>Jenkins</b>  </li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 20px;"><b>Azure DevOps</b> </li>	 
+								<li style="font-size: 20px;"><b>Jasmine and Selenium Testing</b> </li>								
+							</ul>
+						</div>
+						
+					</div>
+				</section>				
+				<section data-background="images/webtool/devops.jpg">
+					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">Application Tools</h1>
+				</section>	
 				<!--<section data-background="#eee">
 				    <h2>Continous Integration Definition</h2>
 				    <p>Continuous Integration is the practice of merging in small code changes frequently - rather than merging in a large change at the end of a development cycle. The goal is to build healthier software by developing and testing in smaller increments.</p>
@@ -217,6 +287,9 @@
 			</div>
 		</div>
 
+
+		<script src="js/svg_ex.js"></script>
+		<!--<script src="js/background.js"></script>-->
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
 
