@@ -48,7 +48,6 @@
 								<li> Class Diagrams | Use Case | Activity | Sequence | Communication</li>
 							</ul>
 						</ul>
-						<li>Class Diagram drafting tools - Draw.io | PlantUML | Microsoft Visio</li>
 						<li>Class Diagrams</li>
 						<ul>
 							<li>Definition of Class Diagram</li>
@@ -56,16 +55,20 @@
 							<ul>
 								<li><strong>Classifiers and Features</strong></li>
 						        <ul>
-									<li>Using Looping Structure - For Loops and While Loops</li>
+									<li>Classes and Interfaces | Attributes and Methods | Visibility | Static and Instance Scope</li>
 		
 								</ul>
-							<li><strong>Relationships</strong></li>
-					        <ul>
-								<li>Multiplicity</li>
-								<li>Defining Aggregation and Composition </li>
-								<!--<li>Automated testing</li>-->
+								<li><strong>Relationships</strong></li>
+						        <ul>
+									<li>Types of Relationships - Associations | Dependencies | Generalizations | Realizations</li>
+									<li>Defining Aggregation and Composition </li>
+									<li>Diagramming Multiplicity</li>
+								</ul>
 							</ul>
-							</ul>
+						</ul>
+						<li>Class Diagram drafting tools</li>
+						<ul>
+							<li> Draw.io |  Forward and Reverse Engineering</li>
 						</ul>
 					
 				    </ul>
@@ -134,38 +137,61 @@
 					<iframe width="860" height="615" src="https://www.youtube.com/embed/tKy85WODAUk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</section>
 				<section data-background="#fff">
-					<h3 style="color: white; background-color: #328853;">Classifiers</h3>
-					<p style="font-size: 28px; margin-bottom: -12px;">A classifier is a category of Unified Modeling Language (UML) elements that have some common features, such as attributes or methods.  In class diagrams, the two most common classifiers are regular classes and interfaces</p>
+					<h3 style="color: white; background-color: #328853;">Classifiers & Features</h3>
+					<p style="font-size: 22px; margin-bottom: 10px;">A classifier is a category of UML elements that have some common features, such as <strong>attributes</strong> or <strong>methods</strong>.  In class diagrams, the two most common classifiers are regular <strong>classes and interfaces</strong></p>
 					<div id="flexcontain">
-						<div class="box_two" style="margin: 10px;">
+						<div class="box_two" style="margin: 12px;">
 						<ul style="font-size: .7em;">	
-							<li><b>Examples: mail-order business</b></li>
+							<li><b>Class diagram components</b></li>
 							<ul>
-								<li>Item numbers are three-digit, non-consecutive numbers</li>
-								<li>Customer orders an item; check if item number is valid</li>
-								<li>Create an array that holds valid item numbers</li>
-								<li>Search the array for an exact match</li>
+								<li>Classes and Interfaces</li>
+								<li>Structural and Behavior Features which translates to attributes and methods</li>
+								<li>Visibility - Private | Protected | Public</li>
+								<li>Static and Instance Scope </li>
+								
 							</ul>
 						</ul>
 						</div>
 						<div class="box_two" style=" margin: 10px;">
-							<img src="images/structures/array_exact_match.png" width="330" alt="Array with exact match example">
+							<img src="images/uml/advanced_class.png" width="600" alt="Advanced class breakdown">
 						</div>
 					</div>
 				</section>
 				<section data-background="#fff">
-					<h3>Activity 2</h3>
+					<h3 style="color: white; background-color: #328853;">Relationships</h3>
+					<p style="font-size: 26px; margin-bottom: 10px;">Graphically, a relationship is rendered as a path, with different kinds of lines used to distinguish the different relationships.</p>
+					<p style="font-weight: 900; font-size: 22px"> Four types - Associations | Dependencies | Generalization | Realizations</p>
+
+					<img src="images/uml/relationships_diagram.png" width="700"  alt="UML class diagram relationship arrows">
+		
+				</section>
+				<section data-background="#fff">
+					<h3>Relationship Descriptions</h3>
+				
+					<div id="flexcontain">
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Use Case Diagram</b> </p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Activity Diagram</b> </p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Sequence Diagram</b> </p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Class Diagram</b> </p></div>
+					
+					</div>
+					
+				
+				</section>
+				<section data-background="#fff">
+					<h3>Class Activity</h3>
 
 					<img src="images/structures/produce_list_cp.jpg" width="400" alt="Picture of produce students will code into a array">
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Using the above image - create an array that holds each of the items above. </div>
-						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Using a looping structure, output the items in list</p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Using the above description, identify all of the possible classes and create class diagrams with respective attributes and methods</div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Translate the requirements into business rules that identify the relationships amongst the classes</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Create the class diagram </p></div>
 
 
 					</div>
 				</section>
 				<section data-background="images/uml/parallel_bg.jpg">
-					<h1 style="color: black; background-color: #ffffffe0; padding: 3px;">Searching an Array for Exact Match</h1>
+					<h1 style="color: black; background-color: #ffffffe0; padding: 3px;">Class Diagram Drafting Tools</h1>
 				</section>
 				<section data-background="#fff">
 					<h3 style="color: white; background-color: #328853;">Searching for Exact Match</h3>
@@ -202,47 +228,7 @@
 				<section data-background="images/structures/parallel_bg.jpg">
 					<h1 style="color: black; background-color: #ffffffe0; padding: 3px;">Parallel Arrays</h1>
 				</section>
-				<section data-background="#fff">
-					
-					<h3>Using parallel arrays</h3>
-					<img src="images/structures/parrallel_arrays.png" width="500" alt="parallel Arrays graphic">
-					<ul>
-						<li style="font-size: .6em;"><b>Two or more arrays contain related Data</b> - A subscript relates the arrays. <em>Elements at the same position in each array are logically related</em></li>
-						<li style=" font-size: .6em;"><b>Indirect Relationship</b> - Relationship between an item's number and its price</li>
-					</ul>
-					
-		
-				</section>
 
-				<section data-background="#fff">
-					<h3>Activity 5</h3>
-					<img src="images/structures/fibonacci-sequence.jpg" width="500" alt="fibonacci sequence diagram">
-					<div id="flexcontain">
-						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Look up the formula for the fibonacci sequence and do research on this mathematical phenomenon</p></div>
-						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Think through and apply the correct structures to fulfill the requirements of the sequence.</p></div>
-						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Code the program in C#</p></div>
-
-					</div>
-					
-				
-				</section>
-
-				<section data-background="#fff">
-				
-					<h4>Nested Loops Structure</h4>
-					<div id="flexcontain">
-						<div class="box yellow" style="font-size: 22px; margin: 10px; min-width: 650px; background-color: #ffffff;">
-						
-							<img src="images/structures/GridviewinGridview.gif"   alt="nested Loops practical example in gridview">
-						</div>
-						<div class="box red" style="font-size: 28px; margin: 10px; height: 235px; background-color: #ddd; color: #111;"><p><b>Nested Loop </b><br>loops within loops</p></div>
-						<div class="box blue" style="font-size: 28px; margin: 10px; height: 235px; background-color: #ddd; color: #111;"><p><b>Outer Loop </b><br>the loop that contains the other loop</b></p></div>
-						<div class="box green" style="font-size: 28px; margin: 10px; height: 235px; background-color: #ddd; color: #111;"><p><b>Inner Loop</b><br> the loop that is contained</p></div>
-
-
-					</div>
-				
-				</section>
 				<section data-background="#fff">
 				
 					<h4>Example of Two nested Loops</h4>
@@ -301,30 +287,7 @@ Console.WriteLine("Weekly Menu has been outputted");
 					</div>
 				
 				</section>
-				<section data-background="#fff">
-					<h3>Using For Loops</h3>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="margin: 10px;">
-							<ul style="font-size: 34px;">
 
-								<li><b>Definite Loop</b></li>
-								<ul>
-									<li>Provides <b>three actions</b> in one structure</li>
-									<li>Initializes  | Evaluates </li>
-								</ul>
-								<li><em>while</em> statement could be used in place of <em>for</em> statement</b></li>
-								<ul>
-									<li><b>Pretest Loop:</b> the loop control variable is tested before each iteration <br>-  <em>for</em> loops and <em>while<em> loops are pretest loops</em></em></li>
-									<li><b>Posttest:</b> the loop control variable is tested after each iteration <br> - <em>do...while</em> is a posttest loop</li>
-
-								</ul>
-							</ul>
-						</div>
-						
-					</div>
-					<img src="images/structures/forstatement.png" width="600" alt="for statement diagram">
-				</section>
 				<section data-background="#fff">
 					<h3>Activity 6</h3>
 					<img src="images/structures/calendar_days.jpg" width="490" alt="2014 calendar graphic">
@@ -337,119 +300,8 @@ Console.WriteLine("Weekly Menu has been outputted");
 					
 				
 				</section>
-				<section data-background="#fff">
-					<h3>Loop Use Cases</h3>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="margin: 10px;">
-							<ul style="font-size: 30px;">
 
-								<li><b>Using a loop to accumulate totals</b></li>
-								<ul>
-									<li>- Examples</li>
-									<ul>
-										<li>Business reports often include totals</li>
-										<li>List of real estate sold and total value</li>
-									</ul>
-								</ul>
-								<li><b>Accumulator:</b> variable that gathers values</li>
-								<ul>
-									<li>- Similar to a counter</li>
-									<ul>
-										<li>Counter increments by 1</li>
-										<li>Accumulator increments by some value</li>
-									</ul>
-								</ul>
-								<li><b>Accumulators require three actions</b></li>
-								<ul>
-									<li style="background-color: #ffe600;">Initialize the accumulator to 0</li>
-									<li style="background-color: #26e600;">Accumulators are altered: once for every data set processed</li>
-									<li style="background-color: #44c8f5;">At the end of processing, accumulators are output</li>
-								</ul>
-							</ul>
-						</div>
-						<div class="box_two" style=" margin: 10px;">
-							<img src="images/structures/accum_loop.PNG" width="500" alt="Accumulator Loop diagram">
-						</div>
-					</div>
-				</section>
-				<section data-background="#fff">
-					<h3>Using loops to validate data</h3>
-					
-					<div id="flexcontain">
-						<div class="box_two" style=" margin: 10px;">
-							<img src="images/structures/loop_validation.png" width="500" alt="Loop validation diagram">
-						</div>
-						<div class="box_two" style="margin: 10px;">
-							<ul style="font-size: 30px;">
-
-								<li><b>Defensive programming:</b> preparing for all possible errors before they occur</li>
-								<ul>
-									<li>When prompting a user for data, no guarantee that data is valid</li>
-								</ul>
-								<li>Good defensive programs try to foresee all possible inconsistencies and errors</li>
-								<li><b>Validate data:</b> make sure data falls in acceptable ranges (month values between 1 and 12)</li>
-								<li><b>GIGO:</b> Garbage in, garbage out</li>
-								<ul>
-									<li>Unvalidatedinput will result in erroneous output</li>
-								</ul>
-							</ul>
-						</div>
-
-					</div>
-				</section>
-				<section data-background="#fff">
-					<h3>Limiting a reprompting Loop</h3>
-					
-					<div id="flexcontain">
-						<div class="box_two" style=" margin: 10px;">
-							<img src="images/structures/limiting_loop.png" width="500" alt="Limiting Loop Reprompt diagram">
-						</div>
-						<div class="box_two" style="margin: 10px;">
-							<ul style="font-size: 30px;">
-
-								<li><b>Reprompting can be frustrating to a user if it continues indefinitely</b></li>
-
-								<li><b>Maintain a count of the number of reprompts</b> </li>
-								<li><b>Forcing</b> a data item means:</li>
-								<ul>
-									<li>Override incorrect data by setting the variable to a specific value</li>
-								</ul>
-							</ul>
-						</div>
-
-					</div>
-				</section>
-				<!--<section data-background="#fff">
-					<h3>Single Folder Structure</h3>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<ul>	
-								<li style="font-size: 28px;">files are placed in the root folder.  Images, JS files, css files all exist in root folder.</li><br>
-   
-							</ul>
-						</div>
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<img src="images/folderstructure.PNG" alt="picture of folder structure">
-						</div>
-					</div>
-				</section>
-				<section data-background="#fff">
-					<h3>Hierarchical Folder Structure</h3>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<ul>	
-								<li style="font-size: 28px;">additional folders are created within the root folder to categorize the different type of files.  Images, JS files, css files will exist within their respective folder.</li><br>
-   
-							</ul>
-						</div>
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<img src="images/webtool/hierarcialstructure.PNG" alt="picture of folder structure">
-						</div>
-					</div>
-				</section>
+				<!--
 				<section data-background="#fff">
 					<h3>File Structure Best Practice</h3>
 					
