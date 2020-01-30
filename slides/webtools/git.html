@@ -61,7 +61,7 @@
 				</section>
 				<section data-background="#eee">
 				    <h2>Learning Objectives</h2>
-				    <ul>
+				    <ul style="font-size: .6em;">
 				        <li>Download and install Git</li>
                         <li>What is version control?  | What is Git?</li>
                         <li>Commonly Used Git commands - Cheatsheet</li>
@@ -69,10 +69,15 @@
 						<li>Understanding Github</li>
 						<ul> 
 							<li>Remote Repository & Local Repository</li>
-							<li>Team Workflow - Forking and Collaborators</li>
-							<li>Github Features - Github pages</li>
+							<li>ReadMe Documentation & .gitIgnore File </li>
+							<li>Github Features - Pages | Actions | Repo settings</li>
 						</ul>
-						<li>ReadMe Documentation & .gitIgnore File </li>
+						<li>Team Workflow </li>
+						<ul> 
+							<li>Forking Workflow | Branching Strategy (Collaboraters) | Organization Set-up</li>
+							<li>Team guidlines, considerations, process and communication </li>
+							
+						</ul>
 
 				    </ul>
 				</section>
@@ -161,10 +166,6 @@
 					<p>Branching allows you to create a copy of your master branch.  You can experiment and test new functionality on new branches.  Branching allows you to keep your master branch clean. </p>
 					<img src="images/git/branching.png" alt="version control branching graphic">
 				</section>
-				<section data-background="#F1F1EE">
-						
-						<img src="images/git/workflow.PNG" alt="github workflow image" style="margin-top: -1em;">
-				</section>
 				<section data-background="#fff">
 				    <h2>Git Update and Share</h2>
 					<p>Git allows you to retrieve and update remote repositories and update local repositories. </p>
@@ -234,7 +235,7 @@
 					<div id="flexcontain">
 						
 						<pre style="font-size: 12px; border: none; height: 400px; margin-bottom: 36px;">
-							<code style="font-size: 12px; border: none; height: 400px;" class="codebox code-example__codebox"  data-trim contenteditable>
+							<code style="font-size: 14px; border: none; height: 385px;" class="codebox code-example__codebox"  data-trim contenteditable>
 # Learning about ReadMe Files
 
 A ReadMe File helps provide documentation for your repository.
@@ -275,6 +276,83 @@ Please make sure to update tests as appropriate.
 						</div>
 					</div>
 				</section>
+				<section data-background="images/ci_cd/ci_bg.jpg">
+					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">Team Workflow</h1>
+				</section>
+				<section data-background="#fff">
+					<h3>Varying Workflows</h3>
+
+					<p>A company can structure thier workflow a variety of ways.  It's important to understand the procedures and policy of a company's version control setup.</p>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Branching Strategy</b> <br> Team determines a strategy on how they will utilize the branching functionality to successfully version control their project.  Team members have full read-write access.</div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Forking</b> <br>Allows for more control over repository and allows anyone to contribute.  Preferred workflow for open source projects with a community</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Organizations</b> <br>You can add repositories to your teams with more flexible levels of access (Admin, Write, Read).  It's not a workflow, but rather a way of providing guidance to respositories.</p></div>
+
+
+					</div>
+				</section>
+				<section data-background="#fff">
+					<section>
+					<h3>Branching Workflow Strategy </h3>
+						<div id="flexcontain">
+							<div class="box_two" style="font-size: 22px; margin: 10px;">
+								<ol>	
+									<li style="font-size: 22px;">Team Lead – the person who will give guidance to the project and creates the repository.</li>
+									<li style="font-size: 22px;">Team lead initiates the project by creating repository and uploading project.  Team lead then adds other members as collaborators in repository settings tab.</li>
+									<li style="font-size: 22px;">Team determines strategy for how remote branches will be used.  ex. feature branching, dev environment/prod/functionality branch</li>
+									<li style="font-size: 22px;">Based on your teams branching stategy, create the brances on the remote repository. </li>
+						
+	
+								</ol>
+							</div>
+							<div class="box_two" style="font-size: 22px; margin: 10px;">
+								<ul>	
+									<img src="images/git/git_team_strategy.png" alt="git branch stategy image" >
+								</ul>
+							</div>
+						</div>
+					</section>
+					<section data-background="#fff">
+						<h3>Branch Strategy</h3>
+						<p style="font-size: .8em;">Typical Branch Strategy - Companies vary on strategy, but this process should be well documented and communicated to each member.</p>
+						<img src="images/git/branch_strategy.png" width="600" alt="branching strategy visual">
+		
+					</section>	
+					<section data-background="#F1F1EE">
+						<img src="images/git/workflow.PNG" alt="github workflow image" style="margin-top: -1em;">
+					</section>
+				</section>
+				<section data-background="#fff">
+					<h3>Branching Workflow Strategy Process for team members</h3>
+				
+					<div id="flexcontain">
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px;  color: #111;"><p><b style="font-size: 28px;">Step 1</b><br> Create a folder on your local machine to bring down remote copy. Execute the command <code>"git init"</code> to initialize git.</p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px;   color: #111;"><p><b style="font-size: 28px;">Step 2</b><br> Connect to remote repository by running <code> "git remote add origin REMOTE_REPO_URL"</code>  </p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee;  height: 225px;  color: #111;"><p><b style="font-size: 28px;">Step 3</b><br>Execute the command <code>"git pull origin SPECIFIC_BRANCH"</code> to bring down files onto local machine. </p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px;   color: #111;"><p><b style="font-size: 28px;">Step 4</b><br>Make the necessary adjustments - make necessary commits - Execute the <code>"git push origin SPECIFIC_BRANCH"</code> to push up changes to remote repository. <br> <span style="color: #cd0000; font-weight: 900;"> Caution: Push to agreed upon branch decided as a team</span></p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #eee;  height: 225px;  color: #111;"><p><b style="font-size: 28px;">Step 5</b><br> Execute a merge request on the hosted Github repository page - Perfect time for code review as a team - communication tool notifies team</p></div>
+					</div>
+					
+				
+				</section>
+				<section data-background="#fff">
+					<h3>Forking Strategy</h3>
+					<p style="font-size: .8em;">A strategy typically used for opensource projects. </p>
+					<img src="images/git/fork_strategy.png" width="575" alt="fork strategy visual">
+	
+				</section>
+				<section data-background="#fff">
+					<h3>Team Activity & Practice</h3>
+
+					<p>Work with your team to decide upon a branching strategy and take turns documenting your strategy in a Readme.md file.  Complete the three steps below.</p>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Decide upon a team lead to do the initial repository set-up and adding collaborators to repo. </div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Allows for more control over repository and allows anyone to contribute.  Preferred workflow for open source projects with a community</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>You can add repositories to your teams with more flexible levels of access (Admin, Write, Read).  It's not a workflow, but rather a way of providing guidance to respositories.</p></div>
+
+
+					</div>
+				</section>
 				<!--<section data-background="#fff">
 				    <h2>Merging</h2>
 					<p>The cheatsheet represents some of the most used commands that allows you to achieve the Git workflow.</p>
@@ -284,6 +362,7 @@ Please make sure to update tests as appropriate.
 				    <h2>References</h2>
 					<ul>
 						<li>https://sentheon.com/blog/git-cheat-sheet.html#.XWAt4uhKiUk</li>
+						<li>https://github.com/oppia/oppia/wiki/Why-fork-and-clone-Oppia%3F</li>
 					</ul>
 				</section>
 			</div>
