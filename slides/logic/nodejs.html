@@ -18,7 +18,7 @@
 		<link rel="stylesheet" href="css/zenburn.css">
 		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css">
 
-		
+	<link href="https://fonts.googleapis.com/css?family=Mallanna&display=swap" rel="stylesheet">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -32,6 +32,10 @@
 			ul li{
 				font-size: 80%;
 			}
+			.reveal{
+				font-family: 'Mallanna', sans-serif;
+			}
+
 		</style>
 	</head>
 	<body>
@@ -45,15 +49,32 @@
 				<section data-background="#eee">
 				    <h2>Learning Objectives</h2>
 				    <ul>
-						<li>What is NodeJs?</li>
-						<li>Asynchronous Programming</li>
 				        <li>Installation of NodeJS</li>
-						<li>Asynchronous Programming</li>
-                        <li>Creating and using modules</li>
-                        <li>Practice with Core Modules</li>
+						<li>What is NodeJs? | Asynchronous Programming</li>
+                        <li>Creating and using modules | Practice with Core Modules</li>
+                        <ul>
+                        	<li>Core Module - http | fs | email</li>
+                        </ul>
+                        <li>NPM</li>
+                        <ul>
+                        	<li>What is NPM?</li>
+                        	<li>Configuration | Installing & Uninstalling Packages  </li>
+                        	<li>Understanding package.json</li>
+                        	<li>NPM most popular commands and cheatsheet</li>
+                        	<li>Exporting Packages</li>
+                        </ul>
+
                         <!--<li>Key Commands</li>-->
                         <!--<li>NPM summary</li>-->
 				    </ul>
+				</section>
+				<section data-background="#fff">
+					<h3>Installing NodeJs</h3>
+					<ul>		
+						<li><a href="https://nodejs.org/en/">Click here to navigte to <code>Nodejs website</code></a></li>	
+						<li>Click on the LTS version that is recommended for most users.</li>	   
+					</ul>
+					
 				</section>
 				<section data-background="#eee">
 						<h2>What is  <code>nodejs</code> ?</h2>
@@ -106,14 +127,7 @@
 
 					
 				</section>
-				<section data-background="#fff">
-					<h3>Installing NodeJs</h3>
-					<ul>		
-						<li><a href="https://nodejs.org/en/">Click here to navigte to <code>Nodejs website</code></a></li>	
-						<li>Click on the LTS version that is recommended for most users.</li>	   
-					</ul>
-					
-				</section>
+
 
 				<!--<section data-background="#eee">
 					<h2>Installing NodeJs</h2>
@@ -168,24 +182,37 @@
 						</code></pre>
 						
 					</section>
-					<!--<section>
-						<h3>Using a Core/Built-in Module</h3>
-						<ul>
-							<li>This example will utilize both the core http module to create a server</li>
-							<li>Create a file called server.js</li>
-							<li>Copy and add the code snippet below to your server.js file: </li>
-						</ul>
-						<pre><code class="hljs" data-trim contenteditable>
-								exports.welcome = function(){    
-									console.log("You called the welcome method");
-								}
 
-								exports.conclude = ()=>{
-									console.log("You called the conclude method");
-								}
-						</code></pre>
+				</section>
+				<section data-background="#eee">
+					<h2>Introduction to Node Package Manager (NPM)</h2>
+					 <img src="images/npm/npmlogo.svg" width="420" style="box-shadow: none; border: none;"alt="Npm logo">
+				</section>
+				<section data-background="#eee">
+						<h2>What is  <code>NPM</code> ?</h2>
+						<p>NPM is the package manager for JavaScript and the world’s largest software registry. Discover packages of reusable code — and assemble them in powerful new ways.</p>
 						
-					</section>-->
+						<ul>
+							<li>NPM comes with the installation of <a href="https://nodejs.org">Node.js</a></li>
+							<li><a href="https://www.npmjs.com/">Click here to navigte to <code>npmjs.com</code></a></li>
+						</ul>
+				</section>
+				<section data-background="#eee">
+					<h2>Why use NPM?</h2>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px;"><p>Download standalone tools you can use right away.</p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px;"><p>Share code with any npm user, any where</p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px;"><p>Form virtual teams (orgs)</p></div>
+						<div class="box yellow" style="font-size: 24px; margin: 10px;"><p>Manage multiple versions of code and code dependencies.</p></div>
+						<div class="box orange" style="font-size: 24px; margin: 10px;"><p>Update applications easily when underlying code is updated.</p></div>
+						<div class="box aquamarine" style="font-size: 24px; margin: 10px;"><p>Discover multiple ways to solve the same puzzle.</p></div>
+					</div>
+
+				</section>
+				<section data-background-color="#000000">
+					<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+						<iframe width="850" height="700" src="https://www.youtube.com/embed/x03fjb2VlGY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					</div>
 				</section>
 				<!--<section data-background="#fff">
 					<h3>Including Modules into your Application</h3>
