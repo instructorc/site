@@ -35,6 +35,11 @@
 			.reveal{
 				font-family: 'Mallanna', sans-serif;
 			}
+			.box:hover{
+			    background-color: #ffffff;
+			    color: #333;
+			    box-shadow: 6px 6px 12px #333;
+			}
 
 		</style>
 	</head>
@@ -48,12 +53,12 @@
 				</section>
 				<section data-background="#eee">
 				    <h2>Learning Objectives</h2>
-				    <ul>
+				    <ul style="font-size: .7em;">
 				        <li>Installation of NodeJS</li>
 						<li>What is NodeJs? | Asynchronous Programming</li>
                         <li>Creating and using modules | Practice with Core Modules</li>
                         <ul>
-                        	<li>Core Module - http | fs | email</li>
+                        	<li>Routing with Core Modules - http | fs | email</li>
                         </ul>
                         <li>NPM</li>
                         <ul>
@@ -141,48 +146,66 @@
 					</div>
 
 				</section>-->
+				
 				<section>
-					<section>
-						<h3>Node Modules</h3>
-						<p> Core/Built-in Modules   &#10022;    Third-Party Modules </p>
-						<div id="flexcontain">
-							<div class="box_two" style="font-size: 22px; margin: 10px;">
-								<ul>
-									<li style="font-size: 26px;"><b>File Module</b> Including the path of file in require method</li>
-									<li style="font-size: 26px;"><b>Core modules</b> are modules that come with NodeJs.  You do not have to install them.  <a href="https://nodejs.org/api/modules.html"> Click here to see a list of core modules</a></li><br>
-									<li style="font-size: 26px;"><b>Third-Party modules</b> - pushes it to a queue and continues with the next statement. If the server returns something, it callback to whatever triggered the event.</li>	   
-								</ul>
-							</div>
-							<pre>
-								<code style="font-size: 16px;" class="language-javascript" data-trim contenteditable>
-									const welcome = require('./welcome'); //including a module that is a file within your program
-									const http = require('http'); //including a core module example
-									const app = require('express'); //including third-party module example
+					<h3>Node Modules</h3>
+					<p> Core/Built-in Modules   &#10022;    Third-Party Modules </p>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>
+								<li style="font-size: 26px;"><b>File Module</b> Including the path of file in require method</li>
+								<li style="font-size: 26px;"><b>Core modules</b> are modules that come with NodeJs.  You do not have to install them.  <a href="https://nodejs.org/api/modules.html"> Click here to see a list of core modules</a></li><br>
+								<li style="font-size: 26px;"><b>Third-Party modules</b> - pushes it to a queue and continues with the next statement. If the server returns something, it callback to whatever triggered the event.</li>	   
+							</ul>
+						</div>
+						<pre>
+							<code style="font-size: 16px;" class="language-javascript" data-trim contenteditable>
+								const welcome = require('./welcome'); //including a module that is a file within your program
+								const http = require('http'); //including a core module example
+								const app = require('express'); //including third-party module example
 
 
-								</code>
-							</pre>
+							</code>
+						</pre>
 
-						</div>	
-					</section>
-					<section>
-						<h3>Creating your own Module</h3>
-						<ul>
-							<li>Create a file called welcome.js</li>
-							<li>Add the code snippet below to your welcome.js file:</li>
-						</ul>
-						<pre><code class="hljs" data-trim contenteditable>
-								exports.welcome = function(){    
-									console.log("You called the welcome method");
-								}
+					</div>	
+				</section>
 
-								exports.conclude = ()=>{
-									console.log("You called the conclude method");
-								}
-						</code></pre>
-						
-					</section>
+				<section data-background="images/methods/overloaded_bg.jpg">
+					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">Modules</h1>
+				</section>
+				<section data-background="#fff">
+					<h3>Http Core Module</h3>
+					<!--<p> Event-driven    &#10022;    Non-blocking I/O </p>-->
+						<img src="images/node/http_image.jpg" width="500" style="box-shadow: none;" alt="Node request Object"/>
 
+							<ul>	
+								<li style="font-size: 26px;"><b>http module</b> - The HTTP core module is a key module to Node.js networking.  Allows for requesting resources across a network. </li>
+								<li style="font-size: 26px;"><b>Resource</b> - <a href="https://nodejs.dev/the-nodejs-http-module">Nodejs.dev</a></li>	   
+							</ul>
+	
+
+					
+				</section>
+				<section>
+					<h3>Creating your own Module</h3>
+					<ul>
+						<li>Create a file called welcome.js</li>
+						<li>Add the code snippet below to your welcome.js file:</li>
+					</ul>
+					<pre><code class="hljs" data-trim contenteditable>
+							exports.welcome = function(){    
+								console.log("You called the welcome method");
+							}
+
+							exports.conclude = ()=>{
+								console.log("You called the conclude method");
+							}
+					</code></pre>
+					
+				</section>
+				<section data-background="images/methods/overloaded_bg.jpg">
+					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">Routing w/Core Modules</h1>
 				</section>
 				<section data-background="#eee">
 					<h2>Introduction to Node Package Manager (NPM)</h2>
@@ -200,19 +223,30 @@
 				<section data-background="#eee">
 					<h2>Why use NPM?</h2>
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 24px; margin: 10px;"><p>Download standalone tools you can use right away.</p></div>
-						<div class="box blue" style="font-size: 24px; margin: 10px;"><p>Share code with any npm user, any where</p></div>
-						<div class="box green" style="font-size: 24px; margin: 10px;"><p>Form virtual teams (orgs)</p></div>
-						<div class="box yellow" style="font-size: 24px; margin: 10px;"><p>Manage multiple versions of code and code dependencies.</p></div>
-						<div class="box orange" style="font-size: 24px; margin: 10px;"><p>Update applications easily when underlying code is updated.</p></div>
-						<div class="box aquamarine" style="font-size: 24px; margin: 10px;"><p>Discover multiple ways to solve the same puzzle.</p></div>
+						<div class="box red" style="font-size: 32px; margin: 10px; border-radius: 12px;"><p>Download standalone tools you can use right away.</p></div>
+						<div class="box blue" style="font-size: 32px; margin: 10px; border-radius: 12px;"><p>Share code with any npm user, any where</p></div>
+						<div class="box green" style="font-size: 32px; margin: 10px; border-radius: 12px;"><p>Form virtual teams (orgs)</p></div>
+						<div class="box yellow" style="font-size: 32px; margin: 10px; border-radius: 12px;"><p>Manage multiple versions of code and code dependencies.</p></div>
+						<div class="box orange" style="font-size: 32px; margin: 10px; border-radius: 12px;"><p>Update applications easily when underlying code is updated.</p></div>
+						<div class="box aquamarine" style="font-size: 32px; margin: 10px; border-radius: 12px;"><p>Discover multiple ways to solve the same puzzle.</p></div>
 					</div>
 
 				</section>
 				<section data-background-color="#000000">
 					<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-						<iframe width="850" height="700" src="https://www.youtube.com/embed/x03fjb2VlGY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+						<iframe width="750" height="500" src="https://www.youtube.com/embed/x03fjb2VlGY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Commonly used NPM commands</h3>
+
+						<iframe src="https://devhints.io/npm" width="900" height="600"></iframe>
+					
+					
+						<p></p>
+				
+
+					
 				</section>
 				<!--<section data-background="#fff">
 					<h3>Including Modules into your Application</h3>
