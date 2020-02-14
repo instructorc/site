@@ -170,7 +170,23 @@
 
 					</div>	
 				</section>
+				<section>
+					<h3>Creating your own Module</h3>
+					<ul>
+						<li>Create a file called welcome.js</li>
+						<li>Add the code snippet below to your welcome.js file:</li>
+					</ul>
+					<pre><code class="hljs" data-trim contenteditable>
+							exports.welcome = function(){    
+								console.log("You called the welcome method");
+							}
 
+							exports.conclude = ()=>{
+								console.log("You called the conclude method");
+							}
+					</code></pre>
+
+				</section>
 				<section data-background="images/methods/overloaded_bg.jpg">
 					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">Modules</h1>
 				</section>
