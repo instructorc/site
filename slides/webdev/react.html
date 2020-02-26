@@ -85,31 +85,68 @@
 				</section>
 				<section data-background="#fff">
 					<h3>Understanding React</h3>
-					<img src="images/structures/array_syntax_initializer.png" width="400" alt="Initializing arrays">
+					
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Components</b> <br> ...</p></div>
-						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Props and State</b> <br>...</p></div>
-						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Event Listeners</b> <br>...</p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 395px; color: #111;"><p><b style="font-size: 26px;">Components</b> <br> are independent and reusable bits of code. They serve the same purpose as JavaScript functions, but work in isolation and returns HTML via a render function. Components come in two types, <strong>Class components</strong> and <strong>Function components</strong>.</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 395px; color: #111;"><p><b style="font-size: 26px;">Props and State</b> <br>Props are arguments passed into React components. Props are passed to components via HTML attributes. <br> <strong>State</strong><br> React components have a built-in state object.  The state object is where you store property values that belongs to the component.  When the state object changes, the component re-renders.</p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #eee; height: 395px; color: #111;"><p><b style="font-size: 26px;">Event Listeners</b> <br>...</p></div>
 
 					</div>
-					
 				
 				</section>
 				<section data-background="#fff">
-					<h3>Adding React</h3>
-					<p style="font-size: 28px; margin-bottom: -12px;">CDN &#9924; Node Package Manager  </p>
+					<h3>Components</h3>
+					<p style="font-size: 28px; margin-bottom: -12px;">Class Component  &#9924; Function Component </p>
 					<div id="flexcontain">
 						<div class="box_two" style="margin: 10px;">
 							<pre style="box-shadow: none;">
 								<code style="font-size: 14px;" class="codebox code-example__codebox"  data-trim contenteditable>
+									import React, { Component } from "react";
+									
+									class Welcome extends Component {
+									   state = {};
+									   render() {
+									      return &lt;div&gt; Hello {this.props.name}&lt;/div&gt;;
+									   }
+									}
+									
+									export default Welcome;
+								</code>
+							</pre>
+							<p><b>Content Delivery Network</b> selection structure</p>
+						</div>
+						<div class="box_two" style=" margin: 10px;">
+							<pre style="box-shadow: none;">
+								<code style="font-size: 14px;" class="codebox code-example__codebox"  data-trim contenteditable>
 									int numOne = 2; int numTwo = 5;
 									
-									if(numOne >= numTwo){
-									   Console.WriteLine("2 is greater than 5");
-									}else{
-									   Console.WriteLine("2 is not greater than 5");
+									if(numOne <= numTwo){
+								       Console.WriteLine("5 is greater than 2");
 									}
 	
+								</code>
+							</pre>
+							<p><b>Node Package Manager</b> selection structure</p>
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Props and State</h3>
+				
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px;">
+							<pre style="box-shadow: none;">
+								<code style="font-size: 14px;" class="codebox code-example__codebox"  data-trim contenteditable>
+									import React, { Component } from "react";
+									
+									class Welcome extends Component {
+									   state = {};
+									   render() {
+									      return &lt;div&gt; Hello {this.props.name}&lt;/div&gt;;
+									   }
+									}
+									
+									export default Welcome;
 								</code>
 							</pre>
 							<p><b>Content Delivery Network</b> selection structure</p>
@@ -998,9 +1035,10 @@ Console.WriteLine("Weekly Menu has been outputted");
 					</div>
 				</section>-->
 				<section data-background="#eee">
-				    <h2>References</h2>
+				    <h2>References/Resources</h2>
 				    <ul>
 				        <li>https://www.qcode.in/learn-react-by-creating-a-comment-app/</li>
+				        <li>https://www.w3schools.com/REACT/react_props.asp</li>
 				      
 
                
