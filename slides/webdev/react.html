@@ -11,6 +11,7 @@
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/gruvbox-dark.min.css">
 		<!-- Google Font -->
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
 
@@ -46,8 +47,8 @@
 							<li>JSX considerations</li>
 							<ul>
 								<li>Executed as a unit</li>
-								<li>Attribute naming</li>
-								<li>Parallel Arrays</li>
+								<li>Attribute naming and Syntax</li>
+								<li>Expressions</li>
 							</ul>
 						</ul>
 				        <li>Components</li>
@@ -60,7 +61,7 @@
 						<li>React Functionality</li>
 				        <ul>
 							<li>Handling Events</li>
-							<li>3d(Qube) - Syntax | Example | Processing </li>
+							<li>Forms </li>
 							<!--<li>Automated testing</li>-->
 						</ul>
 
@@ -70,8 +71,73 @@
 
 				<section data-background="white">
 					<h3>Component-based Development</h3>
+					<p style="font-size: .7em;">Component-based software engineering (CBSE), also called components-based development (CBD), is a branch of software engineering that emphasizes the <strong>separation of concerns</strong> with respect to the wide-ranging functionality available throughout a given software system. It is a <strong>reuse-based approach</strong> to defining, implementing and composing loosely coupled independent components into systems.</p>
 				</section>
+				<section data-background="#fff">
+					<h3 style="color: black;">Implementing React</h3>
+					<p style="font-size: 28px; margin-bottom: -12px;">Using Content Delivery Network </p>
+			
+						
+							<pre style="box-shadow: none;">
+								<code style="font-size: 14px;" class="codebox code-example__codebox"  data-trim contenteditable>
+									
+									  &lt;script src="https://unpkg.com/react@16/umd/react.production.min.js"&gt;&lt;/script&gt;
+									  &lt;script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"&gt;&lt;/script&gt;
+									  &lt;script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js">&lt;/script&gt;
+									
+								</code>
+							</pre>
+					<p style="font-size: 28px; margin-bottom: -12px;">Using React Environment </p>
+							<pre style="box-shadow: none;">
+								<code style="font-size: 14px;" class="codebox code-example__codebox"  data-trim contenteditable>
+				
+									/**Create a scaffolded react application that will be contained in project
+									* folder react_ex
+									**/
+									npx create-react-app react_ex
+	
+								</code>
+							</pre>
+							
+						
+				
+				</section>
+				<section data-background="#fff">
+					<h3 style="color: black;">CDN React Example</h3>
+					<p style="font-size: 28px; margin-bottom: -12px;">Single page application with one component </p>
+		
+					<pre style="box-shadow: none;">
+						<code style="font-size: 14px;" class="codebox code-example__codebox"  data-trim contenteditable>
 
+							  
+						&lt;!DOCTYPE html&gt;
+						&lt;html&gt;
+							&lt;head&gt;
+							  &lt;script src="https://unpkg.com/react@16/umd/react.production.min.js"&gt;&lt;/script&gt;
+							  &lt;script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"&gt;&lt;/script&gt;
+							  &lt;script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js">&lt;/script&gt;
+							&lt;/head&gt;
+							&lt;body&gt;
+							  
+								&lt;div id="mydiv"&gt;&lt;/div&gt;
+								
+								&lt;script type="text/babel"&gt;
+									class Hello extends React.Component {
+									  render() {
+									    return &lt;h1&gt;Hello World!&lt;/h1&gt;
+									  }
+									}
+								
+									ReactDOM.render(&lt;Hello /&gt;, document.getElementById('mydiv'))
+								&lt;/script&gt;
+							
+							&lt;/body&gt;
+						&lt;/html&gt;
+							
+						</code>
+					</pre>
+
+				</section>
 				<section data-background="images/component/react_bg.jpg">
 					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">What is React?</h1>
 				</section>
@@ -89,7 +155,7 @@
 					<div id="flexcontain">
 						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 395px; color: #111;"><p><b style="font-size: 26px;">Components</b> <br> are independent and reusable bits of code. They serve the same purpose as JavaScript functions, but work in isolation and returns HTML via a render function. Components come in two types, <strong>Class components</strong> and <strong>Function components</strong>.</p></div>
 						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 395px; color: #111;"><p><b style="font-size: 26px;">Props and State</b> <br>Props are arguments passed into React components. Props are passed to components via HTML attributes. <br> <strong>State</strong><br> React components have a built-in state object.  The state object is where you store property values that belongs to the component.  When the state object changes, the component re-renders.</p></div>
-						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #eee; height: 395px; color: #111;"><p><b style="font-size: 26px;">Event Listeners</b> <br>...</p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #eee; height: 395px; color: #111;"><p><b style="font-size: 26px;">Event Listeners</b> <br>React can perform actions based on user events.  React has the same events as HTML: click, change, mouseover etc.</p></div>
 
 					</div>
 				
@@ -113,24 +179,22 @@
 									export default Welcome;
 								</code>
 							</pre>
-							<p><b>Content Delivery Network</b> selection structure</p>
+						
 						</div>
 						<div class="box_two" style=" margin: 10px;">
 							<pre style="box-shadow: none;">
 								<code style="font-size: 14px;" class="codebox code-example__codebox"  data-trim contenteditable>
-									int numOne = 2; int numTwo = 5;
-									
-									if(numOne <= numTwo){
-								       Console.WriteLine("5 is greater than 2");
+									function Car() {
+									  return &lt;h2&gt;Hi, I am also a Car!&lt;/h2&gt;;
 									}
 	
 								</code>
 							</pre>
-							<p><b>Node Package Manager</b> selection structure</p>
+							
 						</div>
 					</div>
 				</section>
-				<section data-background="#fff">
+				<!--<section data-background="#fff">
 					<h3>Props and State</h3>
 				
 					<div id="flexcontain">
@@ -1033,7 +1097,7 @@ Console.WriteLine("Weekly Menu has been outputted");
 							<img src="images/webtool/basicstructure.png" alt="picture of folder structure">
 						</div>
 					</div>
-				</section>-->
+				</section>
 				<section data-background="#eee">
 				    <h2>References/Resources</h2>
 				    <ul>
@@ -1043,7 +1107,7 @@ Console.WriteLine("Weekly Menu has been outputted");
 
                
 				    </ul>
-				</section>
+				</section>-->
 			</div>
 		</div>
 
