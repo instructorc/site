@@ -841,7 +841,7 @@
 				</section>
 				<section data-background="#fff">
 				    
-				    <p style="font-size: 32px;"><strong>Lambda Expressions</strong>is an anonymous function that you can use to create delegates or expression tree types.</p>
+				    <p style="font-size: 32px;"><strong>Lambda Expressions</strong> is an anonymous function that you can use to create delegates or expression tree types.</p>
 				     <br>
 				     <p style="font-size: 32px;">By using <strong>lambda expressions</strong>, you can write local functions that can be passed as arguments or returned as the value of function calls</p>
 
@@ -949,7 +949,35 @@ class Program
 
 				</section>
 				<section data-background="#fff">
-					<h4>Microsoft LINQ walk through</h4>
+					<img src="images/io/query_keywords.PNG" width="600" alt="query keywords using linq">
+					<h4>Linq Query Keywords </h4>
+				    <a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/query-keywords">Query Syntax Keywords and Definition</a>
+
+				</section>
+				<section data-background="#fff">
+					<h4>Reserved var keyword</h4>
+					
+						<pre>
+							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+								
+	class Program
+    {
+        static void Main(string[] args)
+        {
+  
+		  string[] learningModels = { "Distance Learning", "Online Learning", "HyBrid Learning" };
+		  var results = learningModels.ToList&lt;string&gt;().Where(x => x.Contains("H")).First();
+
+		  Console.WriteLine(results);
+ 	}
+    }
+							</code>
+						</pre>
+					<p>C# lets you declare local variables without giving them <strong>explicit</strong> types.  The data type is <strong>implied</strong> at runtime.</strong>  </p>
+
+				</section>
+				<section data-background="#fff">
+					<h4>Microsoft LINQ walk through using Query Syntax</h4>
 				    <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq">Microsoft LINQ Walk through</a>
 				    <br>
 				    <ul style="font-size: 26px;">
