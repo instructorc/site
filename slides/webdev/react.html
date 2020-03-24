@@ -39,30 +39,30 @@
 						<ul>
 							<li>Definition</li>
 							<li>Use Cases and understanding component frameworks </li>
-							<li>Adding React - CDN and Package manager</li>
+							<li><strong>Adding React</strong> - CDN and Package manager</li>
+							<li><strong>Components</strong> - Function and Class Components</li>
 						</ul>
 						<li>Syntax, Structure and Rules of React</li>
 						<ul>
 							<li>Understanding JSX</li>
-							<li>JSX considerations</li>
+							<li>JSX Rules and Considerations</li>
 							<ul>
-								<li>Executed as a unit</li>
-								<li>Attribute naming and Syntax</li>
-								<li>Expressions</li>
+								<li>Attributes | Expressions | Nested Elements | CSS Style | Comments </li>
+
 							</ul>
 						</ul>
-				        <li>Components</li>
+				        <li>React Lifecycle</li>
 				        <ul>
-							<li>Function and Class Components</li>
-							<li>React Methods - Render | Mount | UnMount</li>
-							<li>React Features - Props and State | React Hooks | Routing</li>
+							<li><strong>Mounting</strong> - constructor() | getDerivedStateFromProps() | render() | componentDidMount() </li>
+							<li><strong>Updating</strong> - getDerivedStateFromProps() | shouldComponentUpdate() | render() | getSnapshotBeforeUpdate() | componentDidUpdate() </li>
+							<li><strong>UnMounting</strong> - componentWillUnmount()</li>
 
 						</ul>
 						<li>React Functionality</li>
 				        <ul>
+							<li>React Features - Props and State | React Hooks | Routing</li>
 							<li>Handling Events</li>
 							<li>Forms </li>
-							<!--<li>Automated testing</li>-->
 						</ul>
 
 
@@ -215,6 +215,105 @@
 							
 						</div>
 					</div>
+				</section>
+				<section data-background="images/component/react_bg.jpg">
+					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">JSX <br> (JavaScript XML)</h1>
+				</section>
+				<section data-background="#fff">
+					<h3>What is JSX?</h3>
+					<p style="font-size: 28px; margin-bottom: -12px;">JSX is a syntax that gets compiled into valid JavaScript 	&#9733;  JSX converts HTML tags into react elements  &#9733; You do not have to use JSX, but it's easier to use JSX with React.</p>
+					<pre style="box-shadow: none;">
+						<code style="font-size: 14px;" class="codebox code-example__codebox"  data-trim contenteditable>
+							function formatName(user) {
+							  return user.firstName + ' ' + user.lastName;
+							}
+							
+							const user = {
+							  firstName: 'Silas',
+							  lastName: 'Alexander'
+							};
+							
+							const element = (
+							
+							  &lt;h1&gt;
+							    Hello, {formatName(user)}!
+							  &lt;/h1&gt;
+							);
+							
+							ReactDOM.render(element, document.getElementById('root'));
+
+						</code>
+					</pre>
+				</section>
+				<section data-background="#fff">
+					<h3>Understanding JSX</h3>
+									<pre style="box-shadow: none;">
+						<code style="font-size: 14px;" class="codebox code-example__codebox"  data-trim contenteditable>
+							var tested = true;
+							var innerText = 'Offers';
+							var offerReactNode = &lt;div id=""
+							                      data-test={tested?'test':'false'} 
+							                      className="blue" 
+							                      aria-test="test">
+							                          {innerText} 
+							                   &lt;/div&gt;;
+							
+							ReactDOM.render(offerReactNode, document.getElementById('offers'));
+
+						</code>
+					</pre>
+					<div id="flexcontain">
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 24px;">Attributes</b> <br>When we want to add custom attribute, we need to use data- prefix. &#9733; Whenever using the class attribute, we need to use className instead. </p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 24px;">Expressions</b> <br>JavaScript expressions can be used inside of JSX. We just need to wrap it with curly brackets {}.</p></div>
+
+
+					</div>
+					
+				
+				</section>
+				<section data-background="#fff">
+					<h3>Understanding JSX</h3>
+									<pre style="box-shadow: none;">
+						<code style="font-size: 14px;" class="codebox code-example__codebox"  data-trim contenteditable>
+							var styles = {backgroundColor:'#cd0000'};
+							var innerText = 'Suggestions';
+							var suggestionReactNode = ( &lt;div id=""
+							                      style={styles}>
+							                      	&lt;h1&gt;
+							                          {innerText} 
+							                        &lt;/h1&gt;
+							                        {//Line Comment}
+							                        {/*Block Comment...*/}
+							                   &lt;/div&gt;;)
+							
+							ReactDOM.render(suggestionReactNode, document.getElementById('suggest'));
+
+						</code>
+					</pre>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 24px;">Nested Elements</b> <br> &#9733; If we want to return more elements, we need to wrap it with one container element <br> &#9733; To write JSX on multiple lines, wrap in parentheses </div>	
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; color: #111;"><p><b style="font-size: 24px;">CSS Style</b> <br> &#9733; React recommends using inline styles.<br> &#9733; To set inline CSS properties, we need to use camelCase syntax. </div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; color: #111;"><p><b style="font-size: 24px;">Comments</b> <br>When writing comments, we need to put curly brackets {} when we want to write comment within children section of a tag. </p></div>
+
+					</div>
+
+				</section>
+
+				<section data-background="#fff">
+					<h3>Activity/Lab 3</h3>
+				
+					<img src="images/component/profile_components.PNG" width="520" style="float: right;"  alt="MPLS Profile page components">
+					
+					<div id="flexcontain" style="width: 420px;">
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 190px; background-color: #eee; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Create a React environment (refer to previous slides) | Navigate to this <a href="https://github.com/instructorc/CWEB1000_1010Spring2020/tree/cweb1130/mpls_renters">github repository</a> and copy the img folder and profile.html code into environment file.  </div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; height: 190px; background-color: #eee; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Create three  [offers, suggestions, task] class components</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; height: 190px; background-color: #eee; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Add JSX components to page</p></div>
+
+					</div>
+
+				</section>
+				<section data-background="images/component/react_bg.jpg">
+					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">React Lifecycle</h1>
 				</section>
 				<!--<section data-background="#fff">
 					<h3>Props and State</h3>
@@ -416,33 +515,16 @@
 					</div>
 				</section>
 				<!--<section data-background="#fff">
-					<h3>The Three Structures</h3>
-					<p> Sequence   &#10022;    Selection    &#10022;  Looping</p>
+					<h3>Methods with Parameters</h3>
+				
+					<img src="images/methods/methods_withparams.PNG" style="float: right;" width="400" alt="Diagram of program with parameters">
+					
 					<div id="flexcontain">
-						<div class="box_two" style="margin: 10px;">
-					        <ul>
-					        	<li><strong>Sequence</strong></li>
-					        	<ul>
-					        		<li>A <b>data structure</b> is a special way of organizing and storing data in a computer so that it can be used efficiently.</li>
-					        		<li>No branching or skipping any task</li>
-					        		<li>Input/Output, Calculations, assignment</li>
-					        	</ul>
-					        	<li><strong>Selection</strong></li>
-					        	<ul>
-					        		<li>Ask a question, take one of two actions</li>
-					        		<li>Often called if-then-else</li>
-					        		<li>Dual-alternativeifsor single-alternativeifs</li>
-					        	</ul>
-					        	<li><strong>Looping</strong></li>
-					        	<ul>
-					        		<li>Repeat actions while a condition remains true</li>
-					        	</ul>
-					        </ul>
-						</div>
-	
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">With Parameters</b> <br> When you call a method from a program, you must know three things:<br> 1) Name of the called method <br> 2) Type of info. to sent to the method,if any <br> 3) Type of return data to expect from method, if any </p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;"></b> <br><b>Arguement to the method</b> - pass a data item into a method from a calling program<br><b>Parameter to the method</b> - method receives the data item<br> <code> computeTax(202.01, .10) //Called <br> computeTax(double amount, double rate) //Defined</code></p></div>
+
 					</div>
 
-					
 				</section>
 				<section data-background="white">
 					<iframe width="760" height="515" src="https://www.youtube.com/embed/eSYeHlwDCNA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
