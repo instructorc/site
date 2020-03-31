@@ -315,6 +315,65 @@
 				<section data-background="images/component/react_bg.jpg">
 					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">React Lifecycle</h1>
 				</section>
+				<section data-background="#fff">
+					<h3>Lifecycle Stagest</h3>
+					
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 410px; color: #111;"><p><b style="font-size: 26px;">Mounting</b> <br>  the process of outputting the virtual representation of a component into the final UI (e.g. DOM or Native Components). In a browser that would mean outputting a React Element into an actual DOM element. <br> <b>Methods Include</b>-  constructor() | getDerivedStateFromProps() | render() | componentDidMount()</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 410px; color: #111;"><p><b style="font-size: 26px;">Updating</b> <br>A component is updated whenever there is a change in the component's state or props.  <br> <b>Methods include</b> - getDerivedStateFromProps() | shouldComponentUpdate() | render() | getSnapshotBeforeUpdate() | componentDidUpdate()</p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #eee; height: 410px; color: #111;"><p><b style="font-size: 26px;">UnMounting</b> <br>is when a component is removed from the DOM. <br> <b>Methods include </b> - componentWillUnmount()</p></div>
+
+					</div>
+				
+				</section>
+				<section data-background="#fff">
+					<h3>React Lifecycle Stages Visual</h3>
+					<p style="font-size: .7em;">These methods are used to control the behavior of a component </p>
+					
+					
+					<img src="images/component/react_lifecycle_stages_graphic.png"  alt="react lifecycle stages visual">
+		
+				</section>
+				<section data-background="#fff">
+					<h3>Example of Mount methods</h3>
+									<pre style="box-shadow: none;">
+						<code style="font-size: 14px;" class="codebox code-example__codebox"  data-trim contenteditable>
+							const App extends React.Component {
+							  constructor(props) {
+							   super(props) 
+							    this.state = {
+							       points: 0
+							    }  
+							    this.handlePoints = this.handlePoints.bind(this) 
+							    }   
+							    
+								  render() {
+								    return (
+								      &lt;div className="App"&gt;
+								        &lt;header className="App-header"&gt;
+								          &lt;img src={logo} className="App-logo" alt="logo" /&gt;
+								          &lt;p&gt;
+								            You've scored {this.state.points} points.
+								          &lt;/p&gt;
+								        &lt;/header&gt;
+								      &lt;/div&gt;
+								    );
+							}
+
+						</code>
+					</pre>
+					<div id="flexcontain">
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 200px; color: #111;"><p><b style="font-size: 24px;">Constructor</b> <br>When we want to add custom attribute, we need to use data- prefix. &#9733; Whenever using the class attribute, we need to use className instead. </p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #eee; height: 200px; color: #111;"><p><b style="font-size: 24px;">Render</b> <br>JavaScript expressions can be used inside of JSX. We just need to wrap it with curly brackets {}.</p></div>
+
+
+					</div>
+					
+				
+				</section>
+				<section data-background="images/component/react_bg.jpg">
+					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">React State and Props</h1>
+				</section>
 				<!--<section data-background="#fff">
 					<h3>Props and State</h3>
 				
@@ -631,39 +690,7 @@
 					<h2>A basic example</h2>
 					<img src="images/structures/allstructures.PNG" width="575" style="box-shadow: none;" alt="structures set up properly example"/>
 				</section>
-				<section data-background="images/structures/practice.jpg" style="top: 0; color: white;">
-				    <h2 style="color: white; background-color: rgba(0,0,0, .8); padding: 3px;">Practice</h2>
-				  
-				        <h3 style=" font-weight: 300;  background-color: rgba(0,0,0, .8); padding: 3px;">Do your best at getting me out of the room using stuctures and two word commands for sequence and 5 words max for selection and looping.</h3>
 
-				</section>
-				<section data-background="#fff">
-					<h3>Priming Input  </h3>
-
-					<div id="flexcontain">
-						<div class="box_two" style="margin: 10px;">
-							<ul>	
-								<li><b>Priming Input/priming read)</b></li>
-								<ul>
-									<li>Reads the first input data record</li>
-									<li>Helps keep the program structured</li>
-								</ul>
-								<li>Watch for unstructured loops that do not follow this order</li>
-								<ul>
-									<li>First ask a question</li>
-									<li>Take action based on the answer</li>
-									<li>Return to ask the question again</li>
-								</ul>
-							</ul>
-
-						</div>
-						<div class="box_two" style=" margin: 10px;">
-							<img src="images/structures/priming_input.png" alt="">
-						</div>
-					</div>
-
-					
-				</section>
 				
 				<section data-background="#fff">
 					<h3>In-Class Activity 1</h3>
@@ -1201,17 +1228,18 @@ Console.WriteLine("Weekly Menu has been outputted");
 							<img src="images/webtool/basicstructure.png" alt="picture of folder structure">
 						</div>
 					</div>
-				</section>
+				</section-->
 				<section data-background="#eee">
 				    <h2>References/Resources</h2>
 				    <ul>
 				        <li>https://www.qcode.in/learn-react-by-creating-a-comment-app/</li>
 				        <li>https://www.w3schools.com/REACT/react_props.asp</li>
+				        <li>https://blog.logrocket.com/the-new-react-lifecycle-methods-in-plain-approachable-language-61a2105859f3/</li>
 				      
 
                
 				    </ul>
-				</section>-->
+				</section>
 			</div>
 		</div>
 
