@@ -305,9 +305,9 @@
 					<img src="images/component/profile_components.PNG" width="520" style="float: right;"  alt="MPLS Profile page components">
 					
 					<div id="flexcontain" style="width: 420px;">
-						<div class="box red" style="font-size: 20px; margin: 10px; height: 190px; background-color: #eee; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Create a React environment (refer to previous slides) | Navigate to this <a href="https://github.com/instructorc/CWEB1000_1010Spring2020/tree/cweb1130/mpls_renters">github repository</a> and copy the img folder and profile.html code into environment file.  </div>
-						<div class="box blue" style="font-size: 20px; margin: 10px; height: 190px; background-color: #eee; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Create three  [offers, suggestions, task] class components</p></div>
-						<div class="box green" style="font-size: 22px; margin: 10px; height: 190px; background-color: #eee; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Add JSX components to page</p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 175px; background-color: #eee; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Create a React environment (refer to previous slides) | Navigate to this <a href="https://github.com/instructorc/CWEB1000_1010Spring2020/tree/cweb1130/mpls_renters">github repository</a> and copy the img folder and profile.html code into environment file.  </div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; height: 175px; background-color: #eee; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Create three  [offers, suggestions, task] class components</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; height: 175px; background-color: #eee; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Add JSX components to page</p></div>
 
 					</div>
 
@@ -347,17 +347,17 @@
 							    this.handlePoints = this.handlePoints.bind(this) 
 							    }   
 							    
-								  render() {
-								    return (
-								      &lt;div className="App"&gt;
-								        &lt;header className="App-header"&gt;
-								          &lt;img src={logo} className="App-logo" alt="logo" /&gt;
-								          &lt;p&gt;
-								            You've scored {this.state.points} points.
-								          &lt;/p&gt;
-								        &lt;/header&gt;
-								      &lt;/div&gt;
-								    );
+							  render() {
+							    return (
+							      &lt;div className="App"&gt;
+							        &lt;header className="App-header"&gt;
+							          &lt;img src={logo} className="App-logo" alt="logo" /&gt;
+							          &lt;p&gt;
+							            You've scored {this.state.points} points.
+							          &lt;/p&gt;
+							        &lt;/header&gt;
+							      &lt;/div&gt;
+							    );
 							}
 
 						</code>
@@ -372,7 +372,60 @@
 				
 				</section>
 				<section data-background="images/component/react_bg.jpg">
-					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">React State and Props</h1>
+					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">React Functionality</h1>
+				</section>
+
+				<section data-background="#fff">
+					<h3>Props</h3>
+					<p style="font-size: 28px; margin-bottom: -12px;">“Props” is a special keyword in React, which stands for properties and is being used for <strong>passing data from one component to another</strong>. But the important part here is that data with props are being passed in a <strong>uni-directional flow</strong></p>
+					<pre style="box-shadow: none;">
+						<code style="font-size: 12px;" class="codebox code-example__codebox"  data-trim contenteditable>
+						class Car extends React.Component {
+						  render() {
+						    return &lt;h2&gt;I am a {this.props.brand}!&lt;/h2&gt;;
+						  }
+						}
+						
+						class Garage extends React.Component {
+						  render() {
+						    return (
+						      &lt;div&gt;
+						      &lt;h1&gt;Who lives in my garage?&lt;/h1&gt;
+						      &lt;Car brand="Ford" /&gt;
+						      &lt;/div&gt;
+						    );
+						  }
+						}
+						ReactDOM.render(&lt;Garage /&gt;, document.getElementById('root'));
+
+						</code>
+					</pre>
+				</section>
+				<section data-background="#fff">
+					<h3>React Hooks</h3>
+					<p style="font-size: 28px; margin-bottom: -12px;">Hooks are a new addition in React 16.8. They let you use state and other React features without writing a class.</p>
+					<!--<pre style="box-shadow: none;">
+						<code style="font-size: 12px;" class="codebox code-example__codebox"  data-trim contenteditable>
+						class Car extends React.Component {
+						  render() {
+						    return &lt;h2&gt;I am a {this.props.brand}!&lt;/h2&gt;;
+						  }
+						}
+						
+						class Garage extends React.Component {
+						  render() {
+						    return (
+						      &lt;div&gt;
+						      &lt;h1&gt;Who lives in my garage?&lt;/h1&gt;
+						      &lt;Car brand="Ford" /&gt;
+						      &lt;/div&gt;
+						    );
+						  }
+						}
+						ReactDOM.render(&lt;Garage /&gt;, document.getElementById('root'));
+
+						</code>
+					</pre>-->
 				</section>
 				<!--<section data-background="#fff">
 					<h3>Props and State</h3>
@@ -410,141 +463,7 @@
 						</div>
 					</div>
 				</section>
-				<section data-background="#fff">
-					<h3>Activity 1  </h3>
 
-					<div id="flexcontain">
-						<div class="box_two" style="margin: 10px;">
-							<ul>	
-								<li><b>Using the list to the right</b></li>
-								<ul>
-									<li>Create an array accessing each individual element</li>
-									<li>Using the same list, create an array using the colletion initializer </li>
-									
-								</ul>
-
-							</ul>
-
-						</div>
-						<div class="box_two" style=" margin: 10px;">
-							<img src="images/structures/grocery_list.jpg" alt="picture of grocery list">
-						</div>
-					</div>
-
-					
-				</section>
-				<section data-background="images/component/react_bg.jpg">
-					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">Syntax, Structure and Rules of React</h1>
-				</section>
-				<section data-background="#fff">
-					<h3 style="color: white; background-color: rgb(106, 136, 50);">JSX</h3>
-					<p style="font-size: 28px; margin-bottom: -12px;">JSX is a syntax that gets compiled into valid JavaScript.</p>
-					<div id="flexcontain">
-						<div class="box_two" style="margin: 10px;">
-							<img src="images/structures/old_if_new_array.png" height="535" alt="Example of old nested decisions">
-						</div>
-						<div class="box_two" style=" margin: 10px;">
-							<img src="images/structures/new_if_new_array.PNG" alt="Example of replacing nested decisions with array">
-						</div>
-					</div>
-				</section>
-				<section data-background="#fff">
-					<h3>Activity 2</h3>
-
-					<div id="flexcontain">
-						<div class="box_two" style="margin: 10px;">
-							<ul style="font-size: .7em;">	
-								<li><b>Six dependent count accumulators are redefined as a single array</b></li>
-								<ul>
-									<li style="background-color: #ff5500;">Variable as a subscript to the array</li>
-									<li style="background-color: #26e600;">Array is initialized with six indices to 0 </li>
-									<li style="background-color: #44c8f5;">Incremented by 1 each time the logic passes through the loop</li>
-								</ul>
-								<img src="images/structures/array_nest_ex_one.png" alt="array example diagram">
-
-							</ul>
-
-						</div>
-						<div class="box_two" style=" margin: 10px;">
-							<img src="images/structures/array_nest_ex_two.png" alt="array example diagram">
-						</div>
-					</div>
-				</section>
-				<section data-background="images/structures/array_bg.jpg">
-					<h1 style="color: black; background-color: #ffffffe0; padding: 3px;">Searching an Array for Exact Match</h1>
-				</section>
-				<section data-background="#fff">
-					<h3 style="color: white; background-color: rgb(106, 136, 50);">Searching for Exact Match</h3>
-					<p style="font-size: 28px; margin-bottom: -12px;">Sometimes you must search through an entire array to find a value –called a <b>linear search</b></p>
-					<div id="flexcontain">
-						<div class="box_two" style="margin: 10px;">
-						<ul style="font-size: .7em;">	
-							<li><b>Examples: mail-order business</b></li>
-							<ul>
-								<li>Item numbers are three-digit, non-consecutive numbers</li>
-								<li>Customer orders an item; check if item number is valid</li>
-								<li>Create an array that holds valid item numbers</li>
-								<li>Search the array for an exact match</li>
-							</ul>
-						</ul>
-						</div>
-						<div class="box_two" style=" margin: 10px;">
-							<img src="images/structures/array_exact_match.png" width="330" alt="Array with exact match example">
-						</div>
-					</div>
-				</section>
-				<section data-background="#fff">
-					<h3>Activity 3</h3>
-					<img src="images/structures/produce_list_cp.jpg" width="400" alt="Picture of produce students will code into a array">
-					<div id="flexcontain">
-						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Using the above image - create an array that holds each of the items above. </div>
-						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Using a looping structure, output the items in list</p></div>
-						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Use a decision structure to determine if the value "Fish" is within the array.  If so, output "Fish Found".</p></div>
-
-					</div>
-					
-				
-				</section>
-				<section data-background="images/structures/parallel_bg.jpg">
-					<h1 style="color: black; background-color: #ffffffe0; padding: 3px;">Parallel Arrays</h1>
-				</section>
-				<section data-background="#fff">
-					
-					<h3>Using parallel arrays</h3>
-					<img src="images/structures/parrallel_arrays.png" width="500" alt="parallel Arrays graphic">
-					<ul>
-						<li style="font-size: .6em;"><b>Two or more arrays contain related Data</b> - A subscript relates the arrays. <em>Elements at the same position in each array are logically related</em></li>
-						<li style=" font-size: .6em;"><b>Indirect Relationship</b> - Relationship between an item's number and its price</li>
-					</ul>
-					
-		
-				</section>
-				<section data-background="#fff">
-					<h3>Parallel Array Example </h3>
-
-					<div id="flexcontain">
-						<div class="box_two" style="margin: 10px;">
-							<ul>	
-								
-								<li>Reprompting can be frustrating to a user if it continues indefinitely</li>
-								<li>Maintain a count of the number of reprompts</li>
-								<li><b>Forcing</b> a data item means:</li>
-								<ul>
-									<li>Override incorrect data by setting the variable to a specific value</li>
-								</ul>
-									
-								
-
-							</ul>
-
-						</div>
-						<div class="box_two" style=" margin: 10px;">
-							<img src="images/structures/parallel_ex.png" width="330" alt="parallel array example">
-						</div>
-					</div>
-
-					
-				</section>
 				<section data-background="images/structures/multi_bg.jpg">
 					<h1 style="color: black; background-color: #ffffffe0; padding: 3px;">Multi-dimensional Arrays</h1>
 				</section>
