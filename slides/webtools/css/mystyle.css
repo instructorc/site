@@ -1,10 +1,7 @@
 .box{
     
       flex:  1 0 300px;
-      -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
-      -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
-      animation-name: example;
-      animation-duration: 4s;
+
       width: 200px;
       height: 200px;
       float:  left;

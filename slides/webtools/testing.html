@@ -12,10 +12,10 @@
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/dope.css">
-		<link rel="stylesheet" href="css/mystyle.css">
-		<link rel="icon" sizes="32x32" type="image/png" href="images/node/favicon.png">
+
 		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="css/zenburn.css">
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/gruvbox-dark.min.css">
 		<!-- Google Font -->
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
 		<!-- Printing and PDF exports -->
@@ -165,13 +165,12 @@
 						<li>Software Testing</li>
 						<ul>
 							<li>Why is software testing important?</li>
-							<li>What is code quality?</li>
-							<li>Categories of Test</li>
-							<li>Creative Solutions</li>
+							<li>System Development Life Cycle(SDLC)</li>
+							<li>Functional vs. Non-Functional Testing</li>
 						</ul>
-						<li>Testing</li>
+						<li>Types of Test</li>
 				        <ul>
-				        	<li>Unit Testing with Node.js and c#</li>
+				        	<li>Unit Testing Node.js - Using Jest Testing Framework</li>
 				        	<li>Integration Testing</li>
 				        	<li>End to End Tests</li>
 				        	<li>UI Tests</li>
@@ -189,27 +188,49 @@
 
 				    </ul>
 				</section>
-				<section data-background="images/testing/proxyclick.jpg">
+				<section data-background="images/testing/unit_testing_bg.jpg">
 					<h5 id="boxstyle">Why is software testing important?</h5>
 					
-				</section>				
-				<section data-background="#ff5511" style="background-size: 60%;">
-					<h5 id="boxstyle">What is a unit test?</h5>
-					
+					<div id="flexcontain" class="fragment" >
+						<div class="box blue" class="fragment" style=" flex: 1 0 200px; font-size: 20px; margin: 10px;  background-color: #d70901;"><p><b>Detect Logical Errors and Bugs</b><br></p></div>
+						<div class="box aquamarine" class="fragment" style=" flex: 1 0 200px; font-size: 20px; margin: 10px; background-color: #46ACC2;"><p><b>Quality Control and Security</b><br></p></div>
+						<div class="box red" class="fragment" style=" flex: 1 0 200px; font-size: 20px; margin: 10px;  background-color: #498C8A;"><p><b>Cost Savings</b><br></p></div>
+						<div class="box green" class="fragment" style=" flex: 1 0 200px; font-size: 20px; margin: 10px; background-color: #ffa206"><p><b>End-User Satisfaction</b><br></p></div>
+
+					</div>
 				</section>
-				<section data-background="#ff5511" style="background-size: 60%;">
-					<h5 id="boxstyle">Tests that verify the behavior of class methods or functions inside a service. These tests take a code file from the service’s codebase, and execute its functions or class methods using different inputs, while verifying the output of the functions for each input.</h5>
-					
+
+				<section data-background="white">
+					<h4>Understanding SDLC </h4>
+					<p style="font-size: .6em;">What do we test and how do we know what to test?  We start with the <strong>system development life cycle (SDLC)</strong>.  This SDLC informs us on <strong>what we are going to test</strong> and <strong>what are critical requirements</strong> defined by the client.</p>
+					<img src="images/testing/sdlc.png" width="445" alt="image of system development life cycle">
 				</section>
-				
+				<section data-background="white">
+					<h4>SDLC Process and responsibility </h4>
+					<img src="images/testing/SDLCVmodel.png" width="900" alt="image of system development life cycle responsibility breakdown" title="https://lealesolutions.com/software-application-development-services/">
+				</section>
+				<section data-background="white">
+					<h2>SDCL Brief Overview</h2>
+					<iframe width="760" height="515" src="https://www.youtube.com/embed/i-QyW8D3ei0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</section>
+				<section data-background="white">
+					<h4>Functional vs. Non-Functional Test </h4>
+					<img src="images/testing/functionalvsnon_functional.PNG" width="790" alt="Functional vs Non-functional software test" title="https://www.guru99.com/functional-testing-vs-non-functional-testing.html">
+				</section>
+				<section data-background="../csharp/images/wpf/data_binding.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Unit Testing</h1>
+				</section>
+				<section data-background="images/testing/unit_testing_bg.jpg" style="background-size: 60%;">
+					<q style="background-color: rgba(0,0,0,.5); font-size: 2em;">Write tests until fear is transformed into boredom.</q>
+				</section>
 				<section data-background="white">
 					<h3>Crafting a Unit Test</h3>
 					<div id="flexcontain">
-						<div class="box blue fragment" style="font-size: 22px; margin: 10px; color: #d4d4d6; background-color: #292930;"><p><b>Understand Testing Platform</b><br>Select an a unit testing platform and understand the stucture of test and the configuration of such test</p></div>
-						<div class="box aquamarine fragment" style="font-size: 22px; margin: 10px; background-color: #FF5714;"><p><b>Determine Goals of Unit Test</b><br>is to verify all behavior inside the “black box” of the test boundaries by manipulating the inputs to the black box, and verifying that the correct output is produced by the black box for each set of inputs. </p></div>
-						<div class="box red fragment" style="font-size: 22px; margin: 10px;  background-color: #3eb650;"><p><b>Define boundaries of test</b><br>Define what's going to to be critcal to test and </p></div>
-						<div class="box green fragment" style="font-size: 22px; margin: 10px; background-color: #fcc133"><p><b>Determine Inputs</b><br>Select the <b>property/properties</b> you would like to transition</p></div>
-						<div class="box orange fragment" style="font-size: 22px; margin: 10px;  background-color: #e12b38"><p><b>Understand Intended Output</b><br>Give each selected property a <b>transition duration</b></p></div>
+						<div class="box blue fragment" style="font-size: 18px; margin: 10px; color: #d4d4d6; background-color: #292930;"><p><b>&#x2460; Understand Testing Platform</b><br>Select an a unit testing platform and understand the stucture of test and the configuration of such test</p></div>
+						<div class="box aquamarine fragment" style="font-size: 18px; margin: 10px; background-color: #FF5714;"><p><b>&#x2461; Determine Goals of Unit Test</b><br>Define what main goals of the test should be. Identify what this test aspires to accomplish. Why will this test put our team at ease?   </p></div>
+						<div class="box red fragment" style="font-size: 18px; margin: 10px;  background-color: #3eb650;"><p><b>	&#x2462; Define boundaries of test</b><br>Define what the test will and will not test.   </p></div>
+						<div class="box green fragment" style="font-size: 18px; margin: 10px; background-color: #fcc133"><p><b>	&#x2463; Determine Input Data</b><br>Select the <b>property/properties</b> you would like to transition</p></div>
+						<div class="box orange fragment" style="font-size: 18px; margin: 10px;  background-color: #e12b38"><p><b> &#x2464; Determine Intended Output Data</b><br>Give each selected property a <b>transition duration</b></p></div>
 
 						
 					</div>
@@ -219,15 +240,66 @@
 					<h3>Crafting a Unit Test Example</h3>
 					<p>Simple Arithmetic function that adds two numbers together and returns sum </hp>
 					<div id="flexcontain">
-						<div class="box blue" style="font-size: 22px; margin: 10px; color: #d4d4d6; background-color: #292930;"><p><b>Understand Testing Platform</b><br>Mocha Unit Testing for Node.Js</p></div>
-						<div class="box aquamarine" style="font-size: 22px; margin: 10px; background-color: #FF5714;"><p><b>Determine Goals of Unit Test</b><br><ul><li>To determine </li></ul></p></div>
-						<div class="box red" style="font-size: 22px; margin: 10px;  background-color: #3eb650;"><p><b>Define boundaries of test</b><br>Define what's going to to be critcal to test and </p></div>
-						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #fcc133"><p><b>Determine Inputs</b><br>Select the <b>property/properties</b> you would like to transition</p></div>
-						<div class="box orange" style="font-size: 22px; margin: 10px;  background-color: #e12b38"><p><b>Understand Intended Output</b><br>Give each selected property a <b>transition duration</b></p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; color: #d4d4d6; background-color: #292930;"><p><b>Understand Testing Platform</b><br> - Jest Testing Framework</p></div>
+						<div class="box aquamarine" style="font-size: 20px; margin: 10px; background-color: #FF5714;"><p><b>Determine Goals of Unit Test</b><br> - The goal is to ensure that that two interger values return the sum </p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px;  background-color: #3eb650;"><p><b>Define boundaries of test</b><br> - Will test the proper addition of two interger values, The test will not enforce or determine the data type of interger values. </p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #fcc133"><p><b>Determine Inputs</b><br> - First Value will be 2 and second value will be 3.  assert(2 , 3)</p></div>
+						<div class="box orange" style="font-size: 20px; margin: 10px;  background-color: #e12b38"><p><b>Understand Intended Output</b><br> - The input of 2 values should return the value 5.</p></div>
 
-						<div class="box aquamarine" style="font-size: 22px; margin: 10px;"><p><b>Step 6</b><br> Implementing transition delay - how long before transition start</p></div>
+					
 					</div>
 					<!--<a href="https://websitesetup.org/web-safe-fonts-html-css/" style="font-size: .4em;">Link to web safe fonts article</a> -->
+				</section>
+				<section data-background="#fff">
+					<h3>Unit Test Activity 1</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+						
+							<p style="font-size: 18px; text-align: left;">&#x2460; Create a project and create a package.json file, index.js file and sum.js file</p>
+							<p style="font-size: 18px; text-align: left;">&#x2461; Install jest test framework as a dev dependency</p>
+							<p style="font-size: 18px; text-align: left;">&#x2462; Alter the package.json file </p>
+							<p style="font-size: 18px; text-align: left;">&#x2463; Add the following code to sum.js file</p>
+							<p style="font-size: 18px; text-align: left;">&#x2464; Import the sum.js file into your index.js file. </p>
+							
+						<div id="flexcontain" >
+						
+								<pre style="flex: 1 0 245px; max-width: 315px; font-size: 16px; margin: 0px;">&#x2460;
+									<code style="font-size: 16px; line-height: 20px;" class="codebox code-example__codebox"  data-trim contenteditable>
+npm init
+									</code>
+								</pre>
+								<pre style="flex: 1 0 245px; max-width: 315px; font-size: 16px; margin: 0px">&#x2461;
+									<code style="font-size: 16px; line-height: 20px;" class="codebox code-example__codebox"  data-trim contenteditable>
+npm install --save-dev jest
+									</code>
+								</pre>
+								<pre style="flex: 1 0 245px; max-width: 315px; font-size: 16px; margin: 0px">&#x2462;
+									<code style="font-size: 16px; line-height: 20px;" class="codebox code-example__codebox"  data-trim contenteditable>
+{
+  "scripts": {
+    "test": "jest"
+  }
+}
+									</code>
+								</pre>
+								<pre style="flex: 1 0 245px; max-width: 315px; font-size: 16px; margin: 0px">&#x2463;
+									<code style="font-size: 16px; line-height: 20px;" class="codebox code-example__codebox"  data-trim contenteditable>
+function sum(a, b) {
+  return a + b;
+}
+module.exports = sum;
+									</code>
+								</pre>
+						
+					
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="../csharp/images/wpf/data_binding.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Integration Testing</h1>
 				</section>
 				<section data-background="rgb(231, 231, 207)">
 					<h4>Testing Platforms</h4>
@@ -298,6 +370,7 @@
 						</div>
 					</div>
 				</section>
+
 				<section data-background="images/animate/animated_boat.gif" style="background-size: 60%;">
 					<h1 style="color: white; text-shadow: 2px 2px 10px #333;">Animation</h1>
 					
@@ -342,10 +415,7 @@
 					</div>
 				
 				</section>
-				<section data-background="images/animate/moving_galaxy.gif" style="background-size: 100%;">
-					<div id="box_animate"></div>
-					
-				</section>
+
 			<!--<section data-background="rgb(231, 231, 207)" style="background-size: 100%;">
 					<h2>Top Animation Libraries</h2>
 					
@@ -1260,8 +1330,7 @@
 				
 			</div>
 		</div>
-		<script src="js/svg_ex.js"></script>
-		<script src="js/background.js"></script>
+
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
 
