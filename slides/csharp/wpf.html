@@ -68,7 +68,7 @@
 						</ul>
 						<li>Events</li>
 						<ul>
-							<li> Understanding Event Methods | Routed Events | Routed Commands</li>				        	
+							<li> Understanding Event Methods | Routed Events | Routed Commands | Delegates</li>				        	
 		
 						</ul>
 						<li>Advance WPF Features</li>
@@ -95,6 +95,21 @@
 						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">Seperation of Concern</b> <br> XAML can be rendered without any code.  The interaction logic (C# code) is placed in a different file than you place the GUI code. </p><p></p><p>The UI is not generated using c# code but rather XML.  The UI can developed totally separate for the c# code.</p></div>
 						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">Code-Behind Files</b> <br>C# files that are dynamically linked to the XAML files. </p><p> The application's logic layer</p></div>
 					</div>
+				</section>
+				<section data-background="#fff">
+					<h4>Model-View-ViewModel (MVVM) design pattern</h4>
+					<p style="font-size: .7em;">Model-View-ViewModel (MVVM) is a structural design pattern that separates objects into three distinct groups:</p>
+					<ul style="font-size: .6em;">
+						<li><strong>Models</strong> hold application data. They’re usually structs or simple classes.</li>
+						<li><strong>Views</strong> display visual elements and controls on the screen. They’re typically subclasses of UIView.</li>
+						<li><strong>View models</strong> transform model information into values that can be displayed on a view. They’re usually classes, so they can be passed around as references.</li>
+					</ul>		
+					
+					<img src="images/wpf/mvvm.png" width="730" alt="Diagram of Model View ViewMovel"><br>
+					<a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2009/february/patterns-wpf-apps-with-the-model-view-viewmodel-design-pattern" style="font-size: .5em;">Article on MVVM design pattern in WPF applications</a>
+				</section>
+				<section data-background="images/wpf/data_binding.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">XAML</h1>
 				</section>
 				<section data-background="#fff">
 					<h4>Understanding XAML</h4>
@@ -602,6 +617,9 @@ namespace databinding_example
 						</pre>
 						</div>
 					</div>
+				</section>
+				<section data-background="images/wpf/data_binding.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Events</h1>
 				</section>
 			<!--<section data-background="#fff">
 					<h4>Event Handler Method</h4>
