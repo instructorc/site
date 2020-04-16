@@ -239,7 +239,7 @@
 				</section>
 				<section data-background="white">
 					<h3>Crafting a Unit Test</h3>
-					<p style="font-size: .6em;">The purpose of the test to ensure that the unit of code is properly functioning as intended. Some would encourage <strong>test-first development</strong> to enforce compliance.</strong></p>
+					<p style="font-size: .6em;">The purpose of the test to ensure that the unit of code is properly functioning as intended. Some would encourage <strong><a href="https://www.guru99.com/test-driven-development.html">test-driven development</a></strong> to enforce compliance.</strong></p>
 					<div id="flexcontain">
 						<div class="box blue fragment" style="font-size: 18px; margin: 10px; background-color: #015389;"><p><b>&#x2460; Understand Testing Platform</b><br>Select an a unit testing platform and understand the stucture of test and the configuration of such test</p></div>
 						<div class="box aquamarine fragment" style="font-size: 18px; margin: 10px; background-color: #9e0101;"><p><b>&#x2461; Determine Goals of Unit Test</b><br>Define what the purpose of the test/test suite should be. Identify what the test will accomplish. What will a fail notification tell us?  Why will this test put our team at ease?   </p></div>
@@ -342,7 +342,7 @@ test('adds 1 + 2 to equal 3', () => {
 						</code>
 					</pre>
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 16px; margin: 10px; background-color: #eee; height: 255px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> &#8594; Create a project folder <br> &#8594; Using the function above, add the function to a file and make sure the function can used in other files.</p></div>
+						<div class="box red" style="font-size: 16px; margin: 10px; background-color: #eee; height: 255px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> &#8594; Create a project folder <br> &#8594; Using the function above, add the function to a file and make sure the function can be used in other files.</p></div>
 						<div class="box blue" style="font-size: 16px; margin: 10px; background-color: #eee; height: 255px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>&#8594; Create a index.js file and make the getFavoriteNum function availabe to the index.js file<br> &#8594; Call the getFavoriteNum function and pass in a favorite number that's between 1 and 100.<br>&#8594; Output the returned value from the method to console <br>&#8594; Run the program.  </p></div>
 						<div class="box green" style="font-size: 16px; margin: 10px; background-color: #eee; height: 255px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>&#8594; Create a test file<br>&#8594; Create a unit test that enforces a value between 1 and 100 <br>&#8594; Create a test enforces a value that is not between 1 and 100 <br> Hint - Make sure to select the correct expect method. <a href="https://jestjs.io/docs/en/expect">Jest expect resource</a></p></div>
 
@@ -352,6 +352,55 @@ test('adds 1 + 2 to equal 3', () => {
 				</section>
 				<section data-background="../csharp/images/wpf/data_binding.jpg">
 					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Integration Testing</h1>
+				</section>
+				<section data-background="white">
+					<h3>What is Integration Testing</h3>
+					<p style="font-size: .8em;">Integration tests determine if independently developed units of software work correctly when they are connected to each other. More often than not, the focuses is on the <strong>flow of data between modules</strong></p>
+					
+					<img src="images/testing/integration_test_diagram.png" width="480" alt="Integration testing visual illustration">
+				
+					<!--<a href="https://websitesetup.org/web-safe-fonts-html-css/" style="font-size: .4em;">Link to web safe fonts article</a> -->
+				</section>
+				<section data-background="#eee">
+						<h4>Overview of Integration Testing</h4>
+						<p style="font-size: .6em;">Resource from guru99</p>
+						<iframe width="900" height="415" src="https://www.youtube.com/embed/QYCaaNz8emY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</section>
+				<section data-background="#eeeeee" style="background-size: 80%;">
+					<h3>Integration Testing Process</h3>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .7em;" class="fragment">1. Prepare the test integration plan.  <a href="lib/pdf/System-Integration-Test-Plan-Template-2014.pdf">Sample Integration Test Plan</a></p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .7em;" class="fragment">2. Decide on the type of integration testing approach</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .7em;" class="fragment">3. Design test cases, test scenarios and test scripts accordingly.<br>  A <strong>test case</strong> is a document which has a set of conditions or actions that are performed on the software application in order to verify the expected functionality of the feature.</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .7em;" class="fragment">4. Deploy the chosen modules together and get the integration tests running</p>	
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .7em;" class="fragment">5. Track the defects and record the test results of tests</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .7em;" class="fragment">6. Repeat the above steps until the complete system is tested</p>
+				</section>
+				<section data-background="white">
+					<h3>Types of Integration Testing</h3>
+				
+					<div id="flexcontain">
+						<div class="box blue fragment" style="font-size: 18px; margin: 10px; height: 330px; background-color: #015389;"><p><b> Big Bang Integration Testing</b><br><span style="background-color: white; color: #111;">all the modules</span> are developed and tested individually, they are integrated once and tested together at once. The only advantage of this type of testing is that it is very much suitable for smaller systems.</p></div>
+						<div class="box aquamarine fragment" style="font-size: 18px; margin: 10px;  height: 330px; background-color: #9e0101;"><p><b>Incremental Integration Testing</b><br>is performed by connecting <span style="background-color: white; color: #111;">two or more modules</span> together that are logically related. Later more modules are added and tested for proper functionality. This is done until all the modules are integrated and tested successfully. It’s further divided into Top-Down Approach and Bottom-Up Approach</p></div>
+						<div class="box red fragment" style="font-size: 18px; margin: 10px; height: 330px;  background-color: #006c10"><p><b>Top-Down Integration Testing</b><br>starts by testing the <span style="background-color: white; color: #111;">top-most modules</span> and gradually moving down to the lowest set of modules one-by-one. </p></div>
+						<div class="box green fragment" style="font-size: 18px; margin: 10px; background-color: #fdc133"><p><b>Bottom-Up Integration Testing</b><br>starts with testing the <span style="background-color: white; color: #111;">lowest units</span> of the application and gradually moving up one-by-one. </p></div>
+					</div>
+					<!--<a href="https://websitesetup.org/web-safe-fonts-html-css/" style="font-size: .4em;">Link to web safe fonts article</a> -->
+				</section>
+				<section data-background="../csharp/images/wpf/data_binding.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">End-to-End Testing</h1>
+				</section>
+				<section data-background="white">
+					<h3>End-to-End Testing Frameworks</h3>
+					<p style="font-size: .7em;">End-to-End Testing test an application flow from start to end. The purpose of End to end testing is to simulate the real user scenario and validate the system under test and its components for integration and data integrity. The purpose of end-to-end Test is to exercise a complete production-like scenario.  Focuses on <strong>simulation and interface interaction</strong>.</p>
+					<div id="flexcontain">
+						<div class="box blue fragment" style="font-size: 18px; margin: 10px;  background-color: white; flex-basis: 190px;"><img src="images/testing/puppeteer_jasmine_logo.png" alt="jest and puppeteer logo"></div>
+						<div class="box aquamarine fragment" style="font-size: 18px; margin: 10px; background-color: white; flex-basis: 190px;"><img src="images/testing/selenium_logo.png" width="190" alt="selenium logo"></div>
+						<div class="box red fragment" style="font-size: 18px; margin: 10px;  background-color: white; flex-basis: 190px;"><img src="images/testing/testcafe-ogp-icon.png" alt="test cafe logo"></div>
+						<div class="box red fragment" style="font-size: 18px; margin: 10px;  background-color: white; flex-basis: 190px;"><img src="images/testing/taiko-black.png" alt="taiko logo"></div>
+
+						
+					</div>
+					<!--<a href="https://websitesetup.org/web-safe-fonts-html-css/" style="font-size: .4em;">Link to web safe fonts article</a> -->
 				</section>
 				<!--<section data-background="rgb(231, 231, 207)">
 					<h4>Testing Platforms</h4>
@@ -371,163 +420,7 @@ test('adds 1 + 2 to equal 3', () => {
 					<h5 id="boxstyle">WThe goal of the test is to verify all behavior inside the “black box” of the test boundaries by manipulating the inputs to the black box, and verifying that the correct output is produced by the black box for each set of inputs.</h5>
 					
 				</section>
-				<section data-background="rgb(231, 231, 207)">
-					<h4>CSS Transitions</h4>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<aside id="boxtransform"></aside>
-						</div>
-						<p style="font-size: 20px; text-align: left;"><b>Transition</b> – is a change of state from an initial state to an end-state.  CSS transitions allows you to change property values smoothly (from one value to another), over a given duration.</p>
-						<p style="font-size: 20px; text-align: left;">transition: all 3s; is the same as transition-property: all;  transition-duration: 3s;</p>
-						<p></p>
 
-					</div>
-
-				</section>
-				<section data-background="rgb(231, 231, 207)">
-					<h4>Animatable Properties</h4>
-					
-					<div id="flexcontain">
-
-						<ul>
-							<li style="font-size: 24px;">width, border-width, right, color, top, opacity, padding, background-color, font-size, line-height, opacity, left, margin, height, bottom</li>
-							<li style="font-size: 24px;">These properties typically have a numeric measurement value with can change in the intermediate state.</li>
-						
-						</ul>
-
-					</div>
-
-				</section>
-
-				<section data-background="#fff">
-					<h3>In-Class Activity</h3>
-					
-					<div id="flexcontain">
-						
-						<div id="transition_activity">
-							
-						</div>
-						
-
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-								
-								<p style="font-size: 24px; margin-top: -12px;">Write the code to create the transition to the left.</p>
-								<ul>
-									<li style="font-size: 18px;">The transition duration for each property is 4 seconds </li>
-									<li style="font-size: 18px;">The background color changes from red to green</li>
-									<li style="font-size: 18px;">The the height and width goes from 100 to 300 pixels.</li>
-									<li style="font-size: 18px;">A 180px border-radius is applied to the end-state. </li>
-								</ul>
-						</div>
-					</div>
-				</section>
-
-				<section data-background="images/animate/animated_boat.gif" style="background-size: 60%;">
-					<h1 style="color: white; text-shadow: 2px 2px 10px #333;">Animation</h1>
-					
-				</section>
-				<section data-background="images/animate/animated_boat.gif" style="background-size: 60%;">
-					<h3 style="color: white; text-shadow: 2px 2px 10px #333;">How is Animation different from the Transition Property?</h3>
-					<a href="https://cssanimation.rocks/transition-vs-animation/"><div id="animation_diff">Click here for explanation</div></a>
-				</section>
-				<section data-background="#ffe73b">
-					<h3>@Keyframes rule</h3>
-					
-					<div id="flexcontain">
-						<div class="box_two">
-							<p style="font-size: 20px; text-align: left;">The @keyframes CSS at-rule controls the intermediate steps in a CSS animation sequence by defining styles for keyframes (or waypoints) along the animation sequence</p>
-							<pre>
-								<code style="font-size: 12px;" class=""  data-trim contenteditable>
-									@keyframes movingbox {
-									    0%   {top: 0px; left: 0px; background: red;}
-									    25%  {top: 0px; left: 500px; background: blue;}
-									    50%  {top: 500px; left: 500px; background: yellow;}
-									    75%  {top: 500px; left: 0px; background: green;}
-									    100% {top: 0px; left: 0px; background: red;}
-									}
-									div {
-									    width: 100px;
-									    height: 100px;
-									    background: red;
-									    position: relative;
-									    -webkit-animation: movingbox 5s infinite; 
-									}
-	
-	
-								</code>
-							</pre>
-						</div>
-						<div class="box_two">
-							<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #8AEA92;"><p><b>Step 1</b><br>Select an element to animate, define default state.</p></div>
-							<div class="box red" style="font-size: 20px; margin: 10px;  background-color: #80ADA0;"><p><b>Step 2</b><br>Add the @keyframes rule and give name</p></div>
-							<div class="box green" style="font-size: 20px; margin: 10px; background-color: #38618C"><p><b>Step 3</b><br>Define various keyframes</p></div>
-							<div class="box green" style="font-size: 20px; margin: 10px; background-color: #cd0000"><p><b>Step 3</b><br>Add keyframe name and duration to default state using animation property</p></div>
-						</div>
-					</div>
-				
-				</section>
-
-			<!--<section data-background="rgb(231, 231, 207)" style="background-size: 100%;">
-					<h2>Top Animation Libraries</h2>
-					
-				</section>00>
-				<!--<section data-background="rgb(231, 231, 233)">
-					<h4>Responsive Design Example</h4>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<img src="images/responsive/responsive_ex.PNG" width="720" style="box-shadow: none; border: none;"alt="Responsive example graphic">
-						</div>
-						<p style="font-size: 20px; text-align: left;">The image above shows the responsive design of the World Wildlife Fund web site at five screen resolutions</p>
-						<p style="font-size: 20px; margin-top: -10px; text-align: left;">Both page designs are flexible to adapt to sizes above or below the 768-pixel threshold.  This threshold is called the <b>breakpoint</b>—the point at which design layouts change in responsive design schemes </p>
-
-
-					</div>
-
-				</section>
-				<section data-background="white">
-					<h4>Responsive Design Example</h4>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<img src="images/responsive/breakpoints.PNG" width="720" style="box-shadow: none; border: none;"alt="Responsive breakpoint example graphic">
-						</div>
-						<p style="font-size: 24px; text-align: left;">The image above shows the range of sizes and the breakpoint used in the style of the World Wildlife site.  The web site design adapts to larger screen sizes, expanding and adding more content and navigation as the browser widths increase</p>
-						<p style="font-size: 24px; margin-top: -10px; text-align: left;">In the example above, the breakpoint is set to 768 pixels </p>
-
-
-					</div>
-
-				</section>
-				
-				<section data-background="rgb(231, 231, 207)">
-					<h3>Responsive Design Process</h3>
-					<div id="flexcontain">
-						<div class="box red" style="font-size: 22px; margin: 10px; color: white;  background-color: #50312f"><p>Use CSS style rules to change the order, positioning, and other display characteristics of your page elements</p></div>
-						<div class="box blue" style="font-size: 22px; margin: 10px; background-color: #cb0000;"><p>Build one basic layout and then use style rules targeted to different screen sizes</p></div>
-						<div class="box green" style="font-size: 24px; margin: 10px;  background-color: #fec633;"><p>Choose a breakpoint and then design for the devices above and below that point</p></div>
-						<div class="box orange" style="font-size: 24px; margin: 10px;  background-color: #52af83;"><p>Adapt your design for optimal viewing in each range of screen sizes</p></div>
-						<div class="box aquamarine" style="font-size: 24px; margin: 10px; background-color: #3F6C45;"><p> Content, not the device needs, should dictate when you choose breakpoints</p></div>
-					</div>
-					
-				</section>
-				<section data-background="images/responsive/breakpoint_d.jpg">
-					<h3 id="boxstyle">How do you set a breakpoint?</h3>
-					<p style="background-color:rgba(0,0,0,0.7); padding: 10px;" class="fragment"> <b>You need a Media Query</b> <br><span style="font-size: .7em;  font-style: italic;">A media query is composed of an optional media type and zero or more expressions that check for the conditions of particular media features. Among the media features that can be used in media queries are ' width ', ' height ', and ' color '.</span></p>
-		
-				</section>
-				<section data-background="white">
-					<h3>Media Queries consist of 3 parts</h3>
-					<div id="flexcontain">
-						<div class="box red" style="font-size: 24px; margin: 8px; padding-top: 35px; border-radius: 135px; border: 2px solid #333; height: 110px; background-color: white; color: #333; font-weight: 900;"><p>THE MEDIA TYPE</p></div>
-						<div class="box blue" style="font-size: 24px; margin: 8px; padding-top: 35px; border-radius: 135px; border: 2px solid #333; height: 110px; background-color: white; color: #333; font-weight: 900;"><p>THE EXPRESSION(S)</p></div>
-						<div class="box green" style="font-size: 24px; margin: 8px; padding-top: 35px; border-radius: 135px; border: 2px solid #333; height: 110px; background-color: white; color: #333; font-weight: 900;"><p>CONDITIONAL CSS</p></div>
-
-					</div>
-					<img src="images/responsive/definingmobile-mediaquery.jpg" width="620" style="box-shadow: none; border: none;"alt="Media query breakdown ">
-					
-				</section>
 				<section data-background="white">
 						<h4>Variety of Media Types</h4>
 						<img src="images/responsive/media_types.PNG" width="720" style="box-shadow: none; border: none;"alt="Media Type graphic ">
@@ -1374,6 +1267,7 @@ test('adds 1 + 2 to equal 3', () => {
 				    <h2>References</h2>
 				    <ul style="font-size: 28px;">
 						<li>https://medium.com/@nathankpeck/microservice-testing-unit-tests-d795194fe14e</li>
+						<li>https://www.edureka.co/blog/what-is-integration-testing-a-simple-guide-on-how-to-perform-integration-testing/</li>
 
 				    </ul>
 				</section>
