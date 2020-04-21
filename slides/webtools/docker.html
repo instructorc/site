@@ -48,8 +48,8 @@
 				    <ul style="font-size: 28px;">
 						<li>Understanding what is Docker?</li>
 						<ul>
-							<li>Images | Containers | Virtual Machines | </li>
-							<li>Practical Use Cases for Web Developers</li>
+							<li>Images | Containers | Virtual Machines | Containers vs. Virtual Machines</li>
+							<li>Practical Use Cases for Web Developers | Containers and Microservices</li>
 						</ul>
 						<li>Installing Docker</li>
 						<ul>
@@ -72,149 +72,93 @@
 				</section>
 				<section data-background="images/docker/docker_slide_bg.png" style="background-size: 80%;">
 					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">What is Docker?</h3>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black;" class="fragment"> Docker is a set of platform as a service products that uses <strong>OS-level virtualization</strong> to deliver software in packages called containers. <strong>Containers are isolated</strong> from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels.</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7);  font-size: .8em; color: black;" class="fragment"> Docker is a set of platform as a service products that uses <strong>OS-level virtualization</strong> to deliver software in packages called containers. </p>
+					<img class="fragment" src="images/docker/docker_use.PNG" width="690" alt="docker use case stats"/>
 				</section>
 				<section data-background="#fff">
 					<h3>What is Docker cont.?</h3>
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 24px; margin: 10px; height: 500px; background-color: #4ea1c9;"><p><b style="font-size: 30px;">Images</b> <br> Give people tasks or instructions and watch them use your design, without help. </p></div>
-						<div class="box blue" style="font-size: 24px; margin: 10px; height: 500px; background-color: #4ea1c9;"><p><b style="font-size: 30px;">Containers</b> <br> Ask prospective users questions about their expectations of your design.</p></div>
-						<div class="box green" style="font-size: 24px; margin: 10px; height: 500px;  background-color: #4ea1c9;"><p><b style="font-size: 30px;">Virutal Machines</b> <br>   learning about user goals, and understand the tasks users will perform on your site.</p></div>
+						<div class="box red" style="font-size: 24px; margin: 10px; height: 400px; background-color: #4ea1c9;"><p><b style="font-size: 30px;">Images</b> <br> is a file, comprised of multiple layers, that is used to execute code in a Docker container. <strong>Images are created from a Dockerfile with the docker build command.</strong>  </p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; height: 400px; background-color: #4ea1c9;"><p><b style="font-size: 30px;">Containers</b> <br> are <strong>isolated units</strong> of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another. <strong>A runnable instance of an image</strong></p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; height: 400px;  background-color: #4ea1c9;"><p><b style="font-size: 30px;">Virutal Machines</b> <br> a virtual machine is an emulation of a computer system.  A virtual machine is sandboxed from the rest of the system, meaning that the software inside a virtual machine can’t escape or tamper with the computer itself.</p></div>
 
 					</div>
-					<a href="https://www.usability.gov/what-and-why/user-research.html" style="font-size: .4em;">Click here for more information about user research</a> </a>
+					<a href="https://www.docker.com/resources/what-container">Container images become containers at runtime.  Click here more information about containers and virtual machines</a>
 				</section>
-				<section data-background="#eeeeee" style="background-size: 80%;">
-					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Docker Use Cases</h3>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .7em;" class="fragment"> Docker is a set of platform as a service products that uses ate with each other through well-defined channels.</p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .7em;" class="fragment"> Docker is a set of platform as a service products that uses ate with each other through well-defined channels.</p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .7em;" class="fragment"> Docker is a set of platform as a service products that uses ate with each other through well-defined channels.</p>
+				<section data-background="#fff">
+					<h3>Containers vs. Virtual Machines</h3>
+					<div id="flexcontain">
+						<div>
+							<img src="images/docker/container_display.png" width="400" alt="container visual">
+						</div>
+						<div>
+							<img src="images/docker/container_vs_vm.png" width="400" alt="container verses virtual machine visual">
+						</div>
+
+					</div>
+					<p style="font-size: .6em;">Containers and virtual machines have similar resource isolation and allocation benefits, but function differently because containers virtualize the operating system instead of hardware. Containers are more <strong>portable</strong> and <strong>efficient</strong>.</p>
 				</section>
 				<section data-background="#eee">
 						<h4>Containers and Microservices</h4>
 						<p style="font-size: .6em;">What does Microservices have to do with container orchestration?  Please watch the video below in your own time. The video provides an overview of microservices and how containers are orchestrated. </p>
 						<iframe width="900" height="415" src="https://www.youtube.com/embed/1xo-0gCVhTU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</section>
-
-				<section data-background="#fff">
-					<img src="images/ux/uxdesign.PNG" width="820" style="box-shadow: none; border: none;"alt="ux design stages"><br>
-					<q> User experience is more than data collection.  It's about understanding the motivation behind user needs and striking a strategic balance between expectations and business needs.</q>
-				</section>
-				<section data-background="images/docker/docker_use.PNG" style="background-size: contain; background-position: center center;">
-						
-						<!--<img src="images/ux/honeycomb.jpg" width="520" style="box-shadow: none; border: none;"alt="usability honeycomb">-->
-				</section>
-		
-				<section data-background="#fff">
-					<h4 style="color: black;">UX Desired Outcome</h4>
-					<div id="flexcontain">
-						<div class="box red" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Useful</b> <br> Your content should be original and fulfill a need </p></div>
-						<div class="box blue" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Usable</b> <br> Site must be easy to use.</p></div>
-						<div class="box green" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Desirable</b> <br> Image, identity, brand, and other design elements are used to evoke emotion and appreciation</p></div>
-						<div class="box yellow" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Findable</b> <br> Content needs to be navigable and locatable onsite and offsite</p></div>
-						<div class="box orange" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Accessible</b> <br> Content needs to be accessible to people with disabilities</p></div>
-						<div class="box aquamarine" style="font-size: 22px; margin: 10px;"><p><b style="font-size: 32px;">Credible</b> <br> Users must trust and believe what you tell them</p></div>
-					</div>
-
-				</section>
-				<section data-background="#fff">
-					<h3>Activity </h3>
-					
-					<div id="flexcontain">
-
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<ol>	
-								<li style="font-size: 30px;">Conduct research on User experience job descriptions and find common commonalities between the descriptions</li>
-	   							<li style="font-size: 30px;">Make a list of of requirements, skills and tools listed for the job descriptions you researched.</li>
-	   							
-							</ol>
-							
-						</div>
-						<h5>Job board sites: Dice.com, indeed.com, simplyhired.com, etc.</h5>
-					</div>
-				</section>
-				<section data-background="images/ux/user_experience_bg.jpg">
-					<h2 style="color: black;">Why User Research?</h2>
-					
-				</section>
-				<section data-background="white">
-					<h4 style="color: black;">Why User research?</h4>
-					<iframe width="760" height="515" src="https://www.youtube.com/embed/1hbnPCdM4ls?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-				</section>
-				<section data-background="#fff">
-					<h3>User Research</h3>
-					<div id="flexcontain">
-						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #216869;"><p><b style="font-size: 30px;">Observations</b> <br> Give people tasks or instructions and watch them use your design, without help. </p></div>
-						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #49A078;"><p><b style="font-size: 30px;">Interviews</b> <br> Ask prospective users questions about their expectations of your design.</p></div>
-						<div class="box green" style="font-size: 24px; margin: 10px; background-color: #9CC5A1;"><p><b style="font-size: 30px;">Task Analysis</b> <br>   learning about user goals, and understand the tasks users will perform on your site.</p></div>
-						<div class="box orange" style="font-size: 24px; margin: 10px;"><p><b style="font-size: 30px;">Focus Groups</b> <br> a moderated discussion where you can learn about users’ attitudes, beliefs, desires, and reactions to concepts.</p></div>
-						<div class="box aquamarine" style="font-size: 24px; margin: 10px; background-color: #333;"><p><b style="font-size: 30px;">Surveys</b> <br>  a structured questionnaire that your target audience completes over the internet generally through a filling out a form</p></div>
-					</div>
-					<a href="https://www.usability.gov/what-and-why/user-research.html" style="font-size: .4em;">Click here for more information about user research</a> </a>
-				</section>
-				<section data-background="#fff">
-					<a href="https://www.nngroup.com/articles/ux-research-cheat-sheet/" style="font-size: 20px;"><h3>Nielsen Norman Group Research</h3></a>
-					<img src="images/ux/frequentuxmethods.png" width="550" style="box-shadow: none; border: none;"alt="Frequent UX method graphic">
-					
+				<section data-background="#eeeeee" style="background-size: 80%;">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Docker Use Cases</h3>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment"><strong>Simple Environment Configuration</strong><br> Simple configuration  is the primary use case of Docker </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment"><strong>App Isolation & Testing</strong><br> Cautious of erraneous code can be ran in a contained environment. Testing and previewing new applications. Using <a href="https://hub.docker.com/">Docker Hub</a> to pull down preconfigured applications.</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment"><strong>Rapid Deployment and Scaling</strong><br> Easier to deploy an application that runs within a container that contains all of the application processes</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment"><strong> Code Pipeline Management</strong><br>Docker eases the code development and deployment pipeline and offers a consistent environment for the application from dev through production.</p>
 				</section>
 				<section data-background="#eee">
-						<h4>When to use which UX research method</h4>
-						<iframe width="760" height="515" src="https://www.youtube.com/embed/OtUWbsvCujM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					<h4>Containers and Microservices</h4>
+					<p style="font-size: .6em;">What does Microservices have to do with container orchestration?  Please watch the video below in your own time. The video provides an overview of microservices and how containers are orchestrated. </p>
+					<iframe width="900" height="415" src="https://www.youtube.com/embed/1xo-0gCVhTU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</section>
-				<section data-background="images/ux/ia_bg.jpg">
-				    <h1 style="color: black;">Information Architecture (IA)</h1>
-				   
-				</section>
-				<section data-background="white">
-					<h4 style="color: black;">Understanding Navigation</h4>
-					<iframe width="760" height="515" src="https://www.youtube.com/embed/zJLQdMmYWFQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-				</section>
-				<section data-background="#fff">
-					
-					<img src="images/ux/louisrosenfeld.gif" width="870" style="box-shadow: none; border: none;"alt="Information Architecture diagram">
-				</section>
-				<section data-background="#fff">
-					<h4 style="color: black;">Information Architecture and navigation considerations</h4>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; color: black; margin: 10px;">
-							<ul>	
-								<li style="font-size: 26px;">Information design is the most important factor in the success of your site</li>
-								<li style="font-size: 26px;">What do users want when they get to your site?</li>
-								<li style="font-size: 26px;">Anticipate and plan for user actions</li>
-			
-							</ul>
-						</div>
-						<div class="box_two" style="font-size: 22px; color: black; margin: 10px;">
-							<ul>	
-								<li style="font-size: 26px;">Do not make users navigate through too many layers of information</li>
-								<li style="font-size: 26px;">Follow the three clicks rule</li>
-								<li style="font-size: 26px;">Use consistent navigation</li>
-								<li style="font-size: 26px;">Provide direct links to your most popular pages</li>
-							</ul>
-						</div>
-					</div>
 
+				<section data-background="#fff">
+					<h5 style="color: #4ea1c9;">What execution environment should your microservices applications use? That is, in what kind of environment should they run? </h5>
+					<p style="font-size: .7em;">The best choice for running a microservices application architecture is application containers. Containers encapsulate a lightweight runtime environment for your application, presenting a consistent software environment that can follow the application from the developer's desktop to testing to final production deployment, and you can run containers on physical or virtual machines. </p>
 				</section>
-				<section data-background="#eee">
-				    <h5>Navigation Considerations - Orient the User</h5>
-				    <p style="font-size: 28px;">Provide enough location information to let the user answer the following navigation questions:</p>
-				    <ul style="text-align: center; list-style-type: none; text-shadow: 1px 1px 5px #333;">
-						<li style="color: #82C09A;">Where am I?</li>
-						<li style="color: #8C001A;">Where can I go?</li>
-						<li style="color: #456990;">How did I get there?</li>
-						<li style="color: #636940;">How do I get back to where I started?</li>
 				
-				    </ul>
+				<section data-background="images/docker/docker_slide_bg.png">
+				    <h1 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Installing Docker</h1>
 				</section>
 				<section data-background="#fff">
-					<h3>Sample Website Architecture</h3>
-					<img src="images/ux/sitearchdiagram.gif" width="700" style="box-shadow: none; border: none;"alt="Sample Website Architecture Diagram">
+					<h3>Install Docker</h3>
+					<div id="flexcontain">
+						<div class="box green" style="font-size: 24px; margin: 10px; height:500px; background-color: #63C4AB;"><p><b style="font-size: 28px;">Installing Docker on Windows</b> <br>  1) Navigate to <a href="https://www.docker.com/get-started" style="background-color: white;">docker.com/get-started</a> to download for windows. <br><br>2) Click on the download button for Windows<br><br>3) Run the executable file to install docker on machine. </p></div>
+						<div class="box aquamarine" style="font-size: 24px; margin: 10px; height: 500px; background-color: #4ea1c9;"><p><b style="font-size: 28px;">Using Docker Plugin in VS Code</b> <br>1) Within Visual Studio Code, navigate to the extensions tab on the left<br><br>2) Search for Docker from Microsoft and install</p></div>
+					</div>
+					<a href="https://docs.docker.com/docker-for-windows/install/">Docker Installation Guide</a>
 				</section>
-				<section data-background="#000">
-					<h3>Understanding Card Sorting</h3>
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/6RhFN6cul3w?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				<section data-background="#fff">
+					<h3>Running Sample Container Activity</h3>
+															<pre>
+								<code style="font-size: 16px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
+									/** Lets us know the version of docker**/
+									docker --version
+									
+									/** Pulling the hello-world image from Docker Hub and runs the container**/
+									docker run hello-world
+									
+									/** Command to display on the images **/
+									docker image ls
+														
+	
+								</code>
+							</pre>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Open Visual Studio code and click on the extensions tab/icon.</div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Open terminal and run the various commands above.</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Stop container and remove container</p></div>
+
+					</div>
+					
+				
 				</section>
+
+
 				<!--<section data-background="000">
 					<h3>Use Cases</h3>
 					<ul>
@@ -229,60 +173,9 @@
 					<img src="images/ux/use_case.PNG" alt="example of use case"/>
 					
 				</section>-->
-				<section data-background="white">
-					<h3>User Personas</h3>
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<iframe width="760" height="515" src="https://www.youtube.com/embed/khLWLtxmMGM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-						</div>
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<iframe width="760" height="515" src="https://www.youtube.com/embed/fal4Wylyt3M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						</div>
-					
-				</section>
-				<section data-background="#fff">
-					<h3> Sitemap Activity </h3>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-								<img src="images/ux/gatarode.png" width="600" style="box-shadow: none; border: none;"alt="Sample Website Architecture Diagram">
-							
-						</div>
-						
-							<ul>	
-								<li style="font-size: 26px;">Navigate to Gatorade.com and construct a sitemap based on the site's content using <a href="http://draw.io">Draw.io</a>.  Make sure to include the following within your sitemap.</li>
-	   							<ul>
-	   								<li style="font-size: 22px;">The site-maps key/legend that describes each shape represented in your sitemap.  Your key/legend should have a minimum of 3 different shapes.</li>
-	   								<li style="font-size: 22px;">The persistent global navigation which defines the page names and order of pages.</li>
-	   								<li style="font-size: 22px;">The page components or sub-pages that stem from your global navigation.</li>
-	   								<li style="font-size: 22px;">The static footer content that will be persistent on each page.</li>
-	   							</ul>
-	   							
-							</ul>
-							
-					
 
-					</div>
-				</section>
-				<section data-background="#fff">
-				    
-				    <img src="images/ux/ketchup.jpg" width="550" style="box-shadow: none; border: none;"alt="usability ketchup image">
-				    <h3 style="color: black; font-size: 2em;">Why Usability?</h3>
-				</section>
-				<section data-background="#eee">
-				    <iframe width="560" height="315" src="https://www.youtube.com/embed/lhQOx6OxA0E?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>	
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/Ml92QEqE-RQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-				
-				</section>
-				<section data-background="#fff">
-				    <h3>Usability Components</h3>
-				    <img src="images/ux/Usability_Components.png" width="750" style="box-shadow: none; border: none;"alt="usability components">
-				    
-				</section>
-				<section data-background="#fff">
-					<img src="images/ux/uxdesign.PNG" width="820" style="box-shadow: none; border: none;"alt="ux design stages"><br>
-					<q> Usability refers to the ease of access and/or use of a product or website.</q>
-				</section>
+
+
 				<section data-background="#fff">
 					<h3>Website Usability</h3>
 					
@@ -316,56 +209,8 @@
 					</div>
 
 				</section>
-				<section data-background="images/ux/accessibilitypic.jpg">
-				    <h1>Accessibility</h1>
-				   
-				</section>
-				<section data-background="#eee">
-				   <h3>Introduction to Web Accessibility</h3>
-				   <iframe width="860" height="515" src="https://www.youtube.com/embed/20SHvU2PKsM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-				
-				</section>
-				<section data-background="#fff">
-					<h3>Accessibility Principles</h3>
-					<div id="flexcontain">
-						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #9AD1D4;"><p><b style="font-size: 30px;">Perceivable</b> <br>People can see the content or hear it </p></div>
-						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #80CED7;"><p><b style="font-size: 30px;">Operable</b> <br>people can typing or by voice </p></div>
-						<div class="box green" style="font-size: 24px; margin: 10px; background-color: #007EA7;"><p><b style="font-size: 30px;">Understandable information</b> <br>people get clear and simple language  </p></div>
-						<div class="box orange" style="font-size: 24px; margin: 10px; background-color: #003249;"><p><b style="font-size: 30px;">Robust content </b> <br>people can use different assistive technology</p></div>
-					
-					</div>
-					<a href="https://www.w3.org/WAI/fundamentals/accessibility-principles/" style="font-size: .4em;">Click here for more information about accessibility principles</a>
-				</section>
-				<section data-background="images/ux/wireframebg.jpg">
-				    <h1 style="background-color:rgba(0,0,0,0.7);">Wireframing and Prototyping</h1>
-				   
-				</section>
-				<section data-background="#eee">
-						<h4>Prototypes vs Wireframes</h4>
-						<iframe width="760" height="515" src="https://www.youtube.com/embed/miVcrftnhzM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-				</section>
-				<section data-background="#fff">
-					<img src="images/ux/uxdesign.PNG" width="820" style="box-shadow: none; border: none;"alt="ux design stages"><br>
-					<q> A wireframe is a two-dimensional illustration of a page’s interface that specifically focuses on space allocation and prioritization of content, functionalities available, and intended behaviors.</q>
-				</section>
-				<section data-background="#fff">
-					<h3>Benefits of wireframing</h3>
-					<div id="flexcontain">
-						<div class="box red" class="fragment" style="font-size: 24px; margin: 10px; background-color: #9CEC5B;"><p><b style="font-size: 30px;">Visualizing</b> <br> Visualize structure and formation of how content will be presented. </p></div>
-						<div class="box blue" class="fragment" style="font-size: 24px; margin: 10px; background-color: #4E6766;"><p><b style="font-size: 30px;">Error Prevention</b> <br> allows you to catch mistakes and issues that can occur</p></div>
-						<div class="box green" class="fragment" style="font-size: 24px; margin: 10px; background-color: #5AB1BB;"><p><b style="font-size: 30px;">Experimenation</b> <br>   allows for trying out more than one layout design.</p></div>
-						<div class="box orange" class="fragment" style="font-size: 24px; margin: 10px; background-color: #A5C882;"><p><b style="font-size: 30px;">Prioritizing</b> <br> determination of how much space to allocate to a given item and where that item is located.</p></div>
-						<div class="box aquamarine" class="fragment" style="font-size: 24px; margin: 10px; background-color: #F7DD72;"><p><b style="font-size: 30px;">IA Clarity</b> <br>  consistent ways for displaying particular types of information on the user interface</p></div>
-						
-					</div>
-					<a href="https://www.usability.gov/how-to-and-tools/methods/wireframing.html" style="font-size: .4em;">Click here for more information about wireframing</a> </a>
-				</section>
-				<section data-background="#fff">
-					<h3>Wireframing Process</h3>
-					<p>Many processes you can take</p>
-					<img src="images/ux/wireframes-process.png" width="680" style="box-shadow: none; border: none;"alt="wireframe process"><br>
-					
-				</section>
+
+
 				<section data-background="#fff">
 					<h3>Wireframing</h3>
 					<p> Low Fidelity  &#10022;  High Fidelity </p>
@@ -469,7 +314,9 @@
 				    <ul style="font-size: 28px;">
 						<li>https://github.com/docker/labs/blob/master/beginner/chapters/webapps.md</li>
 						<li>https://dzone.com/articles/a-developers-guide-to-docker-docker-compose</li>
-
+    					<li>https://data-flair.training/blogs/docker-use-cases/</li>
+    					<li>https://www.docker.com/resources/what-container</li>
+    					<li>https://gravitational.com/blog/microservices-containers-kubernetes/</li>
 
 				    </ul>
 				</section>
@@ -797,139 +644,7 @@
 								</tbody> 
 						 </table>
 				</section>
-				<section data-background="#fff">
-					<h2>Stream Example</h2>
 
-					<img src="images/io/writerexcode.png"  width="500" style="box-shadow: none; float: left;" alt="Writing to file code"/>
-					<img src="images/io/writerexconsole.png"  width="400" style="box-shadow: none; float: left;" alt="Writing to file console view"/>
-					<img src="images/io/writerextextfile.png"  width="400" style="box-shadow: none; float: left;" alt="Writing to file text output"/>
-
-					
-
-				</section>
-				<section data-background="#fff">
-					<h2>Writing and Reading a Sequential Access File</h2>
-					<ul>
-						<li>C# uses files only as streams of bytes</li>
-						<li>When you write a program to store a data file, you must dictate the form the file will take</li>
-						<li>Whether you are writing data to a file or reading data from one, you create a <code>FileStream </code>object</li>
-					</ul>
-					
-				</section>
-				<section data-background="#fff">
-					<h2 style="font-size: 36px;">Writing Data to a Sequential Access Text File Example</h2>
-					<ul>
-						
-						<li><b>Token</b></li>
-						<ul style="font-size: 22px;">
-							<li>A block of text within a string that represents an entity or field </li>
-
-						</ul>
-						<li><b>Delimiter</b></li>
-						<ul style="font-size: 22px;">
-							<li>A character used to specify the boundary between records and, potentially, fields in text files</li>
-						</ul>
-						<li>When you write data to a text file:</li>
-						<ul style="font-size: 22px;">
-							<li>You can separate the fields with a delimiter</li>
-							<li>Delimiters are needed when fields are not fixed in size and position - field size varies</li>
-							<li><b>CSV files</b> (comma-separated value files) are delimited files</li>
-						</ul>
-
-					</ul>
-					
-				</section>
-				<section data-background="#fff">
-					<h2 style="font-size: 36px;">Writing Data to Sequential Access Text File </h2>
-
-					<img src="images/io/sequentialcode.png"  width="350" style="box-shadow: none; float: left; margin-top:-10px;" alt="Sequential file access code"/>
-					<img src="images/io/sequentialconsole.png"  width="300" style="box-shadow: none; float: left; margin-top: -10px;" alt="Sequential file access console view"/>
-					<img src="images/io/sequentialoutput.png"  width="300" style="box-shadow: none; float: left; margin-top: -10px;" alt="Sequential output"/>
-					<img src="images/io/employeeclass.png"  width="300" style="box-shadow: none; float: left; margin-top: -26px;" alt="Employee class"/>
-
-				</section>
-				<section data-background="#fff">
-					<h2>Reading from a Sequential Access Text File </h2>
-
-					<img src="images/io/readingcode.png"  width="500" style="box-shadow: none; float: left; margin-top: -10px;" alt="Reading Sequential access code"/>
-					<img src="images/io/readingconsole.png"  width="500" style="box-shadow: none; float: left; margin-top: -10px;" alt="Reading Sequential file access console view"/>
-
-				</section>
-				<section data-background="#fff">
-					<h2>Search a Sequential Text File</h2>
-					<ul>
-						<li><b>File position pointer</b></li>
-						<ul style="font-size: 22px;">
-							<li>Holds the byte number of the next byte to be read</li>
-						</ul>
-						<li>Reposition the file pointer using the <code>Seek()</code> method and the <code>SeekOrigin</code> enumeration: <br/> <code style=" font-size: 28px; font-weight: 100;">inFile.Seek(0, SeekOrigin.Begin);</code></li>
-
-					</ul>
-					<img src="images/io/seekimg.png"  width="700" style="box-shadow: none; font-size: 28px; font-weight: 100;" alt="File Position Searching Sequential"/>
-				</section>
-				<section data-background="#fff">
-					<h2>Search a Sequential Text File cont.</h2>
-					<img src="images/io/seekex.png"  width="700" style="box-shadow: none;" alt="seek example code picture"/>
-					
-				</section>
-				<section data-background="#fff">
-					<h2>Search a Sequential Text File cont.</h2>
-					<img src="images/io/seekoutput.png"  width="600" style="box-shadow: none;" alt="seek example output"/>
-					
-				</section>
-				<section data-background="#fff">
-					<h2>Understanding Serialization and Deserialization</h2>
-					<ul>
-						<li>Disadvantages to writing to a text file:</li>
-						<ul style="font-size: 22px;">
-							<li>Data in a text file is easily readable in a text editor such as Notepad, which means it is not secure</li>
-							<li>It is cumbersome to convert each field to text and combine the fields with delimiters</li>	
-						</ul>
-						<li>You can write objects to and read objects from files</li>
-						<li><b>Serialization</b></li>
-						<ul style="font-size: 22px;">
-							<li>The process of converting objects into streams of bytes</li>
-						</ul>
-						<li><b>Deserialization</b></li>
-						<ul style="font-size: 22px;">
-							<li>Converts streams of bytes back into objects</li>
-						</ul>
-					</ul>
-					
-				</section>
-				<section data-background="#fff">
-					<h2>Understanding Serialization and Deserialization</h2>
-					<ul>
-						<li style="font-size: 32px">In a class marked with the [Serializable] attribute, every instance variable must also be Serializable</li>
-
-						<li style="font-size: 32px">By default, all C# simple data types are serializable, including strings</li>
-						<li style="font-size: 32px">If your class contains fields that are more complex data types, you must check the declaration of those classes to ensure they are serializable</li>
-
-					</ul>
-					<img src="images/io/serializableclassimg.png"  width="400" style="box-shadow: none; font-size: 28px; font-weight: 100;" alt="Serializable class image"/>
-				</section>
-				<section data-background="#fff">
-					<h2>Understanding Serialization and Deserialization</h2>
-					<ul>
-						<li>To create a class that can be serialized:</li>
-						<ul style="font-size: 22px;">
-							<li>Mark it with the <code>[Serializable]</code> attribute</li>	
-						</ul>
-						<li>Namespaces included in programs that employ serialization:</li>
-						<ul style="font-size: 22px;">
-							<li><code>System.Runtime.Serialization.Formatters.Binary;</code></li>
-							<li><code>System.Runtime.Serialization;</code></li>
-						</ul>
-					</ul>
-					
-				</section>
-				<section data-background="#fff">
-					<h2>Serilization Code Example </h2>
-
-					<img src="images/io/serialcode1.png"  width="425" style="box-shadow: none; float: left; margin-top: -10px;" alt="Serialization Code example one"/>
-					<img src="images/io/serialcode2.png"  width="425" style="box-shadow: none; float: left; margin-top: -10px;" alt="Serialization Code example two"/>
-
-				</section>
 				<section data-background="#fff">
 					<h2>Serilization Code Example Output </h2>
 
