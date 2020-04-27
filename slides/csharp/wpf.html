@@ -621,6 +621,54 @@ namespace databinding_example
 				<section data-background="images/wpf/data_binding.jpg">
 					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Events</h1>
 				</section>
+				<section data-background="#eee">
+					<h3>Understanding Delegates</h3>
+					<p style="font-size: .6em;">A <strong>delegate</strong> is a type that represents references to methods with a particular parameter list and return type.</p>
+					<ul>
+						<li style="font-size: 22px;">Delegates are used to pass methods as arguments to other methods.</li>
+						<li style="font-size: 22px;"><strong>Process</strong> - Declare a delegate | Set a target method | Invoke a delegate</li>
+					</ul>
+					<div id="flexcontain">
+						<pre>
+							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+public delegate void MyDelegate(string msg); //declaring a delegate
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        MyDelegate del = ClassA.MethodA;
+        del("Hello World");
+
+        del = ClassB.MethodB;
+        del("Hello World");
+
+        del = (string msg) => Console.WriteLine("Called lambda expression: " + msg);
+        del("Hello World");
+    }
+}
+
+class ClassA
+{
+    static void MethodA(string message)
+    {
+        Console.WriteLine("Called ClassA.MethodA() with parameter: " + message);
+    }
+}
+
+class ClassB
+{
+    static void MethodB(string message)
+    {
+        Console.WriteLine("Called ClassB.MethodB() with parameter: " + message);
+    }
+}
+
+
+							</code>
+						</pre>
+					</div>
+				</section>
 			<!--<section data-background="#fff">
 					<h4>Event Handler Method</h4>
 				    	<pre>
@@ -943,42 +991,7 @@ namespace databinding_example
 					<h2>Using the API</h2>
 					
 				</section>
-				<section data-background="#eee">
-					<h3>Console Class Example</h3>
-					<ul>
-						<li style="font-size: 22px;">Our first two projects will be console applications, feel free to be creative and experiment with the properties and methods associated with Console class.</li>
-						<li style="font-size: 22px;">https://docs.microsoft.com/en-us/dotnet/api/system.console?view=netframework-4.7.2</li>
-					</ul>
-					<div id="flexcontain">
-						<pre>
-							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
-								using System;
-								using System.Text;
-								
-								class Program{
-									static void Main(string[] args)
-									{
-									
-										string name;
-										
-										Console.WriteLine("Enter your name: ");
-										name = Console.ReadLine();
-										Console.WriteLine("Welcome {0}", name);
-										int nameLength = name.Length;
-										
-										for(int x = 0; x < nameLength; x++){
-											Console.Beep();
-										}
-									
-	
-									}
-								}
 
-
-							</code>
-						</pre>
-					</div>
-				</section>
 
 				<section data-background="#fff">
 					<h4>Convert Class Methods</h4>
