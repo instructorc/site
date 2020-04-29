@@ -625,8 +625,9 @@ namespace databinding_example
 					<h3>Understanding Delegates</h3>
 					<p style="font-size: .6em;">A <strong>delegate</strong> is a type that represents references to methods with a particular parameter list and return type.</p>
 					<ul>
-						<li style="font-size: 22px;">Delegates are used to pass methods as arguments to other methods.</li>
+						<li style="font-size: 22px;">Delegates are used to pass methods as arguments to other methods. Can be used to implement <strong>callback</strong> functionality</li>
 						<li style="font-size: 22px;"><strong>Process</strong> - Declare a delegate | Set a target method | Invoke a delegate</li>
+						<li style="font-size: 22px;">There are two types of delegates available - Single Cast Delegate and Multi Cast Delegate</li>
 					</ul>
 					<div id="flexcontain">
 						<pre>
@@ -638,13 +639,14 @@ using System.Text;
 using System.Threading.Tasks;  
 namespace DelegatesDemo {  
     class Program {  
-        static void Display(string S) {  
-            Console.WriteLine("My Name is :" + S);  
+        delegate void X(string a); //declaring a delegate
+        static void Display(string I) {  //Target method
+            Console.WriteLine("My Name is :" + I);  
         }  
-        delegate void X(string a);  
+
         static void Main(string[] args) {  
-            X objD = new X(Display);  
-            objD("Rathrola Prem Kumar");  
+            X objD = new X(Display); //Instantiating the delegate 
+            objD("Instructor Chris");  //Invoking the delegate
             Console.Read();  
         }  
     }  
