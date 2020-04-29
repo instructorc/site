@@ -630,38 +630,24 @@ namespace databinding_example
 					</ul>
 					<div id="flexcontain">
 						<pre>
-							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
-public delegate void MyDelegate(string msg); //declaring a delegate
-
-class Program
-{
-    static void Main(string[] args)
-    {
-        MyDelegate del = ClassA.MethodA;
-        del("Hello World");
-
-        del = ClassB.MethodB;
-        del("Hello World");
-
-        del = (string msg) => Console.WriteLine("Called lambda expression: " + msg);
-        del("Hello World");
-    }
-}
-
-class ClassA
-{
-    static void MethodA(string message)
-    {
-        Console.WriteLine("Called ClassA.MethodA() with parameter: " + message);
-    }
-}
-
-class ClassB
-{
-    static void MethodB(string message)
-    {
-        Console.WriteLine("Called ClassB.MethodB() with parameter: " + message);
-    }
+							<code style="font-size: 16px;" class="cs hljs" data-trim contenteditable>
+using System;  
+using System.Collections.Generic;  
+using System.Linq;  
+using System.Text;  
+using System.Threading.Tasks;  
+namespace DelegatesDemo {  
+    class Program {  
+        static void Display(string S) {  
+            Console.WriteLine("My Name is :" + S);  
+        }  
+        delegate void X(string a);  
+        static void Main(string[] args) {  
+            X objD = new X(Display);  
+            objD("Rathrola Prem Kumar");  
+            Console.Read();  
+        }  
+    }  
 }
 
 

@@ -168,14 +168,17 @@
 				</section>
 
 				<section data-background="#fff" style="background-size: 80%;">
-					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Docker CheatSheet</h3>
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Docker CheatSheet and Commands</h3>
 					<div id="flexcontain">
 						<div class="box red" style="font-size: 20px; margin: 10px;  flex: 1 0 400px; background-color: white; color: #111;"><img src="images/docker/docker_build.PNG" alt="docker build image" /></div>
 						<div class="box blue" style="font-size: 20px; margin: 10px; flex: 1 0 400px; background-color: white; color: #111;"><img src="images/docker/docker_share.PNG"  alt="docker share image" /></div>
 						<div class="box green" style="font-size: 22px; margin: 10px; flex: 1 0 500px; height: 260px; background-color: white; color: #111;"><img src="images/docker/docker_run.PNG"  alt="docker run image"></div>
 
 					</div>
-					<a href="pdf/docker-cheat-sheet.pdf" target="_blank">Docker Cheat Sheet</a>
+					<p><a href="pdf/docker-cheat-sheet.pdf" target="_blank">Docker Cheat Sheet</a> | <a href="https://docs.docker.com/engine/reference/commandline/docker/">Docker Command Line Documentation</a></p>
+				</section>
+				<section data-background-iframe="https://docs.docker.com/engine/reference/commandline/docker/" data-background-interactive>
+				
 				</section>
 				<section data-background="#fff">
 					<h3>Docker Hub </h3>
@@ -195,14 +198,16 @@
 					<h4>Activity B -Pulling container from docker hub</h4>
 					<img src="images/docker/docker_ghost.PNG" width="720" alt="docker hub interface">
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 16px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Navigate to hub.docker.com and make sure you create an account and complete initial walkthrough that has you create and push up a container.</div>
-						<div class="box blue" style="font-size: 16px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Navigate to the Explore tab and search for ghost image.  Click on ghost image and copy command <code>docker run -d --name some-ghost -e url=http://localhost:3001 -p 3001:2368 ghost</code>.  Open in browser and explore ghost blog platform.  </p></div>
-						<div class="box green" style="font-size: 16px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Stop container by running command [docker container stop some-ghost] and remove container by running command [docker container rm some-ghost]</p></div>
-
+						<div class="box red" style="font-size: 16px; margin: 10px; background-color: #eee; height: 245px; color: #111;"><p><b style="font-size: 26px;">Step 1</b> <br> Navigate to hub.docker.com and make sure you create an account and complete initial walkthrough that has you create and push up a container.</div>
+						<div class="box blue" style="font-size: 16px; margin: 10px; background-color: #eee; height: 245px; color: #111;"><p><b style="font-size: 26px;">Step 2</b> <br>Navigate to the Explore tab and search for ghost image.  Click on ghost image and copy command <code>docker run -d --name some-ghost -e url=http://localhost:3001 -p 3001:2368 ghost</code>.  Open in browser and explore ghost blog platform. The <code> -p 3001:2368</code> is mapping my machines port to the containers port. </p></div>
+						<div class="box green" style="font-size: 16px; margin: 10px; background-color: #eee; height: 245px; color: #111;"><p><b style="font-size: 26px;">Step 3</b> <br>Stop container by running command [docker container stop some-ghost] and remove container by running command [docker container rm some-ghost]</p></div>
+						<aside class="notes">
+							Step 1 - Requires that you have an account created at docker hub.  When you create an account is going to have you do an initial walkthrough to publish a container.
+						</aside>
 					</div>
-					
-				
+	
 				</section>
+
 				<section data-background="#fff">
 					<h3>Dockerfile </h3>
 					<p><strong> What is a dockerfile</strong> - a text file that contains all commands, in order, needed to build a given image</p>
@@ -255,14 +260,14 @@ CMD ["node", "app/docker.js"]
 								CMD ["node", "app/docker.js"]
 								
 								# Step 3 - Stop container
-								docker container stop sample_walkthrough
+								docker container stop sample_walkthrough .
 
 								</code>
 							</pre>
 					<div id="flexcontain">
 						<div class="box red" style="font-size: 14px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Create a project folder and add a file called docker.js.  Within the docker.js file copy the code under step 1 and save.</div>
 						<div class="box blue" style="font-size: 14px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Create a Dockerfile by running command <strong>[touch Dockerfile]</strong>.  Within the docker file, copy the statements under step 2.</p></div>
-						<div class="box green" style="font-size: 14px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Build the image by running command <strong>[docker build -t sample_walkthrough]</strong>.  Observe the output in console and stop container by running the command above under step 3.</p></div>
+						<div class="box green" style="font-size: 14px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Build the image by running command <strong>[docker build -t sample_walkthrough .]</strong>.  Observe the output in console and stop container by running the command above under step 3.</p></div>
 
 					</div>
 					
@@ -271,7 +276,10 @@ CMD ["node", "app/docker.js"]
 
 				<section data-background="#eee">
 						<h4>Microservices</h4>
-						<iframe width="1000" height="585" src="https://www.youtube.com/embed/1xo-0gCVhTU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe width="1000" class="stretch" height="585" src="https://www.youtube.com/embed/1xo-0gCVhTU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</section>
+				<section>
+					<video data-autoplay class="stretch" src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video>
 				</section>
 				<!--<section>
 					<section>
