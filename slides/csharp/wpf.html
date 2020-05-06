@@ -622,16 +622,17 @@ namespace databinding_example
 					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Events</h1>
 				</section>
 				<section data-background="#eee">
-					<h3>Understanding Delegates</h3>
+					<h4>Understanding Delegates</h4>
 					<p style="font-size: .5em;">A <strong>delegate</strong> is a type that represents references to methods with a particular parameter list and return type.</p>
 					<ul>
-						<li style="font-size: 20px;">Delegates are used to pass methods as arguments to other methods. Can be used to implement <strong>callback</strong> functionality</li>
-						<li style="font-size: 20px;"><strong>Process</strong> - Declare a delegate | Set a target method | Invoke a delegate</li>
-						<li style="font-size: 20px;">There are two types of delegates available - Single Cast Delegate and Multi Cast Delegate</li>
+						<li style="font-size: 16px;">Delegates are used to pass methods as arguments to other methods. Can be used to implement <strong>callback</strong> functionality</li>
+						<li style="font-size: 16px;"><strong>Process</strong> - Declare a delegate | Set a target method | Invoke a delegate</li>
+						<li style="font-size: 16px;">There are two types of delegates available - Single Cast Delegate and Multi Cast Delegate</li>
+						<li style="font-size: 16px;"><a href="https://www.pluralsight.com/guides/how-why-to-use-delegates-csharp">A good reference on understanding delegates</a></li>
 					</ul>
-					<div id="flexcontain">
+					<div id="flexcontain" style="margin-top: -10px;">
 						<pre>
-							<code style="font-size: 14px;" class="cs hljs" data-trim contenteditable>
+							<code style="font-size: 12px;" class="cs hljs" data-trim contenteditable>
 using System;  
 using System.Collections.Generic;  
 using System.Linq;  
@@ -654,6 +655,12 @@ namespace DelegatesDemo {
 							</code>
 						</pre>
 					</div>
+					<aside class="notes">
+						Delegates are representatives.  Think about our election process.  Each state has a certain number of delegates that will support a particular candidate.  The same thing occurs in programming where we have delegate
+						functions and they ultimately represent a function that has been defined somewhere in our code.  Delegate functions provide a way of representing methods with the same signature that can perform and operate in different ways.
+  						When doing event driven program, most people use delegate functions without even knowing they are using theses particular functions.  In simple terms a delegate allows you to pass a function/method as an arguement to another method.
+  						
+					</aside>
 				</section>
 			<!--<section data-background="#fff">
 					<h4>Event Handler Method</h4>
