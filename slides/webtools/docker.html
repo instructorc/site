@@ -281,6 +281,39 @@ CMD ["node", "app/docker.js"]
 				<section>
 					<video data-autoplay class="stretch" src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video>
 				</section>
+				<section data-background="images/docker/docker_slide_bg.png">
+				    <h1 style="background-color:rgba(255, 255, 255, 0.7); color: black;">CI/CD using Docker</h1>
+				</section>
+				<section data-background="#fff">
+					<h4>YAML File</h4>
+							<pre>
+								<code style="font-size: 16px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
+								# Step 1 - Defines and invokes function
+								dockerSucessOutput();
+								function dockerSucessOutput(){
+								    console.log("Dockerfile correctly constructed and image and ran program");
+								}
+								
+								# Step 2 - Including directives into Dockerfile
+								FROM node:12
+								COPY . /app
+								
+								CMD ["node", "app/docker.js"]
+								
+								# Step 3 - Stop container
+								docker container stop sample_walkthrough .
+
+								</code>
+							</pre>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 14px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Create a project folder and add a file called docker.js.  Within the docker.js file copy the code under step 1 and save.</div>
+						<div class="box blue" style="font-size: 14px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Create a Dockerfile by running command <strong>[touch Dockerfile]</strong>.  Within the docker file, copy the statements under step 2.</p></div>
+						<div class="box green" style="font-size: 14px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Build the image by running command <strong>[docker build -t sample_walkthrough .]</strong>.  Observe the output in console and stop container by running the command above under step 3.</p></div>
+
+					</div>
+					
+				
+				</section>				
 				<!--<section>
 					<section>
 						<h3>Node Modules</h3>
