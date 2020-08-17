@@ -35,17 +35,26 @@
 				    <ul>
 				        <li>Explore the history of the Web and HTML</li>
                         <li>Discuss World Wide Web Consortium and purpose</li>
-                        <li>Compare and Explain the versions of HTML</li>
-                        <li>Identify the rules and syntax of HTML</li>
-                        <li>Explain the Categories of HTML5 elements</li>
-                        <li>Creating the structuring of a basic HTML document</li>
-                        <li>Explore how to link to resources</li>
-                        <li>Validating HTML documents</li>
-                        <li>Implementing good coding practices</li>
+                       
+                        <li>Understanding HTML</li>
+                        <ul>
+                        	<li>Rules and Syntax of HTML</li>
+                        	<li>Categories of HTML5 elements</li>
+                        	<li>Attributes and Hyperlinking to resouces</li>
+                        </ul>
+                       
+                        <li>Basic HTML document structure</li>
+                        <ul>
+                        	<li>Doctype | Root tag | Head tags | Body tags</li>
+                        </ul>
+                        <li>Implementing good coding practices and standards</li>
+                       	<ul>
+                       		<li>Validating HTML documents | Commenting and indenting code</li>
+                       	</ul>
 				    </ul>
 				</section>
 				<section data-background="#fff">
-					<h3>Introducting HTML</h3>
+					<h3>History of HTML</h3>
 					
 					<div id="flexcontain">
 						<div class="box_two" style="font-size: 22px; margin: 10px;">
@@ -61,7 +70,7 @@
 					</div>
 				</section>
 				<section data-background="#fff">
-					<h3>Intoducting HTML Cont.</h3>
+					<h3>History of HTML Cont.</h3>
 					
 					<div id="flexcontain">
 						<div class="box_two" style="font-size: 22px; margin: 10px;">
@@ -102,6 +111,13 @@
 				    <p>A web page is a simple text file written in <b>HTML (Hypertext Markup Language)</b> A <b> markup language</b> is a language that describes the content and structure of a document by "marking up" or tagging, different document elements.</p>
 				</section>
 				<section data-background="#fff">
+				    <h2>HTML Version History</h2>
+				    <img src="images/html/htmlversions.png" alt="HTML versions">
+				</section>
+				<section data-background="../webtools/images/webtool/devops.jpg">
+					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">World Wide Web Consortium (W3C)</h1>
+				</section>
+				<section data-background="#fff">
 					<h3>Adopted Standards</h3>
 					
 					<div id="flexcontain">
@@ -117,10 +133,8 @@
 						</div>
 					</div>
 				</section>
-				<section data-background="#fff">
-				    <h2>HTML Version History</h2>
-				    <img src="images/html/htmlversions.png" alt="HTML versions">
-				    
+				<section data-background="../webtools/images/webtool/devops.jpg">
+					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">Understanding HTML</h1>
 				</section>
 				<section data-background="#fff">
 					<h3>Rules and Syntax</h3>
@@ -161,6 +175,42 @@
 					</div>
 				</section>
 				<section data-background="#fff">
+					<h3>Attributes in HTML5</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+						<pre style="line-height: 2.2em;">
+							<code style="font-size: 22px;" class="codebox code-example__codebox"  data-trim contenteditable>
+								&lt;h1 id="honorable"&gt; Those who speak truth  &lt;/h1&gt;
+							</code>
+						</pre>
+						</div>
+						<div id="flexcontain">
+							<div class="box orange" style="font-size: 24px; margin: 10px; width: 265px;"><p>Element attributes provide additional information to the browser about the purpose of the element</p></div>
+							<div class="box yellow" style="font-size: 24px; margin: 10px; width: 265px;"><p>HTML5 has less attributes because of CSS</p></div>
+							<div class="box aquamarine" style="font-size: 24px; margin: 10px; width: 265px;"><p>Most empty or void elements require attributes</p></div>
+						</div>
+
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Linking</h3>
+					
+					<img src="images/html/linking.png" alt="Various ways to link to resources image">
+	
+					<pre style="margin-top: -15px;">
+						<code style="font-size: 16px;" class="codebox code-example__codebox"  data-trim contenteditable>
+							&lt;a href="fax:1-408-555-5555"&gt;1-408-555-5555&lt;/a&gt;
+							&lt;a href="file:pdf/homework.pdf"&gt;homework.pdf&lt;/a&gt;
+							&lt;a href="ftp://someftpserver.com/"&gt;Browse the FTP server&lt;/a&gt;
+							&lt;a href="geo:44.9727845,-93.2923222"&gt;Map Dunwoody&lt;/a&gt;
+							&lt;a href="https://reacttees.com"&gt;Reactttees.com&lt;/a&gt;
+							&lt;a href="mailto:someone@dunwoody.edu?Subject=HTML"&gt;Send mail&lt;/a&gt;
+						</code>
+					</pre>
+			
+				</section>
+				<section data-background="#fff">
 					<h3>Content Categories</h3>
 					
 					<div id="flexcontain">
@@ -174,6 +224,9 @@
 							<img src="images/html/content_categories_venn.png" alt="Venn diagram of HTML categories">
 						</div>
 					</div>
+				</section>
+				<section data-background="../webtools/images/webtool/devops.jpg">
+					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">Basic HTML document structure</h1>
 				</section>
 				<section data-background="#fffde6">
 					<h3>HTML Structure Breakdown</h3>
@@ -250,56 +303,6 @@
 						</div>
 					</div>
 				</section>
-				<section data-background="#eee">
-				    <h2>Creating Syntactically Correct Code</h2>
-				    <ul>
-				        <li>Documents must be well-formed</li>
-                        <li>All tags must nest properly and not overlap</li>
-                        <li>Use all lowercase for element names</li>
-                        <li>Always use closing tags</li>
-                        <li>Attribute values must be contained in quotation marks</li>
-
-				    </ul>
-				</section>
-				<section data-background="#fff">
-					<h3>Attributes in HTML5</h3>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-						<pre style="line-height: 2.2em;">
-							<code style="font-size: 22px;" class="codebox code-example__codebox"  data-trim contenteditable>
-								&lt;h1 id="honorable"&gt; Those who speak truth  &lt;/h1&gt;
-							</code>
-						</pre>
-						</div>
-						<div id="flexcontain">
-							<div class="box red" style="font-size: 24px; margin: 10px;"><p>Elements can contain attributes that set properties use right away.</p></div>
-							<div class="box blue" style="font-size: 24px; margin: 10px;"><p>HTML5 has less attributes because of CSS</p></div>
-							<div class="box green" style="font-size: 24px; margin: 10px;"><p>Global attributes can be applied to any element</p></div>
-							<div class="box yellow" style="font-size: 24px; margin: 10px;"><p>HTML5 has less attributes because of CSS</p></div>
-							<div class="box orange" style="font-size: 24px; margin: 10px;"><p>Element attributes provide additional information to the browser about the purpose of the element</p></div>
-							<div class="box aquamarine" style="font-size: 24px; margin: 10px;"><p>Most empty or void elements require attributes</p></div>
-						</div>
-
-					</div>
-				</section>
-				<section data-background="#fff">
-					<h3>Linking</h3>
-					
-					<img src="images/html/linking.png" alt="Various ways to link to resources image">
-	
-					<pre>
-						<code style="font-size: 16px;" class="codebox code-example__codebox"  data-trim contenteditable>
-							&lt;a href="fax:1-408-555-5555"&gt;1-408-555-5555&lt;/a&gt;
-							&lt;a href="file:pdf/homework.pdf"&gt;homework.pdf&lt;/a&gt;
-							&lt;a href="ftp://someftpserver.com/"&gt;Browse the FTP server&lt;/a&gt;
-							&lt;a href="geo:44.9727845,-93.2923222"&gt;Map Dunwoody&lt;/a&gt;
-							&lt;a href="https://reacttees.com"&gt;Reactttees.com&lt;/a&gt;
-							&lt;a href="mailto:someone@dunwoody.edu?Subject=HTML"&gt;Send mail&lt;/a&gt;
-						</code>
-					</pre>
-			
-				</section>
 				<section data-background="#fff">
 					<h3>Validating your code</h3>
 					
@@ -329,7 +332,7 @@
 				    <ul>
 				        <li><a href="https://htmlreference.io">htmlreference.io</a> - Good site for understanding how to apply the tag.</li>
                         <li><a href="https://www.w3schools.com/tags/ref_byfunc.asp"> W3 Schools </a> - HTML element guide.</li>
-						<a href="sms://+14035550185?body=I%27m%20interested%20in%20your%20product.%20Please%20contact%20me">1-408-555-5555</a>
+						
 				    </ul>
 				</section>
 			</div>
