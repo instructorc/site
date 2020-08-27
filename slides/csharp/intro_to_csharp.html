@@ -16,7 +16,7 @@
 		<link rel="icon" sizes="32x32" type="image/png" href="images/node/favicon.png">
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="css/zenburn.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dark.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/gruvbox-dark.min.css">
 		<!-- Google Font -->
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
 		<!-- Printing and PDF exports -->
@@ -63,7 +63,7 @@
 							<li>Displaying Variables</li>
 						</ul>
 
-						<li>Compiling and Executing a Progam</li>
+						<li>Compiling, Debugging and Executing a Progam</li>
 
 						<li>Console Applications</li>
 						<ul>
@@ -178,7 +178,57 @@
 					</div>
 
 				</section>
+				<section data-background="images/intro/chrome.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Declaring Variables</h1>
+				</section>
+				<section data-background="#fff">
+					<h3>Terms</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Constant</b> <br>Cannot be changed after a program is compiled. Utilize keyword "const"</p></div>
+						<div class="box blue" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Literal constant</b> <br>Its value is taken literally at each use</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Variable</b> <br>A named location in computer memory that can hold different values at different points in time</p></div>
+						<div class="box yellow" style="font-size: 22px; margin: 10px; background-color: #2d4650; height: 285px;"><p><b style="font-size: 32px;">Data Type</b> <br>Describes the format and size of (amount of memory occupied by) a data item</p></div>
+						<div class="box orange" style="font-size: 22px; margin: 10px; background-color: #2d4650; height: 285px;"><p><b style="font-size: 32px;">Intrinsic Types</b> <br>Build-in Data Types | <b>Alias</b> names for a class in the System namespace | All of the built-in types except object and string are called <b>simple types</b></p></div>
+						<div class="box orange" style="font-size: 22px; margin: 10px; background-color: #2d4650; height: 285px;"><p><b style="font-size: 32px;">Unicode</b> <br>is the system that provides a numeric value for every character.</p></div>
+					</div>
 
+				</section>
+				<section data-background="#fff">
+					<h4>Data Types</h4>
+					<img src="images/intro/datatypes.PNG" width="670" height="560" alt="Built-in Data Types in c#">
+				</section>
+				<section data-background="#fff">
+					<h4>Reserved var keyword</h4>
+					
+						<pre>
+							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+								
+	class Program
+    {
+        static void Main(string[] args)
+        {
+  
+		  string[] learningModels = { "Distance Learning", "Online Learning", "HyBrid Learning" };
+		  var results = learningModels.ToList&lt;string&gt;().Where(x => x.Contains("H")).First();
+
+		  Console.WriteLine(results);
+ 	}
+    }
+							</code>
+						</pre>
+					<p>C# lets you declare local variables without giving them <strong>explicit</strong> types.  The data type is <strong>implied</strong> at runtime.</strong>  </p>
+
+				</section>
+				<section data-background="images/intro/string.jpg">
+					<h3 style="text-shadow: 4px 7px 10px #333;">Outputting Data</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>CONCATENATION</p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>PLACEHOLDER <br>OR <br> COMPOSITE FORMATTING</p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>INTERPOLATION</p></div>
+
+					</div>
+					<p style="text-shadow: 4px 7px 10px #333;">Any of the three can be used to format and output text and variables</p> 
+				</section>
 				<section data-background="#fff">
 					<h3>Compiling and Executing a C# Program</h3>
 					
@@ -247,35 +297,7 @@
 					</div>
 
 				</section>
-				<section data-background="images/intro/chrome.jpg">
-					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Declaring Variables</h1>
-				</section>
-				<section data-background="#fff">
-					<h3>Terms</h3>
-					<div id="flexcontain">
-						<div class="box red" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Constant</b> <br>Cannot be changed after a program is compiled. Utilize keyword "const"</p></div>
-						<div class="box blue" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Literal constant</b> <br>Its value is taken literally at each use</p></div>
-						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Variable</b> <br>A named location in computer memory that can hold different values at different points in time</p></div>
-						<div class="box yellow" style="font-size: 22px; margin: 10px; background-color: #2d4650; height: 285px;"><p><b style="font-size: 32px;">Data Type</b> <br>Describes the format and size of (amount of memory occupied by) a data item</p></div>
-						<div class="box orange" style="font-size: 22px; margin: 10px; background-color: #2d4650; height: 285px;"><p><b style="font-size: 32px;">Intrinsic Types</b> <br>Build-in Data Types | <b>Alias</b> names for a class in the System namespace | All of the built-in types except object and string are called <b>simple types</b></p></div>
-						<div class="box orange" style="font-size: 22px; margin: 10px; background-color: #2d4650; height: 285px;"><p><b style="font-size: 32px;">Unicode</b> <br>is the system that provides a numeric value for every character.</p></div>
-					</div>
 
-				</section>
-				<section data-background="#fff">
-					<h4>Data Types</h4>
-					<img src="images/intro/datatypes.PNG" width="670" height="560" alt="Built-in Data Types in c#">
-				</section>
-				<section data-background="images/intro/string.jpg">
-					<h3 style="text-shadow: 4px 7px 10px #333;">Outputting Data</h3>
-					<div id="flexcontain">
-						<div class="box red" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>CONCATENATION</p></div>
-						<div class="box blue" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>PLACEHOLDER <br>OR <br> COMPOSITE FORMATTING</p></div>
-						<div class="box green" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>INTERPOLATION</p></div>
-
-					</div>
-					<p style="text-shadow: 4px 7px 10px #333;">Any of the three can be used to format and output text and variables</p> 
-				</section>
 				<section data-background="#eee">
 					<h4>Concatenating Strings</h4>
 					
