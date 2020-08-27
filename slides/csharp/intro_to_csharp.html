@@ -229,75 +229,6 @@
 					</div>
 					<p style="text-shadow: 4px 7px 10px #333;">Any of the three can be used to format and output text and variables</p> 
 				</section>
-				<section data-background="#fff">
-					<h3>Compiling and Executing a C# Program</h3>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<ul>	
-								<li style="font-size: 26px;">Steps for viewing a program's output</li>
-								<ul>
-									<li style="font-size: 22px;">Compile source code into <b>intermediate language(IL)</b></li>
-									<li style="font-size: 22px;">The C# <b>just in time(JIT)</b> compiler translates the intermediate code into executable statements</li>
-								</ul>
-								<li style="font-size: 26px;">You can either of two ways to compile</li>
-								<ul>
-									<li style="font-size: 22px;">The <b>command line</b></li>
-									<li style="font-size: 22px;">The <b>Integrated Development Environment (IDE)</b></li>
-								</ul>
-
-							</ul>
-						</div>
-
-					</div>
-
-				</section>
-				<section data-background="#eee">
-					<h3>Sample Program to Compile</h3>
-					<ul>
-						<li>Use any text editor to write the following code and save as tuition.cs</li>
-						<li>Why string[] args?</li>
-					</ul>
-					<div id="flexcontain">
-						<pre>
-							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
-								using System;
-								using System.Text;
-								
-								class Program{
-									static void Main(string[] args)
-									{
-									
-									/**first name and credit hours should be provided 
-									as command line arguments**/
-										
-									  const double TUITION = 985.00;
-									  double tuitionCost;
-										
-									  tuitionCost = TUITION * Convert.ToDouble(args[1]);
-										
-									  Console.WriteLine(args[0] + " your tuition cost is " + tuitionCost.ToString("c"));
-										
-									}
-								}
-
-
-							</code>
-						</pre>
-					</div>
-				</section>
-				<section data-background="#fff">
-					<h3>Steps to compile via command line</h3>
-					<div id="flexcontain">
-						<div class="box red" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 1</b> <br>Open the <b>Developer Command Prompt VS 2017</b> </p></div>
-						<div class="box blue" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 2</b> <br>Change to the directory where program is located</p></div>
-						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 3</b> <br>Type the <code>csc tuition.cs </code> command to compile</p></div>
-						<div class="box yellow" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 4</b> <br>type the <code> Dir</code> command to view files (this step is not necessary)</p></div>
-						<div class="box orange" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 5</b> <br>Type <code> tuition</code> and press Enter to run the program</p></div>
-					</div>
-
-				</section>
-
 				<section data-background="#eee">
 					<h4>Concatenating Strings</h4>
 					
@@ -381,6 +312,78 @@
 					<h4>Formatting Floating-Point Values</h4>
 					<img src="images/intro/formatting.PNG" width="570" alt="formatting floating point values in c#">
 				</section>
+				<section data-background="images/intro/compartment.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Compiling, Debugging and Executing a program</h1>
+				</section>
+				<section data-background="#fff">
+					<h3>Compiling and Executing a C# Program</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;">Steps for viewing a program's output</li>
+								<ul>
+									<li style="font-size: 22px;">Compile source code into <b>intermediate language(IL)</b></li>
+									<li style="font-size: 22px;">The C# <b>just in time(JIT)</b> compiler translates the intermediate code into executable statements</li>
+								</ul>
+								<li style="font-size: 26px;">You can either of two ways to compile</li>
+								<ul>
+									<li style="font-size: 22px;">The <b>command line</b></li>
+									<li style="font-size: 22px;">The <b>Integrated Development Environment (IDE)</b></li>
+								</ul>
+
+							</ul>
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#eee">
+					<h3>Sample Program to Compile</h3>
+					<ul>
+						<li>Use any text editor to write the following code and save as tuition.cs</li>
+						<li>Why string[] args?</li>
+					</ul>
+					<div id="flexcontain">
+						<pre>
+							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+								using System;
+								using System.Text;
+								
+								class Program{
+									static void Main(string[] args)
+									{
+									
+									/**first name and credit hours should be provided 
+									as command line arguments**/
+										
+									  const double TUITION = 985.00;
+									  double tuitionCost;
+										
+									  tuitionCost = TUITION * Convert.ToDouble(args[1]);
+										
+									  Console.WriteLine(args[0] + " your tuition cost is " + tuitionCost.ToString("c"));
+										
+									}
+								}
+
+
+							</code>
+						</pre>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Steps to compile via command line</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 1</b> <br>Open the <b>Developer Command Prompt VS 2017</b> </p></div>
+						<div class="box blue" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 2</b> <br>Change to the directory where program is located</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 3</b> <br>Type the <code>csc tuition.cs </code> command to compile</p></div>
+						<div class="box yellow" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 4</b> <br>type the <code> Dir</code> command to view files (this step is not necessary)</p></div>
+						<div class="box orange" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 5</b> <br>Type <code> tuition</code> and press Enter to run the program</p></div>
+					</div>
+
+				</section>
+
 				<section data-background="images/intro/compartment.jpg">
 					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Console Class</h1>
 				</section>

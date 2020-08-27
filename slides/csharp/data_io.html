@@ -954,28 +954,7 @@ class Program
 				    <a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/query-keywords">Query Syntax Keywords and Definition</a>
 
 				</section>
-				<section data-background="#fff">
-					<h4>Reserved var keyword</h4>
-					
-						<pre>
-							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
-								
-	class Program
-    {
-        static void Main(string[] args)
-        {
-  
-		  string[] learningModels = { "Distance Learning", "Online Learning", "HyBrid Learning" };
-		  var results = learningModels.ToList&lt;string&gt;().Where(x => x.Contains("H")).First();
 
-		  Console.WriteLine(results);
- 	}
-    }
-							</code>
-						</pre>
-					<p>C# lets you declare local variables without giving them <strong>explicit</strong> types.  The data type is <strong>implied</strong> at runtime.</strong>  </p>
-
-				</section>
 				<section data-background="#fff">
 					<h4>Microsoft LINQ walk through using Query Syntax</h4>
 				    <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq">Microsoft LINQ Walk through</a>
