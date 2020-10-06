@@ -183,7 +183,8 @@
 						<li>Create a file called welcome.js</li>
 						<li>Add the code snippet below to your welcome.js file:</li>
 					</ul>
-					<pre><code class="hljs" data-trim contenteditable>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
 							exports.welcome = function(){    
 								console.log("You called the welcome method");
 							}
@@ -191,7 +192,48 @@
 							exports.conclude = ()=>{
 								console.log("You called the conclude method");
 							}
-					</code></pre>
+						</code>
+					</pre>
+					  <aside class="notes">
+					    In Nodejs, you can create you own modules.  A module is simple or complex functionality that can be be placed
+					    in seaparate javascript file using the .js extension.   In this file, you will see two examples of  function that is 
+					    able to be exported into a different file.  The reserved keyword "exports" chained to the funciton name allows the function 
+					    to exported to a different file.
+					    
+					    Let's do an example of 
+					  	
+					  </aside>
+
+				</section>
+				<section>
+					<h3>Including your user-defined module</h3>
+					<ul>
+						<li>Create a file called index.js and include the exported modules from welcome.js</li>
+						<li>Add the code snippet below to your welcome.js file:</li>
+					</ul>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							/**The require() function takes one arguement of a relative file path of 
+							where the file is located **/
+							const outputInfo = require('./welcome.js'); 
+							
+							outputInfo.welcome(); /** Outputs info to console **/
+							
+							outputInfo.conclude(); /** Outputs info to console **/
+							
+						</code>
+					</pre>
+					  <aside class="notes">
+					    To include the exported functions in the welcome file, we must first include the 
+					    functionality from the welcome file by using the require function.  The require function 
+					    takes one arguement that contains the file path of where the welcome.js file is located.  
+					    We then have access to the exported functions from the welcome.js file by calling the functions
+					    using the outputInfo variable that was assigned to the contents of the require function at the
+					    top of the page.
+					    
+					    Let's demonstrate this before moving to the next concept.
+					  	
+					  </aside>
 
 				</section>
 				<section data-background="images/methods/overloaded_bg.jpg">
@@ -206,15 +248,39 @@
 								<li style="font-size: 26px;"><b>http module</b> - The HTTP core module is a key module to Node.js networking.  Allows for requesting resources across a network. </li>
 								<li style="font-size: 26px;"><b>Resource</b> - <a href="https://nodejs.dev/the-nodejs-http-module">Nodejs.dev</a></li>	   
 							</ul>
-	
-
-					
+					<aside class="notes">
+						Routing is a core concept that is essential in understanding how a web application
+						receives and send information over a network.  Routing defines the way in which 
+						the client requests are handled by the application endpoints.  In NodeJs, we can 
+						use the core/builtin module http or https to request and receive resources across a network.
+						
+						Nodejs.dev is a good resource to become familiar with the http/https core module.  The site is 
+						also helpful in learning other core nodejs concepts.
+					</aside>
 				</section>
-
+				<section data-background="#fff">
+					<h3>Routing with http Module</h3>
+					<div id="flexcontain">
+						<img src="images/node/req_obj.png" width="440" style="float: left;" alt="request object" title="attribution - http://www.murvinlai.com/req-and-res-in-nodejs.html">
+						<img src="images/node/res_obj.png" width="480" style="float: left;" alt="response object" title="attribution - http://www.murvinlai.com/req-and-res-in-nodejs.html">
+					</div>
+					<aside class="notes">
+						The request and response object allows us to request and respond with specific information
+						over the network.  In the demonstration I will make use of the url and method property to 
+						determine what way we need to respond back to the client over the network. 
+						
+						Let's do a demonstration of routing using the http core module and using the request and response 
+						object to receive and send information over the network from the server to the client and vice versa.
+					</aside>
+				</section>
 
 				<section data-background="#eee">
 					<h2>Introduction to Node Package Manager (NPM)</h2>
 					 <img src="images/npm/npmlogo.svg" width="420" style="box-shadow: none; border: none;"alt="Npm logo">
+					 <aside class="notes">
+						NPM stands for Node Package manager.  We will use NPM to host our own user-defined modules
+						and use modules that others created.
+					</aside>
 				</section>
 				<section data-background="#eee">
 						<h2>What is  <code>NPM</code> ?</h2>
@@ -224,6 +290,10 @@
 							<li>NPM comes with the installation of <a href="https://nodejs.org">Node.js</a></li>
 							<li><a href="https://www.npmjs.com/">Click here to navigte to <code>npmjs.com</code></a></li>
 						</ul>
+					<aside class="notes">
+						NPM is one of the largest software registry's.  NPM comes with Node.js and comes with a suite of 
+						commands you can use via command line interface(CLI).  Let's navigate to npmjs.com and take a look around.
+					</aside>
 				</section>
 				<section data-background="#eee">
 					<h2>Why use NPM?</h2>
@@ -235,12 +305,19 @@
 						<div class="box orange" style="font-size: 32px; margin: 10px; border-radius: 12px;"><p>Update applications easily when underlying code is updated.</p></div>
 						<div class="box aquamarine" style="font-size: 32px; margin: 10px; border-radius: 12px;"><p>Discover multiple ways to solve the same puzzle.</p></div>
 					</div>
-
+					<aside class="notes">
+						Here are some of the use cases of NPM.  
+						[READ THROUGH BOXES]
+						Let's watch a quick intro. video on NPM and run some commands interact with NPM.  
+					</aside>
 				</section>
 				<section data-background-color="#000000">
 					<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
 						<iframe width="750" height="500" src="https://www.youtube.com/embed/x03fjb2VlGY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 					</div>
+					<aside class="notes">
+						Pause this video and watch the video on this slide.    
+					</aside>
 				</section>
 				<section data-background="#fff">
 					<h3>Commonly used NPM commands</h3>
