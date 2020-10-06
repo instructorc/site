@@ -209,12 +209,12 @@
 					<h3>Including your user-defined module</h3>
 					<ul>
 						<li>Create a file called index.js and include the exported modules from welcome.js</li>
-						<li>Add the code snippet below to your welcome.js file:</li>
+						<li>Add the code snippet below to your index.js file:</li>
 					</ul>
 					<pre>
 						<code class="hljs" data-trim contenteditable>
-							/**The require() function takes one arguement of a relative file path of 
-							where the file is located **/
+							/**The require() function takes one argument of a relative file 
+							path of where the file is located **/
 							const outputInfo = require('./welcome.js'); 
 							
 							outputInfo.welcome(); /** Outputs info to console **/
