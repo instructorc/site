@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="description" content="Instructor Fulton's Introduction to Continuous Integratio and Deployment">
+		<meta name="author" content="C. Fulton">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<title>Introduction to Docker</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/dope.css">
+		<link rel="stylesheet" href="css/mystyle.css">
+		<link rel="icon" sizes="32x32" type="image/png" href="images/node/favicon.png">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="css/zenburn.css">
+		<!-- Google Font -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<style>
+			ul li{
+				font-size: 80%;
+			}
+			section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
+			    color: #2d4650;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="white">
+				    <h3>Introduction to Docker</h3>
+				    <img src="images/docker/docker_graphic.png" width="520" style="box-shadow: none; border: none;"alt="docker graphic">
+				    <h3>Instructor: Chris Fulton</h3>
+				</section>
+				<section data-background="#eee">
+				    <h3>Learning Objectives</h3>
+				    <ul style="font-size: 28px;">
+						<li>Understanding what is Docker?</li>
+						<ul>
+							<li>Images | Containers | Virtual Machines | Containers vs. Virtual Machines</li>
+							<li>Practical Use Cases for Web Developers | Containers and Microservices</li>
+						</ul>
+						<li>Installing Docker</li>
+						<ul>
+							<li>Docker Desktop | VS Code Plugin | Running Sample Container</li>
+						</ul>
+				        <li>Docker Workflow</li>
+				        <ul>
+							<li>Commonly used Commands</li>
+							<li>Docker Hub</li>
+							<li>Dockerfile | .dockerignore file</li>
+							<li>Containerizing an application</li>
+						
+						</ul>
+						<li>Using Docker within CI/CD pipeline</li>
+				        <ul>
+							<li>Docker Compose</li>
+							<li>Kubernetes and Swarm</li>
+
+						</ul>
+
+				    </ul>
+				</section>
+				<section data-background="images/docker/docker_slide_bg.png" style="background-size: 80%;">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">What is Docker?</h3>
+					<p style="background-color:rgba(255, 255, 255, 0.7);  font-size: .8em; color: black;" class="fragment"> Docker is a set of platform as a service products that uses <strong>OS-level virtualization</strong> to deliver software in packages called containers. </p>
+					<img class="fragment" src="images/docker/docker_use.PNG" width="690" alt="docker use case stats"/>
+				</section>
+				<section data-background="#fff">
+					<h3>What is Docker cont.?</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; height: 400px; background-color: #4ea1c9;"><p><b style="font-size: 30px;">Images</b> <br> is a file, comprised of multiple layers, that is used to execute code in a Docker container. <strong>Images are created from a Dockerfile with the docker build command.</strong>  </p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; height: 400px; background-color: #4ea1c9;"><p><b style="font-size: 30px;">Containers</b> <br> are <strong>isolated units</strong> of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another. <strong>A runnable instance of an image</strong></p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; height: 400px;  background-color: #4ea1c9;"><p><b style="font-size: 30px;">Virutal Machines</b> <br> a virtual machine is an emulation of a computer system.  A virtual machine is sandboxed from the rest of the system, meaning that the software inside a virtual machine can’t escape or tamper with the computer itself.</p></div>
+
+					</div>
+					<a href="https://www.docker.com/resources/what-container">Container images become containers at runtime.  Click here more information about containers and virtual machines</a>
+				</section>
+				<section data-background="#fff">
+					<h3>Containers vs. Virtual Machines</h3>
+					<div id="flexcontain">
+						<div>
+							<img src="images/docker/container_display.png" width="400" alt="container visual">
+						</div>
+						<div>
+							<img src="images/docker/container_vs_vm.png" width="400" alt="container verses virtual machine visual">
+						</div>
+
+					</div>
+					<p style="font-size: .6em;">Containers and virtual machines have similar resource isolation and allocation benefits, but function differently because containers virtualize the operating system instead of hardware. Containers are more <strong>portable</strong> and <strong>efficient</strong>.</p>
+				</section>
+				<section data-background="#eee">
+						<h4>Containers and Microservices</h4>
+						<p style="font-size: .6em;">What does Microservices have to do with container orchestration?  Please watch the video below in your own time. The video provides an overview of microservices and how containers are orchestrated. </p>
+						<iframe width="900" height="415" src="https://www.youtube.com/embed/1xo-0gCVhTU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</section>
+				<section data-background="#eeeeee" style="background-size: 80%;">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Docker Use Cases</h3>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment"><strong>Simple Environment Configuration</strong><br> Simple configuration  is the primary use case of Docker </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment"><strong>App Isolation & Testing</strong><br> Cautious of erraneous code can be ran in a contained environment. Testing and previewing new applications. Using <a href="https://hub.docker.com/">Docker Hub</a> to pull down preconfigured applications.</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment"><strong>Rapid Deployment and Scaling</strong><br> Easier to deploy an application that runs within a container that contains all of the application processes</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment"><strong> Code Pipeline Management</strong><br>Docker eases the code development and deployment pipeline and offers a consistent environment for the application from dev through production.</p>
+				</section>
+				<section data-background="#eee">
+					<h4>Containers vs. Virtual Machines</h4>
+					<p style="font-size: .6em;">Please watch the video below in your own time. The video highlights the difference between virtual machines and containers. </p>
+					<iframe width="900" height="415" src="https://www.youtube.com/embed/TvnZTi_gaNc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</section>
+
+				<section data-background="#fff">
+					<h5 style="color: #4ea1c9;">What execution environment should your microservices applications use? That is, in what kind of environment should they run? </h5>
+					<p style="font-size: .7em;">The best choice for running a microservices application architecture is application containers. Containers encapsulate a lightweight runtime environment for your application, presenting a consistent software environment that can follow the application from the developer's desktop to testing to final production deployment, and you can run containers on physical or virtual machines. </p>
+				</section>
+				
+				<section data-background="images/docker/docker_slide_bg.png">
+				    <h1 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Installing Docker</h1>
+				</section>
+				<section data-background="#fff">
+					<h3>Install Docker</h3>
+					<div id="flexcontain">
+						<div class="box green" style="font-size: 24px; margin: 10px; height:500px; background-color: #63C4AB;"><p><b style="font-size: 28px;">Installing Docker on Windows</b> <br>  1) Navigate to <a href="https://www.docker.com/get-started" style="background-color: white;">docker.com/get-started</a> to download for windows. <br><br>2) Click on the download button for Windows<br><br>3) Run the executable file to install docker on machine. </p></div>
+						<div class="box aquamarine" style="font-size: 24px; margin: 10px; height: 500px; background-color: #4ea1c9;"><p><b style="font-size: 28px;">Using Docker Plugin in VS Code</b> <br>1) Within Visual Studio Code, navigate to the extensions tab on the left<br><br>2) Search for Docker from Microsoft and install</p></div>
+					</div>
+					<a href="https://docs.docker.com/docker-for-windows/install/">Docker Installation Guide</a>
+				</section>
+				<section data-background="#fff">
+					<h3>Activity A - Running Sample Container</h3>
+															<pre>
+								<code style="font-size: 14px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
+									# Lets us know the version of docker
+									docker --version
+									
+									# Pulling the hello-world image from Docker Hub and runs the container
+									docker run hello-world
+									
+									# Command to display on the images 
+									docker image ls
+									
+									# Stops container and removes container
+									docker container stop hello-world
+									
+									docker container rm hello-world					
+	
+								</code>
+							</pre>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Open Visual Studio code and click on the extensions tab/icon.</div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Open terminal and run the various commands above.</p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Stop container and remove container</p></div>
+
+					</div>
+					
+				
+				</section>
+				<section data-background="images/docker/docker_slide_bg.png">
+				    <h1 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Docker Workflow</h1>
+				</section>
+
+				<section data-background="#fff" style="background-size: 80%;">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Docker CheatSheet and Commands</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px;  flex: 1 0 400px; background-color: white; color: #111;"><img src="images/docker/docker_build.PNG" alt="docker build image" /></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; flex: 1 0 400px; background-color: white; color: #111;"><img src="images/docker/docker_share.PNG"  alt="docker share image" /></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; flex: 1 0 500px; height: 260px; background-color: white; color: #111;"><img src="images/docker/docker_run.PNG"  alt="docker run image"></div>
+
+					</div>
+					<p><a href="pdf/docker-cheat-sheet.pdf" target="_blank">Docker Cheat Sheet</a> | <a href="https://docs.docker.com/engine/reference/commandline/docker/">Docker Command Line Documentation</a></p>
+				</section>
+				<section data-background-iframe="https://docs.docker.com/engine/reference/commandline/docker/" data-background-interactive>
+				
+				</section>
+				<section data-background="#fff">
+					<h3>Docker Hub </h3>
+					<p><strong> DockerHub</strong> - the world's easiest way to create, manage, and deliver your teams' container applications.</p>
+					<div id="flexcontain">
+						
+						<ul>	
+							<li style="font-size: 26px;">Browse over 100,000 container images from software vendors, open-source projects, and the community.  Docker hub allows you to create and publish your own images.</li><br>
+   
+						</ul>
+						<a href="https://hub.docker.com/">
+							<div id="button" style="background-image:linear-gradient(#1B998B, #0a206d); border-radius: 12px; height: 120px; width: 75%; margin: auto; color: white; text-align: center; padding-top: 40px; font-size: 1em;">Click here to navigate to Docker Hub</div>
+						</a>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h4>Activity B -Pulling container from docker hub</h4>
+					<img src="images/docker/docker_ghost.PNG" width="720" alt="docker hub interface">
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 16px; margin: 10px; background-color: #eee; height: 245px; color: #111;"><p><b style="font-size: 26px;">Step 1</b> <br> Navigate to hub.docker.com and make sure you create an account and complete initial walkthrough that has you create and push up a container.</div>
+						<div class="box blue" style="font-size: 16px; margin: 10px; background-color: #eee; height: 245px; color: #111;"><p><b style="font-size: 26px;">Step 2</b> <br>Navigate to the Explore tab and search for ghost image.  Click on ghost image and copy command <code>docker run -d --name some-ghost -e url=http://localhost:3001 -p 3001:2368 ghost</code>.  Open in browser and explore ghost blog platform. The <code> -p 3001:2368</code> is mapping my machines port to the containers port. </p></div>
+						<div class="box green" style="font-size: 16px; margin: 10px; background-color: #eee; height: 245px; color: #111;"><p><b style="font-size: 26px;">Step 3</b> <br>Stop container by running command [docker container stop some-ghost] and remove container by running command [docker container rm some-ghost]</p></div>
+						<aside class="notes">
+							Step 1 - Requires that you have an account created at docker hub.  When you create an account is going to have you do an initial walkthrough to publish a container.
+						</aside>
+					</div>
+	
+				</section>
+
+				<section data-background="#fff">
+					<h3>Dockerfile </h3>
+					<p><strong> What is a dockerfile</strong> - a text file that contains all commands, in order, needed to build a given image</p>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;"><b>Directives</b> - provides instructions on how the image is constructed and ran as a container. </li><br>
+								<li style="font-size: 26px;">The best way to learn how a dockerfile is constructed is to look at how other dockerfiles have been constructed.</li>	   
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<pre>
+								<code style="font-size: 16px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
+# Define from what image we want to build from
+FROM node:12
+
+# Which files would we like to copy into the construction of the image
+COPY . /app
+
+# What commands we would like to run once 
+CMD ["node", "app/docker.js"]
+					
+								</code>
+							</pre>
+						</div>
+					</div>
+				</section>
+				<section data-background="#eeeeee" style="background-size: 80%;">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Creating Dockerfile Steps</h3>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment"><strong>1. Create a file called dockerfile</strong><br> Create a folder and run the touch command to create a Dockerfile.  No file extension is needed. </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment"><strong>2. Add Instructions in Dockerfile</strong><br> Dockerfile reference can be found at this <a href="https://docs.docker.com/engine/reference/builder/">link</a></p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment"><strong>3. Build Dockerfile to create image</strong><br> Run the <code>docker build -t newimagename:1.0</code> to construct image that is now named "newimagename" version "1.0"</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment"><strong>4. Run Image to create container</strong><br>Run the command docker container run --name to run the container.</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment"><strong>5. Stop and remove container</strong><br>Run the command <code>docker container stop [NAME_OF_CONTAINER]</code> and run the command <code>docker container rm [NAME_OF_CONTAINER]</code></p>
+				</section>
+				<section data-background="#fff">
+					<h4>Activity C - Generating Image from Dockerfile</h4>
+							<pre>
+								<code style="font-size: 16px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
+								# Step 1 - Defines and invokes function
+								dockerSucessOutput();
+								function dockerSucessOutput(){
+								    console.log("Dockerfile correctly constructed and image and ran program");
+								}
+								
+								# Step 2 - Including directives into Dockerfile
+								FROM node:12
+								COPY . /app
+								
+								CMD ["node", "app/docker.js"]
+								
+								# Step 3 - Stop container
+								docker container stop sample_walkthrough .
+
+								</code>
+							</pre>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 14px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Create a project folder and add a file called docker.js.  Within the docker.js file copy the code under step 1 and save.</div>
+						<div class="box blue" style="font-size: 14px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Create a Dockerfile by running command <strong>[touch Dockerfile]</strong>.  Within the docker file, copy the statements under step 2.</p></div>
+						<div class="box green" style="font-size: 14px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Build the image by running command <strong>[docker build -t sample_walkthrough .]</strong>.  Observe the output in console and stop container by running the command above under step 3.</p></div>
+
+					</div>
+					
+				
+				</section>
+
+				<section data-background="#eee">
+						<h4>Microservices</h4>
+						<iframe width="1000" class="stretch" height="585" src="https://www.youtube.com/embed/1xo-0gCVhTU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</section>
+				<section>
+					<video data-autoplay class="stretch" src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video>
+				</section>
+				<section data-background="images/docker/docker_slide_bg.png">
+				    <h1 style="background-color:rgba(255, 255, 255, 0.7); color: black;">CI/CD using Docker</h1>
+				</section>
+				<section data-background="#fff">
+					<h4>YAML File</h4>
+							<pre>
+								<code style="font-size: 16px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
+								# Step 1 - Defines and invokes function
+								dockerSucessOutput();
+								function dockerSucessOutput(){
+								    console.log("Dockerfile correctly constructed and image and ran program");
+								}
+								
+								# Step 2 - Including directives into Dockerfile
+								FROM node:12
+								COPY . /app
+								
+								CMD ["node", "app/docker.js"]
+								
+								# Step 3 - Stop container
+								docker container stop sample_walkthrough .
+
+								</code>
+							</pre>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 14px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Create a project folder and add a file called docker.js.  Within the docker.js file copy the code under step 1 and save.</div>
+						<div class="box blue" style="font-size: 14px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Create a Dockerfile by running command <strong>[touch Dockerfile]</strong>.  Within the docker file, copy the statements under step 2.</p></div>
+						<div class="box green" style="font-size: 14px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Build the image by running command <strong>[docker build -t sample_walkthrough .]</strong>.  Observe the output in console and stop container by running the command above under step 3.</p></div>
+
+					</div>
+					
+				
+				</section>				
+				<!--<section>
+					<section>
+						<h3>Node Modules</h3>
+						<p> Core/Built-in Modules   &#10022;    Third-Party Modules </p>
+						<div id="flexcontain">
+							<div class="box_two" style="font-size: 22px; margin: 10px;">
+								<ul>
+									<li style="font-size: 26px;"><b>File Module</b> Including the path of file in require method</li>
+									<li style="font-size: 26px;"><b>Core modules</b> are modules that come with NodeJs.  You do not have to install them.  <a href="https://nodejs.org/api/modules.html"> Click here to see a list of core modules</a></li><br>
+									<li style="font-size: 26px;"><b>Third-Party modules</b> - pushes it to a queue and continues with the next statement. If the server returns something, it callback to whatever triggered the event.</li>	   
+								</ul>
+							</div>
+							<pre>
+								<code style="font-size: 16px;" class="hljs" data-trim contenteditable>
+								const welcome = require('./welcome'); //including a module that is a file within your program
+								const http = require('http'); //including a core module example
+								const app = require('express'); //including third-party module example
+
+
+								</code>
+							</pre>
+
+						</div>	
+					</section>
+
+				<section data-background="#fff">
+					<h3>Understanding Card Sorting</h3>
+						<iframe width="760" height="315" src="https://www.youtube.com/embed/TNvdgXCqEvM?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</section>
+
+				<section data-background-color="#fff">
+					<iframe height="600" src="https://embed.polleverywhere.com/multiple_choice_polls/QdwqUEsc6vjDWi3?controls=none&short_poll=true" width="100%" height="100%" frameBorder="0"></iframe>
+				</section>
+				<section data-background-color="#fff">
+					<iframe height="600" src="https://embed.polleverywhere.com/free_text_polls/njYHOn4wxYZfpDV?controls=none&short_poll=true" width="100%" height="100%" frameBorder="0"></iframe>
+				</section>-->
+				<section data-background="#eee">
+				    <h2>References</h2>
+				    <ul style="font-size: 28px;">
+						<li>https://github.com/docker/labs/blob/master/beginner/chapters/webapps.md</li>
+						<li>https://dzone.com/articles/a-developers-guide-to-docker-docker-compose</li>
+    					<li>https://data-flair.training/blogs/docker-use-cases/</li>
+    					<li>https://www.docker.com/resources/what-container</li>
+    					<li>https://gravitational.com/blog/microservices-containers-kubernetes/</li>
+  						<li>https://github.com/wsargent/docker-cheat-sheet#dockerfile</li>
+				    </ul>
+				</section>
+				<!--<section data-background="#eee">
+				    <h2>File and Directory Classes</h2>
+				    <ul>
+						<li>C# provides built-in classes named File and Directory</li>
+						
+						<li>Contain methods to help you manipulate files and their directories</li> 
+						<ul style="font-size: 22px;">
+							<li>Access information about files</li>
+							<li>Create, delete or move files</li>
+						</ul>
+						  
+                        <li>Your file structure must be transferable</li>
+						<li>Use relative paths to indicate file locations</li>
+						<li><code>File Class</code></li>
+						<ul style="font-size: 22px;">
+							<li>Contians methods to access information about files</li>
+						</ul>
+						<li><code>Directory Class</code></li>
+						<ul style="font-size: 22px;">
+							<li>Provides information about directories or folders</li>
+						</ul>
+               
+				    </ul>
+				</section>
+				<section data-background="#fff">
+						<h2>Common Methods in File Class</h2>
+						<ul>
+							
+							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.file?view=netframework-4.7.1">Click here to navigte to <code>File Class</code></a></li>		   
+						</ul>
+						<img src="images/io/filemethods.png" style="box-shadow: none;" alt="Common methods in File class"/>
+				</section>
+				<section data-background="#fff">
+						<h2>File Class - code and output</h2>
+
+						<img src="images/io/filepic1.png" width="420" style="box-shadow: none; float: left;" alt="File picture example one"/>
+						<img src="images/io/filepic2.png" width="420" style="box-shadow: none; float: left;" alt="File Picture example two"/>
+				</section>
+				<section data-background="#fff">
+						<h2>Common Methods in Directory Class</h2>
+						<ul>
+
+							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.directory?view=netframework-4.7.1">Click here to navigte to <code>Directory Class</code></a></li>		   
+						</ul>
+						<img src="images/io/directorymethods.png" style="box-shadow: none;" alt="Common methods in directory class"/>
+				</section>
+				<section data-background="#fff">
+						<h2>Directory Class - code and output</h2>
+
+						<img src="images/io/directorypic1.png" width="420" style="box-shadow: none; float: left;" alt="directory picture example one"/>
+						<img src="images/io/directorypic2.png" width="420" style="box-shadow: none; float: left;" alt="directory Picture example two"/>
+				</section>
+				<section data-background="#eee">
+						<h2>Understanding File Data Organization</h2>
+						<ul>
+							<li>Businesses store data in a relationship known as the <b>data hierarchy</b></li>
+							
+							<li><b>Character</b></li> 
+							<ul style="font-size: 22px;">
+								<li>Any of the letters, numbers, or other special symbols (such as punctuation marks) that comprise data</li>
+								<li>Characters are made up of bytes containing eight (8) bits</li>
+									<ul style="font-size: 22px;">
+										<li>ASCII characters contain one (1) byte</li>
+										<li>Unicode characters contain two (2) bytes</li>				
+									</ul>
+							</ul>
+
+				   
+						</ul>
+				</section>
+				<section data-background="#fff">
+						<h2>Understanding File Data Organization Diagram</h2>
+						<img src="images/io/dataorg.png" width="750" style="box-shadow: none;" alt="File Data organization diagram"/>
+				</section>
+				<section data-background="#eee">
+						<h2>Understanding File Data Organization</h2>
+						<ul>
+							<li><b>Field</b></li>
+							<ul style="font-size: 22px;">
+								<li>A character or group of characters that has some meaning</li>
+				
+							</ul>
+							
+							<li><b>Record</b></li> 
+							<ul style="font-size: 22px;">
+								<li>A collection of related fields that contain data about an entity</li>
+								<li>Characters are made up of bytes containing eight (8) bits</li>
+
+							</ul>
+							<li><b>Sequential access file</b></li> 
+							<ul style="font-size: 22px;">
+								<li>Each record is read in order based on its relative position</li>
+								<li>Records can be stored in order based on a value in the record</li>
+								<li>The field used to uniquely identify each record in a sequential file is the<b> key field</b></li>
+							</ul>
+							<li><b>Random access file</b></li>
+							<ul style="font-size: 22px;">
+								<li>Records are not in any sequence and  can be accessed in any order</li>
+				
+							</ul>
+						</ul>
+				</section>
+				<section data-background="#fff">
+						<h2>Understanding File Data Organization cont.</h2>
+						<ul>
+							<li>A C# application <b>opens a file</b> by creating an object and associating a stream of bytes with that object</li>
+							<li>When you finish using a file, the program should <b>close the file</b></li>
+									
+							<ul style="font-size: 22px;">
+								<li>Not closing a file may make it inaccessible</li>
+								<li>Not closing an output file can result in data not being written to the file</li>
+				
+							</ul>
+
+						</ul>
+				</section>
+				<section data-background="#fff">
+						<h2>Understanding Streams</h2>
+						<ul>
+							<li><b>Stream</b></li>
+							<ul style="font-size: 22px;">
+								<li>Stream is a class that simulates a stream of bytes to be lined up in a row. Such as the transmission of data on the network, data transmited are contiguous stream of bytes from the first byte to the last byte.</li>
+								<li>Functions as a pipeline or channel between an input device and an application, and potentially an output device</li>
+
+				
+							</ul>
+
+						</ul>
+						<img src="images/io/streampic.png"  width="700" style="box-shadow: none;" alt="Stream class diagram"/>
+				</section>
+				<section data-background="#fff">
+						<h2>Stream Overview</h2>
+
+						<img src="images/io/streamoverview.png"  width="700" style="box-shadow: none;" alt="Stream class overview diagram"/>
+				</section>
+				<section data-background="#fff">
+						<h2>Stream classes</h2>
+						<ul style="font-size: 24px;">
+							<li><b>Stream</b> is an abstract class, it can not initialize an object by itself, you can initialize a Stream object from the Constructors of the subclass. <b>Stream</b> class provides the basic methods of working with data streams, namely the method of read/write a byte or an array of bytes.</li>
+							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.stream?view=netframework-4.7.1">Click here to navigte to <code>Stream Class</code></a></li>
+						</ul>
+						
+						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
+								<tbody> 
+								 <tr> 
+								  <td><strong>Class</strong></td> 
+								  <td><strong>Description</strong></td> 
+								 </tr> 
+								 <tr> 
+								  <td>BufferedStream</td> 
+								  <td>A utility stream, it wrapped another stream, which helps improve performance</td> 
+								 </tr> 
+								 <tr> 
+								  <td>FileStream</td> 
+								  <td>Stream used to read and write data to the file.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>MemoryStream</td> 
+								  <td>Creates a stream whose backing store is memory.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>UnmanagedMemoryStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								 <tr> 
+								  <td>IsolatedStorageFileStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								 <tr> 
+								  <td>PipeStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								 <tr> 
+								  <td>NetworkStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								 <tr> 
+								  <td>CryptoStream</td> 
+								  <td>Defines a stream that links data streams to cryptographic transformations.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>DeflateStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								 <tr> 
+								  <td>GZipStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								</tbody> 
+						</table>
+				</section>
+				<section data-background="#fff">
+						<h2>Properties of Stream</h2>
+						<ul style="font-size: 24px;">
+							<li>Depending on the stream, there are the stream that supports both read and write, and seek by moving the cursor on the stream, read and write data at the cursor position.</li>
+							
+						</ul>
+						
+						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
+								<tbody> 
+								 <tr> 
+								  <td><strong>Attribute</strong></td> 
+								  <td><strong>Description</strong></td> 
+								 </tr> 
+								 <tr> 
+								  <td>CanRead</td> 
+								  <td>Gets a value indicating whether the current stream supports reading.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>CanSeek</td> 
+								  <td>Gets a value indicating whether the current stream supports seeking.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>CanWrite</td> 
+								  <td>Gets a value indicating whether the current stream supports writing.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Length</td> 
+								  <td>Gets the length in bytes of the stream.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Position</td> 
+								  <td>Gets or sets the current position of this stream.</td> 
+								 </tr> 
+								</tbody> 
+						</table>
+				</section>
+				<section data-background="#fff">
+						<h2>Understanding Streams</h2>
+						<ul>
+							<li>Most streams flow in only one direction</li>
+							<li>File processing classes include:</li>
+							<ul style="font-size: 22px;">
+								<li><code>StreamReader</code> for text input from a file</li>
+								<li><code>StreamWriter</code> for text output to a file</li>
+								<li><code>FileStream</code> is used alone for bytes and with either StreamReader and StreamWriter for text, for either input from and output to a file</li>
+				
+							</ul>
+
+						</ul>
+						
+				</section>
+				<section data-background="#fff">
+						<h2>FileStream Class</h2>
+						<ul>
+							<li><b>Filestream</b> is a class which extends from the  <b>Stream</b> class, <b>FileStream</b> is used to read and write data to file, it inherits the properties, methods of Stream, and has additional functions for reading and recording data on the file.</li>
+							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.filestream?view=netframework-4.7.1">Click here to navigte to <code>FileStream Class</code></a></li>
+						</ul>
+						
+				</section>
+				<section data-background="#fff">
+						<h2>FileStream Overloaded Constructor</h2>
+
+						<img src="images/io/filestreamconstructor.PNG"  width="700" style="box-shadow: none;" alt="Stream class overview diagram"/>
+						
+				</section>
+				<section data-background="#fff">
+						<h2>FileMode Enumeration</h2>
+						<ul>
+							<li>A constant that determines how to open or create the file</li>
+						</ul>
+
+						
+						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
+								<tbody> 
+								 <tr> 
+								  <td><strong>FileMode</strong></td> 
+								  <td><strong>Description</strong></td> 
+								 </tr> 
+								 <tr> 
+								  <td>Append</td> 
+								  <td>Opens the file if it exists and seeks to the end of the file, or creates a new file</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Create</td> 
+								  <td>Specifies that the operating system should create a new file. If the file already exists, it will be overwritten.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>CreateNew</td> 
+								  <td>Specifies that the operating system should create a new file.If the file already exists, an <strong>IOException</strong> exception is thrown. This mode requires <strong>FileIOPermissionAccess.Write</strong> permission.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Open</td> 
+								  <td>Specifies that the operating system should open an existing file. A <strong>System.IO.FileNotFoundException</strong> exception is thrown if the file does not exist.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>OpenOrCreate</td> 
+								  <td>Specifies that the operating system should open a file if it exists; otherwise, a new file should be created</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Truncate</td> 
+								  <td>Specifies that the operating system should open an existing file. When the file is opened, it should be truncated so that its size is zero bytes.</td> 
+								 </tr> 
+								</tbody> 
+							   </table>
+				</section>
+				<section data-background="#fff">
+						<h2>FileAccess Enumeration</h2>
+						<ul>
+							<li>A constant that determines how the file can be accessed by the FileStream object. This also determines the values returned by the CanRead and CanWrite properties of the FileStream object. CanSeek is true if path specifies a disk file.</li>
+						</ul>
+
+						
+						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
+								<tbody> 
+								 <tr> 
+								  <td><strong>FileAccess</strong></td> 
+								  <td><strong>Description</strong></td> 
+								 </tr> 
+								 <tr> 
+								  <td>Read</td> 
+								  <td>Data can be read from the file.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>ReadWrite</td> 
+								  <td>Data can be read from and written to the file.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Write</td> 
+								  <td>Data can be written to the file.</td> 
+								 </tr>  
+								</tbody> 
+						 </table>
+				</section>
+
+				<section data-background="#fff">
+					<h2>Serilization Code Example Output </h2>
+
+					<img src="images/io/serialoutput2.png"  width="470" style="box-shadow: none; margin-top: -10px;" alt="Serialization Code example one"/>
+
+
+				</section>-->
+
+				
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
