@@ -18,7 +18,8 @@
 		<link rel="stylesheet" href="css/zenburn.css">
 		<!-- Google Font -->
 		<link rel="preconnect" href="https://fonts.gstatic.com">
-		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;700;900&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;800;900&display=swap" rel="stylesheet">
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -31,6 +32,11 @@
 			body{
 				font-family: 'Raleway', sans-serif;
 			}
+			.reveal {
+			  font-family: 'Raleway', sans-serif;
+ 
+				
+			}
 			ul li{
 				font-size: 80%;
 			}
@@ -42,55 +48,84 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section data-background="images/cloud/cloudbg.jpg">
+				<section data-background="white">
 				    <h1>Cloud Computing</h1>
 				    <h5>Instructor: Chris Fulton</h5>
 				</section>
-				<section data-background="">
+				<section data-background="white">
 				    <h3>Learning Objectives</h3>
 				    <ul style="font-size: 26px;">
-						<li>What is the Cloud? What is Cloud Computing?</li>
+						<li>What is Cloud Computing?</li>
 						<ul>
-							<li>Cloud Computing - Definition | Vendors | Services |</li>
-							<li>IAAS | PAAS | SAAS | FAAS</li>
+							<li>Cloud Computing - Definition | Vendors | Services </li>
+							<li>Cloud Strategy - Public | Private | Hybrid</li>
+							<li>Defining  - IAAS | PAAS | SAAS | FAAS</li>
 						</ul>
-						<li>Installing Docker</li>
+						<li>Infrastructure As A Service</li>
 						<ul>
-							<li>Docker Desktop | VS Code Plugin | Running Sample Container</li>
+							<li>...</li>
 						</ul>
-				        <li>Docker Workflow</li>
+				        <li>Platform As A Service</li>
 				        <ul>
-							<li>Commonly used Commands</li>
-							<li>Docker Hub</li>
-							<li>Dockerfile | .dockerignore file</li>
-							<li>Containerizing an application</li>
+							<li>...</li>
+							<li>...</li>
 						
 						</ul>
-						<li>Using Docker within CI/CD pipeline</li>
+						<li>Software as a Service</li>
 				        <ul>
-							<li>Docker Compose</li>
-							<li>Kubernetes and Swarm</li>
+							<li>...</li>
+							<li>...</li>
+
+						</ul>
+						<li>Function as a Service</li>
+				        <ul>
+							<li>...</li>
+							<li>...</li>
 
 						</ul>
 
 				    </ul>
 				</section>
-				<section data-background="images/docker/docker_slide_bg.png" style="background-size: 80%;">
-					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">What is Docker?</h3>
-					<p style="background-color:rgba(255, 255, 255, 0.7);  font-size: .8em; color: black;" class="fragment"> Docker is a set of platform as a service products that uses <strong>OS-level virtualization</strong> to deliver software in packages called containers. </p>
-					<img class="fragment" src="images/docker/docker_use.PNG" width="690" alt="docker use case stats"/>
-				</section>
-				<section data-background="#fff">
-					<h3>What is Docker cont.?</h3>
-					<div id="flexcontain">
-						<div class="box red" style="font-size: 24px; margin: 10px; height: 400px; background-color: #4ea1c9;"><p><b style="font-size: 30px;">Images</b> <br> is a file, comprised of multiple layers, that is used to execute code in a Docker container. <strong>Images are created from a Dockerfile with the docker build command.</strong>  </p></div>
-						<div class="box blue" style="font-size: 24px; margin: 10px; height: 400px; background-color: #4ea1c9;"><p><b style="font-size: 30px;">Containers</b> <br> are <strong>isolated units</strong> of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another. <strong>A runnable instance of an image</strong></p></div>
-						<div class="box green" style="font-size: 24px; margin: 10px; height: 400px;  background-color: #4ea1c9;"><p><b style="font-size: 30px;">Virutal Machines</b> <br> a virtual machine is an emulation of a computer system.  A virtual machine is sandboxed from the rest of the system, meaning that the software inside a virtual machine can’t escape or tamper with the computer itself.</p></div>
+				<section data-background="white" style="background-size: 80%;">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">What is the Cloud Computing?</h3>
+					<p style="background-color:rgba(255, 255, 255, 0.7);  font-size: .8em; color: black;" class="fragment"> a method of providing <strong>shared computing resources</strong>, including applications, computing, storage, networking, development, and deployment platforms as well as business processes. </p>
+					<div id="flexcontain" class="fragment">
+						<div class="box" style="font-size: 24px; margin: 10px;"><iframe width="360" height="315" src="https://www.youtube.com/embed/dH0yz-Osy54" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+						<div class="box" style="font-size: 24px; margin: 10px; "><iframe width="360" height="315" src="https://www.youtube.com/embed/eZLcyTxi8ZI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+						<div class="box" style="font-size: 24px; margin: 10px;"><iframe width="360" height="315" src="https://www.youtube.com/embed/7dTsB5yvmf4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 					</div>
-					<a href="https://www.docker.com/resources/what-container">Container images become containers at runtime.  Click here more information about containers and virtual machines</a>
+				</section>
+				<section data-background="white" style="background-size: 80%;">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Why use Cloud Computing?</h3>
+					<!--<p style="background-color:rgba(255, 255, 255, 0.7);  font-size: .8em; color: black;" class="fragment"> a method of providing <strong>shared computing resources</strong>, including applications, computing, storage, networking, development, and deployment platforms as well as business processes. </p>-->
+					<div id="flexcontain" class="fragment">
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"></div>
+
+					</div>
 				</section>
 				<section data-background="#fff">
+					<h3>Who are the major cloud vendors?</h3>
+					<div id="flexcontain" class="fragment">
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"></div>
+
+					</div>
+					<a href="https://www.docker.com/resources/what-container"></a>
+				</section>
+				<!--<section data-background="#fff">
 					<h3>Containers vs. Virtual Machines</h3>
 					<div id="flexcontain">
 						<div>
@@ -316,7 +351,7 @@ CMD ["node", "app/docker.js"]
 					</div>
 					
 				
-				</section>				
+				</section>-->				
 				<!--<section>
 					<section>
 						<h3>Node Modules</h3>
@@ -358,10 +393,7 @@ CMD ["node", "app/docker.js"]
 				    <ul style="font-size: 28px;">
 						<li>https://github.com/docker/labs/blob/master/beginner/chapters/webapps.md</li>
 						<li>https://dzone.com/articles/a-developers-guide-to-docker-docker-compose</li>
-    					<li>https://data-flair.training/blogs/docker-use-cases/</li>
-    					<li>https://www.docker.com/resources/what-container</li>
-    					<li>https://gravitational.com/blog/microservices-containers-kubernetes/</li>
-  						<li>https://github.com/wsargent/docker-cheat-sheet#dockerfile</li>
+
 				    </ul>
 				</section>
 				<!--<section data-background="#eee">
@@ -709,6 +741,7 @@ CMD ["node", "app/docker.js"]
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
