@@ -150,7 +150,7 @@
 						<div class="box_two" style="font-size: 22px; margin: 10px;">
 							<h3>Hybrid Cloud</h3>
 							<ul>	
-								<li style="font-size: 20px;">Combination of private cloud and public cloud</li>
+								<li style="font-size: 20px;">Combination of private cloud and public cloud; data exchanged between private and public cloud</li>
 								<li style="font-size: 20px;">End-users won't know the difference. Most companies adobpt this approach.</li>
 							</ul>
 						</div>
@@ -158,22 +158,30 @@
 						
 					</div>
 				</section>
-				<!--<section data-background="#eee">
+				<section data-background="#eee">
 					<h4>Delivery Models Activity</h4>
-					
+					<p style="font-size: 22px">Read the descriptions of the boxes on the left and drag and drop the descriptions in the respective boxes on the right.  Hybrid or Non-Hybrid</p>
 					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; color: #111;">
+							<img id="drag1" src="images/cloud/non_hybrid1.png" style="margin: 2px;" width="290" draggable="true" ondragstart="drag(event)">
+							<img id="drag2" src="images/cloud/hybrid2.png" style="margin: 2px;" width="290" draggable="true" ondragstart="drag(event)">
+							<img id="drag3" src="images/cloud/hybrid3.png" style="margin: 2px;" width="290" draggable="true" ondragstart="drag(event)">
+							<img id="drag4" src="images/cloud/hybrid4.png" style="margin: 2px;" width="290" draggable="true" ondragstart="drag(event)">
+							<img id="drag5" src="images/cloud/hybrid6.png" style="margin: 2px;" width="290" draggable="true" ondragstart="drag(event)">
 
-						<img id="drag1" src="images/cloud/aws_logo.png" width="120" draggable="true" ondragstart="drag(event)" height="69">
-						<img id="drag1" src="images/cloud/aws_logo.png" width="120" draggable="true" ondragstart="drag(event)" height="69">
-						<div id="div1" ondrop="drop(event)" style="border: 2px solid #333; width: 60%; height: 40%;" ondragover="allowDrop(event)"></div>
-									
+						</div>
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee;  color: #111;">
+							<div id="div1" ondrop="drop(event)" style="background-image: url(images/cloud/hybrid_bg.png); background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 10px; min-height: 200px;" ondragover="allowDrop(event)"></div>
+							<div id="div2" ondrop="drop(event)" style="background-image: url(images/cloud/not_hybrid_bg.png); background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 10px; min-height: 200px;" ondragover="allowDrop(event)"></div>
+
+						</div>
 
 
 					</div>
 
 				</section>
 
-				<section data-background="#fff">
+				<!--<section data-background="#fff">
 					<h3>Containers vs. Virtual Machines</h3>
 					<div id="flexcontain">
 						<div>
