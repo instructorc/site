@@ -61,6 +61,7 @@
 						<ul>
 							<li>Read and Write Data to and from file</li>
 							<li>Fetch Data across network</li>
+							<li>Writing Data to a Dictionary</li>
 						</ul>
 						<li>Understanding Exception Handling</li>
 						<ul>
@@ -123,15 +124,15 @@
 					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Built-in Exception Classes</h3>
 					<!--<p style="background-color:rgba(255, 255, 255, 0.7);  font-size: .8em; color: black;" class="fragment"> a method of providing <strong>shared computing resources</strong>, including applications, computing, storage, networking, development, and deployment platforms as well as business processes. </p>-->
 					<div id="flexcontain" class="fragment">
-						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">Efficiency</h3></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">Capacity Planning</h3></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">Secure</h3></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">Global Infrastructure</h3></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">Scalable</h3></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">Minimal Risk</h3></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">Cost Savings</h3></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">Agility</h3></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">Competitive</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">ArithmeticError</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">TypeError</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">SyntaxError</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">IOError</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">IndentationError</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">RuntimeError</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">KeyError</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">IndexError</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">ImportError</h3></div>
 
 					</div>
 				</section>
@@ -139,8 +140,8 @@
 					<h3>Reading and Writing from File</h3>
 					<pre>
 						<code style="font-size: 14px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
-							# Lets us know the version of docker
-							docker --version
+							# Opens file and filemode is set to Read
+							pizzaInfo = open("chicagopizza.txt", "r")
 							
 											
 						</code>
@@ -148,20 +149,20 @@
 					<div id="flexcontain">
 						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">Common Methods</b> <br> Open Visual Studio code and click on the extensions tab/icon.</div>
 						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">File Modes</b> <br>Open terminal and run the various commands above.</p></div>
-						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;"></b> <br>Stop container and remove container</p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;"></b> <br>...</p></div>
 
 					</div>
 					
 				
 				</section>
-				<section data-background="#eeeeee" style="background-size: 80%;">
+				<!--<section data-background="#eeeeee" style="background-size: 80%;">
 					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Advantages of PaaS</h3>
 					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment"><strong>Use sophisticated tools affordably</strong><br>A pay-as-you-go model makes it possible for individuals or organizations to use sophisticated development software and business intelligence and analytics tools that they could not afford to purchase outright.</p>
 					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment"><strong>Cut coding time</strong><br>PaaS development tools can cut the time it takes to code new apps with pre-coded application components built into the platform, such as workflow, directory services, security features, search, and so on.</p>
 					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment"><strong>Support geographically distributed development teams</strong><br> Because the development environment is accessed over the Internet, development teams can work together on projects even when team members are in remote locations.</p>
 					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment"><strong>Efficiently manage the application lifecycle</strong><br>PaaS provides all of the capabilities that you need to support the complete web application lifecycle: building, testing, deploying, managing, and updating within the same integrated environment.</p>
 				</section>
-				<section data-background="white">
+				<!--<section data-background="white">
 					<h4>Software as a Service</h4>
 					<img src="images/cloud/saas.PNG" alt="delivery model image"/>
 				</section>
@@ -188,7 +189,7 @@
 						<div class="box green" style="font-size: 18px; margin: 10px; background-color: #eee; height: 220px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Do some research on service outside of AWS and provide one cloud vendor for each of the three categories</p></div>
 
 					</div>
-				</section>
+				</section>-->
 				<!--<section data-background="#fff">
 					<h3>Containers vs. Virtual Machines</h3>
 					<div id="flexcontain">
