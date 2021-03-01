@@ -53,16 +53,16 @@
 				    <h3>Python - Data I/O & Exception Handling</h3>
 				    <img src="images/python/data_source.png" width="320" alt="Data Sources by Becris from the Noun Project" />
 				    <h5>Instructor: Chris Fulton </h5>
-				    <a href="https://repl.it/@instructorc/iostartertemplate" target="_blank" style="font-size: .8em;">Repl.it Starter Template</a> | <a href="https://forms.gle/hNAEKK6J9eKHJebq7" target="_blank" style="font-size: .8em;">Lecture Response Form</a>
+				    <a href="https://repl.it/@instructorc/iostartertemplate" target="_blank" style="font-size: .8em;">Repl.it Starter Template</a> - <a href="https://forms.gle/hNAEKK6J9eKHJebq7" target="_blank" style="font-size: .8em;">Lecture Response Form</a>
 				</section>
 				<section data-background="white">
 				    <h3>Learning Objectives</h3>
 				    <ul style="font-size: 36px;">
 						<li>Read, Write and Fetch Data using Python </li>
 						<ul>
-							<li>Read and Write Data to and from file</li>
-							<li>Fetch Data across network</li>
-							<li>Writing Data to a Dictionary</li>
+							<li>Perform Read and Write operations to and from file</li>
+							<li>Understand how to Fetch Data across network</li>
+							<li>Create a Program that utilizes, read/write operations and makes use of dictionary</li>
 						</ul>
 						<li>Understanding Exception Handling</li>
 						<ul>
@@ -87,7 +87,7 @@
 						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h4 style="margin-top: 50px;">Mass File Creation</h4></div>
 						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h4 style="margin-top: 50px;">RESTful API Connections</h4></div>
 						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h4 style="margin-top: 50px;">Internal/External DataStore</h4></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h4 style="margin-top: 50px;">Efficient Processes</h4></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h4 style="margin-top: 50px;">Basic User Input</h4></div>
 
 					</div>
 				</section>
@@ -155,12 +155,12 @@
 								<code style="font-size: 14px; line-height: 20px;" width="600"  class="codebox code-example__codebox"  data-trim contenteditable>
 									# Example of IOException
 									try:
-									  # [CODE TO LISTEN FOR EXCEPTION]
-									  age = input("Enter age")
-									  print("Your age is: ", age)
-									except IOError as Argument
-									  # [OUTPUT INFO REGARDING EXCEPTION]
-									  print("")
+									  # CODE TO LISTEN FOR EXCEPTION
+									  number = int(input("Input your favorite number:"))
+									  print("Your favorite number is:", number)
+									except IOError as Arg:
+									  # OUTPUT INFO REGARDING EXCEPTION
+									  print ("Please enter a numeric value", arg )
 									finally
 									  # [CODE TO EXECUTE ONCE EXCEPTION IS RAISED]
 								</code>
@@ -189,41 +189,6 @@
 					</div>
 				</section>
 
-				<!--<section data-background="#eeeeee" style="background-size: 80%;">
-					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Advantages of PaaS</h3>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment"><strong>Use sophisticated tools affordably</strong><br>A pay-as-you-go model makes it possible for individuals or organizations to use sophisticated development software and business intelligence and analytics tools that they could not afford to purchase outright.</p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment"><strong>Cut coding time</strong><br>PaaS development tools can cut the time it takes to code new apps with pre-coded application components built into the platform, such as workflow, directory services, security features, search, and so on.</p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment"><strong>Support geographically distributed development teams</strong><br> Because the development environment is accessed over the Internet, development teams can work together on projects even when team members are in remote locations.</p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment"><strong>Efficiently manage the application lifecycle</strong><br>PaaS provides all of the capabilities that you need to support the complete web application lifecycle: building, testing, deploying, managing, and updating within the same integrated environment.</p>
-				</section>-->
-				<!--<section data-background="white">
-					<h4>Software as a Service</h4>
-					<img src="images/cloud/saas.PNG" alt="delivery model image"/>
-				</section>
-				<section data-background="#eeeeee" style="background-size: 80%;">
-					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Common Scenarios of SaaS</h3>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" >If you’ve used a <strong>web-based</strong> email service such as Outlook, Hotmail, or Yahoo! Mail, then you’ve already used a form of SaaS. With these services, you log into your account over the Internet, often from a web browser. The email software is located on the service provider’s network, and your messages are stored there as well. You can access your email and stored messages from a web browser on any computer or Internet-connected device.</p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;">The previous examples are free services for personal use. For organizational use, you can rent productivity apps, such as email, collaboration, and calendaring; and sophisticated business applications such as customer relationship management (CRM), enterprise resource planning (ERP), and document management. You pay for the use of these apps by subscription or according to the level of use.</p>
-
-				
-				</section>
-				<section data-background="#eeeeee" style="background-size: 80%;">
-					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Advantages of SaaS</h3>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment"><strong>Gain access to sophisticated applications</strong><br>To provide SaaS apps to users, you don’t need to purchase, install, update, or maintain any hardware, middleware, or software. SaaS makes even sophisticated enterprise applications, such as ERP and CRM, affordable for organizations that lack the resources to buy, deploy, and manage the required infrastructure and software themselves.</p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment"><strong>Use free client software</strong><br>Users can run most SaaS apps directly from their web browser without needing to download and install any software, although some apps require plugins. This means that you don’t need to purchase and install special software for your users.</p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment"><strong>Mobilize your workforce easily</strong><br>SaaS makes it easy to “mobilize” your workforce because users can access SaaS apps and data from any Internet-connected computer or mobile device. You don’t need to worry about developing apps to run on different types of computers and devices because the service provider has already done so. In addition, you don’t need to bring special expertise onboard to manage the security issues inherent in mobile computing. A carefully chosen service provider will ensure the security of your data, regardless of the type of device consuming it.</p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment"><strong>Access app data from anywhere</strong><br>With data stored in the cloud, users can access their information from any Internet-connected computer or mobile device. And when app data is stored in the cloud, no data is lost if a user’s computer or device fails.</p>
-				</section>
-				<section data-background="#fff">
-					<h3>Activity</h3>
-					<p>With an understanding of IaaS, PaaS and SaaS.  Do so research on some of the services and determine if they are IaaS, PaaS or SaaS </p>
-					<div id="flexcontain">
-						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #eee; height: 220px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> On a sheet of paper - create three categories IaaS, PaaS, SaaS</p></div>
-						<div class="box blue" style="font-size: 18px; margin: 10px; background-color: #eee; height: 220px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Within the AWS management console.  Review the various services and list two services for each category. </p></div>
-						<div class="box green" style="font-size: 18px; margin: 10px; background-color: #eee; height: 220px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Do some research on service outside of AWS and provide one cloud vendor for each of the three categories</p></div>
-
-					</div>
-				</section>-->
 				<!--<section data-background="#fff">
 					<h3>Containers vs. Virtual Machines</h3>
 					<div id="flexcontain">
@@ -267,37 +232,8 @@
 					
 				
 				</section>
-				<section data-background="images/docker/docker_slide_bg.png">
-				    <h1 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Docker Workflow</h1>
-				</section>
 
-				<section data-background="#fff" style="background-size: 80%;">
-					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Docker CheatSheet and Commands</h3>
-					<div id="flexcontain">
-						<div class="box red" style="font-size: 20px; margin: 10px;  flex: 1 0 400px; background-color: white; color: #111;"><img src="images/docker/docker_build.PNG" alt="docker build image" /></div>
-						<div class="box blue" style="font-size: 20px; margin: 10px; flex: 1 0 400px; background-color: white; color: #111;"><img src="images/docker/docker_share.PNG"  alt="docker share image" /></div>
-						<div class="box green" style="font-size: 22px; margin: 10px; flex: 1 0 500px; height: 260px; background-color: white; color: #111;"><img src="images/docker/docker_run.PNG"  alt="docker run image"></div>
 
-					</div>
-					<p><a href="pdf/docker-cheat-sheet.pdf" target="_blank">Docker Cheat Sheet</a> | <a href="https://docs.docker.com/engine/reference/commandline/docker/">Docker Command Line Documentation</a></p>
-				</section>
-				<section data-background-iframe="https://docs.docker.com/engine/reference/commandline/docker/" data-background-interactive>
-				
-				</section>
-				<section data-background="#fff">
-					<h3>Docker Hub </h3>
-					<p><strong> DockerHub</strong> - the world's easiest way to create, manage, and deliver your teams' container applications.</p>
-					<div id="flexcontain">
-						
-						<ul>	
-							<li style="font-size: 26px;">Browse over 100,000 container images from software vendors, open-source projects, and the community.  Docker hub allows you to create and publish your own images.</li><br>
-   
-						</ul>
-						<a href="https://hub.docker.com/">
-							<div id="button" style="background-image:linear-gradient(#1B998B, #0a206d); border-radius: 12px; height: 120px; width: 75%; margin: auto; color: white; text-align: center; padding-top: 40px; font-size: 1em;">Click here to navigate to Docker Hub</div>
-						</a>
-					</div>
-				</section>
 				<section data-background="#fff">
 					<h4>Activity B -Pulling container from docker hub</h4>
 					<img src="images/docker/docker_ghost.PNG" width="720" alt="docker hub interface">
@@ -417,48 +353,20 @@ CMD ["node", "app/docker.js"]
 					</div>
 					
 				
-				</section>-->				
-				<!--<section>
-					<section>
-						<h3>Node Modules</h3>
-						<p> Core/Built-in Modules   &#10022;    Third-Party Modules </p>
-						<div id="flexcontain">
-							<div class="box_two" style="font-size: 22px; margin: 10px;">
-								<ul>
-									<li style="font-size: 26px;"><b>File Module</b> Including the path of file in require method</li>
-									<li style="font-size: 26px;"><b>Core modules</b> are modules that come with NodeJs.  You do not have to install them.  <a href="https://nodejs.org/api/modules.html"> Click here to see a list of core modules</a></li><br>
-									<li style="font-size: 26px;"><b>Third-Party modules</b> - pushes it to a queue and continues with the next statement. If the server returns something, it callback to whatever triggered the event.</li>	   
-								</ul>
-							</div>
-							<pre>
-								<code style="font-size: 16px;" class="hljs" data-trim contenteditable>
-								const welcome = require('./welcome'); //including a module that is a file within your program
-								const http = require('http'); //including a core module example
-								const app = require('express'); //including third-party module example
+				</section>			
+			
 
 
-								</code>
-							</pre>
-
-						</div>	
-					</section>
-
-				<section data-background="#fff">
-					<h3>Understanding Card Sorting</h3>
-						<iframe width="760" height="315" src="https://www.youtube.com/embed/TNvdgXCqEvM?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-				</section>
-
-				<section data-background-color="#fff">
-					<iframe height="600" src="https://embed.polleverywhere.com/multiple_choice_polls/QdwqUEsc6vjDWi3?controls=none&short_poll=true" width="100%" height="100%" frameBorder="0"></iframe>
-				</section>
 				<section data-background-color="#fff">
 					<iframe height="600" src="https://embed.polleverywhere.com/free_text_polls/njYHOn4wxYZfpDV?controls=none&short_poll=true" width="100%" height="100%" frameBorder="0"></iframe>
 				</section>-->
 				<section data-background="#eee">
 				    <h2>References and Resources</h2>
 				    <ul style="font-size: 28px;">
-
-
+						<li>File Open Method docs - https://docs.python.org/3/library/functions.html#open</li>
+						<li>Http Request Library doc - https://requests.readthedocs.io/en/master/user/quickstart/#make-a-request</li>
+						<li>I/O Operations docs - https://docs.python.org/3/tutorial/inputoutput.html</li>
+						<li>Exception Handling docs - https://docs.python.org/3/tutorial/errors.html</li>
 				    </ul>
 				</section>
 				<!--<section data-background="#eee">
@@ -531,260 +439,8 @@ CMD ["node", "app/docker.js"]
 				   
 						</ul>
 				</section>
-				<section data-background="#fff">
-						<h2>Understanding File Data Organization Diagram</h2>
-						<img src="images/io/dataorg.png" width="750" style="box-shadow: none;" alt="File Data organization diagram"/>
-				</section>
-				<section data-background="#eee">
-						<h2>Understanding File Data Organization</h2>
-						<ul>
-							<li><b>Field</b></li>
-							<ul style="font-size: 22px;">
-								<li>A character or group of characters that has some meaning</li>
-				
-							</ul>
-							
-							<li><b>Record</b></li> 
-							<ul style="font-size: 22px;">
-								<li>A collection of related fields that contain data about an entity</li>
-								<li>Characters are made up of bytes containing eight (8) bits</li>
 
-							</ul>
-							<li><b>Sequential access file</b></li> 
-							<ul style="font-size: 22px;">
-								<li>Each record is read in order based on its relative position</li>
-								<li>Records can be stored in order based on a value in the record</li>
-								<li>The field used to uniquely identify each record in a sequential file is the<b> key field</b></li>
-							</ul>
-							<li><b>Random access file</b></li>
-							<ul style="font-size: 22px;">
-								<li>Records are not in any sequence and  can be accessed in any order</li>
-				
-							</ul>
-						</ul>
-				</section>
-				<section data-background="#fff">
-						<h2>Understanding File Data Organization cont.</h2>
-						<ul>
-							<li>A C# application <b>opens a file</b> by creating an object and associating a stream of bytes with that object</li>
-							<li>When you finish using a file, the program should <b>close the file</b></li>
-									
-							<ul style="font-size: 22px;">
-								<li>Not closing a file may make it inaccessible</li>
-								<li>Not closing an output file can result in data not being written to the file</li>
-				
-							</ul>
 
-						</ul>
-				</section>
-				<section data-background="#fff">
-						<h2>Understanding Streams</h2>
-						<ul>
-							<li><b>Stream</b></li>
-							<ul style="font-size: 22px;">
-								<li>Stream is a class that simulates a stream of bytes to be lined up in a row. Such as the transmission of data on the network, data transmited are contiguous stream of bytes from the first byte to the last byte.</li>
-								<li>Functions as a pipeline or channel between an input device and an application, and potentially an output device</li>
-
-				
-							</ul>
-
-						</ul>
-						<img src="images/io/streampic.png"  width="700" style="box-shadow: none;" alt="Stream class diagram"/>
-				</section>
-				<section data-background="#fff">
-						<h2>Stream Overview</h2>
-
-						<img src="images/io/streamoverview.png"  width="700" style="box-shadow: none;" alt="Stream class overview diagram"/>
-				</section>
-				<section data-background="#fff">
-						<h2>Stream classes</h2>
-						<ul style="font-size: 24px;">
-							<li><b>Stream</b> is an abstract class, it can not initialize an object by itself, you can initialize a Stream object from the Constructors of the subclass. <b>Stream</b> class provides the basic methods of working with data streams, namely the method of read/write a byte or an array of bytes.</li>
-							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.stream?view=netframework-4.7.1">Click here to navigte to <code>Stream Class</code></a></li>
-						</ul>
-						
-						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
-								<tbody> 
-								 <tr> 
-								  <td><strong>Class</strong></td> 
-								  <td><strong>Description</strong></td> 
-								 </tr> 
-								 <tr> 
-								  <td>BufferedStream</td> 
-								  <td>A utility stream, it wrapped another stream, which helps improve performance</td> 
-								 </tr> 
-								 <tr> 
-								  <td>FileStream</td> 
-								  <td>Stream used to read and write data to the file.</td> 
-								 </tr> 
-								 <tr> 
-								  <td>MemoryStream</td> 
-								  <td>Creates a stream whose backing store is memory.</td> 
-								 </tr> 
-								 <tr> 
-								  <td>UnmanagedMemoryStream</td> 
-								  <td>&nbsp;</td> 
-								 </tr> 
-								 <tr> 
-								  <td>IsolatedStorageFileStream</td> 
-								  <td>&nbsp;</td> 
-								 </tr> 
-								 <tr> 
-								  <td>PipeStream</td> 
-								  <td>&nbsp;</td> 
-								 </tr> 
-								 <tr> 
-								  <td>NetworkStream</td> 
-								  <td>&nbsp;</td> 
-								 </tr> 
-								 <tr> 
-								  <td>CryptoStream</td> 
-								  <td>Defines a stream that links data streams to cryptographic transformations.</td> 
-								 </tr> 
-								 <tr> 
-								  <td>DeflateStream</td> 
-								  <td>&nbsp;</td> 
-								 </tr> 
-								 <tr> 
-								  <td>GZipStream</td> 
-								  <td>&nbsp;</td> 
-								 </tr> 
-								</tbody> 
-						</table>
-				</section>
-				<section data-background="#fff">
-						<h2>Properties of Stream</h2>
-						<ul style="font-size: 24px;">
-							<li>Depending on the stream, there are the stream that supports both read and write, and seek by moving the cursor on the stream, read and write data at the cursor position.</li>
-							
-						</ul>
-						
-						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
-								<tbody> 
-								 <tr> 
-								  <td><strong>Attribute</strong></td> 
-								  <td><strong>Description</strong></td> 
-								 </tr> 
-								 <tr> 
-								  <td>CanRead</td> 
-								  <td>Gets a value indicating whether the current stream supports reading.</td> 
-								 </tr> 
-								 <tr> 
-								  <td>CanSeek</td> 
-								  <td>Gets a value indicating whether the current stream supports seeking.</td> 
-								 </tr> 
-								 <tr> 
-								  <td>CanWrite</td> 
-								  <td>Gets a value indicating whether the current stream supports writing.</td> 
-								 </tr> 
-								 <tr> 
-								  <td>Length</td> 
-								  <td>Gets the length in bytes of the stream.</td> 
-								 </tr> 
-								 <tr> 
-								  <td>Position</td> 
-								  <td>Gets or sets the current position of this stream.</td> 
-								 </tr> 
-								</tbody> 
-						</table>
-				</section>
-				<section data-background="#fff">
-						<h2>Understanding Streams</h2>
-						<ul>
-							<li>Most streams flow in only one direction</li>
-							<li>File processing classes include:</li>
-							<ul style="font-size: 22px;">
-								<li><code>StreamReader</code> for text input from a file</li>
-								<li><code>StreamWriter</code> for text output to a file</li>
-								<li><code>FileStream</code> is used alone for bytes and with either StreamReader and StreamWriter for text, for either input from and output to a file</li>
-				
-							</ul>
-
-						</ul>
-						
-				</section>
-				<section data-background="#fff">
-						<h2>FileStream Class</h2>
-						<ul>
-							<li><b>Filestream</b> is a class which extends from the  <b>Stream</b> class, <b>FileStream</b> is used to read and write data to file, it inherits the properties, methods of Stream, and has additional functions for reading and recording data on the file.</li>
-							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.filestream?view=netframework-4.7.1">Click here to navigte to <code>FileStream Class</code></a></li>
-						</ul>
-						
-				</section>
-				<section data-background="#fff">
-						<h2>FileStream Overloaded Constructor</h2>
-
-						<img src="images/io/filestreamconstructor.PNG"  width="700" style="box-shadow: none;" alt="Stream class overview diagram"/>
-						
-				</section>
-				<section data-background="#fff">
-						<h2>FileMode Enumeration</h2>
-						<ul>
-							<li>A constant that determines how to open or create the file</li>
-						</ul>
-
-						
-						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
-								<tbody> 
-								 <tr> 
-								  <td><strong>FileMode</strong></td> 
-								  <td><strong>Description</strong></td> 
-								 </tr> 
-								 <tr> 
-								  <td>Append</td> 
-								  <td>Opens the file if it exists and seeks to the end of the file, or creates a new file</td> 
-								 </tr> 
-								 <tr> 
-								  <td>Create</td> 
-								  <td>Specifies that the operating system should create a new file. If the file already exists, it will be overwritten.</td> 
-								 </tr> 
-								 <tr> 
-								  <td>CreateNew</td> 
-								  <td>Specifies that the operating system should create a new file.If the file already exists, an <strong>IOException</strong> exception is thrown. This mode requires <strong>FileIOPermissionAccess.Write</strong> permission.</td> 
-								 </tr> 
-								 <tr> 
-								  <td>Open</td> 
-								  <td>Specifies that the operating system should open an existing file. A <strong>System.IO.FileNotFoundException</strong> exception is thrown if the file does not exist.</td> 
-								 </tr> 
-								 <tr> 
-								  <td>OpenOrCreate</td> 
-								  <td>Specifies that the operating system should open a file if it exists; otherwise, a new file should be created</td> 
-								 </tr> 
-								 <tr> 
-								  <td>Truncate</td> 
-								  <td>Specifies that the operating system should open an existing file. When the file is opened, it should be truncated so that its size is zero bytes.</td> 
-								 </tr> 
-								</tbody> 
-							   </table>
-				</section>
-				<section data-background="#fff">
-						<h2>FileAccess Enumeration</h2>
-						<ul>
-							<li>A constant that determines how the file can be accessed by the FileStream object. This also determines the values returned by the CanRead and CanWrite properties of the FileStream object. CanSeek is true if path specifies a disk file.</li>
-						</ul>
-
-						
-						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
-								<tbody> 
-								 <tr> 
-								  <td><strong>FileAccess</strong></td> 
-								  <td><strong>Description</strong></td> 
-								 </tr> 
-								 <tr> 
-								  <td>Read</td> 
-								  <td>Data can be read from the file.</td> 
-								 </tr> 
-								 <tr> 
-								  <td>ReadWrite</td> 
-								  <td>Data can be read from and written to the file.</td> 
-								 </tr> 
-								 <tr> 
-								  <td>Write</td> 
-								  <td>Data can be written to the file.</td> 
-								 </tr>  
-								</tbody> 
-						 </table>
-				</section>
 
 				<section data-background="#fff">
 					<h2>Serilization Code Example Output </h2>
