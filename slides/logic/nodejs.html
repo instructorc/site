@@ -311,14 +311,7 @@
 						Let's watch a quick intro. video on NPM and run some commands interact with NPM.  
 					</aside>
 				</section>
-				<section data-background-color="#000000">
-					<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-						<iframe width="750" height="500" src="https://www.youtube.com/embed/x03fjb2VlGY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-					</div>
-					<aside class="notes">
-						Pause this video and watch the video on this slide.    
-					</aside>
-				</section>
+
 				<section data-background="#fff">
 					<h3>Commonly used NPM commands</h3>
 
@@ -331,24 +324,7 @@
 					
 				</section>
 				<section data-background="#fff">
-					<h3>Third Pary Module Practice</h3>
-					<ul>
-						<li><strong>Nodemon</strong> - a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected. </li>
-						<li><strong>Uniq</strong> - Removes all duplicates from an array in place.</li>
-					</ul>
-					<pre><code class="hljs" data-trim contenteditable>
-							//installing nodemon    
-							npm install --save-dev nodemon
-							
-
-							//installing uniq
-							npm install uniq
-							
-					</code></pre>
-
-				</section>
-				<section data-background="#fff">
-					<h3>Routing w/Express App</h3>
+					<h3>Basic Express Starter Code</h3>
 
 						<pre style="box-shadow: none;">
 							<code style="font-size: 16px;" class="language-javascript" data-trim contenteditable>
@@ -372,6 +348,55 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 						<p style="font-size: .7em;">This app starts a server and listens on port 3000 for connections. The app responds with “Hello World!” for requests to the root URL (/) or route. </p>
 						<a href="https://expressjs.com/en/starter/installing.html" style="font-size: .8em;">Express Getting started Guide </a>
 				</section>
+				<section data-background="#fff">
+					<h3>MiddleWare</h3>
+
+						<pre style="box-shadow: none;">
+							<code style="font-size: 16px;" class="language-javascript" data-trim contenteditable>
+							const express = require('express')
+							const app = express()
+							const port = 3000
+							
+							//Accessing functionality of handlebars
+							const handlebars = require('express-handlebars');
+							
+							/**To serve static files such as images, CSS files, and JavaScript files, create a folders
+							* and include the below statement.  The below statement assumes that I have a folder named assets
+							**/
+							app.use(express.static('assets')) 
+							
+							// view engine setup
+							app.set('views', './views');
+							app.set("view engine", "hbs"); //Many Templating frameworks.  I'm using handlebars npm install hbs --save
+
+
+
+
+
+							</code>
+						</pre>
+					
+						<p style="font-size: .7em;">This app starts a server and listens on port 3000 for connections. The app responds with “Hello World!” for requests to the root URL (/) or route. </p>
+						<a href="https://expressjs.com/en/starter/installing.html" style="font-size: .8em;">Express Getting started Guide </a>
+				</section>
+				<section data-background="#fff">
+					<h3>Third Pary Module - Dev. Dependencies</h3>
+					<ul>
+						<li><strong>Nodemon</strong> - a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected. </li>
+						<li><strong>ESLint</strong> - </li>
+					</ul>
+					<pre><code class="hljs" data-trim contenteditable>
+							//installing nodemon    
+							npm install --save-dev nodemon
+							
+
+							//installing uniq :: https://www.npmjs.com/package/eslint
+							npm install eslint --save-dev
+							
+					</code></pre>
+
+				</section>
+
 				<section data-background="#fff">
 					<h3>Routing w/Express App</h3>
 
