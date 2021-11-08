@@ -380,7 +380,7 @@
 						<code style="font-size: 12px;" class="codebox code-example__codebox"  data-trim contenteditable>
 						class Car extends React.Component {
 						  render() {
-						    return &lt;h2&gt;I am a {this.props.brand}!&lt;/h2&gt;;
+						    return &lt;Garage brand ="Mazda" /&gt;;
 						  }
 						}
 						
@@ -388,13 +388,13 @@
 						  render() {
 						    return (
 						      &lt;div&gt;
-						      &lt;h1&gt;Who lives in my garage?&lt;/h1&gt;
-						      &lt;Car brand="Ford" /&gt;
+						      	&lt;h1&gt;Who lives in my garage?&lt;/h1&gt;
+						      	&lt;h2&gt; I am a {this.props.brand}! &lt;/h2&gt;
 						      &lt;/div&gt;
 						    );
 						  }
 						}
-						ReactDOM.render(&lt;Garage /&gt;, document.getElementById('root'));
+						ReactDOM.render(&lt;Car /&gt;, document.getElementById('root'));
 
 						</code>
 					</pre>
