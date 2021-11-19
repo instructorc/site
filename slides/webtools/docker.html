@@ -16,6 +16,7 @@
 		<link rel="icon" sizes="32x32" type="image/png" href="images/node/favicon.png">
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="css/zenburn.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/gruvbox-dark.min.css">
 		<!-- Google Font -->
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
 		<!-- Printing and PDF exports -->
@@ -61,14 +62,12 @@
 							<li>Docker Hub</li>
 							<li>Dockerfile | .dockerignore file</li>
 							<li>Containerizing an application</li>
-						
-						</ul>
-						<li>Using Docker within CI/CD pipeline</li>
-				        <ul>
 							<li>Docker Compose</li>
 							<li>Kubernetes and Swarm</li>
-
+						
 						</ul>
+						<li>Deploying + Hosting Containers</li>
+
 
 				    </ul>
 				</section>
@@ -172,7 +171,7 @@
 					<div id="flexcontain">
 						<div class="box red" style="font-size: 20px; margin: 10px;  flex: 1 0 400px; background-color: white; color: #111;"><img src="images/docker/docker_build.PNG" alt="docker build image" /></div>
 						<div class="box blue" style="font-size: 20px; margin: 10px; flex: 1 0 400px; background-color: white; color: #111;"><img src="images/docker/docker_share.PNG"  alt="docker share image" /></div>
-						<div class="box green" style="font-size: 22px; margin: 10px; flex: 1 0 500px; height: 260px; background-color: white; color: #111;"><img src="images/docker/docker_run.PNG"  alt="docker run image"></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; flex: 1 0 500px; height: 260px; background-color: white; color: #111;"><img src="images/docker/docker_run.PNG" alt="docker run image"></div>
 
 					</div>
 					<p><a href="pdf/docker-cheat-sheet.pdf" target="_blank">Docker Cheat Sheet</a> | <a href="https://docs.docker.com/engine/reference/commandline/docker/">Docker Command Line Documentation</a></p>
@@ -190,7 +189,7 @@
    
 						</ul>
 						<a href="https://hub.docker.com/">
-							<div id="button" style="background-image:linear-gradient(#1B998B, #0a206d); border-radius: 12px; height: 120px; width: 75%; margin: auto; color: white; text-align: center; padding-top: 40px; font-size: 1em;">Click here to navigate to Docker Hub</div>
+							<div id="button" style="background-image:linear-gradient(#1B998B, #0a206d); border-radius: 12px; height: 120px; margin: auto; color: white; text-align: center; padding-top: 40px; font-size: 1em;">Click here to navigate to Docker Hub</div>
 						</a>
 					</div>
 				</section>
@@ -222,7 +221,15 @@
 							<pre>
 								<code style="font-size: 16px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
 # Define from what image we want to build from
-FROM node:12
+FROM node:14.18.1
+
+# Provides metadata regarding the Dockerfile
+LABEL version="1.0"
+LABEL description="Docker image for class example "
+LABEL maintainer = "cifulton@uic.edu"
+
+# Sets the working directory for application in container
+WORKDIR /app
 
 # Which files would we like to copy into the construction of the image
 COPY . /app
@@ -234,6 +241,16 @@ CMD ["node", "app/docker.js"]
 							</pre>
 						</div>
 					</div>
+				</section>
+				<section data-background="#eeeeee" style="background-size: 80%;">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Dockerfile Directives</h3>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment"><strong>FROM</strong><br> Defines the image we will use as the basis for our container. </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment"><strong>LABEL</strong><br> Defines the metadata for our Dockerfile, including information about the version, description, and maintainers.</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment"><strong>WORKDIR</strong><br> Sets the working directory for the application. If the working directory does not already exist, it is created by Docker.</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment"><strong>COPY</strong><br> Copy a file or files into the Docker container. </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment"><strong>RUN</strong><br>Specifies a command that should be run by Docker. You typically use this command to install dependencies, debug, and execute commands in the container.</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment"><strong>EXPOSE</strong><br>Tells Docker which ports the container should listen on during runtime.</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment"><strong>CMD</strong><br>Specifies the command that should be executed when the docker container starts.</p>
 				</section>
 				<section data-background="#eeeeee" style="background-size: 80%;">
 					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Creating Dockerfile Steps</h3>
@@ -254,7 +271,7 @@ CMD ["node", "app/docker.js"]
 								}
 								
 								# Step 2 - Including directives into Dockerfile
-								FROM node:12
+								FROM node:14.18.1
 								COPY . /app
 								
 								CMD ["node", "app/docker.js"]
@@ -273,35 +290,214 @@ CMD ["node", "app/docker.js"]
 					
 				
 				</section>
-
-				<section data-background="#eee">
-						<h4>Microservices</h4>
-						<iframe width="1000" class="stretch" height="585" src="https://www.youtube.com/embed/1xo-0gCVhTU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				</section>
-				<section>
-					<video data-autoplay class="stretch" src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video>
-				</section>
-				<section data-background="images/docker/docker_slide_bg.png">
-				    <h1 style="background-color:rgba(255, 255, 255, 0.7); color: black;">CI/CD using Docker</h1>
+				<section data-background="#fff">
+					<h3>Docker Compose</h3>
+					<p style="font-size: 28px; margin-bottom: -12px;">Compose is a tool for defining and <strong>running multi-container</strong> Docker applications. With Compose, you use a <strong>YAML file</strong> to configure your application’s services.</p>
+					<img src="images/docker/docker_cmds.PNG" width="500" alt="DockerFile commands">
 				</section>
 				<section data-background="#fff">
-					<h4>YAML File</h4>
+					<h3>Docker Compose</h3>
+					<p style="font-size: 32px; margin-bottom: -12px;">YAML File Examples below:</p>
+					<div id="flexcontain">
+						<div class="box ">
+							<code style="font-size: 22px;">Containers: front-end + back-end</code>
+							<pre style="box-shadow: none;">
+								<code style="font-size: 12px;" class="codebox code-example__codebox"  data-trim contenteditable>
+								version: '1'
+								services:
+								  front:
+								    build: ./front
+								    ports:
+								      - '3000:3000'
+								    depends_on:
+								      - back
+								  back:
+								    build: ./back
+								    ports:
+								      - '8080:8080'
+		
+								</code>
+							</pre>
+						</div>
+						<div class="box">
+							<code style="font-size: 22px;">Containers: MySQL DB + Wordpress CMS</code>
+							<pre style="box-shadow: none;">
+								<code style="font-size: 12px;" class="codebox code-example__codebox"  data-trim contenteditable>
+								version: '2'
+								
+								services:
+								   db:
+								     image: mysql:5.7
+								     volumes:
+								       - db_data:/var/lib/mysql
+								     restart: always
+								     environment:
+								       MYSQL_ROOT_PASSWORD: rootpasswordchangeme
+								       MYSQL_DATABASE: wordpress
+								       MYSQL_USER: usernamechangeme
+								       MYSQL_PASSWORD: passwordchangeme
+								
+								   wordpress:
+								     depends_on:
+								       - db
+								     image: wordpress:latest
+								     ports:
+								       - "8000:80"
+								     restart: always
+								     environment:
+								       WORDPRESS_DB_HOST: db:3306
+								       WORDPRESS_DB_USER: usernamechangeme
+								       WORDPRESS_DB_PASSWORD: passwordchangeme
+								volumes:
+								    db_data:
+		
+								</code>
+							</pre>
+						</div>
+					
+				</section>
+				<section data-background="#eeeeee" style="background-size: 80%;">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Getting Started with Docker Compose</h3>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment"><strong>1. Build individual images or pull them from a registry.</strong><br> Make sure each service has it's own Dockerfile that builds an image. </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment"><strong>2. Define all services in a docker-compose.yml file.</strong><br> Once each service has a dockerfile, consider the placement of the .yaml file </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment"><strong>3. Run command</strong><br> Run all of them together using the docker-compose CLI. <code>docker-compose up -d</code></p>
+
+				</section>
+				<section data-background="images/docker/docker_slide_bg.png">
+				    <h1 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Kubernetes</h1>
+				</section>
+				<section data-background="#fff">
+					<h3 style="color: #4ea1c9;" class="fragment">Why Kubernetes? </h3>
+					<div id="flexcontain" class="fragment">
+						<div class="box" style="font-size: 24px; margin: 10px; height: 275px; background-color: #eee;"><h3 style="margin-top: 28px;">Service discovery and load balancing</h3><code style="font-size: 14px;">Kubernetes is able to load balance and distribute the network traffic so that the deployment is stable.</code></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 275px; background-color: #eee;"><h3 style="margin-top: 28px;">Storage orchestration</h3><code style="font-size: 14px;">Kubernetes allows you to automatically mount a storage system of your choice, such as local storages, public cloud providers, and more.</code></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 275px; background-color: #eee;"><h3 style="margin-top: 28px;">Automated rollouts and rollbacks</h3><code style="font-size: 14px;">Kubernetes can create new containers for your deployment, remove existing containers and adopt all their resources to the new container.</code></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 275px; background-color: #eee;"><h3 style="margin-top: 28px;">Automatic bin packing</h3><code style="font-size: 14px;">You tell Kubernetes how much CPU and memory (RAM) each container needs. Kubernetes can fit containers onto your nodes to make the best use of your resources.</code></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 275px; background-color: #eee;"><h3 style="margin-top: 28px;">Self-healing</h3><code style="font-size: 14px;">Kubernetes restarts containers that fail, replaces containers, kills containers that don't respond to your user-defined health check, and doesn't advertise them to clients until they are ready to serve.</code></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 275px; background-color: #eee;"><h3 style="margin-top: 28px;">Self-healing</h3><code style="font-size: 14px;">Kubernetes lets you store and manage sensitive information, such as passwords, OAuth tokens, and SSH keys</code></div>
+
+					</div>
+					<q style="font-size: 8px;">source: https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/</q>
+				</section>
+				<section data-background="#fff">
+					<h4>Kubernetes Architecture</h4>
+					<p style="font-size: 18px;">Kubernetes runs your workload by placing containers into Pods to run on Nodes</p>
+					<img src="images/docker/kubernetes_arch_1.png" width="550" alt="kubernetes architecture">
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 16px; margin: 10px; background-color: #eee; height: 200px; color: #111;"><p><b style="font-size: 22px;"></b>Master Node [3 Components] <br> A master node is a node which controls and manages a set of worker nodes (workloads runtime) and resembles a cluster in Kubernetes.</div>
+						<div class="box blue" style="font-size: 16px; margin: 10px; background-color: #eee; height: 200px; color: #111;"><p><b style="font-size: 22px;">Worker Nodes</b> <br>A Node is a worker machine in Kubernetes and may be either a virtual or a physical machine, depending on the cluster. Each Node is managed by the control plane. A Node can have multiple pods, and the Kubernetes control plane automatically handles scheduling the pods across the Nodes in the cluster.</p></div>
+						<div class="box green" style="font-size: 16px; margin: 10px; background-color: #eee; height: 200px; color: #111;"><p><b style="font-size: 22px;">Pods</b> <br>Pods are the smallest, most basic deployable objects in Kubernetes. A Pod represents a single instance of a running process in your cluster. Pods contain one or more containers, such as Docker containers.</p></div>
+						<aside class="notes">
+							Step 1 - Requires that you have an account created at docker hub.  When you create an account is going to have you do an initial walkthrough to publish a container.
+						</aside>
+					</div>
+	
+				</section>
+				<section data-background="#fff">
+					<h4>Question 1</h4>
+
+					<p>How would you best describe Kubernetes?</p>
+					<ul style="font-size: 28px;">
+						<li>A. a subscription platform designed to manually deploy scaling and operating applications within containers</li>
+						<li>B. an open-source platform designed for manually deploying, scaling, and operating application containers</li>
+						<li>C. a subscription platform designed to automate deploying, scaling, and operating application containers</li>
+						<li>D. an open-source platform designed to automate deploying, scaling, and operating application containers</li>
+					</ul>
+				</section>
+
+				<section data-background="images/docker/docker_slide_bg.png">
+				    <h1 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Deploying + Hosting Containers</h1>
+				</section>
+				<!--<section data-background="#fff">
+					<h3>What is Co</h3>
+					<p><strong> What is a dockerfile</strong> - a text file that contains all commands, in order, needed to build a given image</p>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;"><b>Directives</b> - provides instructions on how the image is constructed and ran as a container. </li><br>
+								<li style="font-size: 26px;">The best way to learn how a dockerfile is constructed is to look at how other dockerfiles have been constructed.</li>	   
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
 							<pre>
 								<code style="font-size: 16px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
-								# Step 1 - Defines and invokes function
-								dockerSucessOutput();
-								function dockerSucessOutput(){
-								    console.log("Dockerfile correctly constructed and image and ran program");
-								}
-								
-								# Step 2 - Including directives into Dockerfile
-								FROM node:12
-								COPY . /app
-								
-								CMD ["node", "app/docker.js"]
-								
-								# Step 3 - Stop container
-								docker container stop sample_walkthrough .
+# Define from what image we want to build from
+FROM node:12
+
+# Which files would we like to copy into the construction of the image
+COPY . /app
+
+# What commands we would like to run once 
+CMD ["node", "app/docker.js"]
+					
+								</code>
+							</pre>
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h4>GitHub Actions Deployment of container</h4>
+							<pre>
+								<code style="font-size: 16px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
+		# Your workflow name.
+name: Deploy to heroku.
+
+# Run workflow on every push to master branch.
+on:
+  push:
+    branches: [main]
+
+# Your workflows jobs.
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Check-out your repository.
+      - name: Checkout
+        uses: actions/checkout@v2
+
+
+### ⬇ IMPORTANT PART ⬇ ###
+
+      - name: Build, Push and Release a Docker container to Heroku. # Your custom step name
+        uses: gonuit/heroku-docker-deploy@v1.3.2 # GitHub action name (leave it as it is).
+        with:
+          # Below you must provide variables for your Heroku app.
+
+          # The email address associated with your Heroku account.
+          # If you don't want to use repository secrets (which is recommended) you can do:
+          # email: my.email@example.com
+          email: ${{ secrets.HEROKU_EMAIL }}
+          
+          # Heroku API key associated with provided user's email.
+          # Api Key is available under your Heroku account settings.
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          
+          # Name of the heroku application to which the build is to be sent.
+          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+
+          # (Optional, default: "./")
+          # Dockerfile directory.
+          # For example, if you have a Dockerfile in the root of your project, leave it as follows:
+          dockerfile_directory: ./
+
+          # (Optional, default: "Dockerfile")
+          # Dockerfile name.
+          dockerfile_name: Dockerfile
+
+          # (Optional, default: "")
+          # Additional options of docker build command.
+          docker_options: "--no-cache"
+
+          # (Optional, default: "web")
+          # Select the process type for which you want the docker container to be uploaded.
+          # By default, this argument is set to "web".
+          # For more information look at https://devcenter.heroku.com/articles/process-model
+          process_type: web
+          
+   
+          
+### ⬆ IMPORTANT PART ⬆ ###
 
 								</code>
 							</pre>
