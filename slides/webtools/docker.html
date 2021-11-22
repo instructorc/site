@@ -382,10 +382,10 @@ CMD ["node", "app/docker.js"]
 				<section data-background="#fff">
 					<h4>Kubernetes Architecture</h4>
 					<p style="font-size: 18px;">Kubernetes runs your workload by placing containers into Pods to run on Nodes</p>
-					<img src="images/docker/kubernetes_arch_1.png" width="500" alt="kubernetes architecture">
+					<img src="images/docker/kubernetes_arch_1.png" width="480" alt="kubernetes architecture">
 					<div id="flexcontain">
 						<div class="box red" style="font-size: 16px; margin: 10px; background-color: #eee; height: 200px; color: #111;"><p><b style="font-size: 22px;">Master Node [3 Components] </b> <br> A master node is a node which controls and manages a set of worker nodes (workloads runtime) and resembles a cluster in Kubernetes.</div>
-						<div class="box blue" style="font-size: 16px; margin: 10px; background-color: #eee; height: 200px; color: #111;"><p><b style="font-size: 22px;">Worker Nodes</b> <br>A Node is a worker machine in Kubernetes and may be either a virtual or a physical machine, depending on the cluster. Each Node is managed by the control plane. A Node can have multiple pods, and the Kubernetes control plane automatically handles scheduling the pods across the Nodes in the cluster.</p></div>
+						<div class="box blue" style="font-size: 16px; margin: 10px; background-color: #eee; height: 200px; color: #111;"><p><b style="font-size: 20px;">Worker Nodes</b> <br>A Node is a worker machine in Kubernetes and may be either a virtual or a physical machine, depending on the cluster. Each Node is managed by the control plane. A Node can have multiple pods, and the Kubernetes control plane automatically handles scheduling the pods across the Nodes in the cluster.</p></div>
 						<div class="box green" style="font-size: 16px; margin: 10px; background-color: #eee; height: 200px; color: #111;"><p><b style="font-size: 22px;">Pods</b> <br>Pods are the smallest, most basic deployable objects in Kubernetes. A Pod represents a single instance of a running process in your cluster. Pods contain one or more containers, such as Docker containers.</p></div>
 						<aside class="notes">
 							Step 1 - Requires that you have an account created at docker hub.  When you create an account is going to have you do an initial walkthrough to publish a container.
@@ -405,6 +405,41 @@ CMD ["node", "app/docker.js"]
 					</ul>
 				</section>
 
+				<section data-background="#fff">
+					<h4>Question 2</h4>
+
+					<p>What does kubernetes do?</p>
+					<ul style="font-size: 28px;">
+						<li>A. Install Docker and sets up a cluster across multiple VMs</li>
+						<li>B. Manages containers and other resources defined in a YAML file</li>
+						<li>C. Build container images across a cluster of machines</li>
+					</ul>
+				</section>
+				<section data-background="#fff">
+					<h4>Question 3</h4>
+
+					<p>How does kubernetes group containers together?</p>
+					<ul style="font-size: 28px;">
+						<li>A. In a cluster, where all containers are deployed on the same VM</li>
+						<li>B. In a service, where all containers share the same networking namespace</li>
+						<li>C. In a pod, where all containers share the same network and compute environment</li>
+					</ul>
+				</section>
+				<section data-background="#fff">
+					<h4>Question 4</h4>
+
+					<p>Which feature in kubernetes assigns pods to a node at runtime?</p>
+					<ul style="font-size: 28px;">
+						<li>A. scalability and availability</li>
+						<li>B. service discovery</li>
+						<li>C. container scheduling</li>
+						<li>D. flexibility and modularization</li>
+					</ul>
+				</section>
+				<section data-background="#eee">
+						<h4>Good Video - Kubernetes in 5min</h4>
+						<iframe width="760" height="515" src="https://www.youtube.com/embed/PH-2FfFD2PU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</section>
 				<section data-background="images/docker/docker_slide_bg.png">
 				    <h1 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Deploying Containers</h1>
 				</section>
