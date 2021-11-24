@@ -439,41 +439,30 @@ CMD ["node", "app/docker.js"]
 				<section data-background="#eee">
 						<h4>Good Video - Kubernetes in 5min</h4>
 						<iframe width="760" height="515" src="https://www.youtube.com/embed/PH-2FfFD2PU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<p style="font-size: 20px;">Documentation on getting started with Kubernetes using docker desktop.  Link found <a href="https://birthday.play-with-docker.com/kubernetes-docker-desktop/">here</a>.</p>
 				</section>
 				<section data-background="images/docker/docker_slide_bg.png">
 				    <h1 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Deploying Containers</h1>
 				</section>
-				<!--<section data-background="#fff">
-					<h3>What is Co</h3>
-					<p><strong> What is a dockerfile</strong> - a text file that contains all commands, in order, needed to build a given image</p>
+				<section data-background="#fff">
+					<h3>Deploying Container</h3>
+					<pstyle="font-size: 26px;">There are many deployment methods in which we can deploy containers or kubrnetes.</p>
 					<div id="flexcontain">
 						<div class="box_two" style="font-size: 22px; margin: 10px;">
 							<ul>	
-								<li style="font-size: 26px;"><b>Directives</b> - provides instructions on how the image is constructed and ran as a container. </li><br>
-								<li style="font-size: 26px;">The best way to learn how a dockerfile is constructed is to look at how other dockerfiles have been constructed.</li>	   
+								<li style="font-size: 22px;"><b>Free cloud services to host container</b> - Deploy using Heroku or Digital Ocean.  Directions for deploying to Heroku can be found <a href="https://devcenter.heroku.com/categories/deploying-with-docker">here</a>.  Directions to deploying to Digital Ocean can be found <a href="https://docs.digitalocean.com/products/app-platform/how-to/deploy-from-registry/">here</a>. </li><br>
+								<li style="font-size: 22px;"><b>Hosting Kubernetes cluster</b> - Example  <a href="https://auth0.com/blog/kubernetes-tutorial-step-by-step-introduction-to-basic-concepts/">tutorial</a> of hosting kubernetes cluster on Digital Ocean.</li>	   
 							</ul>
 						</div>
 						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<pre>
-								<code style="font-size: 16px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
-# Define from what image we want to build from
-FROM node:12
-
-# Which files would we like to copy into the construction of the image
-COPY . /app
-
-# What commands we would like to run once 
-CMD ["node", "app/docker.js"]
-					
-								</code>
-							</pre>
+								<img src="images/docker/kube_deploy.png" width="300" alt="Kubernetes deployment">
 						</div>
 					</div>
 				</section>
 				<section data-background="#fff">
 					<h4>GitHub Actions Deployment of container</h4>
 							<pre>
-								<code style="font-size: 16px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
+								<code style="font-size: 16px; line-height: 20px;" width="600" height="400" class="codebox code-example__codebox"  data-trim contenteditable>
 		# Your workflow name.
 name: Deploy to heroku.
 
@@ -536,12 +525,12 @@ jobs:
 
 								</code>
 							</pre>
-					<div id="flexcontain">
-						<div class="box red" style="font-size: 14px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Create a project folder and add a file called docker.js.  Within the docker.js file copy the code under step 1 and save.</div>
-						<div class="box blue" style="font-size: 14px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Create a Dockerfile by running command <strong>[touch Dockerfile]</strong>.  Within the docker file, copy the statements under step 2.</p></div>
+					<!--<div id="flexcontain">
+						<div class="box red" style="font-size: 14px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> </div>
+						<div class="box blue" style="font-size: 14px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>  </p></div>
 						<div class="box green" style="font-size: 14px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Build the image by running command <strong>[docker build -t sample_walkthrough .]</strong>.  Observe the output in console and stop container by running the command above under step 3.</p></div>
 
-					</div>
+					</div>-->
 					
 				
 				</section>				
