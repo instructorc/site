@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Linq</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/mystyle.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<style>
+			ul li{
+				font-size: 80%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="#eee">
+				    <h2>C# - Linq</h2>
+				    <img src="images/io/csharplogo.png" width="320" style="box-shadow: none; border: none;"alt="c sharp logo">
+				    <h3>Instructor: Chris Fulton</h3>
+				</section>
+				<section data-background="#eee">
+				    <h2>Learning Objectives</h2>
+				    <ul>
+						<li>What is Linq </li>
+				        <li>What can you query with Linq?</li>
+                        <li>What is needed for Linq</li>
+
+				    </ul>
+				</section>
+				<section data-background="#eee">
+						<h2 class="blue">What is Linq?</h2>
+						<p>Linq stands for Language Integrated Query. Linq provides methods to easily query data sets including objects, relational databases, XML and other data sources</p>
+						<ul>
+							<li>Linq can query a variety of data sets that are connected to your application</li>
+						</ul>
+				</section>
+				<section data-background="#fff">
+						<h3 style="color: orangeRed">What can you query?</h3>
+						<p>Arrays, Characters, List of Objects, XML, etc.</p>
+						<img src="images/linq/linqarchitecture.gif" width="650" style="box-shadow: none; float: left; margin-left: 2em;" alt="Linq architecture image"/>
+
+				</section>
+				<section data-background="#eee">
+						<h3>Link provides extension methods to IEnumerable</h3>
+						<ul>
+							<li>Where, Order, Group, Select, GetEnumerator</li>
+							<li><a href="">Click here to navigate to IEnumerable Interface</a></li>
+						</ul>
+				</section>
+				<section data-background="#eee">
+				    <h3>What's Needed for a Linq Query</h3>
+				    <ol>
+						<li>The IEnumerable Interface - utilizing properties and methods from Interface</li>
+						<li>A dataset/datasource - <code><em>"from acct in accounts"</em></code></li>
+						<li>The formated query - <code><em>"where acct.acctBalance > 8000.00"</em></code></li>
+						<li>The Execution of the query - <code><em>"Iterating over data using foreach"</em></code></li>
+				    </ol>
+				</section>
+
+				<!--<section data-background="#fff">
+					<h2>Exception Derived clsses:</h2>
+					<ul>
+						<li>Most exceptions derive from three classes</li>
+						<ul style="font-size: 28px;">
+								<li>- Predefined Common Language Runtime exception classes derived from <code>SystemException</code></li>
+								<li>User-defined application exception classes you derive from <code>ApplicationException</code></li>
+								<li>The <code>Exception </code> class which is the parent of <code>SystemException</code> and <code>ApplicationException</code> </li>
+								
+							
+						</ul>
+					</ul>
+						
+				</section>
+				<section data-background="#fff">
+						<h2>Purposely Generating a <code>SystemException</code></h2>
+						<ul>
+
+							<li style="font-size: 30px;">You can deliberately generate a SystemException by forcing a program to contain an error</li>	
+							<ul style="font-size: 22px;">
+									<li>- Example: Dividing an integer by zero</li>
+							</ul>
+							<li style="font-size: 30px;">Termination of the program is abrupt and unforgiving</li>	
+							<li style="font-size: 30px;">Object-oriented error handling techniques provide more elegant solutions</li>  
+							<li style="font-size: 30px;">With exception handling,a program can continue after dealing with a problem</li> 
+							<ul style="font-size: 22px;">
+									<li>- Especially important in <b>mission-critical</b> applications - any process that is crucial to an organization</li>
+							</ul>
+
+						</ul>
+
+				</section>
+				<section data-background="#fff">
+					<h2>Purposely Generating a <code>SystemException</code></h2>
+					<ul>
+
+						<li>Programs that can handle exceptions appropriately are said to be more fault tolerant and robust than those that do not</li>	
+						<ul style="font-size: 22px;">
+							<li>- <b>Fault-tolerant</b> applications are designed so that they continue to operate, possibly at a reduced level, when some part of the system fails</li>
+							<li>- <b>Robustness</b> represents the degree to which a system is resilient to stress, maintaining correct functioning</li>
+						</ul>
+
+					</ul>
+						
+				</section>
+				<section data-background="#fff">
+						<h2>Exception Subclasses</h2>
+						
+						<img src="images/exception/milesgallonexcode.png" width="450" style="box-shadow: none; float: left;" alt="c# code miles per gallon example code"/>
+						<img src="images/exception/milesgallonexoutput.png" width="450" style="box-shadow: none; float: left;" alt="c# code miles per gallon example output"/>
+				</section>
+
+
+				<section data-background="#eee">
+					<h3>Traditional and Object-Oriened Error-Handling Methods</h3>
+					<ul>
+						<li>Check a variable’s value with an if statement before attempting to divide it into another number</li>
+						<ul style="font-size: 24px;">
+							<li> - Prevents division by zero</li>
+							<ul style="font-size: 22px;">
+								<li>   However, it does not really "handle an exception"</li>			
+							</ul>
+							<li> - Is efficient if you think it will be a frequent problem</li>
+							<ul style="font-size: 22px;">
+								<li>   Has little "overhead"</li>		
+								<li>   Otherwise, create an <code>Exception</code> object</li>		
+							</ul>
+						</ul>
+
+				
+					</ul>
+				</section>
+				<section data-background="#eee">
+					<section>
+						<h4>Object-oriented exception handling uses three unique terms: try, catch, throw, finally</h4>
+						</ul>
+						<div id="flexcontain">
+							<div class="box_three red" style="font-size: 22px; margin: 10px;"><p><b><code style="font-size: 30px;"><em>try</em></code> block</b><br/> Contains statements that can produce an error <br> Code at least one catch block or finally block immediately following a <code>try</code> block</code></p></div>
+							<div class="box_three blue" style="font-size: 22px; margin: 10px;"><p><b><code style="font-size: 30px;"><em>catch</em></code> block</b><br/> Can "catch" one type of Exception <br> You must code at least one <code>catch</code> block or <code>finally</code> block immediately following a <code>try</code> block</code></p></div>
+							<div class="box_three green" style="font-size: 22px; margin: 10px;"><p><b><code style="font-size: 30px;"><em>finally</em></code> block</b><br/> Contains actions to perform at the end of a <code>try…catch</code> sequence<br> Executes whether the try block identifies any Exceptions or not <br /> Used to perform clean-up tasks<br /> A <code>finally</code> block executes after 1) the <code>try</code> ends normally. 2) the <code>catch</code> executes and 3) the <code>try</code> ends abnormally and the <code>catch</code> does not execute </p></div>
+
+						</div>
+					</section>
+					<section data-background="#fff">
+						<h3>Try/Catch block</h3>
+						<img src="images/exception/tryex.png" width="750" style="box-shadow: none;" alt="Try example code"/>
+					</section>
+					<section data-background="#fff">
+						<h3>Try/Catch block example</h3>
+						<img src="images/exception/catchex.png" width="600" style="box-shadow: none;" alt="Try catch example code"/>
+					</section>
+					<section data-background="#fff">
+						<h3>Try/Catch/Finally block example</h3>
+						<img src="images/exception/trycatchfinallyex.png" width="600" style="box-shadow: none;" alt="Try catch finally example code"/>
+					</section>
+				</section>
+				<section data-background="#eee">
+					<section>
+						<h3>Catching Multiple <code>Exceptions</code></h3>
+						<ul>
+							<li>You can place as many statements as you need within a try block</li>	
+							<ul style="font-size: 22px;">
+								<li>- Only the first error-generating statement throws an Exception</li>
+							</ul>
+							<li>Multiple catch blocks are examined in sequence until a match is found for the Exception that occurred</li>
+							<li>Various <code>Exceptions</code> can be handled by the same <code>catch</code> block</li>
+						</ul>
+					</section>	
+					<section data-background="#fff">
+							<h3>Catching Multiple <code>Exceptions</code></h3>
+							<img src="images/exception/multicatchblock.png" width="450" style="box-shadow: none; float: left;" alt="Multiple catch block first eample code"/>
+							<img src="images/exception/multicatchblocktwo.png" width="450" style="box-shadow: none; float: left;" alt="Multiple catch blocks second example code"/>
+					</section>
+				</section>
+				<section>
+					<section>
+					<h3>Handling Exceptions Thrown from Outside Methods</h3>
+						<ul>
+							<li>An advantage of using object-oriented exception-handling techniques:</li>	
+							<ul style="font-size: 22px;">
+								<li>- The ability to deal with Exceptions appropriately as you decide how to handle them</li>
+							</ul>
+							<li>When methods from other classes throw Exceptions, methods do not have to catch them</li>
+							<ul style="font-size: 22px;">
+								<li>- Your calling program can catch them, and you can decide what to do</li>
+							</ul>
+						</ul>
+					</section>
+					<section data-background="#fff">
+							<h4>Handling Exceptions Thrown from outside methods</h4>
+							<img src="images/exception/insideexceptionone.png" width="450" style="box-shadow: none; float: left;" alt="eample one code handled exception called from method"/>
+							<img src="images/exception/insideexceptiontwo.png" width="450" style="box-shadow: none; float: left;" alt="example two code handled exception called from method"/>
+					</section>
+				</section>
+				<section data-background="#fff">
+					<h3>Using the  <code>Exception</code>Class's <code>ToString()</code> Method and Message  property</h3>
+					<ul>
+						<li>The <code>Exception</code> class overrides <code>ToString()</code></li>	
+						<ul style="font-size: 22px;">
+							<li>- Provides a descriptive error message</li>
+							<li>- The user can receive percise information about the nature of any Exception that is thrown</li>
+						</ul>
+					</ul>	
+				</section>
+				<section data-background="#fff">
+					<h3>Using the  <code>Exception</code>Class's <code>ToString()</code> Method and Message  property</h3>
+					<ul>
+						<li><code>Exception</code> class <code>Message</code> property</li>	
+						<ul style="font-size: 22px;">
+							<li>- Contains useful information about an <code>Exception</code></li>
+						</ul>
+						<li><code>getType()</code> method</li>	
+						<ul style="font-size: 22px;">
+							<li>- Indicates the name of the class</li>
+						</ul>
+					</ul>	
+				</section>
+				<section data-background="#fff">
+					<h3>Tracing <code>Exception</code> Objects Through the Call Stack</h3>
+					<ul>
+						<li><b>Call Stack</b></li>	
+						<ul style="font-size: 22px;">
+							<li>-The memory location where the computer stores the list of locations to which the system must return</li>
+							<li>If a method throws an Exception and does not catch it, the Exception is thrown to the next method “up” the call stack</li>
+						</ul>
+						<li><code>StackTrace</code> property</li>	
+						<ul style="font-size: 22px;">
+							<li>- Contains a list of methods in the call stack so you can determine the location of the Exception</li>
+						</ul>
+					</ul>	
+				</section>
+				<section data-background="#eee">
+						<h2>Understanding File Data Organization</h2>
+						<ul>
+							<li><b>Field</b></li>
+							<ul style="font-size: 22px;">
+								<li>A character or group of characters that has some meaning</li>
+				
+							</ul>
+							
+							<li><b>Record</b></li> 
+							<ul style="font-size: 22px;">
+								<li>A collection of related fields that contain data about an entity</li>
+								<li>Characters are made up of bytes containing eight (8) bits</li>
+
+							</ul>
+							<li><b>Sequential access file</b></li> 
+							<ul style="font-size: 22px;">
+								<li>Each record is read in order based on its relative position</li>
+								<li>Records can be stored in order based on a value in the record</li>
+								<li>The field used to uniquely identify each record in a sequential file is the<b> key field</b></li>
+							</ul>
+							<li><b>Random access file</b></li>
+							<ul style="font-size: 22px;">
+								<li>Records are not in any sequence and  can be accessed in any order</li>
+				
+							</ul>
+						</ul>
+				</section>
+				<section data-background="#fff">
+						<h2>Understanding File Data Organization cont.</h2>
+						<ul>
+							<li>A C# application <b>opens a file</b> by creating an object and associating a stream of bytes with that object</li>
+							<li>When you finish using a file, the program should <b>close the file</b></li>
+									
+							<ul style="font-size: 22px;">
+								<li>Not closing a file may make it inaccessible</li>
+								<li>Not closing an output file can result in data not being written to the file</li>
+				
+							</ul>
+
+						</ul>
+				</section>
+				<section data-background="#fff">
+						<h2>Understanding Streams</h2>
+						<ul>
+							<li><b>Stream</b></li>
+							<ul style="font-size: 22px;">
+								<li>Stream is a class that simulates a stream of bytes to be lined up in a row. Such as the transmission of data on the network, data transmited are contiguous stream of bytes from the first byte to the last byte.</li>
+								<li>Functions as a pipeline or channel between an input device and an application, and potentially an output device</li>
+
+				
+							</ul>
+
+						</ul>
+						<img src="images/streampic.png"  width="700" style="box-shadow: none;" alt="Stream class diagram"/>
+				</section>
+				<section data-background="#fff">
+						<h2>Stream Overview</h2>
+
+						<img src="images/streamoverview.png"  width="700" style="box-shadow: none;" alt="Stream class overview diagram"/>
+				</section>
+
+				<section data-background="#fff">
+						<h2>Understanding Streams</h2>
+						<ul>
+							<li>Most streams flow in only one direction</li>
+							<li>File processing classes include:</li>
+							<ul style="font-size: 22px;">
+								<li><code>StreamReader</code> for text input from a file</li>
+								<li><code>StreamWriter</code> for text output to a file</li>
+								<li><code>FileStream</code> is used alone for bytes and with either StreamReader and StreamWriter for text, for either input from and output to a file</li>
+				
+							</ul>
+
+						</ul>
+						
+				</section>
+				<section data-background="#fff">
+						<h2>FileStream Class</h2>
+						<ul>
+							<li><b>Filestream</b> is a class which extends from the  <b>Stream</b> class, <b>FileStream</b> is used to read and write data to file, it inherits the properties, methods of Stream, and has additional functions for reading and recording data on the file.</li>
+							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.filestream?view=netframework-4.7.1">Click here to navigte to <code>FileStream Class</code></a></li>
+						</ul>
+						
+				</section>
+				<section data-background="#fff">
+						<h2>FileStream Overloaded Constructor</h2>
+
+						<img src="images/filestreamconstructor.PNG"  width="700" style="box-shadow: none;" alt="Stream class overview diagram"/>
+						
+				</section>
+				<section data-background="#fff">
+						<h2>FileMode Enumeration</h2>
+						<ul>
+							<li>A constant that determines how to open or create the file</li>
+						</ul>
+
+						
+						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
+								<tbody> 
+								 <tr> 
+								  <td><strong>FileMode</strong></td> 
+								  <td><strong>Description</strong></td> 
+								 </tr> 
+								 <tr> 
+								  <td>Append</td> 
+								  <td>Opens the file if it exists and seeks to the end of the file, or creates a new file</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Create</td> 
+								  <td>Specifies that the operating system should create a new file. If the file already exists, it will be overwritten.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>CreateNew</td> 
+								  <td>Specifies that the operating system should create a new file.If the file already exists, an <strong>IOException</strong> exception is thrown. This mode requires <strong>FileIOPermissionAccess.Write</strong> permission.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Open</td> 
+								  <td>Specifies that the operating system should open an existing file. A <strong>System.IO.FileNotFoundException</strong> exception is thrown if the file does not exist.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>OpenOrCreate</td> 
+								  <td>Specifies that the operating system should open a file if it exists; otherwise, a new file should be created</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Truncate</td> 
+								  <td>Specifies that the operating system should open an existing file. When the file is opened, it should be truncated so that its size is zero bytes.</td> 
+								 </tr> 
+								</tbody> 
+							   </table>
+				</section>
+				<section data-background="#fff">
+						<h2>FileAccess Enumeration</h2>
+						<ul>
+							<li>A constant that determines how the file can be accessed by the FileStream object. This also determines the values returned by the CanRead and CanWrite properties of the FileStream object. CanSeek is true if path specifies a disk file.</li>
+						</ul>
+
+						
+						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
+								<tbody> 
+								 <tr> 
+								  <td><strong>FileAccess</strong></td> 
+								  <td><strong>Description</strong></td> 
+								 </tr> 
+								 <tr> 
+								  <td>Read</td> 
+								  <td>Data can be read from the file.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>ReadWrite</td> 
+								  <td>Data can be read from and written to the file.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Write</td> 
+								  <td>Data can be written to the file.</td> 
+								 </tr>  
+								</tbody> 
+						 </table>
+				</section>
+				<section data-background="#fff">
+					<h2>Stream Example</h2>
+
+					<img src="images/writerexcode.png"  width="500" style="box-shadow: none; float: left;" alt="Writing to file code"/>
+					<img src="images/writerexconsole.png"  width="400" style="box-shadow: none; float: left;" alt="Writing to file console view"/>
+					<img src="images/writerextextfile.png"  width="400" style="box-shadow: none; float: left;" alt="Writing to file text output"/>
+
+					
+
+				</section>-->
+				
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
