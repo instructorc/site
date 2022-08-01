@@ -8,7 +8,7 @@
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-		<title>Introduction to c#</title>
+		<title>Introduction to Java</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/dope.css">
@@ -45,9 +45,9 @@
 				    <h3>Instructor: Chris Fulton</h3>
 				</section>
 				<section data-background="#eee">
-				    <h3>Learning Agenda</h3>
+				    <h3>Learning Objectives</h3>
 				    <ul style="font-size: 28px;">
-						<li>Explain the components of Java</li>
+						<li>Explain the necessary components needed to download, run and execute a Java program</li>
 						<ul>
 							<li>Context - Java | Java API | Java Virtual Machine (JVM)</li>
 							<li>What is needed - Editors, Compilers, and Interpreters</li>
@@ -64,7 +64,8 @@
 						
 						<li>Execute, Compile and Debug a Java Progam</li>
 						<ul>
-							<li>Types of Errors: Compile-time | Run-time | Logical </li>				        	
+							<li>Types of Errors: Compile-time | Run-time | Logical </li>
+							<li>Console Input/Output Scanner Class</li>				        	
 							<li>Debugging</li>
 						</ul>
 						<li>Practice using Java API in basic program</li>
@@ -72,7 +73,7 @@
 							<li> System namespace - Console API</li>				        	
 							<li> Accepting and Converting Data from Console | Parsing and Casting </li>
 						</ul>
-						<li>Indentify useful string methods</li>
+						<li>Identify useful String and Stringbuilder methods</li>
 						<ul>
 							<li> Understanding Methods - Implementation hiding | Method Structure and Break-down</li>				        	
 							<li> Defining and Calling a method | Passing data to and Returning data from a method </li>
@@ -132,7 +133,7 @@
 				</section>
 				<section data-background="#fff">
 					<h4>Sample Program Breakdown</h4>
-					<img src="images/intro/program_structure.PNG" style="font-size: 3vw;" width="800" alt="program break-down structure">
+					<img src="images/intro/sample_java_prog.png" style="font-size: 3vw;" width="800" alt="program break-down structure">
 				</section>
 				<section data-background="#fff">
 					<h4>Program Components</h4>
@@ -145,7 +146,7 @@
 									<li>Provides a way to group similar classes</li>
 									<li>Can be used to avoid naming conflicts in large projects</li>
 								</ul>
-								<li style="font-size: 26px;">C# method parts</li>
+								<li style="font-size: 26px;">Java method parts</li>
 								<ul>
 									<li><b>Method header</b></li>
 									<ul>
@@ -170,10 +171,10 @@
 								<ul>
 									<li>Predefined and reserved identifiers that have special meaning to the compiler</li>
 								</ul>
-								<li style="font-size: 26px;">The name of the method is <code>Main()</code></li>
+								<li style="font-size: 26px;">The name of the method is <code>main()</code></li>
 								<ul>
-									<li>Every application must have a <code>Main()</code> method</li>
-									<li>Classes with a Main()method are called <b>application classes</b>; others are <b>non-application classes</b></li>
+									<li>Every program must have a <code>main()</code> method</li>
+									<li>Classes with a main()method are called <b>application classes</b>; others are <b>non-application classes</b></li>
 								</ul>
 								<li style="font-size: 26px;">The method returns nothing as indicated by the keyword <b>void</b></li>
 
@@ -224,11 +225,11 @@
 
 				</section>
 				<section data-background="images/intro/string.jpg">
-					<h3 style="text-shadow: 4px 7px 10px #333;">Outputting Data</h3>
+					<h3 style="text-shadow: 4px 7px 10px #333;">Execute, Compile and Debug a Java Progam</h3>
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>CONCATENATION</p></div>
-						<div class="box blue" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>PLACEHOLDER <br>OR <br> COMPOSITE FORMATTING</p></div>
-						<div class="box green" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>INTERPOLATION</p></div>
+						<div class="box red" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>Syntax Errors</p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>Logical Errors</p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>Run-time Errors</p></div>
 
 					</div>
 					<p style="text-shadow: 4px 7px 10px #333;">Any of the three can be used to format and output text and variables</p> 
