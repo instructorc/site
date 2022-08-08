@@ -201,9 +201,10 @@
     {
         static void Main(string[] args)
         {
-  
-		  string[] learningModels = { "Distance Learning", "Online Learning", "HyBrid Learning" };
-		  var results = learningModels.toArray&lt;string&gt;().Where(x => x.Contains("H")).First();
+		  //Using primitive data type
+		  List&lt;String&gt; learningModels = new ArrayList&lt;String&gt;();
+		  //Using var keyword
+		  var learningModels = new ArrayList&lt;String&gt;();
 
 		  System.out.println(results);
  		}
