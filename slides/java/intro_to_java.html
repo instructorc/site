@@ -237,13 +237,14 @@
     {
         static void Main(string[] args)
         {
-		  //Using primitive data type
-		  ArrayList&lt;String&gt; learningModels = new ArrayList&lt;String&gt;();
-		  //Using var keyword
-		  var learningModels = new ArrayList&lt;String&gt;();
-
-		  System.out.println(results);
- 		}
+			//Using primitive data type
+			double monthlySalary = 9200.00;
+			
+			//Using Var keyword
+			var yearlySalary = monthlySalary *12;
+	  
+			System.out.println(yearlySalary);
+		}
     }
 							</code>
 						</pre>
@@ -260,24 +261,44 @@
 					</div>
 					<p style="text-shadow: 4px 7px 10px #333;">When compiling and running a program, any of the three errors can occur.</p> 
 				</section>
-				<!--<section data-background="#eee">
-					<h4>Concatenating Strings</h4>
+				<section data-background="#eee">
+					<h4>Syntax Error</h4>
 					
 					<div id="flexcontain">
 						<div class="box_two" style="font-size: 22px; margin: 10px;">
 							<ul>	
-								<li style="font-size: 20px;">Concatenation is the process of appending one string to the end of another string. You concatenate strings by using the + operator</li>
-								<li style="font-size: 20px;">For string literals and string constants, concatenation occurs at compile time; no run-time concatenation occurs. For string variables, concatenation occurs only at run time.</li>
+								<li style="font-size: 20px;"><span style="font-weight: 900;">Common Syntax/Compile Time errors:</span> Missing Semicolon; Missing opening and closing bracket; Mis-spelled keyword; Incorrect case (uppercase vs lowercase characters).</li>
+
 							</ul>
+							<h5>Incorrect</h5>
 							<pre>
-								<code style="font-size: 22px; height: 100px;" class="codebox code-example__codebox"  data-trim contenteditable>
+								<code style="font-size: 20px; height: 120px;" class="codebox code-example__codebox"  data-trim contenteditable>
 									
-								   string marvelMovie = "The Avengers Infinity War";
-								
-									
-								   Console.WriteLine(marvelMovie + " is the best Marvel Movie"); 
+									public class Movie{
+
+										public static void main(String[] args) {
+										
+										   string marvelMovie = "The Avengers Infinity War"
+
+										   System.out.printLine(marvelMovie + " is the best Marvel Movie"); 
+									}
 							
-	
+								</code>
+							</pre>
+							<h5>Correct</h5>
+							<pre>
+								<code style="font-size: 20px; height: 120px;" class="codebox code-example__codebox"  data-trim contenteditable>
+									
+									public class Movie{
+
+										public static void main(String[] args) {
+
+										   String marvelMovie = "The Avengers Infinity War";
+
+										   System.out.println(marvelMovie + " is the best Marvel Movie"); 
+										}
+									}
+
 								</code>
 							</pre>
 						</div>
@@ -286,23 +307,52 @@
 
 				</section>
 				<section data-background="#eee">
-					<h4>Placeholder / Composite Formatting</h4>
+					<h4>Logical Error</h4>
 					
 					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
+						<div class="box_two" style="font-size: 20px; margin: 10px;">
 							<ul>	
-								<li style="font-size: 20px;">A composite format string consists of zero or more runs of fixed text intermixed with one or more format items.</li>
-								<li style="font-size: 20px;">The composite formatting feature returns a new result string where each format item is replaced by the string representation of the corresponding object in the list.</li>
+								<li style="font-size: 20px;"><span style="font-weight: 900;">Logical errors (Hardest to Detect):</span>Incorrect calculations; Using incorrect operator; Using wrong variable for output or calculation</li>
+
 							</ul>
+							<h5>Incorrect</h5>
 							<pre>
-								<code style="font-size: 22px; height: 100px;" class="codebox code-example__codebox"  data-trim contenteditable>
+								<code style="font-size: 16px; height: 160px;" class="codebox code-example__codebox"  data-trim contenteditable>
 									
-								   string marvelMovie = "The Avengers Infinity War";
-								
-									
-								   Console.WriteLine("{0} is the best Marvel Movie", marvelMovie); 
+									public class Discount{
+
+										public static void main(String[] args) {
+
+										   double price = 23.00;
+
+										   double discount = .10;
+
+										   price = discount *(price - 1);
+
+										   System.out.printLine("With discount the price is " +  price); 
+										}
+									}
 							
-	
+								</code>
+							</pre>
+							<h5>Correct</h5>
+							<pre>
+								<code style="font-size: 16px; height: 160px;" class="codebox code-example__codebox"  data-trim contenteditable>
+									
+									public class Discount{
+
+										public static void main(String[] args) {
+
+										   double price = 23.00;
+
+										   double discount = .10;
+										   
+										   price = (1 - discount) * price;
+
+										   System.out.printLine("With discount the price is " +  price); 
+										}
+									}
+
 								</code>
 							</pre>
 						</div>
@@ -311,29 +361,97 @@
 
 				</section>
 				<section data-background="#eee">
-					<h4>Interpolated Strings</h4>
+					<h4>Run-time Errors</h4>
 					
 					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
+						<div class="box_two" style="font-size: 20px; margin: 10px;">
 							<ul>	
-								<li style="font-size: 20px;">The $ special character identifies a string literal as an interpolated string. An interpolated string is a string literal that might contain interpolated expressions.</li>
-								<li style="font-size: 20px;">To identify a string literal as an interpolated string, prepend it with the $ symbol. You cannot have any white space between the $ and the " that starts a string literal. Doing so causes a compile-time error.</li>
+								<li style="font-size: 20px;"><span style="font-weight: 900;">Run-time Errors:</span> Dividing by zero; Mismatch variable data type assignment; Forgetting to close a file</li>
+								<li style="font-size: 20px;">Asking the computer to do something that it is unable to do or complete properly</li>
 							</ul>
+							<h5>Incorrect</h5>
 							<pre>
-								<code style="font-size: 22px; height: 100px;" class="codebox code-example__codebox"  data-trim contenteditable>
+								<code style="font-size: 16px; height: 140px;" class="codebox code-example__codebox"  data-trim contenteditable>
 									
-								   string marvelMovie = "The Avengers Infinity War";
-								
-									
-								   Console.WriteLine($"{marvelMovie} is the best Marvel Movie"); 
+									public class Calculations{
+
+										public static void main(String[] args) {
+
+										   int number1 = 32, number2 = 0, result = 0;
+
+										   result = number1/number2;
+
+										   System.out.println("The result is" +result);
+
+										}
+									}
 							
-	
+								</code>
+							</pre>
+							<h5>Correct</h5>
+							<pre>
+								<code style="font-size: 16px; height: 180px;" class="codebox code-example__codebox"  data-trim contenteditable>
+									
+									public class Calculations{
+
+										public static void main(String[] args) {
+
+
+										   int number1 = 32, number2 = 0, result = 0;
+
+										   try{
+
+										       result = number1/number2;
+
+											   System.out.println("The result is" +result);
+										   }
+
+										   catch(ArithmeticException e) {
+
+											System.out.println ("Can't be divided by Zero " + e);
+
+										   }
+										  
+										}
+
+									}
+
 								</code>
 							</pre>
 						</div>
 
 					</div>
 
+				</section>
+				<!--<section data-background="images/intro/sidebanner.png" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
+					<h3>Learning Activity</h3>
+					
+				     <p>How many errors do you observe in the code above?</p>
+				     
+				     <input type="radio" id="age1" style="transform: scale(2); " name="attendance" value="A">
+				     <label for="attendance1" style="font-size: 20px;">A) 3</label><br>
+				     <input type="radio" id="age2" style="transform: scale(2);" name="attendance" value="B">
+				     <label for="attendance2" style="font-size: 20px;">B) 2</label><br>  
+				     <input type="radio" id="age3" style="transform: scale(2);" name="attendance" value="C">
+				     <label for="attendance3" style="font-size: 20px;">C) Over 5</label><br>
+				     <input type="radio" id="age3" style="transform: scale(2);" name="attendance" value="D">
+				     <label for="attendance3" style="font-size: 20px;">D) There are no errors</label><br>
+			  
+				</section>
+				<section data-background="images/intro/sidebanner.png" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
+					<h3>Understanding Git</h3>
+					
+				     <p>How often should you make commits to your project?</p>
+				     
+				     <input type="radio" id="age1" style="transform: scale(2); " name="attendance" value="A">
+				     <label for="attendance1" style="font-size: 20px;">A) You should only make one big commit at the conclusion of project/app</label><br>
+				     <input type="radio" id="age2" style="transform: scale(2);" name="attendance" value="B">
+				     <label for="attendance2" style="font-size: 20px;">B) Consider making a commit to document incremental changes to project/app</label><br>  
+				     <input type="radio" id="age3" style="transform: scale(2);" name="attendance" value="C">
+				     <label for="attendance3" style="font-size: 20px;">C) Making commits are not necessary</label><br>
+				     <input type="radio" id="age3" style="transform: scale(2);" name="attendance" value="D">
+				     <label for="attendance3" style="font-size: 20px;">D) Not sure - Good question</label><br>
+			  
 				</section>
 				<section data-background="#fff">
 					<h4>Escape Sequence</h4>
