@@ -59,14 +59,14 @@
 						<li>Explore the declaration and use of variables</li>
 						<ul>
 							<li>Java primitive data types </li>
-							<li>Variable declaration and initialization | Escape Sequences</li>
+							<li>Variable declaration and initialization | Parsing and Casting</li>
 						</ul>
 						<li>Execute, compile and debug a basic program</li>
 						<ul>
 							<li> Types of Errors: Compile-time | Run-time | Logical</li>
+							<li> Debugging and Commenting Code</li>
 							<li> Utilizing Java API - Java System Class</li>				        	
-							<li> Creating Interactive programs using Scanner Class| Parsing and Casting </li>
-							<li>Debugging and Commenting Code</li>
+							<li> Creating Interactive programs using Scanner Class| Escape Sequences | Formatting </li>
 						</ul>
 						<li>Utilizing source control to keep track of changes, track history and experiment with code </li>
 						<ul>
@@ -251,8 +251,11 @@
 					<p>Java lets you declare local variables without giving them <strong>explicit</strong> types.  The data type is <strong>implied</strong> at runtime.</strong>  </p>
 
 				</section>
+				<section data-background="images/intro/compartment.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Compiling, Debugging and Executing a program</h1>
+				</section>
 				<section data-background="images/intro/string.jpg">
-					<h3 style="text-shadow: 4px 7px 10px #333;">Execute, Compile and Debug a Java Progam</h3>
+					<h3 style="text-shadow: 4px 7px 10px #333;">Possible Errors in Execute, Compile and Debug a Java Progam</h3>
 					<div id="flexcontain">
 						<div class="box red" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>Syntax Errors</p></div>
 						<div class="box blue" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>Logical Errors</p></div>
@@ -260,6 +263,17 @@
 
 					</div>
 					<p style="text-shadow: 4px 7px 10px #333;">When compiling and running a program, any of the three errors can occur.</p> 
+				</section>
+				<section data-background="#fff">
+					<h3>Steps to compile via command line</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 1</b> <br>Open the terminal </p></div>
+						<div class="box blue" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 2</b> <br>Make sure you in the directory you want to compile source code</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 3</b> <br>Enter the command<code>javac [NAME_OF_FILE].java </code> to compile</p></div>
+						<div class="box yellow" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 4</b> <br>type the <code> Dir</code> command to view files (this step is not necessary for compiling)</p></div>
+						<div class="box orange" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 5</b> <br>Type <code> java [NAME_OF_FILE]</code> and press Enter to run the program.  * Make sure to leave .java off</p></div>
+					</div>
+
 				</section>
 				<section data-background="#eee">
 					<h4>Syntax Error</h4>
@@ -423,90 +437,107 @@
 					</div>
 
 				</section>
-				<!--<section data-background="images/intro/sidebanner.png" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
+				<section data-background="#fff" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="" class="present">
 					<h3>Learning Activity</h3>
-					
-				     <p>How many errors do you observe in the code above?</p>
-				     
-				     <input type="radio" id="age1" style="transform: scale(2); " name="attendance" value="A">
-				     <label for="attendance1" style="font-size: 20px;">A) 3</label><br>
-				     <input type="radio" id="age2" style="transform: scale(2);" name="attendance" value="B">
-				     <label for="attendance2" style="font-size: 20px;">B) 2</label><br>  
-				     <input type="radio" id="age3" style="transform: scale(2);" name="attendance" value="C">
-				     <label for="attendance3" style="font-size: 20px;">C) Over 5</label><br>
-				     <input type="radio" id="age3" style="transform: scale(2);" name="attendance" value="D">
-				     <label for="attendance3" style="font-size: 20px;">D) There are no errors</label><br>
-			  
-				</section>
-				<section data-background="images/intro/sidebanner.png" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
-					<h3>Understanding Git</h3>
-					
-				     <p>How often should you make commits to your project?</p>
-				     
-				     <input type="radio" id="age1" style="transform: scale(2); " name="attendance" value="A">
-				     <label for="attendance1" style="font-size: 20px;">A) You should only make one big commit at the conclusion of project/app</label><br>
-				     <input type="radio" id="age2" style="transform: scale(2);" name="attendance" value="B">
-				     <label for="attendance2" style="font-size: 20px;">B) Consider making a commit to document incremental changes to project/app</label><br>  
-				     <input type="radio" id="age3" style="transform: scale(2);" name="attendance" value="C">
-				     <label for="attendance3" style="font-size: 20px;">C) Making commits are not necessary</label><br>
-				     <input type="radio" id="age3" style="transform: scale(2);" name="attendance" value="D">
-				     <label for="attendance3" style="font-size: 20px;">D) Not sure - Good question</label><br>
-			  
-				</section>
-				<section data-background="#fff">
-					<h4>Escape Sequence</h4>
-					<img src="images/intro/escape_sequence.PNG" width="470" alt="escape sequence in c#">
-				</section>
-				<section data-background="#fff">
-					<h4>Formatting Floating-Point Values</h4>
-					<img src="images/intro/formatting.PNG" width="570" alt="formatting floating point values in c#">
-				</section>
-				<section data-background="images/intro/compartment.jpg">
-					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Compiling, Debugging and Executing a program</h1>
-				</section>
-				<section data-background="#fff">
-					<h3>Compiling and Executing a C# Program</h3>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<ul>	
-								<li style="font-size: 26px;">Steps for viewing a program's output</li>
-								<ul>
-									<li style="font-size: 22px;">Compile source code into <b>intermediate language(IL)</b></li>
-									<li style="font-size: 22px;">The C# <b>just in time(JIT)</b> compiler translates the intermediate code into executable statements</li>
-								</ul>
-								<li style="font-size: 26px;">You can either of two ways to compile</li>
-								<ul>
-									<li style="font-size: 22px;">The <b>command line</b></li>
-									<li style="font-size: 22px;">The <b>Integrated Development Environment (IDE)</b></li>
-								</ul>
+					<pre>
+						<code style="font-size: 14px;" class="cs hljs"  data-trim contenteditable>
+							
+class Program{
+	static void Main(string[] args){
 
+		//Using primitive data type
+		double monthlySalary = 9,200.00;
+		
+		//Using Var keyword
+		var yearlySalary = monthlySalary *12;
+  
+		System.out.println(yearlySalary)
+	}
+}
+						</code>
+					</pre>
+					
+				     <p style="font-size: 22px; margin-top: -20px;">How many errors do you observe in the code above?</p>
+				     
+				     <input type="radio" id="age1" style="transform: scale(1.5); " name="code" value="A">
+				     <label for="attendance1" style="font-size: 18px;">A) 3</label><br>
+				     <input type="radio" id="age2" style="transform: scale(1.5);" name="code" value="B">
+				     <label for="attendance2" style="font-size: 18px;">B) 2</label><br>  
+				     <input type="radio" id="age3" style="transform: scale(1.5);" name="code" value="C">
+				     <label for="attendance3" style="font-size: 18px;">C) Over 5</label><br>
+				     <input type="radio" id="age3" style="transform: scale(1.5);" name="code" value="D">
+				     <label for="attendance3" style="font-size: 18px;">D) There are no errors</label><br>
+			  
+				</section>
+				<section data-background="#eee" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
+					<h3>Learning Activity</h3>
+					<pre>
+						<code style="font-size: 14px;" class="cs hljs"  data-trim contenteditable>
+							
+class Program{
+	static void Main(string[] args){
+
+		//Annual Salary
+		double annualSalary = 92003.14;
+		
+		//Calculate the monthly Salary
+		double monthlySalary = annualSalary * 12;
+		System.out.println("Monthly Salary: $" + monthlySalary);
+	}
+}
+						</code>
+					</pre>
+				     <p style="font-size: 22px; margin-top: -20px;">Using the code above, which option represents the error in the code?</p>
+				     
+				     <input type="radio" id="age1" style="transform: scale(1.5); " name="attendance" value="A">
+				     <label for="attendance1" style="font-size: 18px;">A) Syntax Error</label><br>
+				     <input type="radio" id="age2" style="transform: scale(1.5);" name="attendance" value="B">
+				     <label for="attendance2" style="font-size: 18px;">B) Runtime Error</label><br>  
+				     <input type="radio" id="age3" style="transform: scale(1.5);" name="attendance" value="C">
+				     <label for="attendance3" style="font-size: 18px;">C) Logical Error</label><br>
+				     <input type="radio" id="age3" style="transform: scale(1.5);" name="attendance" value="D">
+				     <label for="attendance3" style="font-size: 18px;">D) No Error presented</label><br>
+			  
+				</section>
+				<section data-background="#fff">
+					<h4>Debugging in Visual Studio Code</h4>
+					<img src="images/intro/debugging_in_vscode.PNG" width="670" alt="Debugging in VS Code">
+						<ul>	
+							<li style="font-size: 24px;"><b>Debugging</b></li>
+							<ul>
+								<li style="font-size: 18px;">The process of removing all syntax and logical errors from the program</li>
+								<li style="font-size: 18px;">Syntax errorsare discovered through compilation. Logical errors are discovered through testing</li>
+								<li style="font-size: 18px;">Commenting out portions of your code is another way to help debug and narrow the issue.</li>
 							</ul>
-						</div>
+							<li style="font-size: 22px;"><span style="font-weight: 900;">1)</span> Set a breakpoint.  <span style="font-weight: 900;">2)</span> Open Debug window - play button that has bug on it. <span style="font-weight: 900;">3)</span> Step through code and observe variable assignment and call stack.</li>
 
-					</div>
+						</ul>
 
+				</section>
+
+				<!--
+				<section data-background="images/intro/compartment.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">System and Scanner Class</h1>
 				</section>
 				<section data-background="#eee">
 					<h3>Sample Program to Compile</h3>
 					<ul>
-						<li>Use any text editor to write the following code and save as tuition.cs</li>
-						<li>Why string[] args?</li>
+						<li>What's the importance of the System's Class.  Comes from the <code>java.lang </code>package</li>
+						<li>The Scanner class allows for input operations - read input from the console</li>
 					</ul>
 					<div id="flexcontain">
 						<pre>
 							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
-								using System;
-								using System.Text;
+								import java.lang.*;
 								
 								class Program{
-									static void Main(string[] args)
+									static void Main(String[] args)
 									{
-									
+									 Scanner scan = new Scanner(System.in);  // Create a Scanner object
 									/**first name and credit hours should be provided 
 									as command line arguments**/
 										
-									  const double TUITION = 985.00;
+									  final double TUITION = 985.00;
 									  double tuitionCost;
 										
 									  tuitionCost = TUITION * Convert.ToDouble(args[1]);
@@ -521,21 +552,7 @@
 						</pre>
 					</div>
 				</section>
-				<section data-background="#fff">
-					<h3>Steps to compile via command line</h3>
-					<div id="flexcontain">
-						<div class="box red" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 1</b> <br>Open the <b>Developer Command Prompt VS 2017</b> </p></div>
-						<div class="box blue" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 2</b> <br>Change to the directory where program is located</p></div>
-						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 3</b> <br>Type the <code>csc tuition.cs </code> command to compile</p></div>
-						<div class="box yellow" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 4</b> <br>type the <code> Dir</code> command to view files (this step is not necessary)</p></div>
-						<div class="box orange" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 5</b> <br>Type <code> tuition</code> and press Enter to run the program</p></div>
-					</div>
 
-				</section>
-
-				<section data-background="images/intro/compartment.jpg">
-					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Console Class</h1>
-				</section>
 				<section data-background="#eee">
 					<h3>Console Activity</h3>
 					<ul>
@@ -598,6 +615,41 @@
 					</div>
 
 				</section>
+				<section data-background="#fff">
+					<h4>Escape Sequence</h4>
+					<img src="images/intro/escape_sequence.PNG" width="470" alt="escape sequence in c#">
+				</section>
+				<section data-background="#fff">
+					<h4>Formatting Floating-Point Values</h4>
+					<img src="images/intro/formatting.PNG" width="570" alt="formatting floating point values in c#">
+				</section>
+				<section data-background="images/intro/compartment.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Compiling, Debugging and Executing a program</h1>
+				</section>
+				<section data-background="#fff">
+					<h3>Compiling and Executing a C# Program</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;">Steps for viewing a program's output</li>
+								<ul>
+									<li style="font-size: 22px;">Compile source code into <b>intermediate language(IL)</b></li>
+									<li style="font-size: 22px;">The C# <b>just in time(JIT)</b> compiler translates the intermediate code into executable statements</li>
+								</ul>
+								<li style="font-size: 26px;">You can either of two ways to compile</li>
+								<ul>
+									<li style="font-size: 22px;">The <b>command line</b></li>
+									<li style="font-size: 22px;">The <b>Integrated Development Environment (IDE)</b></li>
+								</ul>
+
+							</ul>
+						</div>
+
+					</div>
+
+				</section>
+
 				<section data-background="#fff">
 					<h4>Convert Class Methods</h4>
 					<img src="images/intro/converting_strings.PNG" width="570" alt="converting strings diagram">
@@ -934,7 +986,7 @@ class Program
 							<li style="font-size: 26px;"><b>Debugging</b></li>
 							<ul>
 								<li style="font-size: 20px;">The process of removing all syntax and logical errors from the program</li>
-								<li style="font-size: 20px;">Syntax errorsare discovered through compilation</li>
+								<li style="font-size: 20px;">Syntax errors are discovered through compilation</li>
 								<li style="font-size: 20px;">Logical errors are discovered through testing</li>
 							</ul>
 							<li style="font-size: 22px;">At any time that you are working in the code editor, you can set a breakpoint on a line of code by pressingF9. When you pressF5to run your application within the Visual Studio debugger, the application will stop on that line and you can examine the value of any given variable, or view how or when execution breaks out of a loop, step through the code one line at a time by pressingF10, or set additional breakpoints.</li>
