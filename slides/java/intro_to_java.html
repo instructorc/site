@@ -515,35 +515,92 @@ class Program{
 
 				</section>
 
-				<!--
+				
 				<section data-background="images/intro/compartment.jpg">
 					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">System and Scanner Class</h1>
 				</section>
 				<section data-background="#eee">
-					<h3>Sample Program to Compile</h3>
-					<ul>
-						<li>What's the importance of the System's Class.  Comes from the <code>java.lang </code>package</li>
-						<li>The Scanner class allows for input operations - read input from the console</li>
-					</ul>
+					<h3>Scanner Class</h3>
+					<p>To implement the Scanner class, you must import <code>import java.util.*;</code>package</p>
+					<p>The Scanner class allows for input operations - reading input from the console</p>
+				
+						<img src="images/intro/scanner_class_methods.jpeg" alt="Scanner class methods">
+			
+				</section>
+				<section data-background="#eee">
+					<h3>Analyzing Program w/Scanner Class</h3>
 					<div id="flexcontain">
 						<pre>
 							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
 								import java.lang.*;
 								
 								class Program{
-									static void Main(String[] args)
-									{
-									 Scanner scan = new Scanner(System.in);  // Create a Scanner object
-									/**first name and credit hours should be provided 
-									as command line arguments**/
+									static void Main(String[] args){
+
+										//Declarations
+										String name, program;
+										int creditHours;
+										double tuitionCost;
+										final double TUITION = 780.00;
 										
-									  final double TUITION = 985.00;
-									  double tuitionCost;
+										Scanner scn = new Scanner(System.in);  // Create a Scanner object
 										
-									  tuitionCost = TUITION * Convert.ToDouble(args[1]);
+										System.out.println("Please enter your name: ");
+										name = scn.nextLine();
 										
-									  Console.WriteLine(args[0] + " your tuition cost is " + tuitionCost.ToString("c"));
+										System.out.println("Please enter program: ");
+										program = scn.nextLine();
 										
+										System.out.println("Please enter number of credits for this semester: ");
+										creditHours = scn.nextInt();
+										
+										tuitionCost = TUITION * creditHours;
+											
+										System.out.println(name + " Thank you for entering your information. \n" + 
+															"Your tuition for the semester is: " + tuitionCost);
+									}
+								}
+
+
+							</code>
+						</pre>
+					</div>
+				</section>
+				<section data-background="#eee">
+					<h3>System Class</h3>
+					<p>To implement the Scanner class, you must import <code>import java.util.*;</code>package</p>
+					<p>The Scanner class allows for input operations - reading input from the console</p>
+				
+						<img src="images/intro/scanner_class_methods.jpeg" alt="Scanner class methods">
+			
+				</section>
+				<section data-background="#eee">
+					<h3>Analyzing Program w/System Class</h3>
+					<div id="flexcontain">
+						<pre>
+							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+								import java.lang.*;
+								
+								class Program{
+									static void Main(String[] args){
+
+										long startTime = System.nanoTime(); //Gets the time before evaluating next statements
+	 
+										System.out.println("Your System properties");
+										System.out.println("**********************");
+										Properties p = System.getProperties();  //Creating a new instance of 
+										System.out.println("User name: " + p.getProperty("user.name")); //get User's account name  
+										System.out.println("User home directory: " + p.getProperty("user.home")); //get User's home directory  
+										System.out.println("User current working directory: " + p.getProperty("user.dir")); //get User's current working directory  
+										System.out.println("User Operating System: " + p.getProperty("os.name")); //get operating System
+										System.out.println("User Operating System version: " + p.getProperty("os.version")); //get operating system version
+										
+										long elapsedTime = System.nanoTime() - startTime; //Calculate after executing getProperty() statements
+										
+												// 1 second = 1_000_000_000 nano seconds
+										double elapsedTimeInSecond = (double) elapsedTime / 1_000_000_000;
+								
+										System.out.println("Time in seconds it took to execute program: " + elapsedTimeInSecond + " seconds");
 									}
 								}
 
@@ -553,8 +610,8 @@ class Program{
 					</div>
 				</section>
 
-				<section data-background="#eee">
-					<h3>Console Activity</h3>
+				<!--<section data-background="#eee">
+					<h3>Learning Activity</h3>
 					<ul>
 						<li style="font-size: 20px;">Step 1 - Create a program and copy the statements of the main method into your programs main method. </li>
 						<li style="font-size: 20px;">Step 2 - Navigate to https://docs.microsoft.com/en-us/dotnet/api/system.console?view=netcore-3.1 and research the properties and methods found within the documentation</li>
@@ -588,33 +645,7 @@ class Program{
 						</pre>
 					</div>
 				</section>
-				<section data-background="#fff">
-					<h4>Accepting Console Input</h4>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<ul>	
-								<li style="font-size: 26px;"><b>Interactive program</b></li>
-								<ul>
-									<li style="font-size: 20px;">A Program that allows user input</li>
-									
-								</ul>
-								<li style="font-size: 26px;"><code>ReadLine() method</code></li>
-								<ul>
-									<li style="font-size: 20px;">Accepts all of the characters entered by a user input from the keyboard until the user presses Enter</li>
-									<li style="font-size: 20px;">Characters can be assigned to a string</li>
-									<li style="font-size: 20px;">Must use a conversion method to convert the input string to the proper type</li>
-								</ul>
-								
 
-							</ul>
-						</div>
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<img src="images/intro/convert_program.PNG" alt="simple convert program">
-						</div>
-					</div>
-
-				</section>
 				<section data-background="#fff">
 					<h4>Escape Sequence</h4>
 					<img src="images/intro/escape_sequence.PNG" width="470" alt="escape sequence in c#">
@@ -625,29 +656,6 @@ class Program{
 				</section>
 				<section data-background="images/intro/compartment.jpg">
 					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Compiling, Debugging and Executing a program</h1>
-				</section>
-				<section data-background="#fff">
-					<h3>Compiling and Executing a C# Program</h3>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<ul>	
-								<li style="font-size: 26px;">Steps for viewing a program's output</li>
-								<ul>
-									<li style="font-size: 22px;">Compile source code into <b>intermediate language(IL)</b></li>
-									<li style="font-size: 22px;">The C# <b>just in time(JIT)</b> compiler translates the intermediate code into executable statements</li>
-								</ul>
-								<li style="font-size: 26px;">You can either of two ways to compile</li>
-								<ul>
-									<li style="font-size: 22px;">The <b>command line</b></li>
-									<li style="font-size: 22px;">The <b>Integrated Development Environment (IDE)</b></li>
-								</ul>
-
-							</ul>
-						</div>
-
-					</div>
-
 				</section>
 
 				<section data-background="#fff">
