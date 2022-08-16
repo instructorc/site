@@ -566,12 +566,17 @@ class Program{
 						</pre>
 					</div>
 				</section>
-				<section data-background="#eee">
+				<section data-background="#fff">
 					<h3>System Class</h3>
-					<p>The System package is imported by default, no need for an<code>import</code>statement</p>
+					<p>The System package is imported by default, no need for an <code>import</code> statement</p>
 					<p>The System class offers access to input/output operations, but can also provide access to system level information.</p>
 				
-						<img src="images/intro/scanner_class_methods.jpeg" alt="Scanner class methods">
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 18px; background-color: #f7f4f4;"><img src="images/intro/java_system1.PNG" alt="Common used System java methods image 1"></div>
+						<div class="box blue" style="font-size: 18px; background-color: #f7f4f4;"><img src="images/intro/java_system2.PNG" alt="Common used System java methods image 2"></div>
+						
+
+					</div>
 			
 				</section>
 				<section data-background="#eee">
@@ -610,42 +615,20 @@ class Program{
 					</div>
 				</section>
 
-				<!--<section data-background="#eee">
+
+				<section data-background="#fff" class="has-light-background present" style="top: 0px; display: block;">
 					<h3>Learning Activity</h3>
-					
-					<p style="font-size: 20px;">Step 1 - Gaining inspiration from the previous slide, create a program that calculates the time it takes you type out the teams <code>"White Sox, Cubs, Sky, Bears, Fire, Blackhawks, Bulls "</code> </p>
-					<p style="font-size: 20px;">Step 2 - Your should operate and function similar to the program below. 1) Display all teams to type 2) Allow the end-user to type teams 3) Display what they typed and the total elapsed time it took to enter all team names</p>
-					
-					
+					<p style="font-size: 20px;">Gaining inspiration from the previous slide, create a program that calculates the time it takes you to type out the teams <code>"White Sox, Cubs, Sky, Bears, Fire, Blackhawks, Bulls "</code> Your program should operate and function similar to the program below. </p>
+					<img src="images/intro/learning_activity_gif.gif" width="500" alt="Intended output for typing program">
 					<div id="flexcontain">
-						<pre>
-							<code style="font-size: 14px; height: 300px;" class="cs hljs"  data-trim contenteditable>
-								using System;
-								using System.Text;
-								
-								class Program{
-									static void Main(string[] args)
-									{
-										string name;
-										
-										Console.WriteLine("Enter your name: ");
-										name = Console.ReadLine();
-										Console.WriteLine("Welcome {0}", name);
-										int nameLength = name.Length;
-										
-										for(int x = 0; x < nameLength; x++){
-											Console.Beep();
-										}
-							
-									}
-								}
+						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #eee; height: 180px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Declare variables need for program and create Scanner object instance</p></div>
+						<div class="box blue" style="font-size: 18px; margin: 10px; background-color: #eee; height: 180px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Create statement to start the timer and display the teams and accept input</p><p style="font-weight: 700; font-size: 18px;">*Review previous slide</p></div>
+						<div class="box green" style="font-size: 18px; margin: 10px; background-color: #eee; height: 180px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Calculate the starttime from endtime, get time in seconds and display output message</p></div>
 
-
-							</code>
-						</pre>
 					</div>
+					
+				
 				</section>
-
 				<section data-background="#fff">
 					<h4>Escape Sequence</h4>
 					<img src="images/intro/escape_sequence.PNG" width="470" alt="escape sequence in c#">
@@ -655,54 +638,11 @@ class Program{
 					<img src="images/intro/formatting.PNG" width="570" alt="formatting floating point values in c#">
 				</section>
 				<section data-background="images/intro/compartment.jpg">
-					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Compiling, Debugging and Executing a program</h1>
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Utilizing Source Control</h1>
 				</section>
 
-				<section data-background="#fff">
-					<h4>Convert Class Methods</h4>
-					<img src="images/intro/converting_strings.PNG" width="570" alt="converting strings diagram">
-				</section>
-				<section data-background="#fafafa">
-					<h4>Using the <code>Parse()</code> methods</h4>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<img src="images/intro/parse_ex.PNG"  width="400" alt="simple program using parse method program">
-						</div>
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<ul>	
-								<li style="font-size: 26px;"><b>Parse() method</b></li>
-								<ul>
-									<li style="font-size: 20px;">An alternative to the Convert class methods to convert a string to a number</li>
-									<li style="font-size: 20px;">Parse means to break into component parts</li>
-									<li style="font-size: 20px;">Parsing a string turns it into its numeric equivalent</li>
-								</ul>
-							</ul>
-						</div>
-					</div>
 
-				</section>
-				<section data-background="#fff">
-					<h4>Working with Enumeration</h4>
-					
-						<img src="images/intro/enumeration.PNG" alt="simple enumeration program">
-						<ul>	
-							<li style="font-size: 26px;"><b>Enumeration</b></li>
-							<ul>
-								<li style="font-size: 20px;">An enumeration is a set of constants represented by identifiers</li>
-								
-							</ul>
-							<li style="font-size: 26px;"><b>By default, enumeration values are integer</b></li>
-							<ul>
-								<li style="font-size: 20px;">Can specify otherwise by including a colon and a type name after the enumeration name</li>
-
-							</ul>
-							
-
-						</ul>
-
-				</section>
-				<section data-background="images/intro/compartment.jpg">
+				<!--<section data-background="images/intro/compartment.jpg">
 					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Methods</h1>
 				</section>
 				<section data-background="#fff">
@@ -1017,7 +957,7 @@ class Program
 					</div>
 					<a href="https://www.youtube.com/playlist?list=PLvpKGAo_xLN_AQkHQR6-z14z8ZM2_RtG-" style="font-size: .7em;">Click here for playlist</a> </a>
 				</section>
-				<!--<section data-background="#fff">
+				<section data-background="#fff">
 					<ul>
 						<li style="font-size: 26px;">Navigate to <a href="https://dot.net">Dot.net website</a></li>
 					</ul>
