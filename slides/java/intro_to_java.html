@@ -34,6 +34,24 @@
 			section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
 			    color: #2d4650;
 			}
+			#gitbutton {
+				background-color: orangered;
+				color: white;
+				width: auto;
+				margin: auto;
+				padding: 20px;
+				transition: 1s all;
+			}
+			#gitbutton:hover {
+				background-color: #ff0c00;
+				box-shadow: 2px 2px 10px #333;
+			}
+			.expand:hover{
+				transform: scale(3.0);
+				max-width: 250px;
+				justify-content: space-evenly;
+				transition: all .2s ease-in-out;
+			}
 		</style>
 	</head>
 	<body>
@@ -248,7 +266,7 @@
     }
 							</code>
 						</pre>
-					<p>Java lets you declare local variables without giving them <strong>explicit</strong> types.  The data type is <strong>implied</strong> at runtime.</strong>  </p>
+					<p>Java lets you declare local variables without giving them <strong>explicit</strong> types.  The data type is <strong>implied</strong> at runtime. </p>
 
 				</section>
 				<section data-background="images/intro/compartment.jpg">
@@ -619,7 +637,7 @@ class Program{
 				<section data-background="#fff" class="has-light-background present" style="top: 0px; display: block;">
 					<h3>Learning Activity</h3>
 					<p style="font-size: 20px;">Gaining inspiration from the previous slide, create a program that calculates the time it takes you to type out the teams <code>"White Sox, Cubs, Sky, Bears, Fire, Blackhawks, Bulls "</code> Your program should operate and function similar to the program below. </p>
-					<img src="images/intro/learning_activity_gif.gif" width="500" alt="Intended output for typing program">
+					<img src="images/intro/learning_activity_gif.gif" width="400" alt="Intended output for typing program">
 					<div id="flexcontain">
 						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #eee; height: 180px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Declare variables need for program and create Scanner object instance</p></div>
 						<div class="box blue" style="font-size: 18px; margin: 10px; background-color: #eee; height: 180px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Create statement to start the timer and display the teams and accept input</p><p style="font-weight: 700; font-size: 18px;">*Review previous slide</p></div>
@@ -640,7 +658,140 @@ class Program{
 				<section data-background="images/intro/compartment.jpg">
 					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Utilizing Source Control</h1>
 				</section>
+				<section data-background="#fff">
+					<h2 style="text-align: left;">Version Control + Git</h2>
+					<div id="flexcontain" class="fragment visible current-fragment">
+						<div class="box red" style=" flex: 1 0 200px; font-size: 26px; height: 400px; margin: 10px; background-color: white;">
 
+							<img src="images/intro/centralized_distributed.png" alt="centralized and distributed version control"><br><site style="font-size: 10px; color: black; font-style: italic;">Source: https://scriptcrunch.com/295/</site>
+						</div>						
+						<div class="box aquamarine" style=" flex: 1 0 200px; font-size: 26px; height: 400px; margin: 10px; color: black; background-color: white; text-align: left; ">
+							<h4>Version Control</h4>
+							<p style="font-size: 24px; color: black;">The task of keeping a software system consisting of <strong>many versions</strong> and configurations <strong>well organized</strong>. </p><br>
+							<h4>What is Git?</h4>
+							<p style="font-size: 24px;">Git is a free and open source <strong>distributed version control system</strong> designed to handle everything from small to very large projects with <strong>speed</strong> and <strong>efficiency</strong>. </p>
+					
+
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#eee">
+				    <h2>Download and install Git</h2>
+				    <ul style="font-size: 28px;">
+				        <li>Navigate to <a href=" https://git-scm.com/">git-scm.com</a> </li>
+                        <li>Download the latest release for your operating system</li>   
+                        <li>Install using <strong>default configurations</strong> - For windows a git bash terminal will come with your download. For macs you will use terminal for your git.</li>
+                        <li>Once downloaded, open the "Git bash" terminal and enter the command <code> git --version</code></li>
+					
+				    </ul>
+				</section>
+				<section data-background="white" style="background-size: 80%; top: 37.5px; display: block;" class="has-light-background present">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Installation Configuration</h3>
+					<!--<p style="background-color:rgba(255, 255, 255, 0.7);  font-size: .8em; color: black;" class="fragment"> a method of providing <strong>shared computing resources</strong>, including applications, computing, storage, networking, development, and deployment platforms as well as business processes. </p>-->
+					<div id="flexcontain" style="height: 500px; min-width: 900px;">
+						<div class="box expand" style="font-size: 24px; height: 100px;">1<img src="images/intro/1.PNG" alt="git installation configuration"></div>
+						<div class="box expand" style="font-size: 24px; height: 100px;">2<img src="images/intro/2.PNG" alt="git installation configuration"></div>
+						<div class="box expand" style="font-size: 24px; height: 100px;">3<img src="images/intro/3.PNG" alt="git installation configuration"></div>
+						<div class="box expand" style="font-size: 24px; height: 100px;">4<img src="images/intro/4.PNG" alt="git installation configuration"></div>
+						<div class="box expand" style="font-size: 24px; height: 100px;">5<img src="images/intro/5.PNG" alt="git installation configuration"></div>
+						<div class="box expand" style="font-size: 24px; height: 100px;">6<img src="images/intro/6.PNG" alt="git installation configuration"></div>
+						<div class="box expand" style="font-size: 24px; height: 100px;">7<img src="images/intro/7.PNG" alt="git installation configuration"></div>
+						<div class="box expand" style="font-size: 24px; height: 100px;">8<img src="images/intro/8.PNG" alt="git installation configuration"></div>
+						<div class="box expand" style="font-size: 24px; height: 100px;">9<img src="images/intro/9.PNG" alt="git installation configuration"></div>
+						<div class="box expand" style="font-size: 24px; height: 100px;">10<img src="images/intro/10.PNG" alt="git installation configuration"></div>
+						<div class="box expand" style="font-size: 24px; height: 100px; ">11<img src="images/intro/11.PNG" alt="git installation configuration"></div>
+						<div class="box expand" style="font-size: 24px; height: 100px; ">12<img src="images/intro/12.PNG" alt="git installation configuration"></div>
+						<div class="box expand" style="font-size: 24px; height: 100px; ">13<img src="images/intro/13.PNG" alt="git installation configuration"></div>
+						<div class="box expand" style="font-size: 24px; height: 100px; ">14<img src="images/intro/14.PNG" alt="git installation configuration"></div>
+						<div class="box expand" style="font-size: 24px; height: 100px; ">15<img src="images/intro/15.PNG" alt="git installation configuration"></div>
+
+					</div>
+				</section>
+				<section data-background="#fff">
+				    <h2>Commonly Used Git commands - Cheatsheet</h2>
+					<p>The cheatsheet represents some of the most used commands that allow you to achieve the Git workflow.</p>
+					<a href="https://education.github.com/git-cheat-sheet-education.pdf"><div id="gitbutton">Click to download</div></a>
+					<p><a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control">Click here</a> for an exhaustive book on git commands</p>
+				</section>
+				<section data-background="#fff">
+				    <h2>Git workflow </h2>
+					<p>Going through this workflow allows us to keep track of the changes we are making.</p>
+				    <img src="images/intro/git_share_update.png" alt="git share update graphic" width="500">
+				</section>
+				<section data-background="#fff">
+					<h3>Git Command Practice</h3>
+						<pre style="box-shadow: none;">
+						<code style="font-size: 11px;" class="codebox code-example__codebox"  data-trim contenteditable>
+							public class App{
+								public static void main(String[] args) {
+							
+								   double price = 23.00;
+								   double discount = .10;
+								   price = (1 - discount) * price;
+								   System.out.println("With discount the price is " +  price); 
+								}
+							}
+						</code>
+					</pre>
+					<p style="font-size: 20px;">For this activity, we'll keep track of the changes we make to a simple java program</p>
+					
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 16px; margin: 10px; background-color: #eee; height: 220px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br>Create a new Java program and copy the code above into your source code -> Open the folder and right-click to open git bash terminal-> initialize git inside of project folder and make first commit.</p></div>
+						<div class="box blue" style="font-size: 16px; margin: 10px; background-color: #eee; height: 220px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Create a public repository on GitHub.com and copy instructions to push existing code to repository </p></div>
+						<div class="box green" style="font-size: 16px; margin: 10px; background-color: #eee; height: 220px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Run the git status command and make sure your directory does not have untracked files and to make sure branch is clean. <br>Navigate back to the the terminal and paste commands to push code up.  </p></div>
+
+					</div>
+				</section>
+
+
+				<section data-background="#eeeeee" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Git Workflow and Practice </h3>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="0"><strong>1.</strong> <code>git init </code> -> Initializes git into project folder</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="1"><strong>2.</strong> Make the necessary changes to the application. Save the file and render in browser to observe added functionality. </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="2"><strong>3.</strong> <code>git status </code> -> Checks the status to see status of files in directory</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="3"><strong>4.</strong> <code>git add .</code> -> Adds files to staging area. In preparation to be committed.</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="4"><strong>5.</strong> <code>git status</code> -> Check status again to see if file(s) were added to staging area.</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="5"><strong>6.</strong> <code>git commit -m "adding category"</code> -> Document the change by committing changes and adding a brief message.</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="6"><strong>7.</strong> <code>git log</code> -> To view commit history and timestamp.</p>
+				</section>
+				<section data-background="#eee">
+
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; color: #111;">
+							<h1>Get Commands - Check for understanding</h1>
+							<p style="font-size: 28px">Match the command with the description to the right by dragging and dropping term into box. </p>
+							<img id="drag1" src="images/intro/git_branch.PNG" style="margin: 2px;" width="120" draggable="true" ondragstart="drag(event)">
+							<img id="drag2" src="images/intro/git_clone.PNG" style="margin: 2px;" width="120" draggable="true" ondragstart="drag(event)">
+							<img id="drag3" src="images/intro/git_commit.PNG" style="margin: 2px;" width="120" draggable="true" ondragstart="drag(event)">
+							<img id="drag4" src="images/intro/git_status.PNG" style="margin: 2px;" width="120" draggable="true" ondragstart="drag(event)">
+							<img id="drag5" src="images/intro/git_init.PNG" style="margin: 2px;" width="120" draggable="true" ondragstart="drag(event)">
+							<img id="drag6" src="images/intro/git_log.PNG" style="margin: 2px;" width="120" draggable="true" ondragstart="drag(event)">
+							<img id="drag7" src="images/intro/git_add.PNG" style="margin: 2px;" width="120" draggable="true" ondragstart="drag(event)">
+
+						</div>
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee;  color: #111;">
+							<div id="div1" ondrop="drop(event)" style=" background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 5px; min-height: 40px;  " ondragover="allowDrop(event)">Command to show modified files </div>
+							<div id="div2" ondrop="drop(event)" style=" background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 5px; min-height: 40px;" ondragover="allowDrop(event)">Command to view all changes to file</div>
+							<div id="div3" ondrop="drop(event)" style=" background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 5px; min-height: 40px;" ondragover="allowDrop(event)">Command to timestamp a change to repository</div>
+							<div id="div4" ondrop="drop(event)" style=" background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 5px; min-height: 40px;" ondragover="allowDrop(event)">Command to retrieve a repository from URL</div>
+							<div id="div5" ondrop="drop(event)" style=" background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 5px; min-height: 40px;" ondragover="allowDrop(event)">Command to create and "replicate" repository </div>
+							<div id="div6" ondrop="drop(event)" style=" background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 5px; min-height: 40px;" ondragover="allowDrop(event)">Command used to start git in a directory</div>
+							<div id="div7" ondrop="drop(event)" style=" background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 5px; min-height: 40px;" ondragover="allowDrop(event)">Command to move a file to staging area</div>
+						</div>
+
+
+					</div>
+
+				</section>
+
+
+				<section data-background="#fff">
+				    <h2>Git Branching & Merging</h2>
+					<p>Branching allows you to create a copy of your main branch.  You can experiment and test new functionality on new branches.  Branching allows you to keep your main branch clean. </p>
+					<img src="images/intro/branching.png" alt="version control branching graphic">
+				</section>
 
 				<!--<section data-background="images/intro/compartment.jpg">
 					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Methods</h1>
@@ -1697,6 +1848,21 @@ class Program
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
+
+
+			function allowDrop(ev) {
+			  ev.preventDefault();
+			}
+			
+			function drag(ev) {
+			  ev.dataTransfer.setData("text", ev.target.id);
+			}
+			
+			function drop(ev) {
+			  ev.preventDefault();
+			  var data = ev.dataTransfer.getData("text");
+			  ev.target.appendChild(document.getElementById(data));
+			}
 		</script>
 	</body>
 </html>
