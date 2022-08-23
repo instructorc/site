@@ -127,12 +127,39 @@
 				<section data-background="white">
 						<h4>JDK Overview</h4>
 						<img src="images/intro/jdk.png" width="800" style="margin-bottom: -40px;" alt="Java Development Kit visual"><br>
-						<a href="https://code.visualstudio.com/docs/languages/java" style="font-size: 3vw;">Tutorial to install JDK w/VS Code Text Editor</a>
+						<a href="https://code.visualstudio.com/docs/languages/java" style="font-size: 2vw;">Tutorial to install JDK w/VS Code Text Editor</a>
 				</section>
 				<section data-background="white">
 					<h4>The JVM primary job</h4>
 					<img src="images/intro/bytecode_visual.png" width="800" alt="Java virtual machine visual"><br>
 					
+				</section>
+				<section data-background="#fff">
+
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #fff; color: #111;">
+							<h1>Java Terminology and Components - learning activity</h1>
+							<p style="font-size: 28px">Match the command with the description to the right by dragging and dropping term into box. </p>
+							<img id="drag1" src="images/intro/standlib.PNG" style="margin: 2px;" width="120" draggable="true" ondragstart="drag(event)">
+							<img id="drag2" src="images/intro/jvm.PNG" style="margin: 2px;" width="120" draggable="true" ondragstart="drag(event)">
+							<img id="drag3" src="images/intro/javac.PNG" style="margin: 2px;" width="120" draggable="true" ondragstart="drag(event)">
+							<img id="drag4" src="images/intro/jre.PNG" style="margin: 2px;" width="120" draggable="true" ondragstart="drag(event)">
+							<img id="drag5" src="images/intro/java.PNG" style="margin: 2px;" width="120" draggable="true" ondragstart="drag(event)">
+
+
+						</div>
+						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #fff;  color: #111;">
+							<div id="div1" ondrop="drop(event)" style=" background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 5px; min-height: 40px;  " ondragover="allowDrop(event)">Allows Java programs to run on any device/operating system; manages and optimize program memory </div>
+							<div id="div2" ondrop="drop(event)" style=" background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 5px; min-height: 40px;" ondragover="allowDrop(event)">Provided software/code that gives you the ability to immediately start creating programs</div>
+							<div id="div3" ondrop="drop(event)" style=" background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 5px; min-height: 40px;" ondragover="allowDrop(event)">Command used to compile program to bytecode</div>
+							<div id="div4" ondrop="drop(event)" style=" background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 5px; min-height: 40px;" ondragover="allowDrop(event)">Object-Oriented language that is managed and owned by Oracle</div>
+							<div id="div5" ondrop="drop(event)" style=" background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 5px; min-height: 40px;" ondragover="allowDrop(event)">Comes with the the JDK, but does not include the Java development tools</div>
+
+						</div>
+
+
+					</div>
+
 				</section>
 				<section data-background="images/intro/c_bg.jpg">
 					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Sample Program Break-down</h1>
