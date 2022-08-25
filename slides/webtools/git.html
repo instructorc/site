@@ -12,6 +12,8 @@
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/gruvbox-dark.min.css">
+		<!-- Google Font -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -22,7 +24,12 @@
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 		<style>
-
+			.reveal,h2,h3,h4 {
+				font-family: 'Montserrat', sans-serif;
+				font-size: 42px;
+				font-weight: normal;
+				color: #fff; 
+			}
 			.reveal section img {
 				margin: 15px 0px;
 				background: rgba(255, 255, 255, 0.12);
@@ -46,6 +53,7 @@
 				box-shadow: 2px 2px 10px #333;
 			}
 		</style>
+
 	</head>
 	<body>
 		<div class="reveal">
@@ -53,9 +61,9 @@
 				<section data-background="#eee">
 					<h2>Getting Started with Git</h2>
 					<div id="entryslidecontain">
-						<img src="images/git/gitlogo.png" width="390" style="float: left;" alt="git logo">
+						<img src="images/git/gitlogo.png" width="370" style="float: left;" alt="git logo">
 						<span style="float: left; font-size: 2.7em; margin: .1em .4em 0em .4em;"> + </span>
-						<img src="images/git/github_logo.png" width="420" style="float: left;" alt="github logo">
+						<img src="images/git/github_logo.png" width="400" style="float: left;" alt="github logo">
 					</div>
 				    <h3>Instructor: Chris Fulton</h3>
 				</section>
@@ -124,7 +132,7 @@
 				    <img src="images/git/git_share_update.png" alt="git share update graphic" width="500">
 				</section>
 				<section data-background="#fff">
-					<h3>Activity A</h3>
+					<h3>Learning Activity</h3>
 					
 					<div id="flexcontain">
 						
@@ -147,23 +155,62 @@
 
 						<div class="box_two" style="font-size: 20px; margin-top: -20px; ">
 							<ol>	
-								<li style="font-size: 20px;">Create a new web project open project in editor and initialize git into the the project</li>
-	   							<li style="font-size: 20px;">Create a file and name it git.html </li>
-	   							<li style="font-size: 20px;">Copy the HTML code above and run the various workflow commands to make an initial commit.</li>
-	   							<li style="font-size: 20px;">Run the git status command and make sure your directory does not have untracked files.</li>
-	   							<li style="font-size: 20px;">Run the commands to create a new branch called "extend_project" and switch to the new branch.</li>
-	   							<li style="font-size: 20px;">Add a new page to the "extend_project" branch and name it  github.html</li>
-	   							<li style="font-size: 20px;">Run the various commands to commit the new file and merge the "extend_project into the master branch</li>
+								<li style="font-size: 18px;">Create a new web project open project in editor and initialize git into the the project</li>
+	   							<li style="font-size: 18px;">Create a file and name it git.html </li>
+	   							<li style="font-size: 18px;">Copy the HTML code above and run the various workflow commands to make an initial commit.</li>
+	   							<li style="font-size: 18px;">Run the git status command and make sure your directory does not have untracked files.</li>
+	   							<li style="font-size: 18px;">Run the commands to create a new branch called "extend_project" and switch to the new branch.</li>
+	   							<li style="font-size: 18px;">Add a new page to the "extend_project" branch and name it  github.html</li>
+	   							<li style="font-size: 18px;">Run the various commands to commit the new file and merge the "extend_project into the master branch</li>
 	   							
 	   							
 							</ol>
 						</div>
 					</div>
 				</section>
+				<section data-background="#eeeeee" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Git Workflow and Practice </h3>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="0"><strong>1.</strong> <code>git init </code> -> Initializes git into project folder</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="1"><strong>2.</strong> Make the necessary changes to the application. Save the file and render in browser to observe added functionality. </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="2"><strong>3.</strong> <code>git status </code> -> Checks the status to see status of files in directory</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="3"><strong>4.</strong> <code>git add .</code> -> Adds files to staging area. In preparation to be committed.</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="4"><strong>5.</strong> <code>git status</code> -> Check status again to see if file(s) were added to staging area.</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="5"><strong>6.</strong> <code>git commit -m "adding category"</code> -> Document the change by committing changes and addding a brief message.</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="6"><strong>7.</strong> <code>git log</code> -> To view commit history and timestamp.</p>
+				</section>
+				<section data-background="#eee">
+
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; color: #111;">
+							<h1>Get Commands - Check for understanding</h1>
+							<p style="font-size: 28px">Match the command with the description to the right by dragging and dropping term into box. </p>
+							<img id="drag1" src="img/git_branch.PNG" style="margin: 2px;" width="120" draggable="true" ondragstart="drag(event)">
+							<img id="drag2" src="img/git_clone.PNG" style="margin: 2px;" width="120" draggable="true" ondragstart="drag(event)">
+							<img id="drag3" src="img/git_commit.PNG" style="margin: 2px;" width="120" draggable="true" ondragstart="drag(event)">
+							<img id="drag4" src="img/git_status.PNG" style="margin: 2px;" width="120" draggable="true" ondragstart="drag(event)">
+							<img id="drag5" src="img/git_init.PNG" style="margin: 2px;" width="120" draggable="true" ondragstart="drag(event)">
+							<img id="drag6" src="img/git_log.PNG" style="margin: 2px;" width="120" draggable="true" ondragstart="drag(event)">
+							<img id="drag7" src="img/git_add.PNG" style="margin: 2px;" width="120" draggable="true" ondragstart="drag(event)">
+
+						</div>
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee;  color: #111;">
+							<div id="div1" ondrop="drop(event)" style=" background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 5px; min-height: 40px;  " ondragover="allowDrop(event)">Command to show modified files </div>
+							<div id="div2" ondrop="drop(event)" style=" background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 5px; min-height: 40px;" ondragover="allowDrop(event)">Command to view all changes to file</div>
+							<div id="div3" ondrop="drop(event)" style=" background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 5px; min-height: 40px;" ondragover="allowDrop(event)">Command to timestamp a change to repository</div>
+							<div id="div4" ondrop="drop(event)" style=" background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 5px; min-height: 40px;" ondragover="allowDrop(event)">Command to retrieve a repository from URL</div>
+							<div id="div5" ondrop="drop(event)" style=" background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 5px; min-height: 40px;" ondragover="allowDrop(event)">Command to create and "replicate" repository </div>
+							<div id="div6" ondrop="drop(event)" style=" background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 5px; min-height: 40px;" ondragover="allowDrop(event)">Command used to start git in a directory</div>
+							<div id="div7" ondrop="drop(event)" style=" background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 5px; min-height: 40px;" ondragover="allowDrop(event)">Command to move a file to staging area</div>
+						</div>
+
+
+					</div>
+
+				</section>
 				<section data-background="#fff">
 				    <h2>Git Branching & Merging</h2>
 					<p>Branching allows you to create a copy of your master branch.  You can experiment and test new functionality on new branches.  Branching allows you to keep your master branch clean. </p>
-					<img src="images/git/branching.png" alt="version control branching graphic">
+					<img src="images/git/branching.png" width="600" alt="version control branching graphic">
 				</section>
 				<section data-background="#fff">
 				    <h2>Git Update and Share</h2>
@@ -409,6 +456,20 @@ Please make sure to update tests as appropriate.
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
+
+			function allowDrop(ev) {
+			  ev.preventDefault();
+			}
+			
+			function drag(ev) {
+			  ev.dataTransfer.setData("text", ev.target.id);
+			}
+			
+			function drop(ev) {
+			  ev.preventDefault();
+			  var data = ev.dataTransfer.getData("text");
+			  ev.target.appendChild(document.getElementById(data));
+			}
 		</script>
 	</body>
 </html>
