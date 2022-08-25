@@ -520,7 +520,79 @@
 					</ul>
 		
 				</section>
+				<section data-background="#fff" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
+					<h3>Switch Statement</h3>
+					<div id="flexcontain">
+						<div class="box">
+							<pre style="box-shadow: none;">
+								<code style="font-size: 18px; height: 290px;"  data-trim contenteditable>
+									int day = 4;
+									switch (day) {
+									  case 1:
+										System.out.println("Monday");
+										break;
+									  case 2:
+										System.out.println("Tuesday");
+										break;
+									  case 3:
+										System.out.println("Wednesday");
+										break;
+									  case 4:
+										System.out.println("Thursday");
+										break;
+									  case 5:
+										System.out.println("Friday");
+										break;
+									  case 6:
+										System.out.println("Saturday");
+										break;
+									  case 7:
+										System.out.println("Sunday");
+										break;
+									}
 
+								</code>
+							</pre>
+						</div>
+						<div class="box">
+							<div id="flexcontain">
+								<div class="box red" style="font-size: 24px; margin: 10px; height: 235px; background-color: #2d4650;"><p>Similar to nested if/else statments, but some would consider a simpler syntax.</p><p>Consider using switch when making few comparison + what you are comparing doesn't change often. <code> Days of week, Meal selection, Calendar months, etc..</code></code></p></div>
+								<div class="box blue" style="font-size: 24px; margin: 10px; height: 235px; background-color: #2d4650;"><p>The<strong>break</strong>keyword allows you to immediately break out of the structure</p><p>The <strong>default</strong>keyword specifies some code to run if there is no case match</p></div>
+							</div>
+						</div>
+			  		</div>
+				</section>
+				<section data-background="#fff">
+				
+					<p>Ternary</p>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 28px; margin: 10px; height: 235px; background-color: #2d4650;"><p>Use the lowest or highest value in each range</p></div>
+						<div class="box blue" style="font-size: 28px; margin: 10px; height: 235px; background-color: #2d4650;"><p>Adjust the question logic when using highest versus lowest values</p></div>
+
+						<div class="box yellow" style="font-size: 22px; margin: 10px; background-color: #ffffff;">
+							<pre style="box-shadow: none;">
+								<code style="font-size: 18px;" class="codebox code-example__codebox"  data-trim contenteditable>
+										int LOWER_DRIVER_AGE = 16, UPPER_DRIVER_AGE = 120, age = 22; 
+										
+										
+										if(age >= LOWER_DRIVER_AGE && age <= UPPER_DRIVER_AGE){
+										
+									      System.out.println("Able to rent car for Harvey Car Rental");
+									       
+										}else{
+										
+										  System.out.println("Not able to rent car from Harvey Car Rental");
+										}
+									 
+									 
+	
+								</code>
+							</pre>
+						</div>
+
+					</div>
+				
+				</section>
 				<section data-background="../logic/images/structures/looping_bg.jpg">
 					<h1 style="color: #111111;  padding: 3px;">Looping Structure</h1>
 				</section>
