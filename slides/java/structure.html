@@ -525,8 +525,8 @@
 					<div id="flexcontain">
 						<div class="box">
 							<pre style="box-shadow: none;">
-								<code style="font-size: 17px; height: 790px;"  data-trim contenteditable>
-									int day = 4;
+								<code style="font-size: 15px; height: 890px;"  data-trim contenteditable>
+									int day = 2;
 									switch (day) {
 									  case 1:
 										System.out.println("Monday");
@@ -549,6 +549,8 @@
 									  case 7:
 										System.out.println("Sunday");
 										break;
+									  default:
+										System.out.println("Invalid input");
 									}
 
 								</code>
@@ -562,37 +564,60 @@
 						</div>
 			  		</div>
 				</section>
-				<!--<section data-background="#fff">
+				<section data-background="#fff">
 				
-					<p>Ternary</p>
+					<p>Ternary Operator</p>
+					<pre style="box-shadow: none;">
+						<code style="font-size: 15px;" class="codebox code-example__codebox"  data-trim contenteditable>
+							double studentLoanSingle = 1250000.00;
+							double studentLoanJoint = 250000.00;
+
+							double singleAnnualSalary = 120000.00;
+							double jointAnnualSalary = 255000.00;
+							
+							//Determine deduction if Single
+							String singleQualify = singleAnnualSalary <= studentLoanSingle ? "$10,000 deduction " : "$0 deduction";
+							 
+							//Determine deduction if Joint income
+							String jointQualify = jointAnnualSalary <= studentLoanJoint ? "$10,000 deduction " : "$0 deduction";
+							
+							System.out.println("If single, based on Annual Salary you will receive " +  singleQualify);
+							System.out.println("If joint, based on Annual Salary you will receive " +  jointQualify);
+						</code>
+					</pre>
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 28px; margin: 10px; height: 235px; background-color: #2d4650;"><p>Use the lowest or highest value in each range</p></div>
-						<div class="box blue" style="font-size: 28px; margin: 10px; height: 235px; background-color: #2d4650;"><p>Adjust the question logic when using highest versus lowest values</p></div>
-
-						<div class="box yellow" style="font-size: 22px; margin: 10px; background-color: #ffffff;">
-							<pre style="box-shadow: none;">
-								<code style="font-size: 18px;" class="codebox code-example__codebox"  data-trim contenteditable>
-										int LOWER_DRIVER_AGE = 16, UPPER_DRIVER_AGE = 120, age = 22; 
-										
-										
-										if(age >= LOWER_DRIVER_AGE && age <= UPPER_DRIVER_AGE){
-										
-									      System.out.println("Able to rent car for Harvey Car Rental");
-									       
-										}else{
-										
-										  System.out.println("Not able to rent car from Harvey Car Rental");
-										}
-									 
-									 
-	
-								</code>
-							</pre>
-						</div>
-
+						<div class="box red" style="font-size: 28px; margin: 10px; height: 100px; background-color: #eee; color: black;"><p><strong>Ternary Operator: </strong>Simlar to if/else structure but simpler syntax</p></div>
 					</div>
 				
-				</section>-->
+				</section>
+				<section data-background="#fff" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
+					<h3>Quiz Question 4</h3>
+					<pre style="box-shadow: none;">
+						<code style="font-size: 15px; height: 200px;"  data-trim contenteditable>
+							final double STUDENT_LOAN_SINGLE = 1250000.00;
+							double singleAnnualSalary = 125000.00;
+
+							//Determine deduction if Single
+							String sQualify = singleAnnualSalary > STUDENT_LOAN_SINGLE ? "$10,000 deduction " : "$0 deduction";
+
+							System.out.println("If single, based on Annual Salary you will receive " +  sQualify);
+
+						</code>
+					</pre>
+					<div id="flexcontain">
+						<div class="box">
+							<p style="font-size: 27px;">Given the code above, which option will output to the console?</p>
+							
+							<input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
+							<label for="attendance1" style="font-size: 20px;">A) If single, based on Annual Salary you will receive $10,000 deduction</label><br>
+							<input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
+							<label for="attendance2" style="font-size: 20px;">B) If single, based on Annual Salary you will receive $0 deduction</label><br>  
+							<input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+							<label for="attendance3" style="font-size: 20px;">C) No output, Syntax error</label><br>
+
+						</div>
+			  		</div>
+				</section>
 				<section data-background="../logic/images/structures/looping_bg.jpg">
 					<h1 style="color: #111111;  padding: 3px;">Looping Structure</h1>
 				</section>
