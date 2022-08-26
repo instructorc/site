@@ -520,12 +520,12 @@
 					</ul>
 		
 				</section>
-				<section data-background="#fff" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
+				<section data-background="#eee"  class="present">
 					<h3>Switch Statement</h3>
 					<div id="flexcontain">
 						<div class="box">
-							<pre style="box-shadow: none;">
-								<code style="font-size: 15px; height: 990px;"  data-trim contenteditable>
+							<pre style="box-shadow: none; height: 800px;">
+								<code style="font-size: 14px;"  data-trim contenteditable>
 									int day = 2;
 									switch (day) {
 									  case 1:
@@ -558,8 +558,8 @@
 						</div>
 						<div class="box">
 							<div id="flexcontain">
-								<div class="box red" style="font-size: 22px; margin: 10px; padding: 12px; height: 235px; background-color: #eee; color: black;"><p>Similar to nested if/else statments, but some would consider a simpler syntax.</p><p>Consider using switch when making few comparison + what you are comparing doesn't change often. <code> Days of week, Meal selection, Calendar months, etc..</code></code></p></div>
-								<div class="box blue" style="font-size: 24px; margin: 10px; padding: 12px; height: 235px; background-color: #eee; color: black;"><p>The<strong>break</strong> keyword allows you to immediately break out of the structure</p><p>The <strong>default</strong> keyword specifies some code to run if there is no case match</p></div>
+								<div class="box red" style="font-size: 22px; margin: 10px; padding: 12px; height: 235px; background-color: #eee; color: black;"><p>Similar to nested if/else statments, but some would consider a simpler syntax.</p><p>Consider using switch when making few comparison and data you deciding doesn't change often.  Such as: <br> <code> Days of week, Meal selection, Calendar months, etc..</code></code></p></div>
+								<div class="box blue" style="font-size: 24px; margin: 10px; padding: 12px; height: 235px; background-color: #eee; color: black;"><p>The<strong> break</strong> keyword allows you to immediately break out of the structure</p><p>The <strong>default</strong> keyword specifies some code to run if there is no case match</p></div>
 							</div>
 						</div>
 			  		</div>
@@ -617,6 +617,47 @@
 
 						</div>
 			  		</div>
+				</section>
+				<section data-background="#fff" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
+					<h3>Quiz Question 5</h3>
+					<pre style="box-shadow: none;">
+						<code style="font-size: 15px; height: 200px;"  data-trim contenteditable>
+							final int LOWER_DRIVER_AGE = 16, UPPER_DRIVER_AGE = 120;
+							int age = 22; 
+			
+							if(age < LOWER_DRIVER_AGE || age >= UPPER_DRIVER_AGE){
+								System.out.println("Not able to rent car");  
+							}else{
+								System.out.println("Able to rent car");
+							}
+
+						</code>
+					</pre>
+					<div id="flexcontain">
+						<div class="box">
+							<p style="font-size: 27px;">Given the code above, which of the statments is incorrect?</p>
+							
+							<input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
+							<label for="attendance1" style="font-size: 20px;">A) If the variable age is 16, Output = Not able to rent car </label><br>
+							<input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
+							<label for="attendance2" style="font-size: 20px;">B) If the variable age is 120, Output = Able to rent car</label><br>  
+							<input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+							<label for="attendance3" style="font-size: 20px;">C) If the variable age is 22, Output = Able to rent car</label><br>
+							<input type="radio" id="age4" style="transform: scale(2);" name="structure" value="9">
+							<label for="attendance4" style="font-size: 20px;">D) If the variable age is 121, Output = Not able to rent car</label><br>
+
+						</div>
+			  		</div>
+				</section>
+				<section data-background="#fff">
+				
+					<p>Learning Activity</p>
+					<img src="images/structures/structure_coding_prob.PNG" width="550" alt="decision structure problem from program and design book">
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; height: 200px; background-color: #eee; color: black;"><p><strong>1)Identify all possible structures</strong><br>Underline sequence, circle selection </p></div>
+						<div class="box red" style="font-size: 24px; margin: 10px; height: 200px; background-color: #eee; color: black;"><p><strong>2)Code in Java</strong><br>Import Random Class Library; use only sequence and selection structures </p></div>
+					</div>
+				
 				</section>
 				<section data-background="../logic/images/structures/looping_bg.jpg">
 					<h1 style="color: #111111;  padding: 3px;">Looping Structure</h1>
