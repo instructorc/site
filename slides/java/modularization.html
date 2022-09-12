@@ -5,7 +5,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<title>Modularization</title>
-
+		<meta name="description" content="Java Programming - Modularization, Methods">
+		<meta name="keywords" content="Methods, Modularization, Java methods, method overloading">
+		<meta name="author" content="C. Fulton">
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/dope.css">
 
@@ -28,7 +30,7 @@
 			<div class="slides">
 				<section data-background="white">
 				    <h2>Modularization </h2>
-				    <img src="images/methods/methods_home.png" width="500" alt="methods image">
+				    <img src="../logic/images/methods/methods_home.png" width="500" alt="methods image">
 				    <h3>Instructor: Chris Fulton</h3>
 				</section>
 				<section data-background="#eee">
@@ -46,22 +48,50 @@
 						<li>Overloading Methods</li>
 						<li>Using predefined Methods</li>
 						<li>Recursion</li>
-						<!--<ul>
-							<li>Definition of Array | Array Terminology | Array Syntax</li>
-							<li>Practical Array Use Cases</li>
-							<ul>
-								<li>Replacing Nested Decisions</li>
-								<li>Searching an array for exact match</li>
-								<li>Parallel Arrays</li>
-							</ul>-->
+
 						</ul>
 
 
 				    </ul>
 				</section>
-				<section data-background="images/methods/method_parts.jpg">
+
+				<section data-background="images/intro/compartment.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Methods</h1>
+				</section>
+				<section data-background="#fff">
+					<h4>Understanding Methods</h4>
+						
+						<ul>	
+							<li style="font-size: 26px;"><b>Methods</b></li>
+							<ul>
+								<li style="font-size: 20px;">An encapsulated series of statements that perform a task</li>
+								<li style="font-size: 20px;">Using a method is called <b>invoking</b> or <b>calling</b> the method</li>	
+								<li style="font-size: 20px;"><b>Two Step Process</b> - Every Method should be defined then called/invoked</li>
+							</ul>
+							<li style="font-size: 26px;"><b>Implementation Hiding</b></li>
+							<ul>
+								<li style="font-size: 20px;">keeps the details of a methods operations hidden.</li>
+								<li style="font-size: 20px;">the only concern is the way you <b>interface</b>, or interact with the method</li>
+								<li style="font-size: 20px;">methods exist in a black box - a virtual device you can use without knowing how it works internally.</li>
+							</ul>
+
+						</ul>
+
+				</section>
+				<section data-background="#2d4650">
+					<h1 style="color: white;">Why Modularize a program</h1>
+				</section>
+				<section data-background="#eee">
+					<h3>Why Methods?</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 22px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">Easier to Debug and Test</b> <br> Each discrete task has its own discrete section of code if a program is designed with modularity in mind</p><p>If there is a problem in a particular method, the programmer knows where to look and can manage a smaller portion of code.</p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">Reusable Code</b> <br> Modular code allows programmers to easily reuse code. If particular tasks are sectioned off to certain functions or classes, this means that the programmer can reuse that particular code whenever she needs to perform that task again.</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">Readability and Reliability</b> <br> Modular code is code that is highly organized. To organize code based on task means that the programmer can organize each piece of code based on what it does.</p><p>Code that is easier to read, easier to debug, easier to maintain and easier to share will always run smoother with less errors.</p></div>
+					</div>
+				</section>	
+				<section data-background="../logic/images/methods/method_parts.jpg">
 					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">Method Anatomy</h1>
-				</section>				
+				</section>			
 				<section data-background="#fff">
 					<h3>Parts of a method</h3>
 					<div id="flexcontain">
@@ -75,12 +105,41 @@
 				</section>
 				<section data-background="#252523">
 					<h2>Method Breakdown</h2>
-					<img src="images/methods/method_diagram.png"  style="box-shadow: none;" alt="method anatomy"/>
+					<img src="../logic/images/methods/method_diagram.png"  style="box-shadow: none;" alt="method anatomy"/>
+				</section>
+				<section data-background="#fff">
+					<h4>Access Modifiers</h4>
+					<img src="images/intro/access_modifiers.PNG" width="770" alt="method break-down diagram">
+					<p style="font-size: 22px;">Visible to the package, the default. No modifiers are needed | Visible to the class only (modifier private) | Visible to the world (modifier public) | Visible to the package and all subclasses (modifier protected)</p>
+				</section>
+				<section data-background="#fff">
+					<h4>Static vs. Non-static methods</h4>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px; background-color: #2d4650; color: white;"><b>Static</b></li>
+								<ul>
+									<li style="font-size: 20px;">lets a method run without any instance of the class. A static method belongs to the class, so there’s no need to create an instance of the class to access it. </li>
+									<li style="font-size: 20px;">belongs to the class, so there’s no need to create an instance of the class to access it.  A static method is called using the class (className.methodName) as opposed to to an instance reference (new instanceOfClass = class; instanceOfClass.methodName.) </li>								
+								</ul>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>
+								<li style="font-size: 26px; background-color: #2d4650; color: white;"><b>Non-Static</b></li>
+								<ul>
+									<li style="font-size: 20px;">A non-static method belongs to an object of the class and you have to create an instance of the class to access it.</li>
+									<li style="font-size: 20px;">Non-static methods can access any static method and any static variable without creating an instance of the class.</li>
+								</ul>
+							</ul>
+							
+						</div>
+					</div>
 				</section>
 				<section data-background="#fff">
 					<h3>Methods without Parameters</h3>
 				
-					<img src="images/methods/methods_noparams.png" style="float: left;" width="400" alt="Diagram of program with no parameters">
+					<img src="../logic/images/methods/methods_noparams.png" style="float: left;" width="400" alt="Diagram of program with no parameters">
 					<!--<img src="images/methods/methods_withparams.PNG" style="float: right;" width="400" alt="Diagram of program with parameters">-->
 					
 					<div id="flexcontain">
@@ -92,7 +151,7 @@
 				<section data-background="#fff">
 					<h3>Methods with Parameters</h3>
 				
-					<img src="images/methods/methods_withparams.PNG" style="float: right;" width="400" alt="Diagram of program with parameters">
+					<img src="../logic/images/methods/methods_withparams.PNG" style="float: right;" width="400" alt="Diagram of program with parameters">
 					
 					<div id="flexcontain">
 						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">With Parameters</b> <br> When you call a method from a program, you must know three things:<br> 1) Name of the called method <br> 2) Type of info. to sent to the method,if any <br> 3) Type of return data to expect from method, if any </div>
@@ -102,7 +161,7 @@
 				</section>
 				<section data-background="#fff">
 					<h3>Activity 1</h3>
-					<img src="images/structures/produce_list_cp.jpg" width="400" alt="Picture of produce students will code into a array">
+					<img src="../logic/images/structures/produce_list_cp.jpg" width="400" alt="Picture of produce students will code into a array">
 					<div id="flexcontain">
 						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Using the above image - define a global array within the main method that holds each of the items above. </p></div>
 						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Create a method that outputs each of the items within the diagram</p></div>
@@ -112,13 +171,13 @@
 					
 				
 				</section>
-				<section data-background="images/methods/overloaded_bg.jpg">
+				<section data-background="../logic/images/methods/overloaded_bg.jpg">
 					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">Overloading Methods</h1>
 				</section>
 				<section data-background="#fff">
 					<h3>Overloaded Methods</h3>
 				
-					<img src="images/methods/overload_diagram.png" style="float: right;" width="400" alt="Diagram of program with overloaded methods">
+					<img src="../logic/images/methods/overload_diagram.png" style="float: right;" width="400" alt="Diagram of program with overloaded methods">
 					
 					<div id="flexcontain">
 						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #eee; color: #111;"><p><b style="font-size: 28px;">Overloading</b> <br> Involves supplying diverse meanings for a single identifier<br> <b>Overload a Method</b><br>Write multiple methods with a shared name but different parameter lists <br> Language translator understands which version of the method to use based on the arguments used <br> <b>Polymorphism</b><br>Ability of a method to act appropriately according to the context<br>Literally, polymorphism means “many forms”</p> </div>
@@ -126,15 +185,15 @@
 
 					</div>
 				</section>
-				<section data-background="images/methods/overloaded_bg.jpg">
+				<section data-background="../logic/images/methods/overloaded_bg.jpg">
 					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">Advanced Method Concepts</h1>
 				</section>
 				<section data-background="#fff">
 					<h3>Fibonacci sequence in the World</h3>
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><img src="images/methods/hurricane_spiral.jpg" style="width: 100%;" alt="fibonacci in hurricane spiral"></div>
-						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><img src="images/methods/shell.jpg" style="width: 100%;" alt="fibonacci in sea shell"></div>
-						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><img src="images/methods/stock.png" style="width: 100%;" alt="fibonacci in stock trading"></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><img src="../logic/images/methods/hurricane_spiral.jpg" style="width: 100%;" alt="fibonacci in hurricane spiral"></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><img src="../logic/images/methods/shell.jpg" style="width: 100%;" alt="fibonacci in sea shell"></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><img src="../logic/images/methods/stock.png" style="width: 100%;" alt="fibonacci in stock trading"></div>
 
 					</div>
 					<p>The Fibonacci sequence is one of the most famous formulas in mathematics.  It is significant because of the so-called golden ratio of 1.618, or its inverse 0.618.</p>
@@ -144,8 +203,8 @@
 				<section data-background="#fff">
 					<h3>Fibonacci sequence Formula and Output</h3>
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 20px; margin: 10px; background-color: white; height: 225px; color: #111;"><img src="images/methods/fibo_formula.png" style="width: 100%;" alt="fibonacci formula"></div>
-						<div class="box green" style="font-size: 22px; margin: 10px; background-color: white; height: 225px; color: #111;"><img src="images/methods/fibo_output.png" style="width: 100%;" alt="fibonacci output"></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: white; height: 225px; color: #111;"><img src="../logic/images/methods/fibo_formula.png" style="width: 100%;" alt="fibonacci formula"></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: white; height: 225px; color: #111;"><img src="../logic/images/methods/fibo_output.png" style="width: 100%;" alt="fibonacci output"></div>
 
 					</div>
 					<p>The Fibonacci sequence is one of the most famous formulas in mathematics.  It is significant because of the so-called golden ratio of 1.618, or its inverse 0.618.</p>
@@ -154,11 +213,11 @@
 				</section>
 				<section data-background="#fff">
 					<h3>Activity 2</h3>
-					<img src="images/structures/fibonacci-sequence.jpg" width="500" alt="fibonacci sequence diagram">
+					<img src="../logic/images/structures/fibonacci-sequence.jpg" width="500" alt="fibonacci sequence diagram">
 					<div id="flexcontain">
 						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Look up the formula for the fibonacci sequence and do research on this mathematical phenomenon</p></div>
 						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Think through and apply the correct structures to fulfill the requirements of the sequence using recursion.</p></div>
-						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Code the program in C#</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Code the program in Java</p></div>
 
 					</div>
 					
@@ -216,69 +275,7 @@
 					
 				
 				</section>
-				<section data-background="#fff">
-					<h3>Activity 1  </h3>
 
-					<div id="flexcontain">
-						<div class="box_two" style="margin: 10px;">
-							<ul>	
-								<li><b>Using the list to the right</b></li>
-								<ul>
-									<li>Create an array accessing each individual element</li>
-									<li>Using the same list, create an array using the colletion initializer </li>
-									
-								</ul>
-
-							</ul>
-
-						</div>
-						<div class="box_two" style=" margin: 10px;">
-							<img src="images/structures/grocery_list.jpg" alt="picture of grocery list">
-						</div>
-					</div>
-
-					
-				</section>
-				<section data-background="images/structures/replace_nested_bg.jpg">
-					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">Array Use Cases and Examples</h1>
-				</section>
-				<section data-background="#fff">
-					<h3 style="color: white; background-color: rgb(106, 136, 50);">Replacing Nested Decisions </h3>
-					<p style="font-size: 28px; margin-bottom: -12px;">The array reduces the number of statements needed</p>
-					<div id="flexcontain">
-						<div class="box_two" style="margin: 10px;">
-							<img src="images/structures/old_if_new_array.png" height="535" alt="Example of old nested decisions">
-						</div>
-						<div class="box_two" style=" margin: 10px;">
-							<img src="images/structures/new_if_new_array.PNG" alt="Example of replacing nested decisions with array">
-						</div>
-					</div>
-				</section>
-				<section data-background="#fff">
-					<h3>Activity 2</h3>
-
-					<div id="flexcontain">
-						<div class="box_two" style="margin: 10px;">
-							<ul style="font-size: .7em;">	
-								<li><b>Six dependent count accumulators are redefined as a single array</b></li>
-								<ul>
-									<li style="background-color: #ff5500;">Variable as a subscript to the array</li>
-									<li style="background-color: #26e600;">Array is initialized with six indices to 0 </li>
-									<li style="background-color: #44c8f5;">Incremented by 1 each time the logic passes through the loop</li>
-								</ul>
-								<img src="images/structures/array_nest_ex_one.png" alt="array example diagram">
-
-							</ul>
-
-						</div>
-						<div class="box_two" style=" margin: 10px;">
-							<img src="images/structures/array_nest_ex_two.png" alt="array example diagram">
-						</div>
-					</div>
-				</section>
-				<section data-background="images/structures/array_bg.jpg">
-					<h1 style="color: black; background-color: #ffffffe0; padding: 3px;">Searching an Array for Exact Match</h1>
-				</section>
 				<section data-background="#fff">
 					<h3 style="color: white; background-color: rgb(106, 136, 50);">Searching for Exact Match</h3>
 					<p style="font-size: 28px; margin-bottom: -12px;">Sometimes you must search through an entire array to find a value –called a <b>linear search</b></p>
