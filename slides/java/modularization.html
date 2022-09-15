@@ -36,18 +36,21 @@
 				<section data-background="#eee">
 				    <h3>Learning Objectives</h3>
 				    <ul style="font-size: 28px;">
-						<li>Method Anatomy</li>
+						<li>Explore the structure of a method definition, including parameters, visibility and return values</li>
 						<ul>
-							<li>Method Keywords</li>
-							<li>local and global variables</li>
-							<li>Parameters and arguments</li>
-							<li>Calling/Invoking Methods</li>
-							<li>Static and Non-Static Methods</li>
-							<li>Arguments and Parameters</li>
+							<li>Method Anatomy</li>
+							<ul>
+								<li>Method Keywords</li>
+								<li>Calling/Invoking Methods</li>
+								<li>local and global variables</li>
+								<li>Parameters and arguments</li>
+								<li>Arguments and Parameters</li>
+							</ul>
 						</ul>
-						<li>Overloading Methods</li>
-						<li>Using predefined Methods</li>
-						<li>Recursion</li>
+						<li>Describe the effect of the static modifier on methods and data.</li>
+						<li>Discuss issues related to the design of methods, including method decomposition and method overloading.</li>
+						<li>Practice with predefined Methods from the Java Standard Library</li>
+						<li>Understanding how recursion works</li>
 
 						</ul>
 
@@ -93,7 +96,7 @@
 					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">Method Anatomy</h1>
 				</section>			
 				<section data-background="#fff">
-					<h3>Parts of a method</h3>
+					<h3>Why methods?</h3>
 					<div id="flexcontain">
 						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #D9E5D6; color: #1f2d3d;"><p>Methods contains a series of statements that carry out a task</p></div>
 						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #00A7E1; color: white;"><p> You can Invoke or call a method from another program or method</p></div>
@@ -109,33 +112,10 @@
 				</section>
 				<section data-background="#fff">
 					<h4>Access Modifiers</h4>
-					<img src="images/intro/access_modifiers.PNG" width="770" alt="method break-down diagram">
-					<p style="font-size: 22px;">Visible to the package, the default. No modifiers are needed | Visible to the class only (modifier private) | Visible to the world (modifier public) | Visible to the package and all subclasses (modifier protected)</p>
+					<img src="images/methods/access_modifiers.png" width="770" alt="method break-down diagram">
+					<!--<p style="font-size: 22px;">Visible to the package, the default. No modifiers are needed | Visible to the class only (modifier private) | Visible to the world (modifier public) | Visible to the package and all subclasses (modifier protected)</p>-->
 				</section>
-				<section data-background="#fff">
-					<h4>Static vs. Non-static methods</h4>
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<ul>	
-								<li style="font-size: 26px; background-color: #2d4650; color: white;"><b>Static</b></li>
-								<ul>
-									<li style="font-size: 20px;">lets a method run without any instance of the class. A static method belongs to the class, so there’s no need to create an instance of the class to access it. </li>
-									<li style="font-size: 20px;">belongs to the class, so there’s no need to create an instance of the class to access it.  A static method is called using the class (className.methodName) as opposed to to an instance reference (new instanceOfClass = class; instanceOfClass.methodName.) </li>								
-								</ul>
-							</ul>
-						</div>
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<ul>
-								<li style="font-size: 26px; background-color: #2d4650; color: white;"><b>Non-Static</b></li>
-								<ul>
-									<li style="font-size: 20px;">A non-static method belongs to an object of the class and you have to create an instance of the class to access it.</li>
-									<li style="font-size: 20px;">Non-static methods can access any static method and any static variable without creating an instance of the class.</li>
-								</ul>
-							</ul>
-							
-						</div>
-					</div>
-				</section>
+
 				<section data-background="#fff">
 					<h3>Methods without Parameters</h3>
 				
@@ -160,7 +140,7 @@
 					</div>
 				</section>
 				<section data-background="#fff">
-					<h3>Activity 1</h3>
+					<h3>Learning Activity</h3>
 					<img src="../logic/images/structures/produce_list_cp.jpg" width="400" alt="Picture of produce students will code into a array">
 					<div id="flexcontain">
 						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Using the above image - define a global array within the main method that holds each of the items above. </p></div>
@@ -170,6 +150,30 @@
 					</div>
 					
 				
+				</section>
+				<section data-background="#fff">
+					<h4>Static vs. Non-static methods</h4>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px; background-color: #2d4650; color: white;"><b>Static</b></li>
+								<ul>
+									<li style="font-size: 20px;">lets a method run without any instance of the class. A static method belongs to the class, so there’s no need to create an instance of the class to access it. </li>
+									<li style="font-size: 20px;">belongs to the class, so there’s no need to create an instance of the class to access it.  A static method is called using the class (className.methodName) as opposed to to an instance reference (new instanceOfClass = class; instanceOfClass.methodName.) </li>								
+								</ul>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>
+								<li style="font-size: 26px; background-color: #2d4650; color: white;"><b>Non-Static</b></li>
+								<ul>
+									<li style="font-size: 20px;">A non-static method belongs to an object of the class and you have to create an instance of the class to access it.</li>
+									<li style="font-size: 20px;">Non-static methods can access any static method and any static variable without creating an instance of the class.</li>
+								</ul>
+							</ul>
+							
+						</div>
+					</div>
 				</section>
 				<section data-background="../logic/images/methods/overloaded_bg.jpg">
 					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">Overloading Methods</h1>
@@ -212,7 +216,7 @@
 				
 				</section>
 				<section data-background="#fff">
-					<h3>Activity 2</h3>
+					<h3>Learning Activity</h3>
 					<img src="../logic/images/structures/fibonacci-sequence.jpg" width="500" alt="fibonacci sequence diagram">
 					<div id="flexcontain">
 						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Look up the formula for the fibonacci sequence and do research on this mathematical phenomenon</p></div>
@@ -376,7 +380,7 @@
 						</div>
 					</div>
 				</section>
-				<!--<section data-background="#fff">
+				<section data-background="#fff">
 					<h3>The Three Structures</h3>
 					<p> Sequence   &#10022;    Selection    &#10022;  Looping</p>
 					<div id="flexcontain">
@@ -408,24 +412,7 @@
 				<section data-background="white">
 					<iframe width="760" height="515" src="https://www.youtube.com/embed/eSYeHlwDCNA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</section>
-				<section data-background="#fff">
-					<h3>Sequence</h3>
-					<p style="font-size: 24px;"> Input/Output   &#10022;    Calculation  &#10022;  Declaring/Initializing Variables</p>
-					<div id="flexcontain">
-						<div class="box_two" style="margin: 10px;">
-							<ul>	
-								<li><b>Do</b> one process</li><br>
-								<li><b>Do</b> two process</li>	
-								<li><b>Do</b> three process</li>
-							</ul>
-						</div>
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<img src="images/structures/Sequence.PNG" alt="picture of absolute versus relative file structure">
-						</div>
-					</div>
 
-					
-				</section>
 				<section data-background="#fff">
 					<h3>Selection (Dual Alternative)</h3>
 					<p style="font-size: 28px;"> Dual Alternatives  &#10022;    Single Alternatives  </p>
@@ -450,51 +437,6 @@
 					
 				</section>
 				
-				<section data-background="#fff">
-					<h3>Selection (Single Alternative)</h3>
-					<p style="font-size: 28px;"> Dual Alternatives  &#10022;    Single Alternatives  </p>
-					<div id="flexcontain">
-						<div class="box_two" style="margin: 10px;">
-							<ul>	
-								<li><b>Single Alternative IF's</b> - An elseclause is not required</li><br>
-							</ul>
-							<code style="font-size: 28px;">
-								<b>IF</b> employee belongs to dentalPlan <b>THEN</b><br>
-								<b>DO</b> deduct $40 from employeeGrossPay
-								<b>ENDIF</b>
-							</code>
-						</div>
-						<div class="box_two" style=" margin: 10px;">
-							<img src="images/structures/single_alternative.PNG" alt="">
-						</div>
-					</div>
-
-					
-				</section>
-				<section data-background="#fff">
-					<h3>Looping Structure </h3>
-					<p style="font-size: 28px;"> Iterations  &#10022;    Repetition  </p>
-					<div id="flexcontain">
-						<div class="box_two" style="margin: 10px;">
-							<ul>	
-								<li><b>Do something repetitively</b> - Do this until I tell you to stop</li>
-								<li>Good for counting and iterating through list</li>
-							</ul>
-							<code style="font-size: 24px;">
-								<p><b>IF</b> some condition is true <b>THEN</b></p>
-								&nbsp;&nbsp;<p><b>DO</b> one process</p>
-								<p><b>ELSE</b></p>
-								&nbsp;&nbsp;<p><b>DO</b> the other process</p>
-								<p><b>ENDIF</b></p>
-							</code>
-						</div>
-						<div class="box_two" style=" margin: 10px;">
-							<img src="images/structures/looping.PNG" alt="">
-						</div>
-					</div>
-
-					
-				</section>
 				<section data-background="#fff">
 					<h3>A Few Considerations</h3>
 					<div id="flexcontain">
