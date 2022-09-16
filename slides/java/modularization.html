@@ -95,7 +95,7 @@
 				<section data-background="../logic/images/methods/method_parts.jpg">
 					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">Method Anatomy</h1>
 				</section>			
-				<section data-background="#fff">
+				<!--<section data-background="#fff">
 					<h3>Why methods?</h3>
 					<div id="flexcontain">
 						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #D9E5D6; color: #1f2d3d;"><p>Methods contains a series of statements that carry out a task</p></div>
@@ -105,7 +105,7 @@
 						<div class="box orange" style="font-size: 22px; margin: 10px; background-color: #FF9B42; color: #1f2d3d;"><p>Methods provide structure for testing and maintainability</p></div>
 					</div>
 				
-				</section>
+				</section>-->
 				<section data-background="#252523">
 					<h2>Method Breakdown</h2>
 					<img src="../logic/images/methods/method_diagram.png"  style="box-shadow: none;" alt="method anatomy"/>
@@ -115,7 +115,30 @@
 					<img src="images/methods/access_modifiers.png" width="770" alt="method break-down diagram">
 					<!--<p style="font-size: 22px;">Visible to the package, the default. No modifiers are needed | Visible to the class only (modifier private) | Visible to the world (modifier public) | Visible to the package and all subclasses (modifier protected)</p>-->
 				</section>
-
+				<section data-background="#fff">
+					<h4>Static vs. Non-static methods</h4>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px; background-color: #2d4650; color: white;"><b>Static</b></li>
+								<ul>
+									<li style="font-size: 20px;">lets a method run without any instance of the class. A static method belongs to the class, so there’s no need to create an instance of the class to access it. </li>
+									<li style="font-size: 20px;">belongs to the class, so there’s no need to create an instance of the class to access it.  A static method is called using the class (className.methodName) as opposed to to an instance reference (new instanceOfClass = class; instanceOfClass.methodName.) </li>								
+								</ul>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>
+								<li style="font-size: 26px; background-color: #2d4650; color: white;"><b>Non-Static</b></li>
+								<ul>
+									<li style="font-size: 20px;">A non-static method belongs to an object of the class and you have to create an instance of the class to access it.</li>
+									<li style="font-size: 20px;">Non-static methods can access any static method and any static variable without creating an instance of the class.</li>
+								</ul>
+							</ul>
+							
+						</div>
+					</div>
+				</section>
 				<section data-background="#fff">
 					<h3>Methods without Parameters</h3>
 				
@@ -151,30 +174,7 @@
 					
 				
 				</section>
-				<section data-background="#fff">
-					<h4>Static vs. Non-static methods</h4>
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<ul>	
-								<li style="font-size: 26px; background-color: #2d4650; color: white;"><b>Static</b></li>
-								<ul>
-									<li style="font-size: 20px;">lets a method run without any instance of the class. A static method belongs to the class, so there’s no need to create an instance of the class to access it. </li>
-									<li style="font-size: 20px;">belongs to the class, so there’s no need to create an instance of the class to access it.  A static method is called using the class (className.methodName) as opposed to to an instance reference (new instanceOfClass = class; instanceOfClass.methodName.) </li>								
-								</ul>
-							</ul>
-						</div>
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<ul>
-								<li style="font-size: 26px; background-color: #2d4650; color: white;"><b>Non-Static</b></li>
-								<ul>
-									<li style="font-size: 20px;">A non-static method belongs to an object of the class and you have to create an instance of the class to access it.</li>
-									<li style="font-size: 20px;">Non-static methods can access any static method and any static variable without creating an instance of the class.</li>
-								</ul>
-							</ul>
-							
-						</div>
-					</div>
-				</section>
+
 				<section data-background="../logic/images/methods/overloaded_bg.jpg">
 					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">Overloading Methods</h1>
 				</section>
