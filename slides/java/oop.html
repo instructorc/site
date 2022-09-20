@@ -41,43 +41,35 @@
 			<div class="slides">
 				<section data-background="#e6e7e8">
 				    <h4>Object Oriented Programming in Java</h4>
-				    <img src="images/io/csharplogo.png" width="390" style="box-shadow: none; border: none;"alt="c sharp logo">
+				    <img src="images/intro/java_logo.png" width="390" style="box-shadow: none; border: none;"alt="Java logo">
 				    <h3>Instructor: Chris Fulton</h3>
 				</section>
 				<section data-background="#eee">
 				    <h3>Learning Agenda</h3>
 				    <ul style="font-size: 28px;">
-						<li>Understanding Object Oriented Principles</li>
+						<li>Discuss Object Oriented Principles </li>
 						<ul>
 							<li>What is OOP?</li>
 							<li>Terminology - Polymorphism, Encapsulation, Instantiation, Abstraction, Inheritance</li>
-							<li>Classes and Struct - Class Structure and Breakdown</li>
-							<ul>
-								<li> Getters Setters | Auto Implemented Properties | Constructors | ToString Method | Working Methods </li>
-								<li> Constructor and Object Initializer</li>
-								<li> Structs | Partial Classes</li>
-							</ul>
-		
 						</ul>
-						<li>Inheritance</li>
+						<li>Discuss the structure and content of a class definition</li>
 						<ul>
-							<li> Understanding Inheritance </li>
+							<li> Getters Setters | Constructors | ToString Method | Working Methods </li>
+							<li> Constructors - Overloaded Constructors and use cases</li>
+						</ul>
+						<li>Discuss the relationship among classes</li>
+						<ul>
+							<li>Understanding Inheritance </li>
 							<li>UML Modeling | UML Diagrams</li>
-							<li>Base Class | Child Classes | Abstract Classes | Interfaces | Virtual & Override keywords</li>
-							<li>Dependency Injection</li>
-							
-							
+							<li>Base Class | Child Classes | Abstract Classes | Interfaces </li>
+							<li>Overview of Design Patterns</li>
 						</ul>
 
 						<li>Generic's and Collections</li>
                        	<ul>
-                       		<li>Understanding collections and generics in c#</li>
-							<li>Strongly Typed vs. Loosely Typed</li>
-							<li>Systems.Collections.Generic namespace</li>
-							<li>List&lt;T&gt;class | Stacks&lt;T&gt; class | Queues&lt;T&gt;class | Dictionary&lt;Tkey, Tvalue&gt; class</li>
-	
+                       		<li>Understanding collections and generics in Java</li>
+							<li>Import Statements</li>
 						</ul>
-
 				    </ul>
 				</section>
 				<section data-background="#eee">
@@ -94,7 +86,7 @@
 
 						<div class="box green" style="font-size: 20px; margin: 10px; background-color: white; height: 250px;"><p style="color: black;"><b style="font-size: 22px;">Encapsulation</b> <br> enables a group of properties, methods and other members to be considered a single unit or object.<br> Encapsulation provides a way to protect data from accidental corruption.</p></div>
 						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: white; height: 250px;"><p style="color: black;"><b style="font-size: 22px;">Instantiation</b> <br> is used to create an object from a class (instantiate).</p><p style="color: black;"><b style="font-size: 22px;">Composition</b><br>Using an object within another object - defines a <b>has-a-relationship</b></p></div>
-						<div class="box red" style="font-size: 20px; margin: 10px; background-color: white; height: 250px;"><p style="color: black;"><b style="font-size: 22px;">Abstraction</b> <br> can be achieved using abstract classes in C#. C# allows you to create abstract classes that are used to provide a partial class implementation of an interface.</p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: white; height: 250px;"><p style="color: black;"><b style="font-size: 22px;">Abstraction</b> <br> can be achieved using abstract classes in Java. Java allows you to create abstract classes with either abstract classes or interfaces.</p></div>
 						<div class="box green" style="font-size: 20px; margin: 10px; background-color: white; height: 250px;"><p style="color: black;"><b style="font-size: 22px;">Polymorphism</b> <br> the ability of objects of different types to provide a unique interface for different implementations of methods. It is usually used in the context of late binding, where the behavior of an object to respond to a call to its method members is determined based on object type at run time. </p></div>
 						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: white; height: 250px;"><p style="color: black;"><b style="font-size: 22px;">Inheritance</b> <br> allows you to define a child class that reuses (inherits), extends, or modifies the behavior of a parent class. The class whose members are inherited is called the base class. The class that inherits the members of the base class is called the derived class.</p></div>
 					</div>
@@ -104,7 +96,7 @@
 					
 					<div id="flexcontain">
 						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<img src="images/intro/person-diagram.png" width="690" style="box-shadow: none; border: none;"alt="person object image"> 
+							<img src="../csharp/images/intro/person-diagram.png" width="690" style="box-shadow: none; border: none;"alt="person object image"> 
 							<p>Creating a simple model of a more complex thing, which represents its most important aspects in a way that is easy to work with for our program's purposes</p>
 
 						</div>
@@ -128,19 +120,19 @@
 									
     class Person
     {
-        private string name;
+        private String name;
         private int age;
         private string gender;
         private string interest;
         
         public void bio()
         {
-            Console.WriteLine($"{name} is {age} years old.  They like {interest}");
+            System.out.println(name + " is " + age + " years old.  They like " + interest );
         }
 
         public void Greeting()
         {
-            Console.WriteLine($"Hi! I'm {name}");
+            System.out.println("Hi! I'm " + name);
         }
 
     }
@@ -155,13 +147,9 @@
 				<section data-background="images/intro/capsule_img.jpg">
 					<h3 style="text-shadow: 4px 7px 10px #333;">Data Encapsulation</h3>
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 32px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: rgba(0,0,0, .7); color: white; font-weight: 900;"><p>GETTERS/SETTERS <br>old and new way</p></div>
-						<div class="box blue" style="font-size: 32px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: rgba(0,0,0, .7); color: white; font-weight: 900;"><p>AUTO IMPLEMENTED PROPERTIES</p></div>
-						
-
+						<div class="box red" style="font-size: 32px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: rgba(0,0,0, .7); color: white; font-weight: 900;"><p>GETTERS/SETTERS <br>Longer and shorter Syntax</p></div>
 					</div>
-					<p style="text-shadow: 4px 7px 10px #333;">Only methods from within the class can get and set data.  Auto-Implemented properties is c# syntactical sugar.  You can create a public data field when you want all objects of a class to contain the same value
-</p> 
+					
 				</section>
 				<section data-background="#fff">
 					<h3>Getter and Setters</h3>
@@ -172,7 +160,6 @@
 								<li style="font-size: 20px;"><b>Getter and Setter's - Accessor Methods</b></li>
 								<ul>
 									<li>A get property accessor is used to return the property value, and a set accessor is used to assign a new value. Something called Implementation Hiding</li>
-									<li>The <code>value</code> keyword is used to define the value being assigned by the set accessor.</li>
 								</ul>
 							</ul>
 
@@ -187,65 +174,43 @@
         private string gender;
         private string interest;
         
-        
-        public string Name
-        {
-        	get
-        	{
-        	   return name;
-        	}
-        	set
-        	{
-        	
-               name = value;
-            }
-        }
-        public int Age
-        {
-        	get
-        	{
-        	   return age;
-        	}
-        	set
-        	{
-        	
-               age = value;
-            }
-        }
-        public string Gender
-        {
-        	get
-        	{
-        	   return gender;
-        	}
-        	set
-        	{
-        	
-               gender = value;
-            }
-        
-        }
-        public string Interest
-        {
-        	get
-        	{
-        	   return interest;
-        	}
-        	set
-        	{
-        	
-               interest = value;
-            }
-        }
+        //SETTERS
+		public void setName(String name){
+			this.name = name;
+		}
+		public void setAge(int age){
+			this.age = age;
+		}
+		pubic void setGender(String gender){
+			this.gender = gender;
+		}
+
+		public void setInterest(String anInterest){
+			interest = anInterest;
+		}
+
+		//GETTERS
+        public String getName(){
+			return name;
+		}
+		public int getAge(){
+			return age;
+		}
+		public String getGender(){
+			return gender;
+		}
+		public String getInterest(){
+			return interest;
+		}
         
         public void bio()
         {
-            Console.WriteLine($"{Name} is {Age} years old.  They like {Interest}");
+            System.out.println(name + " is " + age " years old.  They like " + interest );
         }
 
         public void Greeting()
         {
-            Console.WriteLine($"Hi! I'm {Name}");
+            System.out.println("Hi! I'm " + name );
         }
 
     }
@@ -257,60 +222,16 @@
 					</div>
 
 				</section>
-				<section data-background="#fff">
-					<h3>AUTO IMPLEMENTED PROPERTIES</h3>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px; width: 300px;">
-							<ul>
-								<li style="font-size: 20px;"><b>Auto Implemented Properites - Fast Implementation</b></li>
-								<ul>
-									<li>The implementation is created for you automatically.  You cannot use auto-implemented property if you need to include customized statements within one of your accessors.</li>
-									<li>The cooresponding backing field is generated by the compiler and has an internal name that would not match the field's name if you code it yourself.</li>
-									<li>When a property only has a 'get' you should use a <b>readonly access modifier</b></li>							
-								</ul>
-							</ul>
 
-							
-							<pre>
-								<code style="font-size: 16px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
-									
-    class Person
-    {
-        public string Interest { get; set; }
-        public string Gender { get; set; }
-        public int Age { get; set; }
-        public string Name { get; set; }
-
-        public void bio()
-        {
-            Console.WriteLine($"{Name} is {Age} years old.  They like {Interest}");
-        }
-
-        public void Greeting()
-        {
-            Console.WriteLine($"Hi! I'm {Name}");
-        }
-
-    }
-							
-	
-								</code>
-							</pre>
-					
-					</div>
-
-				</section>
 				<section data-background="#fff">
 					<h4>Class and Object Relation</h4>
 					
 					<div id="flexcontain">
 						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<img src="images/intro/class_img.png" width="590" style="box-shadow: none; border: none;"alt="class object image">
+							<img src="../csharp/images/intro/class_img.png" width="590" style="box-shadow: none; border: none;"alt="class object image">
 							<ul>	
 								<li style="font-size: 20px;">A class is a blueprint of an object.</li>
 								<li style="font-size: 20px;">Once we have a blueprint, we can create multiple instances. When you create an object, you call its constructor.</li>
-								<li style="font-size: 20px;">All Classes inherit from System.Object.</li>
 							</ul>
 						
 						</div>
@@ -323,7 +244,7 @@
 					
 					<div id="flexcontain">
 						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<img src="images/intro/instantiation.png" width="450" style="box-shadow: none; border: none;"alt="instantiation image"> 
+							<img src="../csharpimages/intro/instantiation.png" width="450" style="box-shadow: none; border: none;"alt="instantiation image"> 
 							<p>This process of creating an object instance from a class is called instantiation — the object instance is instantiated from the class</p>
 
 						</div>
