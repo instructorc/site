@@ -227,6 +227,236 @@
 					
 				
 				</section>
+				<section data-background="#fff" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
+					<h3>Quiz Question 1</h3>
+					<div style="display: flex;">
+					<pre style="box-shadow: none;">
+						<code style="font-size: 14px; height: 730px;"  data-trim contenteditable>
+							import java.util.Scanner;
+							public class Main
+							{
+								public static void main(String[] args) {
+									String name, level;
+									double gpa;
+									Scanner input = new Scanner(System.in);
+									
+									name = getName(input);
+									level = getSchoolLevel(input, name);
+									calcGPAScale(level, name);
+								}
+								public static String getName(Scanner scn){
+									String name; //Local variable
+									System.out.print("Enter Name: ");
+									name = scn.nextLine();
+									return name;
+								}
+								public static String getSchoolLevel(Scanner scn, String name){
+									String level;
+									System.out.print(name + " enter GRAD or UGRAD: ");
+									level = scn.nextLine();
+									return level;
+									
+								}	
+								public static void calcGPAScale(String level, String name){
+									if(level.equalsIgnoreCase("GRAD") ){
+										System.out.println(name + " you will use the 5.0 Scale");
+									}else{
+										System.out.println(name + " you will use the 4.0 Scale");
+									}
+								}
+							}
+
+						</code>
+					</pre>
+					<div style=" margin-left: 30px;">
+				     	<p style="font-size: 22px;">Using the code to the left, how many methods have 2 parameters defined?</p>
+				     
+						<input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
+						<label for="attendance1" style="font-size: 18px;">A) <code>0</code></label><br>
+						<input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
+						<label for="attendance2" style="font-size: 18px;">B) <code>1</code></label><br>  
+						<input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+						<label for="attendance3" style="font-size: 18px;">C) <code>2</code></label><br>
+						<input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+						<label for="attendance4" style="font-size: 18px;">D) <code>3</code></label><br>
+					 </div>
+					</div><!--End of flex container-->
+			  
+				</section>
+				<section data-background="#fff" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
+					<h3>Quiz Question 2</h3>
+					<div style="display: flex;">
+						<pre style="box-shadow: none;">
+							<code style="font-size: 14px; height: 730px;"  data-trim contenteditable>
+								import java.util.Scanner;
+								public class Main
+								{
+									public static void main(String[] args) {
+										String name, level;
+										double gpa;
+										Scanner input = new Scanner(System.in);
+										
+										name = getName(input);
+										level = getSchoolLevel(input, name);
+										calcGPAScale(level, name);
+									}
+									public static String getName(Scanner scn){
+										String name; //Local variable
+										System.out.print("Enter Name: ");
+										name = scn.nextLine();
+										return name;
+									}
+									
+									public static String getSchoolLevel(Scanner scn, String name){
+										String level;
+										System.out.print(name + " enter GRAD or UGRAD: ");
+										level = scn.nextLine();
+										return level;
+										
+									}
+									
+									public static void calcGPAScale(String level, String name){
+										if(level.equalsIgnoreCase("GRAD") ){
+											System.out.println(name + " you will use the 5.0 Scale");
+										}else{
+											System.out.println(name + " you will use the 4.0 Scale");
+										}
+									}
+								}
+
+							</code>
+						</pre>
+						<div style="margin-left: 30px;">
+							<p style="font-size: 22px;">Using the code to the left, how many methods return a value?</p>
+							
+							<input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
+							<label for="attendance1" style="font-size: 18px;">A) <code>0</code></label><br>
+							<input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
+							<label for="attendance2" style="font-size: 18px;">B) <code>1</code></label><br>  
+							<input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+							<label for="attendance3" style="font-size: 18px;">C) <code>2</code></label><br>
+							<input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+							<label for="attendance4" style="font-size: 18px;">D) <code>3</code></label><br>
+						</div>
+					</div><!--End of flex container-->
+				</section>
+				<section data-background="#fff" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
+					<h3>Quiz Question 3</h3>
+					<div style="display: flex;">
+					<pre style="box-shadow: none;">
+						<code style="font-size: 14px; height: 730px;"  data-trim contenteditable>
+							import java.util.Scanner;
+							public class Main
+							{
+								public static void main(String[] args) {
+									String name, level;
+									double gpa;
+									Scanner input = new Scanner(System.in);
+								}
+								public static void calcGPAScale(String level, String name){
+									if(level.equalsIgnoreCase("GRAD") ){
+										System.out.println(name + " you will use the 5.0 Scale");
+									}else{
+										System.out.println(name + " you will use the 4.0 Scale");
+									}
+								}
+							}
+
+						</code>
+					</pre>
+					<div style="margin-left: 30px;">
+						<p style="font-size: 22px;">Assuming the code is correct, Which of the following method calls will output the text "Leah you will use the 5.0 Scale"?</p>
+						
+						<input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
+						<label for="attendance1" style="font-size: 14px;">A) <code>calcGPAScale("leah", "grad");</code></label><br>
+						<input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
+						<label for="attendance2" style="font-size: 14px;">B) <code>calcGPAScale("GRAD");</code></label><br>  
+						<input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+						<label for="attendance3" style="font-size: 14px;">C) <code>calcGPAScale("Leah", "GRAD");</code></label><br>
+						<input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+						<label for="attendance4" style="font-size: 14px;">D) <code>calcGPAScale("GRAD", "Leah");</code></label><br>
+
+					</div>
+				</div><!--End of flex container-->
+				</section>
+				<section data-background="#fff" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
+					<h4>Quiz Question 4</h4>
+					<div style="display: flex;">
+						<pre style="box-shadow: none; float: left; margin-top: -30px;">
+							<code style="font-size: 14px; height: 730px;"  data-trim contenteditable>
+								import java.util.Scanner;
+								public class Main
+								{
+									public static void main(String[] args) {
+										String name, level;
+										Scanner input = new Scanner(System.in);
+										System.out.print(getName(input));
+									}
+									public static String getName(Scanner scn){
+										String name; //Local variable
+										System.out.print("Enter Name: ");
+										name = scn.nextLine();
+
+										System.out.print("First Name: ");
+										return name;
+									}
+								}
+
+							</code>
+						</pre>
+						<div style="float: right; margin-left: 20px;">
+							<p style="font-size: 22px;">Assuming the code is correct, If you enter "Mavis" once the getName() method is called, what text will output to the console?</p>
+							
+							<input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
+							<label for="attendance1" style="font-size: 18px;">A) <code>First Name: Mavis</code></label><br>
+							<input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
+							<label for="attendance2" style="font-size: 18px;">B) <code>First Name: </code></label><br>  
+							<input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+							<label for="attendance3" style="font-size: 18px;">C) <code>Mavis</code></label><br>
+							<input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+							<label for="attendance4" style="font-size: 18px;">D) <code>Mavis First Name:</code></label><br>
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
+					<h3>Quiz Question 5</h3>
+					<div style="display: flex;">
+						<pre style="box-shadow: none;">
+							<code style="font-size: 18px; height: 630px;"  data-trim contenteditable>
+								public class Main
+								{
+									public static void main(String[] args) {
+										int total = calcNumbers(2, 3); 
+										System.out.print("Total: " + total );
+										
+									}
+									public static int calcNumbers(int num1, int num2){ 
+										int sum = num1 + num2;
+										return calcNumbers(sum);
+										
+									}
+									public static int calcNumbers(int aNumber){ 
+										return aNumber + 2;
+									}
+
+								}
+
+							</code>
+						</pre>
+					<div style="margin-left: 30px;">
+						<p style="font-size: 22px;">Assuming the code above is correct, What number outputs to the console?</p>
+						
+						<input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
+						<label for="attendance1" style="font-size: 18px;">A) <code>5</code></label><br>
+						<input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
+						<label for="attendance2" style="font-size: 18px;">B) <code>7 </code></label><br>  
+						<input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+						<label for="attendance3" style="font-size: 18px;">C) <code>2</code></label><br>
+						<input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+						<label for="attendance4" style="font-size: 18px;">D) <code>14</code></label><br>
+					</div>
+			  	</div><!--End of container-->
+				</section>
 				<!--<section data-background="#fff">
 					<h3>Local and Global variables</h3>
 					<ul>
