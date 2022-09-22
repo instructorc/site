@@ -65,11 +65,7 @@
 							<li>Overview of Design Patterns</li>
 						</ul>
 
-						<li>Generic's and Collections</li>
-                       	<ul>
-                       		<li>Understanding collections and generics in Java</li>
-							<li>Import Statements</li>
-						</ul>
+
 				    </ul>
 				</section>
 				<section data-background="#eee">
@@ -285,7 +281,7 @@
 							</ul>
 					</ul>
 				</section>
-				<!--<section data-background="#fff">
+				<section data-background="#fff">
 					<h3>Constructors</h3>
 					
 					<div id="flexcontain">
@@ -309,40 +305,41 @@
 									
     class Person
     {
-        /**Auto-Implemented Properties**/
-        public string Interest { get; set; }
-        public string Gender { get; set; }
-        public int Age { get; set; }
-        public string Name { get; set; }
+        
+        public String interest; 
+        public String gender;
+        public int age;
+        public String name;
         
         /**Default Constructor**/
         public Person(){
-        	this.Interest = "Forth Coming"
+        	this.interest = "Forth Coming";
         }
 		
         /**Constructor with Parameters**/
-        public Person(string Interest, string Gender, int Age, string Name)
+        public Person(String Interest, String Gender, int Age, String Name)
         {
-            this.Interest = Interest;
-            this.Gender = Gender;
-            this.Age = Age;
-            this.Name = Name;
+            interest = Interest;
+            gender = Gender;
+            age = Age;
+            name = Name;
         }
 
-        public Person(string Name, int Age, string Interest)
+        public Person(String name, int age, String interest)
         {
-            this.Name = Name;
-            this.Age = Age;
-            this.Interest = Interest;
+			//NOTICE THE *this KEYWORD - WHY this?
+            this.name = name; 
+            this.age = age;
+            this.interest = interest;
         }
         public void bio()
         {
-            Console.WriteLine($"{Name} is {Age} years old.  They like {Interest}");
+        	System.out.println( name +  " is " + age + " years old.  Interested in " + interest);
         }
 
         public void Greeting()
         {
-            Console.WriteLine($"Hi! I'm {Name}");
+            System.out.println("Hi! I'm " + name);
         }
     }
 							
@@ -353,93 +350,7 @@
 					</div>
 
 				</section>
-				<section data-background="#fff">
-					<h3>Constructor Initializer</h3>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px; width: 300px;">
-							<ul>
-								<li style="font-size: 22px;"><b>Constructor Initializer Example</b></li>
-								<ul>
-									<li>A clause that indicates another instance of a class constructor should be executed before any statements in the current constructor body</li>
-								</ul>
-							</ul>
 
-							
-							<pre>
-								<code style="font-size: 16px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
-									
-    class Person
-    {
-        /**Auto-Implemented Properties**/
-        public string Interest { get; set; }
-        public string Gender { get; set; }
-        public int Age { get; set; }
-        public string Name { get; set; }
-        
-        /**Object Initializer**/
-        public Person() : this("Web Development", "Male", 28, "John Doe")
-        {
-        	
-        }
-		
-        /**Another Example of Object Initializer**/
-        public Person(int age , string name) : this("Web Development", "Male", age, name)
-        {
-          Age = age;
-          Name = name;
-        }
-
-
-    }
-							
-	
-								</code>
-							</pre>
-					
-					</div>
-
-				</section>
-				<section data-background="#fff">
-					<h3>Object Initializer</h3>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px; width: 300px;">
-							<ul>
-								<li style="font-size: 22px;"><b>Object Initializer</b></li>
-								<ul>
-									<li>Allows you to assign values to any accessible members or properties of a class at the time of instantiation without calling a constructor with parameters</li>
-									<li>You can write an object initializer in either of the following ways listed below:</li>
-									<li>Create multiple objects with different initial assignments without having to provide multiple constructors to cover every possible situation</li>
-								</ul>
-							</ul>
-
-							
-							<pre>
-								<code style="font-size: 16px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
-									
-    class Person
-    {
-       static void Main(string[] args)
-       {
-    
-	      Person personOne = new Person(){ Age = 23, Gender = "Male" };
-          Person personTwo = new Person { Interest="Programming C#", Name="Bugs Bunion"};
-          Console.WriteLine(personOne.ToString());
-          Console.WriteLine(personTwo.ToString());
-       }
-
-
-
-    }
-							
-	
-								</code>
-							</pre>
-					
-					</div>
-
-				</section>
 				<section data-background="#fff">
 					<h3>ToString Method</h3>
 					
@@ -451,45 +362,38 @@
 									
     class Person
     {
-        /**Auto-Implemented Properties**/
-        public string Interest { get; set; }
-        public string Gender { get; set; }
-        public int Age { get; set; }
-        public string Name { get; set; }
+        public String interest; 
+        public String gender;
+        public int age;
+        public String name;
         
         /**Default Constructor**/
         public Person(){
-        	this.Interest = "Forth Coming"
+        	this.interest = "Forth Coming";
         }
 		
         /**Constructor with Parameters**/
-        public Person(string Interest, string Gender, int Age, string Name)
+        public Person(String interest, String Gender, int Age, String Name)
         {
-            this.Interest = Interest;
-            this.Gender = Gender;
-            this.Age = Age;
-            this.Name = Name;
+            this.interest = interest;
+            gender = Gender;
+            age = Age;
+            name = Name;
         }
 
-        public Person(string Name, int Age, string Interst)
-        {
-            this.Name = Name;
-            this.Age = Age;
-            this.Interest = Interest;
-        }
         public void bio()
         {
-            Console.WriteLine($"{Name} is {Age} years old.  They like {Interest}");
+        	System.out.println( name +  " is " + age + " years old.  Interested in " + interest);
         }
 
         public void Greeting()
         {
-            Console.WriteLine($"Hi! I'm {Name}");
+            System.out.println("Hi! I'm " + name);
         }
         
-        public override String ToString()
+        public String toString() //Overriding the toString()
         {
-           return String.Format("Name: {0}, Age: {1}, Gender: {2}, Interest: {3}", Name, Age, Gender, Interest);
+           return "Name: " + name + ", "+ "Age: "+ age + ", " + "Interest: " + interest;
         }
     }
 							
@@ -500,8 +404,8 @@
 							<ul style="font-size: 24px; margin-top: -16px;">
 								<li><b>System.Object - derived methods</b></li>
 								<ul>
-									<li>The <code>ToString()</code> method is derived from <b>System.Object</b></li>
-									<li>The <code>ToString()</code> can be use as the string representation of the the class, but must <b>override</b> the System.Object class <code>ToString()</code></li>
+									<li>The <code>toString()</code> method is derived from <b>Object class</b></li>
+									<li>The <code>toString()</code> can be use as the string representation of the the class, but must <b>override</b> the Object class <code>toString()</code></li>
 							
 								</ul>
 			
@@ -529,33 +433,32 @@
 									
     class Person
     {
-        /**Auto-Implemented Properties**/
-        public string Interest { get; set; }
-        public string Gender { get; set; }
-        public int Age { get; set; }
-        public string Name { get; set; }
-        public int RetirementAge { get; }
+        public String interest; 
+        public String gender;
+        public int age;
+        public String name;
+		public int retirementAge;
         
 
         /**Working Method**/
-        private void getEstimatedRetirementYear(){
-        	RetirementAge = 65 + Age;
+        private void getEstimatedRetirementYear(){ //*NOTICE THE Access Specifier
+        	retirementAge = 65 + age;
         }
 		
         /**Class Methods**/
         public void bio()
         {
-            Console.WriteLine($"{Name} is {Age} years old.  They like {Interest}");
+        	System.out.println( name +  " is " + age + " years old.  Interested in " + interest);
         }
 
         public void Greeting()
         {
-            Console.WriteLine($"Hi! I'm {Name}");
+            System.out.println("Hi! I'm " + name);
         }
         
-        public override String ToString()
+        public String toString() //Overriding the toString()
         {
-           return String.Format("Name: {0}, Age: {1}, Gender: {2}, Interest: {3}", Name, Age, Gender, Interest);
+           return "Name: " + name + ", "+ "Age: "+ age + ", " + "Interest: " + interest;
         }
     }
 							
@@ -566,71 +469,8 @@
 					</div>
 
 				</section>
-				<section data-background="#eee">
-					<h3>Structs</h3>
-					<ul>
-						<li style="font-size: 20px;">Structs share most of the same syntax as classes.</li>
-					
-					</ul>
-					<div id="flexcontain">
-						<pre>
-							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
-using System;
 
-class Program
-{
-    static void Main()
-    {
-        // DateTime is a struct.
-        DateTime date = new DateTime(2000, 1, 1);
-
-        // When you assign a DateTime, a separate copy is created.
-        DateTime dateCopy = date;
-
-        // The two structs have the same values.
-        Console.WriteLine(date);
-        Console.WriteLine(dateCopy);
-
-        // The copy is not affected when the original changes.
-        date = DateTime.MinValue;
-        Console.WriteLine(dateCopy);
-    }
-}
-
-
-
-							</code>
-						</pre>
-					</div>
-				</section>
-				<!--<section data-background="#fff">
-					<h4>Class vs. Struct</h4>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<ul>	
-								<li style="font-size: 26px; font-weight: 900;">Class - a reference type</li>
-								<ul>
-									<li style="font-size: 26px;">What do users want when they get to your site?</li>
-									<li style="font-size: 26px;">Anticipate and plan for user actions</li>
-									<li style="font-size: 26px;">Provide direct links to your most popular pages</li>
-								</ul>
-							</ul>
-						</div>
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<ul>	
-								<li style="font-size: 26px; font-weight: 900;">Struct - a value type </li>
-								<ul>
-									<li style="font-size: 26px;">A struct should not be changed after creation.</li>
-									<li style="font-size: 26px;">Anticipate and plan for user actions</li>
-									<li style="font-size: 26px;">Provide direct links to your most popular pages</li>
-								</ul>
-							</ul>
-						</div>
-					</div>
-
-				</section>-->
-				<section data-background="images/intro/inheritance.jpg">
+				<!--<section data-background="images/intro/inheritance.jpg">
 					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Inheritance</h1>
 				</section>
 				<section data-background="#eee">
@@ -682,7 +522,7 @@ class Program
 					<img src="images/intro/uml_snippet.png" width="550" alt="MPLS UML Diagram">
 				</section>
 				<section data-background="#eee">
-					<h3>C# Inheritance</h3>
+					<h3>Java Inheritance</h3>
 
 					<div id="flexcontain">
 						<pre>
@@ -1538,31 +1378,8 @@ class Program
 						<li> Dependency Injection - https://www.freecodecamp.org/news/a-quick-intro-to-dependency-injection-what-it-is-and-when-to-use-it-7578c84fa88f/</li>-->
 				    </ul>
 				</section>
-				<!--<section data-background="#eee">
-				    <h2>File and Directory Classes</h2>
-				    <ul>
-						<li>C# provides built-in classes named File and Directory</li>
-						
-						<li>Contain methods to help you manipulate files and their directories</li> 
-						<ul style="font-size: 22px;">
-							<li>Access information about files</li>
-							<li>Create, delete or move files</li>
-						</ul>
-						  
-                        <li>Your file structure must be transferable</li>
-						<li>Use relative paths to indicate file locations</li>
-						<li><code>File Class</code></li>
-						<ul style="font-size: 22px;">
-							<li>Contians methods to access information about files</li>
-						</ul>
-						<li><code>Directory Class</code></li>
-						<ul style="font-size: 22px;">
-							<li>Provides information about directories or folders</li>
-						</ul>
-               
-				    </ul>
-				</section>
-				<section data-background="#fff">
+
+				<!--<section data-background="#fff">
 						<h2>Common Methods in File Class</h2>
 						<ul>
 							
@@ -1576,20 +1393,7 @@ class Program
 						<img src="images/io/filepic1.png" width="420" style="box-shadow: none; float: left;" alt="File picture example one"/>
 						<img src="images/io/filepic2.png" width="420" style="box-shadow: none; float: left;" alt="File Picture example two"/>
 				</section>
-				<section data-background="#fff">
-						<h2>Common Methods in Directory Class</h2>
-						<ul>
 
-							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.directory?view=netframework-4.7.1">Click here to navigte to <code>Directory Class</code></a></li>		   
-						</ul>
-						<img src="images/io/directorymethods.png" style="box-shadow: none;" alt="Common methods in directory class"/>
-				</section>
-				<section data-background="#fff">
-						<h2>Directory Class - code and output</h2>
-
-						<img src="images/io/directorypic1.png" width="420" style="box-shadow: none; float: left;" alt="directory picture example one"/>
-						<img src="images/io/directorypic2.png" width="420" style="box-shadow: none; float: left;" alt="directory Picture example two"/>
-				</section>
 				<section data-background="#eee">
 						<h2>Understanding File Data Organization</h2>
 						<ul>
@@ -1608,66 +1412,7 @@ class Program
 				   
 						</ul>
 				</section>
-				<section data-background="#fff">
-						<h2>Understanding File Data Organization Diagram</h2>
-						<img src="images/io/dataorg.png" width="750" style="box-shadow: none;" alt="File Data organization diagram"/>
-				</section>
-				<section data-background="#eee">
-						<h2>Understanding File Data Organization</h2>
-						<ul>
-							<li><b>Field</b></li>
-							<ul style="font-size: 22px;">
-								<li>A character or group of characters that has some meaning</li>
-				
-							</ul>
-							
-							<li><b>Record</b></li> 
-							<ul style="font-size: 22px;">
-								<li>A collection of related fields that contain data about an entity</li>
-								<li>Characters are made up of bytes containing eight (8) bits</li>
 
-							</ul>
-							<li><b>Sequential access file</b></li> 
-							<ul style="font-size: 22px;">
-								<li>Each record is read in order based on its relative position</li>
-								<li>Records can be stored in order based on a value in the record</li>
-								<li>The field used to uniquely identify each record in a sequential file is the<b> key field</b></li>
-							</ul>
-							<li><b>Random access file</b></li>
-							<ul style="font-size: 22px;">
-								<li>Records are not in any sequence and  can be accessed in any order</li>
-				
-							</ul>
-						</ul>
-				</section>
-				<section data-background="#fff">
-						<h2>Understanding File Data Organization cont.</h2>
-						<ul>
-							<li>A C# application <b>opens a file</b> by creating an object and associating a stream of bytes with that object</li>
-							<li>When you finish using a file, the program should <b>close the file</b></li>
-									
-							<ul style="font-size: 22px;">
-								<li>Not closing a file may make it inaccessible</li>
-								<li>Not closing an output file can result in data not being written to the file</li>
-				
-							</ul>
-
-						</ul>
-				</section>
-				<section data-background="#fff">
-						<h2>Understanding Streams</h2>
-						<ul>
-							<li><b>Stream</b></li>
-							<ul style="font-size: 22px;">
-								<li>Stream is a class that simulates a stream of bytes to be lined up in a row. Such as the transmission of data on the network, data transmited are contiguous stream of bytes from the first byte to the last byte.</li>
-								<li>Functions as a pipeline or channel between an input device and an application, and potentially an output device</li>
-
-				
-							</ul>
-
-						</ul>
-						<img src="images/io/streampic.png"  width="700" style="box-shadow: none;" alt="Stream class diagram"/>
-				</section>
 				<section data-background="#fff">
 						<h2>Stream Overview</h2>
 
