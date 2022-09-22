@@ -51,7 +51,8 @@
 						<ul>
 							<li>What is Exception Handling?</li>
 							<li>Understanding the difference between bugs, user errors and exceptions</li>
-							<li>Learn about exceptions, the Exception class, and generating SystemExceptions</li>
+							<li>Discuss the hierarchical structure of exception classes - Java Error and Exception</li>
+							<li>Exception sub-classes: Checked vs. UnChecked</li>
 							<li>Learn about traditional and object-oriented error-handling methods</li>
 						</ul>
 						<li>I/O, Directory and Streams</li>
@@ -103,33 +104,66 @@
 				</section>
 				<section data-background="#fff">
 					<h3>Exceptions hierarchy</h3>
-				    <img src="images/io/java-exceptions-hierarchy-example.png"  style="box-shadow: none; float: left;" alt="Java exception hierarchy"/>
+				    <img src="images/io/exception_hierarchy.png"  style="box-shadow: none; float: left;" alt="Java exception hierarchy"/>
 				</section>
 				<section data-background="#fff">
-						<h2>Exception Subclasses</h2>
-						
-						<img src="images/io/java-exceptions-1.png" width="620" style="box-shadow: none; float: left;" alt="Exception Sub Class example one"/>
-						
-				</section>
-				<section data-background="#fff">
-					<h2>Exception Derived clsses:</h2>
-					<ul>
-						<li>Most exceptions derive from three classes</li>
-						<ul>
-								<li>- Predefined Common Language Runtime exception classes derived from <code>SystemException</code></li>
-								<li>User-defined application exception classes you derive from <code>ApplicationException</code></li>
-								<li>The <code>Exception </code> class which is the parent of <code>SystemException</code> and <code>ApplicationException</code> </li>
-								
+					<h4>Java Error vs. Exception</h4>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px; background-color: #2d4650; color: white;"><b>Java Error</b></li>
+								<ul>
+									<li style="font-size: 20px;">Exceptions that are thrown when a <strong>critical error occurs</strong>, such as an internal error in the Java Virtual Machine or running out of memory </li>
+									<li style="font-size: 20px;">Your application should not try to handle these errors because they are the result of a <strong>serious condition</strong></li>								
+								</ul>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>
+								<li style="font-size: 26px; background-color: #2d4650; color: white;"><b>Exception</b></li>
+								<ul>
+									<li style="font-size: 20px;">Exceptions that you will handle.  These exceptions inherit from <strong><code>Exception</code></strong></li>
+									<li style="font-size: 20px;">A few examples of child/sub classes </li>
+									<ul>
+										<li style="font-size: 14px;"><strong><code>EOFException and FileNotFoundException</code></strong> - inherit from the the <code>IOException class</code>.  An <code>EOFException</code> object is thrown when an applicatoin attempts to read beyond the end of a file.  A <code>FileNotFoundException</code> object is thrown when an application tries to open a file that does not exist.</li>
+									</ul>
+								</ul>
+							</ul>
 							
-						</ul>
-					</ul>
-						
+						</div>
+					</div>
+					<p style="font-size: 15px; font-style:italic;">*Important to note: The exception classes are in packages in the Java API.  <code>FileNotFoundException</code> is in the <code>java.io</code> package while another exception may be in another package.  Make sure you import the correct package.</p>
 				</section>
 				<section data-background="#fff">
-						<h2>Purposely Generating a <code>SystemException</code></h2>
+					<h4>Checked vs. UnChecked</h4>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px; background-color: #2d4650; color: white;"><b>Checked</b></li>
+								<ul>
+									<li style="font-size: 18px;">Checked exceptions are also known as <strong>compile-time exceptions</strong> as these exceptions are checked by the compiler during the compilation process to confirm whether the exception is handled by the programmer or not. If not, then the system displays a compilation error.</li>
+									<li style="font-size: 18px; color: green;">For example, SQLException, IOException, InvocationTargetException, and ClassNotFoundException.</li>								
+								</ul>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>
+								<li style="font-size: 26px; background-color: #2d4650; color: white;"><b>UnChecked</b></li>
+								<ul>
+									<li style="font-size: 18px;">The unchecked exceptions are those exceptions that <strong>occur during the execution</strong> of the program. Hence they are also referred to as Runtime exceptions. These exceptions are generally ignored during the compilation process. They are not checked while compiling the program.</li>
+									<li style="font-size: 18px; color: green;">For example, programming bugs like logical errors, and using incorrect APIs.</li>
+								</ul>
+							</ul>
+							
+						</div>
+					</div>
+					<a href="" style="font-size: 15px;">Article that breaks-down checked and unchecked exceptions</a>
+				</section>
+				<section data-background="#fff">
+						<h2>Purposely Generating a <code>Exception</code></h2>
 						<ul>
 
-							<li style="font-size: 30px;">You can deliberately generate a SystemException by forcing a program to contain an error</li>	
+							<li style="font-size: 30px;">You can deliberately generate a Exception by forcing a program to contain an error</li>	
 							<ul>
 									<li>- Example: Dividing an integer by zero</li>
 							</ul>
@@ -144,7 +178,7 @@
 
 				</section>
 				<section data-background="#fff">
-					<h2>Purposely Generating a <code>SystemException</code></h2>
+					<h2>Purposely Generating an <code>Exception</code></h2>
 					<ul>
 
 						<li>Programs that can handle exceptions appropriately are said to be more fault tolerant and robust than those that do not</li>	
@@ -156,16 +190,8 @@
 					</ul>
 						
 				</section>
-				<section data-background="#fff">
-						<h2>Exception Subclasses</h2>
-						
-						<img src="images/io/milesgallonexcode.png" width="450" style="box-shadow: none; float: left;" alt="c# code miles per gallon example code"/>
-						<img src="images/io/milesgallonexoutput.png" width="450" style="box-shadow: none; float: left;" alt="c# code miles per gallon example output"/>
-				</section>
-
-
 				<section data-background="#eee">
-					<h3>Traditional and Object-Oriened Error-Handling Methods</h3>
+					<h3>Traditional and Object-Oriented Error-Handling Methods</h3>
 					<ul>
 						<li>Check a variable’s value with an if statement before attempting to divide it into another number</li>
 						<ul>
@@ -183,29 +209,24 @@
 				
 					</ul>
 				</section>
+				
 				<section data-background="#eee">
-					<section>
-						<h5>Exception handling uses three terms: try, catch, throw, finally</h5>
-						</ul>
-						<div id="flexcontain">
-							<div class="box_three red" style="font-size: 22px; margin: 10px; border-radius: 10px;"><p><b><code style="font-size: 30px;"><em>try</em></code> block</b><br/> Contains statements that can produce an error <br> Code at least one catch block or finally block immediately following a <code>try</code> block</code></p></div>
-							<div class="box_three blue" style="font-size: 22px; margin: 10px; border-radius: 10px;"><p><b><code style="font-size: 30px;"><em>catch</em></code> block</b><br/> Can "catch" one type of Exception <br> You must code at least one <code>catch</code> block or <code>finally</code> block immediately following a <code>try</code> block</code></p></div>
-							<div class="box_three green" style="font-size: 22px; margin: 10px; border-radius: 10px;"><p><b><code style="font-size: 30px;"><em>finally</em></code> block</b><br/> Contains actions to perform at the end of a <code>try…catch</code> sequence<br> Executes whether the try block identifies any Exceptions or not <br /> Used to perform clean-up tasks<br /> A <code>finally</code> block executes after 1) the <code>try</code> ends normally. 2) the <code>catch</code> executes and 3) the <code>try</code> ends abnormally and the <code>catch</code> does not execute </p></div>
+					<h5>Exception handling uses three terms: try, catch, throw, finally</h5>
+					</ul>
+					<div id="flexcontain">
+						<div class="box_three red" style="font-size: 20px; margin: 10px; border-radius: 10px;"><p><b><code style="font-size: 30px;"><em>try</em></code> block</b><br/> Contains statements that can produce an error <br> Code at least one catch block or finally block immediately following a <code>try</code> block</code></p></div>
+						<div class="box_three blue" style="font-size: 20px; margin: 10px; border-radius: 10px;"><p><b><code style="font-size: 30px;"><em>catch</em></code> block</b><br/> Can "catch" one type of Exception <br> You must code at least one <code>catch</code> block or <code>finally</code> block immediately following a <code>try</code> block</code></p></div>
+						<div class="box_three green" style="font-size: 20px; margin: 10px; border-radius: 10px;"><p><b><code style="font-size: 30px;"><em>finally</em></code> block</b><br/> Contains actions to perform at the end of a <code>try…catch</code> sequence<br> Executes whether the try block identifies any Exceptions or not <br /> Used to perform clean-up tasks<br /> A <code>finally</code> block executes after 1) the <code>try</code> ends normally. 2) the <code>catch</code> executes and 3) the <code>try</code> ends abnormally and the <code>catch</code> does not execute </p></div>
 
-						</div>
-					</section>
-					<section data-background="#fff">
-						<h3>Try/Catch block</h3>
-						<img src="images/io/tryex.png" width="750" style="box-shadow: none;" alt="Try example code"/>
-					</section>
-					<section data-background="#fff">
-						<h3>Try/Catch block example</h3>
-						<img src="images/io/catchex.png" width="600" style="box-shadow: none;" alt="Try catch example code"/>
-					</section>
-					<section data-background="#fff">
-						<h3>Try/Catch/Finally block example</h3>
-						<img src="images/exception/trycatchfinallyex.png" width="600" style="box-shadow: none;" alt="Try catch finally example code"/>
-					</section>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Exception Syntax</h3>
+					<img src="images/io/exception-handling-keywords.PNG" width="790" style="box-shadow: none; " alt="Exception Handling Syntax"/>
+				</section>
+				<section data-background="#fff">
+					<h3>Exception Example</h3>
+					<img src="images/io/Checked-Exception.png" width="550" style="box-shadow: none; " alt="Checked Exception"/>
 				</section>
 				<section data-background="#eee">
 					<section>
@@ -221,8 +242,8 @@
 					</section>	
 					<section data-background="#fff">
 							<h3>Catching Multiple <code>Exceptions</code></h3>
-							<img src="images/io/multicatchblock.png" width="450" style="box-shadow: none; float: left;" alt="Multiple catch block first eample code"/>
-							<img src="images/io/multicatchblocktwo.png" width="450" style="box-shadow: none; float: left;" alt="Multiple catch blocks second example code"/>
+							<img src="images/io/java_multiple_catch.png" style="box-shadow: none;" alt="Multiple catch block first eample code"/>
+							
 					</section>
 				</section>
 				<section>
@@ -241,33 +262,21 @@
 					</section>
 					<section data-background="#fff">
 							<h4>Handling Exceptions Thrown from outside methods</h4>
-							<img src="images/io/insideexceptionone.png" width="450" style="box-shadow: none; float: left;" alt="eample one code handled exception called from method"/>
-							<img src="images/io/insideexceptiontwo.png" width="450" style="box-shadow: none; float: left;" alt="example two code handled exception called from method"/>
+							<img src="images/io/throw_exception.png"  style="box-shadow: none;" alt="eample one code handled exception called from method"/>
+
 					</section>
 				</section>
 				<section data-background="#fff">
-					<h3>Using the  <code>Exception</code> Class's <code>ToString()</code> Method and Message  property</h3>
+					<h3>Using the  <code>Throwable</code> Class's <code>getMessage()</code> Method</h3>
 					<ul>
-						<li>The <code>Exception</code> class overrides <code>ToString()</code></li>	
+						<li>Understanding the <code>getMessage()</code> method</li>	
 						<ul>
 							<li>- Provides a descriptive error message</li>
 							<li>- The user can receive percise information about the nature of any Exception that is thrown</li>
 						</ul>
 					</ul>	
 				</section>
-				<section data-background="#fff">
-					<h3>Using the  <code>Exception</code>Class's <code>ToString()</code> Method and Message  property</h3>
-					<ul>
-						<li><code>Exception</code> class <code>Message</code> property</li>	
-						<ul>
-							<li>- Contains useful information about an <code>Exception</code></li>
-						</ul>
-						<li><code>getType()</code> method</li>	
-						<ul>
-							<li>- Indicates the name of the class</li>
-						</ul>
-					</ul>	
-				</section>
+
 				<section data-background="#fff">
 					<h3>Tracing <code>Exception</code> Objects Through the Call Stack</h3>
 					<ul>
@@ -276,13 +285,13 @@
 							<li>-The memory location where the computer stores the list of locations to which the system must return</li>
 							<li>If a method throws an Exception and does not catch it, the Exception is thrown to the next method “up” the call stack</li>
 						</ul>
-						<li><code>StackTrace</code> property</li>	
+						<li><code>StackTrace</code> </li>	
 						<ul>
 							<li>- Contains a list of methods in the call stack so you can determine the location of the Exception</li>
 						</ul>
 					</ul>	
 				</section>
-				<section data-background="images/io/files.jpg">
+				<!--<section data-background="images/io/files.jpg">
 					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Directories and Files</h1>
 				</section>
 				<section data-background="#eee">
@@ -1031,15 +1040,15 @@ class Program
 							</code>
 						</pre>
 
-				</section>
+				</section>-->
 				<section data-background="#eee">
 				    <h2>References</h2>
-				    <ul style="font-size: 22px;">
+				    <!--<ul style="font-size: 22px;">
 						<li>https://csharp.net-tutorials.com/linq/linq-query-syntax-vs-method-syntax/</li>
 						<li>https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods</li>
 						<li>https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq</li>
 				    	<li>https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions</li>
-				    </ul>
+				    </ul>-->
 				</section>
 				
 			</div>
