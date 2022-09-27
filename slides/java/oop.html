@@ -88,9 +88,9 @@
 							</ul>
 					</ul>
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 150px; color: #111;"><p><b style="font-size: 28px;">Finding Objects</b> <br> Identify and circle all the nouns in the problem discription</p></div>
-						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 150px; color: #111;"><p><b style="font-size: 28px;">Finding Properties</b> <br>Identify and underline all the properties in problem discription</p></div>
-						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #eee; height: 150px; color: #111;"><p><b style="font-size: 28px;">Create the Class</b> <br>Code the class structure in Java</p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 140px; color: #111; padding: 10px;"><p><b style="font-size: 28px;">Finding Objects</b> <br> Identify and circle all the nouns in the problem discription</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 140px; color: #111; padding: 10px;"><p><b style="font-size: 28px;">Finding Properties</b> <br>Identify and underline all the properties in problem discription</p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #eee; height: 140px; color: #111; padding: 10px;"><p><b style="font-size: 28px;">Create the Class</b> <br>Code the class structure in Java</p></div>
 
 					</div>
 					
@@ -240,7 +240,7 @@
 				</section>
 				<section data-background="#fff">
 				
-					<p>Learning Activity</p>
+					<h3>Learning Activity</h3>
 					<p>Using either <code>Customer</code> or <code>Car</code>, create a class structure that includes three properties.  One of the properties should be of numeric(double or int) data type </p>
 					<div id="flexcontain">
 						<div class="box red" style="font-size: 22px; margin: 10px; height: 120px; background-color: #eee; color: black;"><p>1) Enforce data encapsulation with the use of Getter and Setter methods</p></div>
@@ -279,7 +279,7 @@
 				</section>
 				<section data-background="#fff">
 				
-					<p>Learning Activity</p>
+					<h3>Learning Activity</h3>
 					<p>Now that you have created either a <code>Customer</code> or <code>Car</code> class that enforces encapsulation. Practice declaring and creating an object instance from your class. </p>
 					<div id="flexcontain">
 						<div class="box red" style="font-size: 22px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p>1) Within your programs main method, declare and create an array that will hold 2 object instances</p></div>
@@ -478,7 +478,7 @@
 				</section>
 				<section data-background="#fff">
 				
-					<p>Learning Activity</p>
+					<h3>Learning Activity</h3>
 					<p>Now that you have created either a <code>Customer</code> or <code>Car</code> class that instantiates 2 objects. Practice implementing constructors and the toString method. </p>
 					<div id="flexcontain">
 						<div class="box red" style="font-size: 22px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p>1) Create a default constructor that sets the objects properties to default information.</p></div>
@@ -509,7 +509,7 @@
 				<section data-background="#fff" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
 					<h3>Quiz Question 2</h3>
 					<pre style="box-shadow: none;">
-						<code style="font-size: 18px; height: 290px;"  data-trim contenteditable>
+						<code style="font-size: 15px; height: 290px;"  data-trim contenteditable>
 							class Person
 							{
 								private String name;
@@ -542,16 +542,16 @@
 					<h4>Quiz Question 3</h4>
 					<div id="flexcontain">
 
-						<div class="box red" style="font-size: 20px; margin: 10px; height: 790px; background-color: #fff; color: #111;">
+						<div class="box red" style="margin: 10px;  background-color: #fff;">
 							<pre style="box-shadow: none;">
-								<code style="font-size: 18px; height: 790px;"  data-trim contenteditable>
+								<code style="font-size: 12px; min-height: 580px; "  data-trim contenteditable>
 									class Person
 									{
 										private String name;
 										private int age;
 										private string gender;
 										private string interest;
-
+									
 										/**Default Constructor**/
 										public Person(){
 											this.name = "N/A";
@@ -559,27 +559,27 @@
 											this.gender = "N/A";
 											this.interest = "Forth Coming";
 										}	
-
+									
 										public void bio()
 										{
-											System.out.println(name + " is " + age + " years old.  They like " + interest );
+										   System.out.println(name + " is " + age + " years old.  They like " + interest );
 										}
 									}
 								</code>
 							</pre>
 						
 						</div>
-						<div class="box">
+						<div class="box" style="text-align: left; max-width: 370px;">
 							<p style="font-size: 22px;">Given the unstructured program to the left, which of the options below would be the correct way to declare and create an object instance?</p>
 				     
 							<input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
-							<label for="attendance1" style="font-size: 20px;">A) Person aPerson = {"Sheila", 27, "Female", "Basketball"};</label><br>
+							<label for="attendance1" style="font-size: 14px;">A) <code>Person aPerson = {"Sheila", 27, "Female", "Basketball"};</code></label><br>
 							<input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
-							<label for="attendance2" style="font-size: 20px;">B) Person aPerson = new Person();</label><br>  
+							<label for="attendance2" style="font-size: 14px;">B)<code>Person aPerson = new Person();</code></label><br>  
 							<input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
-							<label for="attendance3" style="font-size: 20px;">C) Person [] aPerson = new Person[]; </label><br>
+							<label for="attendance3" style="font-size: 14px;">C)<code> Person [] aPerson = new Person[];</code> </label><br>
 							<input type="radio" id="age4" style="transform: scale(2);" name="structure" value="8">
-							<label for="attendance4" style="font-size: 20px;">D) aPerson person = new aPerson();</label><br>
+							<label for="attendance4" style="font-size: 14px;">D) <code>aPerson person = new aPerson();</code></label><br>
 						</div>
 						
 					</div>
@@ -587,12 +587,13 @@
 				
 				</section>
 				<section data-background="#fff">
-					<h4>Quiz Question 4</h4>
+
 					<div id="flexcontain">
 
-						<div class="box red" style="font-size: 20px; margin: 10px; height: 790px; background-color: #fff; color: #111;">
+						<div class="box red" style="margin: 10px; text-align: left; background-color: #fff;">
+							<h4>Quiz Question 4</h4>
 							<pre style="box-shadow: none;">
-								<code style="font-size: 18px; height: 790px;"  data-trim contenteditable>
+								<code style="font-size: 12px; min-height: 580px; "  data-trim contenteditable>
 									class Person
 									{
 										private String name;
@@ -619,17 +620,17 @@
 							</pre>
 						
 						</div>
-						<div class="box">
+						<div class="box" style="text-align: left; max-width: 370px;">
 							<p style="font-size: 22px;">Using the code to the left, which of the options below would <span style="font-weight: 900; text-decoration: underline;">not</span> be the correct way to declare and create an object instance?</p>
 				     
 							<input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
-							<label for="attendance1" style="font-size: 20px;">A) Person p1 = new Person("Lisa");</label><br>
+							<label for="attendance1" style="font-size: 14px;">A) <code>Person p1 = new Person("Lisa");</code></label><br>
 							<input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
-							<label for="attendance2" style="font-size: 20px;">B) Person p1 = new Person();</label><br>  
+							<label for="attendance2" style="font-size: 14px;">B) <code>Person p1 = new Person();</code></label><br>  
 							<input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
-							<label for="attendance3" style="font-size: 20px;">C) Person p1 = new Person("Track", "Male", 59, "James");</label><br>
+							<label for="attendance3" style="font-size: 14px;">C) <code>Person p1 = new Person("Track", "Male", 59, "James");</code></label><br>
 							<input type="radio" id="age4" style="transform: scale(2);" name="structure" value="8">
-							<label for="attendance4" style="font-size: 20px;">D) Person p1 = new Person("James", "Male", 59, "Track");</label><br>
+							<label for="attendance4" style="font-size: 14px;">D) <code>Person p1 = new Person("James", "Male", 59, "Track");</code></label><br>
 						</div>
 						
 					</div>
@@ -640,9 +641,9 @@
 					<h4>Quiz Question 5</h4>
 					<div id="flexcontain">
 
-						<div class="box red" style="font-size: 20px; margin: 10px; height: 790px; background-color: #fff; color: #111;">
+						<div class="box red" style="margin: 10px; text-align: left; background-color: #fff; ">
 							<pre style="box-shadow: none;">
-								<code style="font-size: 18px; height: 790px;"  data-trim contenteditable>
+								<code style="font-size: 12px; min-height: 580px; "  data-trim contenteditable>
 									class Person
 									{
 										private String name;
@@ -684,17 +685,17 @@
 							</pre>
 						
 						</div>
-						<div class="box">
+						<div class="box" style="text-align: left; max-width: 300px;">
 							<p style="font-size: 22px;">Using the code to the left, which option output the text <span style="font-weight: 900; ">Chris the end time for coding has arrived!</span> when the statements are place in the main method?</p>
 				     
 							<input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
-							<label for="attendance1" style="font-size: 20px;">A) <code>Person aPerson = new Person(); <br> System.out.println(aPerson);</code></label><br>
+							<label for="attendance1" style="font-size: 14px;">A) <code>Person aPerson = new Person(); <br> System.out.println(aPerson);</code></label><br>
 							<input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
-							<label for="attendance2" style="font-size: 20px;">B) <code>Person aPerson = new Person("Chris", "coding"); <br> System.out.println(aPerson);</code></label><br>  
+							<label for="attendance2" style="font-size: 14px;">B) <code>Person aPerson = new Person("Chris", "coding"); <br> System.out.println(aPerson);</code></label><br>  
 							<input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
-							<label for="attendance3" style="font-size: 20px;">C) <code>Person aPerson = new Person("coding", "Chris");<br> System.out.println(aPerson);</code></label><br>
+							<label for="attendance3" style="font-size: 14px;">C) <code>Person aPerson = new Person("coding", "Chris");<br> System.out.println(aPerson);</code></label><br>
 							<input type="radio" id="age4" style="transform: scale(2);" name="structure" value="8">
-							<label for="attendance4" style="font-size: 20px;">D) <code>Person aPerson = new Person("coding", "male", 23); <br> System.out.println(aPerson);</code></label><br>
+							<label for="attendance4" style="font-size: 14px;">D) <code>Person aPerson = new Person("coding", "male", 23); <br> System.out.println(aPerson);</code></label><br>
 						</div>
 						
 					</div>
