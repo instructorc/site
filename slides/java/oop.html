@@ -487,6 +487,220 @@
 					</div>
 				
 				</section>
+				<section data-background="#fff">
+					<h4>Quiz Question 1</h4>
+					<div id="flexcontain">
+
+
+						<div class="box">
+							<p style="font-size: 22px;">True or False, An <strong>object</strong> is the blueprint for creating many instances of a <strong>class</strong>?</p>
+				     
+							<input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
+							<label for="attendance1" style="font-size: 20px;">A) True</label><br>
+							<input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
+							<label for="attendance2" style="font-size: 20px;">B) False</label><br>  
+
+						</div>
+						
+					</div>
+					
+				
+				</section>
+				<section data-background="#fff" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
+					<h3>Quiz Question 2</h3>
+					<pre style="box-shadow: none;">
+						<code style="font-size: 18px; height: 290px;"  data-trim contenteditable>
+							class Person
+							{
+								private String name;
+								private int age;
+								private string gender;
+								private string interest;
+								
+								public void bio()
+								{
+								  System.out.println(name + " is " + age + ".  Interest includes" + interest );
+								}
+							}
+
+						</code>
+					</pre>
+				     <p style="font-size: 22px;">Given the code above, which of the following options below properly sets the value for name property?</p>
+				     
+				     <input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
+				     <label for="attendance1" style="font-size: 20px;">A) <code> public static void setName() { name = name; }</code></label><br>
+				     <input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
+				     <label for="attendance2" style="font-size: 20px;">B) <code>public void setName(){ this.name = name; }</code></label><br>  
+				     <input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+				     <label for="attendance3" style="font-size: 20px;">C) <code>public void setName(String name){ name = name; }</code></label><br>
+				     <input type="radio" id="age4" style="transform: scale(2);" name="structure" value="8">
+				     <label for="attendance3" style="font-size: 20px;">D) <code>public void setName(String aName){ name = aName; }</code></label><br>
+
+			  
+				</section>
+				<section data-background="#fff">
+					<h4>Quiz Question 3</h4>
+					<div id="flexcontain">
+
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 790px; background-color: #fff; color: #111;">
+							<pre style="box-shadow: none;">
+								<code style="font-size: 18px; height: 790px;"  data-trim contenteditable>
+									class Person
+									{
+										private String name;
+										private int age;
+										private string gender;
+										private string interest;
+
+										/**Default Constructor**/
+										public Person(){
+											this.name = "N/A";
+											this.age = -1;
+											this.gender = "N/A";
+											this.interest = "Forth Coming";
+										}	
+
+										public void bio()
+										{
+											System.out.println(name + " is " + age + " years old.  They like " + interest );
+										}
+									}
+								</code>
+							</pre>
+						
+						</div>
+						<div class="box">
+							<p style="font-size: 22px;">Given the unstructured program to the left, which of the options below would be the correct way to declare and create an object instance?</p>
+				     
+							<input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
+							<label for="attendance1" style="font-size: 20px;">A) Person aPerson = {"Sheila", 27, "Female", "Basketball"};</label><br>
+							<input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
+							<label for="attendance2" style="font-size: 20px;">B) Person aPerson = new Person();</label><br>  
+							<input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+							<label for="attendance3" style="font-size: 20px;">C) Person [] aPerson = new Person[]; </label><br>
+							<input type="radio" id="age4" style="transform: scale(2);" name="structure" value="8">
+							<label for="attendance4" style="font-size: 20px;">D) aPerson person = new aPerson();</label><br>
+						</div>
+						
+					</div>
+					
+				
+				</section>
+				<section data-background="#fff">
+					<h4>Quiz Question 4</h4>
+					<div id="flexcontain">
+
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 790px; background-color: #fff; color: #111;">
+							<pre style="box-shadow: none;">
+								<code style="font-size: 18px; height: 790px;"  data-trim contenteditable>
+									class Person
+									{
+										private String name;
+										private int age;
+										private string gender;
+										private string interest;
+										
+										/**Default Constructor**/
+										public Person(){
+											this.interest = "Forth Coming";
+										}
+										
+										/**Constructor with Parameters**/
+										public Person(String interest, String Gender, int Age, String Name)
+										{
+											this.interest = interest;
+											gender = Gender;
+											age = Age;
+											name = Name;
+										}
+									}
+		
+								</code>
+							</pre>
+						
+						</div>
+						<div class="box">
+							<p style="font-size: 22px;">Using the code to the left, which of the options below would <span style="font-weight: 900; text-decoration: underline;">not</span> be the correct way to declare and create an object instance?</p>
+				     
+							<input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
+							<label for="attendance1" style="font-size: 20px;">A) Person p1 = new Person("Lisa");</label><br>
+							<input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
+							<label for="attendance2" style="font-size: 20px;">B) Person p1 = new Person();</label><br>  
+							<input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+							<label for="attendance3" style="font-size: 20px;">C) Person p1 = new Person("Track", "Male", 59, "James");</label><br>
+							<input type="radio" id="age4" style="transform: scale(2);" name="structure" value="8">
+							<label for="attendance4" style="font-size: 20px;">D) Person p1 = new Person("James", "Male", 59, "Track");</label><br>
+						</div>
+						
+					</div>
+					
+				
+				</section>
+				<section data-background="#fff">
+					<h4>Quiz Question 5</h4>
+					<div id="flexcontain">
+
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 790px; background-color: #fff; color: #111;">
+							<pre style="box-shadow: none;">
+								<code style="font-size: 18px; height: 790px;"  data-trim contenteditable>
+									class Person
+									{
+										private String name;
+										private int age;
+										private string gender;
+										private string interest;
+										
+										/**Default Constructor**/
+										public Person(){
+											this.interest = "Forth Coming";
+										}
+										
+										/**Constructor with Parameters**/
+										public Person(String interest, String Gender, int Age, String Name)
+										{
+											this.interest = interest;
+											gender = Gender;
+											age = Age;
+											name = Name;
+										}
+										/**Another overloaded constructor with Parameters**/
+										public Person(String interest, String Name)
+										{
+											this.interest = interest;
+											gender = Gender;
+											age = Age;
+											name = Name;
+										}
+
+										public String toString() //Overriding the base class toString() method
+										{
+										   return name + " the end time for "+ interest + " has arrived!";
+										}
+
+
+									}
+		
+								</code>
+							</pre>
+						
+						</div>
+						<div class="box">
+							<p style="font-size: 22px;">Using the code to the left, which option output the text <span style="font-weight: 900; ">Chris the end time for coding has arrived!</span> when the statements are place in the main method?</p>
+				     
+							<input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
+							<label for="attendance1" style="font-size: 20px;">A) <code>Person aPerson = new Person(); <br> System.out.println(aPerson);</code></label><br>
+							<input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
+							<label for="attendance2" style="font-size: 20px;">B) <code>Person aPerson = new Person("Chris", "coding"); <br> System.out.println(aPerson);</code></label><br>  
+							<input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+							<label for="attendance3" style="font-size: 20px;">C) <code>Person aPerson = new Person("coding", "Chris");<br> System.out.println(aPerson);</code></label><br>
+							<input type="radio" id="age4" style="transform: scale(2);" name="structure" value="8">
+							<label for="attendance4" style="font-size: 20px;">D) <code>Person aPerson = new Person("coding", "male", 23); <br> System.out.println(aPerson);</code></label><br>
+						</div>
+						
+					</div>
+
+				</section>
+
 				<!--<section data-background="images/intro/inheritance.jpg">
 					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Inheritance</h1>
 				</section>
