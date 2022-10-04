@@ -64,10 +64,10 @@
 						</ul>
 						<li>Discuss the use cases for dynamic Data Structures</li>
 				        <ul>
-							<li>Using ArrayList, Stack and Queue in Java</li>
+							<li>Using ArrayList, LinkedList, Hashmap and Hashset in Java</li>
 
 						</ul>
-						<li>Evaluating String + StringBuilder + StringBuffer Class</li>
+						<!--<li>Evaluating String + StringBuilder + StringBuffer Class</li>-->
 
 				    </ul>
 				</section>
@@ -376,6 +376,117 @@
 				     <label for="attendance4" style="font-size: 18px;">D) <code>Beggars Pizza</code></label><br>
 
 			  
+				</section>
+				<section data-background="images/intro/abstract_collections.jpg">
+					<h1 style="color: black; background-color: rgba(255,255,255,.8); padding: .5em;">Collections and Generics</h1>
+				</section>
+				<section data-background="white">
+					<h2>Data Structures Overview</h2><br>
+					<img src="images/ds/collection_types.jpg"  width="700" alt="Data Structure Tree">
+				</section>
+				<section data-background="#fff">
+				    
+				    <p style="font-size: 32px;"><b>Collections</b> enable you to maintain groups of objects.  Unlike arrays, collections can include more advanced functionality.</p>
+				     <br>
+				     <p style="font-size: 32px;">A<b> generic class </b>is built around whatever type, or types, you supply during instantiation, enabling you to strongly type an object with hardly any effort at all.</p>
+
+				</section>
+				<section data-background="#fff">
+					<h3>Frequently Used Collections</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 24px;">ArrayList&lt;T&gt;</b> <br>Represents a list of objects that can be accessed by index. Provides methods to search, sort, and modify lists.</p><p style="font-size:16px; margin-top: -9px;"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList doc</a></p></div>
+						<div class="box blue" style="font-size: 18px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 24px;">LinkedList&lt;T&gt;</b> <br>A collection which can contain many objects of the same type, just like the ArrayList</p><p style="font-size:16px; margin-top: -9px; "><a href="https://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html">Linked List doc</a></p></div>
+						<div class="box green" style="font-size: 18px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 24px;">HashMap&lt;TKey, TValue&gt;</b> <br>Represents items in "key/value" pairs, and you can access them by an index of another type</p><p style="font-size:16px; margin-top: -9px;"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html">HashMap doc</a></p></div>
+						<div class="box yellow" style="font-size: 18px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 24px;">HashSet&lt;T&gt;</b> <br>a collection of items where every item is unique, and it is found in the java.util package</p><p style="font-size:16px; margin-top: -9px;"><a href="https://docs.oracle.com/javase/7/docs/api/java/util/HashSet.html">HashSet doc</a></p></div>
+						<!--<div class="box orange" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 28px;">SortedList&lt;TKey, TValue&gt;</b> <br>Represents a collection of key/value pairs that are sorted by key based on the associated IComparer&lt;T&gt; implementation.</p><p style="font-size:16px; margin-top: -11px;"><a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.sortedlist-2?view=netcore-2.2">SortedList API</a></p></div>-->
+					</div>
+				
+				</section>
+				<section data-background="#fff">
+					<h4>Example of using the ArrayList&lt;T&gt;</h4>
+					
+						<pre>
+							<code style="font-size: 16px; height: 700px;" class="cs hljs"  data-trim contenteditable>
+								
+	import java.util.ArrayList;  
+	public class Main
+	{
+		public static void main(String[] args) {
+			//Two dimensional array
+			double[][] price = {
+				{350, 390, 435},
+				{400, 440, 480},
+				{475, 530, 575}
+				};
+
+			String[][] selection = {
+				{"Snickers", "Twix", "Mars"},
+				{"Skittles", "Starburst", "Sour Patch Kids"},
+				{"Big Red", "Winter fresh", "Trident"}
+				};
+
+			ArrayList&lt;Candy&gt; candyList = new ArrayList&lt;Candy&gt;();
+
+			//Iterate through the multi-Array and populate the list
+			for (var i = 0; i < 3; i++)
+			{
+				for (var x = 0; x < 3; x++)
+				{
+					Candy aCandy = new Candy(selection[i][x], price[i][x]);
+					candyList.add(aCandy);
+					System.out.println(selection[i][x] + " goes for $" + price[i][x]);
+				}
+			}
+			
+			//Decrement through the list and find the object with value "Snickers" for the name property
+			for(var i = candyList.size() -1; i >= 0; i--)
+			{
+				if (candyList.get(i).getName().contains("Snickers"))
+				{
+					candyList.remove(i);    
+				}     
+			}
+			//Output the list using lambda Expression
+			candyList.forEach(x -> System.out.println(x));
+		}
+	}
+	public class Candy
+	{
+		private String name; 
+		private double price;
+		
+		public String getName(){ return name;}
+		public double getPrice(){return price;}
+	
+		public Candy(String name, double price)
+		{
+			this.name = name;
+			this.price = price;
+		}
+	
+		public String toString()
+		{
+			return "The name of the candy is " + name + " the price for this candy " + price;
+		}
+	
+	}
+
+
+							</code>
+						</pre>
+
+				</section>
+				<section data-background="#fff">
+					<h3>Activity </h3>
+					<img src="images/intro/vending_machine_candy.jpg" alt="Picture of vending machine candy">
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 26px;">Step 1</b> <br>Using the previous slide code, create a new List that will hold the candy you select and enforce that only Candy objects can be within list. </p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 26px;">Step 2</b> <br>Implement logic within the existing looping structure that adds the selected candy to the new list </p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 26px;">Step 3</b> <br>Output both list. One list will hold the candy not selected and the other list will output the selected candy.</p></div>
+
+					</div>
+					
+				
 				</section>
 				<!--<section data-background="#fff">
 					<h3>The Three Structures</h3>
