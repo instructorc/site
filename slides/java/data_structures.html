@@ -476,6 +476,33 @@
 
 				</section>
 				<section data-background="#fff">
+					<h4>Example of using the HashSet&lt;T&gt;</h4>
+					
+						<pre>
+							<code style="font-size: 16px; height: 700px;" class="cs hljs"  data-trim contenteditable>
+								
+							import java.util.ArrayList;  
+							// Import the HashSet class
+							import java.util.HashSet;
+							public class Main
+							{
+								public static void main(String[] args) {
+									final String [] BRANDS = {"Adidas", "IKEA", "Puma", "Sony", "Puma", "IKEA"};
+									HashSet&lt;String&gt; brandList = new HashSet&lt;String&gt;();
+									for(int x = 0; x < BRANDS.length; x++){
+										brandList.add(BRANDS[x]);	
+									}
+									brandList.forEach(x -> System.out.print(x + "\t"));
+									System.out.println("List Size: " + brandList.size());
+								}
+							}
+
+
+							</code>
+						</pre>
+						<p>What items do the list hold?</p>
+				</section>
+				<section data-background="#fff">
 					<h3>Learning Activity </h3>
 					<img src="images/intro/vending_machine_candy.jpg" alt="Picture of vending machine candy">
 					<div id="flexcontain">
@@ -498,7 +525,7 @@
 
 						</code>
 					</pre>
-				     <p style="font-size: 22px;">Assuming the arraylist class has been properly imported, Which of the following options is <strong>not</strong> permissible and most likely result in an error?</p>
+				     <p style="font-size: 22px;">Assuming the code functions properly, Which of the following options is <strong>not</strong> permissible and most likely result in an error?</p>
 				     
 				     <input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
 				     <label for="attendance1" style="font-size: 18px;">A) <code>brandList.size();</code></label><br>
@@ -522,16 +549,14 @@
 
 						</code>
 					</pre>
-				     <p style="font-size: 22px;">Which of the following four collections is distinctly different as in it would not work if the collection name was replaced in the above code?</p>
+				     <p style="font-size: 22px;">Which of the following collections is distinctly different as in it would not work if the collection name was replaced in the above code?</p>
 				     
 				     <input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
 				     <label for="attendance1" style="font-size: 18px;">A) <code>HashMap</code></label><br>
 				     <input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
 				     <label for="attendance2" style="font-size: 18px;">B) <code>HashSet</code></label><br>  
 				     <input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
-				     <label for="attendance3" style="font-size: 18px;">C) <code>ArrayList</code></label><br>
-				     <input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
-				     <label for="attendance4" style="font-size: 18px;">D) <code>LinkedList</code></label><br>
+				     <label for="attendance4" style="font-size: 18px;">C) <code>LinkedList</code></label><br>
 
 			  
 				</section>

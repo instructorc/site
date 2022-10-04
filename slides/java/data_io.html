@@ -226,7 +226,7 @@
 				</section>
 				<section data-background="#fff">
 					<h3>Exception Example</h3>
-					<img src="images/io/Checked-Exception.png" width="550" style="box-shadow: none; " alt="Checked Exception"/>
+					<img src="images/io/Checked-Exception.png" width="480" style="box-shadow: none; " alt="Checked Exception"/>
 				</section>
 				<section data-background="#eee">
 					<section>
@@ -291,22 +291,67 @@
 						</ul>
 					</ul>	
 				</section>
+				<section data-background="#fff">
+					<h4>Example of try/catch block</h4>
+					
+						<pre style="box-shadow: none;">
+							<code style="font-size: 16px; height: 730px;" class="cs hljs"  data-trim contenteditable>
+								
+								import java.io.*;
+								class DivideByZero {
+								  
+									// Main Method
+									public static void main(String[] args)
+										throws Exception
+									{ 
+										try {
+											// divide the numbers
+											divide(2, 0);
+										}
+										catch (ArithmeticException e) {
+											System.out.println("Message String = " + e.getMessage());
+										}
+									}
+								  
+									// method which divide two numbers
+									public static void divide(int a, int b)
+										throws ArithmeticException
+									{
+										int c = a / b;
+										System.out.println("Result:" + c);
+									}
+								}
+
+
+							</code>
+						</pre>
+						<p>What can we replace ArithmeticException with?</p>
+				</section>
+				<section data-background="#fff">
+					<h3>Learning Activity </h3>
+					<img src="images/io/exception-handling-keywords.PNG" width="600" style="box-shadow: none; " alt="Exception Handling Syntax"/>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 24px;">Step 1</b> <br>Observing the syntax above, create a short program that catches an exception when a user inputs a data type other than what was intended</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 24px;">Step 2</b> <br>Create a general catch block and create another catch block that is specific to the exception</p></div>
+
+
+					</div>
+				
+				</section>
 				<section data-background="images/io/files.jpg">
 					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Input/Output</h1>
 				</section>
 				<section data-background="#eee">
 						<h2>Overview of <code>java.nio</code> and <code>java.io</code>package</h2>
 						<p>The <code>java.nio </code>is a newer version of <code>java.io</code>.  </p>
-						<ul>
-							<li></li>
-						</ul>
+
 						
 						<ul>
 							<li><a href="https://docs.oracle.com/javase/tutorial/essential/io/dirs.html">Click here to navigte to <code>java.io package</code></a></li>
 						</ul>
 				</section>
 				<section data-background="#eee">
-				    <h2>File and Directory Classes</h2>
+				    <h2>Java File Class</h2>
 				    <ul>
 						
 						
@@ -322,43 +367,22 @@
 						<ul>
 							<li>Contians methods to access information about files</li>
 						</ul>
-						<li><code>Directory Class</code></li>
-						<ul>
-							<li>Provides information about directories or folders</li>
-						</ul>
+
                
 				    </ul>
 				</section>
 
-				<!--<section data-background="#fff">
+				<section data-background="#fff">
 						<h2>Common Methods in File Class</h2>
 						<ul>
 							
-							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.file?view=netcore-2.2">Click here to navigte to <code>File Class</code></a></li>		   
+							<li><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html">Click here to navigte to <code>File Class</code></a></li>		   
 						</ul>
-						<img src="images/io/filemethods.png" style="box-shadow: none;" alt="Common methods in File class"/>
+		
 				</section>
-				<section data-background="#fff">
-						<h2>File Class - code and output</h2>
 
-						<img src="images/io/filepic1.png" width="420" style="box-shadow: none; float: left;" alt="File picture example one"/>
-						<img src="images/io/filepic2.png" width="420" style="box-shadow: none; float: left;" alt="File Picture example two"/>
-				</section>
-				<section data-background="#fff">
-						<h2>Common Methods in Directory Class</h2>
-						<ul>
 
-							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.directory?view=netcore-2.2">Click here to navigte to <code>Directory Class</code></a></li>		   
-						</ul>
-						<img src="images/io/directorymethods.png" style="box-shadow: none;" alt="Common methods in directory class"/>
-				</section>
-				<section data-background="#fff">
-						<h2>Directory Class - code and output</h2>
-
-						<img src="images/io/directorypic1.png" width="420" style="box-shadow: none; float: left;" alt="directory picture example one"/>
-						<img src="images/io/directorypic2.png" width="420" style="box-shadow: none; float: left;" alt="directory Picture example two"/>
-				</section>
-				<section data-background="images/io/data_org.jpg">
+				<!--<section data-background="images/io/data_org.jpg">
 					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Data Organization</h1>
 				</section>
 				<section data-background="#eee">
