@@ -398,7 +398,6 @@
 						<div class="box blue" style="font-size: 18px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 24px;">LinkedList&lt;T&gt;</b> <br>A collection which can contain many objects of the same type, just like the ArrayList</p><p style="font-size:16px; margin-top: -9px; "><a href="https://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html">Linked List doc</a></p></div>
 						<div class="box green" style="font-size: 18px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 24px;">HashMap&lt;TKey, TValue&gt;</b> <br>Represents items in "key/value" pairs, and you can access them by an index of another type</p><p style="font-size:16px; margin-top: -9px;"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html">HashMap doc</a></p></div>
 						<div class="box yellow" style="font-size: 18px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 24px;">HashSet&lt;T&gt;</b> <br>a collection of items where every item is unique, and it is found in the java.util package</p><p style="font-size:16px; margin-top: -9px;"><a href="https://docs.oracle.com/javase/7/docs/api/java/util/HashSet.html">HashSet doc</a></p></div>
-						<!--<div class="box orange" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 28px;">SortedList&lt;TKey, TValue&gt;</b> <br>Represents a collection of key/value pairs that are sorted by key based on the associated IComparer&lt;T&gt; implementation.</p><p style="font-size:16px; margin-top: -11px;"><a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.sortedlist-2?view=netcore-2.2">SortedList API</a></p></div>-->
 					</div>
 				
 				</section>
@@ -477,16 +476,64 @@
 
 				</section>
 				<section data-background="#fff">
-					<h3>Activity </h3>
+					<h3>Learning Activity </h3>
 					<img src="images/intro/vending_machine_candy.jpg" alt="Picture of vending machine candy">
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 26px;">Step 1</b> <br>Using the previous slide code, create a new List that will hold the candy you select and enforce that only Candy objects can be within list. </p></div>
-						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 26px;">Step 2</b> <br>Implement logic within the existing looping structure that adds the selected candy to the new list </p></div>
-						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 26px;">Step 3</b> <br>Output both list. One list will hold the candy not selected and the other list will output the selected candy.</p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 26px;">Step 1</b> <br>Create a program that allows you to 1) continually enter the name and price of a candy 2) Create a candy object 3) Add candy object to ArrayList </p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 26px;">Step 2</b> <br>Create a method that allows you to 1) select a candy by name and remove a Candy object from the ArrayList</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 26px;">Step 3</b> <br>Output a list of all candy that remain on the list and display the total number or items list contains.</p></div>
 
 					</div>
-					
 				
+				</section>
+				<section data-background="#fff" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
+					<h3>Quiz Question 6</h3>
+					<pre style="box-shadow: none;">
+						<code style="font-size: 18px; height: 110px;"  data-trim contenteditable>
+							final String [] BRANDS = {"Adidas", "IKEA", "Puma", "Sony", "Nokia"};
+							ArrayList&lt;String&gt; brandList = new ArrayList&lt;String&gt;();
+							for(int x = 0; x < BRANDS.length; x++){
+								brandList.add(BRANDS[x]);	
+							}
+
+						</code>
+					</pre>
+				     <p style="font-size: 22px;">Assuming the arraylist class has been properly imported, Which of the following options is <strong>not</strong> permissible and most likely result in an error?</p>
+				     
+				     <input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
+				     <label for="attendance1" style="font-size: 18px;">A) <code>brandList.size();</code></label><br>
+				     <input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
+				     <label for="attendance2" style="font-size: 18px;">B) <code>brandList.get(2);</code></label><br>  
+				     <input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+				     <label for="attendance3" style="font-size: 18px;">C) <code>brandList.add("Nike");</code></label><br>
+				     <input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+				     <label for="attendance4" style="font-size: 18px;">D) <code>brandList.put("Sketchers");~</code></label><br>
+
+			  
+				</section>
+				<section data-background="#fff" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
+					<h3>Quiz Question 7</h3>
+					<pre style="box-shadow: none;">
+						<code style="font-size: 18px; height: 130px;"  data-trim contenteditable>
+							ArrayList&lt;String&gt; brandList = new ArrayList&lt;String&gt;();
+							for(int x = 0; x < BRANDS.length; x++){
+								brandList.add(BRANDS[x]);	
+							}
+
+						</code>
+					</pre>
+				     <p style="font-size: 22px;">Which of the following four collections is distinctly different as in it would not work if the collection name was replaced in the above code?</p>
+				     
+				     <input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
+				     <label for="attendance1" style="font-size: 18px;">A) <code>HashMap</code></label><br>
+				     <input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
+				     <label for="attendance2" style="font-size: 18px;">B) <code>HashSet</code></label><br>  
+				     <input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+				     <label for="attendance3" style="font-size: 18px;">C) <code>ArrayList</code></label><br>
+				     <input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+				     <label for="attendance4" style="font-size: 18px;">D) <code>LinkedList</code></label><br>
+
+			  
 				</section>
 				<!--<section data-background="#fff">
 					<h3>The Three Structures</h3>
@@ -520,238 +567,9 @@
 				<section data-background="white">
 					<iframe width="760" height="515" src="https://www.youtube.com/embed/eSYeHlwDCNA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</section>
-				<section data-background="#fff">
-					<h3>Sequence</h3>
-					<p style="font-size: 24px;"> Input/Output   &#10022;    Calculation  &#10022;  Declaring/Initializing Variables</p>
-					<div id="flexcontain">
-						<div class="box_two" style="margin: 10px;">
-							<ul>	
-								<li><b>Do</b> one process</li><br>
-								<li><b>Do</b> two process</li>	
-								<li><b>Do</b> three process</li>
-							</ul>
-						</div>
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<img src="images/structures/Sequence.PNG" alt="picture of absolute versus relative file structure">
-						</div>
-					</div>
 
-					
-				</section>
-				<section data-background="#fff">
-					<h3>Selection (Dual Alternative)</h3>
-					<p style="font-size: 28px;"> Dual Alternatives  &#10022;    Single Alternatives  </p>
-					<div id="flexcontain">
-						<div class="box_two" style="margin: 10px;">
-							<ul>	
-								<li><b>Decison Making Time</b> - the juncture in your program where you go right or left</li><br>
-							</ul>
-							<code style="font-size: 28px;">
-								<b>IF</b> some condition is true <b>THEN</b><br>
-								<b>DO</b> one process
-								<b>ELSE</b><br>
-								<b>DO</b> the other process<br>
-								<b>ENDIF</b>
-							</code>
-						</div>
-						<div class="box_two" style=" margin: 10px;">
-							<img src="images/structures/Selection.PNG" alt="">
-						</div>
-					</div>
-
-					
-				</section>
 				
-				<section data-background="#fff">
-					<h3>Selection (Single Alternative)</h3>
-					<p style="font-size: 28px;"> Dual Alternatives  &#10022;    Single Alternatives  </p>
-					<div id="flexcontain">
-						<div class="box_two" style="margin: 10px;">
-							<ul>	
-								<li><b>Single Alternative IF's</b> - An elseclause is not required</li><br>
-							</ul>
-							<code style="font-size: 28px;">
-								<b>IF</b> employee belongs to dentalPlan <b>THEN</b><br>
-								<b>DO</b> deduct $40 from employeeGrossPay
-								<b>ENDIF</b>
-							</code>
-						</div>
-						<div class="box_two" style=" margin: 10px;">
-							<img src="images/structures/single_alternative.PNG" alt="">
-						</div>
-					</div>
 
-					
-				</section>
-				<section data-background="#fff">
-					<h3>Looping Structure </h3>
-					<p style="font-size: 28px;"> Iterations  &#10022;    Repetition  </p>
-					<div id="flexcontain">
-						<div class="box_two" style="margin: 10px;">
-							<ul>	
-								<li><b>Do something repetitively</b> - Do this until I tell you to stop</li>
-								<li>Good for counting and iterating through list</li>
-							</ul>
-							<code style="font-size: 24px;">
-								<p><b>IF</b> some condition is true <b>THEN</b></p>
-								&nbsp;&nbsp;<p><b>DO</b> one process</p>
-								<p><b>ELSE</b></p>
-								&nbsp;&nbsp;<p><b>DO</b> the other process</p>
-								<p><b>ENDIF</b></p>
-							</code>
-						</div>
-						<div class="box_two" style=" margin: 10px;">
-							<img src="images/structures/looping.PNG" alt="">
-						</div>
-					</div>
-
-					
-				</section>
-				<section data-background="#fff">
-					<h3>A Few Considerations</h3>
-					<div id="flexcontain">
-						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 28px;">One Entry Point</b> <br> Every Structure should have one entry point and one exit point.</p></div>
-						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 28px;">No Crossed Lines</b> <br>Lines should never cross each other</p></div>
-						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 28px;">Continous Flow</b> <br>There should be a continuous flow to the program that makes logical sense.</p></div>
-						<div class="box yellow" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 28px;">Stacking Structures</b> <br>Attaching structures end-to-end</p></div>
-						<div class="box orange" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 28px;">Nesting Structures</b> <br>Placing one structure within another</p></div>
-					</div>
-				
-				</section>
-				<section data-background="white">
-					<h2>A basic example</h2>
-					<img src="images/structures/allstructures.PNG" width="575" style="box-shadow: none;" alt="structures set up properly example"/>
-				</section>
-				<section data-background="images/structures/practice.jpg" style="top: 0; color: white;">
-				    <h2 style="color: white; background-color: rgba(0,0,0, .8); padding: 3px;">Practice</h2>
-				  
-				        <h3 style=" font-weight: 300;  background-color: rgba(0,0,0, .8); padding: 3px;">Do your best at getting me out of the room using stuctures and two word commands for sequence and 5 words max for selection and looping.</h3>
-
-				</section>
-				<section data-background="#fff">
-					<h3>Priming Input  </h3>
-
-					<div id="flexcontain">
-						<div class="box_two" style="margin: 10px;">
-							<ul>	
-								<li><b>Priming Input/priming read)</b></li>
-								<ul>
-									<li>Reads the first input data record</li>
-									<li>Helps keep the program structured</li>
-								</ul>
-								<li>Watch for unstructured loops that do not follow this order</li>
-								<ul>
-									<li>First ask a question</li>
-									<li>Take action based on the answer</li>
-									<li>Return to ask the question again</li>
-								</ul>
-							</ul>
-
-						</div>
-						<div class="box_two" style=" margin: 10px;">
-							<img src="images/structures/priming_input.png" alt="">
-						</div>
-					</div>
-
-					
-				</section>
-				
-				<section data-background="#fff">
-					<h3>In-Class Activity 1</h3>
-					<p style="font-size: 28px; margin-bottom: -12px;">Recreate the program below using Flowgorithm </p>
-					<div id="flexcontain">
-						<div class="box_two" style="margin: 10px;">
-							<img src="images/structures/flow_chart_structure.png" height="535" alt="Structured Flow Chart">
-						</div>
-						<div class="box_two" style=" margin: 10px;">
-							<img src="images/structures/pseudocode_structure.png" alt="structured pseudocode ">
-						</div>
-					</div>
-				</section>
-				<section data-background="#fff">
-					<h3>In-Class Activity 2</h3>
-					<p style="font-size: 28px; margin-bottom: -12px;">Design a flowchart and write pseudocode for a program that accepts three numbers from a user and displays a message if sum is greated than 10. </p>
-		
-				</section>
-				<section data-background="images/structures/decisions_bg.jpg">
-					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">Making Decisions</h1>
-				</section>
-				<section data-background="#fff">
-					<h3>Decision Structures</h3>
-					<p style="font-size: 28px; margin-bottom: -12px;">if statements &#9924; if/else statements &#9924; switch statements </p>
-					<div id="flexcontain">
-						<div class="box_two" style="margin: 10px;">
-							<img src="images/structures/dual_alternative.png" alt="dual alternative diagram">
-							<p><b>Dual-alternative</b> selection structure</p>
-						</div>
-						<div class="box_two" style=" margin: 10px;">
-							<img src="images/structures/single_alternative.png" height="345" alt="single alternative diagram">
-							<p><b>Single-alternative</b> selection structure</p>
-						</div>
-					</div>
-				</section>
-				<section data-background="#fff">
-					<h3>Decision Structures</h3>
-					<p style="font-size: 28px; margin-bottom: -12px;">if statements &#9924; if/else statements &#9924; switch statements </p>
-					<div id="flexcontain">
-						<div class="box_two" style="margin: 10px;">
-							<pre style="box-shadow: none;">
-								<code style="font-size: 14px;" class="codebox code-example__codebox"  data-trim contenteditable>
-									int numOne = 2; int numTwo = 5;
-									
-									if(numOne >= numTwo){
-									   Console.WriteLine("2 is greater than 5");
-									}else{
-									   Console.WriteLine("2 is not greater than 5");
-									}
-	
-								</code>
-							</pre>
-							<p><b>Dual-alternative</b> selection structure</p>
-						</div>
-						<div class="box_two" style=" margin: 10px;">
-							<pre style="box-shadow: none;">
-								<code style="font-size: 14px;" class="codebox code-example__codebox"  data-trim contenteditable>
-									int numOne = 2; int numTwo = 5;
-									
-									if(numOne <= numTwo){
-								       Console.WriteLine("5 is greater than 2");
-									}
-	
-								</code>
-							</pre>
-							<p><b>Single-alternative</b> selection structure</p>
-						</div>
-					</div>
-				</section>
-
-				<section data-background="#fff" style="width:115%; margin-left: -100px;">
-					<h3>Relational Comparison Operators</h3>
-				
-					<div id="flexcontain">
-						<div class="box_two" style="margin: 10px;">
-							<ul>	
-								<li><b>Relational comparison operators</b></li>
-								<ul>
-									<li>Six types supported by all modern programming languages</li>
-									<li>Two values compared can be either variables or constants</li>
-								</ul>
-								<li><b>Any decision can be made with only three types of comparisons: =, >, and </b></li>
-								<li><b>"Not equal" operator <></b></li>
-								<ul>
-									<li>Involves thinking in double negatives</li>
-									<li>Best to restrict usage to “if without an else”—that is, only take action when some comparison is false</li>
-								</ul>
-							</ul>
-
-						</div>
-						<div class="box_two" style=" margin: 10px;">
-							<img src="images/structures/relational_operators.PNG" width="600" alt="relational operators diagram">
-						</div>
-					</div>
-
-					
-				</section>
 				<section data-background="images/structures/multiple_decisions.jpg">
 					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">Making Multiple Decisions</h1>
 				</section>
