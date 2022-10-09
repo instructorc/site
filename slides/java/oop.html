@@ -702,7 +702,7 @@
 
 				</section>
 
-				<!--<section data-background="images/intro/inheritance.jpg">
+				<section data-background="images/intro/inheritance.jpg">
 					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Inheritance</h1>
 				</section>
 				<section data-background="#eee">
@@ -719,8 +719,7 @@
 								<li><b>Base class</b> - a class used as a basis for inheritance</li>
 								<li><b>Derived/extended class</b> - a class that inherits from a base class. Also known as a <b>subclass or child class</b></li>
 								<li><b>Abstract class</b> - a class that you create only to extend from, but not to instantiate from</li>
-								<li><b>Virtual</b>  </li>
-								<li><b>Override</b> </li>
+								<li><b>Override Annotation</b> </li>
 							</ul>
 						</div>
 
@@ -761,9 +760,9 @@
 							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
 								
 								class User{
-									public string FirstName;
-									public string LastName;
-									public string Email;
+									public String FirstName;
+									public String LastName;
+									public String Email;
 									public int Phone;
 									
 									private void formatPhone(){
@@ -773,9 +772,9 @@
 									}
 								}
 								
-								class Profile : User{
-									public string AgentStatus;
-									public string AgentCompanyName;
+								class Profile extends User{
+									public String AgentStatus;
+									public String AgentCompanyName;
 								}
 
 
@@ -783,7 +782,7 @@
 						</pre>
 					</div>
 				</section>
-				<section data-background="#fff">
+				<!--<section data-background="#fff">
 					<h4>Creating and Using Abstract Class</h4>
 					
 						<img src="images/intro/abstract_one.PNG" alt="Abstract example one">
