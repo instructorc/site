@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Data and Data Modeling</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/luc.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;800&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="#f8f8f8">
+				    <h2 style="font-size: 3em; color: #000;">Data and Data Modeling</h2>
+				    <h3 style="color: #000; font-weight: 200;"></h3>
+				    <h3 style="color: #000; font-weight: 200;">Instructor: Chris Fulton</h3>
+				    <img src="images/intro/LUC_stacked.png" width="300" style="position: fixed; bottom: 0; margin-left: -15%; margin-bottom: 5%;" alt="LUC logo">
+				</section>
+				<section data-background="" data-background-size="contain" data-background="#fff" style="top: 0;">
+				    <h2>Agenda</h2>
+				    <ul style="font-size: 26px;">
+				        <li>Understanding Data</li>
+				        <li></li>
+						<li>getting to know you questionaire</li>
+						<li>Data Modeling</li>
+						<ul>
+							<li>Conceptual | Logical | Physical</li>
+						</ul>
+				    </ul>
+				</section>
+				<section data-background="" data-background-size="contain" data-background="#fff" style="top: 0;">
+				    <h2>Introductions + Ice Breaker</h2>
+				    <ul>
+				        <li>Name | Program</li>
+						<li>Two Truths and an Aspiration (my example below)</li>
+				        <ul style="font-size: 1em;">
+							<li>I have jumped out of a plane (tandem jump) </li>
+							<li>I created a highly successful mobile app</li>
+							<li>I lived in South Africa</li>
+						</ul>
+				        <li>Discussion Questions (Pick one):</li>
+				        <ul style="font-size: 1em;">
+					      	<li>What technology has yet to be created and why do you think <br> it will be impactful? </li>
+				      	</ul>
+				    </ul>
+				</section>
+				<section data-background="images/data/devops.jpg">
+					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">What is Data?</h1>
+				</section>
+				<section data-background="#fff">
+					<h3>Raw Data</h3>
+					<img src="images/data/rawdata.png"  alt="raw data"/>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 32px; margin: 10px;">
+							<h3>Data</h3>
+							<ul>	
+								<li style="font-size: 26px;"><b>Data</b> - Consist of raw facts</li>
+
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 32px; margin: 10px;">
+							<h3>Raw Data</h3>
+							<ul>	
+								<li style="font-size: 26px;"><b>Raw Data</b> - indicates that the facts have not yet been processes to reveal their meaning. </li>	
+							</ul>
+						</div>
+					</div>
+					
+					  <aside class="notes">
+					    
+					    
+					  </aside>
+				</section>
+
+				<section data-background="images/data/data_bg.jpg">
+					<h2 style="color: white; font-style: italic; background-color: rgba(0, 0, 0, 0.664); padding: 3px;">The purpose of collecting raw data is to extract meaning.</h2>
+				</section>
+				<section data-background="white" style="background-size: 80%;">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Data Pyramid</h3>
+					<img src="images/data/knowledge_pyramid.jpg" width="600" alt="data pyramid" />
+					<div id="flexcontain">
+						<div class="box" style="font-size: 24px; margin: 10px; height: 120px; background-color: #eee;"><h3 style="margin-top: 50px;">Raw Data</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 120px; background-color: #eee;"><h3 style="margin-top: 50px;">Information</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 120px; background-color: #eee;"><h3 style="margin-top: 50px;">Knowledge</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 120px; background-color: #eee;"><h3 style="margin-top: 50px;">Intelligence / Insight / Wisdom</h3></div>
+					</div>
+				</section>
+				<section data-background="images/data/data_bg.jpg">
+					<h2 style="color: white; font-style: italic; background-color: rgba(0, 0, 0, 0.664); padding: 3px;">Why is it important to think of data in this structure?</h2>
+				</section>
+
+				<section data-background="#fff">
+					<h3>Data Modeling</h3>
+					
+					<p style="font-size: 24px;"><b>Minimum data rule:</b>  All that is needed is there, and all that is there is needed
+					</p>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<h3>Conceptual Design</h3>
+							<ul>	
+								<li style="font-size: 20px;">Design a database independent of database software and physical details
+									Conceptual data model – Describes main data entities, attributes, relationships, and contraints
+									</li>
+
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<h3>Logical Design</h3>
+							<ul>	
+								<li style="font-size: 20px;">The process of transforming (or mapping) a conceptual schema of the application domain into a schema for the data model </li>	 
+								<li style="font-size: 20px;">some software is typically to create and map this model</li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<h3>Physical Design</h3>
+							<ul>	
+								<li style="font-size: 20px;">modifies how the data is formatted (framed) and transported between the client and server, both of which manage the entire process, and hides all the complexity from our applications within the new framing layer</li>
+								<li style="font-size: 20px;">The process of transforming logical data models into physical data Models</li>
+							</ul>
+						</div>
+	
+					</div>
+					
+					  <aside class="notes">
+					    
+					    
+					  </aside>
+				</section>
+				<section data-background="" data-background-size="contain" data-background="#fff" style="top: 0;">
+					<h4>Conceptual Model</h4>
+					<p style="font-size: 28px;">Types of ER-Models</p>
+					<img src="images/data/er_models.png" alt="Different types of ER models"/>
+					
+
+				</section>
+
+				<section data-background="#fff">
+					<h3>Conceptual Model Cont.</h3>
+					<p style="font-size: 24px;"><strong>Conceptual Modeling</strong> is an iterative process that requires you to constantly revisit your conceptual model and make alterations</p>
+					<img src="images/data/conceptual_model_process.png" alt="stages of ER models"/>
+					<p><strong></strong></p>
+					  <aside class="notes">
+					    
+					    
+					  </aside>
+				</section>
+				<section data-background="#fff">
+					<h2>MPLS Renters Example</h2>
+					<p>Entities and the Relationships that exist</p>
+
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/data/sample_er_model.PNG" alt="sample ER models"/>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px; max-width: 400px;">
+							<h3>Subset of Relationships Rules:</h3>
+							<ul>	
+								<li style="font-size: 20px;"><code>A <strong>PROPERTY</strong> can be <span style="text-decoration: underline;">associated</span> with one or more <strong>PROP_AMEN_LIST</strong>, each <strong>PROP_AMEN_LIST</strong> can be <span style="text-decoration: underline;">associated</span> with one <strong>PROPERTY</strong></code></li>	 
+								<li style="font-size: 20px;"><code>A <strong>PROPERTY</strong> can be <span style="text-decoration: underline;">added</span> zero or more<strong>PROPERTY_LIST</strong>, each <strong>PROPERTY_LIST</strong> can be <span style="text-decoration: underline;">added</span> to one <strong>PROPERTY</strong></code></li>
+							</ul>
+						</div>
+				</section>
+				<section data-background="#fff">
+					<h2>MPLS Renters Example</h2>
+					<p>Entities and the Relationships that exist</p>
+
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/data/sample_er_model.PNG" alt="sample ER models"/>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px; max-width: 300px;">
+							<h3>What is Depicted in ER Diagram:</h3>
+							<ul>	
+								<li style="font-size: 20px;"><code>Entity Name</code></li>	 
+								<li style="font-size: 20px;"><code>Entity Strength</code></li>
+								<li style="font-size: 20px;"><code>Relationship Strength(Week and Strong)</code></li>
+								<li style="font-size: 20px;"><code>Cardinality</code></li>
+								<li style="font-size: 20px;"><code>Null vs. Not Null</code></li>
+								<li style="font-size: 20px;"><code>Sometimes the Data type</code></li>
+							</ul>
+						</div>
+				</section>
+
+
+				<section data-background="images/data/devops.jpg">
+					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">Logical Model</h1>
+				</section>
+				<section data-background="#fff">
+					<h3>Logical Model</h3>
+					<p>A logical design is a conceptual, abstract design. You do not deal with the physical implementation details yet; you start to define the types of information that you need.</p>
+					<img src="images/data/data_modeling_logical.png" width="600" alt="Data Modeling Logical and Pysical Requirements">
+
+					
+				
+				</section>
+				<section data-background="#fff">
+					<h3>Different Types of DB</h3>
+					<p style="font-size: 28px;">Selection of DB should be based upon how, when, where and who will use the data.</p>
+					<img src="images/data/database_types.jpg" alt="Database Types and brands" />
+
+					<p style="font-size: 24px;"><strong>Relational & Non-Relational</strong> are the overarching categories of DB's</p>
+					  <aside class="notes">
+					    
+					    
+					  </aside>
+				</section>
+				<section data-background="#eee" data-background-size="contain" data-background="#fff" style="top: 0; text-align: left;">
+					<h2>iClicker Quiz/Practice #1</h2>
+					
+				     <p>According to the late work policy if needed, how many days are you permitted to have beyond the due date:</p>
+				     <input type="radio" id="age1" name="score" value="30">
+				     <label for="score1">A) 5</label><br>
+				     <input type="radio" id="age2" name="score" value="60">
+				     <label for="score2">B) As many as you need</label><br>  
+				     <input type="radio" id="age3" name="score" value="100">
+				     <label for="score3">C) 2</label><br>
+					 <input type="radio" id="age3" name="score" value="100">
+				     <label for="score4">D) You must submit work by due date</label><br><br>
+				  
+				</section>
+				<section data-background="" data-background-size="contain" data-background="#fff" style="top: 0;">
+					<h1>Questions?</h1>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
