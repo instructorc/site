@@ -101,12 +101,22 @@
 				</section>
 				<section data-background="white" style="background-size: 80%;">
 					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Data Pyramid</h3>
-					<img src="images/data/knowledge_pyramid.jpg" width="600" alt="data pyramid" />
+					<img src="images/data/knowledge_pyramid.jpg" width="500" alt="data pyramid" />
 					<div id="flexcontain">
 						<div class="box" style="font-size: 24px; margin: 10px; height: 120px; background-color: #eee;"><h3 style="margin-top: 50px;">Raw Data</h3></div>
 						<div class="box" style="font-size: 24px; margin: 10px; height: 120px; background-color: #eee;"><h3 style="margin-top: 50px;">Information</h3></div>
 						<div class="box" style="font-size: 24px; margin: 10px; height: 120px; background-color: #eee;"><h3 style="margin-top: 50px;">Knowledge</h3></div>
 						<div class="box" style="font-size: 24px; margin: 10px; height: 120px; background-color: #eee;"><h3 style="margin-top: 50px;">Intelligence / Insight / Wisdom</h3></div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Learning Activity</h3>
+					<p style="font-size: .6em;">Assume you want to create a database for a community that is looking to start a neighborhood watch program. The community would like to have information on volunteers, incidents that occur, meeting agendas and an evening watch schedule.  The community will ultimately have a website that displays a evening watch schedule, a list of all incidents and a page that displays upcoming and previous meeting agenda's. </p>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Questions</b> <br> What initials questions would you have for the community?</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Data</b> <br>What data would you collect?  Make a list of all the data you would need to collect?</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Grouping Data</b> <br>How would you organize/group the data?  What data can we remove? What data is essential and provides strategic insight?</p></div>
+
 					</div>
 				</section>
 				<section data-background="images/data/data_bg.jpg">
@@ -174,13 +184,18 @@
 
 					<div id="flexcontain">
 						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<img src="images/data/er_model_subset.png" alt="subset of MPLS Renters ER model"/>
+							<img src="images/data/er_model_subset.png" width="350px;" alt="subset of MPLS Renters ER model"/>
 						</div>
-						<div class="box_two" style="font-size: 22px; margin: 10px; max-width: 400px;">
-							<h3>Subset of Relationships Rules:</h3>
+						<div class="box_two" style="font-size: 22px; margin: 10px; max-width: 300px;">
+							<h3>What is Depicted in ER Diagram:</h3>
 							<ul>	
-								<li style="font-size: 20px;"><code>A <strong>PROPERTY</strong> can be <span style="text-decoration: underline;">associated</span> with one or more <strong>PROP_AMEN_LIST</strong>, each <strong>PROP_AMEN_LIST</strong> can be <span style="text-decoration: underline;">associated</span> with one <strong>PROPERTY</strong></code></li>	 
-								<li style="font-size: 20px;"><code>A <strong>PROPERTY</strong> can be <span style="text-decoration: underline;">added</span> zero or more<strong>PROPERTY_LIST</strong>, each <strong>PROPERTY_LIST</strong> can be <span style="text-decoration: underline;">added</span> to one <strong>PROPERTY</strong></code></li>
+								<li style="font-size: 20px;"><code>Entity Name</code></li>	 
+								<li style="font-size: 20px;"><code>Entity Strength</code></li>
+								<li style="font-size: 20px;"><code>Relationship Strength(Weak and Strong)</code></li>
+								<li style="font-size: 20px;"><code>Primary Key + Foriegn Key</code></li>
+								<li style="font-size: 20px;"><code>Cardinality</code></li>
+								<li style="font-size: 20px;"><code>Null vs. Not Null</code></li>
+								<li style="font-size: 20px;"><code>Sometimes the Data type</code></li>
 							</ul>
 						</div>
 				</section>
@@ -190,22 +205,20 @@
 
 					<div id="flexcontain">
 						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<img src="images/data/er_model_subset.png" width="350px;" alt="subset of MPLS Renters ER model"/>
+							<img src="images/data/er_model_subset.png" alt="subset of MPLS Renters ER model"/>
 						</div>
-						<div class="box_two" style="font-size: 22px; margin: 10px; max-width: 300px;">
-							<h3>What is Depicted in ER Diagram:</h3>
+						<div class="box_two" style="font-size: 22px; margin: 10px; max-width: 400px;">
+							<h3>Subset of Relationships Rules:</h3>
 							<ul>	
-								<li style="font-size: 20px;"><code>Entity Name</code></li>	 
-								<li style="font-size: 20px;"><code>Entity Strength</code></li>
-								<li style="font-size: 20px;"><code>Relationship Strength(Week and Strong)</code></li>
-								<li style="font-size: 20px;"><code>Cardinality</code></li>
-								<li style="font-size: 20px;"><code>Null vs. Not Null</code></li>
-								<li style="font-size: 20px;"><code>Sometimes the Data type</code></li>
+								<li style="font-size: 20px;"><code>A <strong>PROPERTY</strong> can be <span style="text-decoration: underline;">associated</span> with one or more <strong>PROP_AMEN_LIST</strong>, each <strong>PROP_AMEN_LIST</strong> can be <span style="text-decoration: underline;">associated</span> with one <strong>PROPERTY</strong></code></li>	 
+							</ul>
+							<h3>A few questions:</h3>
+							<ul>	
+								<li style="font-size: 20px;"><code>Why is <strong>PROP_AMEN_LIST</strong> entity needed?  Why can't a relationship between <strong>AMENTITY</strong> and <strong>PROPERTY</strong> exist? </code></li>
+								<li style="font-size: 20px;"><code>Why is <strong>PROP_AMEN_LIST</strong> entity needed?  Why can't a relationship between <strong>AMENTITY</strong> and <strong>PROPERTY</strong> exist? </code></li>	 
 							</ul>
 						</div>
 				</section>
-
-
 				<section data-background="images/data/devops.jpg">
 					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">Logical Model</h1>
 				</section>
@@ -217,11 +230,11 @@
 				</section>
 				<section data-background="#fff">
 					<h3>Learning Activity</h3>
-					<img src="images/structures/array_syntax_initializer.png" width="400" alt="Initializing arrays">
+					<img src="images/data/er_model_subset.png" width="350px;" alt="subset of MPLS Renters ER model"/>
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Element</b> <br> An item in the array <br> - Array elements are contiguous in memory</p></div>
-						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Size of the Array</b> <br>the number of elements it will hold</p></div>
-						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Subscripts or Indexes</b> <br>Position number of an item in an array <br> Subscripts are always a sequence of integers</p></div>
+						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #eee; height: 235px; color: #111;"><p><b style="font-size: 24px;">Business Rules</b> <br> Write all relationships depicted between in image above </p></div>
+						<div class="box blue" style="font-size: 18px; margin: 10px; background-color: #eee; height: 235px; color: #111;"><p><b style="font-size: 24px;">Draw.io</b> <br>Practice using draw.io to replicate the entities display above.</p></div>
+						<div class="box green" style="font-size: 18px; margin: 10px; background-color: #eee; height: 235px; color: #111;"><p><b style="font-size: 24px;">Extending ERD</b> <br>Consider adding a profile entity<br> Write the relationship between profile and property <br>Addend your conceptual model to include the new entity</p></div>
 
 					</div>
 					
@@ -236,11 +249,12 @@
 				     <label for="score1">A) True</label><br>
 				     <input type="radio" id="age2" name="score" value="60">
 				     <label for="score2">B) False</label><br>  
-				     <input type="radio" id="age3" name="score" value="100">
-				  
 				</section>
 				<section data-background="" data-background-size="contain" data-background="#fff" style="top: 0;">
-					<h1>Questions?</h1>
+					<h1>Supplemental Material</h1>
+					<ul>
+						<li></li>
+					</ul>
 				</section>
 
 			</div>
