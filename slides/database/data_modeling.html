@@ -122,7 +122,65 @@
 				<section data-background="images/data/data_bg.jpg">
 					<h2 style="color: white; font-style: italic; background-color: rgba(0, 0, 0, 0.664); padding: 3px;">Why is it important to think of data in this structure?</h2>
 				</section>
+				<section data-background="images/data/devops.jpg">
+					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">Data Modeling</h1>
+				</section>
+				<section data-background="#fff">
+					<h3>Data Models + Data Modeling </h3>
+					
+					<p style="font-size: 24px;"><b>Model:</b>  Abstraction of a real-world object or event </p>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<h3>Data Models</h3>
+							<ul>	
+								<li style="font-size: 20px;">Are a communication tool</li>	 
+								<li style="font-size: 20px;">Give an overview of the database</li>
+								<li style="font-size: 20px;">Organize data for various users</li>
+								<li style="font-size: 20px;">Are an abstraction for the creation of good database</li>
 
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<h3>Data Modeling</h3>
+							<ul>	
+								<li style="font-size: 20px;">Iterative and progressive process of creating a specific data model for a determined problem domain</li>
+								<li style="font-size: 20px;">The process of transforming logical data models into physical data Models</li>
+							</ul>
+						</div>
+
+	
+					</div>
+					
+					  <aside class="notes">
+					    
+					    
+					  </aside>
+				</section>
+				<section data-background="white" style="background-size: 80%;">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Business Rules</h3>
+					<img src="images/data/business_rules.PNG" width="500" alt="Source for business rules" />
+					<div id="flexcontain">
+
+						<div class="box" style="font-size: 20px; margin: 10px; height: 290px; background-color: #eee;"><h3 style="margin-top: 50px;">Definition</h3><p>Brief, precise, and unambiguous description of a policy, procedure, or principle. <br> Some business rule describes a constraint that cannot be shown in the ER diagram</p></div>
+						<div class="box" style="font-size: 20px; margin: 10px; height: 290px; background-color: #eee;"><h3 style="margin-top: 50px;">Purpose</h3><p>Describe main and distinguishing characteristics of the data</p></div>
+						<div class="box" style="font-size: 18px; margin: 10px; height: 290px; background-color: #eee;"><h3 style="margin-top: 50px;">Example</h3><code> - A community watch group member can submit one or more incidents.</code><br><code>- An incident can be assigned multiple categories</code><br><code> - An agenda can be only be created by site administrator who is also a member</code></div>
+					</div>
+				</section>
+				<section data-background="white" style="background-size: 80%;">
+					
+					<img src="images/data/documenting_business_rules.PNG" width="900" alt="Documenting Business Rules" />
+
+				</section>
+				<section data-background="white" style="background-size: 80%;">
+					
+					<img src="images/data/step_one.PNG" width="900" alt="Step one of documenting Business Rules" />
+
+				</section>
+				<section data-background="white" style="background-size: 80%;">
+					
+					<img src="images/data/step_two.PNG" width="1000" alt="Step two of documenting Business Rules" />
+
+				</section>
 				<section data-background="#fff">
 					<h3>Data Modeling</h3>
 					
@@ -178,6 +236,39 @@
 					    
 					  </aside>
 				</section>
+	
+				<!--<section data-background="#fff">
+					<h2>MPLS Renters Example</h2>
+					<p>Understanding various keys</p>
+
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/data/er_model_subset.png" alt="subset of MPLS Renters ER model"/>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px; max-width: 400px;">
+							<h3>Types of Keys:</h3>
+							<ul>	
+								<li style="font-size: 18px;"><code><strong>Primary Key</strong> a key</code></li>
+								<li style="font-size: 18px;"><code><strong>Foriegn Key</strong> a key</code></li>
+								<li style="font-size: 18px;"><code><strong>Composite/Compound/Concatenated Key</strong> a key</code></li>
+								<li style="font-size: 18px;"><code><strong>Candidate Key</strong> a situation where other columns can serve as a primary key</code></li>	 
+							</ul>
+							<h3>How are keys applied?</h3>
+							<ul>	
+								<li style="font-size: 20px;"><code>Why is <strong>PROP_AMEN_LIST</strong> entity needed?  Why can't a relationship between <strong>AMENTITY</strong> and <strong>PROPERTY</strong> exist? </code></li>
+								<li style="font-size: 20px;"><code>Why is <strong>PROP_AMEN_LIST</strong> entity needed?  Why can't a relationship between <strong>AMENTITY</strong> and <strong>PROPERTY</strong> exist? </code></li>	 
+							</ul>
+						</div>
+				</section>-->
+				<section data-background="images/data/devops.jpg">
+					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">Logical Model</h1>
+				</section>
+				<section data-background="#fff">
+					<h3>Logical Model</h3>
+					<p>A logical design is a conceptual, abstract design. You do not deal with the physical implementation details yet; you start to define the types of information that you need.</p>
+					<img src="images/data/data_modeling_logical.png" width="600" alt="Data Modeling Logical and Pysical Requirements">
+
+				</section>
 				<section data-background="#fff">
 					<h2>MPLS Renters Example</h2>
 					<p>Entities and the Relationships that exist</p>
@@ -218,38 +309,6 @@
 								<li style="font-size: 20px;"><code>Why is <strong>PROP_AMEN_LIST</strong> entity needed?  Why can't a relationship between <strong>AMENTITY</strong> and <strong>PROPERTY</strong> exist? </code></li>	 
 							</ul>
 						</div>
-				</section>
-				<!--<section data-background="#fff">
-					<h2>MPLS Renters Example</h2>
-					<p>Understanding various keys</p>
-
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<img src="images/data/er_model_subset.png" alt="subset of MPLS Renters ER model"/>
-						</div>
-						<div class="box_two" style="font-size: 22px; margin: 10px; max-width: 400px;">
-							<h3>Types of Keys:</h3>
-							<ul>	
-								<li style="font-size: 18px;"><code><strong>Primary Key</strong> a key</code></li>
-								<li style="font-size: 18px;"><code><strong>Foriegn Key</strong> a key</code></li>
-								<li style="font-size: 18px;"><code><strong>Composite/Compound/Concatenated Key</strong> a key</code></li>
-								<li style="font-size: 18px;"><code><strong>Candidate Key</strong> a situation where other columns can serve as a primary key</code></li>	 
-							</ul>
-							<h3>How are keys applied?</h3>
-							<ul>	
-								<li style="font-size: 20px;"><code>Why is <strong>PROP_AMEN_LIST</strong> entity needed?  Why can't a relationship between <strong>AMENTITY</strong> and <strong>PROPERTY</strong> exist? </code></li>
-								<li style="font-size: 20px;"><code>Why is <strong>PROP_AMEN_LIST</strong> entity needed?  Why can't a relationship between <strong>AMENTITY</strong> and <strong>PROPERTY</strong> exist? </code></li>	 
-							</ul>
-						</div>
-				</section>-->
-				<section data-background="images/data/devops.jpg">
-					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">Logical Model</h1>
-				</section>
-				<section data-background="#fff">
-					<h3>Logical Model</h3>
-					<p>A logical design is a conceptual, abstract design. You do not deal with the physical implementation details yet; you start to define the types of information that you need.</p>
-					<img src="images/data/data_modeling_logical.png" width="600" alt="Data Modeling Logical and Pysical Requirements">
-
 				</section>
 				<section data-background="#fff">
 					<h3>Learning Activity</h3>
