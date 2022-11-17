@@ -71,8 +71,149 @@
 						<div class="box" style="font-size: 24px; margin: 10px; height: 260px; background-color: #eee;"><h3 style="margin-top: 50px;">Delete anomaly</h3> A problem that occurs when a row in a table is deleted; the result is loss of related data</div>
 					</div>
 				</section>
+				<section data-background="#fff">
+					<h3>Why is Normalization needed?</h3>
+					<p style="font-size: 28px;">It’s a stringent look at the attributes an entity contain and the process of reducing data anomalies</p>
+					<img src="images/normalization/normalization_overview.PNG" width="600" alt="Image of normalization overview" />
+
+					
+					  <aside class="notes">
+					    
+					    
+					  </aside>
+				</section>
+				<section data-background="#fff">
+					<h3>Normalization Key Concepts</h3>
+					<p style="font-size: 28px;">It’s a stringent look at the attributes an entity contain and the process of reducing data anomalies</p>
+					<img src="images/normalization/Normalization key concepts.PNG" width="700" alt="Normalization key concepts" />
+
+					
+					  <aside class="notes">
+					    
+					    
+					  </aside>
+				</section>
 				<section data-background="../logic/images/methods/overloaded_bg.jpg">
 					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">Normal Forms</h1>
+				</section>
+				<section data-background="#eee">
+					<h3>Normalization Process</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 22px; margin: 10px; background-color: #2d4650; height: 570px;"><p><b style="font-size: 32px;">Ensure that tables conform to well formed relations</b> <br> - Each table represents a single subject <br> - No data item will be unnecessarily stored in more than one table <br> - All nonprime attributes in a table are dependent on the primary key <br> - Each table is void of insertion, update, and deletion anomalies.</p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 570px;"><p><b style="font-size: 32px;">Ensures all tables are in at least 3NF</b> <br> - Higher forms are not likely to be encountered in business environment. <br> - Works one relation at a time</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 570px;"><p><b style="font-size: 32px;">Starts by:</b> <br> -Identifying the dependencies of a relation(table) <br> - Progressively breaking the relation into new set of relations.</p></div>
+					</div>
+				</section>
+				<section data-background="#fff">
+
+					<img src="images/normalization/1nf.PNG"  alt="1nf process" />
+
+					
+					  <aside class="notes">
+					    
+					    
+					  </aside>
+				</section>	
+				<section data-background="#fff">
+
+					<img src="images/normalization/normalization_example.PNG"  alt="1nf process example" />
+
+					
+					  <aside class="notes">
+					    
+					    
+					  </aside>
+				</section>
+				<section data-background="#fff">
+
+					<img src="images/normalization/2nf.PNG"  alt="2nf process" />
+
+					
+					  <aside class="notes">
+					    
+					    
+					  </aside>
+				</section>	
+				<section data-background="#fff">
+
+					<img src="images/normalization/2nf_overview.PNG"  alt="2nf process example" />
+
+					
+					  <aside class="notes">
+					    
+					    
+					  </aside>
+				</section>
+				<section data-background="#fff">
+
+					<img src="images/normalization/3nf.PNG"  alt="3nf process" />
+
+					
+					  <aside class="notes">
+					    
+					    
+					  </aside>
+				</section>	
+				<section data-background="#fff">
+
+					<img src="images/normalization/3nf_overview.PNG"  alt="3nf process example" />
+
+					
+					  <aside class="notes">
+					    
+					    
+					  </aside>
+				</section>
+				<section data-background="#fff">
+
+					<img src="images/normalization/bcnf.PNG"  alt="boyce codd normal form process" />
+
+					
+					  <aside class="notes">
+					    
+					    
+					  </aside>
+				</section>	
+				<section data-background="#fff">
+
+					<img src="images/normalization/bcnf_overview.PNG"  alt="boyce codd mormal form process example" />
+
+					
+					  <aside class="notes">
+					    
+					    
+					  </aside>
+				</section>
+				<section data-background="#fff">
+
+					<img src="images/normalization/4nf.PNG"  alt="4nf normal form process" />
+
+					
+					  <aside class="notes">
+					    
+					    
+					  </aside>
+				</section>	
+				<section data-background="#fff">
+
+					<img src="images/normalization/4nf_overview.PNG"  alt="4nf normal form process example" />
+
+					
+					  <aside class="notes">
+					    
+					    
+					  </aside>
+				</section>
+				<section data-background="#fff">
+					<h3>Learning Activity</h3>
+					<img src="images/normalization/learning_activity_a.PNG" width="600"  alt="image a" />
+					<img src="images/normalization/learning_activity_b.PNG" width="500" alt="image b" />
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Using a Spreadsheet</b> <br>List the data in 1NF form</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Identify Partial and Transitive dependencies</b> <br>Identify new tables that should be formed.</p></div>
+
+
+					</div>
 				</section>
 				<!--<section data-background="#eee">
 					<h3>Why Methods?</h3>
@@ -82,17 +223,7 @@
 						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">Readability and Reliability</b> <br> Modular code is code that is highly organized. To organize code based on task means that the programmer can organize each piece of code based on what it does.</p><p>Code that is easier to read, easier to debug, easier to maintain and easier to share will always run smoother with less errors.</p></div>
 					</div>
 				</section>	
-				<section data-background="#fff">
-					<h3>Different Types of DB</h3>
-					<p style="font-size: 28px;">Selection of DB should be based upon how, when, where and who will use the data.</p>
-					<img src="images/data/database_types.jpg" alt="Database Types and brands" />
 
-					<p style="font-size: 24px;"><strong>Relational & Non-Relational</strong> are the overarching categories of DB's</p>
-					  <aside class="notes">
-					    
-					    
-					  </aside>
-				</section>
 				<section data-background="images/data/devops.jpg">
 					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">What is Data?</h1>
 				</section>
