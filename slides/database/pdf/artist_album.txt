@@ -1,0 +1,53 @@
+artistID,artistName
+1,'Marvin Gaye'
+2,'The Beach Boys'
+3,'Joni Mitchell'
+4,'Stevie Wonder'
+5,'The Beatles'
+6,'Nirvana'
+7,'Fleetwood Mac'
+8,'Prince and the Revolution'
+9,'Bob Dylan'
+10,'Lauryn Hill'
+11,'Michael Jackson'
+12,'Aretha Franklin'
+13,'The Rolling Stones'
+14,'Public Enemy'
+15,'The Clash'
+16,'Kanye West'
+17,'Kendrick Lamar'
+
+
+
+albumID,album_name,album_release_year,album_genre,album_artistID
+1,'What's Going On',1971,'soul',1
+2,'Pet Sounds',1966,'pop',2
+3,'Blue',1971,folk,3
+4,'Songs in the Key of Life',1976,'funk',4
+5,'Abbey Road',1969,'rock',5
+6,'Nevermind',1991,'rock',6
+7,'Rumours',1977,'rock',7
+8,'Purple Rain',1984,'funk',8
+9,'Blood on the Tracks',1975,'rock',9
+10,'The Miseducation of Lauryn Hill',1998,'r&b',10
+11,'Revolver',1966,'rock',5
+12,'Thriller',1982,'pop',11
+13,'I Never Loved a Man the Way I Love You',1967,'soul',12
+14,'Exile on Main Street',1972,'rock',13
+15,'It Takes a Nation of Millions to Hold Us Back',1988,'rap',14
+16,'London Calling',1979,'rock',15
+17,'My Beautiful Dark Twisted Fantasy',2010,'rap',16
+18,'Highway 61 Revisited',1965,'rock',9
+19,'To Pimp a Butterfly',2015,'rap',17
+
+
+
+
+Source: https://www.rollingstone.com/music/music-lists/best-albums-of-all-time-1062063/
+
+
+
+
+
+
+

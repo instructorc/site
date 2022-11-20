@@ -79,17 +79,67 @@
 						<iframe src="https://instructorc.github.io/site/slides/database/pdf/SQL-Cheat-Sheet.pdf" width="900" height="600"></iframe>
 					
 				</section>
-				<section data-background="white" style="background-size: 80%;">
-					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Preventing Anomalies</h3>
-					<img src="images/normalization/anomalies.PNG" width="700" alt="data anomalies ex" />
+				<section data-background="#fff">
+					<h3>Tools</h3>
+					<p>A number of tools can help with visualizing, querying, and database script creation</p>
+				
 					<div id="flexcontain">
-						<div class="box" style="font-size: 24px; margin: 10px; height: 260px; background-color: #eee;"><h3 style="margin-top: 50px;">Update anomaly</h3> A problem that occurs when the data in a table needs to be altered; the result is repeated data</div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 260px; background-color: #eee;"><h3 style="margin-top: 50px;">Insert anomaly</h3> A problem that occurs when new rows are added to a table; the result is incomplete rows</div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 260px; background-color: #eee;"><h3 style="margin-top: 50px;">Delete anomaly</h3> A problem that occurs when a row in a table is deleted; the result is loss of related data</div>
+						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #eee; height: 280px; color: #111;"><code><b style="font-size: 32px;">ER Modeling tools</b> <br> - <a href="https://draw.io">Draw.io</a><br> - <a href="https://www.erdconcepts.com/index.html">ER Concepts 8</a><br> - <a href="https://github.com/ondras/wwwsqldesigner">SQL Designer</a> <br> - <a href="https://drawsql.app/">Draw SQL</a></code></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #eee; height: 280px; color: #111;"><code><b style="font-size: 32px;">Database Interface Tools</b> <br> - <a href="https://sqlitebrowser.org/">DB Browser</a> <br> - <a href="https://dbeaver.io/">DB Beaver</a> <br> - <a href="https://www.mysql.com/products/workbench/">MySQL Workbench</a> -<br> - <a href="https://popSQL.com">popSQL</a><br> - <a href="https://www.jetbrains.com/datagrip/">Datagrip</a></code></div>
+
+
+					</div>
+					<aside class="notes">
+
+					</aside>
+				</section>
+				<section data-background="#fff">
+					<h4>SQL Statement to execute our example</h4>
+				
+					<p style="font-size: 24px;"></p>
+					<div id="flexcontain">
+						<div class="box">
+							<img src="../img/data/entity_relationship.PNG" alt="Entity Relationship"/>
+						</div>
+						<div class="box">
+							<pre>
+								<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+									CREATE TABLE "USER" (
+										"user_id"	INTEGER,
+										"user_email"	TEXT NOT NULL,
+										"user_password"	TEXT,
+										PRIMARY KEY("user_id" AUTOINCREMENT)
+									);
+									
+									CREATE TABLE "TASK" (
+										"task_id"	INTEGER,
+										"task_user_id"	INTEGER NOT NULL,
+										"task_category"	TEXT,
+										"task_description"	TEXT,
+										FOREIGN KEY("task_user_id") REFERENCES "USER"("user_id"),
+										PRIMARY KEY("task_id" AUTOINCREMENT)
+									);
+
+
+							</code>
+						</pre>
+						</div>
+						
+					</div>
+					
+				</section>
+
+				<section data-background="white" style="background-size: 80%;">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Learning Activity</h3>
+					<img src="images/sql/artist_album_erd.png" width="600" alt="artist album" />
+					<div id="flexcontain">
+						<div class="box" style="font-size: 24px; margin: 10px; height: 260px; background-color: #eee;"><h3 style="margin-top: 50px;">Create Table</h3> Write the SQL command to CREATE the table </div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 260px; background-color: #eee;"><h3 style="margin-top: 50px;">Insert Records</h3> Write the SQL command to INSERT the records found in file <br><a href="./pdf/artist_album.txt" target="_blank">Open artist_album.txt file</a></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 260px; background-color: #eee;"><h3 style="margin-top: 50px;">Query Table</h3> Using the SQL SELECT command and document 7 ways to retrieve and aggregate data from Album table  </div>
 					</div>
 				</section>
 				<section data-background="../logic/images/methods/overloaded_bg.jpg">
-					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">Normal Forms</h1>
+					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">Advanced SQL</h1>
 				</section>
 				<!--<section data-background="#eee">
 					<h3>Why Methods?</h3>

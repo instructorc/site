@@ -82,9 +82,9 @@
 	                        	<li>Routing with Express - HandleBars.js(front-end) | GET,POST, DELETE, PUT | JSON </li>
 	                        </ul>
                         </ul>
+						<li>Node and SQLite Walkthrough</li>
 
-                        <!--<li>Key Commands</li>-->
-                        <!--<li>NPM summary</li>-->
+                
 				    </ul>
 				</section>
 				<section data-background="#fff">
@@ -471,6 +471,179 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 					</div>
 					
 				
+				</section>
+				<section data-background="images/methods/overloaded_bg.jpg">
+					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">Node.js and SQLite</h1>
+				</section>
+				<section data-background="" data-background-size="contain" data-background="#fff" style="top: 0;">
+					<h4>Getting Started with Implementing SQLite Database</h4>
+					<p>SQLite -   Configuration steps below:</p>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+				
+							<ul>
+								<li><strong>Step 1</strong> - Import database drivers via NPM</li>
+								<li><strong>Step 2</strong> - Make connection to database</li>
+								<li><strong>Step 3</strong> - Query Database</li>
+								<li><strong>Step 4</strong> - Configure session store </li>
+
+							</ul>
+						</div>
+
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h4>Step 1 - Install Dependencies</h4>
+				
+					<p style="font-size: 24px;">When incorporating a database, we need both the drivers and functionality to configure our session store</p>
+					<div id="flexcontain">
+						<div class="box">
+							<pre>
+								<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+								npm install sqlite3 //install sqlite database drivers
+								npm install connect-sqlite3  //install module to configure session store
+
+							</code>
+						</pre>
+						</div>
+						
+					</div>
+					
+				</section>
+				<section data-background="#fff">
+					<h4>Step 2 - Making connection to Database </h4>
+				
+					<p style="font-size: 24px;">Create a config file that will store your configurtion </p>
+					<div id="flexcontain">
+						<div class="box">
+							<pre>
+								<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+									var sqlite3 = require('sqlite3').verbose() //npm install sqlite3
+									const bcrypt = require('bcryptjs');
+									
+									//Creating a new database instance - Indication of connected database
+									//Before peforming any operations to database, make sure database is connected.
+									let db = new sqlite3.Database('./mplsrenter.sqlite', (err) => {
+										if (err) {
+										  // Cannot open database
+										  console.error(err.message)
+										  throw err
+										}else{
+											//Successful database connection
+											console.log('Connected to the SQLite database.') 
+										}
+									});
+								</code>
+							</pre>
+						</div>
+						
+					</div>
+					
+				</section>
+				<section data-background="#fff">
+					<h4>Step 3 - Context File "database.js" </h4>
+				
+					<p style="font-size: 24px;">Helpful to place database operations into a file and import database functions into other parts of program when needed. </p>
+					<p style="font-size: 20px;">Helpful resource on querying database <a href="https://www.sqlitetutorial.net/">https://www.sqlitetutorial.net/</a></p>
+					<div id="flexcontain">
+						<div class="box">
+							<pre>
+								<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+									//Create a profile
+									let createProfile = (profile) =>{
+										var createProfileSql ='INSERT INTO PROSPECTIVE_PROFILE (prof_id, prof_firstname,prof_lastname, prof_address, prof_decision_date, prof_email, prof_password, prof_phone, prof_rent_range, prof_image_url, prof_class_num) VALUES (?,?,?,?,?,?,?,?,?,?,?)'
+										var params =[null, profile.firstName, profile.lastName, null, profile.move_date, profile.userEmail, profile.user_password, null, profile.user_rent_range, './images/user_profile_images/generic_profile_img.png', null];
+									
+										db.run(createProfileSql, params, function(err){
+											if (err){
+												return console.log(err.message);
+											}
+											console.log("Profile Created");
+											console.log(`Rows inserted ${this.changes}`);	  
+										});
+									}
+									
+									//Return a user from database
+									let authenticateUser = (username, password, done) =>{
+									
+										var findUser = 'SELECT * FROM PROSPECTIVE_PROFILE WHERE prof_email = ?';
+									
+										db.get(findUser, username, function (err, user) {
+											console.log(user);
+											if (!user) {
+											  return done(null, false);
+											}
+											bcrypt.compare(password, user.prof_password, function (err, result) {
+											  if (err) {
+												return console.log(err.message);
+											  }
+											  if (result) {
+												return done(null, user);
+											  }
+											});
+									  
+										  });
+									}
+
+									//Export functions to be used in other areas of program.
+									module.exports = {db, createProfile, authenticateUser}
+									
+								</code>
+							</pre>
+						</div>
+						
+					</div>
+					
+				</section>
+				<section data-background="#fff">
+					<h4>Step 4 - Configure session store </h4>
+				
+					<p>NPM module reference - <a href="https://www.npmjs.com/package/connect-sqlite3">connect-sqlite3</a> </p>
+					<div id="flexcontain">
+						<div class="box">
+							<pre>
+								<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+									//Require dependencies you installed
+									var createError = require('http-errors');
+									var express = require('express');
+									var session = require('express-session');
+									var path = require('path');
+									var cookieParser = require('cookie-parser');
+									var logger = require('morgan');
+									var hbs = require('hbs');
+									const passport = require('passport');
+									var session = require('express-session');
+									var SQLiteStore = require('connect-sqlite3')(session);
+
+									//passport config
+									require('./config/passport')(passport);
+									
+									var session_config = {
+											secret: 'secret', //a random unique string key used to authenticate a session
+											resave: true, //nables the session to be stored back to the session store, even if the session was never modified during the request
+											saveUninitialized: true, //his allows any uninitialized session to be sent to the store. When a session is created but not modified, it is referred to as uninitialized.
+											cookie: { secure: true }, //true is a recommended option. However, it requires an https-enabled website
+											//store  parameter when saving session to database
+											store: new SQLiteStore
+									};
+									
+									session_config.cookie.secure = false;
+									//IMPORTANT REVIEW IN CLASS - https://expressjs.com/en/resources/middleware/session.html
+
+									//Express Sessions
+									app.use(session(session_config))
+									//Reference for above - https://www.section.io/engineering-education/session-management-in-nodejs-using-expressjs-and-express-session/
+
+
+									//Passport middleware
+									app.use(passport.initialize());
+									app.use(passport.session());
+								</code>
+							</pre>
+						</div>
+						
+					</div>
+
 				</section>
 				<section data-background="#fff">
 					<h3>Video Lectures</h3>
