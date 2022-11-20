@@ -22,7 +22,7 @@ artistID,artistName
 albumID,album_name,album_release_year,album_genre,album_artistID
 1,'What's Going On',1971,'soul',1
 2,'Pet Sounds',1966,'pop',2
-3,'Blue',1971,folk,3
+3,'Blue',1971,'folk',3
 4,'Songs in the Key of Life',1976,'funk',4
 5,'Abbey Road',1969,'rock',5
 6,'Nevermind',1991,'rock',6
