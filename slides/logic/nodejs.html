@@ -485,7 +485,7 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 								<li><strong>Step 1</strong> - Import database drivers via NPM</li>
 								<li><strong>Step 2</strong> - Make connection to database</li>
 								<li><strong>Step 3</strong> - Query Database</li>
-								<li><strong>Step 4</strong> - Configure session store </li>
+
 
 							</ul>
 						</div>
@@ -501,7 +501,7 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 							<pre>
 								<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
 								npm install sqlite3 //install sqlite database drivers
-								npm install connect-sqlite3  //install module to configure session store
+								npm install connect-sqlite3  //install module to configure session store *Needed for authentication
 
 							</code>
 						</pre>
@@ -511,7 +511,7 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 					
 				</section>
 				<section data-background="#fff">
-					<h4>Step 2 - Making connection to Database </h4>
+					<h4>Step 2 - Making a connection to Database </h4>
 				
 					<p style="font-size: 24px;">Create a config file that will store your configurtion </p>
 					<div id="flexcontain">
@@ -519,11 +519,10 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 							<pre>
 								<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
 									var sqlite3 = require('sqlite3').verbose() //npm install sqlite3
-									const bcrypt = require('bcryptjs');
-									
+
 									//Creating a new database instance - Indication of connected database
 									//Before peforming any operations to database, make sure database is connected.
-									let db = new sqlite3.Database('./mplsrenter.sqlite', (err) => {
+									let db = new sqlite3.Database('./artist_album.db', sqlite3.OPEN_READWRITE, (err) => {
 										if (err) {
 										  // Cannot open database
 										  console.error(err.message)
@@ -549,44 +548,110 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 						<div class="box">
 							<pre>
 								<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
-									//Create a profile
-									let createProfile = (profile) =>{
-										var createProfileSql ='INSERT INTO PROSPECTIVE_PROFILE (prof_id, prof_firstname,prof_lastname, prof_address, prof_decision_date, prof_email, prof_password, prof_phone, prof_rent_range, prof_image_url, prof_class_num) VALUES (?,?,?,?,?,?,?,?,?,?,?)'
-										var params =[null, profile.firstName, profile.lastName, null, profile.move_date, profile.userEmail, profile.user_password, null, profile.user_rent_range, './images/user_profile_images/generic_profile_img.png', null];
+									//Creating a new database instance - Indication of connected database
+									//Before peforming any operations to database, make sure database is connected.
+									let db = new sqlite3.Database('./artist_album.db', sqlite3.OPEN_READWRITE, (err) => {
+										if (err) {
+										  // Cannot open database
+										  console.error(err.message)
+										  throw err
+										}else{
+											//Successful database connection
+											console.log('Connected to the SQLite database.') 
+										}
+									});
 									
-										db.run(createProfileSql, params, function(err){
-											if (err){
-												return console.log(err.message);
+									//Get Artist and Album
+									let getAllArtistAndAlbums = (res) =>{
+										//var getArtistAndAlbumSQL = 'SELECT ?,?,?,?,? FROM Album INNER JOIN artist ON Album.album_artistID = Artist.artistID';
+										var getArtistAndAlbumSQL = 'SELECT artistID,artist_name,album_name,album_release_year,album_genre FROM Album INNER JOIN artist ON Album.album_artistID = Artist.artistID';
+										var params =["artistID","artist_name", "album_name", "album_release_year", "album_genre"];
+									
+										db.all(getArtistAndAlbumSQL, (err, rows) => {
+											if (err) {
+											 
+											  throw err;
 											}
-											console.log("Profile Created");
-											console.log(`Rows inserted ${this.changes}`);	  
+											res.render('index', {rows})
+											
+											/**rows.forEach((row) => {
+											  console.log(row.album_name);
+											});*/
 										});
 									}
 									
-									//Return a user from database
-									let authenticateUser = (username, password, done) =>{
+									//Create a Artist
+									let createArtist = (artistalbum) =>{
+										var createArtistSql ='INSERT INTO Artist (artist_name) VALUES (?)' //Paramaterized Query
+										var params =[artistalbum.artistName];
 									
-										var findUser = 'SELECT * FROM PROSPECTIVE_PROFILE WHERE prof_email = ?';
-									
-										db.get(findUser, username, function (err, user) {
-											console.log(user);
-											if (!user) {
-											  return done(null, false);
-											}
-											bcrypt.compare(password, user.prof_password, function (err, result) {
-											  if (err) {
+										db.run(createArtistSql, params, function(err){
+											if (err){
 												return console.log(err.message);
-											  }
-											  if (result) {
-												return done(null, user);
-											  }
-											});
-									  
-										  });
+											}
+											console.log("Artist Created");
+											console.log(`Rows inserted ${this.changes}`);	  
+										});
+									
+										getArtist(artistalbum);
+
+									}
+									
+									//Return a Artist
+									let getArtist = (artistalbum) =>{
+										var getArtistSql ="SELECT artistID, artist_name FROM Artist WHERE artist_name = ?"; //Paramaterized Query
+										var params =[artistalbum.artistName];
+										console.log(artistalbum.artistName);
+										//var params=['Michael Jackson'];
+									
+										db.get(getArtistSql, params, async function(err, row){
+											if (err){
+												return console.log(err.message);
+											}
+											console.log(row);
+											//Create Album once we receive the returned ID
+										   await createAlbum(artistalbum, row.artistID);
+											  
+										});
+									}
+									
+									//Create a Album
+									let createAlbum = (album, artistID) =>{
+										var createAlbumSql ='INSERT INTO Album(album_name,album_release_year,album_genre,album_artistID) VALUES (?,?,?,?)' //Paramaterized Query
+										var params =[ album.albumTitle,album.albumRelease,album.albumGenre,artistID];
+										
+									
+									
+										db.run(createAlbumSql, params, function(err){
+											if (err){
+												return console.log(err.message);
+											}
+											console.log("Album Created");
+											console.log(`Rows inserted ${this.changes}`);	  
+										});
+									
 									}
 
+									//Update record
+									let deleteRecord = (id) =>{
+										console.log("Delete Record Function triggered");
+										//var deleteArtistAndAlbumSql ='DELETE FROM Album WHERE album_artistID= ?' //Paramaterized Query
+										var deleteArtistAndAlbumSql = 'DELETE Artist FROM Artist INNER JOIN artist ON Album.album_artistID = Artist.artistID WHERE Album.album_artistID = ?';
+										var params =[id];
+									
+										db.run(deleteArtistAndAlbumSql, params, function(err){
+											if (err){
+												return console.log(err.message);
+											}
+										
+									
+											console.log("Album and Artist Deleted");
+											console.log(`Rows deleted ${this.changes}`);	  
+										});
+									}
+									
 									//Export functions to be used in other areas of program.
-									module.exports = {db, createProfile, authenticateUser}
+									module.exports = {getAllArtistAndAlbums, createArtist, getArtist, deleteRecord, createAlbum}
 									
 								</code>
 							</pre>
@@ -595,7 +660,10 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 					</div>
 					
 				</section>
-				<section data-background="#fff">
+				<section data-background="images/methods/overloaded_bg.jpg">
+					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">Grocery List App</h1>
+				</section>
+				<!--<section data-background="#fff">
 					<h4>Step 4 - Configure session store </h4>
 				
 					<p>NPM module reference - <a href="https://www.npmjs.com/package/connect-sqlite3">connect-sqlite3</a> </p>
@@ -644,7 +712,7 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 						
 					</div>
 
-				</section>
+				</section>-->
 				<section data-background="#fff">
 					<h3>Video Lectures</h3>
 					<div id="flexcontain">
