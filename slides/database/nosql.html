@@ -4,14 +4,13 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Intro. to SQL</title>
+		<title>Intro. NoSQL</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/luc.css">
 
 		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="css/zenburn.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/gruvbox-dark.min.css">
+		<link rel="stylesheet" href="lib/css/zenburn.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -39,7 +38,7 @@
 		<div class="reveal">
 			<div class="slides">
 				<section data-background="#f8f8f8">
-				    <h2 style="font-size: 2em; color: #000;">Structured Query Language (SQL)</h2>
+				    <h2 style="font-size: 2em; color: #000;">Big Data and NoSQL</h2>
 				    <h3 style="color: #000; font-weight: 200;"></h3>
 				    <h3 style="color: #000; font-weight: 200;">Instructor: Chris Fulton</h3>
 				    <img src="images/intro/LUC_stacked.png" width="300" style="position: fixed; bottom: 0; margin-left: -15%; margin-bottom: 5%;" alt="LUC logo">
@@ -158,9 +157,9 @@
 				<section data-background="#eee">
 					<h3>Advanced SQL Clauses</h3>
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #2d4650; height: 475px;"><p><b style="font-size: 32px;">JOINS</b> <br> A <code>JOIN</code> clause is used to combine rows from two or more tables, based on a related column between them. <br></p><img src="images/sql/join_image.PNG" alt="Visual of 4 joins"></div>
-						<div class="box green" style="font-size: 24px; margin: 10px; background-color: #2d4650; height: 475px;"><p><b style="font-size: 32px;">GROUP BY</b> <br> The <code>GROUP BY</code> command is used to group the result set (used with aggregate functions: COUNT, MAX, MIN, SUM, AVG).</p><p><b style="font-size: 32px;">HAVING</b> <br> The <code>HAVING</code> clause was added to SQL because the WHERE keyword cannot be used with aggregate functions.</p></div>
-						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #2d4650; height: 475px;"><p><b style="font-size: 32px;">ORDER BY</b> <br> The <code>ORDER BY</code> is used to sort the result-set in ascending or descending order.</p></div>
+						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #2d4650; height: 470px;"><p><b style="font-size: 32px;">JOINS</b> <br> A <code>JOIN</code> clause is used to combine rows from two or more tables, based on a related column between them. <br></p><img src="images/sql/join_image.PNG" alt="Visual of 4 joins"></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; background-color: #2d4650; height: 470px;"><p><b style="font-size: 32px;">GROUP BY</b> <br> The <code>GROUP BY</code> command is used to group the result set (used with aggregate functions: COUNT, MAX, MIN, SUM, AVG).</p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #2d4650; height: 470px;"><p><b style="font-size: 32px;">HAVING</b> <br> The <code>HAVING</code> clause was added to SQL because the WHERE keyword cannot be used with aggregate functions.</p></div>
 					</div>
 				</section>
 				<section data-background="#fff">
@@ -180,40 +179,6 @@
 							</ul>	 
 							</ul>
 						</div>
-				</section>
-				<section data-background="#eee">
-					<h2>GROUP BY CLAUSE</h2>
-					
-					<div id="flexcontain">
-						<div class="box_two" style="font-size: 22px; margin: 10px;">
-							<ul>	
-								<li style="font-size: 20px;">Rows can be <strong>grouped</strong> into smaller collections.  Typically used with aggregate functions such as <strong><code> COUNT(), MAX(), MIN(), SUM(), and AVG()</code>.</strong></li>
-								<li style="font-size: 20px;">The GROUP BY makes use  of the HAVING clause which operates much like the WHERE clause in the SELECT statement.</li>
-							</ul>
-							<h3>Ex. of Inner Join</h3>
-							<pre>
-								<code style="font-size: 22px; height: 100px;" class="codebox code-example__codebox"  data-trim contenteditable>
-									
-									SELECT artist.artist_name, album.album_name FROM artist
-
-									INNER JOIN album
-
-									ON artist.artistID = album.albumID;
-								</code>
-							</pre>
-						</div>
-
-					</div>
-
-				</section>
-				<section data-background="white" style="background-size: 80%;">
-					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Learning Activity</h3>
-					<img src="images/sql/artist_album_erd.png" width="600" alt="artist album" />
-					<div id="flexcontain">
-						<div class="box" style="font-size: 24px; margin: 10px; height: 260px; background-color: #eee;"><h3 style="margin-top: 50px;">Inner Join</h3> Using the dataset from the previous activity, copy the INNER JOIN query from the previous slide and observe result set</div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 260px; background-color: #eee;"><h3 style="margin-top: 50px;">Right Join</h3> Write the SQL command to execute a Right Join</div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 260px; background-color: #eee;"><h3 style="margin-top: 50px;">Left Join</h3> Write the SQL command to execute a Left Join</div>
-					</div>
 				</section>
 				<!--<section data-background="#eee">
 					<h4></h4>
