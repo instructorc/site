@@ -182,13 +182,13 @@
 						</div>
 				</section>
 				<section data-background="#eee">
-					<h2>GROUP BY CLAUSE</h2>
+					<h2>INNER JOIN EXAMPLE</h2>
 					
 					<div id="flexcontain">
 						<div class="box_two" style="font-size: 22px; margin: 10px;">
 							<ul>	
-								<li style="font-size: 20px;">Rows can be <strong>grouped</strong> into smaller collections.  Typically used with aggregate functions such as <strong><code> COUNT(), MAX(), MIN(), SUM(), and AVG()</code>.</strong></li>
-								<li style="font-size: 20px;">The GROUP BY makes use  of the HAVING clause which operates much like the WHERE clause in the SELECT statement.</li>
+								<li style="font-size: 20px;">Most commonly used JOIN</li>
+								<li style="font-size: 20px;">Another way of stating the example below - return all the rows that match the foreign key in Albums with primary key in Artist</li>
 							</ul>
 							<h3>Ex. of Inner Join</h3>
 							<pre>
@@ -198,7 +198,37 @@
 
 									INNER JOIN album
 
-									ON artist.artistID = album.albumID;
+									ON artist.artistID = album.album_artistID;
+								</code>
+							</pre>
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#eee">
+					<h2>GROUP BY CLAUSE</h2>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 20px;">Rows can be <strong>grouped</strong> into smaller collections.  Typically used with aggregate functions such as <strong><code> COUNT(), MAX(), MIN(), SUM(), and AVG()</code>.</strong></li>
+								<li style="font-size: 20px;">The GROUP BY makes use  of the HAVING clause which operates much like the WHERE clause in the SELECT statement.</li>
+								<li style="font-size: 20px;">Another way of reading the SQL statement  below - Select all artist and the total of number of times they have a top record in the albums table and display total count, name and album title.  Display in descending order.</li>
+							</ul>
+							<h3>Ex. GROUP clause on Year</h3>
+							<pre>
+								<code style="font-size: 22px; height: 160px;" class="codebox code-example__codebox"  data-trim contenteditable>
+									
+									SELECT COUNT(artist.artist_name) AS 'Total Count', artist.artist_name, album.album_name FROM artist
+
+									INNER JOIN album
+
+									ON artist.artistID = album.album_artistID
+
+									GROUP BY artist.artist_name
+
+									ORDER BY COUNT(artist.artist_name) DESC;
 								</code>
 							</pre>
 						</div>
