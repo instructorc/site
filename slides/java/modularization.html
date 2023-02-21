@@ -193,6 +193,59 @@
 					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">Advanced Method Concepts</h1>
 				</section>
 				<section data-background="#fff">
+					<h3>Understanding Recursion</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><img src="images/methods/recursion_google.PNG" style="width: 100%;" alt="Google recursion example"></div>
+					</div>
+					<p>a method of solving a computational problem where the solution depends on solutions to smaller instances of the same problem</p>
+					
+				
+				</section>
+				<section data-background="#fff">
+					<h3>Recursion tracing</h3>
+				
+					<pre style="box-shadow: none;">
+						<code style="font-size: 14px; height: 730px;"  data-trim contenteditable>
+							public class Main
+							{
+								public static void main(String[] args) {
+									System.out.println(f1(2, 4));
+								}
+								
+								public static int f1(int x, int n){
+									if(n == 0){
+										return 0;
+									}else{
+										return x + f1(x, n-1);
+									}
+								}
+							}
+
+						</code>
+					</pre>
+					
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;">
+							<div style="margin-left: 30px;">
+								<p style="font-size: 18px;">Observing the code, What is the output of the statement <code>System.out.println(f1(2,4));</code>?</p>
+								
+								<input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
+								<label for="attendance1" style="font-size: 14px;">A) <code>2</code></label><br>
+								<input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
+								<label for="attendance2" style="font-size: 14px;">B) <code>4</code></label><br>  
+								<input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+								<label for="attendance3" style="font-size: 14px;">C) <code>8</code></label><br>
+								<input type="radio" id="age4" style="transform: scale(2);" name="structure" value="8">
+								<label for="attendance4" style="font-size: 14px;">D) <code>6</code></label><br>
+								<input type="radio" id="age5" style="transform: scale(2);" name="structure" value="16">
+								<label for="attendance4" style="font-size: 14px;">E) <code>16</code></label><br>
+							</div>
+						</div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 22px;"></b> <br>Recursion Tracing <br> <code> Develop a method to keep track of methods and variables that are generated from each method call.</code></p></div>
+
+					</div>
+				</section>
+				<section data-background="#fff">
 					<h3>Fibonacci sequence in the World</h3>
 					<div id="flexcontain">
 						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><img src="../logic/images/methods/hurricane_spiral.jpg" style="width: 100%;" alt="fibonacci in hurricane spiral"></div>
