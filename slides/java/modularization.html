@@ -195,17 +195,20 @@
 				<section data-background="#fff">
 					<h3>Understanding Recursion</h3>
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><img src="images/methods/recursion_google.PNG" style="width: 100%;" alt="Google recursion example"></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: white;">
+							<a href="https://www.google.com/search?q=recursion"><img src="images/methods/recursion_google.PNG" width="500" alt="Google recursion example"></a>
+						</div>
 					</div>
-					<p>a method of solving a computational problem where the solution depends on solutions to smaller instances of the same problem</p>
+					<p style="font-size: 26px;">A method of solving a computational problem where the solution depends on solutions to smaller instances of the same problem</p>
+					<p style="font-size: 20px;">Image of Google searching for recursion. <br> *click the picture for Google's sense of humor </p>
 					
 				
 				</section>
 				<section data-background="#fff">
 					<h3>Recursion tracing</h3>
 				
-					<pre style="box-shadow: none; float: right">
-						<code style="font-size: 14px; height: 730px;"  data-trim contenteditable>
+					<pre style="box-shadow: none; float: left; max-width: 500px;">
+						<code style="font-size: 14px; height: 575px;"  data-trim contenteditable>
 							public class Main
 							{
 								public static void main(String[] args) {
@@ -225,25 +228,49 @@
 					</pre>
 					
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 200px; color: #111;">
 							<div style="margin-left: 30px;">
-								<p style="font-size: 18px;">Observing the code, What is the output of the statement <code>System.out.println(f1(2,4));</code>?</p>
+								<p style="font-size: 18px; text-align: left;">Observing the code, What is the output of the statement <code>System.out.println(f1(2,4));</code>?</p>
 								
-								<input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
-								<label for="attendance1" style="font-size: 14px;">A) <code>2</code></label><br>
+
 								<input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
-								<label for="attendance2" style="font-size: 14px;">B) <code>4</code></label><br>  
-								<input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
-								<label for="attendance3" style="font-size: 14px;">C) <code>8</code></label><br>
-								<input type="radio" id="age4" style="transform: scale(2);" name="structure" value="8">
-								<label for="attendance4" style="font-size: 14px;">D) <code>6</code></label><br>
-								<input type="radio" id="age5" style="transform: scale(2);" name="structure" value="16">
-								<label for="attendance4" style="font-size: 14px;">E) <code>16</code></label><br>
+								<label for="attendance2" style="font-size: 22px;">A) <code>4</code></label>
+								<input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">&nbsp;&nbsp;&nbsp;
+								<label for="attendance3" style="font-size: 22px;">B) <code>8</code></label>
+								<input type="radio" id="age5" style="transform: scale(2);" name="structure" value="16">&nbsp;&nbsp;&nbsp;
+								<label for="attendance4" style="font-size: 22px;">C) <code>16</code></label>
 							</div>
 						</div>
-						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 22px;"></b> <br>Recursion Tracing <br> <code> Develop a method to keep track of methods and variables that are generated from each method call.</code></p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 200px; color: #111;"><p><b style="font-size: 22px;"></b> <br><h4 style="margin-bottom: -12px; margin-top: -20px;">Tracing Recursion</h4> <br> <code> Developing a structured way to keep track of the methods and variables that are generated from each method call.</code></p></div>
 
 					</div>
+				</section>
+				<section data-background="#fff" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
+					<h3>Learning Activity - Tracing Recursion</h3>
+					<div style="display: flex;">
+						<pre style="box-shadow: none; float: left; max-width: 500px;">
+							<code style="font-size: 14px; height: 600px;"  data-trim contenteditable>
+								public class Main
+								{
+									public static void main(String[] args) {
+										System.out.println(f1(2, 4));
+									}
+									
+									public static int f1(int x, int n){
+										if(n == 0){
+											return 0;
+										}else{
+											return x + f1(x, n-1);
+										}
+									}
+								}
+	
+							</code>
+						</pre>
+						<div style="margin-left: 15px;">
+							<img src="images/methods/memory_allocation.PNG" width="230"  alt="memory allocation and program memory allocation visual">
+						</div>
+					</div><!--End of flex container-->
 				</section>
 				<section data-background="#fff">
 					<h3>Fibonacci sequence in the World</h3>
@@ -268,7 +295,7 @@
 					
 				
 				</section>
-				<section data-background="#fff">
+				<!--<section data-background="#fff">
 					<h3>Learning Activity</h3>
 					<img src="../logic/images/structures/fibonacci-sequence.jpg" width="500" alt="fibonacci sequence diagram">
 					<div id="flexcontain">
@@ -279,9 +306,41 @@
 					</div>
 					
 				
-				</section>
+				</section>-->
+				
 				<section data-background="#fff" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
-					<h3>Quiz Question 2</h3>
+					<h3>Learning Activity - Tracing Fibonacci Recursion</h3>
+					<div style="display: flex;">
+						<pre style="box-shadow: none;">
+							<code style="font-size: 14px; height: 700px;"  data-trim contenteditable>
+								public class FibonacciRecursion {
+		
+									public static void main(String[] args) {
+										int n = 5; // number of Fibonacci numbers to display
+										System.out.println("Fibonacci Series:");
+										for (int i = 0; i < n; i++) {
+											System.out.print(fibonacci(i) + " ");
+										}
+									}
+									
+									public static int fibonacci(int n) {
+										if (n <= 1) {
+											return n;
+										} else {
+											return fibonacci(n - 1) + fibonacci(n - 2);
+										}
+									}
+								}
+	
+							</code>
+						</pre>
+						<div style="margin-left: 30px;">
+							<img src="images/methods/memory_allocation.PNG" width="400" alt="memory allocation and program memory allocation visual">
+						</div>
+					</div><!--End of flex container-->
+				</section>
+				<!--<section data-background="#fff" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
+					<h3>Quiz Question 1</h3>
 					<div style="display: flex;">
 						<pre style="box-shadow: none;">
 							<code style="font-size: 14px; height: 730px;"  data-trim contenteditable>
@@ -336,37 +395,8 @@
 							<label for="attendance4" style="font-size: 18px;">D) <code>3</code></label><br>
 						</div>
 					</div><!--End of flex container-->
-				</section>
-				<section data-background="#fff" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
-					<h3>Recursion using Fibonacci</h3>
-					<div style="display: flex;">
-					<pre style="box-shadow: none;">
-						<code style="font-size: 14px; height: 730px;"  data-trim contenteditable>
-							public class FibonacciRecursion {
-    
-								public static void main(String[] args) {
-									int n = 3; // number of Fibonacci numbers to display
-									System.out.println("Fibonacci Series:");
-									for (int i = 0; i < n; i++) {
-										System.out.print(fibonacci(i) + " ");
-									}
-								}
-								
-								public static int fibonacci(int n) {
-									if (n <= 1) {
-										return n;
-									} else {
-										return fibonacci(n - 1) + fibonacci(n - 2);
-									}
-								}
-							}
+				</section>-->
 
-						</code>
-					</pre>
-					
-					</div><!--End of flex container-->
-					<p>Discuss and visualize code</p>
-				</section>
 				<section data-background="#fff" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
 					<h3>Quiz Question 2</h3>
 					<div style="display: flex;">
