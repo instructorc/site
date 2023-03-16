@@ -55,7 +55,7 @@
 							<li>Maui hierarchical project folder structure</li>
 						</ul>
 
-						<li>WPF Controls and Layout Panels</li>
+						<li>MAUI Controls and Layout Panels</li>
 					    <ul>
 							<li>Properties | Property Inheritance | Setting Properties - C# Code, XAML, GUI</li>
 							<li> Canvas Control | DockPanel Control | StackPanel Control | WrapPanel Control | Grid Control | Tab Control</li>
@@ -71,7 +71,7 @@
 							<li> Understanding Event Methods | Routed Events | Routed Commands | Delegates</li>				        	
 		
 						</ul>
-						<li>Advance WPF Features</li>
+						<li>Advance MAUI Features</li>
                        	<ul>
                        		<li>Styles and Templates | Triggers | Dependency Properties</li>
 	
@@ -79,20 +79,35 @@
 				    </ul>
 				</section>
 				<section data-background="images/wpf/desktop_app.jpg">
-					<h3 style="text-shadow: 4px 7px 10px #333;">Types of Desktop Applications with C#</h3>
+					<h3 style="text-shadow: 4px 7px 10px #333;">Types of Applications you can develop with C#</h3>
 					<div id="flexcontain">
 						<div class="box red" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: rgba(255,255,255,.8); color: #333; font-weight: 900;"><p><a href="https://docs.microsoft.com/en-us/windows/uwp/" style="color: black;">Universal Windows Platform(UWP)</a></p></div>
 						<div class="box blue" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: rgba(255,255,255,.8); color: #333; font-weight: 900;"><p><a href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/getting-started/introduction-to-wpf-in-vs" style="color: black;">Windows Presentation Foundation (WFP)</a></p></div>
-						<div class="box green" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: rgba(255,255,255,.8); color: #333; font-weight: 900;"><p><a href="https://docs.microsoft.com/en-us/dotnet/framework/winforms/" style="color: black;">WinForms</a></p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: rgba(255,255,255,.8); color: #333; font-weight: 900;"><p><a href="https://dotnet.microsoft.com/en-us/apps/maui" style="color: black;">Mobile Applications</a></p></div>
 
 					</div>
-					<p style="text-shadow: 4px 7px 10px #333;">Microsoft based desktop applications - Click on the links above to discover more.</p> 
+					<p style="text-shadow: 4px 7px 10px #333;">Microsoft applications - Click on the links above to discover more.</p> 
+				</section>
+				<section data-background="#fff">
+					<h3>Learning Activity</h3>
+					<img src="images/maui/mobile_app_features.webp" width="500" alt="Hybrid vs. Native App Development image">
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Select one individual from your group to jot down notes on group findings.</p></div>
+						<div class="box blue" style="font-size: 18px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Search online to discover the difference between Native and Hybrid Mobile Application development.  As a group identify a list of differences between the two.</p></div>
+						<div class="box green" style="font-size: 18px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Discuss with your team 1) the difference between the two approaches and 2) Mobile apps that utilize a Hybrid approach </p></div>
+
+					</div>
+
+				</section>
+				<section data-background="white">
+					<h4>.NET MAUI Architecture</h4>
+					<img src="images/maui/architecture-diagram.png" width="800" alt=".NET MAUI architecture visual">
 				</section>
 				<section data-background="#eee">
-					<h3>Desktop Programming using WPF</h3>
+					<h3>Mobile App Development using .NET MAUI</h3>
 					<div id="flexcontain">
 						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">XAML</b> <br>a language that uses XML syntax and enables controls to be added to a user interface in a declarative, hierarchical way. </p> <p>You can add controls in the form of XML elements, and specify control properties with XML attributes.</p> <p>XAML is designed with today's powerful graphic's cards in mind </p></div>
-						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">Seperation of Concern</b> <br> XAML can be rendered without any code.  The interaction logic (C# code) is placed in a different file than you place the GUI code. </p><p></p><p>The UI is not generated using c# code but rather XML.  The UI can developed totally separate for the c# code.</p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">Seperation of Concern</b> <br> XAML can be rendered without any code.  The interaction logic (C# code) is placed in a different file than you place the GUI code. </p><p>The UI is not generated using c# code but rather XML.  The UI can developed totally separate for the c# code.</p></div>
 						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">Code-Behind Files</b> <br>C# files that are dynamically linked to the XAML files. </p><p> The application's logic layer</p></div>
 					</div>
 				</section>
@@ -106,7 +121,7 @@
 					</ul>		
 					
 					<img src="images/wpf/mvvm.png" width="730" alt="Diagram of Model View ViewMovel"><br>
-					<a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2009/february/patterns-wpf-apps-with-the-model-view-viewmodel-design-pattern" style="font-size: .5em;">Article on MVVM design pattern in WPF applications</a>
+					<a href="https://learn.microsoft.com/en-us/dotnet/architecture/maui/mvvm" style="font-size: .5em;">Article on MVVM design pattern in .NET MAUI applications</a>
 				</section>
 				<section data-background="images/wpf/data_binding.jpg">
 					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">XAML</h1>
