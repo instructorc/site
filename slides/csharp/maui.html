@@ -136,15 +136,15 @@
              	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              	x:Class="MauiApp1.MainPage"
         		Title=".NET MAUI Quiz"&gt;
-    &lt;Grid&gt;  
-        &lt;RadioButton Content="2018" GroupName="question" HorizontalAlignment="Left" Margin="131,102,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" FontFamily="Microsoft JhengHei UI Light" FontSize="22"/&gt;
-        &lt;RadioButton Content="2014" GroupName="question" HorizontalAlignment="Left" Margin="131,151,0,0" VerticalAlignment="Top" FontFamily="Microsoft JhengHei UI Light" FontSize="22"/&gt;
-        &lt;RadioButton Content="2000" GroupName="question" HorizontalAlignment="Left" Margin="131,205,0,0" VerticalAlignment="Top" FontFamily="Microsoft JhengHei UI Light" FontSize="22"/&gt;
-        &lt;RadioButton Content="1994" GroupName="question" HorizontalAlignment="Left" Margin="131,259,0,0" VerticalAlignment="Top" FontFamily="Microsoft JhengHei UI Light" FontSize="22"/&gt;
-        &lt;TextBox HorizontalAlignment="Left" Margin="96,28,0,0" TextWrapping="Wrap" Text="What year was .NET Core Released?" VerticalAlignment="Top" FontSize="36" FontFamily="Microsoft JhengHei UI Light"/&gt;
-        &lt;Button Content="Submit" FontSize="23" HorizontalAlignment="Left" Foreground="White" Margin="279,336,0,0" Width="200" Height="50" VerticalAlignment="Top" Foreground="White" Background="#FF1873E7" Click="Button_Click"/&gt;
+    &lt;VerticalStackLayout&gt;  
+	    &lt;Label HorizontalOptions="Center" Text="What year was .NET MAUI released?"/&gt;
+        &lt;RadioButton Content="2020" GroupName="question" HorizontalOptions="Center" IsChecked="True" FontFamily="Microsoft JhengHei UI Light" FontSize="22"/&gt;
+        &lt;RadioButton Content="2022" GroupName="question" HorizontalOptions="Center"  FontFamily="Microsoft JhengHei UI Light" FontSize="22"/&gt;
+        &lt;RadioButton Content="2023" GroupName="question" HorizontalOptions="Center"  FontFamily="Microsoft JhengHei UI Light" FontSize="22"/&gt;
+        &lt;RadioButton Content="2021" GroupName="question" HorizontalOptions="Center"  FontFamily="Microsoft JhengHei UI Light" FontSize="22"/&gt;
+        &lt;Button Text="Submit" FontSize="23" HorizontalOptions="Center"  Background="#FF1873E7" Clicked="Button_Click"/&gt;
 
-    &lt;/Grid&gt;
+    &lt;/VerticalStackLayout&gt;
 &lt;/ContentPage&gt;
 
 
@@ -289,21 +289,21 @@ Click="Button_Click"/&gt;
 				<section data-background="#fff">
 					<h4>Quick Activity</h4>
 				    												<pre>
-							<code style="font-size: 14px;" class="xml hljs"  data-trim contenteditable>
+							<code style="font-size: 12px;" class="xml hljs"  data-trim contenteditable>
 								
-				&lt;ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+					&lt;ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
 								xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 								x:Class="MauiApp1.MainPage"
 							   Title=".NET MAUI Quiz"&gt;
-				   &lt;Grid&gt;  
-					   &lt;RadioButton Content="2018" GroupName="question" HorizontalAlignment="Left" Margin="131,102,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" FontFamily="Microsoft JhengHei UI Light" FontSize="22"/&gt;
-					   &lt;RadioButton Content="2014" GroupName="question" HorizontalAlignment="Left" Margin="131,151,0,0" VerticalAlignment="Top" FontFamily="Microsoft JhengHei UI Light" FontSize="22"/&gt;
-					   &lt;RadioButton Content="2000" GroupName="question" HorizontalAlignment="Left" Margin="131,205,0,0" VerticalAlignment="Top" FontFamily="Microsoft JhengHei UI Light" FontSize="22"/&gt;
-					   &lt;RadioButton Content="1994" GroupName="question" HorizontalAlignment="Left" Margin="131,259,0,0" VerticalAlignment="Top" FontFamily="Microsoft JhengHei UI Light" FontSize="22"/&gt;
-					   &lt;TextBox HorizontalAlignment="Left" Margin="96,28,0,0" TextWrapping="Wrap" Text="What year was .NET Core Released?" VerticalAlignment="Top" FontSize="36" FontFamily="Microsoft JhengHei UI Light"/&gt;
-					   &lt;Button Content="Submit" FontSize="23" HorizontalAlignment="Left" Foreground="White" Margin="279,336,0,0" Width="200" Height="50" VerticalAlignment="Top" Foreground="White" Background="#FF1873E7" Click="Button_Click"/&gt;
+				   &lt;VerticalStackLayout&gt;  
+					   &lt;Label HorizontalOptions="Center" Text="What year was .NET MAUI released?"/&gt;
+					   &lt;RadioButton Content="2020" GroupName="question" HorizontalOptions="Center" IsChecked="True" FontFamily="Microsoft JhengHei UI Light" FontSize="22"/&gt;
+					   &lt;RadioButton Content="2022" GroupName="question" HorizontalOptions="Center"  FontFamily="Microsoft JhengHei UI Light" FontSize="22"/&gt;
+					   &lt;RadioButton Content="2023" GroupName="question" HorizontalOptions="Center"  FontFamily="Microsoft JhengHei UI Light" FontSize="22"/&gt;
+					   &lt;RadioButton Content="2021" GroupName="question" HorizontalOptions="Center"  FontFamily="Microsoft JhengHei UI Light" FontSize="22"/&gt;
+					   &lt;Button Text="Submit" FontSize="23" HorizontalOptions="Center"  Background="#FF1873E7" Clicked="Button_Click"/&gt;
 			   
-				   &lt;/Grid&gt;
+				   &lt;/VerticalStackLayout&gt;
 			   &lt;/ContentPage&gt;
 
 
@@ -313,8 +313,8 @@ Click="Button_Click"/&gt;
 				    <ol style="font-size: 18px; margin-top: -36px;">
 						<li>Create a new .NET Maui project and name is CoreQuiz and copy the code above into the MainWindow</li>
 						<li>Change the background to the color #6b8e23, Change the text of the button element to "Submit Quiz"</li>
-						<li>Add a new button and give it an property name and add the text "Next".  This button should be placed above the current button to the left.</li>
-						<li>Add a new content page to the project and name it "Results"</li>
+						<li>Add a new button and give it an property name and add the text "Next". </li>
+						<li>Add a new content page to the project that navigates to the next question</li>
 
 				    </ol>
 				</section>
