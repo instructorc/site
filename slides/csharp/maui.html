@@ -560,17 +560,18 @@ Click="Button_Click"/&gt;
 							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
 <!--Binding Target is the Label, The Target Property is the Background, 
 The Binding Source is the Element name, The Source Property is the Path-->
-&lt;Label x:Name="output_lb" Content="Hello!!" 
-		Background ="{Binding ElementName=submit_btn, Path=Background}"/&gt;
+&lt;Label x:Name="output_lb" Text="Hello!!" 
+		  BindingContext="{x:Reference Name=submit_btn}" 
+          TextColor="{Binding Path=TextColor}"/&gt;
 
-&lt;Button x:Name="submit_btn" Background="Blue"/&gt;
+&lt;Button x:Name="submit_btn" Text="Click Here" TextColor="Orange"/&gt;
 							</code>
 						</pre>
 				</section>
-				<section data-background="white">
+				<!--<section data-background="white">
 					<h2>Data Binding to Local Objects Video Walkthrough</h2><br>
 					<iframe width="760" height="415" src="https://www.youtube.com/embed/CniIPEFZ1Oo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				</section>
+				</section>-->
 				<section data-background="#fff">
 					<h4>Binding to Local Objects</h4>
 					<p style="font-size: 22px;">You can bind to any .NET object that has the data you need as long as the compiler can locate the object.  The following code applies the same background color of the button to the label.</p>
