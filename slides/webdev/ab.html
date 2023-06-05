@@ -31,58 +31,70 @@
 				font-size: 80%;
 			}
 			section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
-			    color: #2d4650;
+			    color: #403f44;
 			}
 		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section data-background="#e6e7e8">
+				<section data-background="#fff">
 				    <h3>A/B Testing and Experimenation</h3>
 				    <img src="images/ab_testing/ab-testing.jpg" width="600" style="box-shadow: none; border: none;"alt="A/b testing image">
 				    <h3>Instructor: Chris Fulton</h3>
 				</section>
-				<section data-background="#eee">
+				<section data-background="#fff">
 				    <h3>Learning Objectives</h3>
 				    <ul style="font-size: 28px;">
-						<li>Contrast the difference between user interface (UI) and user experience (UX)</li>
+						<li>Identify and define key terms related to A/B testing and controlled experimentation.</li>
 						<ul>
-							<li>UX vs. UI</li>
-							<li>UX components</li>
+							<li>Explain A/B Testing and Experimentation</li>
+							<li>Recall the purpose and benefits of A/B testing and controlled experimentation.</li>
+							<li>Define key metrics and ideally an Overall Evaluation Criterion</li>
 						</ul>
-						<li>Analyze various User Research methods used in UX</li>
+						<li>Design and construct an effective A/B testing setup.</li>
 						<ul>
-							<li>Observations | Interviews | Task Analysis | Focus Groups | Surveys | Web Analytics</li>
+							<li>Understanding Misinterpretations and Assumption</li>
 						</ul>
-				        <li>Examine best practices used for developing information architecture and navigation</li>
+				        <li>Define key metrics and ideally an Overall Evaluation Criterion</li>
 				        <ul>
-							<li>Identifying Various Content Strategies</li>
-							<li>Tools and Techniques - Card Sorting | Use Cases,User Stories, User Personas</li>
+							<li>Understanding organizational and business metrics</li>
+							<li>Evaluating Metrics</li>
+							<li>Overall Evaluation Criterion (OEC's)</li>
 						</ul>
-						<li>Review Usability tools and testing resources</li>
+						<li>User Experience Research (UER), Data Collection and Analysis</li>
 				        <ul>
-							<li>Usability Testing | A/B testing | Site Peformance testing: tools, server/hosting | CDN</li>
-							<li>Compatibility Testing - Visual Factors | Browsers | device | print</li>
-							<!--<li>Automated testing</li>-->
+							<li>Surveys</li>
+							<li>Logs-Based Analysis</li>
+							<li>Focus Groups</li>
 						</ul>
-						<li>Review and access accessibility standards</li>
-						<ul>
-							<li>Standards - WCAG | ISO 9660 | Section 508 | Aria Roles</li>
-						</ul>
-						<li>Create Wireframes and Prototypes</li>
-                       	<ul>
-							<li>Low-Fidelity | High-Fidelity | Tools </li>
-						</ul>
+						<li>Advanced Topics for experimentation</li>
+				
 				    </ul>
 				</section>
-				<section data-background="images/ux/uxvsdesing.png" style="background-size: 80%;">
-					<h3 style="background-color:rgba(0,0,0,0.7);">What is User Experience(UX)?</h3>
-					<p style="background-color:rgba(0,0,0,0.7);" class="fragment"> User experience focuses on having a deep understanding of users, what they need, what they value, their abilities, and also their limitations. UX best practices promote improving the quality of the user’s interaction with and perceptions of your product and any related services.</p>
+				<section data-background="images/ab_testing/ab_bg.jpg" style="background-size: 80%;">
+					<h3 style="background-color:rgba(0,0,0,0.7);">What is A/B Testing and Controlled Experiments?</h3>
+					<p style="background-color:rgba(0,0,0,0.7);" class="fragment"> A/B testing—also called split testing or bucket testing—compares the performance of two versions of content to see which one appeals more to visitors/viewers. It tests a control (A) version against a variant (B) version to measure which one is most successful based on your key metrics.</p>
 				</section>
-				<section data-background="#c8c8c8">
+				<!--<section data-background="#c8c8c8">
 						<h4>UX vs. UI</h4>
 						<img src="images/ux/ux_vs_ui.jpg" width="800" alt="The difference between user experience and user interface design">
+				</section>
+				<section data-background="white" style="background-size: 80%;">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Terminology</h3>
+					<p style="background-color:rgba(255, 255, 255, 0.7);  font-size: .8em; color: black;" class="fragment"> a method of providing <strong>shared computing resources</strong>, including applications, computing, storage, networking, development, and deployment platforms as well as business processes. </p>
+					<div id="flexcontain" class="fragment">
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">Efficiency</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">Capacity Planning</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">Secure</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">Global Infrastructure</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">Scalable</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">Minimal Risk</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">Cost Savings</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">Agility</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">Competitive</h3></div>
+
+					</div>
 				</section>
 				<section data-background="#fff">
 					<img src="images/ux/ui_ux.jpg" width="670" style="box-shadow: none; border: none;"alt="user experience slide picture">
@@ -317,7 +329,7 @@
 					<img src="images/ux/sitearchdiagram.gif" width="700" style="box-shadow: none; border: none;"alt="Sample Website Architecture Diagram">
 				</section>
 
-				<!--<section data-background="000">
+				<section data-background="000">
 					<h3>Use Cases</h3>
 					<ul>
 						<li>Describes one specific interaction between the user and the software</li>
@@ -330,7 +342,7 @@
 					<h3>Example Use case</h3>
 					<img src="images/ux/use_case.PNG" alt="example of use case"/>
 					
-				</section>-->
+				</section>
 
 
 				<section data-background="#fff">
@@ -613,10 +625,8 @@
 				<section data-background="#eee">
 				    <h2>References</h2>
 				    <ul style="font-size: 28px;">
-						<li>https://www.interaction-design.org/literature/topics/ux-design</li>
-						<li>https://webdesign.tutsplus.com/articles/a-beginners-guide-to-wireframing--webdesign-7399</li>
-						<li>https://studio571.com/portfolio-items/wireframes-and-prototyping/</li>
-						<li>https://mentormate.com/blog/low-fidelity-wireframes-vs-high-fidelity-wireframes/</li>
+						<li>A/B testing Definition source - https://www.oracle.com/cx/marketing/what-is-ab-testing/</li>
+
 				       
 
 				    </ul>
