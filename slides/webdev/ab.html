@@ -118,14 +118,18 @@
 					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment"><strong>1. Problem Statement</strong><br>Understand the business Goal - Define the User Journey - Identify the product experience you want to achieve - Specify Success/Key Metric's</p>
 					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment"><strong>2. Hypothesis Testing </strong><br>State the Hypothesis: <br><span style="font-style: italic;">Null Hypothesis</span> -  the hypothesis that there is no significant difference between specified populations. <br><span style="font-style: italic;">Alternative Hypothesis</span> - There’s an effect in the population. <br> <span style="font-style: italic">Set significance level</span><span style="font-style: italic">Set statistical power</span></p>
 					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment"><strong>3. Design the Experiment</strong><br>Set the randomization unit - Identify target Populaton - Determine the Sample Size - Set Duration of the Experiment</p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment"><strong>4. Run the Experiment</strong><br>Set up Instruments and data pipelines to collect data - Avoid peeking p-values - Validity Check *see image <br><img src="images/ab_testing/validty_checking.PNG" alt="image of AB validity checking"></p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment"><strong>5. Validity Checking</strong><br>Gaudrail Metrics - External Factors - Selection Bias - Novelty Effect<br><img src="images/ab_testing/validty_checking.PNG" alt="image of AB validity checking"></p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment"><strong>4. Run the Experiment</strong><br>Set up Instruments and data pipelines to collect data - Avoid peeking p-values</p>
+
+				</section>
+				<section data-background="#eeeeee" style="background-size: 80%;">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">A/B Testing Process Cont.</h3>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment"><strong>5. Validity Checking</strong><br>Gaudrail Metrics - External Factors - Selection Bias - Novelty Effect<br><img src="images/ab_testing/validity_checking.PNG" alt="image of AB validity checking"></p>
 					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment"><strong>6. Intrepret the Results</strong><br>Statistical Significance - p-Value is greater thatn .05</p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment"><strong>7. Launch Decision</strong><br></p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment"><strong>7. Launch Decision</strong><br>Determine the cost of launching </p>
 				</section>
 				<section data-background="#eee">
 					<h4>A/B Steps Example Activity</h4>
-					<p style="font-size: 22px">Read the descriptions of the boxes on the left and drag and drop the descriptions in the respective boxes on the right.  Order the boxes from top to bottom in the order in which you think they should occur when setting up an experiment.</p>
+					<p style="font-size: 20px">Read the descriptions of the boxes on the left and drag and drop the descriptions in the respective boxes on the right.  Order the boxes from top to bottom in the order in which you think they should occur when setting up an experiment.</p>
 					<div id="flexcontain">
 						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; color: #111;">
 							<img id="drag1" src="images/cloud/non_hybrid1.png" style="margin: 2px;" width="290" draggable="true" ondragstart="drag(event)">
@@ -138,12 +142,13 @@
 
 						</div>
 						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee;  color: #111;">
-							<div id="div1" ondrop="drop(event)" style=" border: 6px solid #333; border-radius: 14px; margin-top: 6px; min-height: 100px;" ondragover="allowDrop(event)"></div>
-							<div id="div2" ondrop="drop(event)" style=" border: 6px solid #333; border-radius: 14px; margin-top: 6px; min-height: 100px;" ondragover="allowDrop(event)"></div>
-							<div id="div3" ondrop="drop(event)" style=" border: 6px solid #333; border-radius: 14px; margin-top: 6px; min-height: 100px;" ondragover="allowDrop(event)"></div>
-							<div id="div4" ondrop="drop(event)" style=" border: 6px solid #333; border-radius: 14px; margin-top: 6px; min-height: 100px;" ondragover="allowDrop(event)"></div>
-							<div id="div5" ondrop="drop(event)" style=" border: 6px solid #333; border-radius: 14px; margin-top: 6px; min-height: 100px;" ondragover="allowDrop(event)"></div>
-							<div id="div6" ondrop="drop(event)" style=" border: 6px solid #333; border-radius: 14px; margin-top: 6px; min-height: 100px;" ondragover="allowDrop(event)"></div>
+							<div id="div1" ondrop="drop(event)" style=" border: 6px solid #333; border-radius: 14px; margin-top: 6px; min-height: 50px;" ondragover="allowDrop(event)"></div>
+							<div id="div2" ondrop="drop(event)" style=" border: 6px solid #333; border-radius: 14px; margin-top: 6px; min-height: 50px;" ondragover="allowDrop(event)"></div>
+							<div id="div3" ondrop="drop(event)" style=" border: 6px solid #333; border-radius: 14px; margin-top: 6px; min-height: 50px;" ondragover="allowDrop(event)"></div>
+							<div id="div4" ondrop="drop(event)" style=" border: 6px solid #333; border-radius: 14px; margin-top: 6px; min-height: 50px;" ondragover="allowDrop(event)"></div>
+							<div id="div5" ondrop="drop(event)" style=" border: 6px solid #333; border-radius: 14px; margin-top: 6px; min-height: 50px;" ondragover="allowDrop(event)"></div>
+							<div id="div6" ondrop="drop(event)" style=" border: 6px solid #333; border-radius: 14px; margin-top: 6px; min-height: 50px;" ondragover="allowDrop(event)"></div>
+							<div id="div7" ondrop="drop(event)" style=" border: 6px solid #333; border-radius: 14px; margin-top: 6px; min-height: 50px;" ondragover="allowDrop(event)"></div>
 						</div>
 
 
