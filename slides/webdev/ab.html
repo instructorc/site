@@ -274,8 +274,8 @@
 						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">Treatment or Tested</h3></div>
 						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">Variant</h3></div>
 						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">OEC(Overall Evaluation Criteria)</h3></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">Hypothesis</h3></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">p-Value</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">Null Hypothesis</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">p-Value + statistical significance</h3></div>
 						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">Type I, Type II Errors</h3></div>
 						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">Metrics</h3></div>
 						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">A/B/n</h3></div>
@@ -283,8 +283,46 @@
 					</div>
 				</section>
 				<section data-background="#eee">
-					<h4>A/B Experimentation Statistics</h4>
-					<!--<iframe width="1000" height="585" src="https://www.youtube.com/embed/YvT_gqs5ETk?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
+					<h4>How do we interpret the results of dashboard view?</h4>
+					<img src="images/ab_testing/ab-test-dashboard.png" width="480" alt="a/b test dashboard one" style="float: left; margin-right: 2%;">
+					<img src="images/ab_testing/optimizely--screenshot-2.png" width="410" alt="a/b test dashboard two" style="float: left;">
+				</section>
+				<section data-background="#fff" class="has-light-background present" style="top: 7px; display: block;">
+					<h3>p-Value + Statistical Significance</h3>
+					<ul>
+						<li style="font-size: .6em;">The p-value is the  <b>probability</b> of the <b>Null Hypothesis</b> being true.  Can be a number between 0 and 1</li>
+						<li style="font-style: italic; font-size: .6em;">Another way of saying this is - its the statistical measure used to determine the likelihood that an observed outcome is the result of chance</li>
+					</ul>
+					<img src="images/ab_testing/pvalue.png" width="500" alt="confidence interval and p-value">
+		
+				</section>
+				<section data-background="#fff" class="has-light-background present" style="top: 7px; display: block;">
+					<h3>The Significance level </h3>
+					<ul>
+						<li style="font-size: .6em;">Determines the point at which the null hypothesis is rejected.  Determined prior to experiment</li>
+						<li style="font-style: italic; font-size: .6em;">The significance level is typically set at .05</li>
+					</ul>
+					<img src="images/ab_testing/level-of-significance-and-two-tailed-test.png" width="400" alt="Level of significance for two tailed test">
+		
+				</section>
+				<section data-background="#eee">
+					<h4>Explanation of p-value + Statistical Significance</h4>
+					<iframe width="460" height="215" src="https://www.youtube.com/embed/KS6KEWaoOOE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					<iframe width="460" height="215" src="https://www.youtube.com/embed/ukcFrzt6cHk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				</section>
+				<section data-background="#fff" class="has-light-background present" style="top: 9px; display: block;">
+
+					<h3>Activity</h3>
+					<div id="flexcontain">
+						<img src="images/ab_testing/not_statistically_significant.PNG" width="480" alt="Not statistically significance" style="float: left;">
+						<img src="images/ab_testing/statistically_significant.PNG" width="480" alt="statistically significance" >
+					</div>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Sample Data</b> <br> Navigate to <a href="https://abtestguide.com/calc/">https://abtestguide.com/calc/</a> and adjust the values according to whats displayed in the images.</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Observations</b> <br>What do you observe between the two confidence intervals for experiments that are not statistically significant and statistically significant?</p></div>
+						<div class="box green" style="font-size: 18px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Note:</b><br>The sample data provided in this example is for illustrative purposes only. A/B experiments would require a larger sample size to ensure the statistical validity of the result </p></div>
+					</div>
+					
 				</section>
 				<!--<section data-background="white" style="background-size: 80%;">
 					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Success Metric</h3>
