@@ -186,35 +186,27 @@
 				   
 				</section>
 				<section data-background="white" style="background-size: 80%;">
-					<h4 style="background-color:rgba(255, 255, 255, 0.7); color: black;">REST Principles</h4>
-					<img src="images/api/Server.png" width="600" alt="Client Server Architecture Visual" /><br />
-					<cite style="font-size: 12px; margin-top: -28px;">Source: https://www.toolsqa.com/client-server/client-server-architecture-and-model</cite>
+					<h4 style="background-color:rgba(255, 255, 255, 0.7); color: black;">REST Principles or Constraints</h4>
+					<img src="images/api/client_server_visual.png" width="600" alt="Client Server Architecture Visual" /><br />
+					<cite style="font-size: 12px; margin-top: -28px;">Source: https://medium.com/geekculture/rest-architectural-constraints-495a50ae0651</cite>
 					<div id="flexcontain">
-						<div class="box" style="font-size: 24px; margin: 10px; height: 80px; background-color: #eee;"><h3 style="margin-top: 25px;">Client - Server Arch.</h3></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 80px; background-color: #eee;"><h3 style="margin-top: 25px;">Uniform Interface</h3></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 80px; background-color: #eee;"><h3 style="margin-top: 25px;">Stateless</h3></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 80px; background-color: #eee;"><h3 style="margin-top: 25px;">Cachable</h3></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 80px; background-color: #eee;"><h3 style="margin-top: 25px;">Layered System Arch.</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 80px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">Client - Server Arch.</h3><p style="font-size: .5em; font-variant: small-caps;">Separates Client and Server - Client makes request</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 80px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">Uniform Interface</h3><p style="font-size: .5em; font-variant: small-caps;">Consistent way of Interaction - HTTP verbs</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 80px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">Stateless</h3><p style="font-size: .5em; font-variant: small-caps;">No information from previous request</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 80px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">Cachable</h3><p style="font-size: .5em; font-variant: small-caps;">Response determines if cachable or not. Determines clients ability to reuse data</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 80px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">Layered System Arch.</h3><p style="font-size: .5em; font-variant: small-caps;">Use of Intermidiary servers(proxies, load balancers, etc..)</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 80px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">Representation</h3><p style="font-size: .5em; font-variant: small-caps;">Various Formats - various formats(HTML, JSON, XML, etc..)</p></div>
 					</div>
 				</section>
+
 				<section data-background="#fff">
 					<h4>Making a Request</h4>
-				    <!--<h2 style="font-size: 2.3em; color: #fff;"><span style="color: #000000; background-color: white; margin: 3px; padding: 2px;">How</span> can a request be made to server?</h2>-->
+				    <h3 style="font-size: .8em; color: #696969;">Various client tools can be used when making a request - Browser, terminal, API tools</h3>
 
-					<a href="https://hoppscotch.io/"><img src="images/api/hoppscotch_request_tool.PNG" style="border: 6px solid black; border-radius: 16px;" width="650" alt="Picture of Hoppscotch Request tool" /></a><br />
-					<p>https://someapi.io/books/?id=1234</p>
+					<a href="https://hoppscotch.io/"><img src="images/api/hoppscotch_request_tool.PNG" style="border: 6px solid black; border-radius: 16px;" width="600" alt="Picture of Hoppscotch Request tool" /></a><br />
+					<p style="font-size: .7em; color: #696969;">https://data.cityofchicago.org/resource/d6ui-3yap.json</p>
 
 					<h4>GET	|   POST	 |   	PUT		|   	DELETE	 </h4>
-				</section>
-				<section data-background="#fff">
-				
-					<h4>Practice Activity</h4>
-					<img src="images/structures/structure_coding_prob.PNG" width="490" alt="decision structure problem from program and design book">
-					<div id="flexcontain">
-						<div class="box red" style="font-size: 22px; margin: 10px; height: 120px; background-color: #eee; color: black;"><p><strong>1) Identify all possible structures</strong><br>Comment each section of your code </p></div>
-						<div class="box red" style="font-size: 22px; margin: 10px; height: 120px; background-color: #eee; color: black;"><p><strong>2) Code in Java</strong><br>Import Random Class Library; use only sequence and selection structures </p></div>
-					</div>
-				
 				</section>
 				<section data-background="" data-background-size="contain" data-background="#fff" style="top: 0;">
 				    <h1>Web Services</h1>
@@ -227,11 +219,47 @@
 				        <li>Obtaining an API Key</li>
 				        <li>Paid and Free Services</li>
 						<li>Request Limits</li>
+
 				    </ul>
 				</section>
+				<section data-background="#fff">
+				
+					<h4>Practice Activity</h4>
+					<p>Using one of the API's below, </p>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 22px; margin: 10px; height: 120px; background-color: #eee; color: black;"><p><strong>1) Identify all possible structures</strong><br>Comment each section of your code </p></div>
+						<div class="box red" style="font-size: 22px; margin: 10px; height: 120px; background-color: #eee; color: black;"><p><strong>2) Code in Java</strong><br>Import Random Class Library; use only sequence and selection structures </p></div>
+					</div>				
+				</section>
 
-				<!--<section data-background="#fff">
+				<section data-background="#fff">
 					<h3>Who are the major cloud vendors?</h3>
+					<div id="flexcontain" class="fragment">
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/cloud/aws_logo.png" width="120" style="margin-top: 50px;" alt="aws logo"/></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/cloud/google_cloud_logo.png" alt="google cloud logo"/></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/cloud/azure_logo.png" alt="microsoft azure logo"/></div>
+
+
+					</div>
+					<a href="https://www.docker.com/resources/what-container"></a>
+				</section>
+				<section data-background="#eeeeee" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Git Workflow and Practice </h3>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="0"><strong>1.</strong> <code>git init </code> -> Initializes git into project folder</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="1"><strong>2.</strong> Make the necessary changes to the application. Save the file and render in browser to observe added functionality. </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="2"><strong>3.</strong> <code>git status </code> -> Checks the status to see status of files in directory</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="3"><strong>4.</strong> <code>git add .</code> -> Adds files to staging area. In preparation to be committed.</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="4"><strong>5.</strong> <code>git status</code> -> Check status again to see if file(s) were added to staging area.</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="5"><strong>6.</strong> <code>git commit -m "adding category"</code> -> Document the change by committing changes and addding a brief message.</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="6"><strong>7.</strong> <code>git log</code> -> To view commit history and timestamp.</p>
+				</section>
+
+				<section data-background="../webdev/images/ux/ia_bg.jpg">
+				    <h1 style="color: black;"><span style="color: white; background-color: black; margin: 3px; padding: 2px;">Visualizing</span> JSON Data</h1>
+				   
+				</section>
+				<section data-background="#fff">
+					<h3>Low-code/No-Code Dev. Environments + BI Tools</h3>
 					<div id="flexcontain" class="fragment">
 						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/cloud/aws_logo.png" width="120" style="margin-top: 50px;" alt="aws logo"/></div>
 						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/cloud/google_cloud_logo.png" alt="google cloud logo"/></div>
@@ -241,7 +269,17 @@
 						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/cloud/oracle_cloud.png" width="200" alt="oracle cloud logo"/></div>
 
 					</div>
-					<a href="https://www.docker.com/resources/what-container"></a>
+					<a href="https://www.appsmith.com/">Click here to create an AppSmith account</a>
+				</section>
+				<section data-background="#eeeeee" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Process and Steps</h3>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="0"><strong>1.</strong> <code>git init </code> -> Initializes git into project folder</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="1"><strong>2.</strong> Make the necessary changes to the application. Save the file and render in browser to observe added functionality. </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="2"><strong>3.</strong> <code>git status </code> -> Checks the status to see status of files in directory</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="3"><strong>4.</strong> <code>git add .</code> -> Adds files to staging area. In preparation to be committed.</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="4"><strong>5.</strong> <code>git status</code> -> Check status again to see if file(s) were added to staging area.</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="5"><strong>6.</strong> <code>git commit -m "adding category"</code> -> Document the change by committing changes and addding a brief message.</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="6"><strong>7.</strong> <code>git log</code> -> To view commit history and timestamp.</p>
 				</section>
 				<section data-background="#eee" data-background-size="contain" data-background="#fff" style="top: 0; text-align: left;">
 					<h2>Data Type Activity</h2>
@@ -256,10 +294,6 @@
 					 <input type="radio" id="age3" name="score" value="100">
 				     <label for="score4">D) You must submit work by due date</label><br><br>
 				  
-				</section>-->
-				<section data-background="../webdev/images/ux/ia_bg.jpg">
-				    <h1 style="color: black;"><span style="color: white; background-color: black; margin: 3px; padding: 2px;">Visualizing</span> JSON Data</h1>
-				   
 				</section>
 				<section data-background="" data-background-size="contain" data-background="#fff" style="top: 0;">
 					<h1>Questions?</h1>
