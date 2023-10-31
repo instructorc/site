@@ -91,7 +91,7 @@
 							<li style="font-size: 50%;">Retrieve specific data stored in JSON format</li>
 				        	<li style="font-size: 50%;">Interpret JSON data</li>
 							<li style="font-size: 50%;">Execute an HTTP request to interact with a RESTful API</li>	
-							<li style="font-size: 50%;">Organize JSON data for meaningful insights through visualization using Retool.com</li>
+							<li style="font-size: 50%;">Organize JSON data for meaningful insights through visualization using AppSmith</li>
 	
 				      	</ul>
 						  <li style="font-size: 70%;">Skills:</li>
@@ -109,7 +109,7 @@
 					<q style="font-size: .5em; color: #fff;">a <span style="color: #520f24; background-color: white; margin: 3px; padding: 2px;">lightweight text-based</span> open standard designed for <span style="color: #520f24; background-color: white; margin: 3px; padding: 2px;">human-readable data exchange</span></q>
 					<a href="https://www.chicago.gov/city/en/sites/covid-19/home/covid-dashboard.html"><img src="images/api/stat_chi_dashboard.PNG" width="500" alt="dashboard of Chicago statistics" /></a><br />
 
-					<h4 style="color: white;"><a href="">Databases</a>  |   <a href="">Configuration</a> |   <a href="">REST API</a> </h4>
+					<h4 style="color: white;"><a href="https://www.mongodb.com/databases/json-database#json-database-examples" target="_blank">Databases</a>  |   <a href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-processing-training-config-file-example.html" target="_blank">Configuration</a> |   <a href="" target="_blank">REST API</a> </h4>
 				</section>
 				<section data-background="#fff">
 					<h4>JSON Rules and Data Types</h4>
@@ -198,7 +198,31 @@
 						<div class="box" style="font-size: 24px; margin: 10px; height: 80px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">Representation</h3><p style="font-size: .5em; font-variant: small-caps;">Various Formats - various formats(HTML, JSON, XML, etc..)</p></div>
 					</div>
 				</section>
+				<section data-background="" data-background-size="contain" data-background="#fff" style="top: 0;">
+				    <h1>Web Services</h1>
+					<p style="font-size: .5em; line-height: 1.5;">Software systems designed to <strong style="color: white; background-color: black; padding: 3px;">allow interaction</strong> between different applications or systems <strong style="color: white; background-color: black; padding: 3px;">over a network</strong>, typically the internet. They provide a standardized way for <strong style="color: white; background-color: black; padding: 3px;">software components to communicate and exchange data</strong>, enabling the integration of disparate systems and platforms </p>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 22px; margin: 10px; height: 300px; background-color: #eee; color: black;">
+							<h2>A few RESTFul API's</h2>
+							<ul>
+								<li></li>
+							</ul>
+						</div>
+						<div class="box red" style="font-size: 22px; margin: 10px; height: 300px; background-color: #eee; color: black;">
+							<h2>Web Service Tools</h2>
+						</div>
+						<div class="box red" style="font-size: 22px; margin: 10px; height: 300px; background-color: #eee; color: black;">
+							<h2>Considerations</h2>
+							<ul>
+								<li>Obtaining an API Key</li>
+								<li>Paid and Free Services</li>
+								<li>Request Limits</li>
+		
+							</ul>
+						</div>
+					</div>				  
 
+				</section>
 				<section data-background="#fff">
 					<h4>Making a Request</h4>
 				    <h3 style="font-size: .8em; color: #696969;">Various client tools can be used when making a request - Browser, terminal, API tools</h3>
@@ -208,51 +232,19 @@
 
 					<h4>GET	|   POST	 |   	PUT		|   	DELETE	 </h4>
 				</section>
-				<section data-background="" data-background-size="contain" data-background="#fff" style="top: 0;">
-				    <h1>Web Services</h1>
-					<div id="flexcontain">
-						<div class="box red" style="font-size: 22px; margin: 10px; height: 120px; background-color: #eee; color: black;"><p><strong>Dog API</strong><br>Comment each section of your code </p></div>
-						<div class="box red" style="font-size: 22px; margin: 10px; height: 120px; background-color: #eee; color: black;"><p><strong>Health Stats API</strong><br>Import Random Class Library; use only sequence and selection structures </p></div>
-						<div class="box red" style="font-size: 22px; margin: 10px; height: 120px; background-color: #eee; color: black;"><p><strong>Jokes API</strong><br>Import Random Class Library; use only sequence and selection structures </p></div>
-					</div>				  
-				    <ul>
-				        <li>Obtaining an API Key</li>
-				        <li>Paid and Free Services</li>
-						<li>Request Limits</li>
 
-				    </ul>
-				</section>
 				<section data-background="#fff">
 				
 					<h4>Practice Activity</h4>
-					<p>Using one of the API's below, </p>
+					<p>Follow the steps to make a successful request to the college scorecard API</p>
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 22px; margin: 10px; height: 120px; background-color: #eee; color: black;"><p><strong>1) Identify all possible structures</strong><br>Comment each section of your code </p></div>
-						<div class="box red" style="font-size: 22px; margin: 10px; height: 120px; background-color: #eee; color: black;"><p><strong>2) Code in Java</strong><br>Import Random Class Library; use only sequence and selection structures </p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 1</strong><br> Navigate to <a href="https://api.data.gov/signup/"> https://api.data.gov/signup/</a> to sign up for an API Key</p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 2</strong><br> Open a new browser and navigate to hoppscotch.io and perform a GET request using the URL below *Make sure API Key is included as key/value parameters in header request<br><a href="http://api.data.gov/ed/collegescorecard/">http://api.data.gov/ed/collegescorecard/</a> </p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 3</strong><br> Review and Interpret the data by return from request </p></div>
 					</div>				
 				</section>
 
-				<section data-background="#fff">
-					<h3>Who are the major cloud vendors?</h3>
-					<div id="flexcontain" class="fragment">
-						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/cloud/aws_logo.png" width="120" style="margin-top: 50px;" alt="aws logo"/></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/cloud/google_cloud_logo.png" alt="google cloud logo"/></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/cloud/azure_logo.png" alt="microsoft azure logo"/></div>
 
-
-					</div>
-					<a href="https://www.docker.com/resources/what-container"></a>
-				</section>
-				<section data-background="#eeeeee" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
-					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Git Workflow and Practice </h3>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="0"><strong>1.</strong> <code>git init </code> -> Initializes git into project folder</p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="1"><strong>2.</strong> Make the necessary changes to the application. Save the file and render in browser to observe added functionality. </p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="2"><strong>3.</strong> <code>git status </code> -> Checks the status to see status of files in directory</p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="3"><strong>4.</strong> <code>git add .</code> -> Adds files to staging area. In preparation to be committed.</p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="4"><strong>5.</strong> <code>git status</code> -> Check status again to see if file(s) were added to staging area.</p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="5"><strong>6.</strong> <code>git commit -m "adding category"</code> -> Document the change by committing changes and addding a brief message.</p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="6"><strong>7.</strong> <code>git log</code> -> To view commit history and timestamp.</p>
-				</section>
 
 				<section data-background="../webdev/images/ux/ia_bg.jpg">
 				    <h1 style="color: black;"><span style="color: white; background-color: black; margin: 3px; padding: 2px;">Visualizing</span> JSON Data</h1>
@@ -261,12 +253,12 @@
 				<section data-background="#fff">
 					<h3>Low-code/No-Code Dev. Environments + BI Tools</h3>
 					<div id="flexcontain" class="fragment">
-						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/cloud/aws_logo.png" width="120" style="margin-top: 50px;" alt="aws logo"/></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/cloud/google_cloud_logo.png" alt="google cloud logo"/></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/cloud/azure_logo.png" alt="microsoft azure logo"/></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/cloud/alibada_cloud_logo.png" style="margin-top: 65px;" alt="alibada cloud logo"/></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/cloud/ibm-cloud.png" width="200" alt="ibm cloud logo"/></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/cloud/oracle_cloud.png" width="200" alt="oracle cloud logo"/></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/api/Appsmith_Logo.svg" width="120" style="margin-top: 60px;" alt="AppSmith logo"/></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/api/retool_logo.webp" alt="Retool.com logo"/></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/api/powerapps-case-845x321.jpg" alt="microsoft power apps logo"/></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/api/powerbi_logo.jpg" style="margin-top: 25px;" width="200" alt="Power BI logo"/></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/api/google_datastudio_logo.png" width="200" alt="google data studio logo"/></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/api/Tableau-Emblem.png" width="200" alt="tableau logo"/></div>
 
 					</div>
 					<a href="https://www.appsmith.com/">Click here to create an AppSmith account</a>
