@@ -225,7 +225,7 @@
 				</section>
 				<section data-background="#fff">
 					<h4>Making a Request</h4>
-				    <h3 style="font-size: .8em; color: #696969;">Various client tools can be used when making a request - Browser, terminal, API tools</h3>
+				    <h3 style="font-size: .5em; color: #696969;">URI Query syntax | Http verbs | Query Paramters | Authorization | Header Paramters</h3>
 
 					<a href="https://hoppscotch.io/"><img src="images/api/hoppscotch_request_tool.PNG" style="border: 6px solid black; border-radius: 16px;" width="600" alt="Picture of Hoppscotch Request tool" /></a><br />
 					<p style="font-size: .7em; color: #696969;">https://data.cityofchicago.org/resource/d6ui-3yap.json</p>
@@ -238,13 +238,49 @@
 					<h4>Practice Activity</h4>
 					<p>Follow the steps to make a successful request to the college scorecard API</p>
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 1</strong><br> Navigate to <a href="https://api.data.gov/signup/"> https://api.data.gov/signup/</a> to sign up for an API Key</p></div>
-						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 2</strong><br> Open a new browser and navigate to hoppscotch.io and perform a GET request using the URL below *Make sure API Key is included as key/value parameters in header request<br><a href="http://api.data.gov/ed/collegescorecard/">http://api.data.gov/ed/collegescorecard/</a> </p></div>
-						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 3</strong><br> Review and Interpret the data by return from request </p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 1</strong><br> Navigate to <a href="https://api.data.gov/signup/"> https://api.data.gov/signup/</a> to sign up for an API Key.  Check your email and copy the api key.  You will need to provide the API Key as a key/parameter as part of your request.</p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 2</strong><br> Open a new browser and navigate to <a href="https://hoppscotch.io/">hoppscotch.io</a> and follow the steps on the next slide. </p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 3</strong><br> Review and Interpret the data by return from request.  Navigating to the next two slides select an option for the two multiple choice questions. </p></div>
 					</div>				
 				</section>
+				<section data-background="#eeeeee" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
+					<h2 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Practice Activity Steps</h2>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="0"><strong>1. Creating a Collection of Queries</strong> -> Click the new button and name the collection <strong>CollegeScoreCard API queries </strong></p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="1"><strong>2. Create a Request Instance</strong> -> Select the three stacked dots symbol next to the folder and select 'New Request'.  Name the request "General School Query".  A new tab will display with the request name you entered. Underneath the tab, Make sure 'GET' is preset as the dropdown option.  Remove the URL 'https://echo.hoppscotch.io' and add the URL below. <br> https://api.data.gov/ed/collegescorecard/v1/schools.json</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="2"><strong>3. Adding API Key for Authorization </strong>  -> Your API key can be added as either as query parameters or by using the 'Authorization' tab. Select the <strong>Paramters tab</strong>, and enter 'api_key' for the key and enter the key provided to you via email as the value.  Press the 'SAVE' button and then press the 'SEND' button.  </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="3"><strong>4. Narrowing Search</strong> -> Using GitHub Documentation found at this [link](https://github.com/RTICWDT/open-data-maker/blob/master/API.md).  Create a new  request under your CollegeScoreCard API queries that limits the returned results to schools in 'Chicago' with the accreditor as 'Higher Learning Commission'  </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="4"><strong>5. Complete Multiple Choice questions </strong> -> Anwser the two multiple choice questions on the following slides.  </p>
 
 
+				</section>
+				<section data-background="#eee" data-background-size="contain" data-background="#fff" style="top: 0; text-align: left;">
+					<h2>College Scorecard API Question #1</h2>
+					
+				     <p>According to the late work policy if needed, how many days are you permitted to have beyond the due date:</p>
+				     <input type="radio" id="age1" name="score" value="30">
+				     <label for="score1">A) 5</label><br>
+				     <input type="radio" id="age2" name="score" value="60">
+				     <label for="score2">B) As many as you need</label><br>  
+				     <input type="radio" id="age3" name="score" value="100">
+				     <label for="score3">C) 2</label><br>
+					 <input type="radio" id="age3" name="score" value="100">
+				     <label for="score4">D) You must submit work by due date</label><br><br>
+				  
+				</section>
+				<section data-background="#eee" data-background-size="contain" data-background="#fff" style="top: 0; text-align: left;">
+					<h2>College Scorecard API Questions #2</h2>
+					
+				     <p>According to the late work policy if needed, how many days are you permitted to have beyond the due date:</p>
+				     <input type="radio" id="age1" name="score" value="30">
+				     <label for="score1">A) 5</label><br>
+				     <input type="radio" id="age2" name="score" value="60">
+				     <label for="score2">B) As many as you need</label><br>  
+				     <input type="radio" id="age3" name="score" value="100">
+				     <label for="score3">C) 2</label><br>
+					 <input type="radio" id="age3" name="score" value="100">
+				     <label for="score4">D) You must submit work by due date</label><br><br>
+				  
+				</section>
 
 				<section data-background="../webdev/images/ux/ia_bg.jpg">
 				    <h1 style="color: black;"><span style="color: white; background-color: black; margin: 3px; padding: 2px;">Visualizing</span> JSON Data</h1>
@@ -252,13 +288,13 @@
 				</section>
 				<section data-background="#fff">
 					<h3>Low-code/No-Code Dev. Environments + BI Tools</h3>
-					<div id="flexcontain" class="fragment">
-						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/api/Appsmith_Logo.svg" width="120" style="margin-top: 60px;" alt="AppSmith logo"/></div>
+					<div id="flexcontain">
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/api/Appsmith_Logo.svg" width="120" style="margin-top: 75px;" alt="AppSmith logo"/></div>
 						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/api/retool_logo.webp" alt="Retool.com logo"/></div>
 						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/api/powerapps-case-845x321.jpg" alt="microsoft power apps logo"/></div>
 						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/api/powerbi_logo.jpg" style="margin-top: 25px;" width="200" alt="Power BI logo"/></div>
 						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/api/google_datastudio_logo.png" width="200" alt="google data studio logo"/></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/api/Tableau-Emblem.png" width="200" alt="tableau logo"/></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/api/Tableau-Emblem.png" width="130" alt="tableau logo"/></div>
 
 					</div>
 					<a href="https://www.appsmith.com/">Click here to create an AppSmith account</a>
