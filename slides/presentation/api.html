@@ -117,10 +117,9 @@
 
 						<div class="box red" style="margin: 10px; padding-top: 5%; height: 700px; background-color: #fff; color: #111; flex-grow: 2;"><img src="images/api/json_ex_spaced.PNG" alt="JSON example"/></div>
 						<div class="box">
-							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="0"><strong><code style="color: blue;">Key/value </code></strong> -> JSON consist of stacked key/value pairs.  Each key/value pair ends with a comma with the exception of the last key/value pair.</p>
-							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="1"><strong><code style="color: green;">Quotations</code></strong> -> All keys should have quotations</p>
-							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="2"><strong><code style="color: rgb(236, 20, 20);">Keys</code></strong> -> no spaces in keys + good practice to make keys lowercase </p>
-							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="3"><strong><code style="color: black;">Nesting </code></strong> -> key/value pairs can be nested</p>
+							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="0"><strong><code style="color: blue;">Key/value </code></strong> -> JSON consist of stacked key/value pairs.  Each key/value pair ends with a comma with the exception of the last key/value pair. <br> <span style="color: blue; font-weight: 900;">How many key/value pairs do you see?</span></p>
+							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="2"><strong><code style="color: rgb(236, 20, 20);">Keys</code></strong> -> All keys should have quotations <br> No spaces in keys + good practice to make keys lowercase </p>
+							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="3"><strong><code style="color: green;">Nesting </code></strong> -> key/value pairs can be nested</p>
 							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="4"><strong><code style="color: orangered">Data types</code></strong> -> certain syntax needed for values based on the data</p>
 							<!--<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="5"><strong>6.</strong> <code>git commit -m "adding category"</code> -> Document the change by committing changes and addding a brief message.</p>
 							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="6"><strong>7.</strong> <code>git log</code> -> To view commit history and timestamp.</p>-->
@@ -132,12 +131,12 @@
 					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">JSON Rules and Data Types</h3>
 					<!--<p style="background-color:rgba(255, 255, 255, 0.7);  font-size: .8em; color: black;" class="fragment"> a method of providing <strong>shared computing resources</strong>, including applications, computing, storage, networking, development, and deployment platforms as well as business processes. </p>-->
 					<div id="flexcontain" class="fragment">
-						<div class="box" style="font-size: 20px; margin: 10px; height: 140px; background-color: #eee;"><h4 style="margin-top: 25px;">String</h4><code>"title": "Intro. to JSON"</code></div>
-						<div class="box" style="font-size: 20px; margin: 10px; height: 140px; background-color: #eee;"><h4 style="margin-top: 25px;">Number</h4><code>"participants": 12</code></div>
-						<div class="box" style="font-size: 20px; margin: 10px; height: 140px; background-color: #eee;"><h4 style="margin-top: 25px;">Null</h4><code>"badged_event": null</code></div>
-						<div class="box" style="font-size: 20px; margin: 10px; height: 230px; background-color: #eee;"><h4 style="margin-top: 25px;">Boolean</h4><code>"is_online": true</code></div>
-						<div class="box" style="font-size: 18px; margin: 10px; height: 230px; background-color: #eee;"><h4 style="margin-top: 25px;">Array</h4><code>"skills": ["JSON", "REST API"]</code></div>
-						<div class="box" style="font-size: 20px; margin: 10px; height: 230px; background-color: #eee; text-align: left;"><h4 style="margin-top: 25px; text-align: center;">Object</h4>
+						<div class="box" style="font-size: 20px; margin: 10px; height: 120px; background-color: #eee;"><h4 style="margin-top: 25px;">String</h4><code>"title": "Intro. to JSON"</code></div>
+						<div class="box" style="font-size: 20px; margin: 10px; height: 120px; background-color: #eee;"><h4 style="margin-top: 25px;">Number</h4><code>"participants": 12</code></div>
+						<div class="box" style="font-size: 20px; margin: 10px; height: 120px; background-color: #eee;"><h4 style="margin-top: 25px;">Null</h4><code>"badged_event": null</code></div>
+						<div class="box" style="font-size: 20px; margin: 10px; height: 220px; background-color: #eee;"><h4 style="margin-top: 25px;">Boolean</h4><code>"is_online": true</code></div>
+						<div class="box" style="font-size: 18px; margin: 10px; height: 220px; background-color: #eee;"><h4 style="margin-top: 25px;">Array</h4><code>"skills": ["JSON", "REST API"]</code></div>
+						<div class="box" style="font-size: 20px; margin: 10px; height: 220px; background-color: #eee; text-align: left;"><h4 style="margin-top: 25px; text-align: center;">Object</h4>
 							<code>  &nbsp;&nbsp;&nbsp;"info":{ <br>
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"time": "9AM", <br>
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"hours": 3, <br>
@@ -148,6 +147,7 @@
 						</div>
 
 					</div>
+					<p> It is common to see an array of objects.  Multiple instances of grouped data with same keys. <br>Think -> rows in an excel sheet</p>
 				</section>
 
 				<section data-background="#fff">
@@ -157,7 +157,7 @@
 						<div class="box red" style="font-size: 20px; margin: 10px; height: 550px; background-color: #fff; color: #111;"><img src="images/api/student_schedule_json.svg" alt="view of student schedule"/></div>
 						<div class="box">
 							<p style="font-size: .7em;"> Referencing the previous slides, create a JSON object that properly formats all of the content found in the picture. <br><br> Click the button below to construct your code</p>
-							<a href="https://jsonchecker.com/"><div id="jsonbutton">Coding Playground</div></a>
+							<a href="https://jsonchecker.com/" target="_blank"><div id="jsonbutton">Coding Playground</div></a>
 						</div>
 						
 					</div>
@@ -166,8 +166,8 @@
 					<h4>Retrieving JSON</h4>
 					<div id="flexcontain">
 
-						<div class="box red" style="margin: 10px; padding-top: 5%; height: 700px; background-color: #fff; color: #111; flex-grow: 2;"><img src="images/api/json_ex_spaced.PNG" alt="JSON example"/></div>
-						<div class="box">
+						<div class="box red" style="margin: 10px; padding-top: 5%; height: 700px; background-color: #fff; color: #111; flex-grow: 1;"><img src="images/api/json_ex_spaced.PNG" alt="JSON example"/></div>
+						<div class="box" style="flex-grow: 2;">
 							<pre style="box-shadow: none;">
 								<code style="font-size: 18px; height: 670px;"  data-trim contenteditable>
 										//Write pseudocode here
@@ -230,7 +230,7 @@
 					<h4>Making a Request</h4>
 				    <h3 style="font-size: .5em; color: #696969;">URI Query syntax | Http verbs | Query Paramters | Authorization | Header Paramters</h3>
 
-					<a href="https://hoppscotch.io/"><img src="images/api/hoppscotch_request_tool.PNG" style="border: 6px solid black; border-radius: 16px;" width="600" alt="Picture of Hoppscotch Request tool" /></a><br />
+					<a href="https://hoppscotch.io/"><img src="images/api/hoppscotch_request_tool.PNG" style="box-shadow: 1px 4px 8px 2px gray; border-radius: 16px;" width="600" alt="Picture of Hoppscotch Request tool" /></a><br />
 					<p style="font-size: .7em; color: #696969;">https://data.cityofchicago.org/resource/d6ui-3yap.json</p>
 
 					<h4>GET	|   POST	 |   	PUT		|   	DELETE	 </h4>
@@ -250,8 +250,8 @@
 					<h2 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Practice Activity Steps</h2>
 					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="0"><strong>1. Creating a Collection of Queries</strong> -> Click the new button and name the collection <strong>CollegeScoreCard API queries </strong></p>
 					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="1"><strong>2. Create a Request Instance</strong> -> Select the three stacked dots symbol next to the folder and select 'New Request'.  Name the request "General School Query".  A new tab will display with the request name you entered. Underneath the tab, Make sure 'GET' is preset as the dropdown option.  Remove the URL 'https://echo.hoppscotch.io' and add the URL below. <br> https://api.data.gov/ed/collegescorecard/v1/schools.json</p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="2"><strong>3. Adding API Key for Authorization </strong>  -> Your API key can be added as either as query parameters or by using the 'Authorization' tab. Select the <strong>Paramters tab</strong>, and enter 'api_key' for the key and enter the key provided to you via email as the value.  Press the 'SAVE' button and then press the 'SEND' button.  </p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="3"><strong>4. Narrowing Search</strong> -> Using GitHub Documentation found at this [link](https://github.com/RTICWDT/open-data-maker/blob/master/API.md).  Create a new  request under your CollegeScoreCard API queries that limits the returned results to schools in 'Chicago' with the accreditor as 'Higher Learning Commission'  </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="2"><strong>3. Adding API Key for Authorization </strong>  -> Your API key can be added as either query parameters or by using the 'Authorization' tab. Select the <strong>Parameters tab</strong>, and enter 'api_key' for the key and enter the key provided to you via email as the value.  Press the 'SAVE' button and then press the 'SEND' button.  </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="3"><strong>4. Narrowing Search</strong> -> Using GitHub Documentation found at this <a href="https://github.com/RTICWDT/open-data-maker/blob/master/API.md" target="_blank">link</a>.  Create a new  request under your CollegeScoreCard API queries that limits the returned results to schools in with the name 'Loyola'. Copy the results and view the structure in <a href="https://jsonviewer.stack.hu/">https://jsonviewer.stack.hu/</a>  </p>
 					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="4"><strong>5. Complete Multiple Choice questions </strong> -> Anwser the two multiple choice questions on the following slides.  </p>
 
 
@@ -259,23 +259,23 @@
 				<section data-background="#eee" data-background-size="contain" data-background="#fff" style="top: 0; text-align: left;">
 					<h2>College Scorecard API Question #1</h2>
 					
-				     <p>According to the late work policy if needed, how many days are you permitted to have beyond the due date:</p>
+				     <p>How many schools are returned from the request:</p>
 				     <input type="radio" id="age1" name="score" value="30">
-				     <label for="score1">A) 5</label><br>
+				     <label for="score1">A) 68</label><br>
 				     <input type="radio" id="age2" name="score" value="60">
-				     <label for="score2">B) As many as you need</label><br>  
+				     <label for="score2">B) 4 </label><br>  
 				     <input type="radio" id="age3" name="score" value="100">
 				     <label for="score3">C) 2</label><br>
 					 <input type="radio" id="age3" name="score" value="100">
-				     <label for="score4">D) You must submit work by due date</label><br><br>
+				     <label for="score4">D) 6</label><br><br>
 				  
 				</section>
 				<section data-background="#eee" data-background-size="contain" data-background="#fff" style="top: 0; text-align: left;">
 					<h2>College Scorecard API Questions #2</h2>
 					
-				     <p>According to the late work policy if needed, how many days are you permitted to have beyond the due date:</p>
+				     <p>Out of the schools returned, which two schools are at index 2 and 4 :</p>
 				     <input type="radio" id="age1" name="score" value="30">
-				     <label for="score1">A) 5</label><br>
+				     <label for="score1">A) Index 2: Loyola University of Chicago & Loyola University </label><br>
 				     <input type="radio" id="age2" name="score" value="60">
 				     <label for="score2">B) As many as you need</label><br>  
 				     <input type="radio" id="age3" name="score" value="100">
