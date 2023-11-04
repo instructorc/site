@@ -55,9 +55,11 @@
 				<section data-background="#f8f8f8">
 				    <h2 style=" color: #000;">Workshop:  Introduction to JSON</h2>
 					<h3 style=" color: #000; font-weight: 100; font-size: .9em;">Translating text into a structured data exchange format</h3>
-				    <h3 style="color: #000; font-weight: 200;"></h3>
-				    <h3 style="color: #000; font-weight: 100; margin-top: 80px;">Instructor: Chris Fulton</h3>
-				    <img src="images/intro/LUC_stacked.png" width="200" style="position: fixed; bottom: 0; margin-left: -15%; margin-bottom: 5%;" alt="LUC logo">
+				   
+					<img src="images/api/jsonworkshop-400.png" width="180" style="margin-bottom: -2%;" alt="api slide presentation QR code"/>
+					<p style="font-size: 24px;">https://tinyurl.com/jsonworkshop</p>
+				    <h3 style="color: #000; font-weight: 100; margin-top: 30px;">Instructor: Chris Fulton</h3>
+				    <img src="images/intro/LUC_stacked.png" width="190" style="position: fixed; bottom: 0; margin-left: -10%; margin-bottom: 5%;" alt="LUC logo">
 				</section>
 				<section data-background=""  data-background="#fff" style="top: 0;">
 				    <h2>Agenda</h2>
@@ -72,9 +74,9 @@
 						<li style="font-size: 40%; list-style-type: none;">[15 min. break]</li>
 				        <li style="font-size: 70%;">Second Hour</li>
 				        <ul>
-				        	<li style="font-size: 50%;">Requesting data from a REST API</li>
-							<li style="font-size: 50%"> Making a Http Request to REST API call Activity</li>
-							<li style="font-size: 50%;">Understanding and Visualizing API data using a BI tool</li>	
+				        	<li style="font-size: 50%;">Requesting data from a RESTful API</li>
+							<li style="font-size: 50%"> Making a Http Request to RESTful API call Activity</li>
+							<li style="font-size: 50%;">Understanding and Visualizing API data using a AppSmith</li>	
 							<li style="font-size: 50%;">Q and A</li>
 
 							
@@ -91,7 +93,7 @@
 							<li style="font-size: 50%;">Retrieve specific data stored in JSON format</li>
 				        	<li style="font-size: 50%;">Interpret JSON data</li>
 							<li style="font-size: 50%;">Execute an HTTP request to interact with a RESTful API</li>	
-							<li style="font-size: 50%;">Organize JSON data for meaningful insights through visualization using AppSmith</li>
+							<li style="font-size: 50%;">Organize JSON data for meaningful insights through visualization using Low Code Environment</li>
 	
 				      	</ul>
 						  <li style="font-size: 70%;">Skills:</li>
@@ -130,7 +132,7 @@
 				<section data-background="white" style="background-size: 80%;">
 					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">JSON Rules and Data Types</h3>
 					<!--<p style="background-color:rgba(255, 255, 255, 0.7);  font-size: .8em; color: black;" class="fragment"> a method of providing <strong>shared computing resources</strong>, including applications, computing, storage, networking, development, and deployment platforms as well as business processes. </p>-->
-					<div id="flexcontain" class="fragment">
+					<div id="flexcontain">
 						<div class="box" style="font-size: 20px; margin: 10px; height: 120px; background-color: #eee;"><h4 style="margin-top: 25px;">String</h4><code>"title": "Intro. to JSON"</code></div>
 						<div class="box" style="font-size: 20px; margin: 10px; height: 120px; background-color: #eee;"><h4 style="margin-top: 25px;">Number</h4><code>"participants": 12</code></div>
 						<div class="box" style="font-size: 20px; margin: 10px; height: 120px; background-color: #eee;"><h4 style="margin-top: 25px;">Null</h4><code>"badged_event": null</code></div>
@@ -202,18 +204,29 @@
 				    <h1>Web Services</h1>
 					<p style="font-size: .5em; line-height: 1.5;">Software systems designed to <strong style="color: white; background-color: black; padding: 3px;">allow interaction</strong> between different applications or systems <strong style="color: white; background-color: black; padding: 3px;">over a network</strong>, typically the internet. They provide a standardized way for <strong style="color: white; background-color: black; padding: 3px;">software components to communicate and exchange data</strong>, enabling the integration of disparate systems and platforms </p>
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 22px; margin: 10px; height: 300px; background-color: #eee; color: black;">
-							<h2>A few RESTFul API's</h2>
+						<div class="box red" style="font-size: 22px; margin: 10px; height: 400px; background-color: #eee; color: black;">
+							<h2>A few API's</h2>
 							<ul>
-								<li><a href="https://api.nasa.gov/index.html">NASA API</a></li>
-								<li><a href="https://world.openfoodfacts.org/data">Open Food Facts</a></li>
-								<li><a href="https://www.weatherbit.io/api">Weather Bit API</a></li>
+								<li><a href="https://api.nasa.gov/index.html">NASA API</a> [RESTful API]</li>
+								<li><a href="https://world.openfoodfacts.org/data">Open Food Facts</a> [RESTful API]</li>
+								<li><a href="https://www.weatherbit.io/api">Weather Bit API</a> [RESTful API]</li>
+								<li><a href="https://developers.google.com/maps">Google Maps API</a> [Geolocaton API]</li>
+								<li><a href="https://developers.google.com/youtube">YouTube API</a> [Video API]</li>
+								<li><a href="https://developer.spotify.com/documentation/web-api">Spotify API</a> [Media API]</li>
+								<li><a href="https://stripe.com/docs/payments">Stripe API</a> [Payment API]</li>
 							</ul>
 						</div>
-						<div class="box red" style="font-size: 22px; margin: 10px; height: 300px; background-color: #eee; color: black;">
+						<div class="box red" style="font-size: 22px; margin: 10px; height: 400px; background-color: #eee; color: black;">
 							<h2>Web Service Tools</h2>
+							<ul>
+								<li><a href="https://www.postman.com/" target="_blank">Postman</a></li>
+								<li><a href="https://curl.se/" target="_blank">cURL</a></li>
+								<li><a href="https://hoppscotch.io/" target="_blank">Hoppscotch</a></li>
+					
+		
+							</ul>
 						</div>
-						<div class="box red" style="font-size: 22px; margin: 10px; height: 300px; background-color: #eee; color: black;">
+						<div class="box red" style="font-size: 22px; margin: 10px; height: 400px; background-color: #eee; color: black;">
 							<h2>Considerations</h2>
 							<ul>
 								<li>Obtaining an API Key</li>
@@ -241,18 +254,18 @@
 					<h4>Practice Activity</h4>
 					<p>Follow the steps to make a successful request to the college scorecard API</p>
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 1</strong><br> Navigate to <a href="https://api.data.gov/signup/"> https://api.data.gov/signup/</a> to sign up for an API Key.  Check your email and copy the api key.  You will need to provide the API Key as a key/parameter as part of your request.</p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 1</strong><br> Navigate to <a href="https://api.data.gov/signup/"> https://api.data.gov/signup/</a> to sign up for an API Key.  Check your email and copy the api key.  You will need to provide the API Key as a key/value parameter as part of your request.</p></div>
 						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 2</strong><br> Open a new browser and navigate to <a href="https://hoppscotch.io/">hoppscotch.io</a> and follow the steps on the next slide. </p></div>
 						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 3</strong><br> Review and Interpret the data by return from request.  Navigating to the next two slides select an option for the two multiple choice questions. </p></div>
 					</div>				
 				</section>
 				<section data-background="#eeeeee" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
-					<h2 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Practice Activity Steps</h2>
+					<h2>Practice Activity Steps</h2>
 					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="0"><strong>1. Creating a Collection of Queries</strong> -> Click the new button and name the collection <strong>CollegeScoreCard API queries </strong></p>
 					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="1"><strong>2. Create a Request Instance</strong> -> Select the three stacked dots symbol next to the folder and select 'New Request'.  Name the request "General School Query".  A new tab will display with the request name you entered. Underneath the tab, Make sure 'GET' is preset as the dropdown option.  Remove the URL 'https://echo.hoppscotch.io' and add the URL below. <br> https://api.data.gov/ed/collegescorecard/v1/schools.json</p>
 					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="2"><strong>3. Adding API Key for Authorization </strong>  -> Your API key can be added as either query parameters or by using the 'Authorization' tab. Select the <strong>Parameters tab</strong>, and enter 'api_key' for the key and enter the key provided to you via email as the value.  Press the 'SAVE' button and then press the 'SEND' button.  </p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="3"><strong>4. Narrowing Search</strong> -> Using GitHub Documentation found at this <a href="https://github.com/RTICWDT/open-data-maker/blob/master/API.md" target="_blank">link</a>.  Create a new  request under your CollegeScoreCard API queries that limits the returned results to schools in with the name 'Loyola'. Copy the results and view the structure in <a href="https://jsonviewer.stack.hu/">https://jsonviewer.stack.hu/</a>  </p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="4"><strong>5. Complete Multiple Choice questions </strong> -> Anwser the two multiple choice questions on the following slides.  </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="3"><strong>4. Narrowing Search</strong> -> Using GitHub Documentation found at this <a href="https://github.com/RTICWDT/open-data-maker/blob/master/API.md" target="_blank">link</a>.  Create a new  request under your CollegeScoreCard API queries that limits the returned results to schools in with the name 'Loyola'. Copy the results and view the structure in <a href="https://jsonformatter.org/json-viewer">https://jsonformatter.org/json-viewer</a>  </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="4"><strong>5. Complete Multiple Choice question </strong> -> Anwser multiple choice question on the following slide.  </p>
 
 
 				</section>
@@ -270,20 +283,7 @@
 				     <label for="score4">D) 6</label><br><br>
 				  
 				</section>
-				<section data-background="#eee" data-background-size="contain" data-background="#fff" style="top: 0; text-align: left;">
-					<h2>College Scorecard API Questions #2</h2>
-					
-				     <p>Out of the schools returned, which two schools are at index 2 and 4 :</p>
-				     <input type="radio" id="age1" name="score" value="30">
-				     <label for="score1">A) Index 2: Loyola University of Chicago & Loyola University </label><br>
-				     <input type="radio" id="age2" name="score" value="60">
-				     <label for="score2">B) As many as you need</label><br>  
-				     <input type="radio" id="age3" name="score" value="100">
-				     <label for="score3">C) 2</label><br>
-					 <input type="radio" id="age3" name="score" value="100">
-				     <label for="score4">D) You must submit work by due date</label><br><br>
-				  
-				</section>
+
 
 				<section data-background="../webdev/images/ux/ia_bg.jpg">
 				    <h1 style="color: black;"><span style="color: white; background-color: black; margin: 3px; padding: 2px;">Visualizing</span> JSON Data</h1>
@@ -305,37 +305,53 @@
 				<section data-background="#fff">
 				
 					<h4>Practice Activity</h4>
-					<p>Follow the steps to create an AppSmith App that visualize returned API data</p>
+					<p>Follow the steps to create an AppSmith App that visualize the city of Chicago estimated revenue sources</p>
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 1</strong><br> Navigate to <a href="https://api.data.gov/signup/"> https://api.data.gov/signup/</a> to sign up for an API Key.  Check your email and copy the api key.  You will need to provide the API Key as a key/parameter as part of your request.</p></div>
-						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 2</strong><br> Open a new browser and navigate to <a href="https://hoppscotch.io/">hoppscotch.io</a> and follow the steps on the next slide. </p></div>
-						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 3</strong><br> Review and Interpret the data by return from request.  Navigating to the next two slides select an option for the two multiple choice questions. </p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 1</strong><br> Sign into your AppSmith account and skip the tutorial when you first log in.</p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 2</strong><br> Select from one the REST API's above and follow the steps on the next slide. </p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 3</strong><br> If you finish early, look around and see if you can assist someone else.</p></div>
 					</div>				
 				</section>
 				<section data-background="#eeeeee" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
-					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Process and Steps</h3>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="0"><strong>1.</strong> <code>git init </code> -> Initializes git into project folder</p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="1"><strong>2.</strong> Make the necessary changes to the application. Save the file and render in browser to observe added functionality. </p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="2"><strong>3.</strong> <code>git status </code> -> Checks the status to see status of files in directory</p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="3"><strong>4.</strong> <code>git add .</code> -> Adds files to staging area. In preparation to be committed.</p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="4"><strong>5.</strong> <code>git status</code> -> Check status again to see if file(s) were added to staging area.</p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="5"><strong>6.</strong> <code>git commit -m "adding category"</code> -> Document the change by committing changes and addding a brief message.</p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="6"><strong>7.</strong> <code>git log</code> -> To view commit history and timestamp.</p>
+					<h4>Process and Steps</h4>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;" class="fragment" data-fragment-index="0"><strong>1. Select Datasource option </strong>-> Click on the new datasource plus sign in left column and select <strong>'REST API'</strong> </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;" class="fragment" data-fragment-index="1"><strong>2. Configure API Request</strong> -> Rename the datasource to 'cityofchicago_api' <br> Make sure the http verb is set to 'GET' and add the URI below: <br> <strong><code>https://data.cityofchicago.org/resource/at79-usba.json</code></strong></p>
+					<!--<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="2"><strong>3. Add query parameters</strong> -> Add two query paramters that limits the requested data to 'City Council' and 'Alderman' Use keys: <strong><code>organization_description</code></strong> and <strong><code>title_description</code> </strong></p>-->
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;" class="fragment" data-fragment-index="2"><strong>3. Add Table Widget and connect datasource</strong> -> Select the widgets tab and drag a table on canvas area.  Click the <strong><code>'Connect data'</code></strong> button and select <strong><code>cityofchicago_api</code></strong> under Connect to query</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;" class="fragment" data-fragment-index="3"><strong>4. Add Another Widget: JSON Form</strong> -> Select the widgets tab and search for <strong><code>JSON form</code></strong> and drag to canvas area.  Select 'Generate Form' and connect to table widget.</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;" class="fragment" data-fragment-index="4"><strong>5. Add Another Widget: Chart </strong> -> Select the widgets tab and search for <strong><code>Chart</code></strong> and drag to canvas. Using the properties panel to the left, select <strong><code>'Pie Chart</code></strong> for Chart type. </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;" class="fragment" data-fragment-index="5"><strong>6. Add Chart Datasource</strong> -> Using the properties panel to the left, scroll down to the series data and enter the javascript code below. <br> <code>{{cityofchicago_api.data.map(p => ({x:p.revenue_source, y: p.estimated_revenue}))}}</code></p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;" class="fragment" data-fragment-index="6"><strong>7. Adjust Chart Properties</strong> -> Using the Chart properties panel, adjust <strong>'Series title'</strong> to <strong>'Estimated Revenue Sources'</strong>. Adjust <strong>'Title'</strong> to <strong>'City of Chicago Estimated Revenue'</strong> </p>
 				</section>
 				<section data-background="#eee" data-background-size="contain" data-background="#fff" style="top: 0; text-align: left;">
 					<h2>Data Type Activity</h2>
 					
-				     <p>According to the late work policy if needed, how many days are you permitted to have beyond the due date:</p>
-				     <input type="radio" id="age1" name="score" value="30">
-				     <label for="score1">A) 5</label><br>
-				     <input type="radio" id="age2" name="score" value="60">
-				     <label for="score2">B) As many as you need</label><br>  
-				     <input type="radio" id="age3" name="score" value="100">
-				     <label for="score3">C) 2</label><br>
-					 <input type="radio" id="age3" name="score" value="100">
-				     <label for="score4">D) You must submit work by due date</label><br><br>
+				     <p>Which revenue source is expected to generate the <strong>second</strong> largest income for the city?</p>
+				     <input type="radio" id="age1" name="score">
+				     <label for="score1">A) Cable Television</label><br>
+				     <input type="radio" id="age2" name="score">
+				     <label for="score2">B) Water Rates</label><br>  
+				     <input type="radio" id="age3" name="score" >
+				     <label for="score3">C) Amusement Tax</label><br>
+					 <input type="radio" id="age3" name="score" >
+				     <label for="score4">D) Lease of Personal Property</label><br><br>
 				  
 				</section>
+				<!--<section data-background="white" style="background-size: 80%;">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">AppSmith Customization and Deployment</h3>
+					
+					<div id="flexcontain" class="fragment">
+						<div class="box" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee;"><h4 style="margin-top: 25px;">Adjusting Style</h4><code>"title": "Intro. to JSON"</code></div>
+						<div class="box" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee;"><h4 style="margin-top: 25px;">Number</h4><code>"participants": 12</code></div>
+						<div class="box" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee;"><h4 style="margin-top: 25px;">Null</h4><code>"badged_event": null</code></div>
+						<div class="box" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee;"><h4 style="margin-top: 25px;">Boolean</h4><code>"is_online": true</code></div>
+						<div class="box" style="font-size: 18px; margin: 10px; height: 250px; background-color: #eee;"><h4 style="margin-top: 25px;">Array</h4><code>"skills": ["JSON", "REST API"]</code></div>
+
+
+					</div>
+					<p> Share your url by sending an email to cfulton@luc.edu</p>
+				</section>-->
+
 				<section data-background="" data-background-size="contain" data-background="#fff" style="top: 0;">
 					<h1>Questions?</h1>
 				</section>
