@@ -448,31 +448,34 @@ Click="Button_Click"/&gt;
 				<section data-background="#fff">
 					<h4>Grid Definition Example</h4>
 				    	<pre>
-							<code style="font-size: 14px;" class="xml hljs"  data-trim contenteditable>
-								
+							<code style="font-size: 14px;" class="html hljs"  data-trim contenteditable>
     &lt;Grid&gt;  
-    &lt;Grid.RowDefinitions&gt;
-        &lt;RowDefinition Height="320" /&gt;
-        &lt;RowDefinition Height="320" /&gt;
-        &lt;RowDefinition Height="320" /&gt;
-        
-    &lt;/Grid.RowDefinitions&gt;
-    &lt;Grid.ColumnDefinitions&gt;
-        &lt;ColumnDefinition Width="Auto" /&gt;
-        &lt;ColumnDefinition Width="Auto" /&gt;
-        &lt;ColumnDefinition Width="Auto" /&gt;
-    &lt;/Grid.ColumnDefinitions&gt;
-
-	&lt;Button x:Name="submit_btn" Grid.Row="0" Grid.ColumnSpan="3" Text="Submit" FontSize="48"  HorizontalOptions="Start" Margin="301,248,0,0"  VerticalOptions="Start"  Clicked="Submit_btn_Click"/&gt;
-    &lt;Label x:Name="output_lb" Grid.Row="3" Grid.Column="2" Text="Today is Monday"    HorizontalOptions="Start" FontSize="32" Margin="274,118,0,0" VerticalOptions="Start" RenderTransformOrigin="0.337,0.578"/&gt;
-
-    &lt;/Grid&gt;
-
+		&lt;Grid.RowDefinitions&gt;
+				&lt;RowDefinition Height="100" /&gt;
+				&lt;RowDefinition Height="220" /&gt;
+				&lt;RowDefinition Height="120" /&gt;
+		&lt;/Grid.RowDefinitions&gt;
+		&lt;Grid.ColumnDefinitions&gt;
+			&lt;ColumnDefinition Width="*" /&gt;
+			&lt;ColumnDefinition Width="*" /&gt;
+			&lt;ColumnDefinition Width="*" /&gt;
+		&lt;/Grid.ColumnDefinitions&gt;
+		&lt;BoxView Grid.Row="0" Grid.ColumnSpan="3" Color="#F8F8DD" /&gt;
+		&lt;BoxView Grid.Row="1" Grid.Column="0" Color="#88A075" /&gt;
+		&lt;BoxView Grid.Row="1" Grid.Column="2" Color="#D0A34D" /&gt;
+		&lt;BoxView Grid.Row="1" Grid.Column="1" Color="#FF363A" /&gt;
+		&lt;BoxView Grid.Row="2" Grid.Column="0" Color="#FDE88B" /&gt;
+		&lt;BoxView Grid.Row="2" Grid.Column="1" Color="#6B82D2" /&gt;
+		&lt;BoxView Grid.Row="2" Grid.Column="2" Color="#FDE88B" /&gt;
+		&lt;Button x:Name="submit_btn" Grid.Row="2" Grid.Column="2" Text="Next ->" FontSize="20"  HorizontalOptions="Center"  VerticalOptions="Center" BackgroundColor="#E4F1ED" TextColor="#3B2C28"  Clicked="Submit_btn_Click"/&gt;
+		&lt;Label x:Name="output_lb" Grid.Row="0" Grid.ColumnSpan="3" Text="Quiz Question" HorizontalOptions="Center" TextColor="#3B2C28" FontSize="20"  VerticalOptions="Center" /&gt;
+		&lt;Label x:Name="output_lb" Grid.Row="1" Grid.ColumnSpan="3" Text="Quiz Question Options" HorizontalOptions="Center" TextColor="WhiteSmoke" FontSize="20"  VerticalOptions="Center" /&gt;
+	&lt;/Grid&gt;
 
 							</code>
 						</pre>
 				   
-				    <p style="font-size: 20px;">The above example provides code that defines a 3 column/3 row grid.  The button is then placed unto the grid using the <strong>Grid.Row/Grid.Column/Grid.ColumnSpan</strong> properties</p>
+				    <p style="font-size: 20px;">The example above defines a 3 column 3 row grid.  Properties to place grid items include <strong>Grid.Row/Grid.RowSpan/Grid.Column/Grid.ColumnSpan</strong> properties</p>
 				</section>
 				<section data-background="#eee">
 					<h4>In-class Activity</h4>
@@ -499,9 +502,9 @@ Click="Button_Click"/&gt;
 					</pre>
 					<div id="flexcontain">
 
-						<div class="box green" style="font-size: 20px; margin: 10px; height: 140px; background-color: white;"><p style="color: black; font-size: 15px;"><b style="font-size: 20px;">Step 1</b><br>Adjust the code above to add a FlyoutPage to the App Shell </p></div>
-						<div class="box blue" style="font-size: 20px; margin: 10px; height: 140px; background-color: white"><p style="color: black; font-size: 15px;"><b style="font-size: 20px;">Step 2</b><br>Indicate whether or not option choice is correct by changing color.  Red if wrong, green if incorrect</p></div>
-						<div class="box red" style="font-size: 20px; margin: 10px; height: 140px; background-color: white;"><p style="color: black; font-size: 15px;"><b style="font-size: 20px;">Step 3</b><br></p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; height: 140px; background-color: white;"><p style="color: black; font-size: 15px;"><b style="font-size: 20px;">Step 1</b><br>Create a new .NET MAUI program and modify the MainPage XAML file to render the GRID displayed above.</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; height: 140px; background-color: white"><p style="color: black; font-size: 15px;"><b style="font-size: 20px;">Step 2 <span style="color: red; font-weight: 900;">[STRETCH REQ.]</span></b><br>Do some research on how to add a new tabbed page to your program and create 3 tabs.  For example, tab 1 will render " Q1 ", tab 2  will render " Q2 ", etc.. <a href="https://www.c-sharpcorner.com/article/tabbedpage-in-net-maui/">*helpful resource</a></p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 140px; background-color: white;"><p style="color: black; font-size: 15px;"><b style="font-size: 20px;">Step 3</b><br>Modify the MainPage to only include a button to start quiz.  The button will allow you to navigate to your new Tabbed Page.</p></div>
 
 
 					</div>
@@ -534,14 +537,7 @@ Click="Button_Click"/&gt;
 							</code>
 						</pre>
 				   
-				    <ol style="font-size: 18px; margin-top: -36px;">
-						<li>Open CoreQuiz program and copy the above code into the MainWindow.xaml file.</li>
-						<li>Implement a Grid layout that includes five columns and 6 rows.</li>
-						<li>The TextBox should be placed on the first row</li>
-						<li>Each radio button should be placed in the grid starting at row 2 and span columns</li>
-						<li>The button should be centered on the 5th row.</li>
 
-				    </ol>
 				</section>
 
 				<section data-background="images/wpf/data_binding.jpg">
