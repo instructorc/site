@@ -725,7 +725,7 @@ public class Person
 				</section>
 				<section data-background="white">
 					<h3>JSON Cheatsheet</h3>
-					<iframe src="https://quickref.me/json.html" width="900" height="600"></iframe>
+					<a href="https://quickref.me/json.html#getting-started"><img src="images/maui/json_cheatsheet.png" height="570" /></a>
 				</section>
 				<section data-background="#eee">
 					<h4>In-class Activity</h4>
@@ -740,6 +740,80 @@ public class Person
 					<img src="images/maui/json_activity.PNG" alt="JSON Activity" style="width: 400px;">
 					
 					
+				</section>
+				<section data-background="#eee">
+					<h3>Serialization and Deserialization</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">Serialization</b> <br>Serialization is the process of converting an object into a format that can be easily stored, transmitted, or reconstructed later. This typically involves converting the object into a stream of bytes. </p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">Deserialization</b> <br> Deserialization is the reverse process, where the serialized object is reconstructed into its original form, allowing it to be used within a program or system. </p><p>This process is important for data persistence, network communication, and inter-process communication, enabling objects to be saved to a file or sent over a network and then reconstructed at a later time.</p></div>
+						
+					</div>
+				</section>
+				<section data-background="#eee">
+					<h4>Serialization JSON data</h4>
+					<pre>
+						<code style="font-size: 14px; line-height: .9em;" class="cs hljs"  data-trim contenteditable>
+
+							using System.Text.Json;  // We need using statement so that we can use the resouces from JSON class
+							using System;
+							
+							public class Person
+							{
+								public string Name { get; set; }
+								public int Age { get; set; }
+							}
+							
+							class Program
+							{
+								static void Main()
+								{
+									Person person = new Person { Name = "Maya Moore", Age = 30 };
+							
+									// Serialize object to JSON string
+									string jsonObject = JsonSerializer.Deserialize&lt;Person&gt;(person);
+									Console.WriteLine(jsonObject);
+								}
+							}
+
+						</code>
+					</pre>
+					<div id="flexcontain">
+						<div class="box green" style="font-size: 20px; margin: 10px; height: 140px; background-color: rgb(91, 164, 177);"><p style="color: black; font-size: 15px;"><b style="font-size: 20px;">Serialization Process</b><br>Include the using statement to gain access to resources.  Use proper methods to Serialize JSON string. The example above is using the Serialize method and provides the type in which to Serialize into.  </p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; height: 140px; background-color: white;"><p style="color: black; font-size: 15px;"><b style="font-size: 20px;">Deserialization Process</b><br>Include the using statement to gain access to resources.  Use proper methods to Deserialize JSON string.  The example above is using the Deserialize method and enforces type to Deserialize into. </p></div>
+					</div>
+				</section>
+				<section data-background="#eee">
+					<h4>Deserialization JSON data</h4>
+					<pre>
+						<code style="font-size: 14px; line-height: .9em;" class="cs hljs"  data-trim contenteditable>
+
+							using System.Text.Json;
+							using System;
+							
+							public class Person
+							{
+								public string Name { get; set; }
+								public int Age { get; set; }
+							}
+							
+							class Program
+							{
+								static void Main()
+								{
+									string json = "{\"Name\":\"Bo Jackson\",\"Age\":25}";
+							
+									// Deserialize JSON string to object
+									Person aPerson = JsonSerializer.Serialize&lt;Person&gt;(json);
+									Console.WriteLine($"Name: {person.Name}, Age: {person.Age}");
+								}
+							}
+
+						</code>
+					</pre>
+					<div id="flexcontain">
+						<div class="box green" style="font-size: 20px; margin: 10px; height: 140px; background-color: white"><p style="color: black; font-size: 15px;"><b style="font-size: 20px;">Serialization Process</b><br>Include the using statement to gain access to resources.  Use proper methods to Serialize JSON string</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; height: 140px; background-color: rgb(91, 164, 177);"><p style="color: black; font-size: 15px;"><b style="font-size: 20px;">Deserialization</b><br>Include the using statement to gain access to resources.  Use proper methods to Deserialize JSON string.  The example above is using the Deserialize method and provides the type in which to deserialize into. </p></div>
+					</div>
 				</section>
 				<section data-background="images/wpf/data_binding.jpg">
 					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Events</h1>
