@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Intro to HTML5/CSS: Web Page Design from start to finish </title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/luc.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;800&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@200&family=Roboto:ital,wght@0,300;1,100&family=Staatliches&display=swap" rel="stylesheet">
+		<style>
+			body{
+				font-family: 'Gabarito' !important;
+			}
+			section  p{
+				font-size: .7em;
+			}
+			#jsonbutton {
+				background-color: orangered;
+				color: white;
+				width: auto;
+				margin: auto;
+				padding: 20px;
+				transition: 1s all;
+			}
+			#jsonbutton:hover {
+				background-color: #ff0c00;
+				box-shadow: 2px 2px 10px #333;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="#f8f8f8">
+				    <h2 style=" color: #000;">Workshop: Intro to HTML5/CSS: Web Page Design from start to finish </h2>
+					<h3 style=" color: #000; font-weight: 100; font-size: .9em;">Up and Running with HTML/CSS in 4 hours!!</h3>
+				   
+					<img src="images/api/jsonworkshop-400.png" width="180" style="margin-bottom: -2%;" alt="api slide presentation QR code"/>
+					<p style="font-size: 24px;">https://tinyurl.com/jsonworkshop</p>
+				    <h3 style="color: #000; font-weight: 100; margin-top: 30px;">Instructor: Chris Fulton</h3>
+				    <img src="images/intro/LUC_stacked.png" width="190" style="position: fixed; bottom: 0; margin-left: -10%; margin-bottom: 5%;" alt="LUC logo">
+				</section>
+				<section data-background=""  data-background="#fff" style="top: 0;">
+				    <h2>Agenda</h2>
+
+				    <ul>
+				        <li style="font-size: 70%;">First Hour</li>
+				        <ul>
+				        	<li style="font-size: 50%;">History, Context and Development Environment Walk-through</li>
+							<li style="font-size: 50%;">Understanding HTML and Stucture of Content</li>	
+							<li style="font-size: 50%;">Practice and Assistence</li>
+				        </ul>
+						<li style="font-size: 40%; list-style-type: none;">[15 min. break]</li>
+				        <li style="font-size: 70%;">Second Hour</li>
+				        <ul>
+				        	<li style="font-size: 50%;">Understanding CSS</li>
+							<li style="font-size: 50%"> Color and Graphic Scheme</li>
+							<li style="font-size: 50%;">Starting Page Layout</li>	
+				        </ul>
+						<li style="font-size: 40%; list-style-type: none;">[20 min. break]</li>
+						<li style="font-size: 70%;">Third Hour</li>
+				        <ul>
+				        	<li style="font-size: 50%;">Page Layout Cont.</li>
+				        	<li style="font-size: 50%;">Responsive Design</li>
+							<li style="font-size: 50%"> Accessibility Considerations + Validation</li>
+
+				        </ul>
+						<li style="font-size: 70%;">20 Minute Wrap-Up</li>
+				        <ul>
+							<li style="font-size: 50%;">Site Hosting Options</li>	
+							<li style="font-size: 50%;">Q and A</li>	
+
+				        </ul>
+				    </ul>
+
+				</section>
+				<section data-background="" data-background-size="contain" data-background="#fff" style="top: 0;">
+				    <h2>Learning Objectives</h2>
+				    <ul>
+				        <li style="font-size: 70%;">You will learn how to:</li>
+				        <ul>
+							<li style="font-size: 50%;">Convert text into JSON format</li>
+							<li style="font-size: 50%;">Retrieve specific data stored in JSON format</li>
+				        	<li style="font-size: 50%;">Interpret JSON data</li>
+							<li style="font-size: 50%;">Execute an HTTP request to interact with a RESTful API</li>	
+							<li style="font-size: 50%;">Organize JSON data for meaningful insights through visualization using Low Code Environment</li>
+	
+				      	</ul>
+						  <li style="font-size: 70%;">Skills:</li>
+						  <ul>
+							  <li style="font-size: 50%;">JSON, RESTful Architecture, Client/Service Architecture, Data Visualization</li>
+							</ul>
+				    </ul>
+				</section>
+				<section data-background="../webdev/images/ux/ia_bg.jpg">
+				    <h1 style="color: black;">What is <span style="color: white; background-color: black; margin: 3px; padding: 2px;">JSON</span>?</h1>
+				   
+				</section>
+				<section data-background="#5D0024">
+				    <h2 style="font-size: 2.3em; color: #fff;"><span style="color: #520f24; background-color: white; margin: 3px; padding: 2px;">JSON</span> Use Cases</h2>
+					<q style="font-size: .5em; color: #fff;">a <span style="color: #520f24; background-color: white; margin: 3px; padding: 2px;">lightweight text-based</span> open standard designed for <span style="color: #520f24; background-color: white; margin: 3px; padding: 2px;">human-readable data exchange</span></q>
+					<a href="https://www.chicago.gov/city/en/sites/covid-19/home/covid-dashboard.html"><img src="images/api/stat_chi_dashboard.PNG" width="500" alt="dashboard of Chicago statistics" /></a><br />
+
+					<h4 style="color: white;"><a href="https://www.mongodb.com/databases/json-database#json-database-examples" target="_blank">Databases</a>  |   <a href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-processing-training-config-file-example.html" target="_blank">Configuration</a> |   <a href="" target="_blank">REST API</a> </h4>
+				</section>
+				<section data-background="#fff">
+					<h4>JSON Rules and Data Types</h4>
+					<div id="flexcontain">
+
+						<div class="box red" style="margin: 10px; padding-top: 5%; height: 700px; background-color: #fff; color: #111; flex-grow: 2;"><img src="images/api/json_ex_spaced.PNG" alt="JSON example"/></div>
+						<div class="box">
+							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="0"><strong><code style="color: blue;">Key/value </code></strong> -> JSON consist of stacked key/value pairs.  Each key/value pair ends with a comma with the exception of the last key/value pair. <br> <span style="color: blue; font-weight: 900;">How many key/value pairs do you see?</span></p>
+							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="2"><strong><code style="color: rgb(236, 20, 20);">Keys</code></strong> -> All keys should have quotations <br> No spaces in keys + good practice to make keys lowercase </p>
+							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="3"><strong><code style="color: green;">Nesting </code></strong> -> key/value pairs can be nested</p>
+							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="4"><strong><code style="color: orangered">Data types</code></strong> -> certain syntax needed for values based on the data</p>
+							<!--<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="5"><strong>6.</strong> <code>git commit -m "adding category"</code> -> Document the change by committing changes and addding a brief message.</p>
+							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="6"><strong>7.</strong> <code>git log</code> -> To view commit history and timestamp.</p>-->
+							
+						</div>
+					</div>
+				</section>
+				<section data-background="white" style="background-size: 80%;">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">JSON Rules and Data Types</h3>
+					<!--<p style="background-color:rgba(255, 255, 255, 0.7);  font-size: .8em; color: black;" class="fragment"> a method of providing <strong>shared computing resources</strong>, including applications, computing, storage, networking, development, and deployment platforms as well as business processes. </p>-->
+					<div id="flexcontain">
+						<div class="box" style="font-size: 20px; margin: 10px; height: 120px; background-color: #eee;"><h4 style="margin-top: 25px;">String</h4><code>"title": "Intro. to JSON"</code></div>
+						<div class="box" style="font-size: 20px; margin: 10px; height: 120px; background-color: #eee;"><h4 style="margin-top: 25px;">Number</h4><code>"participants": 12</code></div>
+						<div class="box" style="font-size: 20px; margin: 10px; height: 120px; background-color: #eee;"><h4 style="margin-top: 25px;">Null</h4><code>"badged_event": null</code></div>
+						<div class="box" style="font-size: 20px; margin: 10px; height: 220px; background-color: #eee;"><h4 style="margin-top: 25px;">Boolean</h4><code>"is_online": true</code></div>
+						<div class="box" style="font-size: 18px; margin: 10px; height: 220px; background-color: #eee;"><h4 style="margin-top: 25px;">Array</h4><code>"skills": ["JSON", "REST API"]</code></div>
+						<div class="box" style="font-size: 20px; margin: 10px; height: 220px; background-color: #eee; text-align: left;"><h4 style="margin-top: 25px; text-align: center;">Object</h4>
+							<code>  &nbsp;&nbsp;&nbsp;"info":{ <br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"time": "9AM", <br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"hours": 3, <br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"isOK": false <br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}
+
+							</code>
+						</div>
+
+					</div>
+					<p> It is common to see an array of objects.  Multiple instances of grouped data with same keys. <br>Think -> rows in an excel sheet</p>
+				</section>
+
+				<section data-background="#fff">
+					<h4>Practice Activity</h4>
+					<div id="flexcontain">
+
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 550px; background-color: #fff; color: #111;"><img src="images/api/student_schedule_json.svg" alt="view of student schedule"/></div>
+						<div class="box">
+							<p style="font-size: .7em;"> Referencing the previous slides, create a JSON object that properly formats all of the content found in the picture. <br><br> Click the button below to construct your code</p>
+							<a href="https://jsonchecker.com/" target="_blank"><div id="jsonbutton">Coding Playground</div></a>
+						</div>
+						
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h4>Retrieving JSON</h4>
+					<div id="flexcontain">
+
+						<div class="box red" style="margin: 10px; padding-top: 5%; height: 700px; background-color: #fff; color: #111; flex-grow: 1;"><img src="images/api/json_ex_spaced.PNG" alt="JSON example"/></div>
+						<div class="box" style="flex-grow: 2;">
+							<pre style="box-shadow: none;">
+								<code style="font-size: 18px; height: 670px;"  data-trim contenteditable>
+										//Write pseudocode here
+
+									
+									
+
+								</code>
+							</pre>
+						</div>
+						
+					</div>
+				</section>
+				<section data-background="../webdev/images/ux/ia_bg.jpg">
+				    <h1 style="color: black;">What is <span style="color: white; background-color: black; margin: 3px; padding: 2px;">REST API</span>?</h1>
+				   
+				</section>
+				<section data-background="white" style="background-size: 80%;">
+					<h4 style="background-color:rgba(255, 255, 255, 0.7); color: black;">REST Principles or Constraints</h4>
+					<img src="images/api/client_server_visual.png" width="600" alt="Client Server Architecture Visual" /><br />
+					<cite style="font-size: 12px; margin-top: -28px;">Source: https://medium.com/geekculture/rest-architectural-constraints-495a50ae0651</cite>
+					<div id="flexcontain">
+						<div class="box" style="font-size: 24px; margin: 10px; height: 80px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">Client - Server Arch.</h3><p style="font-size: .5em; font-variant: small-caps;">Separates Client and Server - Client makes request</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 80px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">Uniform Interface</h3><p style="font-size: .5em; font-variant: small-caps;">Consistent way of Interaction - HTTP verbs</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 80px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">Stateless</h3><p style="font-size: .5em; font-variant: small-caps;">No information from previous request</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 80px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">Cachable</h3><p style="font-size: .5em; font-variant: small-caps;">Response determines if cachable or not. Determines clients ability to reuse data</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 80px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">Layered System Arch.</h3><p style="font-size: .5em; font-variant: small-caps;">Use of Intermidiary servers(proxies, load balancers, etc..)</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 80px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">Representation</h3><p style="font-size: .5em; font-variant: small-caps;">Various Formats - various formats(HTML, JSON, XML, etc..)</p></div>
+					</div>
+				</section>
+				<section data-background="" data-background-size="contain" data-background="#fff" style="top: 0;">
+				    <h1>Web Services</h1>
+					<p style="font-size: .5em; line-height: 1.5;">Software systems designed to <strong style="color: white; background-color: black; padding: 3px;">allow interaction</strong> between different applications or systems <strong style="color: white; background-color: black; padding: 3px;">over a network</strong>, typically the internet. They provide a standardized way for <strong style="color: white; background-color: black; padding: 3px;">software components to communicate and exchange data</strong>, enabling the integration of disparate systems and platforms </p>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 22px; margin: 10px; height: 400px; background-color: #eee; color: black;">
+							<h2>A few API's</h2>
+							<ul>
+								<li><a href="https://api.nasa.gov/index.html">NASA API</a> [RESTful API]</li>
+								<li><a href="https://world.openfoodfacts.org/data">Open Food Facts</a> [RESTful API]</li>
+								<li><a href="https://www.weatherbit.io/api">Weather Bit API</a> [RESTful API]</li>
+								<li><a href="https://developers.google.com/maps">Google Maps API</a> [Geolocaton API]</li>
+								<li><a href="https://developers.google.com/youtube">YouTube API</a> [Video API]</li>
+								<li><a href="https://developer.spotify.com/documentation/web-api">Spotify API</a> [Media API]</li>
+								<li><a href="https://stripe.com/docs/payments">Stripe API</a> [Payment API]</li>
+							</ul>
+						</div>
+						<div class="box red" style="font-size: 22px; margin: 10px; height: 400px; background-color: #eee; color: black;">
+							<h2>Web Service Tools</h2>
+							<ul>
+								<li><a href="https://www.postman.com/" target="_blank">Postman</a></li>
+								<li><a href="https://curl.se/" target="_blank">cURL</a></li>
+								<li><a href="https://hoppscotch.io/" target="_blank">Hoppscotch</a></li>
+					
+		
+							</ul>
+						</div>
+						<div class="box red" style="font-size: 22px; margin: 10px; height: 400px; background-color: #eee; color: black;">
+							<h2>Considerations</h2>
+							<ul>
+								<li>Obtaining an API Key</li>
+								<li>Paid and Free Services</li>
+								<li>Request Limits</li>
+								<li>Adhering to License Requirements and Limitations</li>
+		
+							</ul>
+						</div>
+					</div>				  
+
+				</section>
+				<section data-background="#fff">
+					<h4>Making a Request</h4>
+				    <h3 style="font-size: .5em; color: #696969;">URI Query syntax | Http verbs | Query Paramters | Authorization | Header Paramters</h3>
+
+					<a href="https://hoppscotch.io/"><img src="images/api/hoppscotch_request_tool.PNG" style="box-shadow: 1px 4px 8px 2px gray; border-radius: 16px;" width="600" alt="Picture of Hoppscotch Request tool" /></a><br />
+					<p style="font-size: .7em; color: #696969;">https://data.cityofchicago.org/resource/d6ui-3yap.json</p>
+
+					<h4>GET	|   POST	 |   	PUT		|   	DELETE	 </h4>
+				</section>
+
+				<section data-background="#fff">
+				
+					<h4>Practice Activity</h4>
+					<p>Follow the steps to make a successful request to the college scorecard API</p>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 1</strong><br> Navigate to <a href="https://api.data.gov/signup/"> https://api.data.gov/signup/</a> to sign up for an API Key.  Check your email and copy the api key.  You will need to provide the API Key as a key/value parameter as part of your request.</p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 2</strong><br> Open a new browser and navigate to <a href="https://hoppscotch.io/">hoppscotch.io</a> and follow the steps on the next slide. </p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 3</strong><br> Review and Interpret the data by return from request.  Navigating to the next two slides select an option for the two multiple choice questions. </p></div>
+					</div>				
+				</section>
+				<section data-background="#eeeeee" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
+					<h2>Practice Activity Steps</h2>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="0"><strong>1. Creating a Collection of Queries</strong> -> Click the new button and name the collection <strong>CollegeScoreCard API queries </strong></p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="1"><strong>2. Create a Request Instance</strong> -> Select the three stacked dots symbol next to the folder and select 'New Request'.  Name the request "General School Query".  A new tab will display with the request name you entered. Underneath the tab, Make sure 'GET' is preset as the dropdown option.  Remove the URL 'https://echo.hoppscotch.io' and add the URL below. <br> https://api.data.gov/ed/collegescorecard/v1/schools.json</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="2"><strong>3. Adding API Key for Authorization </strong>  -> Your API key can be added as either query parameters or by using the 'Authorization' tab. Select the <strong>Parameters tab</strong>, and enter 'api_key' for the key and enter the key provided to you via email as the value.  Press the 'SAVE' button and then press the 'SEND' button.  </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="3"><strong>4. Narrowing Search</strong> -> Using GitHub Documentation found at this <a href="https://github.com/RTICWDT/open-data-maker/blob/master/API.md" target="_blank">link</a>.  Create a new  request under your CollegeScoreCard API queries that limits the returned results to schools in with the name 'Loyola'. Copy the results and view the structure in <a href="https://jsonformatter.org/json-viewer">https://jsonformatter.org/json-viewer</a>  </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="4"><strong>5. Complete Multiple Choice question </strong> -> Anwser multiple choice question on the following slide.  </p>
+
+
+				</section>
+				<section data-background="#eee" data-background-size="contain" data-background="#fff" style="top: 0; text-align: left;">
+					<h2>College Scorecard API Question #1</h2>
+					
+				     <p>How many schools are returned from the request:</p>
+				     <input type="radio" id="age1" name="score" value="30">
+				     <label for="score1">A) 68</label><br>
+				     <input type="radio" id="age2" name="score" value="60">
+				     <label for="score2">B) 4 </label><br>  
+				     <input type="radio" id="age3" name="score" value="100">
+				     <label for="score3">C) 2</label><br>
+					 <input type="radio" id="age3" name="score" value="100">
+				     <label for="score4">D) 6</label><br><br>
+				  
+				</section>
+
+
+				<section data-background="../webdev/images/ux/ia_bg.jpg">
+				    <h1 style="color: black;"><span style="color: white; background-color: black; margin: 3px; padding: 2px;">Visualizing</span> JSON Data</h1>
+				   
+				</section>
+				<section data-background="#fff">
+					<h3>Low-code/No-Code Dev. Environments + BI Tools</h3>
+					<div id="flexcontain">
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/api/Appsmith_Logo.svg" width="120" style="margin-top: 75px;" alt="AppSmith logo"/></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/api/retool_logo.webp" alt="Retool.com logo"/></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/api/powerapps-case-845x321.jpg" alt="microsoft power apps logo"/></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/api/powerbi_logo.jpg" style="margin-top: 25px;" width="200" alt="Power BI logo"/></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/api/google_datastudio_logo.png" width="200" alt="google data studio logo"/></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/api/Tableau-Emblem.png" width="130" alt="tableau logo"/></div>
+
+					</div>
+					<a href="https://www.appsmith.com/">Click here to create an AppSmith account</a>
+				</section>
+				<section data-background="#fff">
+				
+					<h4>Practice Activity</h4>
+					<p>Follow the steps to create an AppSmith App that visualize the city of Chicago estimated revenue sources</p>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 1</strong><br> Sign into your AppSmith account and skip the tutorial when you first log in.</p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 2</strong><br> Select from one the REST API's above and follow the steps on the next slide. </p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 3</strong><br> If you finish early, look around and see if you can assist someone else.</p></div>
+					</div>				
+				</section>
+				<section data-background="#eeeeee" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
+					<h4>Process and Steps</h4>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;" class="fragment" data-fragment-index="0"><strong>1. Select Datasource option </strong>-> Click on the new datasource plus sign in left column and select <strong>'REST API'</strong> </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;" class="fragment" data-fragment-index="1"><strong>2. Configure API Request</strong> -> Rename the datasource to 'cityofchicago_api' <br> Make sure the http verb is set to 'GET' and add the URI below: <br> <strong><code>https://data.cityofchicago.org/resource/at79-usba.json</code></strong></p>
+					<!--<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="2"><strong>3. Add query parameters</strong> -> Add two query paramters that limits the requested data to 'City Council' and 'Alderman' Use keys: <strong><code>organization_description</code></strong> and <strong><code>title_description</code> </strong></p>-->
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;" class="fragment" data-fragment-index="2"><strong>3. Add Table Widget and connect datasource</strong> -> Select the widgets tab and drag a table on canvas area.  Click the <strong><code>'Connect data'</code></strong> button and select <strong><code>cityofchicago_api</code></strong> under Connect to query</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;" class="fragment" data-fragment-index="3"><strong>4. Add Another Widget: JSON Form</strong> -> Select the widgets tab and search for <strong><code>JSON form</code></strong> and drag to canvas area.  Select 'Generate Form' and connect to table widget.</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;" class="fragment" data-fragment-index="4"><strong>5. Add Another Widget: Chart </strong> -> Select the widgets tab and search for <strong><code>Chart</code></strong> and drag to canvas. Using the properties panel to the left, select <strong><code>'Pie Chart</code></strong> for Chart type. </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;" class="fragment" data-fragment-index="5"><strong>6. Add Chart Datasource</strong> -> Using the properties panel to the left, scroll down to the series data and enter the javascript code below. <br> <code>{{cityofchicago_api.data.map(p => ({x:p.revenue_source, y: p.estimated_revenue}))}}</code></p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;" class="fragment" data-fragment-index="6"><strong>7. Adjust Chart Properties</strong> -> Using the Chart properties panel, adjust <strong>'Series title'</strong> to <strong>'Estimated Revenue Sources'</strong>. Adjust <strong>'Title'</strong> to <strong>'City of Chicago Estimated Revenue'</strong> </p>
+				</section>
+				<section data-background="#eee" data-background-size="contain" data-background="#fff" style="top: 0; text-align: left;">
+					<h2>Data Type Activity</h2>
+					
+				     <p>Which revenue source is expected to generate the <strong>second</strong> largest income for the city?</p>
+				     <input type="radio" id="age1" name="score">
+				     <label for="score1">A) Cable Television</label><br>
+				     <input type="radio" id="age2" name="score">
+				     <label for="score2">B) Water Rates</label><br>  
+				     <input type="radio" id="age3" name="score" >
+				     <label for="score3">C) Amusement Tax</label><br>
+					 <input type="radio" id="age3" name="score" >
+				     <label for="score4">D) Lease of Personal Property</label><br><br>
+				  
+				</section>
+				<!--<section data-background="white" style="background-size: 80%;">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">AppSmith Customization and Deployment</h3>
+					
+					<div id="flexcontain" class="fragment">
+						<div class="box" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee;"><h4 style="margin-top: 25px;">Adjusting Style</h4><code>"title": "Intro. to JSON"</code></div>
+						<div class="box" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee;"><h4 style="margin-top: 25px;">Number</h4><code>"participants": 12</code></div>
+						<div class="box" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee;"><h4 style="margin-top: 25px;">Null</h4><code>"badged_event": null</code></div>
+						<div class="box" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee;"><h4 style="margin-top: 25px;">Boolean</h4><code>"is_online": true</code></div>
+						<div class="box" style="font-size: 18px; margin: 10px; height: 250px; background-color: #eee;"><h4 style="margin-top: 25px;">Array</h4><code>"skills": ["JSON", "REST API"]</code></div>
+
+
+					</div>
+					<p> Share your url by sending an email to cfulton@luc.edu</p>
+				</section>-->
+
+				<section data-background="" data-background-size="contain" data-background="#fff" style="top: 0;">
+					<h1>Questions?</h1>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
