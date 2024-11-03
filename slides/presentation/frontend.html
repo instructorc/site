@@ -116,6 +116,7 @@
 				<section data-background="../webdev/images/ux/ia_bg.jpg">
 				    <h1 style="color: black;">What will we  <span style="color: white; background-color: black; margin: 3px; padding: 2px;">build </span> today?</h1>
 					<a href="https://LoopLuxuryLiving.com"><img src="images/frontend/control.png" width="600" alt="Browser snapshot of LoopLuxuryLiving.com website" /></a><br />
+					<a href="pdf/move_in_page.pdf" target="_blank">Wireframe of page we'll build</a>
 				</section>
 
 				<section data-background="#fff">
@@ -172,7 +173,27 @@
 
 					</div>
 				</section>
-
+				<section data-background="#fff">
+					<h3>Void or Empty Elements</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px;">
+							<ul>	
+								<li style="font-size: 22px;">Some HTML elements contain only a single tag. These are known as <b>void elements</b></li>
+   								<li style="font-size: 22px;">Commonly used empty/void elements include:</li>
+   								<ul>
+   									<li style="font-size: 14px;"><xmp><img src="face.jpg" alt="Happy Face" ></xmp></li>
+   									<li style="font-size: 14px;"><xmp><link href="css/style.css" type="text/css" rel="stylesheet" ></xmp></li>
+   									<li style="font-size: 14px;"><xmp><br></xmp></li>
+   									<li style="font-size: 14px;"><xmp><meta charset="UTF-8"></xmp></li>
+   								</ul>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="../webdev/images/html/voidelements.PNG" alt="Picture of void elements">
+						</div>
+					</div>
+				</section>
 				<section data-background="#fff">
 					<h4>Quick Practice</h4>
 					<div id="flexcontain">
@@ -188,7 +209,7 @@
 						<div class="box" style="flex-grow: 2;">
 							<pre style="box-shadow: none;">
 								<code style="font-size: 18px; height: 670px;"  data-trim contenteditable>
-										
+								<!--Use space below to code HTML -->	
 
 									
 									
@@ -198,6 +219,53 @@
 						</div>
 						
 					</div>
+				</section>
+
+				<section data-background="#fff">
+					<h4>Attributes in HTML5</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+						<pre style="line-height: 2.2em; box-shadow: none;">
+							<code style="font-size: 22px;" class="codebox code-example__codebox"  data-trim contenteditable>
+								&lt;h1 id="honorable"&gt; Those who speak truth  &lt;/h1&gt;
+							</code>
+						</pre>
+						</div>
+						<div id="flexcontain">
+							<div class="box orange" style="font-size: 24px; margin: 10px; width: 265px; height: 150px;"><p>Element attributes provide additional information to the browser about the purpose of the element</p></div>
+							<div class="box yellow" style="font-size: 24px; margin: 10px; width: 265px; height: 150px;"><p>HTML5 has less attributes because of CSS</p></div>
+							<div class="box aquamarine" style="font-size: 24px; margin: 10px; width: 265px; height: 150px;"><p>Most empty or void elements require attributes</p></div>
+						</div>
+
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h4>Linking to Internal + External Resources</h4>
+					
+					<img src="../webdev/images/html/linking.png" width="575" alt="Various ways to link to resources image">
+	
+					<pre style="margin-top: -15px; box-shadow: none;">
+						<code style="font-size: 16px;" class="codebox code-example__codebox"  data-trim contenteditable>
+							&lt;a href="fax:1-408-555-5555"&gt;1-408-555-5555&lt;/a&gt;
+							&lt;a href="file:pdf/homework.pdf"&gt;homework.pdf&lt;/a&gt;
+							&lt;a href="ftp://someftpserver.com/"&gt;Browse the FTP server&lt;/a&gt;
+							&lt;a href="geo:44.9727845,-93.2923222"&gt;Map Dunwoody&lt;/a&gt;
+							&lt;a href="https://LoopLuxuryLiving.com"&gt;LoopLuxuryLiving.com&lt;/a&gt;
+							&lt;a href="mailto:someone@luc.edu?Subject=HTML"&gt;Send mail&lt;/a&gt;
+						</code>
+					</pre>
+			
+				</section>
+				<section data-background="#fff">
+				
+					<h4>Code Along Exercise</h4>
+					<p>Follow the steps to make a successful request to the college scorecard API</p>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 1</strong><br> Add header(logo, navigation, sign-in button) and footer(sub navigation) content </p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 2</strong><br> Add Form along with text for checklist items</p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 3</strong><br> Add content for preferred partners </p></div>
+					</div>				
 				</section>
 				<section data-background="#fff">
 					<h4>Commonly Used Tags</h4>
@@ -217,7 +285,7 @@
 				</section>
 				<section data-background="white" style="background-size: 80%;">
 					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">JSON Rules and Data Types</h3>
-					<!--<p style="background-color:rgba(255, 255, 255, 0.7);  font-size: .8em; color: black;" class="fragment"> a method of providing <strong>shared computing resources</strong>, including applications, computing, storage, networking, development, and deployment platforms as well as business processes. </p>-->
+					<!--<p style="background-color:rgba(255, 255, 255, 0Open a new brow.7);  font-size: .8em; color: black;" class="fragment"> a method of providing <strong>shared computing resources</strong>, including applications, computing, storage, networking, development, and deployment platforms as well as business processes. </p>-->
 					<div id="flexcontain">
 						<div class="box" style="font-size: 20px; margin: 10px; height: 120px; background-color: #eee;"><h4 style="margin-top: 25px;">String</h4><code>"title": "Intro. to JSON"</code></div>
 						<div class="box" style="font-size: 20px; margin: 10px; height: 120px; background-color: #eee;"><h4 style="margin-top: 25px;">Number</h4><code>"participants": 12</code></div>
