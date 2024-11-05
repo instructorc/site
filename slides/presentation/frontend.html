@@ -69,27 +69,29 @@
 				        <ul>
 				        	<li style="font-size: 40%;">History, Context and Development Environment Walk-through</li>
 							<li style="font-size: 40%;">Understanding HTML and Stucture of Content</li>	
-							<li style="font-size: 40%;">Practice and Assistence</li>
+							<li style="font-size: 40%;">HTML Practice + <span style="background-color: black; color: white;">Code Along Session</span> </li>
 				        </ul>
+						<li style="font-size: 30%; list-style-type: none;">[10 min. break]</li>
 				        <li style="font-size: 60%;">Second Hour</li>
 				        <ul>
 				        	<li style="font-size: 40%;">Understanding CSS</li>
 							<li style="font-size: 40%"> Color and Graphic Scheme</li>
-							<li style="font-size: 40%;">Starting Page Layout</li>	
+							<li style="font-size: 40%;">Box Strategy + <span style="background-color: black; color: white;">Code Along Session</span> </li>	
 				        </ul>
-						<li style="font-size: 30%; list-style-type: none;">[30 min. break]</li>
+						<li style="font-size: 30%; list-style-type: none;">[20 min. break]</li>
 						<li style="font-size: 60%;">Third Hour</li>
 				        <ul>
-				        	<li style="font-size: 40%;">Page Layout Cont.</li>
-				        	<li style="font-size: 40%;">Responsive Design</li>
-							<li style="font-size: 40%"> Accessibility Considerations + Validation</li>
+				        	<li style="font-size: 40%;">Understanding Page Layout using Flexbox and Grid</li>
+							<li style="font-size: 40%"> Page Layout Strategy and Tips </li>
+				        	<li style="font-size: 40%;">Page Layout Implementation + <span style="background-color: black; color: white;">Code Along Session</span> </li>
+
 
 				        </ul>
 						<li style="font-size: 30%; list-style-type: none;">[10 min. break]</li>
 						<li style="font-size: 60%;">20 Minute Wrap-Up</li>
 				        <ul>
-							<li style="font-size: 40%;">Site Hosting Options</li>	
-							<li style="font-size: 40%;">Q and A</li>	
+							<li style="font-size: 40%;">Reviewing Responsive + Accessible Design Considerations</li>	
+							<li style="font-size: 40%;">Resources</li>	
 
 				        </ul>
 				    </ul>
@@ -123,7 +125,7 @@
 					<h4>Development Environment + Resources</h4>
 					<div id="flexcontain">
 
-						<div class="box red" style="margin: 10px; padding-top: 5%; height: 700px; background-color: #fff; color: #111; flex-grow: 2;"><a href="https://codesandbox.io/p/sandbox/64w6hj"><img src="images/frontend/codesandbox_web_image.PNG" width="500" alt="visual of codesandbox.io templates webpage" /></a></div>
+						<div class="box red" style="margin: 10px; padding-top: 5%; height: 700px; background-color: #fff; color: #111; flex-grow: 2;"><a href="https://codesandbox.io/p/sandbox/64w6hj" target="_blank"><img src="images/frontend/codesandbox_web_image.PNG" width="500" alt="visual of codesandbox.io templates webpage" /></a></div>
 						<div class="box">
 							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;"><strong>How will we construct our code?</strong><br>We'll use an online text-editor called codesandbox.io.  </p>
 							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;"><strong>Create an Account</strong><br> Click on image to the left and create an account. *If you do not have a Google or Apple account, you can quickly create a Github account and sign-in </p>
@@ -162,19 +164,8 @@
 						
 					</div>
 				</section>
-				<section data-background="white" style="background-size: 80%;">
-					<h4 style="background-color:rgba(255, 255, 255, 0.7); color: black;">HTML Syntax and Rules</h4>
-					<img src="images/frontend/html_syntax_rules.png" width="700" alt="image of h1 element with explanation of syntax" /><br />
-					<cite style="font-size: 12px; margin-top: -28px;">Source: https://medium.com/geekculture/rest-architectural-constraints-495a50ae0651</cite>
-					<div id="flexcontain">
-						<div class="box" style="font-size: 24px; margin: 10px; height: 170px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">Start Tag</h3><p style="font-size: .7em; font-variant: small-caps;">Consist of the name of the tag enclosed by greater and less than sign. Ex. &lt;p&gt;</div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 170px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">Content Text</h3><p style="font-size: .7em; font-variant: small-caps;">Place the content between opening and closing tag you would like to give structure to.</p></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 170px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">End Tag</h3><p style="font-size: .7em; font-variant: small-caps;">Consist of the name of the tag enclosed by &lt;/p&gt;</p></div>
-
-					</div>
-				</section>
 				<section data-background="#fff">
-					<h3>Void or Empty Elements</h3>
+					<h4>Void or Empty Elements</h4>
 					
 					<div id="flexcontain">
 						<div class="box_two" style="font-size: 22px;">
@@ -194,6 +185,18 @@
 						</div>
 					</div>
 				</section>
+				<section data-background="white" style="background-size: 80%;">
+					<h4 style="background-color:rgba(255, 255, 255, 0.7); color: black;">HTML Syntax and Rules</h4>
+					<img src="images/frontend/html_syntax_rules.png" width="700" alt="image of h1 element with explanation of syntax" /><br />
+					<cite style="font-size: 12px; margin-top: -28px;">Source: https://medium.com/geekculture/rest-architectural-constraints-495a50ae0651</cite>
+					<div id="flexcontain">
+						<div class="box" style="font-size: 24px; margin: 10px; height: 170px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">Start Tag</h3><p style="font-size: .7em; font-variant: small-caps;">Consist of the name of the tag enclosed by greater and less than sign. Ex. &lt;p&gt;</div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 170px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">Content Text</h3><p style="font-size: .7em; font-variant: small-caps;">Place the content between opening and closing tag you would like to give structure to.</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 170px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">End Tag</h3><p style="font-size: .7em; font-variant: small-caps;">Consist of the name of the tag enclosed by &lt;/p&gt;</p></div>
+
+					</div>
+				</section>
+
 				<section data-background="#fff">
 					<h4>Quick Practice</h4>
 					<div id="flexcontain">
@@ -247,7 +250,6 @@
 	
 					<pre style="margin-top: -15px; box-shadow: none;">
 						<code style="font-size: 16px;" class="codebox code-example__codebox"  data-trim contenteditable>
-							&lt;a href="fax:1-408-555-5555"&gt;1-408-555-5555&lt;/a&gt;
 							&lt;a href="file:pdf/homework.pdf"&gt;homework.pdf&lt;/a&gt;
 							&lt;a href="ftp://someftpserver.com/"&gt;Browse the FTP server&lt;/a&gt;
 							&lt;a href="geo:44.9727845,-93.2923222"&gt;Map Dunwoody&lt;/a&gt;
@@ -257,18 +259,70 @@
 					</pre>
 			
 				</section>
+				<section data-background="white" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
+					<h2>Code Along Session</h2>
+					<div id="flexcontain">
+						<div class="box" style="height: 90%;  width: 100%;">
+							<img src="images/frontend/move_in_wireframe_color.png" style="margin-top: -20px;" alt="Move in Wireframe Page"/>
+						</div>
+						<div class="box" style="margin: 10px; ">
+							<p style="background-color:rgba(249 255 170); color: black; font-size: .5em;" class="fragment" data-fragment-index="0"><strong>1. Add Header</strong> -> Add logo using image tag; Add navigation using a href tags, Add sign-in button using a div tag </p>
+							<p style="background-color:rgb(168 246 199); color: black; font-size: .5em;" class="fragment" data-fragment-index="1"><strong>2. Add Page Title</strong> -> Add text <code>Move-in Checklist</code> to an h3 tag; Add Form element along with checkboxes; Add preferred Vendor text using a paragraph tag and vendor graphic using an image</p>
+							<p style="background-color:rgb(174 214 250); color: black; font-size: .5em;" class="fragment" data-fragment-index="2"><strong>3. Body of Page Box 1</strong> -> Add text <code>Move-in Checklist</code> to an h3 tag; Add Form element along with checkboxes; Add preferred Vendor text using a paragraph tag and vendor graphic using an image</p>
+							<p style="background-color:rgb(230 145 146); color: black; font-size: .5em;" class="fragment" data-fragment-index="3"><strong>4. Body of Page Box 2</strong>  -> Add text <code>Preferred Vendor as h2 </code> and add <code>sdfs</code> </p>
+							<p style="background-color:rgb(180 155 214); color: black; font-size: .5em;" class="fragment" data-fragment-index="4"><strong>5. Add Footer</strong> -> Add navigation to footer</p>
+		
+						</div>
+
+					</div>	
+
+
+				</section>
+				<section data-background="white">
+				    <h2 style="font-size: 1em; color: #45378d;"><span style=" margin: 3px; padding: 2px;">Code Along Activity 1 <span style=" margin: 3px; padding: 8px; background-color: #cae0cb;">Completed</span> code!</h2>
+					
+					<script src="https://gist.github.com/instructorc/8ce723e84d8a704ea313ca489598ee9d.js"></script>
+
+					<!--<h4 style="color: white;"><a href="https://www.mongodb.com/databases/json-database#json-database-examples" target="_blank">Databases</a>  |   <a href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-processing-training-config-file-example.html" target="_blank">Configuration</a> |   <a href="" target="_blank">REST API</a> </h4>-->
+				</section>
+				<section data-background="../webdev/images/ux/ia_bg.jpg">
+				    <h1 style="color: black;">Let's Add <span style="color: white; background-color: black; margin: 3px; padding: 2px;">CSS</span>?</h1>
+				   
+				</section>
+				<section data-background="white" style="background-size: 80%;">
+					<h2 style="font-size: 1em; color: #45378d;"><span style=" margin: 3px; padding: 2px;">What can <span style=" margin: 3px; padding: 8px; background-color: #cae0cb;">CSS</span> do?</span</h2>
+					<p> It is common to see an array of objects.  Multiple instances of grouped data with same keys. <br>Think -> rows in an excel sheet</p>
+					<div id="flexcontain">
+						<div class="box" style="font-size: 20px; margin: 10px; height: 120px; background-color: #eee;"><h4 style="margin-top: 25px;">Adjust text</h4><code>"title": "Intro. to JSON"</code></div>
+						<div class="box" style="font-size: 20px; margin: 10px; height: 120px; background-color: #eee;"><h4 style="margin-top: 25px;">Add Visual Effects to text</h4><code>"participants": 12</code></div>
+						<div class="box" style="font-size: 20px; margin: 10px; height: 120px; background-color: #eee;"><h4 style="margin-top: 25px;">Adjust Color</h4><code>"badged_event": null</code></div>
+						<div class="box" style="font-size: 20px; margin: 10px; height: 220px; background-color: #eee;"><h4 style="margin-top: 25px;">Format Box Elements</h4><code>"is_online": true</code></div>
+						<div class="box" style="font-size: 18px; margin: 10px; height: 220px; background-color: #eee;"><h4 style="margin-top: 25px;">Alter Background</h4><code>"skills": ["JSON", "REST API"]</code></div>
+						<div class="box" style="font-size: 20px; margin: 10px; height: 220px; background-color: #eee; text-align: left;"><h4 style="margin-top: 25px; text-align: center;">Structure page Layout</h4>
+							<code>  &nbsp;&nbsp;&nbsp;"info":{ <br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"time": "9AM", <br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"hours": 3, <br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"isOK": false <br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}
+
+							</code>
+						</div>
+
+					</div>
+					
+				</section>
 				<section data-background="#fff">
 				
-					<h4>Code Along Exercise</h4>
-					<p>Follow the steps to make a successful request to the college scorecard API</p>
+					<h2 style="font-size: 1em; color: #eb0e0e;"><span style=" margin: 3px; padding: 2px;">How do we add <span style=" margin: 3px; padding: 8px; background-color: #cae0cb;">CSS</span> to our HTML?</span></h2>
+					<img src="images/frontend/cssmethods.jpg" width="600" alt="Graphic that displays ways of implementing CSS"/>
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 1</strong><br> Add header(logo, navigation, sign-in button) and footer(sub navigation) content </p></div>
-						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 2</strong><br> Add Form along with text for checklist items</p></div>
-						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 3</strong><br> Add content for preferred partners </p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 220px; background-color: #eee; color: black;"><p><strong>Internal</strong><br> uses the style tag and applies CSS to an HTML document.</p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 220px; background-color: #eee; color: black;"><p><strong>External</strong><br> uses the link tag to link multiple HTML documents to CSS file. External style sheets are separate documents that have a .css extension</p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 220px; background-color: #eee; color: black;"><p><strong>Inline</strong><br> uses the style attribute and is tag specific and applies CSS to a tag.</p></div>
 					</div>				
 				</section>
 				<section data-background="#fff">
-					<h4>Commonly Used Tags</h4>
+					<h2 style="font-size: 1em; color: #1359e5;"><span style=" margin: 3px; padding: 2px;"><span style=" margin: 3px; padding: 8px; background-color: #cae0cb;">CSS</span> Syntax</h2>
 					<div id="flexcontain">
 
 						<div class="box red" style="margin: 10px; padding-top: 5%; height: 600px; background-color: #fff; color: #111; flex-grow: 2;"><img src="images/api/json_ex_spaced.PNG" alt="JSON example"/></div>
@@ -337,10 +391,7 @@
 						
 					</div>
 				</section>
-				<section data-background="../webdev/images/ux/ia_bg.jpg">
-				    <h1 style="color: black;">Let's Add <span style="color: white; background-color: black; margin: 3px; padding: 2px;">CSS</span>?</h1>
-				   
-				</section>
+
 				<section data-background="white" style="background-size: 80%;">
 					<h4 style="background-color:rgba(255, 255, 255, 0.7); color: black;">REST Principles or Constraints</h4>
 					<img src="images/api/client_server_visual.png" width="600" alt="Client Server Architecture Visual" /><br />
@@ -440,7 +491,7 @@
 
 
 				<section data-background="../webdev/images/ux/ia_bg.jpg">
-				    <h1 style="color: black;"><span style="color: white; background-color: black; margin: 3px; padding: 2px;">Visualizing</span> JSON Data</h1>
+				    <h1 style="color: black;"><span style="color: white; background-color: black; margin: 3px; padding: 2px;">Responsive</span> and <span style="color: white; background-color: black; margin: 3px; padding: 2px;">Accessible </span> web design</h1>
 				   
 				</section>
 				<section data-background="#fff">
