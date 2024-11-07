@@ -204,7 +204,7 @@
 						<div class="box red" style="margin: 10px; padding-top: 5%; height: 600px; background-color: #fff; color: #111; flex-grow: 2;"><img src="images/frontend/html_considerations.PNG" alt="Image of HTML DOM Structure"/></div>
 						<div class="box">
 							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="0"><strong><code style="color: blue;">Indentation + Nesting of HTML tags</code></strong><br>Indentation is good coding practice - Easier to read and understand code.  Nesting the tags establishes a child/parent relationship and complies to DOM tree structure </p>
-							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="2"><strong><code style="color: rgb(236, 20, 20);">Understanding the &lt;div&gt; tag, </code></strong><br> The div tag serves as a container to group tags. </p>
+							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="2"><strong><code style="color: rgb(236, 20, 20);">Understanding the &lt;div&gt; tag, </code></strong><br> The div tag serves as a container to group tags. Other container tags include &lt;header&gt;,&lt;nav&gt;, &lt;footer&gt;, &lt;section&gt;, &lt;article&gt;,&lt;aside&gt;. </p>
 							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="3"><strong><code style="color: green;">Attributes</code></strong><br> Placed in the opening tag and provides additional information to tag.</p>
 							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="4"><strong><code style="color: orangered;">Linking to External Resources</code></strong><br> Including images or linking to a style sheet</p>
 
@@ -244,9 +244,9 @@
 							<img src="images/frontend/move_in_wireframe_color.png" style="margin-top: -20px;" alt="Move in Wireframe Page"/>
 						</div>
 						<div class="box" style="margin: 10px; text-align: left; margin-top: -30px;">
-							<p style="background-color:rgba(249 255 170); color: black; font-size: .45em; padding: 2%;" class="fragment" data-fragment-index="0"><strong>Add Header</strong><br> 1. Add opening and closing &lt;header&gt; tag. <br> 2. Add &lt;a&gt; tag and provide relative URL file path to triple_logo.png as a child of header tag <br> 3. Add &lt;a&gt; for each of the navigation links (Services, Apartments, FAQ) as a child of header tag. <br> 4. Add &lt;div&gt; tag for sign-up button and add text <code>"SIGN-IN"</code>.</p>
+							<p style="background-color:rgba(249 255 170); color: black; font-size: .45em; padding: 2%;" class="fragment" data-fragment-index="0"><strong>Add Header</strong><br> 1. Add opening and closing &lt;header&gt; tag. <br> 2. As a child of the header tag, add &lt;img&gt; tag and add "src" attribute to provide the relative URL file path to triple_logo.png <br> 3. Add opening and closing &lt;nav&gt; tag and add &lt;a&gt; tags for each of the navigation links (Services, Apartments, FAQ) as a child of the nav tag. <br> 4. After the closing nav tag, add &lt;div&gt; tag for sign-up button and enclose with text <code>"SIGN-IN"</code>.</p>
 							<p style="background-color:rgb(168 246 199); color: black; font-size: .45em; padding: 2%;" class="fragment" data-fragment-index="1"><strong>Add Page Title</strong><br> 1. Underneath &lt;header&gt; tag, add opening and closing &lt;h3&gt; tag with text <code>"Move-in Checklist"</code></p>
-							<p style="background-color:rgb(174 214 250); color: black; font-size: .45em; padding: 2%;" class="fragment" data-fragment-index="2"><strong>Body of Page Box 1</strong><br>1. Add opening and closing &lt;form&gt; tag. <br> 2. Add each of the checkbox input tags as a child of &lt;form&gt; tag. (Observe wireframe for checkbox text) <br> 3. Add opening and closing &lt;button&gt; tag that encloses text <code>SAVE + PRINT LIST</code>.</p>
+							<p style="background-color:rgb(174 214 250); color: black; font-size: .45em; padding: 2%;" class="fragment" data-fragment-index="2"><strong>Body of Page Box 1</strong><br>1. Add opening and closing &lt;form&gt; tag. <br> 2. Add all checkbox input tags as a child of &lt;form&gt; tag. (Observe wireframe for checkbox text) <br><span style="font-size: 10px;">Ex. <code>&lt;input type="checkbox" /&gt; Sign Lease Agreement &lt;br /&gt;</code></span> <br> 3. Add opening and closing &lt;button&gt; tag that encloses text <code>SAVE + PRINT LIST</code>.</p>
 		
 						</div>
 
@@ -261,8 +261,8 @@
 							<img src="images/frontend/move_in_wireframe_color.png" style="margin-top: -20px;" alt="Move in Wireframe Page"/>
 						</div>
 						<div class="box" style="margin: 10px; text-align: left; margin-top: -30px;">
-							<p style="background-color:rgb(230 145 146); color: black; font-size: .5em; padding: 2%;" class="fragment" data-fragment-index="0"><strong>Body of Page Box 2</strong><br> 1. Add opening and closing &lt;div&gt; tag. <br> 2. Add opening and closing &lt;h2&gt; tag as a child of the div tag that encloses text <code>Preferred Vendor as h2 </code>. <br> 3. Add opening and closing &lt;p&gt; tag and encloses text <code>Lemonade specializes in renters insurance and provides quick, easy, simple, reliable, and affordable insurance.</code> <br> 4. Add &lt;img&gt; tag and provide the relative file path to <code>triple_logo.png</code> image.  </p>
-							<p style="background-color:rgb(180 155 214); color: black; font-size: .5em; padding: 2%;" class="fragment" data-fragment-index="1"><strong>Add Footer</strong><br> 1. Add opening and closing &lt;div&gt; tag.  2.  Add &lt;h3&gt; tag</p>
+							<p style="background-color:rgb(230 145 146); color: black; font-size: .45em; padding: 2%;" class="fragment" data-fragment-index="0"><strong>Body of Page Box 2</strong><br> 1. Add opening and closing &lt;div&gt; tag beneath closing form tag. <br> 2. Add opening and closing &lt;h2&gt; tag as a child of the div tag that encloses text <code>Preferred Insurance Vendor</code> <br> 3. Add opening and closing &lt;p&gt; tag and encloses text <code style="font-size: 14px;">Lemonade specializes in renters insurance and provides quick, easy, simple, reliable, and affordable insurance.</code> <br> 4. Add &lt;img&gt; tag beneath closing &lt;p&gt; tag and provide the relative file path to <code>triple_logo.png</code> image.  </p>
+							<p style="background-color:rgb(180 155 214); color: black; font-size: .45em; padding: 2%;" class="fragment" data-fragment-index="1"><strong>Add Footer</strong><br> 1. Add opening and closing &lt;footer&gt; tag <br> 2. Add opening and closing &lt;div&gt; tag. as a child of the footer tag. <br> 2. Add &lt;h3&gt; tag as a child of div tag and enclose h3 with text <code>CONTACT US</code> <br> 3. Add opening and closing &lt;ol&gt; tag and add &lt;li&gt; tags for each navigation link as children of ol tag. <br> 4. Repeat steps 2 - 3 to add 2 additional div containers representing footer navigation.</p>
 		
 						</div>
 
@@ -273,7 +273,7 @@
 				<section data-background="white">
 				    <h2 style="font-size: 1em; color: #45378d;"><span style=" margin: 3px; padding: 2px;">Code Along Activity 1 <span style=" margin: 3px; padding: 8px; background-color: #cae0cb;">Completed</span> code!</h2>
 					
-					<script src="https://gist.github.com/instructorc/8ce723e84d8a704ea313ca489598ee9d.js"></script>
+					<div style="height: 500px; width: 900px; overflow-y: scroll; scrollbar-color: #45378d #cae0cb;"><script src="https://gist.github.com/instructorc/8ce723e84d8a704ea313ca489598ee9d.js"></script></div>
 
 					<!--<h4 style="color: white;"><a href="https://www.mongodb.com/databases/json-database#json-database-examples" target="_blank">Databases</a>  |   <a href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-processing-training-config-file-example.html" target="_blank">Configuration</a> |   <a href="" target="_blank">REST API</a> </h4>-->
 				</section>
