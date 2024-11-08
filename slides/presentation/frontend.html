@@ -282,9 +282,9 @@
 					<style>
 						#textbox{
 							display: block;
-							border:2px dotted black;
+					
 							width: 600px;
-							height: 200px;
+							min-height: 200px;
 							margin-top: 20px;
 							margin:auto;
 						}
@@ -295,25 +295,65 @@
 
 					</style>
 					<h2 style="font-size: 1em; color: #45378d;"><span style=" margin: 3px; padding: 2px;">What can <span style=" margin: 3px; padding: 8px; background-color: #cae0cb;">CSS</span> do?</span></h2>
-					<div id="textbox"><p id="textdisplay">Cascading Style Sheet</p></div>
+					<div id="textbox" style="margin-bottom: 20px;"><p id="textdisplay">Cascading Style Sheet</p></div>
 					<div id="flexcontain">
-						<div class="box" style="font-size: 20px; margin: 10px; height: 120px; background-color: #eee;"><h4 style="margin-top: 10px;">Adjust text size and density</h4><code>font-size: 2em; <br> font-weight: 900;</code></div>
-						<div class="box" style="font-size: 20px; margin: 10px; height: 120px; background-color: #eee;"><h4 style="margin-top: 10px;">Adjust Color</h4><code>color: bluegreen;</code></div>
-						<div class="box" style="font-size: 20px; margin: 10px; height: 120px; background-color: #eee;"><h4 style="margin-top: 10px;">Add Visual Effects to text</h4><code>text-transform <br> text-shadow: #FC0 1px 0 10px;</code></div>
-						<div class="box" style="font-size: 20px; margin: 10px; height: 220px; background-color: #eee;"><h4 style="margin-top: 10px;">Format Box Elements</h4><code>gradient</code></div>
-						<div class="box" style="font-size: 18px; margin: 10px; height: 220px; background-color: #eee;"><h4 style="margin-top: 10px;">Alter Background</h4><code>"skills": ["JSON", "REST API"]</code></div>
-						<div class="box" style="font-size: 20px; margin: 10px; height: 220px; background-color: #eee; text-align: left;"><h4 style="margin-top: 20px; text-align: center;">CSS Animation</h4>
-							<code>  &nbsp;&nbsp;&nbsp;"info":{ <br>
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"time": "9AM", <br>
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"hours": 3, <br>
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"isOK": false <br>
-								&nbsp;&nbsp;&nbsp;&nbsp;}
-
-							</code>
-						</div>
+						<div class="box" style="font-size: 20px; margin: 8px; height: 70px; background-color: #eee;" onClick="alterText()"><h4 style="margin-top: 10px;">Adjust text size and density</h4></div>
+						<div class="box" style="font-size: 20px; margin: 8px; height: 70px; background-color: #eee;" onClick="adjustColor()"><h4 style="margin-top: 10px;">Adjust Color</h4></div>
+						<div class="box" style="font-size: 20px; margin: 8px; height: 70px; background-color: #eee;" onClick="addVisualEffect()"><h4 style="margin-top: 10px;">Add Visual Effects to text</h4></div>
+						<div class="box" style="font-size: 20px; margin: 8px; height: 70px; background-color: #eee;" onClick="adjustGradient()"><h4 style="margin-top: 10px;">Add Gradient Background</h4></div>
+						<div class="box" style="font-size: 20px; margin: 8px; height: 70px; background-color: #eee;" onClick="addBackground()"><h4 style="margin-top: 10px;">Alter Background</h4></div>
+						<div class="box" style="font-size: 20px; margin: 8px; height: 70px; background-color: #eee; text-align: left;" onClick="addBackground()"><h4 style="margin-top: 10px;">CSS Animation</h4></div>
 
 					</div>
+					<script>
+						var box = document.getElementById('textdisplay');
+						var parentBox = document.getElementById('textbox');
+						function alterText(){
+							box.style.fontSize= '1.4em';
+							box.style.fontWeight= '900';
 
+						}
+						function adjustColor(){
+							box.style.fontSize= '1.4em';
+							box.style.fontWeight= '900';
+							box.style.color= '#0D98BA';
+
+						}
+						function addVisualEffect(){
+							box.style.fontSize= '1.4em';
+							box.style.fontWeight= '900';
+							box.style.color= '#0D98BA';
+							box.style.textShadow= '3px 3px 3px silver';
+							box.style.rotate = '-10deg';
+
+						}
+
+						function adjustGradient(){
+							box.style.fontSize= '1.4em';
+							box.style.fontWeight= '900';	
+							box.style.textShadow= '3px 3px 3px black';
+							box.style.color= 'white';
+							box.style.rotate = '-10deg';
+							parentBox.style.paddingTop = '14px';
+							parentBox.style.borderRadius = '8px';
+							parentBox.style.background= 'rgb(34,193,195)';
+							parentBox.style.background= 'linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)';
+						}
+
+						function addBackground(){
+							box.style.fontSize= '1.4em';
+							box.style.fontWeight= '900';
+							box.style.color= 'white';
+							box.style.textShadow= '3px 3px 3px black';
+							box.style.rotate = '-10deg';
+							parentBox.style.paddingTop = '14px';
+							parentBox.style.borderRadius = '8px';
+							
+							parentBox.style.backgroundImage= 'url(images/frontend/skyline_bg.jpg)';
+							parentBox.style.backgroundSize= '100% 100%';
+							
+						}
+					</script>
 					
 				</section>
 				<section data-background="#fff">
@@ -404,35 +444,166 @@
 				</section>
 				<section data-background="#fff">
 				
-					<h4>Working with Boxes in our Header</h4>
+					<h4>Working with Boxes in our Header <br> Observe Process</h4>
 					<p style="font-size: .6em; color: gray;">Understanding how to work with box elements is the beginning stages of page layout. CSS properties to consider when working with box elements - border, margin, padding, text-align, box-shadow </p>
 					<img src="images/frontend/site_header.PNG" style="margin: 20px;" alt="header for move-in page of Loop Luxury Living"/>
 					<div id="flexcontain">
 						<div class="box red" style="font-size: 20px; margin: 10px; height: 210px; background-color: #eee; color: black;"><p><strong>Step 1</strong><br> Add the border property to all structural box elements/tags.  Including tags that will serve as containers.</p></div>
-						<div class="box red" style="font-size: 20px; margin: 10px; height: 210px; background-color: #eee; color: black;"><p><strong>Step 2</strong><br> Use the browser or rendered view to prototype and observe how box elements are taking shape before saving to CSS file.</p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 210px; background-color: #eee; color: black;"><p><strong>Step 2</strong><br> Use the browser inspection tools to prototype and observe how box elements are taking shape when CSS properties are being applied.</p></div>
 						<div class="box red" style="font-size: 20px; margin: 10px; height: 210px; background-color: #eee; color: black;"><p><strong>Step 3</strong><br> Adjust CSS prpperties to consider Responsive Design considerations.</p></div>
 					</div>				
 				</section>
-				<section data-background="#eeeeee" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
-					<h2>Practice Activity Steps</h2>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="0"><strong>1. Creating a Collection of Queries</strong> -> Click the new button and name the collection <strong>CollegeScoreCard API queries </strong></p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="1"><strong>2. Create a Request Instance</strong> -> Select the three stacked dots symbol next to the folder and select 'New Request'.  Name the request "General School Query".  A new tab will display with the request name you entered. Underneath the tab, Make sure 'GET' is preset as the dropdown option.  Remove the URL 'https://echo.hoppscotch.io' and add the URL below. <br> https://api.data.gov/ed/collegescorecard/v1/schools.json</p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="2"><strong>3. Adding API Key for Authorization </strong>  -> Your API key can be added as either query parameters or by using the 'Authorization' tab. Select the <strong>Parameters tab</strong>, and enter 'api_key' for the key and enter the key provided to you via email as the value.  Press the 'SAVE' button and then press the 'SEND' button.  </p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="3"><strong>4. Narrowing Search</strong> -> Using GitHub Documentation found at this <a href="https://github.com/RTICWDT/open-data-maker/blob/master/API.md" target="_blank">link</a>.  Create a new  request under your CollegeScoreCard API queries that limits the returned results to schools in with the name 'Loyola'. Copy the results and view the structure in <a href="https://jsonformatter.org/json-viewer">https://jsonformatter.org/json-viewer</a>  </p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="4"><strong>5. Complete Multiple Choice question </strong> -> Anwser multiple choice question on the following slide.  </p>
+				<section data-background="white" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
+				
+					<div id="flexcontain">
+
+						<div class="box" style="margin: 10px; text-align: left; margin-top: -10px;">
+							<h4>Update Header HTML and CSS</h4>
+							<p style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .45em; padding: 2%;" class="fragment" data-fragment-index="0"><strong>Add Containers to Box elements</strong><br> 1. Underneath &lt;header&gt; tag, add opening and closing &lt;h3&gt; tag with text <code>"Move-in Checklist"</code></p>
+							<p style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .45em; padding: 2%;" class="fragment" data-fragment-index="1">
+								<strong>Add Header CSS Style Rules </strong><br> 1. Copy the code below and paste into styles.css <br> </p>
+								<pre style="box-shadow: none; " class="fragment" data-fragment-index="1">
+									<code style="font-size: 18px; overflow-y: scroll; height: 200px;"  data-trim contenteditable>
+										/**STYLING HEADER OF SITE**/
+										header {
+										  width: 100%;
+										  padding: 20px 5px 0px 5px;
+										  min-height: 100px;
+										  border: 4px solid green;
+										}
+										
+										#logo {
+										  border: 4px solid blue;
+										  margin-right: 20px;
+										  width: 300px;
+										  float: left;
+										}
+										
+										#logo img {
+										  width: 100%;
+										}
+										#top_nav {
+										  border: 4px solid red;
+										  width: 400px;
+										  float: left;
+										  padding: 24px;
+										}
+										
+										#top_nav a {
+										  color: black;
+										  text-decoration: none;
+										  margin-right: 40px;
+										  padding: 2%;
+										  border: 4px solid purple;
+										}
+										
+										#sign_in {
+										  border: 4px solid orangered;
+										  width: 300px;
+										  float: right;
+										  height: 67px;
+										}
+										
+										#sign_in a {
+										  background-color: teal;
+										  color: white;
+										  text-decoration: none;
+										  padding: 2%;
+										  text-transform: uppercase;
+										  border-radius: 6px;
+										  font-weight: bolder;
+										  float: right;
+										  margin-top: 16px;
+										  margin-right: 20px;
+										}
+										
+	
+									</code>
+								</pre>
+							
+							
+							
+		
+						</div>
+
+					</div>	
 
 
 				</section>
+
 				<section data-background="white" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
-					<h2>Code Along Session</h2>
+				
 					<div id="flexcontain">
+						
 						<div class="box" style="height: 90%;  width: 100%;">
-							<img src="images/frontend/move_in_wireframe_color.png" style="margin-top: -20px;" alt="Move in Wireframe Page"/>
+							<img src="images/frontend/move_in_wireframe_boxes.PNG" style="margin-top: -20px;" alt="Move in Wireframe Page"/>
 						</div>
-						<div class="box" style="margin: 10px; text-align: left; margin-top: -30px;">
-							<p style="background-color:rgba(249 255 170); color: black; font-size: .45em; padding: 2%;" class="fragment" data-fragment-index="0"><strong>Add Header</strong><br> 1. Add opening and closing &lt;header&gt; tag. <br> 2. As a child of the header tag, add &lt;img&gt; tag and add "src" attribute to provide the relative URL file path to triple_logo.png <br> 3. Add opening and closing &lt;nav&gt; tag and add &lt;a&gt; tags for each of the navigation links (Services, Apartments, FAQ) as a child of the nav tag. <br> 4. After the closing nav tag, add &lt;div&gt; tag for sign-up button and enclose with text <code>"SIGN-IN"</code>.</p>
-							<p style="background-color:rgb(168 246 199); color: black; font-size: .45em; padding: 2%;" class="fragment" data-fragment-index="1"><strong>Add Page Title</strong><br> 1. Underneath &lt;header&gt; tag, add opening and closing &lt;h3&gt; tag with text <code>"Move-in Checklist"</code></p>
-							<p style="background-color:rgb(174 214 250); color: black; font-size: .45em; padding: 2%;" class="fragment" data-fragment-index="2"><strong>Body of Page Box 1</strong><br>1. Add opening and closing &lt;form&gt; tag. <br> 2. Add all checkbox input tags as a child of &lt;form&gt; tag. (Observe wireframe for checkbox text) <br><span style="font-size: 10px;">Ex. <code>&lt;input type="checkbox" /&gt; Sign Lease Agreement &lt;br /&gt;</code></span> <br> 3. Add opening and closing &lt;button&gt; tag that encloses text <code>SAVE + PRINT LIST</code>.</p>
+						<div class="box" style="margin: 10px; text-align: left; margin-top: -10px;">
+							<h4>Code Along Session</h4>
+							<p style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .45em; padding: 2%;" class="fragment" data-fragment-index="0"><strong>Add Containers to Box elements</strong><br> 1. Underneath &lt;header&gt; tag, add opening and closing &lt;h3&gt; tag with text <code>"Move-in Checklist"</code></p>
+							<p style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .45em; padding: 2%;" class="fragment" data-fragment-index="1">
+								<strong>Add Header CSS Style Rules </strong><br> 1. Copy the code below and paste into styles.css <br> </p>
+								<pre style="box-shadow: none; " class="fragment" data-fragment-index="1">
+									<code style="font-size: 18px; overflow-y: scroll; height: 200px;"  data-trim contenteditable>
+										/**STYLING HEADER OF SITE**/
+										header {
+										  width: 100%;
+										  padding: 20px 5px 0px 5px;
+										  min-height: 100px;
+										  border: 4px solid green;
+										}
+										
+										#logo {
+										  border: 4px solid blue;
+										  margin-right: 20px;
+										  width: 300px;
+										  float: left;
+										}
+										
+										#logo img {
+										  width: 100%;
+										}
+										#top_nav {
+										  border: 4px solid red;
+										  width: 400px;
+										  float: left;
+										  padding: 24px;
+										}
+										
+										#top_nav a {
+										  color: black;
+										  text-decoration: none;
+										  margin-right: 40px;
+										  padding: 2%;
+										  border: 4px solid purple;
+										}
+										
+										#sign_in {
+										  border: 4px solid orangered;
+										  width: 300px;
+										  float: right;
+										  height: 67px;
+										}
+										
+										#sign_in a {
+										  background-color: teal;
+										  color: white;
+										  text-decoration: none;
+										  padding: 2%;
+										  text-transform: uppercase;
+										  border-radius: 6px;
+										  font-weight: bolder;
+										  float: right;
+										  margin-top: 16px;
+										  margin-right: 20px;
+										}
+										
+	
+									</code>
+								</pre>
+							
+							
+							
 		
 						</div>
 
@@ -444,7 +615,7 @@
 					<h2>Code Along Session Cont.</h2>
 					<div id="flexcontain">
 						<div class="box" style="height: 90%;  width: 100%;">
-							<img src="images/frontend/move_in_wireframe_color.png" style="margin-top: -20px;" alt="Move in Wireframe Page"/>
+							<img src="images/frontend/move_in_wireframe_boxes.PNG" style="margin-top: -20px;" alt="Move in Wireframe Page"/>
 						</div>
 						<div class="box" style="margin: 10px; text-align: left; margin-top: -30px;">
 							<p style="background-color:rgb(230 145 146); color: black; font-size: .45em; padding: 2%;" class="fragment" data-fragment-index="0"><strong>Body of Page Box 2</strong><br> 1. Add opening and closing &lt;div&gt; tag beneath closing form tag. <br> 2. Add opening and closing &lt;h2&gt; tag as a child of the div tag that encloses text <code>Preferred Insurance Vendor</code> <br> 3. Add opening and closing &lt;p&gt; tag and encloses text <code style="font-size: 14px;">Lemonade specializes in renters insurance and provides quick, easy, simple, reliable, and affordable insurance.</code> <br> 4. Add &lt;img&gt; tag beneath closing &lt;p&gt; tag and provide the relative file path to <code>triple_logo.png</code> image.  </p>
@@ -462,6 +633,21 @@
 					<div style="height: 500px; width: 900px; overflow-y: scroll; scrollbar-color: #45378d #cae0cb;"><script src="https://gist.github.com/instructorc/8ce723e84d8a704ea313ca489598ee9d.js"></script></div>
 
 				</section>
+				<section data-background="../webdev/images/ux/ia_bg.jpg">
+				    <h1 style="color: black;">Getting Started with<span style="color: white; background-color: black; margin: 3px; padding: 2px;"> Page Layout</span>!</h1>
+				   
+				</section>
+				<section data-background="#eeeeee" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
+					<h2>Practice Activity Steps</h2>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="0"><strong>1. Creating a Collection of Queries</strong> -> Click the new button and name the collection <strong>CollegeScoreCard API queries </strong></p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="1"><strong>2. Create a Request Instance</strong> -> Select the three stacked dots symbol next to the folder and select 'New Request'.  Name the request "General School Query".  A new tab will display with the request name you entered. Underneath the tab, Make sure 'GET' is preset as the dropdown option.  Remove the URL 'https://echo.hoppscotch.io' and add the URL below. <br> https://api.data.gov/ed/collegescorecard/v1/schools.json</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="2"><strong>3. Adding API Key for Authorization </strong>  -> Your API key can be added as either query parameters or by using the 'Authorization' tab. Select the <strong>Parameters tab</strong>, and enter 'api_key' for the key and enter the key provided to you via email as the value.  Press the 'SAVE' button and then press the 'SEND' button.  </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="3"><strong>4. Narrowing Search</strong> -> Using GitHub Documentation found at this <a href="https://github.com/RTICWDT/open-data-maker/blob/master/API.md" target="_blank">link</a>.  Create a new  request under your CollegeScoreCard API queries that limits the returned results to schools in with the name 'Loyola'. Copy the results and view the structure in <a href="https://jsonformatter.org/json-viewer">https://jsonformatter.org/json-viewer</a>  </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="4"><strong>5. Complete Multiple Choice question </strong> -> Anwser multiple choice question on the following slide.  </p>
+
+
+				</section>
+
 				<section data-background="#fff">
 					<h2 style="font-size: 1em; color: #1359e5;"><span style=" margin: 3px; padding: 2px;"><span style=" margin: 3px; padding: 8px; background-color: #cae0cb;">CSS</span> Syntax</h2>
 					<div id="flexcontain">
