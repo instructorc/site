@@ -74,7 +74,7 @@
 						<li style="font-size: 30%; list-style-type: none;">[10 min. break]</li>
 				        <li style="font-size: 60%;">Second Hour</li>
 				        <ul>
-				        	<li style="font-size: 40%;">Understanding CSS</li>
+				        	<li style="font-size: 40%;">Understanding + Implementing CSS</li>
 							<li style="font-size: 40%"> Color and Graphic Scheme</li>
 							<li style="font-size: 40%;">Box Strategy + <span style="background-color: black; color: white;">Code Along Session</span> </li>	
 				        </ul>
@@ -275,7 +275,6 @@
 					
 					<div style="height: 500px; width: 900px; overflow-y: scroll; scrollbar-color: #45378d #cae0cb;"><script src="https://gist.github.com/instructorc/8ce723e84d8a704ea313ca489598ee9d.js"></script></div>
 
-					<!--<h4 style="color: white;"><a href="https://www.mongodb.com/databases/json-database#json-database-examples" target="_blank">Databases</a>  |   <a href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-processing-training-config-file-example.html" target="_blank">Configuration</a> |   <a href="" target="_blank">REST API</a> </h4>-->
 				</section>
 				<section data-background="../webdev/images/ux/ia_bg.jpg">
 				    <h1 style="color: black;">Let's Add <span style="color: white; background-color: black; margin: 3px; padding: 2px;">CSS</span>?</h1>
@@ -321,85 +320,90 @@
 				</section>
 				<section data-background="#fff">
 				
-					<h2 style="font-size: 1em; color: #eb0e0e;"><span style=" margin: 3px; padding: 2px;">How do we add <span style=" margin: 3px; padding: 8px; background-color: #cae0cb;">CSS</span> to our HTML?</span></h2>
-					<img src="images/frontend/cssmethods.jpg" width="600" alt="Graphic that displays ways of implementing CSS"/>
+					<h2 style="font-size: 1em; color: #eb0e0e;"><span style=" margin: 3px; padding: 2px;">How do we connect <span style=" margin: 3px; padding: 8px; background-color: #cae0cb;">CSS</span> to our <span style=" margin: 3px; padding: 8px; background-color: #cae0cb;">HTML?</span></span></h2>
+					<img src="images/frontend/implementing_css.png" width="740" alt="Graphic that displays ways of implementing CSS"/>
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 20px; margin: 10px; height: 220px; background-color: #eee; color: black;"><p><strong>Internal</strong><br> uses the style tag and applies CSS to an HTML document. <br><span style="font-weight: bolder;">*Use opening and closing &lt;style&gt; tag in &lt;head&gt; of html document</span></p></div>
-						<div class="box red" style="font-size: 20px; margin: 10px; height: 220px; background-color: #eee; color: black;"><p><strong>External</strong><br> uses the link tag to link multiple HTML documents to CSS file. External style sheets are separate documents that have a .css extension <br><span style="font-weight: bolder;">*Use &lt;link&gt; tag in &lt;head&gt; of html document</span></p></div>
-						<div class="box red" style="font-size: 20px; margin: 10px; height: 220px; background-color: #eee; color: black;"><p><strong>Inline</strong><br> uses the style attribute and is tag specific and applies CSS to a tag. <br><span style="font-weight: bolder;">*Uses style attribute in the opening HTML tag</span></p></div>
+						<div class="box red" style="font-size: 20px; margin: 5px; height: 190px; background-color: #eee; color: black; max-width: 210px;"><p><strong>Internal</strong><br> uses the style tag within head of your site and applies CSS to an HTML document. <br><span style="font-weight: bolder; font-size: 18px; ">&lt;style&gt;  &lt;/style&gt; </span></p></div>
+						<div class="box red" style="font-size: 20px; margin: 5px; height: 190px; background-color: #eee; color: black;"><p><strong>External</strong><br> uses the link tag to link multiple HTML documents to CSS file. External style sheets are separate documents that have a .css extension <br><span style="font-weight: bolder; font-size: 18px;">&lt;link href="style.css" rel="stylesheet" type="text/css" /&gt; </span></p></div>
+						<div class="box red" style="font-size: 20px; margin: 5px; height: 190px; background-color: #eee; color: black; max-width: 210px;"><p><strong>Inline</strong><br> uses the style attribute and is tag specific and applies CSS to a tag. <br><span style="font-weight: bolder; font-size: 18px;">&lt;div style="color: red;"&gt; </span></p></div>
 					</div>				
 				</section>
 				<section data-background="white" style="background-size: 80%;">
 					<h4 style="background-color:rgba(255, 255, 255, 0.7); color: black;">CSS Syntax and Rules</h4>
 					<img src="images/frontend/css-rule.png" width="550" alt="image of css style rule" /><br />
 					<cite style="font-size: 12px; margin-top: -28px;">Source: https://frontend.turing.edu/lessons/module-1/css-fundamentals.html</cite>
-					<div id="flexcontain">
-						<div class="box" style="font-size: 24px; margin: 10px; height: 170px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">Start Tag</h3><p style="font-size: .7em; font-variant: small-caps;">Consist of the name of the tag enclosed by greater and less than sign. Ex. &lt;p&gt;</div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 170px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">Content Text</h3><p style="font-size: .7em; font-variant: small-caps;">Place the content between opening and closing tag you would like to give structure to.</p></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 170px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">End Tag</h3><p style="font-size: .7em; font-variant: small-caps;">Consist of the name of the tag enclosed by &lt;/p&gt;</p></div>
+				
+					<a href="https://www.w3schools.com/cssref/index.php" target="_blank"><div id="jsonbutton" style="display: block; margin: auto; background-color:#06abb5;">CSS Property Reference</div></a>
 
-					</div>
+					
 				</section>
 
 				<section data-background="#fff">
-					<h2 style="font-size: 1em; color: #197fec;"><span style=" margin: 3px; padding: 2px;">A few CSS <span style=" margin: 3px; padding: 8px; background-color: #cae0cb;">Considerations</span>!</h2>
+					<h2 style="font-size: 1em; color: #197fec;"><span style=" margin: 3px; padding: 2px;">Targeting Tags with <span style=" margin: 3px; padding: 8px; background-color: #cae0cb;">CSS Selectors</span>!</h2>
 					<div id="flexcontain">
 
-						<div class="box red" style="margin: 10px; padding-top: 5%; height: 600px; background-color: #fff; color: #111; flex-grow: 2;">
+						<div class="box red" style="margin: 10px; padding-top: 5%; height: 700px; background-color: #fff; color: #111; flex-grow: 2;">
 							<pre style="box-shadow: none;">
 								<code style="font-size: 18px; height: 670px;"  data-trim contenteditable>
-								/*Use space below to code CSS*/
+								/*Type Selector*/
 								button { 
 									background-color: #5f9ea0;
 									border: none;
 									color: white;
 									text-transform:uppercase;
-									padding: 18px;
-									width: 325px;
-									border-radius: 6px;
-									font-size: 24px
 								 }
-									
+								/*id selector - use pound or hastag */
+								#goat{
+									text-align: center;
+									border-radius: 6px;
+									float: left;
+								 }
+								 /*class selector - use dot notation */
+								 .team{
+									width: 300px;
+								 }
+								 
+								 /*Descendent - parent + child selectors with 
+								 separating space*/
+								aside p{
+									margin: 4%;
+									padding: 12px;
+								}
 									
 
 								</code>
 							</pre>
 						</div>
 						<div class="box">
-							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="0"><strong><code style="color: blue;">Indentation + Nesting of HTML tags</code></strong><br>Indentation is good coding practice - Easier to read and understand code.  Nesting the tags establishes a child/parent relationship and complies to DOM tree structure </p>
-							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="2"><strong><code style="color: rgb(236, 20, 20);">One Property per line </code></strong><br> The div tag serves as a container to group tags. Other container tags include &lt;header&gt;,&lt;nav&gt;, &lt;footer&gt;, &lt;section&gt;, &lt;article&gt;,&lt;aside&gt;. </p>
-							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="3"><strong><code style="color: green;">Property ends with Semi-colon</code></strong><br> Placed in the opening tag and provides additional information to tag.</p>
-							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="4"><strong><code style="color: orangered;">Linking to External Resources</code></strong><br> Including images or linking to a style sheet</p>
+							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em; text-align: left;" class="fragment" data-fragment-index="0"><strong><code>Type Selector</code></strong><br>Simply use the name of HTML tag. <br> <code style="font-size: 16px; margin: 3px; padding: 8px; background-color: #cae0cb;">HTML: &lt;button&gt;Save + Print List&lt;/button&gt;</code> </p>
+							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em; text-align: left;" class="fragment" data-fragment-index="2"><strong><code>id Selector </code></strong><br> Used to target a specific HTML tag. <br><code style="font-size: 16px; margin: 3px; padding: 8px; background-color: #cae0cb;">HTML: &lt;div id="goat"&gt; Jordan &lt;/div&gt;</code> </p>
+							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em; text-align: left;" class="fragment" data-fragment-index="3"><strong><code>class Selector</code></strong><br> Can be target multiple HTML tags. <br>HTML:<br><code style="font-size: 16px; margin: 3px; padding: 8px; background-color: #cae0cb;"> &lt;div class="team"&gt; Pippen &lt;/div&gt;</code> <br><code style="font-size: 16px; margin: 3px; padding: 8px; background-color: #cae0cb;">&lt;div class="team"&gt; Rodman &lt;/div&gt;</code> <br><code style="font-size: 16px; margin: 3px; padding: 8px; background-color: #cae0cb;">&lt;div class="team"&gt; Harper &lt;/div&gt;</code> </p>
+							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em; text-align: left;" class="fragment" data-fragment-index="4"><strong><code>Desendent Selector</code></strong><br> Targeting child tag of a parent.  <br>HTML:<br><code style="font-size: 16px; margin: 3px; padding: 8px; background-color: #cae0cb;">&lt;aside&gt; <br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Greatest team! &lt;/p&gt; <br> &lt;/aside&gt;</code> </p>
 
 						</div>
 					</div>
 				</section>
+
 				<section data-background="#fff">
-					<h4>Quick Practice</h4>
+					<h4>Practice Activity</h4>
 					<div id="flexcontain">
 
-						<div class="box red" style="margin: 10px; padding-top: 5%; height: 700px; background-color: #fff; color: #111; flex-grow: 1;">
-							<div id="flexcontain">
-								<div class="box" style="font-size: 24px; margin: 10px; height: 140px; background-color: #eee;"><h4 style="margin-top: 10px; margin-bottom: -15px;">Step 1</h4><p style="font-size: .9em; font-variant: small-caps;">Using an &lt;h1&gt; tag, add your name to the right.</div>
-								<div class="box" style="font-size: 24px; margin: 10px; height: 170px; background-color: #eee;"><h4 style="margin-top: 10px; margin-bottom: -15px;">Step 2</h4><p style="font-size: .9em; font-variant: small-caps;">Using this <a href="https://www.w3schools.com/tags/default.asp" target="_blank">W3C Resource</a>, search and identify the most approapriate tag that allows you to create a bullet point list of the items you ate for breakfast.</p></div>
-		
-							</div>
-						</div>
-						<div class="box" style="flex-grow: 2;">
-							<pre style="box-shadow: none;">
-								<code style="font-size: 18px; height: 670px;"  data-trim contenteditable>
-								<!--Use space below to code HTML -->	
-
-									
-									
-
-								</code>
-							</pre>
+						<div class="box red" style="font-size: 20px; margin: 10px; padding-top: 150px; height: 550px; background-color: #fff; color: #111;"><img src="images/frontend/loyola_css.PNG" alt="image of text for Loyola"/></div>
+						<div class="box">
+							<p style="font-size: .55em; text-align: left;"> 1) Click on the coding playground button below to open editor <br><br> 2) Delete line 9 and add a new paragraph tag that has an id attribute with "school" as the value and "Loyola" as the content <br><br> 3) Add internal CSS and create a style rule to target the p tag by its id attribute <br><br> 4) Add the following declarations: <br>- font-size: 3em; <br>- color: black; <br>- text-transform: uppercase <br>- text-shadow: 2px 3px 4px black;  </p>
+							<a href="https://liveweave.com/" target="_blank"><div id="jsonbutton">Coding Playground</div></a>
 						</div>
 						
 					</div>
 				</section>
-
+				<section data-background="#2e2e2e">
+					<h4 style="color:white; font-size: 2em;">Box Model and Properties</h4>
+					<img src="../webdev/images/layout/box2.png" width="875" style="box-shadow: none; border: none;"alt="Box Model properties example">
+				</section>
+				<section data-background="#fff">
+					<h4>Box Model - Another View</h4>
+					<img src="../webdev/images/layout/box_alternative.PNG" width="775" style="box-shadow: none; border: none;"alt="Box Model alternative view example">
+				</section>
 				<section data-background="white" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
 					<h2>Code Along Session</h2>
 					<div id="flexcontain">
@@ -434,11 +438,10 @@
 
 				</section>
 				<section data-background="white">
-				    <h2 style="font-size: 1em; color: #45378d;"><span style=" margin: 3px; padding: 2px;">Code Along Activity 1 <span style=" margin: 3px; padding: 8px; background-color: #cae0cb;">Completed</span> code!</h2>
+				    <h2 style="font-size: 1em; color: #45378d;"><span style=" margin: 3px; padding: 2px;">Code Along Activity 2 <span style=" margin: 3px; padding: 8px; background-color: #cae0cb;">Completed</span> code!</h2>
 					
 					<div style="height: 500px; width: 900px; overflow-y: scroll; scrollbar-color: #45378d #cae0cb;"><script src="https://gist.github.com/instructorc/8ce723e84d8a704ea313ca489598ee9d.js"></script></div>
 
-					<!--<h4 style="color: white;"><a href="https://www.mongodb.com/databases/json-database#json-database-examples" target="_blank">Databases</a>  |   <a href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-processing-training-config-file-example.html" target="_blank">Configuration</a> |   <a href="" target="_blank">REST API</a> </h4>-->
 				</section>
 				<section data-background="#fff">
 					<h2 style="font-size: 1em; color: #1359e5;"><span style=" margin: 3px; padding: 2px;"><span style=" margin: 3px; padding: 8px; background-color: #cae0cb;">CSS</span> Syntax</h2>
