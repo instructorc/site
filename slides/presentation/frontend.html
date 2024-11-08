@@ -129,10 +129,8 @@
 						<div class="box">
 							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;"><strong>How will we construct our code?</strong><br>We'll use an online text-editor called codesandbox.io.  </p>
 							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;"><strong>Create an Account</strong><br> Click on image to the left and create an account. *If you do not have a Google or Apple account, you can quickly create a Github account and sign-in </p>
-							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;"><strong>Fork the project</strong><br> Click the "Fork" button in upper  right hand cornerCreates a copy on your account</p>
-
-
-							
+							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;"><strong>Fork the project</strong><br> Click the "Fork" button in upper right hand corner to duplicate the web project.</p>
+	
 						</div>
 					</div>
 				</section>
@@ -190,9 +188,9 @@
 					<img src="images/frontend/html_syntax_rules.png" width="700" alt="image of h1 element with explanation of syntax" /><br />
 					<cite style="font-size: 12px; margin-top: -28px;">Source: https://medium.com/geekculture/rest-architectural-constraints-495a50ae0651</cite>
 					<div id="flexcontain">
-						<div class="box" style="font-size: 24px; margin: 10px; height: 170px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">Start Tag</h3><p style="font-size: .7em; font-variant: small-caps;">Consist of the name of the tag enclosed by greater and less than sign. Ex. &lt;p&gt;</div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 170px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">Content Text</h3><p style="font-size: .7em; font-variant: small-caps;">Place the content between opening and closing tag you would like to give structure to.</p></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 170px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">End Tag</h3><p style="font-size: .7em; font-variant: small-caps;">Consist of the name of the tag enclosed by &lt;/p&gt;</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 170px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">Start Tag</h3><p style="font-size: .9em; font-variant: small-caps;">Consist of the name of the tag enclosed by greater and less than sign. Ex. &lt;p&gt;</div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 170px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">Content Text</h3><p style="font-size: .9em; font-variant: small-caps;">Place the content between opening and closing tag you would like to give structure to.</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 170px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">End Tag</h3><p style="font-size: .9em; font-variant: small-caps;">Consist of the name of the tag enclosed by &lt;/p&gt;</p></div>
 
 					</div>
 				</section>
@@ -201,7 +199,7 @@
 					<h2 style="font-size: 1em; color: #057b5f;"><span style=" margin: 3px; padding: 2px;">A few HTML <span style=" margin: 3px; padding: 8px; background-color: #cae0cb;">Considerations</span>!</h2>
 					<div id="flexcontain">
 
-						<div class="box red" style="margin: 10px; padding-top: 5%; height: 600px; background-color: #fff; color: #111; flex-grow: 2;"><img src="images/frontend/html_considerations.PNG" alt="Image of HTML DOM Structure"/></div>
+						<div class="box red" style="margin: 10px; padding-top: 5%; height: 600px; background-color: #fff; color: #111; flex-grow: 2;"><img src="images/frontend/html_considerations.PNG" alt="Image of HTML DOM Structure" style="max-width: 103%;"/></div>
 						<div class="box">
 							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="0"><strong><code style="color: blue;">Indentation + Nesting of HTML tags</code></strong><br>Indentation is good coding practice - Easier to read and understand code.  Nesting the tags establishes a child/parent relationship and complies to DOM tree structure </p>
 							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="2"><strong><code style="color: rgb(236, 20, 20);">Understanding the &lt;div&gt; tag, </code></strong><br> The div tag serves as a container to group tags. Other container tags include &lt;header&gt;,&lt;nav&gt;, &lt;footer&gt;, &lt;section&gt;, &lt;article&gt;,&lt;aside&gt;. </p>
@@ -403,6 +401,27 @@
 				<section data-background="#fff">
 					<h4>Box Model - Another View</h4>
 					<img src="../webdev/images/layout/box_alternative.PNG" width="775" style="box-shadow: none; border: none;"alt="Box Model alternative view example">
+				</section>
+				<section data-background="#fff">
+				
+					<h4>Working with Boxes in our Header</h4>
+					<p style="font-size: .6em; color: gray;">Understanding how to work with box elements is the beginning stages of page layout. CSS properties to consider when working with box elements - border, margin, padding, text-align, box-shadow </p>
+					<img src="images/frontend/site_header.PNG" style="margin: 20px;" alt="header for move-in page of Loop Luxury Living"/>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 210px; background-color: #eee; color: black;"><p><strong>Step 1</strong><br> Add the border property to all structural box elements/tags.  Including tags that will serve as containers.</p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 210px; background-color: #eee; color: black;"><p><strong>Step 2</strong><br> Use the browser or rendered view to prototype and observe how box elements are taking shape before saving to CSS file.</p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 210px; background-color: #eee; color: black;"><p><strong>Step 3</strong><br> Adjust CSS prpperties to consider Responsive Design considerations.</p></div>
+					</div>				
+				</section>
+				<section data-background="#eeeeee" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
+					<h2>Practice Activity Steps</h2>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="0"><strong>1. Creating a Collection of Queries</strong> -> Click the new button and name the collection <strong>CollegeScoreCard API queries </strong></p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="1"><strong>2. Create a Request Instance</strong> -> Select the three stacked dots symbol next to the folder and select 'New Request'.  Name the request "General School Query".  A new tab will display with the request name you entered. Underneath the tab, Make sure 'GET' is preset as the dropdown option.  Remove the URL 'https://echo.hoppscotch.io' and add the URL below. <br> https://api.data.gov/ed/collegescorecard/v1/schools.json</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="2"><strong>3. Adding API Key for Authorization </strong>  -> Your API key can be added as either query parameters or by using the 'Authorization' tab. Select the <strong>Parameters tab</strong>, and enter 'api_key' for the key and enter the key provided to you via email as the value.  Press the 'SAVE' button and then press the 'SEND' button.  </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="3"><strong>4. Narrowing Search</strong> -> Using GitHub Documentation found at this <a href="https://github.com/RTICWDT/open-data-maker/blob/master/API.md" target="_blank">link</a>.  Create a new  request under your CollegeScoreCard API queries that limits the returned results to schools in with the name 'Loyola'. Copy the results and view the structure in <a href="https://jsonformatter.org/json-viewer">https://jsonformatter.org/json-viewer</a>  </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="4"><strong>5. Complete Multiple Choice question </strong> -> Anwser multiple choice question on the following slide.  </p>
+
+
 				</section>
 				<section data-background="white" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
 					<h2>Code Along Session</h2>
