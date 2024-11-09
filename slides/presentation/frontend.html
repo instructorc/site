@@ -454,433 +454,406 @@
 					</div>				
 				</section>
 				<section data-background="white" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
-				
+							
+					<h4>Update and Replace Header HTML + CSS</h4>
 					<div id="flexcontain">
 
 						<div class="box" style="margin: 10px; text-align: left; margin-top: -10px;">
-							<h4>Update Header HTML and CSS</h4>
-							<div style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .45em; padding: 2%;" class="fragment" data-fragment-index="0">
-								<p><strong>Update and Replace Header</strong><br> Replace current header code with what is listed below.</p>
-								<pre style="box-shadow: none; " class="fragment" data-fragment-index="1">
-									<code style="font-size: 18px; overflow-y: scroll;"  data-trim contenteditable>
-										&lt;header&gt;
-											&lt;div id="logo"&gt; 
 
-												&lt;img src="images/triple_logo.png" alt="Loop Luxury Living Logo" /&gt;
-
-											&lt;/div&gt;
-
-											&lt;nav id="top_nav" &gt;
-
-												&lt;a href=""&gt;Services&lt;/a&gt;
-
-												&lt;a href=""&gt;Apartments&lt;/a&gt;
-
-												&lt;a href=""&gt;FAQ&lt;/a&gt;
-												
-											&lt;/nav&gt;
-
-											&lt;div id="sign_in">&lt;a href="/"&gt;Sign-in&lt;/a&gt;&lt;/div&gt;
-
-										&lt;/header&gt;
-	
-									</code>
-								</pre>
-							</div>
-							<p style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .45em; padding: 2%;" class="fragment" data-fragment-index="1">
-								<strong>Add Header CSS Style Rules </strong><br> 1. Copy the code below and paste into styles.css <br> </p>
-								<pre style="box-shadow: none; " class="fragment" data-fragment-index="1">
-									<code style="font-size: 18px; overflow-y: scroll; height: 200px;"  data-trim contenteditable>
-										/**STYLING HEADER OF SITE**/
-										header {
-										  width: 100%;
-										  padding: 20px 5px 0px 5px;
-										  min-height: 100px;
-										  border: 4px solid green;
-										}
-										
-										#logo {
-										  border: 4px solid blue;
-										  margin-right: 20px;
-										  width: 300px;
-										  float: left;
-										}
-										
-										#logo img {
-										  width: 100%;
-										}
-										#top_nav {
-										  border: 4px solid red;
-										  width: 400px;
-										  float: left;
-										  padding: 24px;
-										}
-										
-										#top_nav a {
-										  color: black;
-										  text-decoration: none;
-										  margin-right: 40px;
-										  padding: 2%;
-										  border: 4px solid purple;
-										}
-										
-										#sign_in {
-										  border: 4px solid orangered;
-										  width: 300px;
-										  float: right;
-										  height: 67px;
-										}
-										
-										#sign_in a {
-										  background-color: teal;
-										  color: white;
-										  text-decoration: none;
-										  padding: 2%;
-										  text-transform: uppercase;
-										  border-radius: 6px;
-										  font-weight: bolder;
-										  float: right;
-										  margin-top: 16px;
-										  margin-right: 20px;
-										}
-										
-	
-									</code>
-								</pre>
-							
-							
-							
-		
-						</div>
-
-					</div>	
-
-
-				</section>
-
-				<section data-background="white" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
-				
-					<div id="flexcontain">
-						
-						<div class="box" style="height: 90%;  width: 100%;">
-							<img src="images/frontend/move_in_wireframe_boxes.PNG" style="margin-top: -20px;" alt="Move in Wireframe Page"/>
-						</div>
-						<div class="box" style="margin: 10px; text-align: left; margin-top: -10px;">
-							<h4>Code Along Session</h4>
-							<p style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .45em; padding: 2%;" class="fragment" data-fragment-index="0"><strong>Add Containers to Box elements</strong><br> 1. Underneath &lt;header&gt; tag, add opening and closing &lt;h3&gt; tag with text <code>"Move-in Checklist"</code></p>
-							<p style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .45em; padding: 2%;" class="fragment" data-fragment-index="1">
-								<strong>Add Header CSS Style Rules </strong><br> 1. Copy the code below and paste into styles.css <br> </p>
-								<pre style="box-shadow: none; " class="fragment" data-fragment-index="1">
-									<code style="font-size: 18px; overflow-y: scroll; height: 200px;"  data-trim contenteditable>
-										/**STYLING HEADER OF SITE**/
-										header {
-										  width: 100%;
-										  padding: 20px 5px 0px 5px;
-										  min-height: 100px;
-										  border: 4px solid green;
-										}
-										
-										#logo {
-										  border: 4px solid blue;
-										  margin-right: 20px;
-										  width: 300px;
-										  float: left;
-										}
-										
-										#logo img {
-										  width: 100%;
-										}
-										#top_nav {
-										  border: 4px solid red;
-										  width: 400px;
-										  float: left;
-										  padding: 24px;
-										}
-										
-										#top_nav a {
-										  color: black;
-										  text-decoration: none;
-										  margin-right: 40px;
-										  padding: 2%;
-										  border: 4px solid purple;
-										}
-										
-										#sign_in {
-										  border: 4px solid orangered;
-										  width: 300px;
-										  float: right;
-										  height: 67px;
-										}
-										
-										#sign_in a {
-										  background-color: teal;
-										  color: white;
-										  text-decoration: none;
-										  padding: 2%;
-										  text-transform: uppercase;
-										  border-radius: 6px;
-										  font-weight: bolder;
-										  float: right;
-										  margin-top: 16px;
-										  margin-right: 20px;
-										}
-										
-	
-									</code>
-								</pre>
-							
-							
-							
-		
-						</div>
-
-					</div>	
-
-
-				</section>
-				<section data-background="white" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
-					<h2>Code Along Session Cont.</h2>
-					<div id="flexcontain">
-						<div class="box" style="height: 90%;  width: 100%;">
-							<img src="images/frontend/move_in_wireframe_boxes.PNG" style="margin-top: -20px;" alt="Move in Wireframe Page"/>
-						</div>
-						<div class="box" style="margin: 10px; text-align: left; margin-top: -30px;">
-							<p style="background-color:rgb(230 145 146); color: black; font-size: .45em; padding: 2%;" class="fragment" data-fragment-index="0"><strong>Body of Page Box 2</strong><br> 1. Add opening and closing &lt;div&gt; tag beneath closing form tag. <br> 2. Add opening and closing &lt;h2&gt; tag as a child of the div tag that encloses text <code>Preferred Insurance Vendor</code> <br> 3. Add opening and closing &lt;p&gt; tag and encloses text <code style="font-size: 14px;">Lemonade specializes in renters insurance and provides quick, easy, simple, reliable, and affordable insurance.</code> <br> 4. Add &lt;img&gt; tag beneath closing &lt;p&gt; tag and provide the relative file path to <code>triple_logo.png</code> image.  </p>
-							<p style="background-color:rgb(180 155 214); color: black; font-size: .45em; padding: 2%;" class="fragment" data-fragment-index="1"><strong>Add Footer</strong><br> 1. Add opening and closing &lt;footer&gt; tag <br> 2. Add opening and closing &lt;div&gt; tag. as a child of the footer tag. <br> 2. Add &lt;h3&gt; tag as a child of div tag and enclose h3 with text <code>CONTACT US</code> <br> 3. Add opening and closing &lt;ol&gt; tag and add &lt;li&gt; tags for each navigation link as children of ol tag. <br> 4. Repeat steps 2 - 3 to add 2 additional div containers representing footer navigation.</p>
-		
-						</div>
-
-					</div>	
-
-
-				</section>
-				<section data-background="white">
-				    <h2 style="font-size: 1em; color: #45378d;"><span style=" margin: 3px; padding: 2px;">Code Along Activity 2 <span style=" margin: 3px; padding: 8px; background-color: #cae0cb;">Completed</span> code!</h2>
-					
-					<div style="height: 500px; width: 900px; overflow-y: scroll; scrollbar-color: #45378d #cae0cb;"><script src="https://gist.github.com/instructorc/8ce723e84d8a704ea313ca489598ee9d.js"></script></div>
-
-				</section>
-				<section data-background="../webdev/images/ux/ia_bg.jpg">
-				    <h1 style="color: black;">Getting Started with<span style="color: white; background-color: black; margin: 3px; padding: 2px;"> Page Layout</span>!</h1>
-				   
-				</section>
-				<section data-background="#eeeeee" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
-					<h2>Practice Activity Steps</h2>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="0"><strong>1. Creating a Collection of Queries</strong> -> Click the new button and name the collection <strong>CollegeScoreCard API queries </strong></p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="1"><strong>2. Create a Request Instance</strong> -> Select the three stacked dots symbol next to the folder and select 'New Request'.  Name the request "General School Query".  A new tab will display with the request name you entered. Underneath the tab, Make sure 'GET' is preset as the dropdown option.  Remove the URL 'https://echo.hoppscotch.io' and add the URL below. <br> https://api.data.gov/ed/collegescorecard/v1/schools.json</p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="2"><strong>3. Adding API Key for Authorization </strong>  -> Your API key can be added as either query parameters or by using the 'Authorization' tab. Select the <strong>Parameters tab</strong>, and enter 'api_key' for the key and enter the key provided to you via email as the value.  Press the 'SAVE' button and then press the 'SEND' button.  </p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="3"><strong>4. Narrowing Search</strong> -> Using GitHub Documentation found at this <a href="https://github.com/RTICWDT/open-data-maker/blob/master/API.md" target="_blank">link</a>.  Create a new  request under your CollegeScoreCard API queries that limits the returned results to schools in with the name 'Loyola'. Copy the results and view the structure in <a href="https://jsonformatter.org/json-viewer">https://jsonformatter.org/json-viewer</a>  </p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="4"><strong>5. Complete Multiple Choice question </strong> -> Anwser multiple choice question on the following slide.  </p>
-
-
-				</section>
-
-				<section data-background="#fff">
-					<h2 style="font-size: 1em; color: #1359e5;"><span style=" margin: 3px; padding: 2px;"><span style=" margin: 3px; padding: 8px; background-color: #cae0cb;">CSS</span> Syntax</h2>
-					<div id="flexcontain">
-
-						<div class="box red" style="margin: 10px; padding-top: 5%; height: 600px; background-color: #fff; color: #111; flex-grow: 2;"><img src="images/api/json_ex_spaced.PNG" alt="JSON example"/></div>
-						<div class="box">
-							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="0"><strong><code style="color: blue;">Key/value </code></strong> -> JSON consist of stacked key/value pairs.  Each key/value pair ends with a comma with the exception of the last key/value pair. <br> <span style="color: blue; font-weight: 900;">How many key/value pairs do you see?</span></p>
-							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="2"><strong><code style="color: rgb(236, 20, 20);">Keys</code></strong> -> All keys should have quotations <br> No spaces in keys + good practice to make keys lowercase </p>
-							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="3"><strong><code style="color: green;">Nesting </code></strong> -> key/value pairs can be nested</p>
-							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="4"><strong><code style="color: orangered">Data types</code></strong> -> certain syntax needed for values based on the data</p>
-							<!--<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="5"><strong>6.</strong> <code>git commit -m "adding category"</code> -> Document the change by committing changes and addding a brief message.</p>
-							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="6"><strong>7.</strong> <code>git log</code> -> To view commit history and timestamp.</p>-->
-							
-						</div>
-					</div>
-				</section>
-				<section data-background="white" style="background-size: 80%;">
-					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">JSON Rules and Data Types</h3>
-					<!--<p style="background-color:rgba(255, 255, 255, 0Open a new brow.7);  font-size: .8em; color: black;" class="fragment"> a method of providing <strong>shared computing resources</strong>, including applications, computing, storage, networking, development, and deployment platforms as well as business processes. </p>-->
-					<div id="flexcontain">
-						<div class="box" style="font-size: 20px; margin: 10px; height: 120px; background-color: #eee;"><h4 style="margin-top: 25px;">String</h4><code>"title": "Intro. to JSON"</code></div>
-						<div class="box" style="font-size: 20px; margin: 10px; height: 120px; background-color: #eee;"><h4 style="margin-top: 25px;">Number</h4><code>"participants": 12</code></div>
-						<div class="box" style="font-size: 20px; margin: 10px; height: 120px; background-color: #eee;"><h4 style="margin-top: 25px;">Null</h4><code>"badged_event": null</code></div>
-						<div class="box" style="font-size: 20px; margin: 10px; height: 220px; background-color: #eee;"><h4 style="margin-top: 25px;">Boolean</h4><code>"is_online": true</code></div>
-						<div class="box" style="font-size: 18px; margin: 10px; height: 220px; background-color: #eee;"><h4 style="margin-top: 25px;">Array</h4><code>"skills": ["JSON", "REST API"]</code></div>
-						<div class="box" style="font-size: 20px; margin: 10px; height: 220px; background-color: #eee; text-align: left;"><h4 style="margin-top: 25px; text-align: center;">Object</h4>
-							<code>  &nbsp;&nbsp;&nbsp;"info":{ <br>
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"time": "9AM", <br>
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"hours": 3, <br>
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"isOK": false <br>
-								&nbsp;&nbsp;&nbsp;&nbsp;}
-
-							</code>
-						</div>
-
-					</div>
-					<p> It is common to see an array of objects.  Multiple instances of grouped data with same keys. <br>Think -> rows in an excel sheet</p>
-				</section>
-
-				<section data-background="#fff">
-					<h4>Practice Activity</h4>
-					<div id="flexcontain">
-
-						<div class="box red" style="font-size: 20px; margin: 10px; height: 550px; background-color: #fff; color: #111;"><img src="images/api/student_schedule_json.svg" alt="view of student schedule"/></div>
-						<div class="box">
-							<p style="font-size: .7em;"> Referencing the previous slides, create a JSON object that properly formats all of the content found in the picture. <br><br> Click the button below to construct your code</p>
-							<a href="https://jsonchecker.com/" target="_blank"><div id="jsonbutton">Coding Playground</div></a>
-						</div>
-						
-					</div>
-				</section>
-				<section data-background="#fff">
-					<h4>Retrieving JSON</h4>
-					<div id="flexcontain">
-
-						<div class="box red" style="margin: 10px; padding-top: 5%; height: 700px; background-color: #fff; color: #111; flex-grow: 1;"><img src="images/api/json_ex_spaced.PNG" alt="JSON example"/></div>
-						<div class="box" style="flex-grow: 2;">
-							<pre style="box-shadow: none;">
-								<code style="font-size: 18px; height: 670px;"  data-trim contenteditable>
-										//Write pseudocode here
-
-									
-									
+							<pre style="box-shadow: none; float:left; ">
+								<code style="font-size: 18px; overflow-y: scroll;"  data-trim contenteditable>
+									<!--HTML CODE-->
+									&lt;header&gt;
+										&lt;div id="logo"&gt; 
+											&lt;img src="images/triple_logo.png" alt="Loop Luxury Living Logo" /&gt;
+										&lt;/div&gt;
+										&lt;nav id="top_nav" &gt;
+											&lt;a href=""&gt;Services&lt;/a&gt;
+											&lt;a href=""&gt;Apartments&lt;/a&gt;
+											&lt;a href=""&gt;FAQ&lt;/a&gt;
+										&lt;/nav&gt;
+										&lt;div id="sign_in">&lt;a href="/"&gt;Sign-in&lt;/a&gt;&lt;/div&gt;
+									&lt;/header&gt;
 
 								</code>
 							</pre>
 						</div>
-						
-					</div>
+						<div class="box" style="margin: 10px; text-align: left; margin-top: -10px;">
+							<pre style="box-shadow: none; float: left;">
+								<code style="font-size: 18px; overflow-y: scroll;"  data-trim contenteditable>
+									/**STYLING HEADER OF SITE**/
+									header {
+										width: 100%;
+										padding: 20px 5px 0px 5px;
+										min-height: 100px;
+										border: 4px solid green;
+									}
+									
+									#logo {
+										border: 4px solid blue;
+										margin-right: 20px;
+										width: 300px;
+										float: left;
+									}
+									
+									#logo img {
+										width: 100%;
+									}
+									#top_nav {
+										border: 4px solid red;
+										width: 400px;
+										float: left;
+										padding: 24px;
+									}
+									
+									#top_nav a {
+										color: black;
+										text-decoration: none;
+										margin-right: 40px;
+										padding: 2%;
+										border: 4px solid purple;
+									}
+									
+									#sign_in {
+										border: 4px solid orangered;
+										width: 300px;
+										float: right;
+										height: 67px;
+									}
+									
+									#sign_in a {
+										background-color: teal;
+										color: white;
+										text-decoration: none;
+										padding: 2%;
+										text-transform: uppercase;
+										border-radius: 6px;
+										font-weight: bolder;
+										float: right;
+										margin-top: 16px;
+										margin-right: 20px;
+									}
+
+								</code>
+							</pre>
+
+						</div>
+
+					</div>	
 				</section>
 
-				<section data-background="white" style="background-size: 80%;">
-					<h4 style="background-color:rgba(255, 255, 255, 0.7); color: black;">REST Principles or Constraints</h4>
-					<img src="images/api/client_server_visual.png" width="600" alt="Client Server Architecture Visual" /><br />
-					<cite style="font-size: 12px; margin-top: -28px;">Source: https://medium.com/geekculture/rest-architectural-constraints-495a50ae0651</cite>
+				<section data-background="white" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
+				
 					<div id="flexcontain">
-						<div class="box" style="font-size: 24px; margin: 10px; height: 80px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">Client - Server Arch.</h3><p style="font-size: .5em; font-variant: small-caps;">Separates Client and Server - Client makes request</p></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 80px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">Uniform Interface</h3><p style="font-size: .5em; font-variant: small-caps;">Consistent way of Interaction - HTTP verbs</p></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 80px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">Stateless</h3><p style="font-size: .5em; font-variant: small-caps;">No information from previous request</p></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 80px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">Cachable</h3><p style="font-size: .5em; font-variant: small-caps;">Response determines if cachable or not. Determines clients ability to reuse data</p></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 80px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">Layered System Arch.</h3><p style="font-size: .5em; font-variant: small-caps;">Use of Intermidiary servers(proxies, load balancers, etc..)</p></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 80px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">Representation</h3><p style="font-size: .5em; font-variant: small-caps;">Various Formats - various formats(HTML, JSON, XML, etc..)</p></div>
-					</div>
+						
+						<div class="box" style="height: 90%;  width: 100%;">
+							<a href="pdf/move_in_wireframe_boxes.pdf" target="_blank"><img src="images/frontend/move_in_wireframe_boxes.PNG" style="margin-top: -20px;" alt="Move in Wireframe Page"/></a>
+						</div>
+						<div class="box" style="margin: 10px; text-align: left; margin-top: -10px;">
+							<h4>Code Along Session I</h4>
+							<p style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .5em; padding: 2%;" class="fragment" data-fragment-index="0"><strong style="background-color: red; color: white;">Create &lt;main&gt; Container and add Border</strong><br>1. Add &lt;main&gt; tag to contain everything between header and footer tag.<br>2.  Create a style rule that targets the &lt;main&gt; tag and adds a red border.  </p>
+							<p style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .5em; padding: 2%;" class="fragment" data-fragment-index="1"><strong style="background-color: #fdbe18; color: black;">Create &lt;section&gt; Container and add Border </strong><br> 1. Locate the h3 page title and add a &lt;section&gt; tag with id attribute value as "title" that will contain h3 tag. <br> 2. Create a style rule that targets "foot_structure" attribute and adds a dark yellow border.  </p>
+							<p style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .5em; padding: 2%;" class="fragment" data-fragment-index="2"><strong style="background-color: #20a6f2; color: white;">Create &lt;section&gt; Container and add Border </strong><br> 1. Add &lt;section&gt; tag with id attribute value as "main_section" that will contain both the form and div tags. <br> 2. Create a style rule that targets "main_section" attribute and adds a blue border.</p>	
+						</div>
+
+					</div>	
+				</section>
+				<section data-background="white" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
+				
+					<div id="flexcontain">
+						
+						<div class="box" style="height: 90%;  width: 100%;">
+							<a href="pdf/move_in_wireframe_boxes.pdf" target="_blank"><img src="images/frontend/move_in_wireframe_boxes.PNG" style="margin-top: -20px;" alt="Move in Wireframe Page"/></a>
+						</div>
+						<div class="box" style="margin: 10px; text-align: left; margin-top: -10px;">
+							<h4>Code Along Session II</h4>
+							<p style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .5em; padding: 2%;" class="fragment" data-fragment-index="0"><strong style="background-color: #4e11c4; color: white;">Add class attribute to &lt;form&gt; + &lt;div&gt; tag</strong><br>1. Add class attribute to &lt;form&gt; + &lt;div&gt; tag and add "mid_boxes" as the value. <br>2. Create a style rule that targets the class "mid_boxes" attribute and adds a purple border.  </p>
+							<p style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .5em; padding: 2%;" class="fragment" data-fragment-index="1"><strong style="background-color: green; color: white;">Add id attribute to &lt;footer&gt; tag </strong><br> 1. Locate &lt;footer&gt; tag and add id attribute with "foot_structure" as the value. <br> 2. Create a style rule that targets "foot_structure" attribute and adds a green border.  </p>
+							<p style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .5em; padding: 2%;" class="fragment" data-fragment-index="2"><strong style="background-color: #ffd500; color: black;">Add class attribute to &lt;div&gt; footer div tags </strong><br> 1. Locate &lt;div&gt; tags within footer and add class attribute with "foot_box" as the value.<br> 2. Create a style rule that targets "foot_box" attribute and adds a yellow border.  </p>	
+						</div>
+
+					</div>	
+				</section>
+				<section data-background="white">
+				    <h2 style="font-size: 1em; color: #45378d;"><span style=" margin: 3px; padding: 2px;">Code Along Activity 2 <span style=" margin: 3px; padding: 8px; background-color: #cae0cb;">Completed</span> code!</h2>
+					
+					<div style="height: 500px; width: 900px; overflow-y: scroll; scrollbar-color: #45378d #cae0cb;"><script src="https://gist.github.com/instructorc/5af27d43406cb50672cab91fb515aa95.js"></script></div>
+
+				</section>
+				<section data-background="../webdev/images/ux/ia_bg.jpg">
+				    <h1 style="color: black;">Getting Started with<span style="color: white; background-color: black; margin: 3px; padding: 2px;"> Page Layout</span>!</h1>  
 				</section>
 				<section data-background="" data-background-size="contain" data-background="#fff" style="top: 0;">
-				    <h1>Web Services</h1>
-					<p style="font-size: .5em; line-height: 1.5;">Software systems designed to <strong style="color: white; background-color: black; padding: 3px;">allow interaction</strong> between different applications or systems <strong style="color: white; background-color: black; padding: 3px;">over a network</strong>, typically the internet. They provide a standardized way for <strong style="color: white; background-color: black; padding: 3px;">software components to communicate and exchange data</strong>, enabling the integration of disparate systems and platforms </p>
+				    <h1>Layout Strategy</h1>
+					<p style="font-size: .5em; line-height: 1.5;">A number of strategies can be used to design the layout of your page.  You can use CSS flexbox, CSS grid, float, or a mixture of the three.</p>
 					<div id="flexcontain">
 						<div class="box red" style="font-size: 22px; margin: 10px; height: 400px; background-color: #eee; color: black;">
-							<h2>A few API's</h2>
-							<ul>
-								<li><a href="https://api.nasa.gov/index.html">NASA API</a> [RESTful API]</li>
-								<li><a href="https://world.openfoodfacts.org/data">Open Food Facts</a> [RESTful API]</li>
-								<li><a href="https://www.weatherbit.io/api">Weather Bit API</a> [RESTful API]</li>
-								<li><a href="https://developers.google.com/maps">Google Maps API</a> [Geolocaton API]</li>
-								<li><a href="https://developers.google.com/youtube">YouTube API</a> [Video API]</li>
-								<li><a href="https://developer.spotify.com/documentation/web-api">Spotify API</a> [Media API]</li>
-								<li><a href="https://stripe.com/docs/payments">Stripe API</a> [Payment API]</li>
-							</ul>
+							<h2>Traditional Float</h2>
+							<p>Using float, clear, position </p>
 						</div>
 						<div class="box red" style="font-size: 22px; margin: 10px; height: 400px; background-color: #eee; color: black;">
-							<h2>Web Service Tools</h2>
-							<ul>
-								<li><a href="https://www.postman.com/" target="_blank">Postman</a></li>
-								<li><a href="https://curl.se/" target="_blank">cURL</a></li>
-								<li><a href="https://hoppscotch.io/" target="_blank">Hoppscotch</a></li>
-					
-		
-							</ul>
+							<h2>CSS Flexbox</h2>
+							<p>Lends itself to responsive design.  An easier way to work with pages.</p>
 						</div>
 						<div class="box red" style="font-size: 22px; margin: 10px; height: 400px; background-color: #eee; color: black;">
-							<h2>Considerations</h2>
-							<ul>
-								<li>Obtaining an API Key</li>
-								<li>Paid and Free Services</li>
-								<li>Request Limits</li>
-								<li>Adhering to License Requirements and Limitations</li>
-		
-							</ul>
+							<h2>CSS Grid</h2>
+							<p>Implementation is similar to CSS Flexbox.  CSS Grid defines a grid where you can place box elements on to the grid.</p>
 						</div>
 					</div>				  
-
 				</section>
 				<section data-background="#fff">
-					<h4>Making a Request</h4>
-				    <h3 style="font-size: .5em; color: #696969;">URI Query syntax | Http verbs | Query Paramters | Authorization | Header Paramters</h3>
-
-					<a href="https://hoppscotch.io/"><img src="images/api/hoppscotch_request_tool.PNG" style="box-shadow: 1px 4px 8px 2px gray; border-radius: 16px;" width="600" alt="Picture of Hoppscotch Request tool" /></a><br />
-					<p style="font-size: .7em; color: #696969;">https://data.cityofchicago.org/resource/d6ui-3yap.json</p>
-
-					<h4>GET	|   POST	 |   	PUT		|   	DELETE	 </h4>
-				</section>
-
-				<section data-background="#fff">
-				
-					<h4>Practice Activity</h4>
-					<p>Follow the steps to make a successful request to the college scorecard API</p>
+					<h4>CSS Flex Steps</h4>
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 1</strong><br> Navigate to <a href="https://api.data.gov/signup/"> https://api.data.gov/signup/</a> to sign up for an API Key.  Check your email and copy the api key.  You will need to provide the API Key as a key/value parameter as part of your request.</p></div>
-						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 2</strong><br> Open a new browser and navigate to <a href="https://hoppscotch.io/">hoppscotch.io</a> and follow the steps on the next slide. </p></div>
-						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 3</strong><br> Review and Interpret the data by return from request.  Navigating to the next two slides select an option for the two multiple choice questions. </p></div>
-					</div>				
-				</section>
-				<section data-background="#eeeeee" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
-					<h2>Practice Activity Steps</h2>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="0"><strong>1. Creating a Collection of Queries</strong> -> Click the new button and name the collection <strong>CollegeScoreCard API queries </strong></p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="1"><strong>2. Create a Request Instance</strong> -> Select the three stacked dots symbol next to the folder and select 'New Request'.  Name the request "General School Query".  A new tab will display with the request name you entered. Underneath the tab, Make sure 'GET' is preset as the dropdown option.  Remove the URL 'https://echo.hoppscotch.io' and add the URL below. <br> https://api.data.gov/ed/collegescorecard/v1/schools.json</p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="2"><strong>3. Adding API Key for Authorization </strong>  -> Your API key can be added as either query parameters or by using the 'Authorization' tab. Select the <strong>Parameters tab</strong>, and enter 'api_key' for the key and enter the key provided to you via email as the value.  Press the 'SAVE' button and then press the 'SEND' button.  </p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="3"><strong>4. Narrowing Search</strong> -> Using GitHub Documentation found at this <a href="https://github.com/RTICWDT/open-data-maker/blob/master/API.md" target="_blank">link</a>.  Create a new  request under your CollegeScoreCard API queries that limits the returned results to schools in with the name 'Loyola'. Copy the results and view the structure in <a href="https://jsonformatter.org/json-viewer">https://jsonformatter.org/json-viewer</a>  </p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="4"><strong>5. Complete Multiple Choice question </strong> -> Anwser multiple choice question on the following slide.  </p>
-
-
-				</section>
-				<section data-background="#eee" data-background-size="contain" data-background="#fff" style="top: 0; text-align: left;">
-					<h2>College Scorecard API Question #1</h2>
-					
-				     <p>How many schools are returned from the request:</p>
-				     <input type="radio" id="age1" name="score" value="30">
-				     <label for="score1">A) 68</label><br>
-				     <input type="radio" id="age2" name="score" value="60">
-				     <label for="score2">B) 4 </label><br>  
-				     <input type="radio" id="age3" name="score" value="100">
-				     <label for="score3">C) 2</label><br>
-					 <input type="radio" id="age3" name="score" value="100">
-				     <label for="score4">D) 6</label><br><br>
-				  
-				</section>
-
-
-				<section data-background="../webdev/images/ux/ia_bg.jpg">
-				    <h1 style="color: black;"><span style="color: white; background-color: black; margin: 3px; padding: 2px;">Responsive</span> and <span style="color: white; background-color: black; margin: 3px; padding: 2px;">Accessible </span> web design</h1>
-				   
-				</section>
-				<section data-background="#fff">
-					<h3>Low-code/No-Code Dev. Environments + BI Tools</h3>
-					<div id="flexcontain">
-						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/api/Appsmith_Logo.svg" width="120" style="margin-top: 75px;" alt="AppSmith logo"/></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/api/retool_logo.webp" alt="Retool.com logo"/></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/api/powerapps-case-845x321.jpg" alt="microsoft power apps logo"/></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/api/powerbi_logo.jpg" style="margin-top: 25px;" width="200" alt="Power BI logo"/></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/api/google_datastudio_logo.png" width="200" alt="google data studio logo"/></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: transparent;"><img src="images/api/Tableau-Emblem.png" width="130" alt="tableau logo"/></div>
+						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #32E875; color: #333;"><p><b>Step 1</b><br> Define a container element as a grid with <em>display: flex;</em></p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #2E933C;"><p><b>Step 2</b><br> Give structure to flex-items and set the flex-grow, flex-shrink, and flex-basis for each box. <em>flex: 1 0 300px;</em></p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; background-color: #297045;"><p><b>Step 3</b><br> Define flow of boxes using either flex-direction or flex-wrap <em>flex-wrap: wrap;</em></p></div>
 
 					</div>
-					<a href="https://www.appsmith.com/">Click here to create an AppSmith account</a>
-				</section>
-				<section data-background="#fff">
-				
-					<h4>Practice Activity</h4>
-					<p>Follow the steps to create an AppSmith App that visualize the city of Chicago estimated revenue sources</p>
-					<div id="flexcontain">
-						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 1</strong><br> Sign into your AppSmith account and skip the tutorial when you first log in.</p></div>
-						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 2</strong><br> Select from one the REST API's above and follow the steps on the next slide. </p></div>
-						<div class="box red" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p><strong>Step 3</strong><br> If you finish early, look around and see if you can assist someone else.</p></div>
-					</div>				
+					<a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" style="font-size: .4em;">Chris Coyier's CSS tricks tutorial on using CSS Flexbox</a> 
 				</section>
 				<section data-background="#eeeeee" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
-					<h4>Process and Steps</h4>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;" class="fragment" data-fragment-index="0"><strong>1. Select Datasource option </strong>-> Click on the new datasource plus sign in left column and select <strong>'REST API'</strong> </p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;" class="fragment" data-fragment-index="1"><strong>2. Configure API Request</strong> -> Rename the datasource to 'cityofchicago_api' <br> Make sure the http verb is set to 'GET' and add the URI below: <br> <strong><code>https://data.cityofchicago.org/resource/at79-usba.json</code></strong></p>
+					<h2>Our Layout Strategy</h2>
+					<a href="pdf/move_in_wireframe_boxes.pdf" target="_blank"><img src="images/frontend/move_in_wireframe_boxes.PNG" style="margin-top: -20px;" width="400" alt="Move in Wireframe Page"/></a>
+				</section>
+				<section data-background="../webdev/images/layout/css_grid.jpg">
+					<h1 id="boxstyle2" style="background-color: #ffffffb6; color: black;"> CSS Grid</h1>
+				</section>
+				<section data-background="#fff">
+					<h4>CSS Grid Steps</h4>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #32E875; color: #333;"><p><b>Step 1</b><br> Define a container element as a grid with <em>display: grid</em></p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #2E933C;"><p><b>Step 2</b><br> Set the column and row sizes with grid-template-columns and grid-template-rows</p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; background-color: #297045;"><p><b>Step 3</b><br> Place child elements into the grid with grid-column and grid-row</p></div>
+
+					</div>
+					<a href="https://css-tricks.com/snippets/css/complete-guide-grid/" style="font-size: .4em;">Chris Coyier's CSS tricks tutorial on using CSS Grid</a> 
+				</section>
+				<section data-background="#f1f1f1">
+					<h4>Defining the Grid</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<pre style="box-shadow: none;">
+								<code style="font-size: 18px; line-height: 1em;" class="css hljs"  data-trim contenteditable>
+									.grid {
+									 display: grid;
+									 grid-template-columns: repeat(4, 1fr);
+									 grid-template-rows: repeat(4, 75px);
+									}
+	
+	
+								</code>
+							</pre>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="../webdev/images/layout/define_grid.jpg" width="525" style="box-shadow: none; border: none;"alt="Defining CSS Grid">
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#f1f1f1">
+					<h4>Defining a Complex Grid</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<pre style="box-shadow: none;">
+								<code style="font-size: 18px; line-height: 1em;" class="codebox code-example__codebox"  data-trim contenteditable>
+									.grid {
+									 display: grid;
+									 grid-template-columns: repeat(4, 1fr);
+									 grid-template-rows: 40px 2fr repeat(2, minmax(75px, 1fr));
+									}
+	
+	
+								</code>
+							</pre>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="../webdev/images/layout/grid_columns_rows.jpg" width="525" style="box-shadow: none; border: none;"alt="Complex Grid layout">
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#f1f1f1">
+					<h4>Positioning items in the Grid using line numbers</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<pre style="box-shadow: none;">
+								<code style="font-size: 18px; line-height: 1em;" class="codebox code-example__codebox"  data-trim contenteditable>
+									.grid {
+									 	display: grid;
+									 	grid-template-columns: repeat(4, 1fr);
+									 	grid-template-rows: 40px 2fr repeat(2, minmax(75px, 1fr));
+									}
+									
+									#item1{
+										grid-column-start: 2;
+										grid-column-end: 4;
+										grid-row-start: 3;
+										grid-row-end: -1;
+										background-color: red;
+									}
+									
+									#item2{
+										grid-column: 3;
+										grid-row: 1;
+										background-color: red;
+									}
+	
+	
+								</code>
+							</pre>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="../webdev/images/layout/grid_template_lines.jpg" width="525" style="box-shadow: none; border: none;"alt="Position in Grid using lines">
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#f1f1f1">
+					<h4>Positioning items in the Grid using area names</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<pre style="box-shadow: none;">
+								<code style="font-size: 18px; line-height: 1em;" class="codebox code-example__codebox"  data-trim contenteditable>
+									.grid {
+									 	display: grid;
+									 	grid-template-columns: repeat(4, 1fr);
+									 	grid-template-rows: 40px 2fr repeat(2, minmax(75px, 1fr));
+									 	grid-template-areas: ". . . ." 
+                                                             "item1 . . ." 
+                                                             "item1 item2 item2 item2" 
+                                                             " . item2 item2 item2";
+									}
+									
+									#item1{
+										grid-area: item1;
+										background-color: red;
+									}
+									
+									#item2{
+										grid-area: item2;
+										background-color: red;
+									}
+	
+	
+								</code>
+							</pre>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="../webdev/images/layout/grid_template_areas.jpg" width="525" style="box-shadow: none; border: none;"alt="Position in Grid using template areas">
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="white" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
+				
+					<div id="flexcontain">
+						
+						<div class="box" style="height: 90%;  width: 100%;">
+							<a href="pdf/move_in_wireframe_boxes.pdf" target="_blank"><img src="images/frontend/move_in_wireframe_boxes.PNG" style="margin-top: -20px;" alt="Move in Wireframe Page"/></a>
+						</div>
+						<div class="box" style="margin: 10px; text-align: left; margin-top: -10px;">
+							<h4>Code Along Session I</h4>
+							<p style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .5em; padding: 2%;" class="fragment" data-fragment-index="0"><strong style="background-color: #fdbe18; color: black;">Structure &lt;h3&gt; and adjust CSS </strong><br> 1. Adjust the font-size, font-weight and padding for h3 tag.  Using a descendent selector - Add CSS property font-size: 2.6em; font-weight: 100; margin: 20px 0px 20px 10px;. </p>
+							<p style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .5em; padding: 2%;" class="fragment" data-fragment-index="1"><strong style="background-color: #20a6f2; color: white;">Implement Flexbox </strong><br> 1. Target the &lt;section&gt; tag with id attribute value as "main_section" and add CSS properties <em>display: flex; flex-wrap: wrap;</em> <br> 2. Observe the difference in the browser.</p>	
+							<p style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .5em; padding: 2%;" class="fragment" data-fragment-index="2"><strong style="background-color: #4e11c4; color: white;">Target Flex-items (children of container)</strong><br>1. Target &lt;form&gt; + &lt;div&gt; tag by their class attribute "mid_boxes" and add CSS properties<br><em>flex: 1 0 300px; </em><br><em>margin: 2%;</em> <br><em>max-width:</em> </p>
+						</div>
+
+					</div>	
+				</section>
+				<section data-background="white" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
+				
+					<div id="flexcontain">
+						
+						<div class="box" style="height: 90%;  width: 100%;">
+							<a href="pdf/move_in_wireframe_boxes.pdf" target="_blank"><img src="images/frontend/move_in_wireframe_boxes.PNG" style="margin-top: -20px;" alt="Move in Wireframe Page"/></a>
+						</div>
+						<div class="box" style="margin: 10px; text-align: left; margin-top: -10px;">
+							<h4>Code Along Session II</h4>
+							<p style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .5em; padding: 2%;" class="fragment" data-fragment-index="0"><strong style="background-color: #4e11c4; color: white;">Add class attribute to &lt;form&gt; + &lt;div&gt; tag</strong><br>1. Add class attribute to &lt;form&gt; + &lt;div&gt; tag and add "mid_boxes" as the value. <br>2. Create a style rule that targets the class "mid_boxes" attribute and adds a purple border.  </p>
+							<p style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .5em; padding: 2%;" class="fragment" data-fragment-index="1"><strong style="background-color: green; color: white;">Add id attribute to &lt;footer&gt; tag </strong><br> 1. Locate &lt;footer&gt; tag and add id attribute with "foot_structure" as the value. <br> 2. Create a style rule that targets "foot_structure" attribute and adds a green border.  </p>
+							<p style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .5em; padding: 2%;" class="fragment" data-fragment-index="2"><strong style="background-color: #ffd500; color: black;">Add class attribute to &lt;div&gt; footer div tags </strong><br> 1. Locate &lt;div&gt; tags within footer and add class attribute with "foot_box" as the value.<br> 2. Create a style rule that targets "foot_box" attribute and adds a yellow border.  </p>	
+						</div>
+
+					</div>	
+				</section>
+				<section data-background="../webdev/images/ux/ia_bg.jpg">
+				    <h1 style="color: black;"><span style="color: white; background-color: black; margin: 3px; padding: 2px;">Accessible</span> and <span style="color: white; background-color: black; margin: 3px; padding: 2px;">Responsive </span> web design</h1>
+				</section>
+				<section data-background="#fff">
+					<h3>Validating your code</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 24px;">Valid code conforms to W3C rules.</li><br>
+   								<li style="font-size: 24px;">Valid code enhances browser compatibility, accessibility, and exchange of data</li>
+  								<li style="font-size: 24px;">The most common mistakes include:</li>							
+								<ul>
+									<li>No doctype declaration</li>
+							        <li>Missing closing tags</li>
+			                        <li>Missing alt attributes in image elements</li>
+			                        <li>Incorrect tag nesting</li>
+			                        <li>Unquoted attributes</li>
+							    </ul>
+							    <li style="font-size: 24px;"><a href="https://validator.w3.org/">W3C Validation Service Link</a></li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="../webdev/images/html/validation.PNG" alt="W3C validation image">
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Accessibility Principles</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #9AD1D4;"><p><b style="font-size: 30px;">Perceivable</b> <br>People can see the content or hear it </p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #80CED7;"><p><b style="font-size: 30px;">Operable</b> <br>people can typing or by voice </p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; background-color: #007EA7;"><p><b style="font-size: 30px;">Understandable information</b> <br>people get clear and simple language  </p></div>
+						<div class="box orange" style="font-size: 24px; margin: 10px; background-color: #003249;"><p><b style="font-size: 30px;">Robust content </b> <br>people can use different assistive technology</p></div>
+					
+					</div>
+					<a href="https://www.w3.org/WAI/WCAG21/quickref/" style="font-size: .4em;">Click here for WCAG Quick reference Guidelines</a>
+				</section>
+				<section data-background="#fff">
+					<h3>Accessibility Tools and Resources</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #a8c2ac;"><p><b style="font-size: 22px;">WAVE Web Accessibility Evaluation Tool</b> <br>WAVE can identify many accessibility and Web Content Accessibility Guideline (WCAG) errors, but also facilitates human evaluation of web content. </p></div>
+						<div class="box blue" style="font-size: 18px; margin: 10px; background-color: #e4df7e;"><p><b style="font-size: 22px;">The A11yProject</b> <br>A checklist that uses the the Web Content Accessibility Guidelines (WCAG).  You can access the list <a href="https://www.a11yproject.com/checklist/">here</a>  </p></div>
+						<div class="box green" style="font-size: 18px; margin: 10px; background-color: #f49455;"><p><b style="font-size: 22px;">Web Accessibility Evaluation Tools List</b> <br><a href="https://www.w3.org/WAI/ER/tools/">Web accessibility evaluation tools</a> are software programs or online services that help you determine if web content meets accessibility guidelines.  </p></div>
+					
+					</div>
+					<a href="https://www.w3.org/WAI/WCAG21/quickref/" style="font-size: .4em;">Click here for WCAG Quick reference Guidelines</a>
+				</section>
+				<section data-background="#fff">
+					<h3>Accessible Color Evaluation</h3>
+					<img src="../webdev/images/ux/ratios.webp" width="500" alt="image of color contrast acceptable ratio levels " title="Attribution: http://generic.wordpress.soton.ac.uk/digital-learning/2021/04/04/how-can-i-use-colour-accessibly/">
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Identify a website that utilizes color and identify a 1 page of the site to evaluate.  </div>
+						<div class="box blue" style="font-size: 18px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Perform a color evaluation on the site using the link below and observe areas of the site that meet the ratio standard and areas of the site that fall short of the standard.<br><a href="https://color.a11y.com/?wc3">https://color.a11y.com/?wc3</a>  </p></div>
+						<div class="box green" style="font-size: 18px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Using the color picker in the browser developer tools, make a recommendation of closely related colors that would pass meet the minimum ratio level.</p></div>
+
+					</div>
+
+				</section>
+			
+				<section data-background="#eeeeee" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
+					<h4>Resources</h4>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;"><strong>1. Select Datasource option </strong>-> Click on the new datasource plus sign in left column and select <strong>'REST API'</strong> </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;"><strong>2. Configure API Request</strong> -> Rename the datasource to 'cityofchicago_api' <br> Make sure the http verb is set to 'GET' and add the URI below: <br> <strong><code>https://data.cityofchicago.org/resource/at79-usba.json</code></strong></p>
 					<!--<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="2"><strong>3. Add query parameters</strong> -> Add two query paramters that limits the requested data to 'City Council' and 'Alderman' Use keys: <strong><code>organization_description</code></strong> and <strong><code>title_description</code> </strong></p>-->
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;" class="fragment" data-fragment-index="2"><strong>3. Add Table Widget and connect datasource</strong> -> Select the widgets tab and drag a table on canvas area.  Click the <strong><code>'Connect data'</code></strong> button and select <strong><code>cityofchicago_api</code></strong> under Connect to query</p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;" class="fragment" data-fragment-index="3"><strong>4. Add Another Widget: JSON Form</strong> -> Select the widgets tab and search for <strong><code>JSON form</code></strong> and drag to canvas area.  Select 'Generate Form' and connect to table widget.</p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;" class="fragment" data-fragment-index="4"><strong>5. Add Another Widget: Chart </strong> -> Select the widgets tab and search for <strong><code>Chart</code></strong> and drag to canvas. Using the properties panel to the left, select <strong><code>'Pie Chart</code></strong> for Chart type. </p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;" class="fragment" data-fragment-index="5"><strong>6. Add Chart Datasource</strong> -> Using the properties panel to the left, scroll down to the series data and enter the javascript code below. <br> <code>{{cityofchicago_api.data.map(p => ({x:p.revenue_source, y: p.estimated_revenue}))}}</code></p>
-					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;" class="fragment" data-fragment-index="6"><strong>7. Adjust Chart Properties</strong> -> Using the Chart properties panel, adjust <strong>'Series title'</strong> to <strong>'Estimated Revenue Sources'</strong>. Adjust <strong>'Title'</strong> to <strong>'City of Chicago Estimated Revenue'</strong> </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;"><strong>3. Add Table Widget and connect datasource</strong> -> Select the widgets tab and drag a table on canvas area.  Click the <strong><code>'Connect data'</code></strong> button and select <strong><code>cityofchicago_api</code></strong> under Connect to query</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;"><strong>4. Add Another Widget: JSON Form</strong> -> Select the widgets tab and search for <strong><code>JSON form</code></strong> and drag to canvas area.  Select 'Generate Form' and connect to table widget.</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;"><strong>5. Add Another Widget: Chart </strong> -> Select the widgets tab and search for <strong><code>Chart</code></strong> and drag to canvas. Using the properties panel to the left, select <strong><code>'Pie Chart</code></strong> for Chart type. </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;"><strong>6. Add Chart Datasource</strong> -> Using the properties panel to the left, scroll down to the series data and enter the javascript code below. <br> <code>{{cityofchicago_api.data.map(p => ({x:p.revenue_source, y: p.estimated_revenue}))}}</code></p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;"><strong>7. Adjust Chart Properties</strong> -> Using the Chart properties panel, adjust <strong>'Series title'</strong> to <strong>'Estimated Revenue Sources'</strong>. Adjust <strong>'Title'</strong> to <strong>'City of Chicago Estimated Revenue'</strong> </p>
 				</section>
 				<section data-background="#eee" data-background-size="contain" data-background="#fff" style="top: 0; text-align: left;">
 					<h2>Data Type Activity</h2>
