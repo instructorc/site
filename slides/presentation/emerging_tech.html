@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Emerging Technology</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/luc.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;800&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@200&family=Roboto:ital,wght@0,300;1,100&family=Staatliches&display=swap" rel="stylesheet">
+		<style>
+			body{
+				font-family: 'Gabarito' !important;
+			}
+			section  p{
+				font-size: .7em;
+			}
+			#jsonbutton {
+				background-color: orangered;
+				color: white;
+				width: auto;
+				margin: auto;
+				padding: 20px;
+				transition: 1s all;
+			}
+			#jsonbutton:hover {
+				background-color: #ff0c00;
+				box-shadow: 2px 2px 10px #333;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="#fff">
+				    <h2 style=" color: #000;">Emerging Technology </h2>
+					<h3 style=" color: #000; font-weight: 100; font-size: .9em;">Leading Technologies in the 21st century</h3>
+				   
+					<img src="images/frontend/htmlcsspagedesign.svg" width="140" style="margin-bottom: -2%;" alt="api slide presentation QR code"/>
+					<p style="font-size: 24px;">https://tinyurl.com/htmlcsspagedesign</p>
+				    <h3 style="color: #000; font-weight: 100; margin-top: 20spx; font-size: 32px;">Instructor: Chris Fulton</h3>
+				    <img src="images/frontend/luc_logo.jpg" width="190" style="position: fixed; bottom: 0; margin-left: -10%; margin-bottom: 5%;" alt="LUC logo">
+				</section>
+				<section data-background=""  data-background="#fff" style="top: 0;">
+				    <h2>Agenda</h2>
+
+				    <ul>
+				        <li style="font-size: 60%;">First Hour</li>
+				        <ul>
+				        	<li style="font-size: 40%;">History, Context and Development Environment Walk-through</li>
+							<li style="font-size: 40%;">Understanding HTML and Stucture of Content</li>	
+							<li style="font-size: 40%;">HTML Practice + <span style="background-color: black; color: white;">Code Along Session</span> </li>
+				        </ul>
+						<li style="font-size: 30%; list-style-type: none;">[10 min. break]</li>
+				        <li style="font-size: 60%;">Second Hour</li>
+				        <ul>
+				        	<li style="font-size: 40%;">Understanding + Implementing CSS</li>
+							<li style="font-size: 40%"> Color and Graphic Scheme</li>
+							<li style="font-size: 40%;">Box Strategy + <span style="background-color: black; color: white;">Code Along Session</span> </li>	
+				        </ul>
+						<li style="font-size: 30%; list-style-type: none;">[20 min. break]</li>
+						<li style="font-size: 60%;">Third Hour</li>
+				        <ul>
+				        	<li style="font-size: 40%;">Understanding Page Layout using Flexbox and Grid</li>
+							<li style="font-size: 40%"> Page Layout Strategy and Tips </li>
+				        	<li style="font-size: 40%;">Page Layout Implementation + <span style="background-color: black; color: white;">Code Along Session</span> </li>
+
+
+				        </ul>
+						<li style="font-size: 30%; list-style-type: none;">[10 min. break]</li>
+						<li style="font-size: 60%;">20 Minute Wrap-Up</li>
+				        <ul>
+							<li style="font-size: 40%;">Reviewing Responsive + Accessible Design Considerations</li>	
+							<li style="font-size: 40%;">Resources</li>	
+
+				        </ul>
+				    </ul>
+
+				</section>
+				<section data-background="" data-background-size="contain" data-background="#fff" style="top: 0;">
+				    <h2>Learning Objectives</h2>
+				    <ul>
+				        <li style="font-size: 70%;">You will learn how to:</li>
+				        <ul>
+							<li style="font-size: 50%;">Create a web project using a coding development environment</li>
+							<li style="font-size: 50%;">Apply the appropriate semantic HTML tags to describe content within a HTML document</li>
+				        	<li style="font-size: 50%;">Construct a basic HTML document structure that implement a structured layout</li>
+							<li style="font-size: 50%;">Integrate color, graphics, and fonts into a web page </li>	
+							<li style="font-size: 50%;">Implement design principles including accessible and responsive design practices</li>
+	
+				      	</ul>
+						  <li style="font-size: 70%;">Skills:</li>
+						  <ul>
+							  <li style="font-size: 50%;">HTML/CSS, Accessible Web Design, Responsive Design, Webpage Layout</li>
+							</ul>
+				    </ul>
+				</section>
+				<section data-background="../webdev/images/ux/ia_bg.jpg">
+				    <h4 style="color: black;">What do you think are the leading <span style="color: white; background-color: black; margin: 3px; padding: 2px;">Technologies </span> of the current time?</h4>
+					<a href="pdf/2015RP_Rotolo_Hicks_Martin_Preprint.pdf"><img src="images/emerge_tech/emerge_tech.png" width="600" alt="Emerging Tech Image" /></a>
+					
+				</section>
+				<section data-background="white" style="background-size: 80%; top: 0.5px; display: block;" class="has-light-background present">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">JSON Rules and Data Types</h3>
+					<!--<p style="background-color:rgba(255, 255, 255, 0.7);  font-size: .8em; color: black;" class="fragment"> a method of providing <strong>shared computing resources</strong>, including applications, computing, storage, networking, development, and deployment platforms as well as business processes. </p>-->
+					<div id="flexcontain">
+						<div class="box" style="font-size: 20px; margin: 10px; height: 120px; background-color: #eee;"><h4 style="margin-top: 25px;">String</h4><code>"title": "Intro. to JSON"</code></div>
+						<div class="box" style="font-size: 20px; margin: 10px; height: 120px; background-color: #eee;"><h4 style="margin-top: 25px;">Number</h4><code>"participants": 12</code></div>
+						<div class="box" style="font-size: 20px; margin: 10px; height: 120px; background-color: #eee;"><h4 style="margin-top: 25px;">Null</h4><code>"badged_event": null</code></div>
+						<div class="box" style="font-size: 20px; margin: 10px; height: 220px; background-color: #eee;"><h4 style="margin-top: 25px;">Boolean</h4><code>"is_online": true</code></div>
+						<div class="box" style="font-size: 18px; margin: 10px; height: 220px; background-color: #eee;"><h4 style="margin-top: 25px;">Array</h4><code>"skills": ["JSON", "REST API"]</code></div>
+						<div class="box" style="font-size: 20px; margin: 10px; height: 220px; background-color: #eee; text-align: left;"><h4 style="margin-top: 25px; text-align: center;">Object</h4>
+							<code>  &nbsp;&nbsp;&nbsp;"info":{ <br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"time": "9AM", <br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"hours": 3, <br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"isOK": false <br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}
+
+							</code>
+						</div>
+
+					</div>
+					<p> It is common to see an array of objects.  Multiple instances of grouped data with same keys. <br>Think -&gt; rows in an excel sheet</p>
+				</section>
+				<section data-background="#fff">
+					<h4>Development Environment + Resources</h4>
+					<div id="flexcontain">
+
+						<div class="box red" style="margin: 10px; padding-top: 5%; height: 700px; background-color: #fff; color: #111; flex-grow: 2;"><a href="https://codesandbox.io/p/sandbox/64w6hj" target="_blank"><img src="images/frontend/codesandbox_web_image.PNG" width="500" alt="visual of codesandbox.io templates webpage" /></a></div>
+						<div class="box">
+							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;"><strong>How will we construct our code?</strong><br>We'll use an online text-editor called codesandbox.io.  </p>
+							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;"><strong>Create an Account</strong><br> Click on image to the left and create an account. *If you do not have a Google or Apple account, you can quickly create a Github account and sign-in </p>
+							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;"><strong>Fork the project</strong><br> Click the "Fork" button in upper right hand corner to duplicate the web project.</p>
+	
+						</div>
+					</div>
+				</section>
+				<section>
+					<h4>What is HTML?  What is CSS?</h4>
+					<img src="images/frontend/house_css.png" alt="House, HTML, CSS analogy graphic">
+			
+					<p style="font-size: .7em;"><strong>HTML</strong> Provides structure to site content.  <b>CSS</b> Shapes and formats the site content</p>
+				</section>
+				<section data-background="#fefde7">
+				    <h2 style="font-size: 2.3em; color: #45378d;"><span style=" margin: 3px; padding: 2px;">What is the <span style=" margin: 3px; padding: 8px; background-color: #cae0cb;">DOM?!</span></h2>
+					
+					<img src="images/frontend/htmlstructure.png" width="620" alt="Document Object Model Structure" /><br />
+
+					<!--<h4 style="color: white;"><a href="https://www.mongodb.com/databases/json-database#json-database-examples" target="_blank">Databases</a>  |   <a href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-processing-training-config-file-example.html" target="_blank">Configuration</a> |   <a href="" target="_blank">REST API</a> </h4>-->
+				</section>
+				<section data-background="#fff">
+					<h4>Most Commonly Used HTML Tags</h4>
+					<div id="flexcontain">
+
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 550px; background-color: #fff; color: #111;">
+							<img src="images/frontend/commonly_used_html_tags.jpg" width="600" alt="commonly used html tags"/>
+							<cite style="font-size: 12px; margin-top: -28px;">Source: https://medium.com/healthwellnext/how-to-write-html-part-2-understanding-tags-fd8fc583a06a</cite>
+						</div>
+						<div class="box">
+							<p style="font-size: .7em;"> To the left, you will find a list of some of the most commonly used HTML tags. <br><br> Below is a link to W3 Schools that provides an exhaustive list of tags along with an example.</p>
+							<a href="https://www.w3schools.com/tags/default.asp" target="_blank"><div id="jsonbutton">List of HTML tags</div></a>
+						</div>
+						
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h4>Void or Empty Elements</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px;">
+							<ul>	
+								<li style="font-size: 22px;">Some HTML elements contain only a single tag. These are known as <b>void elements</b></li>
+   								<li style="font-size: 22px;">Commonly used empty/void elements include:</li>
+   								<ul>
+   									<li style="font-size: 14px;"><xmp><img src="face.jpg" alt="Happy Face" ></xmp></li>
+   									<li style="font-size: 14px;"><xmp><link href="css/style.css" type="text/css" rel="stylesheet" ></xmp></li>
+   									<li style="font-size: 14px;"><xmp><br></xmp></li>
+   									<li style="font-size: 14px;"><xmp><meta charset="UTF-8"></xmp></li>
+   								</ul>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="../webdev/images/html/voidelements.PNG" alt="Picture of void elements">
+						</div>
+					</div>
+				</section>
+				<section data-background="white" style="background-size: 80%;">
+					<h4 style="background-color:rgba(255, 255, 255, 0.7); color: black;">HTML Syntax and Rules</h4>
+					<img src="images/frontend/html_syntax_rules.png" width="700" alt="image of h1 element with explanation of syntax" /><br />
+					<cite style="font-size: 12px; margin-top: -28px;">Source: https://medium.com/geekculture/rest-architectural-constraints-495a50ae0651</cite>
+					<div id="flexcontain">
+						<div class="box" style="font-size: 24px; margin: 10px; height: 170px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">Start Tag</h3><p style="font-size: .9em; font-variant: small-caps;">Consist of the name of the tag enclosed by greater and less than sign. Ex. &lt;p&gt;</div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 170px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">Content Text</h3><p style="font-size: .9em; font-variant: small-caps;">Place the content between opening and closing tag you would like to give structure to.</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 170px; background-color: #eee;"><h3 style="margin-top: 10px; margin-bottom: -15px;">End Tag</h3><p style="font-size: .9em; font-variant: small-caps;">Consist of the name of the tag enclosed by &lt;/p&gt;</p></div>
+
+					</div>
+				</section>
+
+				<section data-background="#fff">
+					<h2 style="font-size: 1em; color: #057b5f;"><span style=" margin: 3px; padding: 2px;">A few HTML <span style=" margin: 3px; padding: 8px; background-color: #cae0cb;">Considerations</span>!</h2>
+					<div id="flexcontain">
+
+						<div class="box red" style="margin: 10px; padding-top: 5%; height: 600px; background-color: #fff; color: #111; flex-grow: 2;"><img src="images/frontend/html_considerations.PNG" alt="Image of HTML DOM Structure" style="max-width: 103%;"/></div>
+						<div class="box">
+							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="0"><strong><code style="color: blue;">Indentation + Nesting of HTML tags</code></strong><br>Indentation is good coding practice - Easier to read and understand code.  Nesting the tags establishes a child/parent relationship and complies to DOM tree structure </p>
+							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="2"><strong><code style="color: rgb(236, 20, 20);">Understanding the &lt;div&gt; tag, </code></strong><br> The div tag serves as a container to group tags. Other container tags include &lt;header&gt;,&lt;nav&gt;, &lt;footer&gt;, &lt;section&gt;, &lt;article&gt;,&lt;aside&gt;. </p>
+							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="3"><strong><code style="color: green;">Attributes</code></strong><br> Placed in the opening tag and provides additional information to tag.</p>
+							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em;" class="fragment" data-fragment-index="4"><strong><code style="color: orangered;">Linking to External Resources</code></strong><br> Including images or linking to a style sheet</p>
+
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h4>Quick Practice</h4>
+					<div id="flexcontain">
+
+						<div class="box red" style="margin: 10px; padding-top: 5%; height: 700px; background-color: #fff; color: #111; flex-grow: 1;">
+							<div id="flexcontain">
+								<div class="box" style="font-size: 24px; margin: 10px; height: 140px; background-color: #eee;"><h4 style="margin-top: 10px; margin-bottom: -15px;">Step 1</h4><p style="font-size: .9em; font-variant: small-caps;">Using an &lt;h1&gt; tag, add your name to the right.</div>
+								<div class="box" style="font-size: 24px; margin: 10px; height: 170px; background-color: #eee;"><h4 style="margin-top: 10px; margin-bottom: -15px;">Step 2</h4><p style="font-size: .9em; font-variant: small-caps;">Using this <a href="https://www.w3schools.com/tags/default.asp" target="_blank">W3C Resource</a>, search and identify the most approapriate tag that allows you to create a bullet point list of the items you ate for breakfast.</p></div>
+		
+							</div>
+						</div>
+						<div class="box" style="flex-grow: 2;">
+							<pre style="box-shadow: none;">
+								<code style="font-size: 18px; height: 670px;"  data-trim contenteditable>
+								<!--Use space below to code HTML -->	
+
+									
+									
+
+								</code>
+							</pre>
+						</div>
+						
+					</div>
+				</section>
+
+				<section data-background="white" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
+					<h2>Code Along Session</h2>
+					<div id="flexcontain">
+						<div class="box" style="height: 90%;  width: 100%;">
+							<img src="images/frontend/move_in_wireframe_color.png" style="margin-top: -20px;" alt="Move in Wireframe Page"/>
+						</div>
+						<div class="box" style="margin: 10px; text-align: left; margin-top: -30px;">
+							<p style="background-color:rgba(249 255 170); color: black; font-size: .45em; padding: 2%;" class="fragment" data-fragment-index="0"><strong>Add Header</strong><br> 1. Add opening and closing &lt;header&gt; tag. <br> 2. As a child of the header tag, add &lt;img&gt; tag and add "src" attribute to provide the relative URL file path to triple_logo.png <br> 3. Add opening and closing &lt;nav&gt; tag and add &lt;a&gt; tags for each of the navigation links (Services, Apartments, FAQ) as a child of the nav tag. <br> 4. After the closing nav tag, add &lt;div&gt; tag for sign-up button and enclose with text <code>"SIGN-IN"</code>.</p>
+							<p style="background-color:rgb(168 246 199); color: black; font-size: .45em; padding: 2%;" class="fragment" data-fragment-index="1"><strong>Add Page Title</strong><br> 1. Underneath &lt;header&gt; tag, add opening and closing &lt;h3&gt; tag with text <code>"Move-in Checklist"</code></p>
+							<p style="background-color:rgb(174 214 250); color: black; font-size: .45em; padding: 2%;" class="fragment" data-fragment-index="2"><strong>Body of Page Box 1</strong><br>1. Add opening and closing &lt;form&gt; tag. <br> 2. Add all checkbox input tags as a child of &lt;form&gt; tag. (Observe wireframe for checkbox text) <br><span style="font-size: 10px;">Ex. <code>&lt;input type="checkbox" /&gt; Sign Lease Agreement &lt;br /&gt;</code></span> <br> 3. Add opening and closing &lt;button&gt; tag that encloses text <code>SAVE + PRINT LIST</code>.</p>
+		
+						</div>
+
+					</div>	
+
+
+				</section>
+				<section data-background="white" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
+					<h2>Code Along Session Cont.</h2>
+					<div id="flexcontain">
+						<div class="box" style="height: 90%;  width: 100%;">
+							<img src="images/frontend/move_in_wireframe_color.png" style="margin-top: -20px;" alt="Move in Wireframe Page"/>
+						</div>
+						<div class="box" style="margin: 10px; text-align: left; margin-top: -30px;">
+							<p style="background-color:rgb(230 145 146); color: black; font-size: .45em; padding: 2%;" class="fragment" data-fragment-index="0"><strong>Body of Page Box 2</strong><br> 1. Add opening and closing &lt;div&gt; tag beneath closing form tag. <br> 2. Add opening and closing &lt;h2&gt; tag as a child of the div tag that encloses text <code>Preferred Insurance Vendor</code> <br> 3. Add opening and closing &lt;p&gt; tag and encloses text <code style="font-size: 14px;">Lemonade specializes in renters insurance and provides quick, easy, simple, reliable, and affordable insurance.</code> <br> 4. Add &lt;img&gt; tag beneath closing &lt;p&gt; tag and provide the relative file path to <code>triple_logo.png</code> image.  </p>
+							<p style="background-color:rgb(180 155 214); color: black; font-size: .45em; padding: 2%;" class="fragment" data-fragment-index="1"><strong>Add Footer</strong><br> 1. Add opening and closing &lt;footer&gt; tag <br> 2. Add opening and closing &lt;div&gt; tag. as a child of the footer tag. <br> 2. Add &lt;h3&gt; tag as a child of div tag and enclose h3 with text <code>CONTACT US</code> <br> 3. Add opening and closing &lt;ol&gt; tag and add &lt;li&gt; tags for each navigation link as children of ol tag. <br> 4. Repeat steps 2 - 3 to add 2 additional div containers representing footer navigation.</p>
+		
+						</div>
+
+					</div>	
+
+
+				</section>
+				<section data-background="white">
+				    <h2 style="font-size: 1em; color: #45378d;"><span style=" margin: 3px; padding: 2px;">Code Along Activity 1 <span style=" margin: 3px; padding: 8px; background-color: #cae0cb;">Completed</span> code!</h2>
+					
+					<div style="height: 500px; width: 900px; overflow-y: scroll; scrollbar-color: #45378d #cae0cb;"><script src="https://gist.github.com/instructorc/8ce723e84d8a704ea313ca489598ee9d.js"></script></div>
+
+				</section>
+				<section data-background="../webdev/images/ux/ia_bg.jpg">
+				    <h1 style="color: black;">Let's Add <span style="color: white; background-color: black; margin: 3px; padding: 2px;">CSS</span>?</h1>
+				   
+				</section>
+				<section data-background="white" style="background-size: 80%;">
+					<style>
+						#textbox{
+							display: block;
+					
+							width: 600px;
+							min-height: 200px;
+							margin-top: 20px;
+							margin:auto;
+						}
+						#textdisplay{
+							margin-top: 70px;
+    					    font-weight: 100;
+						}
+
+					</style>
+					<h2 style="font-size: 1em; color: #45378d;"><span style=" margin: 3px; padding: 2px;">What can <span style=" margin: 3px; padding: 8px; background-color: #cae0cb;">CSS</span> do?</span></h2>
+					<div id="textbox" style="margin-bottom: 20px;"><p id="textdisplay">Cascading Style Sheet</p></div>
+					<div id="flexcontain">
+						<div class="box" style="font-size: 20px; margin: 8px; height: 70px; background-color: #eee;" onClick="alterText()"><h4 style="margin-top: 10px;">Adjust text size and density</h4></div>
+						<div class="box" style="font-size: 20px; margin: 8px; height: 70px; background-color: #eee;" onClick="adjustColor()"><h4 style="margin-top: 10px;">Adjust Color</h4></div>
+						<div class="box" style="font-size: 20px; margin: 8px; height: 70px; background-color: #eee;" onClick="addVisualEffect()"><h4 style="margin-top: 10px;">Add Visual Effects to text</h4></div>
+						<div class="box" style="font-size: 20px; margin: 8px; height: 70px; background-color: #eee;" onClick="adjustGradient()"><h4 style="margin-top: 10px;">Add Gradient Background</h4></div>
+						<div class="box" style="font-size: 20px; margin: 8px; height: 70px; background-color: #eee;" onClick="addBackground()"><h4 style="margin-top: 10px;">Alter Background</h4></div>
+						<div class="box" style="font-size: 20px; margin: 8px; height: 70px; background-color: #eee; text-align: left;" onClick="addBackground()"><h4 style="margin-top: 10px;">CSS Animation</h4></div>
+
+					</div>
+					<script>
+						var box = document.getElementById('textdisplay');
+						var parentBox = document.getElementById('textbox');
+						function alterText(){
+							box.style.fontSize= '1.4em';
+							box.style.fontWeight= '900';
+
+						}
+						function adjustColor(){
+							box.style.fontSize= '1.4em';
+							box.style.fontWeight= '900';
+							box.style.color= '#0D98BA';
+
+						}
+						function addVisualEffect(){
+							box.style.fontSize= '1.4em';
+							box.style.fontWeight= '900';
+							box.style.color= '#0D98BA';
+							box.style.textShadow= '3px 3px 3px silver';
+							box.style.rotate = '-10deg';
+
+						}
+
+						function adjustGradient(){
+							box.style.fontSize= '1.4em';
+							box.style.fontWeight= '900';	
+							box.style.textShadow= '3px 3px 3px black';
+							box.style.color= 'white';
+							box.style.rotate = '-10deg';
+							parentBox.style.paddingTop = '14px';
+							parentBox.style.borderRadius = '8px';
+							parentBox.style.background= 'rgb(34,193,195)';
+							parentBox.style.background= 'linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)';
+						}
+
+						function addBackground(){
+							box.style.fontSize= '1.4em';
+							box.style.fontWeight= '900';
+							box.style.color= 'white';
+							box.style.textShadow= '3px 3px 3px black';
+							box.style.rotate = '-10deg';
+							parentBox.style.paddingTop = '14px';
+							parentBox.style.borderRadius = '8px';
+							
+							parentBox.style.backgroundImage= 'url(images/frontend/skyline_bg.jpg)';
+							parentBox.style.backgroundSize= '100% 100%';
+							
+						}
+					</script>
+					
+				</section>
+				<section data-background="#fff">
+				
+					<h2 style="font-size: 1em; color: #eb0e0e;"><span style=" margin: 3px; padding: 2px;">How do we connect <span style=" margin: 3px; padding: 8px; background-color: #cae0cb;">CSS</span> to our <span style=" margin: 3px; padding: 8px; background-color: #cae0cb;">HTML?</span></span></h2>
+					<img src="images/frontend/implementing_css.png" width="740" alt="Graphic that displays ways of implementing CSS"/>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 5px; height: 190px; background-color: #eee; color: black; max-width: 210px;"><p><strong>Internal</strong><br> uses the style tag within head of your site and applies CSS to an HTML document. <br><span style="font-weight: bolder; font-size: 18px; ">&lt;style&gt;  &lt;/style&gt; </span></p></div>
+						<div class="box red" style="font-size: 20px; margin: 5px; height: 190px; background-color: #eee; color: black;"><p><strong>External</strong><br> uses the link tag to link multiple HTML documents to CSS file. External style sheets are separate documents that have a .css extension <br><span style="font-weight: bolder; font-size: 18px;">&lt;link href="style.css" rel="stylesheet" type="text/css" /&gt; </span></p></div>
+						<div class="box red" style="font-size: 20px; margin: 5px; height: 190px; background-color: #eee; color: black; max-width: 210px;"><p><strong>Inline</strong><br> uses the style attribute and is tag specific and applies CSS to a tag. <br><span style="font-weight: bolder; font-size: 18px;">&lt;div style="color: red;"&gt; </span></p></div>
+					</div>				
+				</section>
+				<section data-background="white" style="background-size: 80%;">
+					<h4 style="background-color:rgba(255, 255, 255, 0.7); color: black;">CSS Syntax and Rules</h4>
+					<img src="images/frontend/css-rule.png" width="550" alt="image of css style rule" /><br />
+					<cite style="font-size: 12px; margin-top: -28px;">Source: https://frontend.turing.edu/lessons/module-1/css-fundamentals.html</cite>
+				
+					<a href="https://www.w3schools.com/cssref/index.php" target="_blank"><div id="jsonbutton" style="display: block; margin: auto; background-color:#06abb5;">CSS Property Reference</div></a>
+
+					
+				</section>
+
+				<section data-background="#fff">
+					<h2 style="font-size: 1em; color: #197fec;"><span style=" margin: 3px; padding: 2px;">Targeting Tags with <span style=" margin: 3px; padding: 8px; background-color: #cae0cb;">CSS Selectors</span>!</h2>
+					<div id="flexcontain">
+
+						<div class="box red" style="margin: 10px; padding-top: 5%; height: 700px; background-color: #fff; color: #111; flex-grow: 2;">
+							<pre style="box-shadow: none;">
+								<code style="font-size: 18px; height: 670px;"  data-trim contenteditable>
+								/*Type Selector*/
+								button { 
+									background-color: #5f9ea0;
+									border: none;
+									color: white;
+									text-transform:uppercase;
+								 }
+								/*id selector - use pound or hastag */
+								#goat{
+									text-align: center;
+									border-radius: 6px;
+									float: left;
+								 }
+								 /*class selector - use dot notation */
+								 .team{
+									width: 300px;
+								 }
+								 
+								 /*Descendent - parent + child selectors with 
+								 separating space*/
+								aside p{
+									margin: 4%;
+									padding: 12px;
+								}
+									
+
+								</code>
+							</pre>
+						</div>
+						<div class="box">
+							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em; text-align: left;" class="fragment" data-fragment-index="0"><strong><code>Type Selector</code></strong><br>Simply use the name of HTML tag. <br> <code style="font-size: 16px; margin: 3px; padding: 8px; background-color: #cae0cb;">HTML: &lt;button&gt;Save + Print List&lt;/button&gt;</code> </p>
+							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em; text-align: left;" class="fragment" data-fragment-index="2"><strong><code>id Selector </code></strong><br> Used to target a specific HTML tag. <br><code style="font-size: 16px; margin: 3px; padding: 8px; background-color: #cae0cb;">HTML: &lt;div id="goat"&gt; Jordan &lt;/div&gt;</code> </p>
+							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em; text-align: left;" class="fragment" data-fragment-index="3"><strong><code>class Selector</code></strong><br> Can be target multiple HTML tags. <br>HTML:<br><code style="font-size: 16px; margin: 3px; padding: 8px; background-color: #cae0cb;"> &lt;div class="team"&gt; Pippen &lt;/div&gt;</code> <br><code style="font-size: 16px; margin: 3px; padding: 8px; background-color: #cae0cb;">&lt;div class="team"&gt; Rodman &lt;/div&gt;</code> <br><code style="font-size: 16px; margin: 3px; padding: 8px; background-color: #cae0cb;">&lt;div class="team"&gt; Harper &lt;/div&gt;</code> </p>
+							<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .5em; text-align: left;" class="fragment" data-fragment-index="4"><strong><code>Desendent Selector</code></strong><br> Targeting child tag of a parent.  <br>HTML:<br><code style="font-size: 16px; margin: 3px; padding: 8px; background-color: #cae0cb;">&lt;aside&gt; <br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Greatest team! &lt;/p&gt; <br> &lt;/aside&gt;</code> </p>
+
+						</div>
+					</div>
+				</section>
+
+				<section data-background="#fff">
+					<h4>Practice Activity</h4>
+					<div id="flexcontain">
+
+						<div class="box red" style="font-size: 20px; margin: 10px; padding-top: 150px; height: 550px; background-color: #fff; color: #111;"><img src="images/frontend/loyola_css.PNG" alt="image of text for Loyola"/></div>
+						<div class="box">
+							<p style="font-size: .55em; text-align: left;"> 1) Click on the coding playground button below to open editor <br><br> 2) Delete line 9 and add a new paragraph tag that has an id attribute with "school" as the value and "Loyola" as the content <br><br> 3) Add internal CSS and create a style rule to target the p tag by its id attribute <br><br> 4) Add the following declarations: <br>- font-size: 3em; <br>- color: black; <br>- text-transform: uppercase <br>- text-shadow: 2px 3px 4px black;  </p>
+							<a href="https://liveweave.com/" target="_blank"><div id="jsonbutton">Coding Playground</div></a>
+						</div>
+						
+					</div>
+				</section>
+				<section data-background="#2e2e2e">
+					<h4 style="color:white; font-size: 2em;">Box Model and Properties</h4>
+					<img src="../webdev/images/layout/box2.png" width="875" style="box-shadow: none; border: none;"alt="Box Model properties example">
+				</section>
+				<section data-background="#fff">
+					<h4>Box Model - Another View</h4>
+					<img src="../webdev/images/layout/box_alternative.PNG" width="775" style="box-shadow: none; border: none;"alt="Box Model alternative view example">
+				</section>
+				<section data-background="#fff">
+				
+					<h4>Working with Boxes in our Header <br> Observe Process</h4>
+					<p style="font-size: .6em; color: gray;">Understanding how to work with box elements is the beginning stages of page layout. CSS properties to consider when working with box elements - border, margin, padding, text-align, box-shadow </p>
+					<img src="images/frontend/site_header.PNG" style="margin: 20px;" alt="header for move-in page of Loop Luxury Living"/>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 210px; background-color: #eee; color: black;"><p><strong>Step 1</strong><br> Add the border property to all structural box elements/tags.  Including tags that will serve as containers.</p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 210px; background-color: #eee; color: black;"><p><strong>Step 2</strong><br> Use the browser inspection tools to prototype and observe how box elements are taking shape when CSS properties are being applied.</p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 210px; background-color: #eee; color: black;"><p><strong>Step 3</strong><br> Adjust CSS prpperties to consider Responsive Design considerations.</p></div>
+					</div>				
+				</section>
+				<section data-background="white" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
+							
+					<h4>Update and Replace Header HTML + CSS</h4>
+					<div id="flexcontain">
+
+						<div class="box" style="margin: 10px; text-align: left; margin-top: -10px;">
+
+							<pre style="box-shadow: none; float:left; ">
+								<code style="font-size: 18px; overflow-y: scroll;"  data-trim contenteditable>
+									<!--HTML CODE-->
+									&lt;header&gt;
+										&lt;div id="logo"&gt; 
+											&lt;img src="images/triple_logo.png" alt="Loop Luxury Living Logo" /&gt;
+										&lt;/div&gt;
+										&lt;nav id="top_nav" &gt;
+											&lt;a href=""&gt;Services&lt;/a&gt;
+											&lt;a href=""&gt;Apartments&lt;/a&gt;
+											&lt;a href=""&gt;FAQ&lt;/a&gt;
+										&lt;/nav&gt;
+										&lt;div id="sign_in">&lt;a href="/"&gt;Sign-in&lt;/a&gt;&lt;/div&gt;
+									&lt;/header&gt;
+
+								</code>
+							</pre>
+						</div>
+						<div class="box" style="margin: 10px; text-align: left; margin-top: -10px;">
+							<pre style="box-shadow: none; float: left;">
+								<code style="font-size: 18px; overflow-y: scroll;"  data-trim contenteditable>
+									/**STYLING HEADER OF SITE**/
+									header {
+										width: 100%;
+										padding: 20px 5px 0px 5px;
+										min-height: 100px;
+										border: 4px solid green;
+									}
+									
+									#logo {
+										border: 4px solid blue;
+										margin-right: 20px;
+										width: 300px;
+										float: left;
+									}
+									
+									#logo img {
+										width: 100%;
+									}
+									#top_nav {
+										border: 4px solid red;
+										width: 400px;
+										float: left;
+										padding: 24px;
+									}
+									
+									#top_nav a {
+										color: black;
+										text-decoration: none;
+										margin-right: 40px;
+										padding: 2%;
+										border: 4px solid purple;
+									}
+									
+									#sign_in {
+										border: 4px solid orangered;
+										width: 300px;
+										float: right;
+										height: 67px;
+									}
+									
+									#sign_in a {
+										background-color: teal;
+										color: white;
+										text-decoration: none;
+										padding: 2%;
+										text-transform: uppercase;
+										border-radius: 6px;
+										font-weight: bolder;
+										float: right;
+										margin-top: 16px;
+										margin-right: 20px;
+									}
+
+								</code>
+							</pre>
+
+						</div>
+
+					</div>	
+				</section>
+
+				<section data-background="white" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
+				
+					<div id="flexcontain">
+						
+						<div class="box" style="height: 90%;  width: 100%;">
+							<a href="pdf/move_in_wireframe_boxes.pdf" target="_blank"><img src="images/frontend/move_in_wireframe_boxes.PNG" style="margin-top: -20px;" alt="Move in Wireframe Page"/></a>
+						</div>
+						<div class="box" style="margin: 10px; text-align: left; margin-top: -10px;">
+							<h4>Code Along Session I</h4>
+							<p style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .5em; padding: 2%;" class="fragment" data-fragment-index="0"><strong style="background-color: red; color: white;">Create &lt;main&gt; Container and add Border</strong><br>1. Add &lt;main&gt; tag to contain everything between header and footer tag.<br>2.  Create a style rule that targets the &lt;main&gt; tag and adds a red border.  </p>
+							<p style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .5em; padding: 2%;" class="fragment" data-fragment-index="1"><strong style="background-color: #fdbe18; color: black;">Create &lt;section&gt; Container and add Border </strong><br> 1. Locate the h3 page title and add a &lt;section&gt; tag with id attribute value as "title" that will contain h3 tag. <br> 2. Create a style rule that targets "foot_structure" attribute and adds a dark yellow border.  </p>
+							<p style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .5em; padding: 2%;" class="fragment" data-fragment-index="2"><strong style="background-color: #20a6f2; color: white;">Create &lt;section&gt; Container and add Border </strong><br> 1. Add &lt;section&gt; tag with id attribute value as "main_section" that will contain both the form and div tags. <br> 2. Create a style rule that targets "main_section" attribute and adds a blue border.</p>	
+						</div>
+
+					</div>	
+				</section>
+				<section data-background="white" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
+				
+					<div id="flexcontain">
+						
+						<div class="box" style="height: 90%;  width: 100%;">
+							<a href="pdf/move_in_wireframe_boxes.pdf" target="_blank"><img src="images/frontend/move_in_wireframe_boxes.PNG" style="margin-top: -20px;" alt="Move in Wireframe Page"/></a>
+						</div>
+						<div class="box" style="margin: 10px; text-align: left; margin-top: -10px;">
+							<h4>Code Along Session II</h4>
+							<p style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .5em; padding: 2%;" class="fragment" data-fragment-index="0"><strong style="background-color: #4e11c4; color: white;">Add class attribute to &lt;form&gt; + &lt;div&gt; tag</strong><br>1. Add class attribute to &lt;form&gt; + &lt;div&gt; tag and add "mid_boxes" as the value. <br>2. Create a style rule that targets the class "mid_boxes" attribute and adds a purple border.  </p>
+							<p style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .5em; padding: 2%;" class="fragment" data-fragment-index="1"><strong style="background-color: green; color: white;">Add id attribute to &lt;footer&gt; tag </strong><br> 1. Locate &lt;footer&gt; tag and add id attribute with "foot_structure" as the value. <br> 2. Create a style rule that targets "foot_structure" attribute and adds a green border.  </p>
+							<p style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .5em; padding: 2%;" class="fragment" data-fragment-index="2"><strong style="background-color: #ffd500; color: black;">Add class attribute to &lt;div&gt; footer div tags </strong><br> 1. Locate &lt;div&gt; tags within footer and add class attribute with "foot_box" as the value.<br> 2. Create a style rule that targets "foot_box" attribute and adds a yellow border.  </p>	
+						</div>
+
+					</div>	
+				</section>
+				<section data-background="white">
+				    <h2 style="font-size: 1em; color: #45378d;"><span style=" margin: 3px; padding: 2px;">Code Along Activity 2 <span style=" margin: 3px; padding: 8px; background-color: #cae0cb;">Completed</span> code!</h2>
+					<div id="flexcontain" style="justify-content: center;">
+						<div style="height: 70px; width: 300px; background-color: #eee; margin: 30px; font-family:'Courier New', Courier, monospace; padding: 10px;"><a href="https://gist.github.com/instructorc/5af27d43406cb50672cab91fb515aa95" target="_blank">HTML CODE</a></div>
+						<div style="height: 70px; width: 300px; background-color: #eee; margin: 30px; font-family:'Courier New', Courier, monospace; padding: 10px;"><a href="https://gist.github.com/instructorc/46c24693384f41b052444d19c698c858" target="_blank">CSS CODE</a></div>
+					</div>
+				</section>
+				<section data-background="../webdev/images/ux/ia_bg.jpg">
+				    <h1 style="color: black;">Getting Started with<span style="color: white; background-color: black; margin: 3px; padding: 2px;"> Page Layout</span>!</h1>  
+				</section>
+				<section data-background="" data-background-size="contain" data-background="#fff" style="top: 0;">
+				    <h1>Layout Strategy</h1>
+					<p style="font-size: .5em; line-height: 1.5;">A number of strategies can be used to design the layout of your page.  You can use CSS flexbox, CSS grid, float, or a mixture of the three.</p>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 22px; margin: 10px; height: 300px; background-color: #eee; color: black;">
+							<h2>Traditional Float</h2>
+							<p>Using float, clear, position </p>
+						</div>
+						<div class="box red" style="font-size: 22px; margin: 10px; height: 300px; background-color: #eee; color: black;">
+							<h2>CSS Flexbox</h2>
+							<p>Lends itself to responsive design.  An easier way to work with pages.</p>
+						</div>
+						<div class="box red" style="font-size: 22px; margin: 10px; height: 300px; background-color: #eee; color: black;">
+							<h2>CSS Grid</h2>
+							<p>Implementation is similar to CSS Flexbox.  CSS Grid defines a grid where you can place box elements on to the grid.</p>
+						</div>
+					</div>				  
+				</section>
+				<section data-background="#fff">
+					<h4>CSS Flex Steps</h4>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #32E875; color: #333;"><p><b>Step 1</b><br> Define a container element as a grid with <em>display: flex;</em></p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #2E933C;"><p><b>Step 2</b><br> Give structure to flex-items and set the flex-grow, flex-shrink, and flex-basis for each box. <em>flex: 1 0 300px;</em></p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; background-color: #297045;"><p><b>Step 3</b><br> Define flow of boxes using either flex-direction or flex-wrap <em>flex-wrap: wrap;</em></p></div>
+
+					</div>
+					<a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" style="font-size: .4em;">Chris Coyier's CSS tricks tutorial on using CSS Flexbox</a> 
+				</section>
+				<section data-background="#eeeeee" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
+					<h2>Our Layout Strategy</h2>
+					<a href="pdf/move_in_wireframe_boxes.pdf" target="_blank"><img src="images/frontend/move_in_wireframe_boxes.PNG" style="margin-top: -20px;" width="400" alt="Move in Wireframe Page"/></a>
+				</section>
+				<section data-background="../webdev/images/layout/css_grid.jpg">
+					<h1 id="boxstyle2" style="background-color: #ffffffb6; color: black;"> CSS Grid</h1>
+				</section>
+				<section data-background="#fff">
+					<h4>CSS Grid Steps</h4>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #32E875; color: #333;"><p><b>Step 1</b><br> Define a container element as a grid with <em>display: grid</em></p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #2E933C;"><p><b>Step 2</b><br> Set the column and row sizes with grid-template-columns and grid-template-rows</p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; background-color: #297045;"><p><b>Step 3</b><br> Place child elements into the grid with grid-column and grid-row</p></div>
+
+					</div>
+					<a href="https://css-tricks.com/snippets/css/complete-guide-grid/" style="font-size: .4em;">Chris Coyier's CSS tricks tutorial on using CSS Grid</a> 
+				</section>
+				<section data-background="#f1f1f1">
+					<h4>Defining the Grid</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<pre style="box-shadow: none;">
+								<code style="font-size: 18px; line-height: 1em;" class="css hljs"  data-trim contenteditable>
+									.grid {
+									 display: grid;
+									 grid-template-columns: repeat(4, 1fr);
+									 grid-template-rows: repeat(4, 75px);
+									}
+	
+	
+								</code>
+							</pre>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="../webdev/images/layout/define_grid.jpg" width="525" style="box-shadow: none; border: none;"alt="Defining CSS Grid">
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#f1f1f1">
+					<h4>Defining a Complex Grid</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<pre style="box-shadow: none;">
+								<code style="font-size: 18px; line-height: 1em;" class="codebox code-example__codebox"  data-trim contenteditable>
+									.grid {
+									 display: grid;
+									 grid-template-columns: repeat(4, 1fr);
+									 grid-template-rows: 40px 2fr repeat(2, minmax(75px, 1fr));
+									}
+	
+	
+								</code>
+							</pre>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="../webdev/images/layout/grid_columns_rows.jpg" width="525" style="box-shadow: none; border: none;"alt="Complex Grid layout">
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#f1f1f1">
+					<h4>Positioning items in the Grid using line numbers</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<pre style="box-shadow: none;">
+								<code style="font-size: 18px; line-height: 1em;" class="codebox code-example__codebox"  data-trim contenteditable>
+									.grid {
+									 	display: grid;
+									 	grid-template-columns: repeat(4, 1fr);
+									 	grid-template-rows: 40px 2fr repeat(2, minmax(75px, 1fr));
+									}
+									
+									#item1{
+										grid-column-start: 2;
+										grid-column-end: 4;
+										grid-row-start: 3;
+										grid-row-end: -1;
+										background-color: red;
+									}
+									
+									#item2{
+										grid-column: 3;
+										grid-row: 1;
+										background-color: red;
+									}
+	
+	
+								</code>
+							</pre>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="../webdev/images/layout/grid_template_lines.jpg" width="525" style="box-shadow: none; border: none;"alt="Position in Grid using lines">
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#f1f1f1">
+					<h4>Positioning items in the Grid using area names</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<pre style="box-shadow: none;">
+								<code style="font-size: 18px; line-height: 1em;" class="codebox code-example__codebox"  data-trim contenteditable>
+									.grid {
+									 	display: grid;
+									 	grid-template-columns: repeat(4, 1fr);
+									 	grid-template-rows: 40px 2fr repeat(2, minmax(75px, 1fr));
+									 	grid-template-areas: ". . . ." 
+                                                             "item1 . . ." 
+                                                             "item1 item2 item2 item2" 
+                                                             " . item2 item2 item2";
+									}
+									
+									#item1{
+										grid-area: item1;
+										background-color: red;
+									}
+									
+									#item2{
+										grid-area: item2;
+										background-color: red;
+									}
+	
+	
+								</code>
+							</pre>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="../webdev/images/layout/grid_template_areas.jpg" width="525" style="box-shadow: none; border: none;"alt="Position in Grid using template areas">
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="white" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
+				
+					<div id="flexcontain">
+						
+						<div class="box" style="height: 90%;  width: 100%;">
+							<a href="pdf/move_in_wireframe_boxes.pdf" target="_blank"><img src="images/frontend/move_in_wireframe_boxes.PNG" style="margin-top: -20px;" alt="Move in Wireframe Page"/></a>
+						</div>
+						<div class="box" style="margin: 10px; text-align: left; margin-top: -10px;">
+							<h4>Code Along Session I</h4>
+							<p style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .5em; padding: 2%;" class="fragment" data-fragment-index="0"><strong style="background-color: #fdbe18; color: black;">Structure &lt;h3&gt; and adjust CSS </strong><br> 1. Adjust the font-size, font-weight and padding for h3 tag.  Using a descendent selector - Add CSS property font-size: 2.6em; font-weight: 100; margin: 20px 0px 20px 10px;. </p>
+							<p style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .5em; padding: 2%;" class="fragment" data-fragment-index="1"><strong style="background-color: #20a6f2; color: white;">Implement Flexbox </strong><br> 1. Target the &lt;section&gt; tag with id attribute value as "main_section" and add CSS properties <em>display: flex; flex-wrap: wrap; justify-content: center;</em> <br> 2. Observe the difference in the browser.</p>	
+							<p style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .5em; padding: 2%;" class="fragment" data-fragment-index="2"><strong style="background-color: #4e11c4; color: white;">Target Flex-items (children of container)</strong><br>1. Target &lt;form&gt; + &lt;div&gt; tag by their class attribute "mid_boxes" and add CSS properties<br><em>flex: 1 0 300px; </em><br><em>margin: 2%;</em> <br><em>max-width: 500px;</em> </p>
+						</div>
+
+					</div>	
+				</section>
+				<section data-background="white" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
+				
+					<div id="flexcontain">
+						
+						<div class="box" style="height: 90%;  width: 100%;">
+							<a href="pdf/move_in_wireframe_boxes.pdf" target="_blank"><img src="images/frontend/move_in_wireframe_boxes.PNG" style="margin-top: -20px;" alt="Move in Wireframe Page"/></a>
+						</div>
+						<div class="box" style="margin: 10px; text-align: left; margin-top: -10px;">
+							<h4>Code Along Session II</h4>
+							<div style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .5em; padding: 2%;" class="fragment" data-fragment-index="0"><strong style="background-color: #4e11c4; color: white;">
+								Add Additional CSS </strong><br>1. Copy style rules in file </em>site_content.txt</em> and past into <em>styles.css</em> file</div>
+							<p style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .5em; padding: 2%;" class="fragment" data-fragment-index="1"><strong style="background-color: green; color: white;">Implement Flexbox</strong><br> 1. Target the &lt;footer&gt; tag with id attribute value "foot_structure" and add CSS properties value. <em>display: flex; flex-wrap: wrap; padding-top: 10%;</em>  </p>
+							<p style="background-color:#eee; box-shadow: 3px 3px 10px #111; color: black; font-size: .5em; padding: 2%;" class="fragment" data-fragment-index="2"><strong style=" color: black;">Remove all borders from box elements </strong><br> Make sure to delete only the border properties! </p>	
+						</div>
+
+					</div>	
+				</section>
+				<section data-background="white">
+				    <h2 style="font-size: 1em; color: #45378d;"><span style=" margin: 3px; padding: 2px;">Code Along Activity 3 <span style=" margin: 3px; padding: 8px; background-color: #cae0cb;">Completed</span> code!</h2>
+					<div id="flexcontain" style="justify-content: center;">
+						<div style="height: 100px; width: 300px; background-color: #eee; margin: 30px; font-family:'Courier New', Courier, monospace; padding: 10px;"><a href="https://gist.github.com/instructorc/40a160a0938afcdce4764fa704f04e9b" target="_blank">HTML CODE</a></div>
+						<div style="height: 100px; width: 300px; background-color: #eee; margin: 30px; font-family:'Courier New', Courier, monospace; padding: 10px;"><a href="https://gist.github.com/instructorc/85a31f1d6d1029cabcd022b4e8ad3337" target="_blank">CSS CODE</a></div>
+					</div>
+				</section>
+				<section data-background="../webdev/images/ux/ia_bg.jpg">
+				    <h1 style="color: black;"><span style="color: white; background-color: black; margin: 3px; padding: 2px;">Accessible</span> and <span style="color: white; background-color: black; margin: 3px; padding: 2px;">Responsive </span> web design</h1>
+				</section>
+				<section data-background="#fff">
+					<h3>Validating your code</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 24px;">Valid code conforms to W3C rules.</li><br>
+   								<li style="font-size: 24px;">Valid code enhances browser compatibility, accessibility, and exchange of data</li>
+  								<li style="font-size: 24px;">The most common mistakes include:</li>							
+								<ul>
+									<li>No doctype declaration</li>
+							        <li>Missing closing tags</li>
+			                        <li>Missing alt attributes in image elements</li>
+			                        <li>Incorrect tag nesting</li>
+			                        <li>Unquoted attributes</li>
+							    </ul>
+							    <li style="font-size: 24px;"><a href="https://validator.w3.org/">W3C Validation Service Link</a></li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="../webdev/images/html/validation.PNG" alt="W3C validation image">
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Accessibility Principles</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #9AD1D4;"><p><b style="font-size: 30px;">Perceivable</b> <br>People can see the content or hear it </p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #80CED7;"><p><b style="font-size: 30px;">Operable</b> <br>people can typing or by voice </p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; background-color: #007EA7;"><p><b style="font-size: 30px;">Understandable information</b> <br>people get clear and simple language  </p></div>
+						<div class="box orange" style="font-size: 24px; margin: 10px; background-color: #003249;"><p><b style="font-size: 30px;">Robust content </b> <br>people can use different assistive technology</p></div>
+					
+					</div>
+					<a href="https://www.w3.org/WAI/WCAG21/quickref/" style="font-size: .4em;">Click here for WCAG Quick reference Guidelines</a>
+				</section>
+				<section data-background="#fff">
+					<h3>Accessibility Tools and Resources</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #a8c2ac;"><p><b style="font-size: 22px;">WAVE Web Accessibility Evaluation Tool</b> <br>WAVE can identify many accessibility and Web Content Accessibility Guideline (WCAG) errors, but also facilitates human evaluation of web content. </p></div>
+						<div class="box blue" style="font-size: 18px; margin: 10px; background-color: #e4df7e;"><p><b style="font-size: 22px;">The A11yProject</b> <br>A checklist that uses the the Web Content Accessibility Guidelines (WCAG).  You can access the list <a href="https://www.a11yproject.com/checklist/">here</a>  </p></div>
+						<div class="box green" style="font-size: 18px; margin: 10px; background-color: #f49455;"><p><b style="font-size: 22px;">Web Accessibility Evaluation Tools List</b> <br><a href="https://www.w3.org/WAI/ER/tools/">Web accessibility evaluation tools</a> are software programs or online services that help you determine if web content meets accessibility guidelines.  </p></div>
+					
+					</div>
+					<a href="https://www.w3.org/WAI/WCAG21/quickref/" style="font-size: .4em;">Click here for WCAG Quick reference Guidelines</a>
+				</section>
+				<section data-background="#fff">
+					<h3>Accessible Color Evaluation</h3>
+					<img src="../webdev/images/ux/ratios.webp" width="500" alt="image of color contrast acceptable ratio levels " title="Attribution: http://generic.wordpress.soton.ac.uk/digital-learning/2021/04/04/how-can-i-use-colour-accessibly/">
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Identify a website that utilizes color and identify a 1 page of the site to evaluate.  </div>
+						<div class="box blue" style="font-size: 18px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Perform a color evaluation on the site using the link below and observe areas of the site that meet the ratio standard and areas of the site that fall short of the standard.<br><a href="https://color.a11y.com/?wc3">https://color.a11y.com/?wc3</a>  </p></div>
+						<div class="box green" style="font-size: 18px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Using the color picker in the browser developer tools, make a recommendation of closely related colors that would pass meet the minimum ratio level.</p></div>
+
+					</div>
+
+				</section>
+			
+				<!--<section data-background="#eeeeee" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
+					<h4>Resources</h4>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;"><strong>1. Select Datasource option </strong>-> Click on the new datasource plus sign in left column and select <strong>'REST API'</strong> </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;"><strong>2. Configure API Request</strong> -> Rename the datasource to 'cityofchicago_api' <br> Make sure the http verb is set to 'GET' and add the URI below: <br> <strong><code>https://data.cityofchicago.org/resource/at79-usba.json</code></strong></p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="2"><strong>3. Add query parameters</strong> -> Add two query paramters that limits the requested data to 'City Council' and 'Alderman' Use keys: <strong><code>organization_description</code></strong> and <strong><code>title_description</code> </strong></p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;"><strong>3. Add Table Widget and connect datasource</strong> -> Select the widgets tab and drag a table on canvas area.  Click the <strong><code>'Connect data'</code></strong> button and select <strong><code>cityofchicago_api</code></strong> under Connect to query</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;"><strong>4. Add Another Widget: JSON Form</strong> -> Select the widgets tab and search for <strong><code>JSON form</code></strong> and drag to canvas area.  Select 'Generate Form' and connect to table widget.</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;"><strong>5. Add Another Widget: Chart </strong> -> Select the widgets tab and search for <strong><code>Chart</code></strong> and drag to canvas. Using the properties panel to the left, select <strong><code>'Pie Chart</code></strong> for Chart type. </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;"><strong>6. Add Chart Datasource</strong> -> Using the properties panel to the left, scroll down to the series data and enter the javascript code below. <br> <code>{{cityofchicago_api.data.map(p => ({x:p.revenue_source, y: p.estimated_revenue}))}}</code></p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;"><strong>7. Adjust Chart Properties</strong> -> Using the Chart properties panel, adjust <strong>'Series title'</strong> to <strong>'Estimated Revenue Sources'</strong>. Adjust <strong>'Title'</strong> to <strong>'City of Chicago Estimated Revenue'</strong> </p>
+				</section>
+				<section data-background="#eee" data-background-size="contain" data-background="#fff" style="top: 0; text-align: left;">
+					<h2>Data Type Activity</h2>
+					
+				     <p>Which revenue source is expected to generate the <strong>second</strong> largest income for the city?</p>
+				     <input type="radio" id="age1" name="score">
+				     <label for="score1">A) Cable Television</label><br>
+				     <input type="radio" id="age2" name="score">
+				     <label for="score2">B) Water Rates</label><br>  
+				     <input type="radio" id="age3" name="score" >
+				     <label for="score3">C) Amusement Tax</label><br>
+					 <input type="radio" id="age3" name="score" >
+				     <label for="score4">D) Lease of Personal Property</label><br><br>
+				  
+				</section>-->
+				<!--<section data-background="white" style="background-size: 80%;">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">AppSmith Customization and Deployment</h3>
+					
+					<div id="flexcontain" class="fragment">
+						<div class="box" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee;"><h4 style="margin-top: 25px;">Adjusting Style</h4><code>"title": "Intro. to JSON"</code></div>
+						<div class="box" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee;"><h4 style="margin-top: 25px;">Number</h4><code>"participants": 12</code></div>
+						<div class="box" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee;"><h4 style="margin-top: 25px;">Null</h4><code>"badged_event": null</code></div>
+						<div class="box" style="font-size: 20px; margin: 10px; height: 250px; background-color: #eee;"><h4 style="margin-top: 25px;">Boolean</h4><code>"is_online": true</code></div>
+						<div class="box" style="font-size: 18px; margin: 10px; height: 250px; background-color: #eee;"><h4 style="margin-top: 25px;">Array</h4><code>"skills": ["JSON", "REST API"]</code></div>
+
+
+					</div>
+					<p> Share your url by sending an email to cfulton@luc.edu</p>
+				</section>-->
+
+				<section data-background="" data-background-size="contain" data-background="#fff" style="top: 0;">
+					<h1>Questions?</h1>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
