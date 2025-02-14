@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Emerging Technology: Introduction</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/luc.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;800&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="#f8f8f8">
+				    <h2 style="font-size: 1.7em; color: #000;">Emerging Technology: Introduction</h2>
+				    <h3 style="color: #000; font-weight: 200;"></h3>
+				    <h3 style="color: #000; font-weight: 200;">Instructor: Chris Fulton</h3>
+				    <img src="images/intro/LUC_stacked.png" width="300" style="position: fixed; bottom: 0; margin-left: -15%; margin-bottom: 5%;" alt="LUC logo">
+				</section>
+				<section data-background="" data-background-size="contain" data-background="#fff" style="top: 0;">
+				    <h2>Agenda</h2>
+				    <ul style="font-size: 26px;">
+						<li>How do you define "Emerging Technology"?</li>
+						<li>What is considered "Emerging Technology"?</li>
+						<li>Resources and Tools</li>
+						<ul>
+							<li>Gartner Research</li>
+							<ul>
+								<li>Magic Quadrants</li>
+								<li>Hype Cycles</li>
+								<li>Initiatives + Complementary Research</li>
+							</ul>
+							<li>Forrestor Research</li>
+						</ul>
+						<li>Case-Study Introduction</li>
+						<ul>
+							<li>Good Shepard Pharmacy and Remedi </li>
+							<li>2018 Emerging Tech: Blockchain [Web3]</li>
+						</ul>
+				    </ul>
+				</section>
+
+
+				<section data-background="images/data/devops.jpg">
+					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">How would you define "Emerging Technology?</h1>
+				</section>
+				<section data-background="" data-background-size="contain" data-background="#fff" style="top: 0;">
+				    <h2>Definition</h2>
+				    <p>A database is an <strong>organized collection</strong> of <strong>structured information</strong>, or data, typically <strong>stored electronically</strong> in a computer system.</p>
+				</section>
+				<section data-background="#fff">
+					<h3>Different Types of DB</h3>
+					<p style="font-size: 28px;">Selection of DB should be based upon how, when, where and who will use the data. Click on picture below to see db-engines.com ranking. </p>
+					<a href="https://db-engines.com/en/ranking"><img src="images/data/database_types.jpg" alt="Database Types and brands" /></a>
+
+					<p style="font-size: 24px;"><strong>Relational & Non-Relational</strong> are the overarching categories of DB's</p>
+					  <aside class="notes">
+					    
+					    
+					  </aside>
+				</section>
+				<section data-background="images/data/devops.jpg">
+					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">What is Data?</h1>
+				</section>
+				<section data-background="#fff">
+					<h3>Raw Data</h3>
+					<img src="images/data/rawdata.png" width="400"  alt="raw data"/>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 28px; margin: 10px;">
+							<h3>Data</h3>
+							<ul>	
+								<li style="font-size: 26px;"><b>Data</b> - Consist of raw facts</li>
+
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 28px; margin: 10px;">
+							<h3>Raw Data</h3>
+							<ul>	
+								<li style="font-size: 26px;"><b>Raw Data</b> - indicates that the facts have not yet been processes to reveal their meaning. </li>	
+							</ul>
+						</div>
+					</div>
+					
+					  <aside class="notes">
+					    
+					    
+					  </aside>
+				</section>
+
+				<section data-background="images/data/data_bg.jpg">
+					<h2 style="color: white; font-style: italic; background-color: rgba(0, 0, 0, 0.664); padding: 3px;">The purpose of collecting raw data is to extract meaning.</h2>
+				</section>
+				<section data-background="white" style="background-size: 80%;">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Data Pyramid</h3>
+					<img src="images/data/dIk_model.webp" width="590" alt="data pyramid" />
+					<div id="flexcontain">
+						<div class="box" style="font-size: 24px; margin: 10px; height: 120px; background-color: #eee;"><h3 style="margin-top: 50px;">Raw Data</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 120px; background-color: #eee;"><h3 style="margin-top: 50px;">Information</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 120px; background-color: #eee;"><h3 style="margin-top: 50px;">Knowledge</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 120px; background-color: #eee;"><h3 style="margin-top: 50px;">Intelligence / Insight / Wisdom</h3></div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Learning Activity</h3>
+					<p style="font-size: .6em;">Assume you want to create a database for a community that is looking to start a neighborhood watch program. The community would like to have information on volunteers, incidents that occur, meeting agendas and an evening watch schedule.  The community will ultimately have a website that displays the name, phone number and email of those on the watch list, a list of all incidents and a page that displays a URL linking to upcoming and previous meeting agenda's. </p>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Questions</b> <br> What initials questions would you have for the community?</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Data</b> <br>What data would you collect?  Make a list of all the data you would need to collect?</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Grouping Data</b> <br>How would you organize/group the data?  What data can we remove? What data is essential and provides strategic insight?</p></div>
+
+					</div>
+				</section>
+				<section data-background="images/data/data_bg.jpg">
+					<h2 style="color: white; font-style: italic; background-color: rgba(0, 0, 0, 0.664); padding: 3px;">Why is it important to think of data in this structure?</h2>
+				</section>
+				<section data-background="images/data/devops.jpg">
+					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">Data Modeling</h1>
+				</section>
+				<section data-background="#fff">
+					<h3>Data Models + Data Modeling </h3>
+					
+					<p style="font-size: 24px;"><b>Model:</b>  Abstraction of a real-world object or event </p>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<h3>Data Models</h3>
+							<ul>	
+								<li style="font-size: 20px;">Are a communication tool</li>	 
+								<li style="font-size: 20px;">Give an overview of the database</li>
+								<li style="font-size: 20px;">Organize data for various users</li>
+								<li style="font-size: 20px;">Are an abstraction for the creation of good database</li>
+
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<h3>Data Modeling</h3>
+							<ul>	
+								<li style="font-size: 20px;">Iterative and progressive process of creating a specific data model for a determined problem domain</li>
+								<li style="font-size: 20px;">The process of transforming logical data models into physical data Models</li>
+							</ul>
+						</div>
+
+	
+					</div>
+					
+					  <aside class="notes">
+					    
+					    
+					  </aside>
+				</section>
+				<section data-background="white" style="background-size: 80%;">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Business Rules</h3>
+					<img src="images/data/business_rules.PNG" width="500" alt="Source for business rules" />
+					<div id="flexcontain">
+
+						<div class="box" style="font-size: 20px; margin: 10px; height: 290px; background-color: #eee;"><h3 style="margin-top: 50px;">Definition</h3><p>Brief, precise, and unambiguous description of a policy, procedure, or principle. <br> Some business rule describes a constraint that cannot be shown in the ER diagram</p></div>
+						<div class="box" style="font-size: 20px; margin: 10px; height: 290px; background-color: #eee;"><h3 style="margin-top: 50px;">Purpose</h3><p>Describe main and distinguishing characteristics of the data</p></div>
+						<div class="box" style="font-size: 18px; margin: 10px; height: 290px; background-color: #eee;"><h3 style="margin-top: 50px;">Example</h3><code> - A community watch group member can submit one or more incidents.</code><br><code>- An incident can be assigned multiple categories</code><br><code> - An agenda can be only be created by site administrator who is also a member</code></div>
+					</div>
+				</section>
+				<section data-background="white" style="background-size: 80%;">
+					
+					<img src="images/data/documenting_business_rules.PNG" width="900" alt="Documenting Business Rules" />
+
+				</section>
+				<section data-background="white" style="background-size: 80%;">
+					
+					<img src="images/data/step_one.PNG" width="900" alt="Step one of documenting Business Rules" />
+
+				</section>
+				<section data-background="white" style="background-size: 80%;">
+					
+					<img src="images/data/step_two.PNG" width="1000" alt="Step two of documenting Business Rules" />
+
+				</section>
+				<section data-background="#fff">
+					<h3>Data Modeling</h3>
+					
+					<p style="font-size: 24px;"><b>Minimum data rule:</b>  All that is needed is there, and all that is there is needed
+					</p>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<h3>Conceptual Design</h3>
+							<ul>	
+								<li style="font-size: 20px;">Design a database independent of database software and physical details
+									Conceptual data model – Describes main data entities, attributes, relationships, and contraints
+									</li>
+
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<h3>Logical Design</h3>
+							<ul>	
+								<li style="font-size: 20px;">The process of transforming (or mapping) a conceptual schema of the application domain into a schema for the data model </li>	 
+								<li style="font-size: 20px;">some software is typically to create and map this model</li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<h3>Physical Design</h3>
+							<ul>	
+								<li style="font-size: 20px;">modifies how the data is formatted (framed) and transported between the client and server, both of which manage the entire process, and hides all the complexity from our applications within the new framing layer</li>
+								<li style="font-size: 20px;">The process of transforming logical data models into physical data Models</li>
+							</ul>
+						</div>
+	
+					</div>
+					
+					  <aside class="notes">
+					    
+					    
+					  </aside>
+				</section>
+				<section data-background="" data-background-size="contain" data-background="#fff" style="top: 0;">
+					<h4>Conceptual Model</h4>
+					<img src="images/data/conceptual_model.PNG" alt="Conceptual Model"/>
+				</section>
+				<section data-background="" data-background-size="contain" data-background="#fff" style="top: 0;">
+					<h4>Conceptual Model</h4>
+					<p style="font-size: 28px;">Types of ER-Models</p>
+					<img src="images/data/er_models.png" alt="Different types of ER models"/>
+					
+
+				</section>
+
+				<section data-background="#fff">
+					<h3>Conceptual Model Cont.</h3>
+					<p style="font-size: 24px;"><strong>Conceptual Modeling</strong> is an iterative process that requires you to constantly revisit your conceptual model and make alterations</p>
+					<img src="images/data/conceptual_model_process.png" alt="stages of ER models"/>
+					<p><strong></strong></p>
+					  <aside class="notes">
+					    
+					    
+					  </aside>
+				</section>
+	
+
+				<section data-background="images/data/devops.jpg">
+					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">Logical Model</h1>
+				</section>
+				<section data-background="#fff">
+					<h3>Logical Model</h3>
+					<p>A logical design is a conceptual, abstract design. You do not deal with the physical implementation details yet; you start to define the types of information that you need.</p>
+					<img src="images/data/data_modeling_logical.png" width="600" alt="Data Modeling Logical and Pysical Requirements">
+
+				</section>
+				<section data-background="#fff">
+					<h2>MPLS Renters Example</h2>
+					<p>Entities and the Relationships that exist</p>
+
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/data/er_model_subset.png" width="350px;" alt="subset of MPLS Renters ER model"/>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px; max-width: 300px;">
+							<h3>What is Depicted in ER Diagram:</h3>
+							<ul>	
+								<li style="font-size: 20px;"><code>Entity Name</code></li>	 
+								<li style="font-size: 20px;"><code>Entity Strength</code></li>
+								<li style="font-size: 20px;"><code>Relationship Strength(Weak and Strong)</code></li>
+								<li style="font-size: 20px;"><code>Primary Key + Foriegn Key</code></li>
+								<li style="font-size: 20px;"><code>Cardinality</code></li>
+								<li style="font-size: 20px;"><code>Null vs. Not Null</code></li>
+								<li style="font-size: 20px;"><code>Sometimes the Data type</code></li>
+							</ul>
+						</div>
+				</section>
+				<section data-background="#fff">
+					<h2>MPLS Renters Example</h2>
+					<p>Entities and the Relationships that exist</p>
+
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/data/er_model_subset.png" alt="subset of MPLS Renters ER model"/>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px; max-width: 400px;">
+							<h3>Subset of Relationships Rules:</h3>
+							<ul>	
+								<li style="font-size: 20px;"><code>A <strong>PROPERTY</strong> can be <span style="text-decoration: underline;">associated</span> with one or more <strong>PROP_AMEN_LIST</strong>, each <strong>PROP_AMEN_LIST</strong> can be <span style="text-decoration: underline;">associated</span> with one <strong>PROPERTY</strong></code></li>	 
+							</ul>
+							<h3>A few questions:</h3>
+							<ul>	
+								<li style="font-size: 20px;"><code>Why is <strong>PROP_AMEN_LIST</strong> entity needed?  Why can't a relationship between <strong>AMENTITY</strong> and <strong>PROPERTY</strong> exist? </code></li>
+								<li style="font-size: 20px;"><code>How is relationship strength indicated?</code></li>	 
+							</ul>
+						</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Learning Activity</h3>
+					<h4 style="text-align: center;">Scenario 1</h4>
+					<img src="images/data/learning_activity1.PNG" width="500" alt="Problem description 1"/>
+					<h4 style="text-align: center;">Scenario 2</h4>
+					<img src="images/data/learning_activity2.PNG" width="500" alt="Problem description 2"/>
+					<!--<div id="flexcontain">
+						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #eee; height: 235px; color: #111;"><p><b style="font-size: 24px;">Business Rules</b> <br> Write all relationships depicted between in image above </p></div>
+						<div class="box blue" style="font-size: 18px; margin: 10px; background-color: #eee; height: 235px; color: #111;"><p><b style="font-size: 24px;">Draw.io</b> <br>Practice using draw.io to replicate the entities display above.</p></div>
+						<div class="box green" style="font-size: 18px; margin: 10px; background-color: #eee; height: 235px; color: #111;"><p><b style="font-size: 24px;">Extending ERD</b> <br>Consider adding a profile entity<br> Write the relationship between profile and property <br>Addend your logical model to include the new entity</p></div>
+
+					</div>-->
+				</section>
+
+				<section data-background="#fff">
+					<h2>MPLS Renters Example</h2>
+					<p>Understanding various keys</p>
+
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/data/er_model_subset.png" alt="subset of MPLS Renters ER model"/>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px; max-width: 400px;">
+							<h3>Types of Keys:</h3>
+							<ul>	
+								<li style="font-size: 16px;"><code><strong>Primary Key</strong> is a column or group of columns in a table that uniquely identify every row in that table</code></li>
+								<li style="font-size: 16px;"><code><strong>Foriegn Key</strong>  is a column that creates a relationship between two tables</code></li>
+								<li style="font-size: 16px;"><code><strong>Composite/Compound</strong> is a combination of two or more columns that uniquely identify rows in a table</code></li>
+								<li style="font-size: 16px;"><code><strong>Alternate Key</strong> iis a column or group of columns in a table that uniquely identify every row in that tables</code></li>	 
+							</ul>
+							<h3>How are keys applied?</h3>
+							<ul>	
+								<li style="font-size: 16px;"><code>In a relationship, the many side recieves the foriegn key</code></li>
+								<li style="font-size: 16px;"><code>There are so many keys - The difference sometimes equates to what can uniquely identify <strong>tuples(a column)</strong> or <strong>rows</strong></code></li>	 
+							</ul>
+						</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Learning Activity</h3>
+
+					<h4 style="text-align: center;">Scenario </h4>
+					<img src="images/data/learning_activity2.PNG" width="500" alt="Problem description 2"/>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #eee; height: 235px; color: #111;"><p><b style="font-size: 24px;">Business Rules</b> <br> Write all relationships depicted between in image above </p></div>
+						<div class="box blue" style="font-size: 18px; margin: 10px; background-color: #eee; height: 235px; color: #111;"><p><b style="font-size: 24px;">Draw.io</b> <br>Practice using draw.io to replicate the entities display above.</p></div>
+						<div class="box green" style="font-size: 18px; margin: 10px; background-color: #eee; height: 235px; color: #111;"><p><b style="font-size: 24px;">MySQL WorkBench Model</b> <br>Create the Diagram in MySQL workbench</p></div>
+
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Learning Activity</h3>
+					<img src="images/data/er_model_subset.png" width="350px;" alt="subset of MPLS Renters ER model"/>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #eee; height: 235px; color: #111;"><p><b style="font-size: 24px;">Business Rules</b> <br> Write all relationships depicted between in image above </p></div>
+						<div class="box blue" style="font-size: 18px; margin: 10px; background-color: #eee; height: 235px; color: #111;"><p><b style="font-size: 24px;">Draw.io</b> <br>Practice using draw.io to replicate the entities display above.</p></div>
+						<div class="box green" style="font-size: 18px; margin: 10px; background-color: #eee; height: 235px; color: #111;"><p><b style="font-size: 24px;">Extending ERD</b> <br>Consider adding a profile entity<br> Write the relationship between profile and property <br>Addend your logical model to include the new entity</p></div>
+
+					</div>
+				</section>
+				
+				<section data-background="#eee" data-background-size="contain" data-background="#fff" style="top: 0; text-align: left;">
+					<h2>Sample Quiz Question</h2>
+					
+				     <p>[TRUE or FALSE] Data and information are essentially the same thing:</p>
+				     <input type="radio" id="age1" name="score" value="30">
+				     <label for="score1">A) True</label><br>
+				     <input type="radio" id="age2" name="score" value="60">
+				     <label for="score2">B) False</label><br>  
+				</section>
+				<section data-background="" data-background-size="contain" data-background="#fff" style="top: 0;">
+					<h1>Supplemental Material</h1>
+					<ul>
+						<li><a href="https://www.guru99.com/dbms-keys.html">Guru99: Understanding Database Keys</a></li>
+					</ul>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

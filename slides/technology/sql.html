@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Intro. to SQL</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/luc.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="css/zenburn.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/gruvbox-dark.min.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;800&display=swap" rel="stylesheet">
+		<style>
+			.reveal pre {
+	
+				box-shadow: none;
+			}
+
+
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="#f8f8f8">
+				    <h2 style="font-size: 2em; color: #000;">Structured Query Language (SQL)</h2>
+				    <h3 style="color: #000; font-weight: 200;"></h3>
+				    <h3 style="color: #000; font-weight: 200;">Instructor: Chris Fulton</h3>
+				    <img src="images/intro/LUC_stacked.png" width="300" style="position: fixed; bottom: 0; margin-left: -15%; margin-bottom: 5%;" alt="LUC logo">
+				</section>
+				<section data-background="" data-background-size="contain" data-background="#fff" style="top: 0;">
+				    <h2>Agenda + Learning Objectives</h2>
+				    <ul style="font-size: 26px;">
+
+						<li>Examinine the various SQL commands for Data Manipulation Language(DML) and Data Definition Language (DDL)</li>
+						<ul>
+							<li>DDL - CREATE, DROP, ALTER, TRUNCATE</li>
+							<li>DML - DROP, CREATE, DELETE UPDATE</li>
+							<li>TCL - COMMIT, UPDATE, DELETE, CALL, EXPLAN CALL, LOCK</li>
+							<li>DQL - SELECT</li>
+							<li>DCL - GRANT, REVOKE</li>
+						</ul>
+						<li>Design internal database schema using modern database tools</li>
+						<ul>
+							<li>Review MySQL Workbench: Forward Engineering, Modeling Tools</li>
+							<li>Designing database schema using modern database tools such as popSQL, BeaverDB, etc...</li>
+
+						</ul>
+						<li>Implementing Views, Indexes and Stored Procedures</li>
+						<ul>
+							<li>Improving Database Performance </li>
+						</ul>
+					
+				    </ul>
+				</section>
+
+
+				<section data-background="../logic/images/methods/overloaded_bg.jpg">
+					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">SQL(Structured Query Langauge)</h1>
+					<h4 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">DDL – Data Definition Language.
+						<br>DQL – Data Query Language.
+						<br>DML – Data Manipulation Language.
+						<br>DCL – Data Control Language.
+						<br>TCL – Transaction Control Language.</h4>
+				</section>
+				<section data-background="" data-background-size="contain" data-background="#fff" style="top: 0;">
+				    <h2>SQL Categories</h2>
+				    <p style="font-size: .5em;"><strong>SQL</strong> a programming language designed for interacting with a relational database. SQL allows us to define the scope of the database, add, delete or modify the data in the database</p>
+					<img src="images/sql/sql_commands_geeksforgeeks.png" width="600" alt="Graphic of SQL categories" />
+				</section>
+				<section data-background="#eee">
+					<h4>SQL in 100 Seconds</h4>
+					<iframe width="1020" height="515" src="https://www.youtube.com/embed/zsjvFFKOm3c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</section>
+				<section data-background="#fff">
+					<h3>SQL command cheatsheet</h3>
+						<iframe src="https://instructorc.github.io/site/slides/database/pdf/SQL-Cheat-Sheet.pdf" width="900" height="600"></iframe>
+					
+				</section>
+				<section data-background="#fff">
+					<h3>Tools</h3>
+					<p>A number of tools can help with visualizing, querying, and database script creation</p>
+				
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #eee; height: 280px; color: #111;"><code><b style="font-size: 32px;">ER Modeling tools</b> <br> - <a href="https://draw.io">Draw.io</a><br> - <a href="https://www.erdconcepts.com/index.html">ER Concepts 8</a><br> - <a href="https://github.com/ondras/wwwsqldesigner">SQL Designer</a> <br> - <a href="https://drawsql.app/">Draw SQL</a></code></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #eee; height: 280px; color: #111;"><code><b style="font-size: 32px;">Database Interface Tools</b> <br> - <a href="https://sqlitebrowser.org/">DB Browser</a> <br> - <a href="https://dbeaver.io/">DB Beaver</a> <br> - <a href="https://www.mysql.com/products/workbench/">MySQL Workbench</a> -<br> - <a href="https://popSQL.com">popSQL</a><br> - <a href="https://www.jetbrains.com/datagrip/">Datagrip</a></code></div>
+
+
+					</div>
+					<aside class="notes">
+
+					</aside>
+				</section>
+				<section data-background="#fff">
+					<h4>SQL Statement to execute our example</h4>
+				
+					<p style="font-size: 24px;"></p>
+					<div id="flexcontain">
+						<div class="box">
+							<img src="images/sql/entity_relationship.PNG" alt="Entity Relationship"/>
+						</div>
+						<div class="box">
+							<pre>
+								<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+									CREATE TABLE "USER" (
+										"user_id"	INTEGER,
+										"user_email"	TEXT NOT NULL,
+										"user_password"	TEXT,
+										PRIMARY KEY("user_id" AUTOINCREMENT)
+									);
+									
+									CREATE TABLE "TASK" (
+										"task_id"	INTEGER,
+										"task_user_id"	INTEGER NOT NULL,
+										"task_category"	TEXT,
+										"task_description"	TEXT,
+										FOREIGN KEY("task_user_id") REFERENCES "USER"("user_id"),
+										PRIMARY KEY("task_id" AUTOINCREMENT)
+									);
+
+
+							</code>
+						</pre>
+						</div>
+						
+					</div>
+					
+				</section>
+
+				<section data-background="white" style="background-size: 80%;">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Learning Activity</h3>
+					<img src="images/sql/artist_album_erd.png" width="600" alt="artist album" />
+					<div id="flexcontain">
+						<div class="box" style="font-size: 24px; margin: 10px; height: 260px; background-color: #eee;"><h3 style="margin-top: 50px;">Create Table</h3> Write the SQL command to CREATE the table </div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 260px; background-color: #eee;"><h3 style="margin-top: 50px;">Insert Records</h3> Write the SQL command to INSERT the records found in file <br><a href="./pdf/artist_album.txt" target="_blank">Open artist_album.txt file</a></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 260px; background-color: #eee;"><h3 style="margin-top: 50px;">Query Table</h3> Using the SQL SELECT command and document 7 ways to retrieve and aggregate data from Album table  </div>
+					</div>
+				</section>
+				<section data-background="../logic/images/methods/overloaded_bg.jpg">
+					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">Advanced SQL</h1>
+				</section>
+				<section data-background="#eee">
+					<h3>Advanced SQL Clauses</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #2d4650; height: 475px;"><p><b style="font-size: 32px;">JOINS</b> <br> A <code>JOIN</code> clause is used to combine rows from two or more tables, based on a related column between them. <br></p><img src="images/sql/join_image.PNG" alt="Visual of 4 joins"></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; background-color: #2d4650; height: 475px;"><p><b style="font-size: 32px;">GROUP BY</b> <br> The <code>GROUP BY</code> command is used to group the result set (used with aggregate functions: COUNT, MAX, MIN, SUM, AVG).</p><p><b style="font-size: 32px;">HAVING</b> <br> The <code>HAVING</code> clause was added to SQL because the WHERE keyword cannot be used with aggregate functions.</p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #2d4650; height: 475px;"><p><b style="font-size: 32px;">ORDER BY</b> <br> The <code>ORDER BY</code> is used to sort the result-set in ascending or descending order.</p></div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h2>JOINS</h2>
+
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/sql/sql_joins.png" width="430" alt="All the types of joins image"/>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px; max-width: 400px;">
+							<h3>Types of Joins:</h3>
+							<ul>	
+								<li style="font-size: 24px;"><strong>INNER</strong> - Returns records that have matching values in both tables </li>
+								<li style="font-size: 24px;"><strong>FULL (OUTER) JOIN</strong> - Returns all records when there is a match in either left or right table </li>	 
+								<li style="font-size: 24px;"><strong>LEFT (OUTER) JOIN</strong> - Returns all records from the left table, and the matched records from the right table  </li>	
+								<li style="font-size: 24px;"><strong>RIGHT (OUTER) JOIN</strong> - Returns all records from the right table, and the matched records from the left table</li>	
+							</ul>	 
+							</ul>
+						</div>
+				</section>
+				<section data-background="#eee">
+					<h2>INNER JOIN EXAMPLE</h2>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 20px;">Most commonly used JOIN</li>
+								<li style="font-size: 20px;">Another way of stating the example below - return all the rows that match the foreign key in Albums with primary key in Artist</li>
+							</ul>
+							<h3>Ex. of Inner Join</h3>
+							<pre>
+								<code style="font-size: 22px; height: 100px;" class="codebox code-example__codebox"  data-trim contenteditable>
+									
+									SELECT artist.artist_name, album.album_name FROM artist
+
+									INNER JOIN album
+
+									ON artist.artistID = album.album_artistID;
+								</code>
+							</pre>
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#eee">
+					<h2>GROUP BY CLAUSE</h2>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 20px;">Rows can be <strong>grouped</strong> into smaller collections.  Typically used with aggregate functions such as <strong><code> COUNT(), MAX(), MIN(), SUM(), and AVG()</code>.</strong></li>
+								<li style="font-size: 20px;">The GROUP BY makes use  of the HAVING clause which operates much like the WHERE clause in the SELECT statement.</li>
+								<li style="font-size: 20px;">Another way of reading the SQL statement  below - Select all artist and the total of number of times they have a top record in the albums table and display total count, name and album title.  Display in descending order.</li>
+							</ul>
+							<h3>Ex. GROUP clause on Year</h3>
+							<pre>
+								<code style="font-size: 22px; height: 160px;" class="codebox code-example__codebox"  data-trim contenteditable>
+									
+									SELECT COUNT(artist.artist_name) AS 'Total Count', artist.artist_name, album.album_name FROM artist
+
+									INNER JOIN album
+
+									ON artist.artistID = album.album_artistID
+
+									GROUP BY artist.artist_name
+
+									ORDER BY COUNT(artist.artist_name) DESC;
+								</code>
+							</pre>
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="white" style="background-size: 80%;">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Learning Activity</h3>
+					<img src="images/sql/artist_album_erd.png" width="600" alt="artist album" />
+					<div id="flexcontain">
+						<div class="box" style="font-size: 24px; margin: 10px; height: 260px; background-color: #eee;"><h3 style="margin-top: 50px;">Inner Join</h3> Using the dataset from the previous activity, copy the INNER JOIN query from the previous slide and observe result set</div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 260px; background-color: #eee;"><h3 style="margin-top: 50px;">Right Join</h3> Write the SQL command to execute a Right Join</div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 260px; background-color: #eee;"><h3 style="margin-top: 50px;">Left Join</h3> Write the SQL command to execute a Left Join</div>
+					</div>
+				</section>
+				<!--<section data-background="#eee">
+					<h4></h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 20px;"><b>background-color</b> – <input type="checkbox" id="bg_color"> - Click the checkbox to change the background-color: #cd0000;</li>
+								<li style="font-size: 20px;"><b>background-image</b> – <input type="checkbox" id="bg_image"> - Click the checkbox to change the background-image: url(images/cgt/chicago_bears_logo.png);</li>
+								<li style="font-size: 20px;"><b>background-repeat-x</b> – <input type="checkbox" id="bg_repeat_x"> - Click the checkbox to change the background-repeat-x: repeat-x;</li>
+								<li style="font-size: 20px;"><b>background-repeat-y</b> – <input type="checkbox" id="bg_repeat_y"> - Click the checkbox to change the background-repeat-y: repeat-y;</li>
+								<li style="font-size: 20px;"><b>background-position</b> – <input type="checkbox" id="bg_position"> - Click the checkbox to change the background-position: center;</li>
+								<li style="font-size: 20px;"><b>background-size</b> – <input type="checkbox" id="bg_size_cover"> - Click the checkbox to change the background-size: cover; (</li>
+								<li style="font-size: 20px;"><b>background-size</b> – <input type="checkbox" id="bg_size_contain"> - Click the checkbox to change the background-size: contain;</li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<div id="bgbox" style="border: 6px solid #333; width: 100%; height: 90%; border-radius: 12px;"></div>
+						
+						</div>
+
+					</div>
+
+				</section>
+					
+				<section data-background="#fff">
+					<h3>Different Types of DB</h3>
+					<p style="font-size: 28px;">Selection of DB should be based upon how, when, where and who will use the data.</p>
+					<img src="images/data/database_types.jpg" alt="Database Types and brands" />
+
+					<p style="font-size: 24px;"><strong>Relational & Non-Relational</strong> are the overarching categories of DB's</p>
+					  <aside class="notes">
+					    
+					    
+					  </aside>
+				</section>
+				<section data-background="images/data/devops.jpg">
+					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">What is Data?</h1>
+				</section>
+				<section data-background="#fff">
+					<h3>Raw Data</h3>
+					<img src="images/data/rawdata.png" width="400"  alt="raw data"/>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 28px; margin: 10px;">
+							<h3>Data</h3>
+							<ul>	
+								<li style="font-size: 26px;"><b>Data</b> - Consist of raw facts</li>
+
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 28px; margin: 10px;">
+							<h3>Raw Data</h3>
+							<ul>	
+								<li style="font-size: 26px;"><b>Raw Data</b> - indicates that the facts have not yet been processes to reveal their meaning. </li>	
+							</ul>
+						</div>
+					</div>
+					
+					  <aside class="notes">
+					    
+					    
+					  </aside>
+				</section>
+
+				<section data-background="images/data/data_bg.jpg">
+					<h2 style="color: white; font-style: italic; background-color: rgba(0, 0, 0, 0.664); padding: 3px;">The purpose of collecting raw data is to extract meaning.</h2>
+				</section>
+				<section data-background="white" style="background-size: 80%;">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Data Pyramid</h3>
+					<img src="images/data/knowledge_pyramid.jpg" width="500" alt="data pyramid" />
+					<div id="flexcontain">
+						<div class="box" style="font-size: 24px; margin: 10px; height: 120px; background-color: #eee;"><h3 style="margin-top: 50px;">Raw Data</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 120px; background-color: #eee;"><h3 style="margin-top: 50px;">Information</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 120px; background-color: #eee;"><h3 style="margin-top: 50px;">Knowledge</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 120px; background-color: #eee;"><h3 style="margin-top: 50px;">Intelligence / Insight / Wisdom</h3></div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Learning Activity</h3>
+					<p style="font-size: .6em;">Assume you want to create a database for a community that is looking to start a neighborhood watch program. The community would like to have information on volunteers, incidents that occur, meeting agendas and an evening watch schedule.  The community will ultimately have a website that displays a evening watch schedule, a list of all incidents and a page that displays upcoming and previous meeting agenda's. </p>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Questions</b> <br> What initials questions would you have for the community?</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Data</b> <br>What data would you collect?  Make a list of all the data you would need to collect?</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Grouping Data</b> <br>How would you organize/group the data?  What data can we remove? What data is essential and provides strategic insight?</p></div>
+
+					</div>
+				</section>
+				<section data-background="images/data/data_bg.jpg">
+					<h2 style="color: white; font-style: italic; background-color: rgba(0, 0, 0, 0.664); padding: 3px;">Why is it important to think of data in this structure?</h2>
+				</section>
+				<section data-background="images/data/devops.jpg">
+					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">Data Modeling</h1>
+				</section>
+				<section data-background="#fff">
+					<h3>Data Models + Data Modeling </h3>
+					
+					<p style="font-size: 24px;"><b>Model:</b>  Abstraction of a real-world object or event </p>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<h3>Data Models</h3>
+							<ul>	
+								<li style="font-size: 20px;">Are a communication tool</li>	 
+								<li style="font-size: 20px;">Give an overview of the database</li>
+								<li style="font-size: 20px;">Organize data for various users</li>
+								<li style="font-size: 20px;">Are an abstraction for the creation of good database</li>
+
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<h3>Data Modeling</h3>
+							<ul>	
+								<li style="font-size: 20px;">Iterative and progressive process of creating a specific data model for a determined problem domain</li>
+								<li style="font-size: 20px;">The process of transforming logical data models into physical data Models</li>
+							</ul>
+						</div>
+
+	
+					</div>
+					
+					  <aside class="notes">
+					    
+					    
+					  </aside>
+				</section>
+				<section data-background="white" style="background-size: 80%;">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Business Rules</h3>
+					<img src="images/data/business_rules.PNG" width="500" alt="Source for business rules" />
+					<div id="flexcontain">
+
+						<div class="box" style="font-size: 20px; margin: 10px; height: 290px; background-color: #eee;"><h3 style="margin-top: 50px;">Definition</h3><p>Brief, precise, and unambiguous description of a policy, procedure, or principle. <br> Some business rule describes a constraint that cannot be shown in the ER diagram</p></div>
+						<div class="box" style="font-size: 20px; margin: 10px; height: 290px; background-color: #eee;"><h3 style="margin-top: 50px;">Purpose</h3><p>Describe main and distinguishing characteristics of the data</p></div>
+						<div class="box" style="font-size: 18px; margin: 10px; height: 290px; background-color: #eee;"><h3 style="margin-top: 50px;">Example</h3><code> - A community watch group member can submit one or more incidents.</code><br><code>- An incident can be assigned multiple categories</code><br><code> - An agenda can be only be created by site administrator who is also a member</code></div>
+					</div>
+				</section>
+				<section data-background="white" style="background-size: 80%;">
+					
+					<img src="images/data/documenting_business_rules.PNG" width="900" alt="Documenting Business Rules" />
+
+				</section>
+				<section data-background="white" style="background-size: 80%;">
+					
+					<img src="images/data/step_one.PNG" width="900" alt="Step one of documenting Business Rules" />
+
+				</section>
+				<section data-background="white" style="background-size: 80%;">
+					
+					<img src="images/data/step_two.PNG" width="1000" alt="Step two of documenting Business Rules" />
+
+				</section>
+				<section data-background="#fff">
+					<h3>Data Modeling</h3>
+					
+					<p style="font-size: 24px;"><b>Minimum data rule:</b>  All that is needed is there, and all that is there is needed
+					</p>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<h3>Conceptual Design</h3>
+							<ul>	
+								<li style="font-size: 20px;">Design a database independent of database software and physical details
+									Conceptual data model – Describes main data entities, attributes, relationships, and contraints
+									</li>
+
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<h3>Logical Design</h3>
+							<ul>	
+								<li style="font-size: 20px;">The process of transforming (or mapping) a conceptual schema of the application domain into a schema for the data model </li>	 
+								<li style="font-size: 20px;">some software is typically to create and map this model</li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<h3>Physical Design</h3>
+							<ul>	
+								<li style="font-size: 20px;">modifies how the data is formatted (framed) and transported between the client and server, both of which manage the entire process, and hides all the complexity from our applications within the new framing layer</li>
+								<li style="font-size: 20px;">The process of transforming logical data models into physical data Models</li>
+							</ul>
+						</div>
+	
+					</div>
+					
+					  <aside class="notes">
+					    
+					    
+					  </aside>
+				</section>
+				<section data-background="" data-background-size="contain" data-background="#fff" style="top: 0;">
+					<h4>Conceptual Model</h4>
+					<img src="images/data/conceptual_model.PNG" alt="Conceptual Model"/>
+				</section>
+				<section data-background="" data-background-size="contain" data-background="#fff" style="top: 0;">
+					<h4>Conceptual Model</h4>
+					<p style="font-size: 28px;">Types of ER-Models</p>
+					<img src="images/data/er_models.png" alt="Different types of ER models"/>
+					
+
+				</section>
+
+				<section data-background="#fff">
+					<h3>Conceptual Model Cont.</h3>
+					<p style="font-size: 24px;"><strong>Conceptual Modeling</strong> is an iterative process that requires you to constantly revisit your conceptual model and make alterations</p>
+					<img src="images/data/conceptual_model_process.png" alt="stages of ER models"/>
+					<p><strong></strong></p>
+					  <aside class="notes">
+					    
+					    
+					  </aside>
+				</section>
+	
+
+				<section data-background="images/data/devops.jpg">
+					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">Logical Model</h1>
+				</section>
+				<section data-background="#fff">
+					<h3>Logical Model</h3>
+					<p>A logical design is a conceptual, abstract design. You do not deal with the physical implementation details yet; you start to define the types of information that you need.</p>
+					<img src="images/data/data_modeling_logical.png" width="600" alt="Data Modeling Logical and Pysical Requirements">
+
+				</section>
+				<section data-background="#fff">
+					<h2>MPLS Renters Example</h2>
+					<p>Entities and the Relationships that exist</p>
+
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/data/er_model_subset.png" width="350px;" alt="subset of MPLS Renters ER model"/>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px; max-width: 300px;">
+							<h3>What is Depicted in ER Diagram:</h3>
+							<ul>	
+								<li style="font-size: 20px;"><code>Entity Name</code></li>	 
+								<li style="font-size: 20px;"><code>Entity Strength</code></li>
+								<li style="font-size: 20px;"><code>Relationship Strength(Weak and Strong)</code></li>
+								<li style="font-size: 20px;"><code>Primary Key + Foriegn Key</code></li>
+								<li style="font-size: 20px;"><code>Cardinality</code></li>
+								<li style="font-size: 20px;"><code>Null vs. Not Null</code></li>
+								<li style="font-size: 20px;"><code>Sometimes the Data type</code></li>
+							</ul>
+						</div>
+				</section>
+				<section data-background="#fff">
+					<h2>MPLS Renters Example</h2>
+					<p>Entities and the Relationships that exist</p>
+
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/data/er_model_subset.png" alt="subset of MPLS Renters ER model"/>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px; max-width: 400px;">
+							<h3>Subset of Relationships Rules:</h3>
+							<ul>	
+								<li style="font-size: 20px;"><code>A <strong>PROPERTY</strong> can be <span style="text-decoration: underline;">associated</span> with one or more <strong>PROP_AMEN_LIST</strong>, each <strong>PROP_AMEN_LIST</strong> can be <span style="text-decoration: underline;">associated</span> with one <strong>PROPERTY</strong></code></li>	 
+							</ul>
+							<h3>A few questions:</h3>
+							<ul>	
+								<li style="font-size: 20px;"><code>Why is <strong>PROP_AMEN_LIST</strong> entity needed?  Why can't a relationship between <strong>AMENTITY</strong> and <strong>PROPERTY</strong> exist? </code></li>
+								<li style="font-size: 20px;"><code>How is relationship strength indicated?</code></li>	 
+							</ul>
+						</div>
+				</section>
+				<section data-background="#fff">
+					<h2>MPLS Renters Example</h2>
+					<p>Understanding various keys</p>
+
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/data/er_model_subset.png" alt="subset of MPLS Renters ER model"/>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px; max-width: 400px;">
+							<h3>Types of Keys:</h3>
+							<ul>	
+								<li style="font-size: 16px;"><code><strong>Primary Key</strong> is a column or group of columns in a table that uniquely identify every row in that table</code></li>
+								<li style="font-size: 16px;"><code><strong>Foriegn Key</strong>  is a column that creates a relationship between two tables</code></li>
+								<li style="font-size: 16px;"><code><strong>Composite/Compound</strong> is a combination of two or more columns that uniquely identify rows in a table</code></li>
+								<li style="font-size: 16px;"><code><strong>Alternate Key</strong> iis a column or group of columns in a table that uniquely identify every row in that tables</code></li>	 
+							</ul>
+							<h3>How are keys applied?</h3>
+							<ul>	
+								<li style="font-size: 16px;"><code>In a relationship, the many side recieves the foriegn key</code></li>
+								<li style="font-size: 16px;"><code>There are so many keys - The difference sometimes equates to what can uniquely identify <strong>tuples(a column)</strong> or <strong>rows</strong></code></li>	 
+							</ul>
+						</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Learning Activity</h3>
+					<img src="images/data/er_model_subset.png" width="350px;" alt="subset of MPLS Renters ER model"/>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #eee; height: 235px; color: #111;"><p><b style="font-size: 24px;">Business Rules</b> <br> Write all relationships depicted between in image above </p></div>
+						<div class="box blue" style="font-size: 18px; margin: 10px; background-color: #eee; height: 235px; color: #111;"><p><b style="font-size: 24px;">Draw.io</b> <br>Practice using draw.io to replicate the entities display above.</p></div>
+						<div class="box green" style="font-size: 18px; margin: 10px; background-color: #eee; height: 235px; color: #111;"><p><b style="font-size: 24px;">Extending ERD</b> <br>Consider adding a profile entity<br> Write the relationship between profile and property <br>Addend your logical model to include the new entity</p></div>
+
+					</div>
+				</section>
+				
+				<section data-background="#eee" data-background-size="contain" data-background="#fff" style="top: 0; text-align: left;">
+					<h2>Sample Quiz Question</h2>
+					
+				     <p>[TRUE or FALSE] Data and information are essentially the same thing:</p>
+				     <input type="radio" id="age1" name="score" value="30">
+				     <label for="score1">A) True</label><br>
+				     <input type="radio" id="age2" name="score" value="60">
+				     <label for="score2">B) False</label><br>  
+				</section>-->
+				<section data-background="" data-background-size="contain" data-background="#fff" style="top: 0;">
+					<h1>Supplemental Material</h1>
+					<ul>
+						<li><a href="https://www.w3schools.com/sql/">W3Schools.com SQL Tutorial</a></li>
+					</ul>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script src="js/background.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
