@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Database Normalization</title>
+		<title>AI Foundations</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/luc.css">
@@ -30,20 +30,20 @@
 		<div class="reveal">
 			<div class="slides">
 				<section data-background="#f8f8f8">
-				    <h2 style="font-size: 2em; color: #000;">Database Normalization</h2>
+				    <h2 style="font-size: 2em; color: #000;">AI Foundations</h2>
 				    <h3 style="color: #000; font-weight: 200;"></h3>
 				    <h3 style="color: #000; font-weight: 200;">Instructor: Chris Fulton</h3>
-				    <img src="images/intro/LUC_stacked.png" width="300" style="position: fixed; bottom: 0; margin-left: -15%; margin-bottom: 5%;" alt="LUC logo">
+				    <img src="images/intro/official_logo.jpg" width="300" style="position: fixed; bottom: 0; margin-left: -15%; margin-bottom: 5%;" alt="LUC logo">
 				</section>
 				<section data-background="" data-background-size="contain" data-background="#fff" style="top: 0;">
 				    <h2>Agenda + Learning Objectives</h2>
 				    <ul style="font-size: 26px;">
-						<li>Explain what normalization is and what role it plays in the database design process</li>
+						<li>AI Overview</li>
 						<ul>
-							<li>Eliminating Data Redundancy</li>
-							<li>Data Anomalies -  Update, Delete and Insert anomaly</li>
+							<li>Machine Learning</li>
+							<li>Deep Learning</li>
 						</ul>
-						<li>Apply the normal forms 1NF, 2NF, 3NF, BCNF, and 4NF</li>
+						<li>AI Algorithms</li>
 						<ul>
 							<li>Reviewing Atomicity and Granularity </li>
 							<li>Eliminating Repeating Groups</li>
@@ -56,25 +56,14 @@
 
 
 				<section data-background="../logic/images/methods/overloaded_bg.jpg">
-					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">What is Normalization and Why is it important?</h1>
+					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">AI Overview</h1>
 				</section>
-				<section data-background="" data-background-size="contain" data-background="#fff" style="top: 0;">
-				    <h2>Normalization Definition</h2>
-				    <p>The process of designing and creating a set of database tables that satisfies the users' needs and <strong>avoids redundancies</strong> and <strong>anomalies</strong></p>
-				</section>
-				<section data-background="white" style="background-size: 80%;">
-					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Preventing Anomalies</h3>
-					<img src="images/normalization/anomalies.PNG" width="700" alt="data anomalies ex" />
-					<div id="flexcontain">
-						<div class="box" style="font-size: 24px; margin: 10px; height: 260px; background-color: #eee;"><h3 style="margin-top: 50px;">Update anomaly</h3> A problem that occurs when the data in a table needs to be altered; the result is repeated data</div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 260px; background-color: #eee;"><h3 style="margin-top: 50px;">Insert anomaly</h3> A problem that occurs when new rows are added to a table; the result is incomplete rows</div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 260px; background-color: #eee;"><h3 style="margin-top: 50px;">Delete anomaly</h3> A problem that occurs when a row in a table is deleted; the result is loss of related data</div>
-					</div>
-				</section>
+
+
 				<section data-background="#fff">
-					<h3>Why is Normalization needed?</h3>
-					<p style="font-size: 28px;">It’s a stringent look at the attributes an entity contain and the process of reducing data anomalies</p>
-					<img src="images/normalization/normalization_overview.PNG" width="600" alt="Image of normalization overview" />
+					<h3>AI Overview</h3>
+					<p style="font-size: 28px;">AI has been around for quit some time.</p>
+					<img src="images/ai/ai_overview_cropped.PNG" width="520" alt="AI overview overlaping spheres of machine learning and deep learning" />
 
 					
 					  <aside class="notes">
@@ -143,6 +132,15 @@
 					    
 					    
 					  </aside>
+				</section>
+				<section data-background="white" style="background-size: 80%;">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Preventing Anomalies</h3>
+					<img src="images/normalization/anomalies.PNG" width="700" alt="data anomalies ex" />
+					<div id="flexcontain">
+						<div class="box" style="font-size: 24px; margin: 10px; height: 260px; background-color: #eee;"><h3 style="margin-top: 50px;">Update anomaly</h3> A problem that occurs when the data in a table needs to be altered; the result is repeated data</div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 260px; background-color: #eee;"><h3 style="margin-top: 50px;">Insert anomaly</h3> A problem that occurs when new rows are added to a table; the result is incomplete rows</div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 260px; background-color: #eee;"><h3 style="margin-top: 50px;">Delete anomaly</h3> A problem that occurs when a row in a table is deleted; the result is loss of related data</div>
+					</div>
 				</section>
 				<section data-background="#fff">
 
