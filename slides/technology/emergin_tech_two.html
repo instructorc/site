@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Emerging Technology: Introduction</title>
+		<title>Emerging Technology: Software Adoption, Implementation, and Integration</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/luc.css">
@@ -30,7 +30,7 @@
 		<div class="reveal">
 			<div class="slides">
 				<section data-background="#fff">
-				    <h2 style="font-size: 1.7em; color: #000;">Emerging Technology: Introduction</h2>
+				    <h2 style="font-size: 1.7em; color: #000;">Emerging Technology: Governance and Risk Assessment</h2>
 				    <h3 style="color: #000; font-weight: 200;"></h3>
 				    <h3 style="color: #000; font-weight: 200;">Instructor: Chris Fulton</h3>
 				    <img src="images/intro/official_logo.jpg"  style="position: fixed; bottom: 0; margin-left: -15%; margin-bottom: 5%;" alt="LUC logo">
@@ -38,53 +38,61 @@
 				<section data-background="" data-background-size="contain" data-background="#fff" style="top: 0;">
 				    <h2>Agenda</h2>
 				    <ul style="font-size: 26px;">
-						<li>How do you define "Emerging Technology"?</li>
-						<li>What is considered "Emerging Technology"?</li>
+						<li>IT Governance Frameworks</li>
 						<ul>
-							<li>Overview of Emerging Technology landscape</li>
-							<li>Macro + Micro landscape</li>
-						</ul>
-						<li>Research, Resources, Analysis, and Tools</li>
-						<ul>
-							<li>User Experience + Research + Analysis</li>
+							<li>Committee of Sponsoring Organizations of the Treadway Committee (COSO)</li>
 							<ul>
-								<li>User Experience Research: Observations, Focus Groups, Interviews, Field Study, Usability Study, Survey</li>
-								<li>Market Analysis: Competitive Analysis Analysis, BenchMarking</li>
-								<ul>
-									<li>SWOT + PESTLE Analysis</li>	
-									<li>Gartner: Magic Quadrants, Hype Cycles, Initiatives and Complementary Research</li>
-									<li>Forrestor: Hype Cycles</li>
-									<li>Initiatives + Complementary Research</li>
-								</ul>
-
+								<li>Internal Control Framework</li>
+								<li>Enterprise Risk Management</li>
 							</ul>
-
+							<li>ISO/IEC 27001</li>
+							<li>Control Objectives for Information and Related Technologies (COBIT)</li>
+							<li>System and Organization Controls (SOC)</li>
 						</ul>
+						<li>Accessing the Risk of Emerging Technologies</li>
+						<ul>
+							<li>Evaluate Industry Trends & Competitor Adoption: Gartner Hype Cycle an Forrestor Wave Reports</li>
+							<li>Cost-Benefit & ROI Analysis</li>
+							<li>Develop a Risk Mitigation Plan</li>
+							<li>Establish a Review & Adaptation Process</li>
+						</ul>
+
 						<li>Case-Study Introduction</li>
 						<ul>
-							<li>Summer Health: Raising an AI-first company?</li>
+							<li>Walmart's Blockchain Quest: Integrating New Technology into a Complex Supply
+								Chain</li>
 						</ul>	
-
 				    </ul>
 				</section>
 
 
 				<section data-background="images/data/devops.jpg">
-					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">How would you define "Emerging Technology?</h1>
+					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">IT Governance Frameworks</h1>
 				</section>
 				<section data-background="#fff">
-					<h3>Variety of Definitions</h3>
+					<h3>Purpose of IT Governance Frameworks</h3>
 					
 					<div id="flexcontain">
-						<div class="box red" style="font-size: 16px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Gartner</b> <br>"an innovation that breaks into the market with the potential for significant business and social impact over the next five to ten years."    </p></div>
-						<div class="box blue" style="font-size: 16px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">World Economic Forum</b> <br>"discusses emerging technologies within the context of the "Fourth Industrial Revolution, technologies are seen as transformative, altering existing industries and creating new ones."  </p></div>
-						<div class="box green" style="font-size: 16px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">McKinsey and Company</b> <br> "innovations that drive rapid change across industries, influencing business strategies and operations"  </p></div>
+						<div class="box red" style="font-size: 16px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Strategic Alignment</b> <br>COBIT (Control Objectives for Information and Related Technologies) aligns IT processes with enterprise goals</p></div>
+						<div class="box blue" style="font-size: 16px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Risk Management & Security</b> <br>ISO/IEC 27001 ensures organizations have robust information security management systems (ISMS) in place. </p></div>
+						<div class="box green" style="font-size: 16px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Regulatory Compliance</b> <br>   </p></div>
 
-						<div class="box red" style="font-size: 16px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Forrestor</b> <br> "those that are in the early stages of maturity but have the potential to become significant drivers of business innovation and disruption" </p></div>
-						<div class="box blue" style="font-size: 16px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Lux Research</b> <br> "technologies that have the potential to transform industries through scientific innovation"</p></div>
-						<div class="box green" style="font-size: 16px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Deloitte</b> <br>"innovations that create or reshape industries and markets by introducing new capabilities or redefining existing ones."  </p></div>
+						<div class="box red" style="font-size: 16px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Performance Optimization & Efficiency</b> <br> </p></div>
+						<div class="box blue" style="font-size: 16px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Accountability & Transparency</b> <br> COBIT provides a structured governance model with clear accountability at all levels.</p></div>
+						<div class="box green" style="font-size: 16px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Innovation & Competitive Advantage</b> <br> </p></div>
 
 					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Committee of Sponsoring Organizations of the Treadway Committee (COSO)</h3>
+					<p style="font-size: 28px;">Not specifically geared toward IT, but framework can be applied for monitoring and assessment </p>
+					<img src="images/intro/emerge_tech.PNG" width="570" alt="Image of emerging tech" />
+
+					
+					  <aside class="notes">
+					    
+					    
+					  </aside>
 				</section>
 				<section data-background="white" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
 				
