@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="description" content="Java Programming data structure">
+		<meta name="keywords" content="Static arrays, multi-dimensional arrays">
+		<meta name="author" content="C. Fulton">
+
+		<title>Static and Dynamic Data Structures</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/dope.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<!-- Google Font -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="#6a8832">
+				    <h2 style="color: #fff952;">Static and Dynamic Data Structures</h2>
+				    <img src="../logic/images/structures/data_structure_hp.png" width="400" alt="static and dynamic data structure image">
+				    <h3 style="color: #fff952;">Instructor: Chris Fulton</h3>
+				</section>
+				<section data-background="#eee">
+				    <h3>Learning Objectives</h3>
+				    <ul style="font-size: 28px;">
+						<li>Identify types of Data Structures</li>
+						<ul>
+							<li>Data Structure Overview</li>
+							<li>Static vs. Dynamic Data Structures</li>
+						</ul>
+						<li>Explain the use cases of static arrays</li>
+						<ul>
+							<li>Definition of Array | Array Terminology | Array Syntax</li>
+							<li>Practical Array Use Cases</li>
+							<ul>
+								<li>Replacing Nested Decisions</li>
+								<li>Searching an array for exact match</li>
+								<li>Parallel Arrays</li>
+							</ul>
+						</ul>
+				        <li>Practice processing arrays using looping structure</li>
+				        <ul>
+							<li>Using Looping Structure - For Loops and While Loops</li>
+
+						</ul>
+						<li>Develop programs using Multi-dimensional Arrays</li>
+				        <ul>
+							<li>2d(Matrix)  - Syntax | Example | Processing</li>
+							<li>3d(Qube) - Syntax | Example | Processing </li>
+						</ul>
+						<li>Discuss the use cases for dynamic Data Structures</li>
+				        <ul>
+							<li>Using ArrayList, LinkedList, Hashmap and Hashset in Java</li>
+
+						</ul>
+						<!--<li>Evaluating String + StringBuilder + StringBuffer Class</li>-->
+
+				    </ul>
+				</section>
+
+				<section data-background="white">
+					<img src="../logic/images/structures/data_structure_tree.jpg"  style="box-shadow: none;" alt="data structure tree"/>
+					<p>Data can be stored and accessed in many ways</p>
+				</section>
+
+				<section data-background="../logic/images/structures/car_bg.jpg">
+					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">Data Structure - Array</h1>
+				</section>
+				<section data-background="#fff">
+					<h3>Array</h3>
+					<ul>
+						<li style="font-size: .6em;">An array is a <b>collection</b> of homogeneous (same type) data <b>items stored</b> in contiguous memory locations. For example if an array is of type “int”, it can only store integer elements and cannot allow the elements of other types such as double, float, char etc.</li>
+						<li style="font-style: italic; font-size: .6em;">Array is particularly useful when we are dealing with lot of variables of the same type.</li>
+					</ul>
+					<img src="../logic/images/structures/java_array.jpg" alt="picture of array">
+		
+				</section>
+				<section data-background="#fff">
+					<h3>Arrays in Java</h3>
+					<img src="images/ds/array_syntax_initializer.png" width="400" alt="Initializing arrays">
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Element</b> <br> An item in the array <br> - Array elements are contiguous in memory</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Size of the Array</b> <br>the number of elements it will hold</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Subscripts or Indexes</b> <br>Position number of an item in an array <br> Subscripts are always a sequence of integers</p></div>
+
+					</div>
+					
+				
+				</section>
+				<section data-background="#fff">
+					<h3>Learning Activity</h3>
+
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px;">
+							<ul>	
+								<li><b>Using the list to the right</b></li>
+								<ul>
+									<li>Create an array accessing each individual element</li>
+									<li>Using the same list, create an array using the colletion initializer </li>
+									
+								</ul>
+
+							</ul>
+
+						</div>
+						<div class="box_two" style=" margin: 10px;">
+							<img src="../logic/images/structures/grocery_list.jpg" alt="picture of grocery list">
+						</div>
+					</div>
+
+					
+				</section>
+				<section data-background="../logic/images/structures/replace_nested_bg.jpg">
+					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">Array Use Cases and Examples</h1>
+				</section>
+				<section data-background="#fff">
+					<h3 style="color: white; background-color: rgb(106, 136, 50);">Replacing Nested Decisions </h3>
+					<p style="font-size: 28px; margin-bottom: -12px;">The array reduces the number of statements needed</p>
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px;">
+							<img src="../logic/images/structures/old_if_new_array.png" height="535" alt="Example of old nested decisions">
+						</div>
+						<div class="box_two" style=" margin: 10px;">
+							<img src="../logic/images/structures/new_if_new_array.PNG" alt="Example of replacing nested decisions with array">
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Learning Activity</h3>
+
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px;">
+							<ul style="font-size: .7em;">	
+								<li><b>Six dependent count accumulators are redefined as a single array</b></li>
+								<ul>
+									<li style="background-color: #ff5500;">Variable as a subscript to the array</li>
+									<li style="background-color: #26e600;">Array is initialized with six indices to 0 </li>
+									<li style="background-color: #44c8f5;">Incremented by 1 each time the logic passes through the loop</li>
+								</ul>
+								<img src="../logic/images/structures/array_nest_ex_one.png" alt="array example diagram">
+
+							</ul>
+
+						</div>
+						<div class="box_two" style=" margin: 10px;">
+							<img src="../logic/images/structures/array_nest_ex_two.png" alt="array example diagram">
+						</div>
+					</div>
+				</section>
+				<section data-background="../logic/images/structures/array_bg.jpg">
+					<h1 style="color: black; background-color: #ffffffe0; padding: 3px;">Searching an Array for Exact Match</h1>
+				</section>
+				<section data-background="#fff">
+					<h3 style="color: white; background-color: rgb(106, 136, 50);">Searching for Exact Match</h3>
+					<p style="font-size: 28px; margin-bottom: -12px;">Sometimes you must search through an entire array to find a value –called a <b>linear search</b></p>
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px;">
+						<ul style="font-size: .7em;">	
+							<li><b>Examples: mail-order business</b></li>
+							<ul>
+								<li>Item numbers are three-digit, non-consecutive numbers</li>
+								<li>Customer orders an item; check if item number is valid</li>
+								<li>Create an array that holds valid item numbers</li>
+								<li>Search the array for an exact match</li>
+							</ul>
+						</ul>
+						</div>
+						<div class="box_two" style=" margin: 10px;">
+							<img src="../logic/images/structures/array_exact_match.png" width="330" alt="Array with exact match example">
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Learning Activity</h3>
+					<img src="../logic/images/structures/produce_list_cp.jpg" width="400" alt="Picture of produce students will code into a array">
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Using the above image - create an array that holds each of the items above. </div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Using a looping structure, output the items in list</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Use a decision structure to determine if the value "Fish" is within the array.  If so, output "Fish Found".</p></div>
+
+					</div>
+					
+				
+				</section>
+				<section data-background="../logic/images/structures/array_bg.jpg">
+					<h1 style="color: black; background-color: #ffffffe0; padding: 3px;">Parallel Arrays</h1>
+				</section>
+				<section data-background="#fff">
+					
+					<h3>Using parallel arrays</h3>
+					<img src="../logic/images/structures/parrallel_arrays.png" width="500" alt="parallel Arrays graphic">
+					<ul>
+						<li style="font-size: .6em;"><b>Two or more arrays contain related Data</b> - A subscript relates the arrays. <em>Elements at the same position in each array are logically related</em></li>
+						<li style=" font-size: .6em;"><b>Indirect Relationship</b> - Relationship between an item's number and its price</li>
+					</ul>
+					
+		
+				</section>
+				<section data-background="#fff">
+					<h3>Parallel Array Example </h3>
+
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px;">
+							<ul>	
+								
+								<li>Reprompting can be frustrating to a user if it continues indefinitely</li>
+								<li>Maintain a count of the number of reprompts</li>
+								<li><b>Forcing</b> a data item means:</li>
+								<ul>
+									<li>Override incorrect data by setting the variable to a specific value</li>
+								</ul>
+									
+								
+
+							</ul>
+
+						</div>
+						<div class="box_two" style=" margin: 10px;">
+							<img src="../logic/images/structures/parallel_ex.png" width="330" alt="parallel array example">
+						</div>
+					</div>
+
+					
+				</section>
+				<section data-background="../logic/images/structures/multi_bg.jpg">
+					<h1 style="color: black; background-color: #ffffffe0; padding: 3px;">Multi-dimensional Arrays</h1>
+				</section>
+				<section data-background="#fff">
+					<h3 style="color: white; background-color: rgb(106, 136, 50);">Two-dimensional array</h3>
+					<p style="font-size: 28px; margin-bottom: -12px;">Contains two dimensions: <b>height</b> and <b>width</b>.  The location of an element within the array depends on two factors.</p>
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px;">
+						<ul style="font-size: .7em;">	
+							<li><b>Examples: </b></li>
+							<ul>
+								<li>Apartment building with five floors</li>
+								<li>Each floor has studio apartments and one-and two-bedroom apartments</li>
+								<li>– To determine a tenant’s rent, you need to know two pieces of information:</li>
+								<ul>
+									<li>The floor</li>
+									<li>The number of bedrooms in the apartment</li>
+								</ul>
+								<li>java syntax: <br> <code style="font-size: .8em;"> int[][] RENT_BY_FLOOR_AND_BDRMS = new int [5][3]; <br> RENT_BY_FLOOR_AND_BDRMS[0][0] = 350; <br> System.out.print(RENT_BY_FLOOR_AND_BDRMS[0][0]);</code></li>
+							</ul>
+						</ul>
+						</div>
+						<div class="box_two" style=" margin: 10px;">
+							<img src="../logic/images/structures/multi_apartment_one.png" width="330" alt="Multi-dimensional array example one">
+							<img src="../logic/images/structures/multi_apartment_two.png" width="330" alt="Multi-dimensional array example two">
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
+					<h3>Quiz Question 1</h3>
+
+				     <p style="font-size: 22px;">Which of the following options is not the correct way to declare an array and will display a syntax error</code>?</p>
+				     
+				     <input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
+				     <label for="attendance1" style="font-size: 18px;">A) <code>String [] food = {"Soup", "Rice", "Bread"};</code></label><br>
+				     <input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
+				     <label for="attendance2" style="font-size: 18px;">B) <code>String [] food = new String[3];</code></label><br>  
+				     <input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+				     <label for="attendance3" style="font-size: 18px;">C) <code>String [] food = new food[3];</code></label><br>
+				     <input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+				     <label for="attendance4" style="font-size: 18px;">D) <code>String [] food = {};</code></label><br>
+
+			  
+				</section>
+				<section data-background="#fff" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
+					<h3>Quiz Question 2</h3>
+					<pre style="box-shadow: none;">
+						<code style="font-size: 18px; height: 90px;"  data-trim contenteditable>
+							String [] RESTAURANTS = {"Portillos", "Giordano's", "Grand Lux Cafe"};
+
+						</code>
+					</pre>
+				     <p style="font-size: 22px;">Using the code above, Which option below would change the value <code>Giordano's</code> to <code>Gino's East Pizza</code>?</p>
+				     
+				     <input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
+				     <label for="attendance1" style="font-size: 18px;">A) <code>RESTAURANTS[1] = "Gino's East Pizza";</code></label><br>
+				     <input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
+				     <label for="attendance2" style="font-size: 18px;">B) <code>RESTAURANTS[0] = "Gino's East Pizza";</code></label><br>  
+				     <input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+				     <label for="attendance3" style="font-size: 18px;">C) <code>RESTAURANTS[2] = "Gino's East Pizza";</code></label><br>
+				     <input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+				     <label for="attendance4" style="font-size: 18px;">D) <code>None of the options presented</code></label><br>
+
+			  
+				</section>
+				<section data-background="#fff" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
+					<h3>Quiz Question 3</h3>
+					<pre style="box-shadow: none;">
+						<code style="font-size: 18px; height: 110px;"  data-trim contenteditable>
+							final String [] BRANDS = {"Adidas", "IKEA", "Puma", "Sony", "Nokia"};
+							for(int x = 2; x < BRANDS.length; x++){
+								System.out.print(BRANDS[x] + " ");
+							}
+
+						</code>
+					</pre>
+				     <p style="font-size: 22px;">Using the code above, What will output to the console?</p>
+				     
+				     <input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
+				     <label for="attendance1" style="font-size: 18px;">A) <code>Puma Sony Nokia</code></label><br>
+				     <input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
+				     <label for="attendance2" style="font-size: 18px;">B) <code>Adidas IKEA Puma Sony Nokia;</code></label><br>  
+				     <input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+				     <label for="attendance3" style="font-size: 18px;">C) <code>IKEA Puma Sony</code></label><br>
+				     <input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+				     <label for="attendance4" style="font-size: 18px;">D) <code>Puma Sony</code></label><br>
+
+			  
+				</section>
+				<section data-background="#fff" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
+					<h3>Quiz Question 4</h3>
+					<pre style="box-shadow: none;">
+						<code style="font-size: 18px; height: 130px;"  data-trim contenteditable>
+							String [][] RESTAURANTS = {
+								{"Portillos", "Giordanos", "Grand Lux Cafe"},
+								{"Five Guys","Lou Malnati's", "The Purple Pig" },
+								{"Shake Shack", "Beggars Pizza", "Big Bowl" }
+						   };
+
+						</code>
+					</pre>
+				     <p style="font-size: 22px;">Using the code above, Which option below would output the text <code>The Purple Pig</code>?</p>
+				     
+				     <input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
+				     <label for="attendance1" style="font-size: 18px;">A) <code>System.out.print(RESTAURANTS[1][1]);</code></label><br>
+				     <input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
+				     <label for="attendance2" style="font-size: 18px;">B) <code>System.out.print(RESTAURANTS[0][1]);</code></label><br>  
+				     <input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+				     <label for="attendance3" style="font-size: 18px;">C) <code>System.out.print(RESTAURANTS[1][2]);</code></label><br>
+				     <input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+				     <label for="attendance4" style="font-size: 18px;">D) <code>System.out.print(RESTAURANTS[2][3]);</code></label><br>
+
+			  
+				</section>
+				<section data-background="#fff" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
+					<h3>Quiz Question 5</h3>
+					<pre style="box-shadow: none;">
+						<code style="font-size: 18px; height: 190px;"  data-trim contenteditable>
+							String [][] RESTAURANTS = {
+								{"Portillos", "Giordanos", "Grand Lux Cafe"},
+								{"Five Guys","Lou Malnati's", "The Purple Pig" },
+								{"Shake Shack", "Beggars Pizza", "Big Bowl" }
+						   };
+						   RESTAURANTS[2][0+1] = "Connie's Pizza";
+						   System.out.println(RESTAURANTS[2][0+1]);
+
+						</code>
+					</pre>
+				     <p style="font-size: 22px;">Using the code above, Which value in the array was <strong>changed</strong>?</p>
+				     
+				     <input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
+				     <label for="attendance1" style="font-size: 18px;">A) <code>The Purple Pig</code></label><br>
+				     <input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
+				     <label for="attendance2" style="font-size: 18px;">B) <code>Giordanos</code></label><br>  
+				     <input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+				     <label for="attendance3" style="font-size: 18px;">C) <code>Lou Malnati's</code></label><br>
+				     <input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+				     <label for="attendance4" style="font-size: 18px;">D) <code>Beggars Pizza</code></label><br>
+
+			  
+				</section>
+				<section data-background="images/intro/abstract_collections.jpg">
+					<h1 style="color: black; background-color: rgba(255,255,255,.8); padding: .5em;">Collections and Generics</h1>
+				</section>
+				<section data-background="white">
+					<h2>Data Structures Overview</h2><br>
+					<img src="images/ds/collection_types.jpg"  width="700" alt="Data Structure Tree">
+				</section>
+				<section data-background="#fff">
+				    
+				    <p style="font-size: 32px;"><b>Collections</b> enable you to maintain groups of objects.  Unlike arrays, collections can include more advanced functionality.</p>
+				     <br>
+				     <p style="font-size: 32px;">A<b> generic class </b>is built around whatever type, or types, you supply during instantiation, enabling you to strongly type an object with hardly any effort at all.</p>
+
+				</section>
+				<section data-background="#fff">
+					<h3>Frequently Used Collections</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 24px;">ArrayList&lt;T&gt;</b> <br>Represents a list of objects that can be accessed by index. Provides methods to search, sort, and modify lists.</p><p style="font-size:16px; margin-top: -9px;"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList doc</a></p></div>
+						<div class="box blue" style="font-size: 18px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 24px;">LinkedList&lt;T&gt;</b> <br>A collection which can contain many objects of the same type, just like the ArrayList</p><p style="font-size:16px; margin-top: -9px; "><a href="https://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html">Linked List doc</a></p></div>
+						<div class="box green" style="font-size: 18px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 24px;">HashMap&lt;TKey, TValue&gt;</b> <br>Represents items in "key/value" pairs, and you can access them by an index of another type</p><p style="font-size:16px; margin-top: -9px;"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html">HashMap doc</a></p></div>
+						<div class="box yellow" style="font-size: 18px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 24px;">HashSet&lt;T&gt;</b> <br>a collection of items where every item is unique, and it is found in the java.util package</p><p style="font-size:16px; margin-top: -9px;"><a href="https://docs.oracle.com/javase/7/docs/api/java/util/HashSet.html">HashSet doc</a></p></div>
+					</div>
+				
+				</section>
+				<section data-background="#fff">
+					<h4>Example of using the ArrayList&lt;T&gt;</h4>
+					
+						<pre>
+							<code style="font-size: 16px; height: 700px;" class="cs hljs"  data-trim contenteditable>
+								
+	import java.util.ArrayList;  
+	public class Main
+	{
+		public static void main(String[] args) {
+			//Two dimensional array
+			double[][] price = {
+				{350, 390, 435},
+				{400, 440, 480},
+				{475, 530, 575}
+				};
+
+			String[][] selection = {
+				{"Snickers", "Twix", "Mars"},
+				{"Skittles", "Starburst", "Sour Patch Kids"},
+				{"Big Red", "Winter fresh", "Trident"}
+				};
+
+			ArrayList&lt;Candy&gt; candyList = new ArrayList&lt;Candy&gt;();
+
+			//Iterate through the multi-Array and populate the list
+			for (var i = 0; i < 3; i++)
+			{
+				for (var x = 0; x < 3; x++)
+				{
+					Candy aCandy = new Candy(selection[i][x], price[i][x]);
+					candyList.add(aCandy);
+					System.out.println(selection[i][x] + " goes for $" + price[i][x]);
+				}
+			}
+			
+			//Decrement through the list and find the object with value "Snickers" for the name property
+			for(var i = candyList.size() -1; i >= 0; i--)
+			{
+				if (candyList.get(i).getName().contains("Snickers"))
+				{
+					candyList.remove(i);    
+				}     
+			}
+			//Output the list using lambda Expression
+			candyList.forEach(x -> System.out.println(x));
+		}
+	}
+	public class Candy
+	{
+		private String name; 
+		private double price;
+		
+		public String getName(){ return name;}
+		public double getPrice(){return price;}
+	
+		public Candy(String name, double price)
+		{
+			this.name = name;
+			this.price = price;
+		}
+	
+		public String toString()
+		{
+			return "The name of the candy is " + name + " the price for this candy " + price;
+		}
+	
+	}
+
+
+							</code>
+						</pre>
+
+				</section>
+				<section data-background="#fff">
+					<h4>Example of using the HashSet&lt;T&gt;</h4>
+					
+						<pre>
+							<code style="font-size: 16px; height: 700px;" class="cs hljs"  data-trim contenteditable>
+								
+							import java.util.ArrayList;  
+							// Import the HashSet class
+							import java.util.HashSet;
+							public class Main
+							{
+								public static void main(String[] args) {
+									final String [] BRANDS = {"Adidas", "IKEA", "Puma", "Sony", "Puma", "IKEA"};
+									HashSet&lt;String&gt; brandList = new HashSet&lt;String&gt;();
+									for(int x = 0; x < BRANDS.length; x++){
+										brandList.add(BRANDS[x]);	
+									}
+									brandList.forEach(x -> System.out.print(x + "\t"));
+									System.out.println("List Size: " + brandList.size());
+								}
+							}
+
+
+							</code>
+						</pre>
+						<p>What items do the list hold?</p>
+				</section>
+				<section data-background="#fff">
+					<h3>Learning Activity </h3>
+					<img src="images/intro/vending_machine_candy.jpg" alt="Picture of vending machine candy">
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 26px;">Step 1</b> <br>Create a program that allows you to 1) continually enter the name and price of a candy 2) Create a candy object 3) Add candy object to ArrayList </p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 26px;">Step 2</b> <br>Create a method that allows you to 1) select a candy by name and remove a Candy object from the ArrayList</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 26px;">Step 3</b> <br>Output a list of all candy that remain on the list and display the total number or items list contains.</p></div>
+
+					</div>
+				
+				</section>
+				<section data-background="#fff" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
+					<h3>Quiz Question 6</h3>
+					<pre style="box-shadow: none;">
+						<code style="font-size: 18px; height: 110px;"  data-trim contenteditable>
+							final String [] BRANDS = {"Adidas", "IKEA", "Puma", "Sony", "Nokia"};
+							ArrayList&lt;String&gt; brandList = new ArrayList&lt;String&gt;();
+							for(int x = 0; x < BRANDS.length; x++){
+								brandList.add(BRANDS[x]);	
+							}
+
+						</code>
+					</pre>
+				     <p style="font-size: 22px;">Assuming the code functions properly, Which of the following options is <strong>not</strong> permissible and most likely result in an error?</p>
+				     
+				     <input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
+				     <label for="attendance1" style="font-size: 18px;">A) <code>brandList.size();</code></label><br>
+				     <input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
+				     <label for="attendance2" style="font-size: 18px;">B) <code>brandList.get(2);</code></label><br>  
+				     <input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+				     <label for="attendance3" style="font-size: 18px;">C) <code>brandList.add("Nike");</code></label><br>
+				     <input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+				     <label for="attendance4" style="font-size: 18px;">D) <code>brandList.put("Sketchers");</code></label><br>
+
+			  
+				</section>
+				<section data-background="#fff" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
+					<h3>Quiz Question 7</h3>
+					<pre style="box-shadow: none;">
+						<code style="font-size: 18px; height: 130px;"  data-trim contenteditable>
+							final String [] BRANDS = {"Adidas", "IKEA", "Puma", "Sony", "Nokia"};
+							ArrayList&lt;String&gt; brandList = new ArrayList&lt;String&gt;();
+							for(int x = 0; x < BRANDS.length; x++){
+								brandList.add(BRANDS[x]);	
+							}
+
+						</code>
+					</pre>
+				     <p style="font-size: 22px;">Which of the following collections is distinctly different as in it would not work if the collection name was replaced in the above code?</p>
+				     
+				     <input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
+				     <label for="attendance1" style="font-size: 18px;">A) <code>HashMap</code></label><br>
+				     <input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
+				     <label for="attendance2" style="font-size: 18px;">B) <code>HashSet</code></label><br>  
+				     <input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+				     <label for="attendance4" style="font-size: 18px;">C) <code>LinkedList</code></label><br>
+
+			  
+				</section>
+				<section data-background="#fff" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
+					<h3>Quiz Question 8</h3>
+					<pre style="box-shadow: none;">
+						<code style="font-size: 18px; height: 130px;"  data-trim contenteditable>
+							final String [] BRANDS = {"Adidas", "IKEA", "Puma", "Sony", "Nokia"};
+							ArrayList&lt;String&gt; brandList = new ArrayList&lt;String&gt;();
+							for(int x = 0; x < BRANDS.length; x++){
+								brandList.add(BRANDS[x]);	
+							}
+
+						</code>
+					</pre>
+				     <p style="font-size: 22px;">Which statement below is the correct way to retrieve the first element in the brandList ArrayList??</p>
+				     
+				     <input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
+				     <label for="attendance1" style="font-size: 18px;">A) <code>brandList.get(0);</code></label><br>
+				     <input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
+				     <label for="attendance2" style="font-size: 18px;">B) <code>brandList[0];</code></label><br>  
+				     <input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+				     <label for="attendance4" style="font-size: 18px;">C) <code>brandList.put(1);</code></label><br>
+				     <input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+				     <label for="attendance4" style="font-size: 18px;">D) <code>brandList.get(1);</code></label><br>
+
+			  
+				</section>
+				<section data-background="#fff" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
+					<h3>Quiz Question 9</h3>
+					<pre style="box-shadow: none;">
+						<code style="font-size: 18px; height: 130px;"  data-trim contenteditable>
+							HashMap&lt;String, Integer&gt; exMap = new HashMap&lt;String, Integer&gt;();
+								exMap.put("Tom", 14);
+								exMap.put("John", 26);
+								exMap.put("Mary", 13);
+								exMap.put("Hans", 90);
+								exMap.put("Franz", 88);
+
+						</code>
+					</pre>
+				     <p style="font-size: 22px;">Which of the following collections is distinctly different as in it would not work if the collection name was replaced in the above code?</p>
+				     
+				     <input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
+				     <label for="attendance1" style="font-size: 18px;">A) <code>exMap.putIfAbsent("Frederique", 36);</code></label><br>
+				     <input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
+				     <label for="attendance2" style="font-size: 18px;">B) <code>exMap.putIfAbsent("Mary", 17);</code></label><br>  
+				     <input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+				     <label for="attendance4" style="font-size: 18px;">C) <code>exMap.putIfAbsent("Hans", 44);</code></label><br>
+
+			  
+				</section>
+				<section data-background="#fff" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
+					<h3>Quiz Question 10</h3>
+					<pre style="box-shadow: none;">
+						<code style="font-size: 18px; height: 130px;"  data-trim contenteditable>
+							HashMap&lt;String, Integer&gt; exMap = new HashMap&lt;String, Integer&gt;();
+							LinkedList&lt;Double&gt; accelerometerValues = new LinkedList&lt;Double&gt;();
+								accelerometerValues.add(9.8);
+								accelerometerValues.add(10.2);
+								accelerometerValues.add(15.4);
+
+						</code>
+					</pre>
+				     <p style="font-size: 22px;">Which of the statements remove the value 9.8 from the list.</p>
+				     
+				     <input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
+				     <label for="attendance1" style="font-size: 18px;">A) <code>accelerometerValues.remove(0);</code></label><br>
+				     <input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
+				     <label for="attendance2" style="font-size: 18px;">B) <code>accelerometerValues[1].remove();</code></label><br>  
+				     <input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+				     <label for="attendance4" style="font-size: 18px;">C) <code>accelerometerValues.remove(9.8);</code></label><br>
+
+			  
+				</section>
+				<!--<section data-background="#fff">
+					<h3>The Three Structures</h3>
+					<p> Sequence   &#10022;    Selection    &#10022;  Looping</p>
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px;">
+					        <ul>
+					        	<li><strong>Sequence</strong></li>
+					        	<ul>
+					        		<li>A <b>data structure</b> is a special way of organizing and storing data in a computer so that it can be used efficiently.</li>
+					        		<li>No branching or skipping any task</li>
+					        		<li>Input/Output, Calculations, assignment</li>
+					        	</ul>
+					        	<li><strong>Selection</strong></li>
+					        	<ul>
+					        		<li>Ask a question, take one of two actions</li>
+					        		<li>Often called if-then-else</li>
+					        		<li>Dual-alternativeifsor single-alternativeifs</li>
+					        	</ul>
+					        	<li><strong>Looping</strong></li>
+					        	<ul>
+					        		<li>Repeat actions while a condition remains true</li>
+					        	</ul>
+					        </ul>
+						</div>
+	
+					</div>
+
+					
+				</section>
+				<section data-background="white">
+					<iframe width="760" height="515" src="https://www.youtube.com/embed/eSYeHlwDCNA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</section>
+
+				
+
+				<section data-background="images/structures/multiple_decisions.jpg">
+					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">Making Multiple Decisions</h1>
+				</section>
+				<section data-background="#fff" style="width:105%; margin-left: -34px;">
+					<h3>Using <span style="color: #cd0000;">AND</span> Logic</h3>
+				
+					<div id="flexcontain">
+					<div class="box_two" style="margin: 10px;">
+							<ul>	
+								<li><b>Relational comparison operators</b></li>
+								<ul>
+									<li>Six types supported by all modern programming languages</li>
+									<li>Two values compared can be either variables or constants</li>
+								</ul>
+								<li><b>Any decision can be made with only three types of comparisons: =, >, and </b></li>
+								<!--<li><b>"Not equal" operator <></b></li>
+								<ul>
+									<li>Involves thinking in double negatives</li>
+									<li>Best to restrict usage to “if without an else”—that is, only take action when some comparison is false</li>
+								</ul>
+							</ul>
+
+						</div>
+						<div class="box_two" style=" margin: 10px;">
+							<img src="images/structures/and_logic.png" width="500" alt="and logic diagram">
+						</div>
+					</div>
+
+					
+				</section>
+				<section data-background="#fff">
+					<h3>Using <span style="color: #333;">AND</span> Logic</h3>
+					<img src="images/structures/truth_table_one.PNG" width="700" alt="And truth table diagram">
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 295px;"><p><b style="font-size: 28px;">Compound Condition</b> <br> Asks multiple questions before an outcome is determined</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 295px;"><p><b style="font-size: 28px;">AND decision</b> <br>Requires that both of two tests evaluate to true. <br><br> Requires a nested decision or a cascading if statement</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #2d4650; height: 295px;"><p><b style="font-size: 28px;">Conditional AND operator</b> <br>Ask two or more questions in a single comparison. <br><br> Each Boolean expression must be true for entire expression to evaluate to true</p></div>
+
+					</div>
+					
+				
+				</section>
+				<section data-background="#fff" style="width:105%; margin-left: -34px;">
+					<h3>Using <span style="color: #1586be;">OR</span> Logic</h3>
+				
+					<div id="flexcontain">
+						<div class="box_two" style=" margin: 10px;">
+							<img src="images/structures/or_logic.png" width="600" alt="or logic diagram">
+						</div>
+						<div class="box_two" style="margin: 10px;">
+							<ul>	
+								<li><b>Relational comparison operators</b></li>
+								<ul>
+									<li>Six types supported by all modern programming languages</li>
+									<li>Two values compared can be either variables or constants</li>
+								</ul>
+								<li><b>Any decision can be made with only three types of comparisons: =, >, and </b></li>
+								<!--<li><b>"Not equal" operator <></b></li>
+								<ul>
+									<li>Involves thinking in double negatives</li>
+									<li>Best to restrict usage to “if without an else”—that is, only take action when some comparison is false</li>
+								</ul>
+							</ul>
+
+						</div>
+
+					</div>
+
+					
+				</section>
+				<section data-background="#fff">
+					<h3>Using <span style="color: #1586be;">OR</span> Logic</h3>
+					<img src="images/structures/truth_table_two.PNG" width="700" alt="OR comparison operator truth table diagram">
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 295px;"><p><b style="font-size: 28px;">Compound Condition</b> <br> Asks multiple questions before an outcome is determined</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 295px;"><p><b style="font-size: 28px;">OR decision</b> <br>Take action when one or the other of two conditions is true <br><br> Example - “Are you free for dinner Friday or Saturday?”</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #2d4650; height: 295px;"><p><b style="font-size: 28px;">Conditional OR operator</b> <br>Ask two or more questions in a single comparison. <br><br> Only one Boolean expression in an OR selection must be true to produce a result of true</p></div>
+
+					</div>
+				
+				</section>
+				<section data-background="#fff">
+					<h3>In-Class Activity 3</h3>
+					<p style="font-size: 22px; margin-bottom: -2px;">Complete the following activity using the diagram below</p>
+					<img src="images/structures/activity_three_1.png" width="550" alt="activity three">
+					<img src="images/structures/activity_three_2.png" style="margin-top: -10px;" width="550" alt="activity three cropping">
+				</section>
+				<section data-background="images/structures/range_bg.jpg">
+					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">Selections within Range</h1>
+				</section>
+				<section data-background="#fff">
+				
+					<p><b>Range Check</b> - Compare a variable to a series of values between limits</p>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 28px; margin: 10px; height: 235px; background-color: #2d4650;"><p>Use the lowest or highest value in each range</p></div>
+						<div class="box blue" style="font-size: 28px; margin: 10px; height: 235px; background-color: #2d4650;"><p>Adjust the question logic when using highest versus lowest values</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; height: 235px; background-color: #2d4650;"><p>Consider if end points of the range should be included <br><br> Yes: use >=or <= <br><br> No: use < or ></p></div>
+						<div class="box yellow" style="font-size: 22px; margin: 10px; background-color: #ffffff;">
+							<pre style="box-shadow: none;">
+								<code style="font-size: 18px;" class="codebox code-example__codebox"  data-trim contenteditable>
+										int LOWER_DRIVER_AGE = 16, UPPER_DRIVER_AGE = 120, age = 22; 
+										
+										
+										if(age >= LOWER_DRIVER_AGE && age <= UPPER_DRIVER_AGE){
+										
+									      Console.WriteLine("Able to rent car for Harvey Car Rental");
+									       
+										}else{
+										
+										  Console.WriteLine("Not able to rent car from Harvey Car Rental");
+										}
+									 
+									 
+	
+								</code>
+							</pre>
+						</div>
+
+					</div>
+				
+				</section>
+				<section data-background="#fff">
+					<h3>Selections within ranges</h3>
+				
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px; max-width: 270px;" >
+							<img src="images/structures/range_chart.png" alt="decision range chart diagram">
+						
+						</div>
+						<div class="box_two" style=" margin: 10px;">
+							<img src="images/structures/range_logic_code.png"  alt="smultiple decision structure diagram">
+						
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Common Errors When Using Range Checks</h3>
+					<ul>
+						<li>Avoid a <b>dead</b> or <b>unreachable path</b>.</li>
+						<ul>
+							<li>Don't check for values that can never occur</li>
+							<li>Requires some prior knowledge of the data</li>
+						</ul>
+						<li>Never ask a question if there is only one possible outcome</li>
+						<li>Avoid asking a question when the logic has already determined the outcome</li>
+						<li>Avoid testing the same range limit multiple times</li>
+					</ul>
+		
+				</section>
+				<section data-background="#fff">
+					<h3>In-Class Activity 4</h3>
+					<p style="font-size: 28px;">MetLife Insurance company wants several lists of salesperson data. Design the flowchart and write pseudocode for the following:</p>
+					<ol>
+						<li style="font-size: 20px;">A program that accepts one salesperson’s <b>ID number</b> and <b>number of polices sold</b> in the last month, and displays the data only if the salesperson is a high performer –a person who sells more than 25 policies in the month.</li>
+						<li style="font-size: 20px;">A program that accepts salesperson data <b>continuously</b> until a sentinel value is entered and displays a list of high performers.</li>
+						<li style="font-size: 20px;">A program that accepts salesperson data <b>continuously</b> until a sentinel value is entered and displays a list of salespeople who sold <b>between 5 and 10 policies</b> in the month.</li>
+					</ol>
+				</section>
+				<section data-background="images/structures/looping_bg.jpg">
+					<h1 style="color: #111111;  padding: 3px;">Looping Structure</h1>
+				</section>
+				<section data-background="#fff">
+					<h3>Looping/Iteration</h3>
+					<ul>
+						<li><b>Loop:</b> a structure that repeats actions while some condition continues</li>
+						<ul>
+							<li>As long as a condition(s) remains true, the statements in a while loop’s body execute</li>
+						</ul>
+						<li><b>Use Cases:</b></li>
+						<ul>
+							<li>Validating Data by Defensive Programming | Outputing Structure Data | Reprompting | Repetitive Output(Such as counting, using math, or general text ouput) </li>
+						</ul>
+					</ul>
+					<img src="images/structures/fox-loop.jpg" alt="looping comic graphic">
+		
+				</section>
+
+				<section data-background="#fff">
+					<h3>Definite Loop with Counter</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px;">
+							<ul>
+								<li><b>Definite Loop</b> - Executes a predetermined number of times</li>
+								<li><b>Counter-controlled Loop</b> - Program counts loop repetitions</li>
+								<li>Loop control variables altered by:</li>
+								<ul>
+									<li>Incrementing</li>
+									<li>Decrementing</li>
+								</ul>
+							</ul>
+						</div>
+						<div class="box_two" style=" margin: 10px;">
+							<img src="images/structures/loop_control.png" width="500" alt="Definite loop with counter diagram">
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Loop with Sentinel Value</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px;">
+							<ul style="font-size: 34px;">
+
+								<li><b>Indefinite Loop</b></li>
+								<ul>
+									<li>Performed a different number of times each time the program executes</li>
+									<li>The user decides how many times the loop executes</li>
+								</ul>
+								<li><b>Three steps should occur in every properly functioning loop</b></li>
+								<ul>
+									<li style="background-color: #ffe600;">Provide a starting value for the variable that will control the loop</li>
+									<li style="background-color: #26e600;">Test the loop control variable to determine whether the loop body executes</li>
+									<li style="background-color: #44c8f5;">Alter the loop control variable</li>
+								</ul>
+							</ul>
+						</div>
+						<div class="box_two" style=" margin: 10px;">
+							<img src="images/structures/loop_sentinel.png" width="500" alt="Loop with sentinel value diagram">
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Activity 5</h3>
+					<img src="images/structures/fibonacci-sequence.jpg" width="500" alt="fibonacci sequence diagram">
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Look up the formula for the fibonacci sequence and do research on this mathematical phenomenon</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Think through and apply the correct structures to fulfill the requirements of the sequence.</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Code the program in C#</p></div>
+
+					</div>
+					
+				
+				</section>
+
+				<section data-background="#fff">
+				
+					<h4>Nested Loops Structure</h4>
+					<div id="flexcontain">
+						<div class="box yellow" style="font-size: 22px; margin: 10px; min-width: 650px; background-color: #ffffff;">
+						
+							<img src="images/structures/GridviewinGridview.gif"   alt="nested Loops practical example in gridview">
+						</div>
+						<div class="box red" style="font-size: 28px; margin: 10px; height: 235px; background-color: #ddd; color: #111;"><p><b>Nested Loop </b><br>loops within loops</p></div>
+						<div class="box blue" style="font-size: 28px; margin: 10px; height: 235px; background-color: #ddd; color: #111;"><p><b>Outer Loop </b><br>the loop that contains the other loop</b></p></div>
+						<div class="box green" style="font-size: 28px; margin: 10px; height: 235px; background-color: #ddd; color: #111;"><p><b>Inner Loop</b><br> the loop that is contained</p></div>
+
+
+					</div>
+				
+				</section>
+				<section data-background="#fff">
+				
+					<h4>Example of Two nested Loops</h4>
+
+					<pre style="box-shadow: none;">
+						<code style="font-size: 16px; min-height: 100%;" class="codebox code-example__codebox"  data-trim contenteditable>
+string [] days = {"Mon.", "Tue", "Wed.", "Thur", "Fri"};
+string [] meals = {"Breakfast", "Lunch", "Dinner"};
+string [] breakfastItems = {"OJ","Toast", "Banana"};
+string [] lunchItems = {"Juice","Pizza", "Pear"};
+string [] dinnerItems = {"Hi-C","Ribs", "Apple"};
+int firstIterator = 0, secondIterator = 0, thirdIterator = 0;
+
+Console.WriteLine("Weekly Menu \n");
+while(firstIterator < 5){
+	Console.WriteLine(days[firstIterator]);
+	secondIterator = 0;
+	while(secondIterator < 3){
+		Console.WriteLine("   " + meals[secondIterator]);
+		thirdIterator = 0;
+		while(thirdIterator < 3){
+			if(secondIterator == 0){
+				Console.WriteLine("       " + breakfastItems[thirdIterator]);
+			}else if(secondIterator == 1){
+				Console.WriteLine("       " + lunchItems[thirdIterator]);
+			}else{
+				Console.WriteLine("       " + dinnerItems[thirdIterator]);
+			}
+			thirdIterator++;
+			
+		}//End of inner most loop
+		secondIterator++;
+	}//end of second inner loop
+	firstIterator++;
+}//End of first loop
+
+Console.WriteLine("Weekly Menu has been outputted");
+
+						</code>
+					</pre>
+
+				
+				</section>
+				<section data-background="#fff">
+				
+					<h4>Nested Loops Functional</h4>
+					<div id="flexcontain">
+						<div class="box yellow" style="font-size: 22px; margin: 10px; min-width: 650px; background-color: #ffffff;">
+							<img src="images/structures/nested_loop.gif" width="500" alt="nested loop animation">
+						</div>
+						<div class="box red" style="font-size: 22px; margin: 10px; height: 245px; background-color: #ddd; color: #111;"><p>Nested loops never overlap. An inner loop is always completely contained within an outer loop</p></div>
+						<div class="box blue" style="font-size: 22px; margin: 10px; height: 245px; background-color: #ddd; color: #111;"><p>The total number of iterations executed by a nested loop is the number of inner loop iterations times the number of outer loop iterations</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; height: 245px; background-color: #ddd; color: #111;"><p>An inner loop goes through all of its iterations each time its outer loop goes through just one iteration</p></div>
+
+
+					</div>
+				
+				</section>
+				<section data-background="#fff">
+					<h3>Using For Loops</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px;">
+							<ul style="font-size: 34px;">
+
+								<li><b>Definite Loop</b></li>
+								<ul>
+									<li>Provides <b>three actions</b> in one structure</li>
+									<li>Initializes  | Evaluates </li>
+								</ul>
+								<li><em>while</em> statement could be used in place of <em>for</em> statement</b></li>
+								<ul>
+									<li><b>Pretest Loop:</b> the loop control variable is tested before each iteration <br>-  <em>for</em> loops and <em>while<em> loops are pretest loops</em></em></li>
+									<li><b>Posttest:</b> the loop control variable is tested after each iteration <br> - <em>do...while</em> is a posttest loop</li>
+
+								</ul>
+							</ul>
+						</div>
+						
+					</div>
+					<img src="images/structures/forstatement.png" width="600" alt="for statement diagram">
+				</section>
+				<section data-background="#fff">
+					<h3>Activity 6</h3>
+					<img src="images/structures/calendar_days.jpg" width="490" alt="2014 calendar graphic">
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #eee; height: 220px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Observe the diagram above and declare variables for the data you will use in program</p></div>
+						<div class="box blue" style="font-size: 18px; margin: 10px; background-color: #eee; height: 220px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Think through and apply the correct structures to fulfill the requirements of the program.</p></div>
+						<div class="box green" style="font-size: 18px; margin: 10px; background-color: #eee; height: 220px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Code the program in C# and output the month day along with the correct number of days for each month.</p></div>
+
+					</div>
+					
+				
+				</section>
+				<section data-background="#fff">
+					<h3>Loop Use Cases</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px;">
+							<ul style="font-size: 30px;">
+
+								<li><b>Using a loop to accumulate totals</b></li>
+								<ul>
+									<li>- Examples</li>
+									<ul>
+										<li>Business reports often include totals</li>
+										<li>List of real estate sold and total value</li>
+									</ul>
+								</ul>
+								<li><b>Accumulator:</b> variable that gathers values</li>
+								<ul>
+									<li>- Similar to a counter</li>
+									<ul>
+										<li>Counter increments by 1</li>
+										<li>Accumulator increments by some value</li>
+									</ul>
+								</ul>
+								<li><b>Accumulators require three actions</b></li>
+								<ul>
+									<li style="background-color: #ffe600;">Initialize the accumulator to 0</li>
+									<li style="background-color: #26e600;">Accumulators are altered: once for every data set processed</li>
+									<li style="background-color: #44c8f5;">At the end of processing, accumulators are output</li>
+								</ul>
+							</ul>
+						</div>
+						<div class="box_two" style=" margin: 10px;">
+							<img src="images/structures/accum_loop.PNG" width="500" alt="Accumulator Loop diagram">
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Using loops to validate data</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style=" margin: 10px;">
+							<img src="images/structures/loop_validation.png" width="500" alt="Loop validation diagram">
+						</div>
+						<div class="box_two" style="margin: 10px;">
+							<ul style="font-size: 30px;">
+
+								<li><b>Defensive programming:</b> preparing for all possible errors before they occur</li>
+								<ul>
+									<li>When prompting a user for data, no guarantee that data is valid</li>
+								</ul>
+								<li>Good defensive programs try to foresee all possible inconsistencies and errors</li>
+								<li><b>Validate data:</b> make sure data falls in acceptable ranges (month values between 1 and 12)</li>
+								<li><b>GIGO:</b> Garbage in, garbage out</li>
+								<ul>
+									<li>Unvalidatedinput will result in erroneous output</li>
+								</ul>
+							</ul>
+						</div>
+
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Limiting a reprompting Loop</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style=" margin: 10px;">
+							<img src="images/structures/limiting_loop.png" width="500" alt="Limiting Loop Reprompt diagram">
+						</div>
+						<div class="box_two" style="margin: 10px;">
+							<ul style="font-size: 30px;">
+
+								<li><b>Reprompting can be frustrating to a user if it continues indefinitely</b></li>
+
+								<li><b>Maintain a count of the number of reprompts</b> </li>
+								<li><b>Forcing</b> a data item means:</li>
+								<ul>
+									<li>Override incorrect data by setting the variable to a specific value</li>
+								</ul>
+							</ul>
+						</div>
+
+					</div>
+				</section>
+				<!--<section data-background="#fff">
+					<h3>Single Folder Structure</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 28px;">files are placed in the root folder.  Images, JS files, css files all exist in root folder.</li><br>
+   
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/folderstructure.PNG" alt="picture of folder structure">
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Hierarchical Folder Structure</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 28px;">additional folders are created within the root folder to categorize the different type of files.  Images, JS files, css files will exist within their respective folder.</li><br>
+   
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/webtool/hierarcialstructure.PNG" alt="picture of folder structure">
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>File Structure Best Practice</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 28px;">Basic structure we'll use is similar to picture on the left.</li>
+								<li style="font-size: 28px;">Different file structures will look different based on technology stack and type of project.</li>
+   								<li style="font-size: 28px;">The idea is to have order and structure to your files</li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/webtool/basicstructure.png" alt="picture of folder structure">
+						</div>
+					</div>
+				</section>-->
+				<section data-background="#eee">
+				    <h2>References</h2>
+				    <ul>
+				        <li>https://beginnersbook.com/2018/10/data-structure-introduction/</li>
+				        <li>https://beginnersbook.com/2018/10/data-structure-array/</li>
+
+               
+				    </ul>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

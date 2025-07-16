@@ -1,0 +1,1923 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="description" content="Instructor Fulton's Introduction to Object Oriented Programming in Java">
+		<meta name="author" content="C. Fulton">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<title>Object Oriented Programming in Java</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/dope.css">
+		<link rel="stylesheet" href="css/mystyle.css">
+		<link rel="icon" sizes="32x32" type="image/png" href="images/node/favicon.png">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="css/zenburn.css">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/gruvbox-dark.min.css">
+		<!-- Google Font -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<style>
+			ul li{
+				font-size: 80%;
+			}
+			section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
+			    color: #2d4650;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="#e6e7e8">
+				    <h4>Object Oriented Programming in Java</h4>
+				    <img src="images/intro/java_logo.png" width="390" style="box-shadow: none; border: none;"alt="Java logo">
+				    <h3>Instructor: Chris Fulton</h3>
+				</section>
+				<section data-background="#eee">
+				    <h3>Learning Agenda</h3>
+				    <ul style="font-size: 28px;">
+						<li>Discuss Object Oriented Principles </li>
+						<ul>
+							<li>What is OOP?</li>
+							<li>Terminology - Polymorphism, Encapsulation, Instantiation, Abstraction, Inheritance</li>
+						</ul>
+						<li>Discuss the structure and content of a class definition</li>
+						<ul>
+							<li> Getters Setters | Constructors | ToString Method | Working Methods </li>
+							<li> Constructors - Overloaded Constructors and use cases</li>
+						</ul>
+						<li>Discuss the relationship among classes</li>
+						<ul>
+							<li>Understanding Inheritance </li>
+							<li>UML Modeling | UML Diagrams</li>
+							<li>Base Class | Child Classes | Abstract Classes | Interfaces </li>
+							<li>Overview of Design Patterns</li>
+						</ul>
+
+
+				    </ul>
+				</section>
+				<section data-background="#eee">
+				    <h3>What is <b>OOP</b>?</h3><br>
+				    <p>A way of organizing your code to focus on real world nouns (Person,  place, thing or idea)</p>
+				</section>
+				<section data-background="white">
+					<h2>What is <b>OOP</b>?</h2><br>
+					<iframe width="760" height="515" src="https://www.youtube.com/embed/SS-9y0H3Si8?start=4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</section>
+				<section data-background="#fff">
+					<h3>Learning Activity</h3>
+					<ul>	
+						<li style="font-size: 22px;">MPLS Renters</li>
+						<ul>
+							<li>Construct an console application that allows a prospective renter to search for Luxury apartments downtown and add apartments to thier profile.</li>
+							<ul>
+								<li style="font-size: 18px;">The data you may wish to collect for an apartment includes name, address, floor count, region of city estimated rent for 1 bedroom, 2- bedroom and 3 - bedroom</li>
+								<li style="font-size: 18px;">The data you may wish to collect for a prospective renter includes name, email, move-in date, preferred region of city, preferred number of bedrooms and baths.</li>
+							</ul>
+					</ul>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 140px; color: #111; padding: 10px;"><p><b style="font-size: 28px;">Finding Objects</b> <br> Identify and circle all the nouns in the problem discription</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 140px; color: #111; padding: 10px;"><p><b style="font-size: 28px;">Finding Properties</b> <br>Identify and underline all the properties in problem discription</p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #eee; height: 140px; color: #111; padding: 10px;"><p><b style="font-size: 28px;">Create the Class</b> <br>Code the class structure in Java</p></div>
+
+					</div>
+					
+				
+				</section>
+				<section data-background="#eee">
+					<h3>Terminology</h3>
+					<div id="flexcontain">
+
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: white; height: 250px;"><p style="color: black;"><b style="font-size: 22px;">Encapsulation</b> <br> enables a group of properties, methods and other members to be considered a single unit or object.<br> Encapsulation provides a way to protect data from accidental corruption.</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: white; height: 250px;"><p style="color: black;"><b style="font-size: 22px;">Instantiation</b> <br> is used to create an object from a class (instantiate).</p><p style="color: black;"><b style="font-size: 22px;">Composition</b><br>Using an object within another object - defines a <b>has-a-relationship</b></p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: white; height: 250px;"><p style="color: black;"><b style="font-size: 22px;">Abstraction</b> <br> can be achieved using abstract classes in Java. Java allows you to create abstract classes with either abstract classes or interfaces.</p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: white; height: 250px;"><p style="color: black;"><b style="font-size: 22px;">Polymorphism</b> <br> the ability of objects of different types to provide a unique interface for different implementations of methods. It is usually used in the context of late binding, where the behavior of an object to respond to a call to its method members is determined based on object type at run time. </p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: white; height: 250px;"><p style="color: black;"><b style="font-size: 22px;">Inheritance</b> <br> allows you to define a child class that reuses (inherits), extends, or modifies the behavior of a parent class. The class whose members are inherited is called the base class. The class that inherits the members of the base class is called the derived class.</p></div>
+					</div>
+				</section>
+				<section data-background="#eee">
+					<h4>Abstraction</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="../csharp/images/intro/person-diagram.png" width="690" style="box-shadow: none; border: none;"alt="person object image"> 
+							<p>Creating a simple model of a more complex thing, which represents its most important aspects in a way that is easy to work with for our program's purposes</p>
+
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#fff">
+					<h3>Class Structure and Break-down</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>
+								<li style="font-size: 22px;">When you create a class, you define both its attributes and its methods.</li>
+								<li style="font-size: 22px;">The <b>attributes</b> hold data for each object instance.</li>
+								<li style="font-size: 22px;">the <b>methods</b> are verbs that take action against the data for each instance.</li>
+							</ul>
+
+															<pre>
+								<code style="font-size: 16px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
+									
+    class Person
+    {
+        private String name;
+        private int age;
+        private string gender;
+        private string interest;
+        
+        public void bio()
+        {
+            System.out.println(name + " is " + age + " years old.  They like " + interest );
+        }
+
+        public void Greeting()
+        {
+            System.out.println("Hi! I'm " + name);
+        }
+
+    }
+							
+	
+								</code>
+							</pre>
+						
+					</div>
+
+				</section>
+				<section data-background="images/intro/capsule_img.jpg">
+					<h3 style="text-shadow: 4px 7px 10px #333;">Data Encapsulation</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 32px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: rgba(0,0,0, .7); color: white; font-weight: 900;"><p>GETTERS/SETTERS <br>Longer and shorter Syntax</p></div>
+					</div>
+					
+				</section>
+				<section data-background="#fff">
+					<h3>Getter and Setters</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px; width: 300px;">
+							<ul>
+								<li style="font-size: 20px;"><b>Getter and Setter's - Accessor Methods</b></li>
+								<ul>
+									<li>A get property accessor is used to return the property value, and a set accessor is used to assign a new value. Something called Implementation Hiding</li>
+								</ul>
+							</ul>
+
+							
+							<pre>
+								<code style="font-size: 16px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
+									
+    class Person
+    {
+        private string name;
+        private int age;
+        private string gender;
+        private string interest;
+        
+        //SETTERS
+		public void setName(String name){
+			this.name = name;
+		}
+		public void setAge(int age){
+			this.age = age;
+		}
+		pubic void setGender(String gender){
+			this.gender = gender;
+		}
+
+		public void setInterest(String anInterest){
+			interest = anInterest;
+		}
+
+		//GETTERS
+        public String getName(){
+			return name;
+		}
+		public int getAge(){
+			return age;
+		}
+		public String getGender(){
+			return gender;
+		}
+		public String getInterest(){
+			return interest;
+		}
+        
+        public void bio()
+        {
+            System.out.println(name + " is " + age " years old.  They like " + interest );
+        }
+
+        public void Greeting()
+        {
+            System.out.println("Hi! I'm " + name );
+        }
+
+    }
+							
+	
+								</code>
+							</pre>
+						
+					</div>
+
+				</section>
+				<section data-background="#fff">
+				
+					<h3>Learning Activity</h3>
+					<p>Using either <code>Customer</code> or <code>Car</code>, create a class structure that includes three properties.  One of the properties should be of numeric(double or int) data type </p>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 22px; margin: 10px; height: 120px; background-color: #eee; color: black;"><p>1) Enforce data encapsulation with the use of Getter and Setter methods</p></div>
+						<div class="box red" style="font-size: 22px; margin: 10px; height: 120px; background-color: #eee; color: black;"><p>2) Create a method that performs some calculation on the property of that is of numeric data type. </p></div>
+					</div>
+				
+				</section>
+				<section data-background="#fff">
+					<h4>Class and Object Relation</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="../csharp/images/intro/class_img.png" width="590" style="box-shadow: none; border: none;"alt="class object image">
+							<ul>	
+								<li style="font-size: 20px;">A class is a blueprint of an object.</li>
+								<li style="font-size: 20px;">Once we have a blueprint, we can create multiple instances. When you create an object, you call its constructor.</li>
+							</ul>
+						
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#eee">
+					<h4>Instantiation</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="../csharp/images/intro/instantiation.png" width="450" style="box-shadow: none; border: none;"alt="instantiation image"> 
+							<p>This process of creating an object instance from a class is called instantiation — the object instance is instantiated from the class</p>
+
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#fff">
+				
+					<h3>Learning Activity</h3>
+					<p>Now that you have created either a <code>Customer</code> or <code>Car</code> class that enforces encapsulation. Practice declaring and creating an object instance from your class. </p>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 22px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p>1) Within your programs main method, declare and create an array that will hold 2 object instances</p></div>
+						<div class="box red" style="font-size: 22px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p>2) Use a looping structure to populate each of the object instances declared in the array.</p></div>
+						<div class="box red" style="font-size: 22px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p>3) Once object instances are populated, use another looping structure to output each of the items using getter methods.</p></div>
+					</div>
+				
+				</section>
+				<section data-background="#fff">
+					<h3>Constructors</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px; width: 300px;">
+							<ul>
+								<li style="font-size: 20px;"><b>All class definitions contain at least one constructor</b></li>
+								<ul>
+									<li>A class definition can include several constructor methods with parameters, known as <em>nondefault constructors</em></li>
+									<li>In Java, constructors are called using the new keyword.  And can be <b>overloaded</b> as seen below</li>
+							
+								</ul>
+								<li style="font-size: 20px;"><b>Destructors</b></li>
+								<ul>
+									<li> are used to clean up after objects.  In general, you don't have to provide code for a destructor method; instead the default operation does the work for you.</li>
+								</ul>
+							</ul>
+
+							
+							<pre>
+								<code style="font-size: 16px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
+									
+    class Person
+    {
+        
+        public String interest; 
+        public String gender;
+        public int age;
+        public String name;
+        
+        /**Default Constructor**/
+        public Person(){
+        	this.interest = "Forth Coming";
+        }
+		
+        /**Constructor with Parameters**/
+        public Person(String Interest, String Gender, int Age, String Name)
+        {
+            interest = Interest;
+            gender = Gender;
+            age = Age;
+            name = Name;
+        }
+
+        public Person(String name, int age, String interest)
+        {
+			//NOTICE THE *this KEYWORD - WHY this?
+            this.name = name; 
+            this.age = age;
+            this.interest = interest;
+        }
+        public void bio()
+        {
+        	System.out.println( name +  " is " + age + " years old.  Interested in " + interest);
+        }
+
+        public void Greeting()
+        {
+            System.out.println("Hi! I'm " + name);
+        }
+    }
+							
+	
+								</code>
+							</pre>
+					
+					</div>
+
+				</section>
+
+				<section data-background="#fff">
+					<h3>ToString Method</h3>
+					
+					<div id="flexcontain">
+
+							
+							<pre>
+								<code style="font-size: 14px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
+									
+    class Person
+    {
+        public String interest; 
+        public String gender;
+        public int age;
+        public String name;
+        
+        /**Default Constructor**/
+        public Person(){
+        	this.interest = "Forth Coming";
+        }
+		
+        /**Constructor with Parameters**/
+        public Person(String interest, String Gender, int Age, String Name)
+        {
+            this.interest = interest;
+            gender = Gender;
+            age = Age;
+            name = Name;
+        }
+
+        public void bio()
+        {
+        	System.out.println( name +  " is " + age + " years old.  Interested in " + interest);
+        }
+
+        public void Greeting()
+        {
+            System.out.println("Hi! I'm " + name);
+        }
+        
+        public String toString() //Overriding the toString()
+        {
+           return "Name: " + name + ", "+ "Age: "+ age + ", " + "Interest: " + interest;
+        }
+    }
+							
+	
+								</code>
+							</pre>
+
+							<ul style="font-size: 24px; margin-top: -16px;">
+								<li><b>System.Object - derived methods</b></li>
+								<ul>
+									<li>The <code>toString()</code> method is derived from <b>Object class</b></li>
+									<li>The <code>toString()</code> can be use as the string representation of the the class, but must <b>override</b> the Object class <code>toString()</code></li>
+							
+								</ul>
+			
+							</ul>
+					</div>
+
+				</section>
+				<section data-background="#fff">
+					<h3>Working Methods</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px; width: 300px;">
+							<ul>
+								<li style="font-size: 22px;"><b>Working Methods</b></li>
+								<ul>
+									<li>Typically, perform some operation on the data that has been set for each object instance.</li>
+									<li>You can set these methods to private if only used within the class to perform an operation.</li>
+									<li>Create multiple objects with different initial assignments without having to provide multiple constructors to cover every possible situation</li>
+								</ul>
+							</ul>
+
+							
+							<pre>
+								<code style="font-size: 16px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
+									
+    class Person
+    {
+        public String interest; 
+        public String gender;
+        public int age;
+        public String name;
+		public int retirementAge;
+        
+
+        /**Working Method**/
+        private void getEstimatedRetirementYear(){ //*NOTICE THE Access Specifier
+        	retirementAge = 65 + age;
+        }
+		
+        /**Class Methods**/
+        public void bio()
+        {
+        	System.out.println( name +  " is " + age + " years old.  Interested in " + interest);
+        }
+
+        public void Greeting()
+        {
+            System.out.println("Hi! I'm " + name);
+        }
+        
+        public String toString() //Overriding the toString()
+        {
+           return "Name: " + name + ", "+ "Age: "+ age + ", " + "Interest: " + interest;
+        }
+    }
+							
+	
+								</code>
+							</pre>
+					
+					</div>
+
+				</section>
+				<section data-background="#fff">
+				
+					<h3>Learning Activity</h3>
+					<p>Now that you have created either a <code>Customer</code> or <code>Car</code> class that instantiates 2 objects. Practice implementing constructors and the toString method. </p>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 22px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p>1) Create a default constructor that sets the objects properties to default information.</p></div>
+						<div class="box red" style="font-size: 22px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p>2) Create an overloaded constructor that defines three parameters and sets the objects data for the three properties defined within the class.</p></div>
+						<div class="box red" style="font-size: 22px; margin: 10px; height: 250px; background-color: #eee; color: black;"><p>3) <strong>EXTRA REQUIREMENT</strong> Create a private working method that makes a calculation on the numeric property and assigns a new fourth property for the class.</p></div>
+					</div>
+				
+				</section>
+				<section data-background="#fff">
+					<h4>Quiz Question 1</h4>
+					<div id="flexcontain">
+
+
+						<div class="box">
+							<p style="font-size: 22px;">True or False, An <strong>object</strong> is the blueprint for creating many instances of a <strong>class</strong>?</p>
+				     
+							<input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
+							<label for="attendance1" style="font-size: 20px;">A) True</label><br>
+							<input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
+							<label for="attendance2" style="font-size: 20px;">B) False</label><br>  
+
+						</div>
+						
+					</div>
+					
+				
+				</section>
+				<section data-background="#fff" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
+					<h3>Quiz Question 2</h3>
+					<pre style="box-shadow: none;">
+						<code style="font-size: 15px; height: 290px;"  data-trim contenteditable>
+							class Person
+							{
+								private String name;
+								private int age;
+								private String gender;
+								private String interest;
+								
+								public void bio()
+								{
+								  System.out.println(name + " is " + age + ".  Interest includes" + interest );
+								}
+							}
+
+						</code>
+					</pre>
+				     <p style="font-size: 22px;">Given the code above, which of the following options below properly sets the value for name property?</p>
+				     
+				     <input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
+				     <label for="attendance1" style="font-size: 16px;">A) <code> public static void setName() { name = name; }</code></label><br>
+				     <input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
+				     <label for="attendance2" style="font-size: 16px;">B) <code>public void setName(){ this.name = name; }</code></label><br>  
+				     <input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+				     <label for="attendance3" style="font-size: 16px;">C) <code>public void setName(String name){ name = name; }</code></label><br>
+				     <input type="radio" id="age4" style="transform: scale(2);" name="structure" value="8">
+				     <label for="attendance3" style="font-size: 16px;">D) <code>public void setName(String aName){ name = aName; }</code></label><br>
+
+			  
+				</section>
+				<section data-background="#fff">
+					<h4>Quiz Question 3</h4>
+					<div id="flexcontain">
+
+						<div class="box red" style="margin: 10px;  background-color: #fff;">
+							<pre style="box-shadow: none;">
+								<code style="font-size: 12px; min-height: 580px; "  data-trim contenteditable>
+									class Person
+									{
+										private String name;
+										private int age;
+										private String gender;
+										private String interest;
+									
+										/**Default Constructor**/
+										public Person(){
+											this.name = "N/A";
+											this.age = -1;
+											this.gender = "N/A";
+											this.interest = "Forth Coming";
+										}	
+									
+										public void bio()
+										{
+										   System.out.println(name + " is " + age + " years old.  They like " + interest );
+										}
+									}
+								</code>
+							</pre>
+						
+						</div>
+						<div class="box" style="text-align: left; max-width: 370px;">
+							<p style="font-size: 22px;">Observing the program to the left, which of the options below would be the correct way to declare and create an object instance?</p>
+				     
+							<input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
+							<label for="attendance1" style="font-size: 14px;">A) <code>Person aPerson = {"Sheila", 27, "Female", "Basketball"};</code></label><br>
+							<input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
+							<label for="attendance2" style="font-size: 14px;">B)<code>Person aPerson = new Person();</code></label><br>  
+							<input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+							<label for="attendance3" style="font-size: 14px;">C)<code> Person [] aPerson = new Person[];</code> </label><br>
+							<input type="radio" id="age4" style="transform: scale(2);" name="structure" value="8">
+							<label for="attendance4" style="font-size: 14px;">D) <code>aPerson person = new aPerson();</code></label><br>
+						</div>
+						
+					</div>
+					
+				
+				</section>
+				<section data-background="#fff">
+
+					<div id="flexcontain">
+
+						<div class="box red" style="margin: 10px; text-align: left; background-color: #fff;">
+							<h4>Quiz Question 4</h4>
+							<pre style="box-shadow: none;">
+								<code style="font-size: 12px; min-height: 580px; "  data-trim contenteditable>
+									class Person
+									{
+										private String name;
+										private int age;
+										private String gender;
+										private String interest;
+										
+										/**Default Constructor**/
+										public Person(){
+											this.interest = "Forth Coming";
+										}
+										
+										/**Constructor with Parameters**/
+										public Person(String interest, String Gender, int Age, String Name)
+										{
+											this.interest = interest;
+											gender = Gender;
+											age = Age;
+											name = Name;
+										}
+									}
+		
+								</code>
+							</pre>
+						
+						</div>
+						<div class="box" style="text-align: left; max-width: 370px;">
+							<p style="font-size: 22px;">Using the code to the left, which of the options below would <span style="font-weight: 900; text-decoration: underline;">not</span> be the correct way to declare and create an object instance?</p>
+				     
+							<input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
+							<label for="attendance1" style="font-size: 14px;">A) <code>Person p1 = new Person("Lisa");</code></label><br>
+							<input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
+							<label for="attendance2" style="font-size: 14px;">B) <code>Person p1 = new Person();</code></label><br>  
+							<input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+							<label for="attendance3" style="font-size: 14px;">C) <code>Person p1 = new Person("Track", "Male", 59, "James");</code></label><br>
+							<input type="radio" id="age4" style="transform: scale(2);" name="structure" value="8">
+							<label for="attendance4" style="font-size: 14px;">D) <code>Person p1 = new Person("James", "Male", 59, "Track");</code></label><br>
+						</div>
+						
+					</div>
+					
+				
+				</section>
+				<section data-background="#fff">
+					<h4>Quiz Question 5</h4>
+					<div id="flexcontain">
+
+						<div class="box red" style="margin: 10px; text-align: left; background-color: #fff; ">
+							<pre style="box-shadow: none;">
+								<code style="font-size: 12px; min-height: 580px; "  data-trim contenteditable>
+									class Person
+									{
+										private String name;
+										private int age;
+										private String gender;
+										private String interest;
+										
+										/**Default Constructor**/
+										public Person(){
+											this.interest = "Forth Coming";
+										}
+										
+										/**Constructor with Parameters**/
+										public Person(String interest, String Gender, int Age, String Name)
+										{
+											this.interest = interest;
+											gender = Gender;
+											age = Age;
+											name = Name;
+										}
+										/**Another overloaded constructor with Parameters**/
+										public Person(String interest, String Name)
+										{
+											this.interest = interest;
+											gender = Gender;
+											age = Age;
+											name = Name;
+										}
+
+										public String toString() //Overriding the base class toString() method
+										{
+										   return name + " the end time for "+ interest + " has arrived!";
+										}
+
+
+									}
+		
+								</code>
+							</pre>
+						
+						</div>
+						<div class="box" style="text-align: left; max-width: 300px;">
+							<p style="font-size: 22px;">Using the code to the left, which option output the text <span style="font-weight: 900; ">Chris the end time for coding has arrived!</span> when the statements are place in the main method?</p>
+				     
+							<input type="radio" id="age1" style="transform: scale(2); " name="structure" value="4">
+							<label for="attendance1" style="font-size: 14px;">A) <code>Person aPerson = new Person(); <br> System.out.println(aPerson);</code></label><br>
+							<input type="radio" id="age2" style="transform: scale(2);" name="structure" value="3">
+							<label for="attendance2" style="font-size: 14px;">B) <code>Person aPerson = new Person("Chris", "coding"); <br> System.out.println(aPerson);</code></label><br>  
+							<input type="radio" id="age3" style="transform: scale(2);" name="structure" value="8">
+							<label for="attendance3" style="font-size: 14px;">C) <code>Person aPerson = new Person("coding", "Chris");<br> System.out.println(aPerson);</code></label><br>
+							<input type="radio" id="age4" style="transform: scale(2);" name="structure" value="8">
+							<label for="attendance4" style="font-size: 14px;">D) <code>Person aPerson = new Person("coding", "male", 23); <br> System.out.println(aPerson);</code></label><br>
+						</div>
+						
+					</div>
+
+				</section>
+
+				<section data-background="images/intro/inheritance.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Inheritance</h1>
+				</section>
+				<section data-background="#eee">
+					<h3>Understanding Inheritance</h3>
+					<p style="font-size: 22px;">The principle that you can apply knowledge of a general category to more specific objects.  Inheritance allows you to define a child class that reuses (inherits), extends, or modifies the behavior of a parent class.</p>
+					<div id="flexcontain">
+
+						<div class="box green" style="font-size: 20px; margin: 10px; height: 90px; background-color: white;"><p style="color: black;"><b style="font-size: 22px;">Scalability and Saves Time</b> </p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; height: 90px; background-color: white;"><p style="color: black;"><b style="font-size: 22px;">Reduces the chance of errors</b></p></div>
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 90px; background-color: white;"><p style="color: black;"><b style="font-size: 22px;">Easier to Understand and Write</b></p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; height: 200px; background-color: white;">
+							<h4 style="font-size: 22px;">Terminology</h4>
+							<ul style="color: black;text-align: left;">
+								<li><b>Base class</b> - a class used as a basis for inheritance</li>
+								<li><b>Derived/extended class</b> - a class that inherits from a base class. Also known as a <b>subclass or child class</b></li>
+								<li><b>Abstract class</b> - a class that you create only to extend from, but not to instantiate from</li>
+								<li><b>Override Annotation</b> </li>
+							</ul>
+						</div>
+
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h2>Let's understand a little UML before coding...</h2>
+					
+				</section>
+				<section data-background="#fff">
+					<h4>Example UML Class Diagram</h4>
+					<img src="images/intro/uml_ultimate.png" width="850" alt="great example of UML breakdown">
+				</section>
+				<section data-background="#eee">
+
+					<h3>Sample Problem Walk through</h3>
+					<ul>	
+						<li style="font-size: 26px; font-weight: 900;">MPLS Renters</li>
+						<ul>
+							<li style="font-size: 22px;">Construct an desktop application that allows you to enter prospective renter's, agents and apartment data.  The end-user of the application will be able to search for agents, existing prospective users and apartment properties.   The end-user will also be able to add new agents, apartment's and prospective renters. The end-user will also be able to add Apartments to a profile.</li>
+							<ul>
+								<li style="font-size: 18px;"><b>Apartment</b>The data you may wish to collect for an apartment includes name, address, floor count, region of city estimated rent for 1 bedroom, 2- bedroom and 3 - bedroom</li>
+								<li style="font-size: 18px;"><b>Prospective Renter</b>The data you may wish to collect for a prospective renter includes first name, last name, phone, email, move-in date, preferred region of city, preferred number of bedrooms and baths.</li>
+								<li style="font-size: 18px;"><b>Agent</b>The data you may wish to collect for an agent includes first name, last name, email, phone, agent status and the agents company name.</li>
+							</ul>
+					</ul>
+				</section>
+				<section data-background="#fff">
+					<h4>MPLS Renters Basic UML Diagram</h4>
+				
+					<img src="images/intro/uml_snippet.png" width="550" alt="MPLS UML Diagram">
+				</section>
+				<section data-background="#eee">
+					<h3>Java Inheritance</h3>
+
+					<div id="flexcontain">
+						<pre>
+							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+								
+								class User{
+									public String FirstName;
+									public String LastName;
+									public String Email;
+									public int Phone;
+									
+									private void formatPhone(){
+										
+										//Logic to format phone
+									
+									}
+								}
+								
+								class Profile extends User{
+									public String AgentStatus;
+									public String AgentCompanyName;
+								}
+
+
+							</code>
+						</pre>
+					</div>
+				</section>
+				<!--<section data-background="#fff">
+					<h4>Creating and Using Abstract Class</h4>
+					
+						<img src="images/intro/abstract_one.PNG" alt="Abstract example one">
+						<img src="images/intro/abstract_two.PNG" alt="Abstract example two">
+						<ul>	
+							<li style="font-size: 26px;"><b>Abstract Class</b></li>
+							<ul>
+								<li style="font-size: 20px;">A class that you create only to extend from, but not to instantiate from</li>
+								
+							</ul>
+							<li style="font-size: 26px;"><b>Abstract Methods</b></li>
+							<ul>
+								<li style="font-size: 18px;">Has no method statements | Derived classes must override it using the keyword override</li>
+
+							</ul>
+						
+						</ul>
+				</section>
+
+				<section data-background="#eee">
+					<h3>Using Base Class Constructors </h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">Base Class Constructor</b><br> <br> Instantiating an object of a derived class calls the constructor for both the base class and the derived class</p> <p>The base class constructor must execute first</p> <p>When you create a base class and a derived class, and instantiate a derived class object, you call three constructors:</p><p>One from the Object class, one from the base class, and one from the derived class</p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">Base Class Constructor that require arguments</b> <br>When a base class constructor requires arguments, include a constructor for each derived class you create</p><p>The derived class constructor can contain any number of statements</p><p>Within the header, provide values for any arguments required by the base class constructor.</p><p>Use the keyword <b>base</b></p></div>
+
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h4>Using Base Class Constructors That Require Arguments</h4>
+					
+						<pre>
+							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+								
+								class User{
+									public string Fname;
+									public string Lname;
+									public string Email;
+									public int Phone;
+									
+									/**Constructor**/
+									public User(string Fname, string Lname, string Email, string Phone)
+									{
+										this.Fname = Fname;
+										this.Lname = Lname;
+										this.Email = Email;
+										this.Phone = Phone;
+									
+									}
+								}
+								
+								class Agent : User{
+									public string AgentStatus;
+									public string AgentCompanyName;
+									
+									public Agent(string Fname, string Lname, string Email, string Phone, string AgentStatus, string AgentCompanyName) : base(Fname, Lname, Email, Phone)
+									{
+										this.Fname = Fname;
+										this.Lname = Lname;
+										this.Email = Email;
+										this.Phone = Phone;
+										this.AgentStatus = AgentStatus;
+										this.AgentCompanyName = AgentCompanyName;
+									
+									}
+								}
+
+
+							</code>
+						</pre>
+
+				</section>
+				<section data-background="#ffffff">
+					<h4>Interfaces</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/intro/interface_definition.PNG"  width="280" alt="c# interface definition">
+							<ul>	
+								<li style="font-size: 26px;"><b>Interfaces</b></li>
+								<ul>
+									<li style="font-size: 20px;">An alternative to <b>multiple inheritance</b></li>
+									<li style="font-size: 20px;">A collection of public instance (that is, nonstatic) methods and properties that are grouped together to encapsulate specific functionality</li>
+									<li style="font-size: 20px;">You cannot instantiate concrete objects from either <b>abstract classes</b> or <b>interfaces</b></li>
+									<li style="font-size: 20px;">Interfaces provide you with a way to exhibit <b>polymorphic behavior</b></li>
+								</ul>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/intro/interface_implementation.PNG"  width="300" alt="c# interface implementation">
+						</div>
+					</div>
+
+				</section>
+				<section data-background="images/intro/abstract_collections.jpg">
+					<h1 style="color: black; background-color: rgba(255,255,255,.8); padding: .5em;">Collections and Generics</h1>
+				</section>
+				<section data-background="white">
+					<h2>Data Structures Overview</h2><br>
+					<img src="images/intro/data_structure_tree.jpg"  width="700" alt="Data Structure Tree">
+				</section>
+				<section data-background="#fff">
+				    
+				    <p style="font-size: 32px;"><b>Collections</b> enable you to maintain groups of objects.  Unlike arrays, collections can include more advanced functionality.</p>
+				     <br>
+				     <p style="font-size: 32px;">A<b> generic class </b>is built around whatever type, or types, you supply during instantiation, enabling you to strongly type an object with hardly any effort at all.</p>
+				     	<p style="font-size: 18px;">Namespace - using System.Collections.Generic;</p>
+				</section>
+				<section data-background="#fff">
+					<h3>Frequently Used Collections</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 28px;">List&lt;T&gt;</b> <br>Represents a list of objects that can be accessed by index. Provides methods to search, sort, and modify lists.</p><p style="font-size:16px; margin-top: -9px;"><a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=netcore-2.2">Link API</a></p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 28px;">Stacks&lt;T&gt;</b> <br>Represents a last in, first out (LIFO) collection of objects.</p><p style="font-size:16px; margin-top: -9px; "><a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.linkedlist-1?view=netcore-2.2">Stacks API</a></p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 28px;">Queues&lt;T&gt;</b> <br>Represents a first in, first out (FIFO) collection of objects.</p><p style="font-size:16px; margin-top: -9px;"><a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1?view=netcore-2.2">Queues API</a></p></div>
+						<div class="box yellow" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 28px;">Dictionary&lt;TKey, TValue&gt;</b> <br>Represents a collection of key/value pairs that are organized based on the key.</p><p style="font-size:16px; margin-top: -9px;"><a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2?view=netcore-2.2">Dictionary API</a></p></div>
+						<div class="box orange" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 28px;">SortedList&lt;TKey, TValue&gt;</b> <br>Represents a collection of key/value pairs that are sorted by key based on the associated IComparer&lt;T&gt; implementation.</p><p style="font-size:16px; margin-top: -11px;"><a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.sortedlist-2?view=netcore-2.2">SortedList API</a></p></div>
+					</div>
+				
+				</section>
+				<section data-background="#fff">
+					<h4>Example of using the List&lt;T&gt;</h4>
+					
+						<pre>
+							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+								
+class Program
+    {
+        static void Main(string[] args)
+        {
+            //Two dimensional array
+            double[,] price = {
+                                 {350, 390, 435},
+                                 {400, 440, 480},
+                                 {475, 530, 575}
+                              };
+
+            string[,] selection = {
+                                     {"Snickers", "Twix", "Mars"},
+                                     {"Skittles", "Starburst", "Sour Patch Kids"},
+                                     {"Big Red", "Winter fresh", "Trident"}
+                                  };
+            List&lt;Candy&gt; candyList = new List&lt;Candy&gt;();
+
+            //Iterate through the multi-Array and populate the list
+            for (var i = 0; i < 3; i++)
+            {
+                for (var x = 0; x < 3; x++)
+                {
+                    Candy aCandy = new Candy(selection[i, x], price[i, x]);
+                    candyList.Add(aCandy);
+                    Console.WriteLine("{0} goes for {1}", selection[i, x], price[i, x].ToString("c"));
+                }
+            }
+            
+            //Decrement through the list and find the object with value "Snickers" for the name property
+            for(var i = candyList.Count -1; i >= 0; i--)
+            {
+                if (candyList[i].name.Contains("Snickers"))
+                {
+                    candyList.RemoveAt(i);    
+                }     
+            }
+            //Output the list using lambda Expression
+            candyList.ForEach(x => Console.WriteLine(x.ToString()));
+        }
+    }
+    public class Candy
+    {
+        public string name { get; set; }
+        public double price { get; set; }
+
+        public Candy(string name, double price)
+        {
+            this.name = name;
+            this.price = price;
+        }
+
+        public override string ToString()
+        {
+            return String.Format("The name of the candy is " + name + " the price for this candy " + price);
+        }
+
+    }
+
+
+							</code>
+						</pre>
+
+				</section>
+				<section data-background="#fff">
+					<h3>Activity </h3>
+					<img src="images/intro/vending_machine_candy.jpg" alt="Picture of vending machine candy">
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 26px;">Step 1</b> <br>Using the previous slide code, create a new List that will hold the candy you select and enforce that only Candy objects can be within list. </p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 26px;">Step 2</b> <br>Implement logic within the existing looping structure that adds the selected candy to the new list </p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 26px;">Step 3</b> <br>Output both list. One list will hold the candy not selected and the other list will output the selected candy.</p></div>
+
+					</div>
+					
+				
+				</section>
+				<!--<section data-background="images/intro/c_bg.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Sample Program Break-down</h1>
+				</section>
+				<section data-background="#fff">
+					<h4>Sample Program Breakdown</h4>
+					<img src="images/intro/program_structure.PNG" width="750" alt="program break-down structure">
+				</section>
+				<section data-background="#fff">
+					<h4>Program Components</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;"><b>Namespace</b></li>
+								<ul>
+									<li>Provides a way to group similar classes</li>
+									<li>Can be used to avoid naming conflicts in large projects</li>
+								</ul>
+								<li style="font-size: 26px;">C# method parts</li>
+								<ul>
+									<li><b>Method header</b></li>
+									<ul>
+										<li>Includes the method name and information about what will pass into and be returned from a method</li>
+									</ul>
+									<li><b>Method body</b></li>
+									<ul>
+										<li>Contained within a pair of curly braces and includes all the instructions executed by the method</li>
+									</ul>
+								</ul>
+								<li style="font-size: 26px;">Access Modifier</li>
+								<ul>
+									<li>Defines the circumstances under which the method can be accessed</li>
+									<li>Public, private, protected, internal, readonly, etc..</li>
+								</ul>
+
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;"><b>Keywords</b></li>
+								<ul>
+									<li>Predefined and reserved identifiers that have special meaning to the compiler</li>
+								</ul>
+								<li style="font-size: 26px;">The name of the method is <code>Main()</code></li>
+								<ul>
+									<li>Every application must have a <code>Main()</code> method</li>
+									<li>Classes with a Main()method are called <b>application classes</b>; others are <b>non-application classes</b></li>
+								</ul>
+								<li style="font-size: 26px;">The method returns nothing as indicated by the keyword <b>void</b></li>
+
+							</ul>
+						</div>
+					</div>
+
+				</section>
+
+				<section data-background="#fff">
+					<h3>Compiling and Executing a C# Program</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;">Steps for viewing a program's output</li>
+								<ul>
+									<li style="font-size: 22px;">Compile source code into <b>intermediate language(IL)</b></li>
+									<li style="font-size: 22px;">The C# <b>just in time(JIT)</b> compiler translates the intermediate code into executable statements</li>
+								</ul>
+								<li style="font-size: 26px;">You can either of two ways to compile</li>
+								<ul>
+									<li style="font-size: 22px;">The <b>command line</b></li>
+									<li style="font-size: 22px;">The <b>Integrated Development Environment (IDE)</b></li>
+								</ul>
+
+							</ul>
+						</div>
+
+					</div>
+
+				</section>
+
+				<section data-background="#fff">
+					<h3>Steps to compile via command line</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 1</b> <br>Open the <b>Developer Command Prompt VS 2017</b> </p></div>
+						<div class="box blue" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 2</b> <br>Change to the directory where program is located</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 3</b> <br>Type the <code>csc tuition.cs </code> command to compile</p></div>
+						<div class="box yellow" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 4</b> <br>type the <code> Dir</code> command to view files (this step is not necessary)</p></div>
+						<div class="box orange" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 5</b> <br>Type <code> tuition</code> and press Enter to run the program</p></div>
+					</div>
+
+				</section>
+
+				<section data-background="#fff">
+					<h3>Terms</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Constant</b> <br>Cannot be changed after a program is compiled. Utilize keyword "const"</p></div>
+						<div class="box blue" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Literal constant</b> <br>Its value is taken literally at each use</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Variable</b> <br>A named location in computer memory that can hold different values at different points in time</p></div>
+						<div class="box yellow" style="font-size: 22px; margin: 10px; background-color: #2d4650; height: 285px;"><p><b style="font-size: 32px;">Data Type</b> <br>Describes the format and size of (amount of memory occupied by) a data item</p></div>
+						<div class="box orange" style="font-size: 22px; margin: 10px; background-color: #2d4650; height: 285px;"><p><b style="font-size: 32px;">Intrinsic Types</b> <br>Build-in Data Types | <b>Alias</b> names for a class in the System namespace | All of the built-in types except object and string are called <b>simple types</b></p></div>
+						<div class="box orange" style="font-size: 22px; margin: 10px; background-color: #2d4650; height: 285px;"><p><b style="font-size: 32px;">Unicode</b> <br>is the system that provides a numeric value for every character.</p></div>
+					</div>
+
+				</section>
+				<section data-background="#fff">
+					<h4>Data Types</h4>
+					<img src="images/intro/datatypes.PNG" width="670" height="560" alt="Built-in Data Types in c#">
+				</section>
+				<section data-background="images/intro/string.jpg">
+					<h3 style="text-shadow: 4px 7px 10px #333;">Outputting Data</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>CONCATENATION</p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>PLACEHOLDER <br>OR <br> COMPOSITE FORMATTING</p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>INTERPOLATION</p></div>
+
+					</div>
+					<p style="text-shadow: 4px 7px 10px #333;">Any of the three can be used to format and output text and variables</p> 
+				</section>
+				<section data-background="#eee">
+					<h4>Concatenating Strings</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 20px;">Concatenation is the process of appending one string to the end of another string. You concatenate strings by using the + operator</li>
+								<li style="font-size: 20px;">For string literals and string constants, concatenation occurs at compile time; no run-time concatenation occurs. For string variables, concatenation occurs only at run time.</li>
+							</ul>
+							<pre>
+								<code style="font-size: 22px; height: 100px;" class="codebox code-example__codebox"  data-trim contenteditable>
+									
+								   string marvelMovie = "The Avengers Infinity War";
+								
+									
+								   Console.WriteLine(marvelMovie + " is the best Marvel Movie"); 
+							
+	
+								</code>
+							</pre>
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#eee">
+					<h4>Placeholder / Composite Formatting</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 20px;">A composite format string consists of zero or more runs of fixed text intermixed with one or more format items.</li>
+								<li style="font-size: 20px;">The composite formatting feature returns a new result string where each format item is replaced by the string representation of the corresponding object in the list.</li>
+							</ul>
+							<pre>
+								<code style="font-size: 22px; height: 100px;" class="codebox code-example__codebox"  data-trim contenteditable>
+									
+								   string marvelMovie = "The Avengers Infinity War";
+								
+									
+								   Console.WriteLine("{0} is the best Marvel Movie", marvelMovie); 
+							
+	
+								</code>
+							</pre>
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#eee">
+					<h4>Interpolated Strings</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 20px;">The $ special character identifies a string literal as an interpolated string. An interpolated string is a string literal that might contain interpolated expressions.</li>
+								<li style="font-size: 20px;">To identify a string literal as an interpolated string, prepend it with the $ symbol. You cannot have any white space between the $ and the " that starts a string literal. Doing so causes a compile-time error.</li>
+							</ul>
+							<pre>
+								<code style="font-size: 22px; height: 100px;" class="codebox code-example__codebox"  data-trim contenteditable>
+									
+								   string marvelMovie = "The Avengers Infinity War";
+								
+									
+								   Console.WriteLine($"{marvelMovie} is the best Marvel Movie"); 
+							
+	
+								</code>
+							</pre>
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#fff">
+					<h4>Escape Sequence</h4>
+					<img src="images/intro/escape_sequence.PNG" width="470" alt="escape sequence in c#">
+				</section>
+				<section data-background="#fff">
+					<h4>Formatting Floating-Point Values</h4>
+					<img src="images/intro/formatting.PNG" width="570" alt="formatting floating point values in c#">
+				</section>
+				<section data-background="#eee">
+					<h2>Using the API</h2>
+					
+				</section>
+				<section data-background="#eee">
+					<h3>Console Class Example</h3>
+					<ul>
+						<li style="font-size: 22px;">Our first two projects will be console applications, feel free to be creative and experiment with the properties and methods associated with Console class.</li>
+						<li style="font-size: 22px;">https://docs.microsoft.com/en-us/dotnet/api/system.console?view=netframework-4.7.2</li>
+					</ul>
+					<div id="flexcontain">
+						<pre>
+							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+								using System;
+								using System.Text;
+								
+								class Program{
+									static void Main(string[] args)
+									{
+									
+										string name;
+										
+										Console.WriteLine("Enter your name: ");
+										name = Console.ReadLine();
+										Console.WriteLine("Welcome {0}", name);
+										int nameLength = name.Length;
+										
+										for(int x = 0; x < nameLength; x++){
+											Console.Beep();
+										}
+									
+	
+									}
+								}
+
+
+							</code>
+						</pre>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h4>Accepting Console Input</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;"><b>Interactive program</b></li>
+								<ul>
+									<li style="font-size: 20px;">A Program that allows user input</li>
+									
+								</ul>
+								<li style="font-size: 26px;"><code>ReadLine() method</code></li>
+								<ul>
+									<li style="font-size: 20px;">Accepts all of the characters entered by a user input from the keyboard until the user presses Enter</li>
+									<li style="font-size: 20px;">Characters can be assigned to a string</li>
+									<li style="font-size: 20px;">Must use a conversion method to convert the input string to the proper type</li>
+								</ul>
+								
+
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/intro/convert_program.PNG" alt="simple convert program">
+						</div>
+					</div>
+
+				</section>
+				<section data-background="#fff">
+					<h4>Convert Class Methods</h4>
+					<img src="images/intro/converting_strings.PNG" width="570" alt="converting strings diagram">
+				</section>
+				<section data-background="#fafafa">
+					<h4>Using the <code>Parse()</code> methods</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/intro/parse_ex.PNG"  width="400" alt="simple program using parse method program">
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;"><b>Parse() method</b></li>
+								<ul>
+									<li style="font-size: 20px;">An alternative to the Convert class methods to convert a string to a number</li>
+									<li style="font-size: 20px;">Parse means to break into component parts</li>
+									<li style="font-size: 20px;">Parsing a string turns it into its numeric equivalent</li>
+								</ul>
+							</ul>
+						</div>
+					</div>
+
+				</section>
+
+				<section data-background="images/intro/oldbooks.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Resources and Tools</h1>
+				</section>
+				<section data-background="#fff">
+					<h4>NuGet Package Manager</h4>
+					
+						<a href="https://docs.microsoft.com/en-us/nuget/what-is-nuget"><img src="images/intro/nuget-roles.png" width="500" alt="nuget developer to consumer process"></a>
+						
+						<ul>	
+							<li style="font-size: 26px;"><b>NuGet Package</b></li>
+							<ul>
+								<li style="font-size: 20px;">Microsoft-supported mechanism for sharing code is NuGet</li>
+								
+							</ul>
+							<li style="font-size: 26px;"><b>NuGet Package Structure</b></li>
+							<ul>
+								<li style="font-size: 20px;">a NuGet package is a single ZIP file with the .nupkg extension that contains compiled code (DLLs), other files related to that code, and a descriptive manifest that includes information like the package's version number.</li>
+								<li style="font-size: 20px;">Developers with code to share create packages and publish them to a public or private host.</li>
+								<li style="font-size: 20px;">Package consumers obtain those packages from suitable hosts, add them to their projects, and then call a package's functionality in their project code</li>
+							</ul>
+
+						</ul>
+
+				</section>
+				<section data-background="#fff">
+					<h4>Resources</h4>
+					
+						
+						
+						<ul>	
+
+							<li style="font-size: 26px;"><b>Resources</b></li>
+							<ul>
+								<li style="font-size: 20px;"><a href="http://learncs.org/">Learncs.org - Good for learning foundation concepts</a></li>
+								<li style="font-size: 20px;"><a href="https://www.c-sharpcorner.com/">c-sharpcorner.com - A Csharp community where people share ideas</a></li>
+								<li style="font-size: 20px;"><a href="https://docs.microsoft.com/en-us/learn/">Microsoft Learn - A good site not only for c#, but other product and technology offerings from Microsoft.</a></li>
+							</ul>
+
+						</ul>
+
+				</section>
+				<section data-background="#fff">
+					<h4>Debugging in Visual Studio</h4>
+					
+						
+						
+						<ul>	
+
+							<li style="font-size: 26px;"><b>Debugging</b></li>
+							<ul>
+								<li style="font-size: 20px;">The process of removing all syntax and logical errors from the program</li>
+								<li style="font-size: 20px;">Syntax errorsare discovered through compilation</li>
+								<li style="font-size: 20px;">Logical errors are discovered through testing</li>
+							</ul>
+							<li style="font-size: 22px;">At any time that you are working in the code editor, you can set a breakpoint on a line of code by pressingF9. When you pressF5to run your application within the Visual Studio debugger, the application will stop on that line and you can examine the value of any given variable, or view how or when execution breaks out of a loop, step through the code one line at a time by pressingF10, or set additional breakpoints.</li>
+
+						</ul>
+
+				</section>
+				<section data-background="#fff">
+					<h4>Debugging Features</h4>
+					
+						<iframe width="760" height="515" src="https://www.youtube.com/embed/E7aAU4lDbcc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+				</section>
+				<!--<section data-background="#fff">
+					<ul>
+						<li style="font-size: 26px;">Navigate to <a href="https://dot.net">Dot.net website</a></li>
+					</ul>
+					
+				</section>
+
+				<section data-background="#fff">
+					<h3>User Research</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #216869;"><p><b style="font-size: 30px;">Observations</b> <br> Give people tasks or instructions and watch them use your design, without help. </p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #49A078;"><p><b style="font-size: 30px;">Interviews</b> <br> Ask prospective users questions about their expectations of your design.</p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; background-color: #9CC5A1;"><p><b style="font-size: 30px;">Task Analysis</b> <br>   learning about user goals, and understand the tasks users will perform on your site.</p></div>
+						<div class="box orange" style="font-size: 24px; margin: 10px;"><p><b style="font-size: 30px;">Focus Groups</b> <br> a moderated discussion where you can learn about users’ attitudes, beliefs, desires, and reactions to concepts.</p></div>
+						<div class="box aquamarine" style="font-size: 24px; margin: 10px; background-color: #333;"><p><b style="font-size: 30px;">Surveys</b> <br>  a structured questionnaire that your target audience completes over the internet generally through a filling out a form</p></div>
+					</div>
+					<a href="https://www.usability.gov/what-and-why/user-research.html" style="font-size: .4em;">Click here for more information about user research</a> </a>
+				</section>
+				<section data-background="#fff">
+					<a href="https://www.nngroup.com/articles/ux-research-cheat-sheet/" style="font-size: 20px;"><h3>Nielsen Norman Group Research</h3></a>
+					<img src="images/ux/frequentuxmethods.png" width="550" style="box-shadow: none; border: none;"alt="Frequent UX method graphic">
+					
+				</section>
+				<section data-background="#eee">
+						<h4>When to use which UX research method</h4>
+						<iframe width="760" height="515" src="https://www.youtube.com/embed/OtUWbsvCujM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</section>
+				<section data-background="#fff">
+					
+					<img src="images/ux/ia_pic.gif" width="800" style="box-shadow: none; border: none;"alt="Information Architecture graphic">
+				</section>
+				<section data-background="#fff">
+					
+					<img src="images/ux/louisrosenfeld.gif" width="870" style="box-shadow: none; border: none;"alt="Information Architecture diagram">
+				</section>
+				<section data-background="#fff">
+					<p>Information Architecture and navigation considerations</p>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;">Information design is the most important factor in the success of your site</li>
+								<li style="font-size: 26px;">What do users want when they get to your site?</li>
+								<li style="font-size: 26px;">Anticipate and plan for user actions</li>
+								<li style="font-size: 26px;">Provide direct links to your most popular pages</li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;">Do not make users navigate through too many layers of information</li>
+								<li style="font-size: 26px;">Follow the three clicks rule</li>
+								<li style="font-size: 26px;">Use consistent navigation</li>
+								<li style="font-size: 26px;">Provide direct links to your most popular pages</li>
+							</ul>
+						</div>
+					</div>
+
+				</section>
+				<section data-background="#eee">
+				    <h5>Navigation Considerations - Orient the User</h5>
+				    <p style="font-size: 28px;">Provide enough location information to let the user answer the following navigation questions:</p>
+				    <ul style="text-align: center; list-style-type: none; text-shadow: 1px 1px 5px #333;">
+						<li style="color: #82C09A;">Where am I?</li>
+						<li style="color: #8C001A;">Where can I go?</li>
+						<li style="color: #456990;">How did I get there?</li>
+						<li style="color: #636940;">How do I get back to where I started?</li>
+				
+				    </ul>
+				</section>
+				<section data-background="#fff">
+					<h3>Sample Website Architecture</h3>
+					<img src="images/ux/sitearchdiagram.gif" width="700" style="box-shadow: none; border: none;"alt="Sample Website Architecture Diagram">
+				</section>
+				<section data-background="#000">
+					<h3>Understanding Card Sorting</h3>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/6RhFN6cul3w?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</section>
+				<section data-background="000">
+					<h3>Use Cases</h3>
+					<ul>
+						<li>Describes one specific interaction between the user and the software</li>
+						<li>The use cases are gathered from the clients requirements which defines the scope requirements.</li>
+						<li><a href="https://www.usability.gov/how-to-and-tools/methods/use-cases.html">Usability.gov - Explanation of Use cases</a></li>
+					</ul>
+					
+				</section>
+				<section data-background="000">
+					<h3>Example Use case</h3>
+					<img src="images/ux/use_case.PNG" alt="example of use case"/>
+					
+				</section>
+				<section data-background="#000">
+					<h3>User Personas</h3>
+					<iframe width="760" height="515" src="https://www.youtube.com/embed/B23iWg0koi8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					
+				</section>
+				<section data-background="#fff">
+				    <h3>Why Usability?</h3>
+				    <img src="images/ux/ketchup.jpg" width="650" style="box-shadow: none; border: none;"alt="usability ketchup image">
+				    
+				</section>
+				<section data-background="#eee">
+				    <iframe width="560" height="315" src="https://www.youtube.com/embed/lhQOx6OxA0E?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>	
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/Ml92QEqE-RQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				
+				</section>
+				<section data-background="#fff">
+				    <h3>Usability Components</h3>
+				    <img src="images/ux/Usability_Components.png" width="750" style="box-shadow: none; border: none;"alt="usability components">
+				    
+				</section>
+
+				<section data-background="#fff">
+					<h3>Accessibility Principles</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #3F7CAC;"><p><b style="font-size: 22px;">Perceivable</b> <br> Text alternatives for non-text content; Captions and other alternatives for multimedia; Content can be presented in different ways; </p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #95AFBA;"><p><b style="font-size: 22px;">Operable</b> <br> Captions and other alternatives for multimedia</p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #BDC4A7;"><p><b style="font-size: 22px;">Understandable information</b> <br>   learning about user goals, and understand the tasks users will perform on your site.</p></div>
+						<div class="box orange" style="font-size: 20px; margin: 10px; background-color: #f74545;"><p><b style="font-size: 22px;">Robust content </b> <br> a moderated discussion where you can learn about users’ attitudes, beliefs, desires, and reactions to concepts.</p></div>
+					
+					</div>
+					<a href="https://www.w3.org/WAI/fundamentals/accessibility-principles/" style="font-size: .4em;">Click here for more information about accessibility principles</a>
+				</section>
+				<!--<section>
+					<section>
+						<h3>Node Modules</h3>
+						<p> Core/Built-in Modules   &#10022;    Third-Party Modules </p>
+						<div id="flexcontain">
+							<div class="box_two" style="font-size: 22px; margin: 10px;">
+								<ul>
+									<li style="font-size: 26px;"><b>File Module</b> Including the path of file in require method</li>
+									<li style="font-size: 26px;"><b>Core modules</b> are modules that come with NodeJs.  You do not have to install them.  <a href="https://nodejs.org/api/modules.html"> Click here to see a list of core modules</a></li><br>
+									<li style="font-size: 26px;"><b>Third-Party modules</b> - pushes it to a queue and continues with the next statement. If the server returns something, it callback to whatever triggered the event.</li>	   
+								</ul>
+							</div>
+							<pre>
+								<code style="font-size: 16px;" class="hljs" data-trim contenteditable>
+								const welcome = require('./welcome'); //including a module that is a file within your program
+								const http = require('http'); //including a core module example
+								const app = require('express'); //including third-party module example
+
+
+								</code>
+							</pre>
+
+						</div>	
+					</section>
+					<section>
+						<h3>Creating your own Module</h3>
+						<ul>
+							<li>Create a file called welcome.js</li>
+							<li>Add the code snippet below to your welcome.js file:</li>
+						</ul>
+						<pre><code class="hljs" data-trim contenteditable>
+								exports.welcome = function(){    
+									console.log("You called the welcome method");
+								}
+
+								exports.conclude = ()=>{
+									console.log("You called the conclude method");
+								}
+						</code></pre>
+						
+					</section>
+					<section>
+						<h3>Using a Core/Built-in Module</h3>
+						<ul>
+							<li>This example will utilize both the core http module to create a server</li>
+							<li>Create a file called server.js</li>
+							<li>Copy and add the code snippet below to your server.js file: </li>
+						</ul>
+						<pre><code class="hljs" data-trim contenteditable>
+								exports.welcome = function(){    
+									console.log("You called the welcome method");
+								}
+
+								exports.conclude = ()=>{
+									console.log("You called the conclude method");
+								}
+						</code></pre>
+						
+					</section>
+				</section>
+				<section data-background="#fff">
+					<h3>Understanding Card Sorting</h3>
+						<iframe width="760" height="315" src="https://www.youtube.com/embed/TNvdgXCqEvM?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</section>
+				<section data-background="#fff">
+					<h3>Creating your own Module </h3>
+					<p> Core/Built-in Modules   &#10022;    Third-Party Modules </p>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;"><b>Most Languages</b> - Once an event is triggered to perform a task, most languages wait until the task is complete to move onto the next statement </li><br>
+								<li style="font-size: 26px;"><b>NodeJs</b> - pushes it to a queue and continues with the next statement. If the server returns something, it callback to whatever triggered the event.</li>	   
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/node/eventloop.png" width="500" style="box-shadow: none;" alt="Nodejs event loop queue"/>
+						</div>
+					</div>
+
+					
+				</section>
+				<section data-background-color="#fff">
+					<iframe height="600" src="https://embed.polleverywhere.com/multiple_choice_polls/QdwqUEsc6vjDWi3?controls=none&short_poll=true" width="100%" height="100%" frameBorder="0"></iframe>
+				</section>
+				<section data-background-color="#fff">
+					<iframe height="600" src="https://embed.polleverywhere.com/free_text_polls/njYHOn4wxYZfpDV?controls=none&short_poll=true" width="100%" height="100%" frameBorder="0"></iframe>
+				</section>-->
+				<section data-background="#eee">
+				    <h2>References</h2>
+				    <ul style="font-size: 22px;">
+						<!--<li>https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/</li>
+						<li>https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/polymorphism</li>
+						<li>https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/inheritance</li>
+						<li>https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-class-diagram-tutorial/</li>
+						<li>https://www.dotnetodyssey.com/2017/05/31/difference-fields-properties-c/</li>
+						<li>https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic?view=netcore-2.2</li>
+						<li>Dependency Injection - https://www.codementor.io/@mrfojo/c-with-dependency-injection-k2qfxbb8q</li>
+						<li> Dependency Injection - https://www.freecodecamp.org/news/a-quick-intro-to-dependency-injection-what-it-is-and-when-to-use-it-7578c84fa88f/</li>-->
+				    </ul>
+				</section>
+
+				<!--<section data-background="#fff">
+						<h2>Common Methods in File Class</h2>
+						<ul>
+							
+							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.file?view=netframework-4.7.1">Click here to navigte to <code>File Class</code></a></li>		   
+						</ul>
+						<img src="images/io/filemethods.png" style="box-shadow: none;" alt="Common methods in File class"/>
+				</section>
+				<section data-background="#fff">
+						<h2>File Class - code and output</h2>
+
+						<img src="images/io/filepic1.png" width="420" style="box-shadow: none; float: left;" alt="File picture example one"/>
+						<img src="images/io/filepic2.png" width="420" style="box-shadow: none; float: left;" alt="File Picture example two"/>
+				</section>
+
+				<section data-background="#eee">
+						<h2>Understanding File Data Organization</h2>
+						<ul>
+							<li>Businesses store data in a relationship known as the <b>data hierarchy</b></li>
+							
+							<li><b>Character</b></li> 
+							<ul style="font-size: 22px;">
+								<li>Any of the letters, numbers, or other special symbols (such as punctuation marks) that comprise data</li>
+								<li>Characters are made up of bytes containing eight (8) bits</li>
+									<ul style="font-size: 22px;">
+										<li>ASCII characters contain one (1) byte</li>
+										<li>Unicode characters contain two (2) bytes</li>				
+									</ul>
+							</ul>
+
+				   
+						</ul>
+				</section>
+
+				<section data-background="#fff">
+						<h2>Stream Overview</h2>
+
+						<img src="images/io/streamoverview.png"  width="700" style="box-shadow: none;" alt="Stream class overview diagram"/>
+				</section>
+				<section data-background="#fff">
+						<h2>Stream classes</h2>
+						<ul style="font-size: 24px;">
+							<li><b>Stream</b> is an abstract class, it can not initialize an object by itself, you can initialize a Stream object from the Constructors of the subclass. <b>Stream</b> class provides the basic methods of working with data streams, namely the method of read/write a byte or an array of bytes.</li>
+							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.stream?view=netframework-4.7.1">Click here to navigte to <code>Stream Class</code></a></li>
+						</ul>
+						
+						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
+								<tbody> 
+								 <tr> 
+								  <td><strong>Class</strong></td> 
+								  <td><strong>Description</strong></td> 
+								 </tr> 
+								 <tr> 
+								  <td>BufferedStream</td> 
+								  <td>A utility stream, it wrapped another stream, which helps improve performance</td> 
+								 </tr> 
+								 <tr> 
+								  <td>FileStream</td> 
+								  <td>Stream used to read and write data to the file.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>MemoryStream</td> 
+								  <td>Creates a stream whose backing store is memory.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>UnmanagedMemoryStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								 <tr> 
+								  <td>IsolatedStorageFileStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								 <tr> 
+								  <td>PipeStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								 <tr> 
+								  <td>NetworkStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								 <tr> 
+								  <td>CryptoStream</td> 
+								  <td>Defines a stream that links data streams to cryptographic transformations.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>DeflateStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								 <tr> 
+								  <td>GZipStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								</tbody> 
+						</table>
+				</section>
+				<section data-background="#fff">
+						<h2>Properties of Stream</h2>
+						<ul style="font-size: 24px;">
+							<li>Depending on the stream, there are the stream that supports both read and write, and seek by moving the cursor on the stream, read and write data at the cursor position.</li>
+							
+						</ul>
+						
+						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
+								<tbody> 
+								 <tr> 
+								  <td><strong>Attribute</strong></td> 
+								  <td><strong>Description</strong></td> 
+								 </tr> 
+								 <tr> 
+								  <td>CanRead</td> 
+								  <td>Gets a value indicating whether the current stream supports reading.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>CanSeek</td> 
+								  <td>Gets a value indicating whether the current stream supports seeking.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>CanWrite</td> 
+								  <td>Gets a value indicating whether the current stream supports writing.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Length</td> 
+								  <td>Gets the length in bytes of the stream.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Position</td> 
+								  <td>Gets or sets the current position of this stream.</td> 
+								 </tr> 
+								</tbody> 
+						</table>
+				</section>
+
+
+				<section data-background="#fff">
+						<h2>FileMode Enumeration</h2>
+						<ul>
+							<li>A constant that determines how to open or create the file</li>
+						</ul>
+
+						
+						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
+								<tbody> 
+								 <tr> 
+								  <td><strong>FileMode</strong></td> 
+								  <td><strong>Description</strong></td> 
+								 </tr> 
+								 <tr> 
+								  <td>Append</td> 
+								  <td>Opens the file if it exists and seeks to the end of the file, or creates a new file</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Create</td> 
+								  <td>Specifies that the operating system should create a new file. If the file already exists, it will be overwritten.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>CreateNew</td> 
+								  <td>Specifies that the operating system should create a new file.If the file already exists, an <strong>IOException</strong> exception is thrown. This mode requires <strong>FileIOPermissionAccess.Write</strong> permission.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Open</td> 
+								  <td>Specifies that the operating system should open an existing file. A <strong>System.IO.FileNotFoundException</strong> exception is thrown if the file does not exist.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>OpenOrCreate</td> 
+								  <td>Specifies that the operating system should open a file if it exists; otherwise, a new file should be created</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Truncate</td> 
+								  <td>Specifies that the operating system should open an existing file. When the file is opened, it should be truncated so that its size is zero bytes.</td> 
+								 </tr> 
+								</tbody> 
+							   </table>
+				</section>
+				<section data-background="#fff">
+						<h2>FileAccess Enumeration</h2>
+						<ul>
+							<li>A constant that determines how the file can be accessed by the FileStream object. This also determines the values returned by the CanRead and CanWrite properties of the FileStream object. CanSeek is true if path specifies a disk file.</li>
+						</ul>
+
+						
+						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
+								<tbody> 
+								 <tr> 
+								  <td><strong>FileAccess</strong></td> 
+								  <td><strong>Description</strong></td> 
+								 </tr> 
+								 <tr> 
+								  <td>Read</td> 
+								  <td>Data can be read from the file.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>ReadWrite</td> 
+								  <td>Data can be read from and written to the file.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Write</td> 
+								  <td>Data can be written to the file.</td> 
+								 </tr>  
+								</tbody> 
+						 </table>
+				</section>
+				<section data-background="#fff">
+					<h2>Stream Example</h2>
+
+					<img src="images/io/writerexcode.png"  width="500" style="box-shadow: none; float: left;" alt="Writing to file code"/>
+					<img src="images/io/writerexconsole.png"  width="400" style="box-shadow: none; float: left;" alt="Writing to file console view"/>
+					<img src="images/io/writerextextfile.png"  width="400" style="box-shadow: none; float: left;" alt="Writing to file text output"/>
+
+					
+
+				</section>
+
+				<section data-background="#fff">
+					<h2 style="font-size: 36px;">Writing Data to a Sequential Access Text File Example</h2>
+					<ul>
+						
+						<li><b>Token</b></li>
+						<ul style="font-size: 22px;">
+							<li>A block of text within a string that represents an entity or field </li>
+
+						</ul>
+						<li><b>Delimiter</b></li>
+						<ul style="font-size: 22px;">
+							<li>A character used to specify the boundary between records and, potentially, fields in text files</li>
+						</ul>
+						<li>When you write data to a text file:</li>
+						<ul style="font-size: 22px;">
+							<li>You can separate the fields with a delimiter</li>
+							<li>Delimiters are needed when fields are not fixed in size and position - field size varies</li>
+							<li><b>CSV files</b> (comma-separated value files) are delimited files</li>
+						</ul>
+
+					</ul>
+					
+				</section>
+				<section data-background="#fff">
+					<h2 style="font-size: 36px;">Writing Data to Sequential Access Text File </h2>
+
+					<img src="images/io/sequentialcode.png"  width="350" style="box-shadow: none; float: left; margin-top:-10px;" alt="Sequential file access code"/>
+					<img src="images/io/sequentialconsole.png"  width="300" style="box-shadow: none; float: left; margin-top: -10px;" alt="Sequential file access console view"/>
+					<img src="images/io/sequentialoutput.png"  width="300" style="box-shadow: none; float: left; margin-top: -10px;" alt="Sequential output"/>
+					<img src="images/io/employeeclass.png"  width="300" style="box-shadow: none; float: left; margin-top: -26px;" alt="Employee class"/>
+
+				</section>
+				<section data-background="#fff">
+					<h2>Reading from a Sequential Access Text File </h2>
+
+					<img src="images/io/readingcode.png"  width="500" style="box-shadow: none; float: left; margin-top: -10px;" alt="Reading Sequential access code"/>
+					<img src="images/io/readingconsole.png"  width="500" style="box-shadow: none; float: left; margin-top: -10px;" alt="Reading Sequential file access console view"/>
+
+				</section>
+				<section data-background="#fff">
+					<h2>Search a Sequential Text File</h2>
+					<ul>
+						<li><b>File position pointer</b></li>
+						<ul style="font-size: 22px;">
+							<li>Holds the byte number of the next byte to be read</li>
+						</ul>
+						<li>Reposition the file pointer using the <code>Seek()</code> method and the <code>SeekOrigin</code> enumeration: <br/> <code style=" font-size: 28px; font-weight: 100;">inFile.Seek(0, SeekOrigin.Begin);</code></li>
+
+					</ul>
+					<img src="images/io/seekimg.png"  width="700" style="box-shadow: none; font-size: 28px; font-weight: 100;" alt="File Position Searching Sequential"/>
+				</section>
+				<section data-background="#fff">
+					<h2>Search a Sequential Text File cont.</h2>
+					<img src="images/io/seekex.png"  width="700" style="box-shadow: none;" alt="seek example code picture"/>
+					
+				</section>
+				<section data-background="#fff">
+					<h2>Search a Sequential Text File cont.</h2>
+					<img src="images/io/seekoutput.png"  width="600" style="box-shadow: none;" alt="seek example output"/>
+					
+				</section>
+				<section data-background="#fff">
+					<h2>Understanding Serialization and Deserialization</h2>
+					<ul>
+						<li>Disadvantages to writing to a text file:</li>
+						<ul style="font-size: 22px;">
+							<li>Data in a text file is easily readable in a text editor such as Notepad, which means it is not secure</li>
+							<li>It is cumbersome to convert each field to text and combine the fields with delimiters</li>	
+						</ul>
+						<li>You can write objects to and read objects from files</li>
+						<li><b>Serialization</b></li>
+						<ul style="font-size: 22px;">
+							<li>The process of converting objects into streams of bytes</li>
+						</ul>
+						<li><b>Deserialization</b></li>
+						<ul style="font-size: 22px;">
+							<li>Converts streams of bytes back into objects</li>
+						</ul>
+					</ul>
+					
+				</section>
+				<section data-background="#fff">
+					<h2>Understanding Serialization and Deserialization</h2>
+					<ul>
+						<li style="font-size: 32px">In a class marked with the [Serializable] attribute, every instance variable must also be Serializable</li>
+
+						<li style="font-size: 32px">By default, all C# simple data types are serializable, including strings</li>
+						<li style="font-size: 32px">If your class contains fields that are more complex data types, you must check the declaration of those classes to ensure they are serializable</li>
+
+					</ul>
+					<img src="images/io/serializableclassimg.png"  width="400" style="box-shadow: none; font-size: 28px; font-weight: 100;" alt="Serializable class image"/>
+				</section>
+				<section data-background="#fff">
+					<h2>Understanding Serialization and Deserialization</h2>
+					<ul>
+						<li>To create a class that can be serialized:</li>
+						<ul style="font-size: 22px;">
+							<li>Mark it with the <code>[Serializable]</code> attribute</li>	
+						</ul>
+						<li>Namespaces included in programs that employ serialization:</li>
+						<ul style="font-size: 22px;">
+							<li><code>System.Runtime.Serialization.Formatters.Binary;</code></li>
+							<li><code>System.Runtime.Serialization;</code></li>
+						</ul>
+					</ul>
+					
+				</section>
+				<section data-background="#fff">
+					<h2>Serilization Code Example </h2>
+
+					<img src="images/io/serialcode1.png"  width="425" style="box-shadow: none; float: left; margin-top: -10px;" alt="Serialization Code example one"/>
+					<img src="images/io/serialcode2.png"  width="425" style="box-shadow: none; float: left; margin-top: -10px;" alt="Serialization Code example two"/>
+
+				</section>
+				<section data-background="#fff">
+					<h2>Serilization Code Example Output </h2>
+
+					<img src="images/io/serialoutput2.png"  width="470" style="box-shadow: none; margin-top: -10px;" alt="Serialization Code example one"/>
+
+
+				</section>-->
+
+				
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

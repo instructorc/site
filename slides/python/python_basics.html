@@ -1,0 +1,1895 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="description" content="Instructor Fulton's Introduction to Java">
+		<meta name="author" content="C. Fulton">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<title>Introduction to Java - Java Basics</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/dope.css">
+		<link rel="stylesheet" href="css/mystyle.css">
+		<link rel="icon" sizes="32x32" type="image/png" href="images/node/favicon.png">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="css/zenburn.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/gruvbox-dark.min.css">
+		<!-- Google Font -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<style>
+			ul li{
+				font-size: 80%;
+			}
+			section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
+			    color: #2d4650;
+			}
+			#gitbutton {
+				background-color: orangered;
+				color: white;
+				width: auto;
+				margin: auto;
+				padding: 20px;
+				transition: 1s all;
+			}
+			#gitbutton:hover {
+				background-color: #ff0c00;
+				box-shadow: 2px 2px 10px #333;
+			}
+			.expand:hover{
+				transform: scale(3.0);
+				max-width: 250px;
+				justify-content: space-evenly;
+				transition: all .2s ease-in-out;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="#e6e7e8">
+				    <h3>Introduction to Java - Java Basics</h3>
+				    <img src="images/intro/java_logo.png" width="400" style="box-shadow: none; border: none;"alt="java logo">
+				    <h3>Instructor: Chris Fulton</h3>
+				</section>
+				<section data-background="#eee">
+				    <h3>Learning Objectives</h3>
+				    <ul style="font-size: 28px;">
+						<li>Explain the necessary components needed to download, run and execute a Java program</li>
+						<ul>
+							<li>Context - Java | Java API | Java Virtual Machine (JVM)</li>
+							<li>What is needed - Editors, Compilers, and Interpreters</li>
+						</ul>
+						<li>Interpret a basic Java program</li>
+					    <ul>
+							<li> Project structure | import | Main() | Method Declaration | Method Body | Statements </li>				        	
+						</ul>
+						<li>Explore the declaration and use of variables</li>
+						<ul>
+							<li>Java primitive data types </li>
+							<li>Variable declaration and initialization | Parsing and Casting</li>
+						</ul>
+						<li>Execute, compile and debug a basic program</li>
+						<ul>
+							<li> Types of Errors: Compile-time | Run-time | Logical</li>
+							<li> Debugging and Commenting Code</li>
+							<li> Utilizing Java API - Java System Class</li>				        	
+							<li> Creating Interactive programs using Scanner Class| Escape Sequences | Formatting </li>
+						</ul>
+						<li>Utilizing source control to keep track of changes, track history and experiment with code </li>
+						<ul>
+							<li> Downloading starter code and uploading Programs using Git</li>				        	
+							<li> Overview of Version Control using Git</li>
+						</ul>
+
+				    </ul>
+				</section>
+				<section data-background="#eee">
+					<h3>Context</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 30px;">Java</b> <br> is an object oriented programming language</p> <p> Java is accompanied with the Java API or <strong>standard class library</strong></p> <p>Developed in early 1990s by James Gosling at Sun Microsystems which is currently owned by Oracle</p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 30px;">Standard Class Library</b> <br> the standard class library or Java API is provided software/code that gives you the ability to create graphics, communicate over networks, and interact with databases, among other features</p><p><a href="https://docs.oracle.com/en/java/javase/11/">Java 11 API Documentation</a></p></div>
+
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 30px;">Java Virtual Machine (JVM)</b> <br> The JVM has two primary functions: to allow Java programs to run on any device or operating system (known as the "Write once, run anywhere" principle), and to manage and optimize program memory.<br><br> The JVM makes it possible to translate bytecode into machine code </p></div>
+					</div>
+					<p>What is needed to run Java?</p>
+				</section>
+				<section data-background="#eee">
+
+					<h3>The JDK (Java Development Kit)</h3>
+					<h4>Contains two major parts </h4>
+					<ul>	
+						<li style="font-size: 26px;">The Java Runtime Environment (JRE) includes:</li>
+						<ul>
+							<li>Java Virtual Machine (JVM)</li>
+							<li>Java API or Java Standard Class Library</li>
+						</ul>
+						<li style="font-size: 26px;">Java Development Tools</li>
+						<ul>
+							<li>Java Compiler aka <code>javac</code></li>
+							<li>Java documentation aka <code>javadoc</code></li>
+							<li>Java Archive Resource files aka <code>jar</code></li>
+							<li>etc... </li>
+						</ul>
+
+					</ul>
+				</section>
+				<section data-background="white">
+						<h4>JDK Overview</h4>
+						<img src="images/intro/jdk.png" width="800" style="margin-bottom: -40px;" alt="Java Development Kit visual"><br>
+						<a href="https://code.visualstudio.com/docs/languages/java" style="font-size: 2vw;">Tutorial to install JDK w/VS Code Text Editor</a>
+				</section>
+				<section data-background="white">
+					<h4>The JVM primary job</h4>
+					<img src="images/intro/bytecode_visual.png" width="800" alt="Java virtual machine visual"><br>
+					
+				</section>
+				<section data-background="#fff">
+
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #fff; color: #111;">
+							<h1>Java Terminology and Components - learning activity</h1>
+							<p style="font-size: 28px">Match the command with the description to the right by dragging and dropping term into box. </p>
+							<img id="drag1" src="images/intro/standlib.PNG" style="margin: 2px;" width="120" draggable="true" ondragstart="drag(event)">
+							<img id="drag2" src="images/intro/jvm.PNG" style="margin: 2px;" width="120" draggable="true" ondragstart="drag(event)">
+							<img id="drag3" src="images/intro/javac.PNG" style="margin: 2px;" width="120" draggable="true" ondragstart="drag(event)">
+							<img id="drag4" src="images/intro/jre.PNG" style="margin: 2px;" width="120" draggable="true" ondragstart="drag(event)">
+							<img id="drag5" src="images/intro/java.PNG" style="margin: 2px;" width="120" draggable="true" ondragstart="drag(event)">
+
+
+						</div>
+						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #fff;  color: #111;">
+							<div id="div1" ondrop="drop(event)" style=" background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 5px; min-height: 40px;  " ondragover="allowDrop(event)">Allows Java programs to run on any device/operating system; manages and optimize program memory </div>
+							<div id="div2" ondrop="drop(event)" style=" background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 5px; min-height: 40px;" ondragover="allowDrop(event)">Provided software/code that gives you the ability to immediately start creating programs</div>
+							<div id="div3" ondrop="drop(event)" style=" background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 5px; min-height: 40px;" ondragover="allowDrop(event)">Command used to compile program to bytecode</div>
+							<div id="div4" ondrop="drop(event)" style=" background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 5px; min-height: 40px;" ondragover="allowDrop(event)">Object-Oriented language that is managed and owned by Oracle</div>
+							<div id="div5" ondrop="drop(event)" style=" background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 5px; min-height: 40px;" ondragover="allowDrop(event)">Comes with the the JDK, but does not include the Java development tools</div>
+
+						</div>
+
+
+					</div>
+
+				</section>
+				<section data-background="images/intro/c_bg.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Sample Program Break-down</h1>
+				</section>
+				<section data-background="#fff">
+					<h3>Program Components</h3>
+					<img src="images/intro/sample_java_prog.png" style="font-size: 3vw;" width="400"  alt="program break-down structure">
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 20px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 22px;">Java main method</li>
+								<ul>
+									<li><b>Method header</b></li>
+									<ul>
+										<li>Includes the access modifier - Who can access the method</li>
+										<li>Includes what will data type will be returned from method.  *In the image above, the method returns void "nothing"</li>
+										<li>Includes the method name and information about what will pass into and be returned from a method</li>
+									</ul>
+									<li><b>Method body</b></li>
+									<ul>
+										<li>Contained within a pair of curly braces and includes all the instructions executed by the method</li>
+									</ul>
+								</ul>
+								<li style="font-size: 22px;">Access Modifier</li>
+								<ul>
+									<li>Defines the circumstances under which the method can be accessed</li>
+									<li>default, public, private, protected, etc..</li>
+								</ul>
+
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 22px;">Keywords</li>
+								<ul>
+									<li>Predefined and reserved identifiers that have special meaning to the compiler</li>
+								</ul>
+								<li style="font-size: 22px;">The name of the method is <code>main()</code></li>
+								<ul>
+									<li>Every program must have a <code>Main()</code> method</li>
+									<li>Classes with a Main()method are called <b>application classes</b>; others are <b>non-application classes</b></li>
+								</ul>
+								<li style="font-size: 22px;">Packages</li>
+								<ul>
+									<li>To control access; avoid naming conflicts, used to group related classes. Can be thought of as a folder in a file directory</li>
+									<li>Two categories of packages</li>
+										<ul>
+											<li>Built-in Packages (packages from the Java API)</li>
+											<li>User-defined Packages (create your own packages)</li>
+										</ul>
+									</li>
+							
+								</ul>
+
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="images/intro/chrome.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Declaring & Initializing Variables</h1>
+				</section>
+				<section data-background="#fff">
+					<h3>Terms</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Constant</b> <br>Cannot be changed after a program is compiled. Utilize keyword "final"</p></div>
+						<div class="box blue" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Literal constant</b> <br>Its value is taken literally at each use</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Variable</b> <br>A named location in computer memory that can hold different values at different points in time</p></div>
+						<div class="box yellow" style="font-size: 22px; margin: 10px; background-color: #2d4650; height: 295px;"><p><b style="font-size: 32px;">Data Type</b> <br>Describes the format and size of (amount of memory occupied by) a data item</p></div>
+						<div class="box orange" style="font-size: 22px; margin: 10px; background-color: #2d4650; height: 295px;"><p><b style="font-size: 32px;">Primitive Types</b> <br>types that are self contained and holds atomic value; Types without any fields or methods; Types do not inherit Object. Primitive data types are also called <b>simple types</b></p></div>
+						<div class="box orange" style="font-size: 22px; margin: 10px; background-color: #2d4650; height: 295px;"><p><b style="font-size: 32px;">Unicode</b> <br>is the system that provides a numeric value for every character.</p></div>
+					</div>
+
+				</section>
+				<section data-background="#fff">
+					<h4>Data Types</h4>
+					<img src="images/intro/data_type_range_chart_java.jpg" alt="Primitive Data Types Ranges">
+					<p>What does it mean by <a href="https://www.therevisionist.org/software-engineering/java/terms/2complement/">signed and unsigned</a>?  What's the difference between bit and bytes?</p>
+				</section>
+				<section data-background="#fff">
+					<h3>Learning Activity - number guess boxes</h3>
+					<img src="images/intro/binary_guess.png" width="500" alt="Guess number with boxes">
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 190px; color: #111;"><p><b style="font-size: 28px;">Think of a number between 1 - 60 </b> <br> Do not share this number with the instructor.  The instructor will magically guess your number <br> <strong> How did I guess the number?</strong></p></div>
+
+
+					</div>
+					
+				
+				</section>
+				<section data-background="#fff">
+					<h3>Unicode - ASCII - Binary</h3>
+					<iframe width="760" height="515" src="https://www.youtube.com/embed/5aJKKgSEUnY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					
+				
+				</section>
+				<section data-background="#fff">
+
+					<div id="flexcontain">
+
+						<div id="flexcontain" style="max-width: 550px;">
+							<h3>Learning Activity - Binary</h3>
+							<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 150px; color: #111;"><p><b style="font-size: 24px;">Patterns?</b> <br> Are there any recognizable patterns you observe from the chart to the right?</p></div>
+							<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 150px; color: #111;"><p><b style="font-size: 24px;">Decimal to Binary</b> <br>Convert the number 92 and 203 into Binary</p></div>
+							<div class="box green" style="font-size: 22px; margin: 10px; background-color: #eee; height: 150px; color: #111;"><p><b style="font-size: 24px;">Binary to Decimal</b> <br>What is the decimal value of 10010110? <br> What is the decimal value of 0110101?</p></div>
+						</div>
+						<img src="images/intro/binary_decimal_chart.webp" style="margin-top: -30px; width: 320px;" alt="binary decimal chart">
+						
+					</div>
+					
+				
+				</section>
+				<section data-background="#fff">
+					<h4>Reserved var keyword</h4>
+					
+						<pre>
+							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+								
+	class Program
+    {
+        static void Main(string[] args)
+        {
+			//Using primitive data type
+			double monthlySalary = 9200.00;
+			
+			//Using Var keyword
+			var yearlySalary = monthlySalary *12;
+	  
+			System.out.println(yearlySalary);
+		}
+    }
+							</code>
+						</pre>
+					<p>Java lets you declare local variables without giving them <strong>explicit</strong> types.  The data type is <strong>implied</strong> at runtime. </p>
+
+				</section>
+				<section data-background="images/intro/compartment.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Compiling, Debugging and Executing a program</h1>
+				</section>
+				<section data-background="images/intro/string.jpg">
+					<h3 style="text-shadow: 4px 7px 10px #333;">Possible Errors in Execute, Compile and Debug a Java Progam</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>Syntax Errors</p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>Logical Errors</p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>Run-time Errors</p></div>
+
+					</div>
+					<p style="text-shadow: 4px 7px 10px #333;">When compiling and running a program, any of the three errors can occur.</p> 
+				</section>
+				<section data-background="#fff">
+					<h3>Steps to compile via command line</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 1</b> <br>Open the terminal </p></div>
+						<div class="box blue" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 2</b> <br>Make sure you in the directory you want to compile source code</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 3</b> <br>Enter the command<code>javac [NAME_OF_FILE].java </code> to compile</p></div>
+						<div class="box yellow" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 4</b> <br>type the <code> Dir</code> command to view files (this step is not necessary for compiling)</p></div>
+						<div class="box orange" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 32px;">Step 5</b> <br>Type <code> java [NAME_OF_FILE]</code> and press Enter to run the program.  * Make sure to leave .java off</p></div>
+					</div>
+
+				</section>
+				<section data-background="#eee">
+					<h4>Syntax Error</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 20px;"><span style="font-weight: 900;">Common Syntax/Compile Time errors:</span> Missing Semicolon; Missing opening and closing bracket; Mis-spelled keyword; Incorrect case (uppercase vs lowercase characters).</li>
+
+							</ul>
+							<h5>Incorrect</h5>
+							<pre>
+								<code style="font-size: 20px; height: 120px;" class="codebox code-example__codebox"  data-trim contenteditable>
+									
+									public class Movie{
+
+										public static void main(String[] args) {
+										
+										   string marvelMovie = "The Avengers Infinity War"
+
+										   System.out.printLine(marvelMovie + " is the best Marvel Movie"); 
+									}
+							
+								</code>
+							</pre>
+							<h5>Correct</h5>
+							<pre>
+								<code style="font-size: 20px; height: 120px;" class="codebox code-example__codebox"  data-trim contenteditable>
+									
+									public class Movie{
+
+										public static void main(String[] args) {
+
+										   String marvelMovie = "The Avengers Infinity War";
+
+										   System.out.println(marvelMovie + " is the best Marvel Movie"); 
+										}
+									}
+
+								</code>
+							</pre>
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#eee">
+					<h4>Logical Error</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 20px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 20px;"><span style="font-weight: 900;">Logical errors (Hardest to Detect):</span>Incorrect calculations; Using incorrect operator; Using wrong variable for output or calculation</li>
+
+							</ul>
+							<h5>Incorrect</h5>
+							<pre>
+								<code style="font-size: 16px; height: 160px;" class="codebox code-example__codebox"  data-trim contenteditable>
+									
+									public class Discount{
+
+										public static void main(String[] args) {
+
+										   double price = 23.00;
+
+										   double discount = .10;
+
+										   price = discount *(price - 1);
+
+										   System.out.println("With discount the price is " +  price); 
+										}
+									}
+							
+								</code>
+							</pre>
+							<h5>Correct</h5>
+							<pre>
+								<code style="font-size: 16px; height: 160px;" class="codebox code-example__codebox"  data-trim contenteditable>
+									
+									public class Discount{
+
+										public static void main(String[] args) {
+
+										   double price = 23.00;
+
+										   double discount = .10;
+										   
+										   price = (1 - discount) * price;
+
+										   System.out.println("With discount the price is " +  price); 
+										}
+									}
+
+								</code>
+							</pre>
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#eee">
+					<h4>Run-time Errors</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 20px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 20px;"><span style="font-weight: 900;">Run-time Errors:</span> Dividing by zero; Mismatch variable data type assignment; Forgetting to close a file</li>
+								<li style="font-size: 20px;">Asking the computer to do something that it is unable to do or complete properly</li>
+							</ul>
+							<h5>Incorrect</h5>
+							<pre>
+								<code style="font-size: 16px; height: 140px;" class="codebox code-example__codebox"  data-trim contenteditable>
+									
+									public class Calculations{
+
+										public static void main(String[] args) {
+
+										   int number1 = 32, number2 = 0, result = 0;
+
+										   result = number1/number2;
+
+										   System.out.println("The result is" +result);
+
+										}
+									}
+							
+								</code>
+							</pre>
+							<h5>Correct</h5>
+							<pre>
+								<code style="font-size: 16px; height: 180px;" class="codebox code-example__codebox"  data-trim contenteditable>
+									
+									public class Calculations{
+
+										public static void main(String[] args) {
+
+
+										   int number1 = 32, number2 = 0, result = 0;
+
+										   try{
+
+										       result = number1/number2;
+
+											   System.out.println("The result is" +result);
+										   }
+
+										   catch(ArithmeticException e) {
+
+											System.out.println ("Can't be divided by Zero " + e);
+
+										   }
+										  
+										}
+
+									}
+
+								</code>
+							</pre>
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#fff" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="" class="present">
+					<h3>Quiz Question</h3>
+					<pre>
+						<code style="font-size: 14px;" class="cs hljs"  data-trim contenteditable>
+							
+class Program{
+	public static void main(String[] args){
+
+		//Using primitive data type
+		double monthlySalary = 9,200.00;
+		
+		//Using Var keyword
+		var yearlySalary = monthlySalary *12;
+  
+		System.out.println(yearlySalary)
+	}
+}
+						</code>
+					</pre>
+					
+				     <p style="font-size: 22px; margin-top: -20px;">How many errors do you observe in the code above?</p>
+				     
+				     <input type="radio" id="age1" style="transform: scale(1.5); " name="code" value="A">
+				     <label for="attendance1" style="font-size: 18px;">A) 3</label><br>
+				     <input type="radio" id="age2" style="transform: scale(1.5);" name="code" value="B">
+				     <label for="attendance2" style="font-size: 18px;">B) 2</label><br>  
+				     <input type="radio" id="age3" style="transform: scale(1.5);" name="code" value="C">
+				     <label for="attendance3" style="font-size: 18px;">C) Over 5</label><br>
+				     <input type="radio" id="age3" style="transform: scale(1.5);" name="code" value="D">
+				     <label for="attendance3" style="font-size: 18px;">D) There are no errors</label><br>
+			  
+				</section>
+				<section data-background="#eee" data-background-size="contain" style="top: 138.5px; display: block; text-align: left;" data-background-image="images/intro/sidebanner.png" class="present">
+					<h3>Quiz Question</h3>
+					<pre>
+						<code style="font-size: 14px;" class="cs hljs"  data-trim contenteditable>
+							
+class Program{
+	public static void Main(String[] args){
+
+		//Annual Salary
+		double annualSalary = 92003.14;
+		
+		//Calculate the monthly Salary
+		double monthlySalary = annualSalary * 12;
+		System.out.println("Monthly Salary: $" + monthlySalary);
+	}
+}
+						</code>
+					</pre>
+				     <p style="font-size: 22px; margin-top: -20px;">Using the code above, which option represents the error in the code?</p>
+				     
+				     <input type="radio" id="age1" style="transform: scale(1.5); " name="attendance" value="A">
+				     <label for="attendance1" style="font-size: 18px;">A) Syntax Error</label><br>
+				     <input type="radio" id="age2" style="transform: scale(1.5);" name="attendance" value="B">
+				     <label for="attendance2" style="font-size: 18px;">B) Runtime Error</label><br>  
+				     <input type="radio" id="age3" style="transform: scale(1.5);" name="attendance" value="C">
+				     <label for="attendance3" style="font-size: 18px;">C) Logical Error</label><br>
+				     <input type="radio" id="age3" style="transform: scale(1.5);" name="attendance" value="D">
+				     <label for="attendance3" style="font-size: 18px;">D) No Error presented</label><br>
+			  
+				</section>
+				<section data-background="#fff">
+					<h4>Debugging in Visual Studio Code</h4>
+					<img src="images/intro/debugging_in_vscode.PNG" width="670" alt="Debugging in VS Code">
+						<ul>	
+							<li style="font-size: 24px;"><b>Debugging</b></li>
+							<ul>
+								<li style="font-size: 18px;">The process of removing all syntax and logical errors from the program</li>
+								<li style="font-size: 18px;">Syntax errorsare discovered through compilation. Logical errors are discovered through testing</li>
+								<li style="font-size: 18px;">Commenting out portions of your code is another way to help debug and narrow the issue.</li>
+							</ul>
+							<li style="font-size: 22px;"><span style="font-weight: 900;">1)</span> Set a breakpoint.  <span style="font-weight: 900;">2)</span> Open Debug window - play button that has bug on it. <span style="font-weight: 900;">3)</span> Step through code and observe variable assignment and call stack.</li>
+
+						</ul>
+
+				</section>
+
+				
+				<section data-background="images/intro/compartment.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">System and Scanner Class</h1>
+				</section>
+				<section data-background="#eee">
+					<h3>Scanner Class</h3>
+					<p>To implement the Scanner class, you must import <code>import java.util.*;</code>package</p>
+					<p>The Scanner class allows for input operations - reading input from the console</p>
+				
+						<img src="images/intro/scanner_class_methods.jpeg" alt="Scanner class methods">
+			
+				</section>
+				<section data-background="#eee">
+					<h3>Analyzing Program w/Scanner Class</h3>
+					<div id="flexcontain">
+						<pre>
+							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+								import java.lang.*;
+								
+								class Program{
+									static void Main(String[] args){
+
+										//Declarations
+										String name, program;
+										int creditHours;
+										double tuitionCost;
+										final double TUITION = 780.00;
+										
+										Scanner scn = new Scanner(System.in);  // Create a Scanner object
+										
+										System.out.println("Please enter your name: ");
+										name = scn.nextLine();
+										
+										System.out.println("Please enter program: ");
+										program = scn.nextLine();
+										
+										System.out.println("Please enter number of credits for this semester: ");
+										creditHours = scn.nextInt();
+										
+										tuitionCost = TUITION * creditHours;
+											
+										System.out.println(name + " Thank you for entering your information. \n" + 
+															"Your tuition for the semester is: " + tuitionCost);
+									}
+								}
+
+
+							</code>
+						</pre>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>System Class</h3>
+					<p>The System package is imported by default, no need for an <code>import</code> statement</p>
+					<p>The System class offers access to input/output operations, but can also provide access to system level information.</p>
+				
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 18px; background-color: #f7f4f4;"><img src="images/intro/java_system1.PNG" alt="Common used System java methods image 1"></div>
+						<div class="box blue" style="font-size: 18px; background-color: #f7f4f4;"><img src="images/intro/java_system2.PNG" alt="Common used System java methods image 2"></div>
+						
+
+					</div>
+			
+				</section>
+				<section data-background="#eee">
+					<h3>Analyzing Program w/System Class</h3>
+					<div id="flexcontain">
+						<pre>
+							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+								import java.lang.*;
+								
+								class Program{
+									static void Main(String[] args){
+
+										long startTime = System.nanoTime(); //Gets the time before evaluating next statements
+	 
+										System.out.println("Your System properties");
+										System.out.println("**********************");
+										Properties p = System.getProperties();  //Creating a new instance of 
+										System.out.println("User name: " + p.getProperty("user.name")); //get User's account name  
+										System.out.println("User home directory: " + p.getProperty("user.home")); //get User's home directory  
+										System.out.println("User current working directory: " + p.getProperty("user.dir")); //get User's current working directory  
+										System.out.println("User Operating System: " + p.getProperty("os.name")); //get operating System
+										System.out.println("User Operating System version: " + p.getProperty("os.version")); //get operating system version
+										
+										long elapsedTime = System.nanoTime() - startTime; //Calculate after executing getProperty() statements
+										
+												// 1 second = 1_000_000_000 nano seconds
+										double elapsedTimeInSecond = (double) elapsedTime / 1_000_000_000;
+								
+										System.out.println("Time in seconds it took to execute program: " + elapsedTimeInSecond + " seconds");
+									}
+								}
+
+
+							</code>
+						</pre>
+					</div>
+				</section>
+
+
+				<section data-background="#fff" class="has-light-background present" style="top: 0px; display: block;">
+					<h3>Learning Activity</h3>
+					<p style="font-size: 20px;">Gaining inspiration from the previous slide, create a program that calculates the time it takes you to type out the teams <code>"White Sox, Cubs, Sky, Bears, Fire, Blackhawks, Bulls "</code> Your program should operate and function similar to the program below. </p>
+					<img src="images/intro/learning_activity_gif.gif" width="400" alt="Intended output for typing program">
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #eee; height: 180px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Declare variables need for program and create Scanner object instance</p></div>
+						<div class="box blue" style="font-size: 18px; margin: 10px; background-color: #eee; height: 180px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Create statement to start the timer and display the teams and accept input</p><p style="font-weight: 700; font-size: 18px;">*Review previous slide</p></div>
+						<div class="box green" style="font-size: 18px; margin: 10px; background-color: #eee; height: 180px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Calculate the starttime from endtime, get time in seconds and display output message</p></div>
+
+					</div>
+					
+				
+				</section>
+				<section data-background="#fff">
+					<h4>Escape Sequence</h4>
+					<img src="images/intro/escape_sequence.PNG" width="470" alt="escape sequence in c#">
+				</section>
+				<section data-background="#fff">
+					<h4>Formatting Floating-Point Values</h4>
+					<img src="images/intro/formatting.PNG" width="570" alt="formatting floating point values in c#">
+				</section>
+				<section data-background="images/intro/compartment.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Utilizing Source Control</h1>
+				</section>
+				<section data-background="#fff">
+					<h2 style="text-align: left;">Version Control + Git</h2>
+					<div id="flexcontain" class="fragment visible current-fragment">
+						<div class="box red" style=" flex: 1 0 200px; font-size: 26px; height: 400px; margin: 10px; background-color: white;">
+
+							<img src="images/intro/centralized_distributed.png" alt="centralized and distributed version control"><br><site style="font-size: 10px; color: black; font-style: italic;">Source: https://scriptcrunch.com/295/</site>
+						</div>						
+						<div class="box aquamarine" style=" flex: 1 0 200px; font-size: 26px; height: 400px; margin: 10px; color: black; background-color: white; text-align: left; ">
+							<h4>Version Control</h4>
+							<p style="font-size: 24px; color: black;">The task of keeping a software system consisting of <strong>many versions</strong> and configurations <strong>well organized</strong>. </p><br>
+							<h4>What is Git?</h4>
+							<p style="font-size: 24px;">Git is a free and open source <strong>distributed version control system</strong> designed to handle everything from small to very large projects with <strong>speed</strong> and <strong>efficiency</strong>. </p>
+					
+
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#eee">
+				    <h2>Download and install Git</h2>
+				    <ul style="font-size: 28px;">
+				        <li>Navigate to <a href=" https://git-scm.com/">git-scm.com</a> </li>
+                        <li>Download the latest release for your operating system</li>   
+                        <li>Install using <strong>default configurations</strong> - For windows a git bash terminal will come with your download. For macs you will use terminal for your git.</li>
+                        <li>Once downloaded, open the "Git bash" terminal and enter the command <code> git --version</code></li>
+					
+				    </ul>
+				</section>
+				<section data-background="white" style="background-size: 80%; top: 37.5px; display: block;" class="has-light-background present">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Installation Configuration</h3>
+					<!--<p style="background-color:rgba(255, 255, 255, 0.7);  font-size: .8em; color: black;" class="fragment"> a method of providing <strong>shared computing resources</strong>, including applications, computing, storage, networking, development, and deployment platforms as well as business processes. </p>-->
+					<div id="flexcontain" style="height: 500px; min-width: 900px;">
+						<div class="box expand" style="font-size: 24px; height: 100px;">1<img src="images/intro/1.PNG" alt="git installation configuration"></div>
+						<div class="box expand" style="font-size: 24px; height: 100px;">2<img src="images/intro/2.PNG" alt="git installation configuration"></div>
+						<div class="box expand" style="font-size: 24px; height: 100px;">3<img src="images/intro/3.PNG" alt="git installation configuration"></div>
+						<div class="box expand" style="font-size: 24px; height: 100px;">4<img src="images/intro/4.PNG" alt="git installation configuration"></div>
+						<div class="box expand" style="font-size: 24px; height: 100px;">5<img src="images/intro/5.PNG" alt="git installation configuration"></div>
+						<div class="box expand" style="font-size: 24px; height: 100px;">6<img src="images/intro/6.PNG" alt="git installation configuration"></div>
+						<div class="box expand" style="font-size: 24px; height: 100px;">7<img src="images/intro/7.PNG" alt="git installation configuration"></div>
+						<div class="box expand" style="font-size: 24px; height: 100px;">8<img src="images/intro/8.PNG" alt="git installation configuration"></div>
+						<div class="box expand" style="font-size: 24px; height: 100px;">9<img src="images/intro/9.PNG" alt="git installation configuration"></div>
+						<div class="box expand" style="font-size: 24px; height: 100px;">10<img src="images/intro/10.PNG" alt="git installation configuration"></div>
+						<div class="box expand" style="font-size: 24px; height: 100px; ">11<img src="images/intro/11.PNG" alt="git installation configuration"></div>
+						<div class="box expand" style="font-size: 24px; height: 100px; ">12<img src="images/intro/12.PNG" alt="git installation configuration"></div>
+						<div class="box expand" style="font-size: 24px; height: 100px; ">13<img src="images/intro/13.PNG" alt="git installation configuration"></div>
+						<div class="box expand" style="font-size: 24px; height: 100px; ">14<img src="images/intro/14.PNG" alt="git installation configuration"></div>
+						<div class="box expand" style="font-size: 24px; height: 100px; ">15<img src="images/intro/15.PNG" alt="git installation configuration"></div>
+
+					</div>
+				</section>
+				<section data-background="#fff">
+				    <h2>Commonly Used Git commands - Cheatsheet</h2>
+					<p>The cheatsheet represents some of the most used commands that allow you to achieve the Git workflow.</p>
+					<a href="https://education.github.com/git-cheat-sheet-education.pdf"><div id="gitbutton">Click to download</div></a>
+					<p><a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control">Click here</a> for an exhaustive book on git commands</p>
+				</section>
+				<section data-background="#fff">
+				    <h2>Git workflow </h2>
+					<p>Going through this workflow allows us to keep track of the changes we are making.</p>
+				    <img src="images/intro/git_share_update.png" alt="git share update graphic" width="500">
+				</section>
+				<section data-background="#fff">
+					<h3>Git Command Practice</h3>
+						<pre style="box-shadow: none;">
+						<code style="font-size: 11px;" class="codebox code-example__codebox"  data-trim contenteditable>
+							public class App{
+								public static void main(String[] args) {
+							
+								   double price = 23.00;
+								   double discount = .10;
+								   price = (1 - discount) * price;
+								   System.out.println("With discount the price is " +  price); 
+								}
+							}
+						</code>
+					</pre>
+					<p style="font-size: 20px;">For this activity, we'll keep track of the changes we make to a simple java program</p>
+					
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 16px; margin: 10px; background-color: #eee; height: 220px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br>Create a new Java program and copy the code above into your source code -> Open the folder and right-click to open git bash terminal-> initialize git inside of project folder and make first commit.</p></div>
+						<div class="box blue" style="font-size: 16px; margin: 10px; background-color: #eee; height: 220px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Create a public repository on GitHub.com and copy instructions to push existing code to repository </p></div>
+						<div class="box green" style="font-size: 16px; margin: 10px; background-color: #eee; height: 220px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Run the git status command and make sure your directory does not have untracked files and to make sure branch is clean. <br>Navigate back to the the terminal and paste commands to push code up.  </p></div>
+
+					</div>
+				</section>
+
+
+				<section data-background="#eeeeee" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Git Workflow and Practice </h3>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="0"><strong>1.</strong> <code>git init </code> -> Initializes git into project folder</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="1"><strong>2.</strong> Make the necessary changes to the application. Save the file and render in browser to observe added functionality. </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="2"><strong>3.</strong> <code>git status </code> -> Checks the status to see status of files in directory</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="3"><strong>4.</strong> <code>git add .</code> -> Adds files to staging area. In preparation to be committed.</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="4"><strong>5.</strong> <code>git status</code> -> Check status again to see if file(s) were added to staging area.</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="5"><strong>6.</strong> <code>git commit -m "adding category"</code> -> Document the change by committing changes and adding a brief message.</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment" data-fragment-index="6"><strong>7.</strong> <code>git log</code> -> To view commit history and timestamp.</p>
+				</section>
+				<section data-background="#eee">
+
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; color: #111;">
+							<h1>Get Commands - Check for understanding</h1>
+							<p style="font-size: 28px">Match the command with the description to the right by dragging and dropping term into box. </p>
+							<img id="drag1" src="images/intro/git_branch.PNG" style="margin: 2px;" width="120" draggable="true" ondragstart="drag(event)">
+							<img id="drag2" src="images/intro/git_clone.PNG" style="margin: 2px;" width="120" draggable="true" ondragstart="drag(event)">
+							<img id="drag3" src="images/intro/git_commit.PNG" style="margin: 2px;" width="120" draggable="true" ondragstart="drag(event)">
+							<img id="drag4" src="images/intro/git_status.PNG" style="margin: 2px;" width="120" draggable="true" ondragstart="drag(event)">
+							<img id="drag5" src="images/intro/git_init.PNG" style="margin: 2px;" width="120" draggable="true" ondragstart="drag(event)">
+							<img id="drag6" src="images/intro/git_log.PNG" style="margin: 2px;" width="120" draggable="true" ondragstart="drag(event)">
+							<img id="drag7" src="images/intro/git_add.PNG" style="margin: 2px;" width="120" draggable="true" ondragstart="drag(event)">
+
+						</div>
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee;  color: #111;">
+							<div id="div1" ondrop="drop(event)" style=" background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 5px; min-height: 40px;  " ondragover="allowDrop(event)">Command to show modified files </div>
+							<div id="div2" ondrop="drop(event)" style=" background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 5px; min-height: 40px;" ondragover="allowDrop(event)">Command to view all changes to file</div>
+							<div id="div3" ondrop="drop(event)" style=" background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 5px; min-height: 40px;" ondragover="allowDrop(event)">Command to timestamp a change to repository</div>
+							<div id="div4" ondrop="drop(event)" style=" background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 5px; min-height: 40px;" ondragover="allowDrop(event)">Command to retrieve a repository from URL</div>
+							<div id="div5" ondrop="drop(event)" style=" background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 5px; min-height: 40px;" ondragover="allowDrop(event)">Command to create and "replicate" repository </div>
+							<div id="div6" ondrop="drop(event)" style=" background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 5px; min-height: 40px;" ondragover="allowDrop(event)">Command used to start git in a directory</div>
+							<div id="div7" ondrop="drop(event)" style=" background-position: center; border: 6px solid #333; border-radius: 14px; margin-top: 5px; min-height: 40px;" ondragover="allowDrop(event)">Command to move a file to staging area</div>
+						</div>
+
+
+					</div>
+
+				</section>
+
+
+				<section data-background="#fff">
+				    <h2>Git Branching & Merging</h2>
+					<p>Branching allows you to create a copy of your main branch.  You can experiment and test new functionality on new branches.  Branching allows you to keep your main branch clean. </p>
+					<img src="images/intro/branching.png" alt="version control branching graphic">
+				</section>
+
+				<!--<section data-background="images/intro/compartment.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Methods</h1>
+				</section>
+				<section data-background="#fff">
+					<h4>Understanding Methods</h4>
+						
+						<ul>	
+							<li style="font-size: 26px;"><b>Methods</b></li>
+							<ul>
+								<li style="font-size: 20px;">An encapsulated series of statements that perform a task</li>
+								<li style="font-size: 20px;">Using a method is called <b>invoking</b> or <b>calling</b> the method</li>	
+								<li style="font-size: 20px;"><b>Two Step Process</b> - Every Method should be defined then called/invoked</li>
+							</ul>
+							<li style="font-size: 26px;"><b>Implementation Hiding</b></li>
+							<ul>
+								<li style="font-size: 20px;">keeps the details of a methods operations hidden.</li>
+								<li style="font-size: 20px;">the only concern is the way you <b>interface</b>, or interact with the method</li>
+								<li style="font-size: 20px;">methods exist in a black box - a virtual device you can use without knowing how it works internally.</li>
+							</ul>
+
+						</ul>
+
+				</section>
+				<section data-background="#2d4650">
+					<h1 style="color: white;">Why Modularize a program</h1>
+				</section>
+				<section data-background="#eee">
+					<h3>Why Methods?</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 22px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">Easier to Debug and Test</b> <br> Each discrete task has its own discrete section of code if a program is designed with modularity in mind</p><p>If there is a problem in a particular method, the programmer knows where to look and can manage a smaller portion of code.</p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">Reusable Code</b> <br> Modular code allows programmers to easily reuse code. If particular tasks are sectioned off to certain functions or classes, this means that the programmer can reuse that particular code whenever she needs to perform that task again.</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">Readability and Reliability</b> <br> Modular code is code that is highly organized. To organize code based on task means that the programmer can organize each piece of code based on what it does.</p><p>Code that is easier to read, easier to debug, easier to maintain and easier to share will always run smoother with less errors.</p></div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h4>Method Breakdown</h4>
+					<img src="images/intro/method_break_down.PNG" width="770" alt="method break-down diagram">
+					<p style="font-size: 22px;">The method header describes access permission, if it's an instance or class based method, if something will be returned from the method, the name of the method and what will possibly be passed into the method.</p>
+				</section>
+				<section data-background="#fff">
+					<h4>Access Modifiers</h4>
+					<img src="images/intro/access_modifiers.PNG" width="770" alt="method break-down diagram">
+					<p style="font-size: 22px;">Visible to the package, the default. No modifiers are needed | Visible to the class only (modifier private) | Visible to the world (modifier public) | Visible to the package and all subclasses (modifier protected)</p>
+				</section>
+				<section data-background="#fff">
+					<h4>Static vs. Non-static methods</h4>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px; background-color: #2d4650; color: white;"><b>Static</b></li>
+								<ul>
+									<li style="font-size: 20px;">lets a method run without any instance of the class. A static method belongs to the class, so there’s no need to create an instance of the class to access it. </li>
+									<li style="font-size: 20px;">belongs to the class, so there’s no need to create an instance of the class to access it.  A static method is called using the class (className.methodName) as opposed to to an instance reference (new instanceOfClass = class; instanceOfClass.methodName.) </li>								
+								</ul>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>
+								<li style="font-size: 26px; background-color: #2d4650; color: white;"><b>Non-Static</b></li>
+								<ul>
+									<li style="font-size: 20px;">A non-static method belongs to an object of the class and you have to create an instance of the class to access it.</li>
+									<li style="font-size: 20px;">Non-static methods can access any static method and any static variable without creating an instance of the class.</li>
+								</ul>
+							</ul>
+							
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>In-Class Activity and Walk through </h3>
+					<ul style="font-size: 26px;">
+						<li>Modularize the program according to comments listed in code</li>
+					</ul>
+					<pre><code class="hljs" style="font-size: 20px;" data-trim contenteditable>
+class Program
+    {
+        static void Main(string[] args)
+        {
+            string[,] product = {
+                                    {"Snickers", "Almond Joy", "Reeses"},
+                                    {"Skittles", "Starburst", "Jolly Ranchers"},
+                                    {"Juicy Fruit", "Winter Fresh", "Big Red"}
+                                };
+
+            double[,] cost = {
+                                {1.80, 1.50, 1.45},
+                                {1.30, 1.45, 1.20},
+                                {1.10, 1.15, 1.10}
+                            };
+            ConsoleKey sentinel;
+            double priceAccum = 0;
+            int row, column;
+			//Create a welcome message
+            Console.WriteLine("Welcome, to simple Vending Machine");
+            Console.WriteLine("Press any key to add a product or press the 'X' key to exit the vending machine and receive total");
+            sentinel = Console.ReadKey().Key;
+            while (sentinel != ConsoleKey.X)
+            {
+                //clear console
+                Console.Clear();
+                //Create a Module to display products
+                Console.WriteLine($"\t 0 \t\t 1  \t\t 2");
+                for(var i = 0; i < product.GetLength(0); i++)
+                {
+                    Console.Write($"{i} \t");
+                    for(var x = 0; x < product.GetLength(1); x++)
+                    {
+                        Console.Write($"{product[i,x]} \t");
+                    }
+                    Console.WriteLine("");
+                }
+                //Create a Module
+                Console.WriteLine("Please enter the row of the product you would like to enter");
+                row = Convert.ToInt32(Console.ReadLine());
+                
+                //Create a module that defensively program
+                while((row < 0) || (row > 3)){
+                    Console.WriteLine("Invalid row entry, please enter a number between 0 and 2");
+                    row = Convert.ToInt32(Console.ReadLine());
+                }
+
+                //Create a Module to get column
+                Console.WriteLine("Please enter the column of the product you would like to enter");
+                column = Convert.ToInt32(Console.ReadLine());
+
+                //Create a module that defensively program
+                while ((column < 0) || (column > 3))
+                {
+                    Console.WriteLine("Invalid column entry, please enter a number between 0 and 2");
+                    column = Convert.ToInt32(Console.ReadLine());
+                }
+
+                //Create a module that output selection and accumulates the price
+                Console.WriteLine($"You have selected {product[row,column]} for {cost[row,column].ToString("c")}");
+                priceAccum += cost[row, column];
+
+
+                //module that ask for sentinel value
+                Console.WriteLine("Press any key to add a product or press the 'X' key to exit the vending machine and recieve total");
+                sentinel = Console.ReadKey(true).Key;
+
+
+            }
+
+            //Create a module that will output total
+            Console.WriteLine("Based on your selections, you owe {0}", priceAccum.ToString("c"));
+
+        }
+    }
+					</code></pre>
+					
+				</section>
+				<section data-background="images/intro/parameters_mandatory.jpg">
+					<h3 style="background-color: rgba(0,0,0,.5); padding: .5em;">Using Reference Parameters, Output Parameters, and Parameter Arrays</h3>
+				</section>
+				<section data-background="images/intro/outdoors.jpg">
+					<h3 style="text-shadow: 4px 7px 10px #333;">Using Reference Parameters, Output Parameters, and Parameter Arrays</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>REFERENCE PARAMETERS <br>ref modifier</p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>OUTPUT <br> PARAMETERS <br>out modifier</p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>PARAMETER ARRAYS<br> params modifier</p></div>
+
+					</div>
+					<p style="text-shadow: 4px 7px 10px #333;">Each has memory addresses that are passed to a method, allowing the method to alter the original variables</p> 
+				</section>
+				<section data-background="#fff">
+					<h4>Ref parameters</h4>
+					<pre>
+						<code class="lang-csharp" data-interactive="csharp">
+	void Method(ref int refArgument)
+	{
+	    refArgument = refArgument + 44;
+	}
+	
+	int number = 1;
+	Method(ref number);
+	Console.WriteLine(number);
+	// Output: 45
+						</code>
+					</pre>
+					<p style="font-size: 26px;">Reference parameters need to contain a value before calling the method</p>
+				</section>
+				<section data-background="#fff">
+					<h4>Out parameters</h4>
+					<pre>
+						<code class="lang-csharp" data-interactive="csharp">
+	int initializeInMethod;
+	OutArgExample(out initializeInMethod);
+	Console.WriteLine(initializeInMethod); // now 44
+	
+	void OutArgExample(out int number)
+	{
+	    number = 44;
+	}
+						</code>
+					</pre>
+					<p style="font-size: 22px;">Output parameters do not need to contain a value </p>
+				</section>
+				<section data-background="#fff">
+					<h4>Params Parameter</h4>
+					<pre>
+						<code class="lang-csharp" style="font-size: 20px;" data-interactive="csharp">
+    public static void UseParams(params int[] list)
+    {
+        for (int i = 0; i < list.Length; i++)
+        {
+            Console.Write(list[i] + " ");
+        }
+        Console.WriteLine();
+    }
+
+    public static void UseParams2(params object[] list)
+    {
+        for (int i = 0; i < list.Length; i++)
+        {
+            Console.Write(list[i] + " ");
+        }
+        Console.WriteLine();
+    }
+
+    static void Main()
+    {
+        // You can send a comma-separated list of arguments of the 
+        // specified type.
+        UseParams(1, 2, 3, 4);
+        UseParams2(1, 'a', "test");
+    }
+						</code>
+					</pre>
+					<p style="font-size: 18px;">By using the params keyword, you can specify a method parameter that takes a variable number of arguments. <br> You can send a comma-separated list of arguments of the type specified in the parameter declaration or an array of arguments of the specified type. You also can send no arguments. If you send no arguments, the length of the params list is zero.</p>
+				</section>
+				<section data-background="images/intro/oldbooks.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Resources and Tools</h1>
+				</section>
+				<section data-background="#fff">
+					<h4>NuGet Package Manager</h4>
+					
+						<a href="https://docs.microsoft.com/en-us/nuget/what-is-nuget"><img src="images/intro/nuget-roles.png" width="500" alt="nuget developer to consumer process"></a>
+						
+						<ul>	
+							<li style="font-size: 26px;"><b>NuGet Package</b></li>
+							<ul>
+								<li style="font-size: 20px;">Microsoft-supported mechanism for sharing code is NuGet</li>
+								
+							</ul>
+							<li style="font-size: 26px;"><b>NuGet Package Structure</b></li>
+							<ul>
+								<li style="font-size: 20px;">a NuGet package is a single ZIP file with the .nupkg extension that contains compiled code (DLLs), other files related to that code, and a descriptive manifest that includes information like the package's version number.</li>
+								<li style="font-size: 20px;">Developers with code to share create packages and publish them to a public or private host.</li>
+								<li style="font-size: 20px;">Package consumers obtain those packages from suitable hosts, add them to their projects, and then call a package's functionality in their project code</li>
+							</ul>
+
+						</ul>
+
+				</section>
+				<section data-background="#fff">
+					<h3>Activity</h3>
+					<p>This activity will walk you through installing a nuget package.  This package will extend your console application and allow for you to incorporate table formatting within your console application.</p>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #eee; height: 220px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Navigate to Nuget.org and search for the ConsoleTables Package</p></div>
+						<div class="box blue" style="font-size: 18px; margin: 10px; background-color: #eee; height: 220px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Copy the command and paste into terminal where your project exist.</p></div>
+						<div class="box green" style="font-size: 18px; margin: 10px; background-color: #eee; height: 220px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Use the documentation at this <a href="https://github.com/khalidabuhakmeh/ConsoleTables">link</a> and replicate the example code.</p></div>
+
+					</div>
+					
+				
+				</section>
+				<section data-background="#fff">
+					<h4>Resources</h4>
+		
+						<ul>	
+
+							<li style="font-size: 26px;"><b>Resources</b></li>
+							<ul>
+								<li style="font-size: 20px;"><a href="http://learncs.org/">Learncs.org - Good for learning foundation concepts</a></li>
+								<li style="font-size: 20px;"><a href="https://www.c-sharpcorner.com/">c-sharpcorner.com - A Csharp community where people share ideas</a></li>
+								<li style="font-size: 20px;"><a href="https://docs.microsoft.com/en-us/learn/">Microsoft Learn - A good site not only for c#, but other product and technology offerings from Microsoft.</a></li>
+							</ul>
+
+						</ul>
+
+				</section>
+				<section data-background="#fff">
+					<h4>Debugging in Visual Studio</h4>
+					
+						
+						
+						<ul>	
+
+							<li style="font-size: 26px;"><b>Debugging</b></li>
+							<ul>
+								<li style="font-size: 20px;">The process of removing all syntax and logical errors from the program</li>
+								<li style="font-size: 20px;">Syntax errors are discovered through compilation</li>
+								<li style="font-size: 20px;">Logical errors are discovered through testing</li>
+							</ul>
+							<li style="font-size: 22px;">At any time that you are working in the code editor, you can set a breakpoint on a line of code by pressingF9. When you pressF5to run your application within the Visual Studio debugger, the application will stop on that line and you can examine the value of any given variable, or view how or when execution breaks out of a loop, step through the code one line at a time by pressingF10, or set additional breakpoints.</li>
+
+						</ul>
+
+				</section>
+				<section data-background="#fff">
+					<h4>Debugging Features</h4>
+					
+						<iframe width="760" height="515" src="https://www.youtube.com/embed/E7aAU4lDbcc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+				</section>
+				<section data-background="#fff">
+					<h3>Video Lectures</h3>
+					<div id="flexcontain">
+						<div class="box"><iframe width="360" height="215" src="https://www.youtube.com/embed/wUfMh9uR050" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+
+					</div>
+					<a href="https://www.youtube.com/playlist?list=PLvpKGAo_xLN_AQkHQR6-z14z8ZM2_RtG-" style="font-size: .7em;">Click here for playlist</a> </a>
+				</section>
+				<section data-background="#fff">
+					<ul>
+						<li style="font-size: 26px;">Navigate to <a href="https://dot.net">Dot.net website</a></li>
+					</ul>
+					
+				</section>
+
+				<section data-background="#fff">
+					<h3>User Research</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #216869;"><p><b style="font-size: 30px;">Observations</b> <br> Give people tasks or instructions and watch them use your design, without help. </p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #49A078;"><p><b style="font-size: 30px;">Interviews</b> <br> Ask prospective users questions about their expectations of your design.</p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; background-color: #9CC5A1;"><p><b style="font-size: 30px;">Task Analysis</b> <br>   learning about user goals, and understand the tasks users will perform on your site.</p></div>
+						<div class="box orange" style="font-size: 24px; margin: 10px;"><p><b style="font-size: 30px;">Focus Groups</b> <br> a moderated discussion where you can learn about users’ attitudes, beliefs, desires, and reactions to concepts.</p></div>
+						<div class="box aquamarine" style="font-size: 24px; margin: 10px; background-color: #333;"><p><b style="font-size: 30px;">Surveys</b> <br>  a structured questionnaire that your target audience completes over the internet generally through a filling out a form</p></div>
+					</div>
+					<a href="https://www.usability.gov/what-and-why/user-research.html" style="font-size: .4em;">Click here for more information about user research</a> </a>
+				</section>
+				<section data-background="#fff">
+					<a href="https://www.nngroup.com/articles/ux-research-cheat-sheet/" style="font-size: 20px;"><h3>Nielsen Norman Group Research</h3></a>
+					<img src="images/ux/frequentuxmethods.png" width="550" style="box-shadow: none; border: none;"alt="Frequent UX method graphic">
+					
+				</section>
+				<section data-background="#eee">
+						<h4>When to use which UX research method</h4>
+						<iframe width="760" height="515" src="https://www.youtube.com/embed/OtUWbsvCujM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</section>
+				<section data-background="#fff">
+					
+					<img src="images/ux/ia_pic.gif" width="800" style="box-shadow: none; border: none;"alt="Information Architecture graphic">
+				</section>
+				<section data-background="#fff">
+					
+					<img src="images/ux/louisrosenfeld.gif" width="870" style="box-shadow: none; border: none;"alt="Information Architecture diagram">
+				</section>
+				<section data-background="#fff">
+					<p>Information Architecture and navigation considerations</p>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;">Information design is the most important factor in the success of your site</li>
+								<li style="font-size: 26px;">What do users want when they get to your site?</li>
+								<li style="font-size: 26px;">Anticipate and plan for user actions</li>
+								<li style="font-size: 26px;">Provide direct links to your most popular pages</li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;">Do not make users navigate through too many layers of information</li>
+								<li style="font-size: 26px;">Follow the three clicks rule</li>
+								<li style="font-size: 26px;">Use consistent navigation</li>
+								<li style="font-size: 26px;">Provide direct links to your most popular pages</li>
+							</ul>
+						</div>
+					</div>
+
+				</section>
+				<section data-background="#eee">
+				    <h5>Navigation Considerations - Orient the User</h5>
+				    <p style="font-size: 28px;">Provide enough location information to let the user answer the following navigation questions:</p>
+				    <ul style="text-align: center; list-style-type: none; text-shadow: 1px 1px 5px #333;">
+						<li style="color: #82C09A;">Where am I?</li>
+						<li style="color: #8C001A;">Where can I go?</li>
+						<li style="color: #456990;">How did I get there?</li>
+						<li style="color: #636940;">How do I get back to where I started?</li>
+				
+				    </ul>
+				</section>
+				<section data-background="#fff">
+					<h3>Sample Website Architecture</h3>
+					<img src="images/ux/sitearchdiagram.gif" width="700" style="box-shadow: none; border: none;"alt="Sample Website Architecture Diagram">
+				</section>
+				<section data-background="#000">
+					<h3>Understanding Card Sorting</h3>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/6RhFN6cul3w?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</section>
+				<section data-background="000">
+					<h3>Use Cases</h3>
+					<ul>
+						<li>Describes one specific interaction between the user and the software</li>
+						<li>The use cases are gathered from the clients requirements which defines the scope requirements.</li>
+						<li><a href="https://www.usability.gov/how-to-and-tools/methods/use-cases.html">Usability.gov - Explanation of Use cases</a></li>
+					</ul>
+					
+				</section>
+				<section data-background="000">
+					<h3>Example Use case</h3>
+					<img src="images/ux/use_case.PNG" alt="example of use case"/>
+					
+				</section>
+				<section data-background="#000">
+					<h3>User Personas</h3>
+					<iframe width="760" height="515" src="https://www.youtube.com/embed/B23iWg0koi8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					
+				</section>
+				<section data-background="#fff">
+				    <h3>Why Usability?</h3>
+				    <img src="images/ux/ketchup.jpg" width="650" style="box-shadow: none; border: none;"alt="usability ketchup image">
+				    
+				</section>
+				<section data-background="#eee">
+				    <iframe width="560" height="315" src="https://www.youtube.com/embed/lhQOx6OxA0E?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>	
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/Ml92QEqE-RQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				
+				</section>
+				<section data-background="#fff">
+				    <h3>Usability Components</h3>
+				    <img src="images/ux/Usability_Components.png" width="750" style="box-shadow: none; border: none;"alt="usability components">
+				    
+				</section>
+				<section data-background="#fff">
+					<img src="images/ux/uxdesign.PNG" width="820" style="box-shadow: none; border: none;"alt="ux design stages"><br>
+					<q> Usability refers to the ease of access and/or use of a product or website.</q>
+				</section>
+				<section data-background="#fff">
+					<h3>Website Usability</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<h4>Website usability considerations</h4>
+							<ul>	
+								<li style="font-size: 26px;">Speed, Uptime</li>
+								<li style="font-size: 26px;">Site errors - broken links</li>
+								<li style="font-size: 26px;">Visual Factors  </li>
+								<ul>
+									<li style="font-size: 22px;">Color Choice</li>
+									<li style="font-size: 22px;">Presentation of Content - https://www.webpagefx.com</li>
+									<li style="font-size: 22px;">Accessibility related maters</li>
+								</ul>
+								<li style="font-size: 26px;">Browser and device compatibility</li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+						<h4>A few tools</h4>
+							<ul>	
+								<li style="font-size: 26px;"><a href="https://tools.pingdom.com">Pingdom.com</a></li>
+								<li style="font-size: 26px;"><a href="http://Hotjar.com">Hotjar.com</a></li>
+								<li style="font-size: 26px;"><a href="https://fivesecondtest.com/">fivesecondtest.com</a></li>
+								<li style="font-size: 26px;"><a href="https://developers.google.com/speed/pagespeed/insights/">Google Page Speed Tool</a></li>
+								<li style="font-size: 26px;"><a href="https://fivesecondtest.com/">fivesecondtest.com</a></li>
+								<li style="font-size: 26px;"><a href="https://www.webpagetest.org/">Webpagetest.org</a></li>
+							<li style="font-size: 26px;"><a href="https://www.browserling.com/">browserling.com</a></li>
+							</ul>
+						</div>
+					</div>
+
+				</section>
+				<section data-background="images/ux/accessibilitypic.jpg">
+				    <h1>Accessibility</h1>
+				   
+				</section>
+				<section data-background="#eee">
+				   <h3>Introduction to Web Accessibility</h3>
+				   <iframe width="860" height="515" src="https://www.youtube.com/embed/20SHvU2PKsM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				
+				</section>
+				<section data-background="#fff">
+					<h3>Accessibility Principles</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #3F7CAC;"><p><b style="font-size: 22px;">Perceivable</b> <br> Text alternatives for non-text content; Captions and other alternatives for multimedia; Content can be presented in different ways; </p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #95AFBA;"><p><b style="font-size: 22px;">Operable</b> <br> Captions and other alternatives for multimedia</p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #BDC4A7;"><p><b style="font-size: 22px;">Understandable information</b> <br>   learning about user goals, and understand the tasks users will perform on your site.</p></div>
+						<div class="box orange" style="font-size: 20px; margin: 10px; background-color: #f74545;"><p><b style="font-size: 22px;">Robust content </b> <br> a moderated discussion where you can learn about users’ attitudes, beliefs, desires, and reactions to concepts.</p></div>
+					
+					</div>
+					<a href="https://www.w3.org/WAI/fundamentals/accessibility-principles/" style="font-size: .4em;">Click here for more information about accessibility principles</a>
+				</section>
+				<!--<section>
+					<section>
+						<h3>Node Modules</h3>
+						<p> Core/Built-in Modules   &#10022;    Third-Party Modules </p>
+						<div id="flexcontain">
+							<div class="box_two" style="font-size: 22px; margin: 10px;">
+								<ul>
+									<li style="font-size: 26px;"><b>File Module</b> Including the path of file in require method</li>
+									<li style="font-size: 26px;"><b>Core modules</b> are modules that come with NodeJs.  You do not have to install them.  <a href="https://nodejs.org/api/modules.html"> Click here to see a list of core modules</a></li><br>
+									<li style="font-size: 26px;"><b>Third-Party modules</b> - pushes it to a queue and continues with the next statement. If the server returns something, it callback to whatever triggered the event.</li>	   
+								</ul>
+							</div>
+							<pre>
+								<code style="font-size: 16px;" class="hljs" data-trim contenteditable>
+								const welcome = require('./welcome'); //including a module that is a file within your program
+								const http = require('http'); //including a core module example
+								const app = require('express'); //including third-party module example
+
+
+								</code>
+							</pre>
+
+						</div>	
+					</section>
+					<section>
+						<h3>Creating your own Module</h3>
+						<ul>
+							<li>Create a file called welcome.js</li>
+							<li>Add the code snippet below to your welcome.js file:</li>
+						</ul>
+						<pre><code class="hljs" data-trim contenteditable>
+								exports.welcome = function(){    
+									console.log("You called the welcome method");
+								}
+
+								exports.conclude = ()=>{
+									console.log("You called the conclude method");
+								}
+						</code></pre>
+						
+					</section>
+					<section>
+						<h3>Using a Core/Built-in Module</h3>
+						<ul>
+							<li>This example will utilize both the core http module to create a server</li>
+							<li>Create a file called server.js</li>
+							<li>Copy and add the code snippet below to your server.js file: </li>
+						</ul>
+						<pre><code class="hljs" data-trim contenteditable>
+								exports.welcome = function(){    
+									console.log("You called the welcome method");
+								}
+
+								exports.conclude = ()=>{
+									console.log("You called the conclude method");
+								}
+						</code></pre>
+						
+					</section>
+				</section>
+				<section data-background="#fff">
+					<h3>Understanding Card Sorting</h3>
+						<iframe width="760" height="315" src="https://www.youtube.com/embed/TNvdgXCqEvM?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</section>
+				<section data-background="#fff">
+					<h3>Creating your own Module </h3>
+					<p> Core/Built-in Modules   &#10022;    Third-Party Modules </p>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;"><b>Most Languages</b> - Once an event is triggered to perform a task, most languages wait until the task is complete to move onto the next statement </li><br>
+								<li style="font-size: 26px;"><b>NodeJs</b> - pushes it to a queue and continues with the next statement. If the server returns something, it callback to whatever triggered the event.</li>	   
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/node/eventloop.png" width="500" style="box-shadow: none;" alt="Nodejs event loop queue"/>
+						</div>
+					</div>
+
+					
+				</section>
+				<section data-background-color="#fff">
+					<iframe height="600" src="https://embed.polleverywhere.com/multiple_choice_polls/QdwqUEsc6vjDWi3?controls=none&short_poll=true" width="100%" height="100%" frameBorder="0"></iframe>
+				</section>
+				<section data-background-color="#fff">
+					<iframe height="600" src="https://embed.polleverywhere.com/free_text_polls/njYHOn4wxYZfpDV?controls=none&short_poll=true" width="100%" height="100%" frameBorder="0"></iframe>
+				</section>-->
+
+				<!--<section data-background="#eee">
+				    <h2>File and Directory Classes</h2>
+				    <ul>
+						<li>C# provides built-in classes named File and Directory</li>
+						
+						<li>Contain methods to help you manipulate files and their directories</li> 
+						<ul style="font-size: 22px;">
+							<li>Access information about files</li>
+							<li>Create, delete or move files</li>
+						</ul>
+						  
+                        <li>Your file structure must be transferable</li>
+						<li>Use relative paths to indicate file locations</li>
+						<li><code>File Class</code></li>
+						<ul style="font-size: 22px;">
+							<li>Contians methods to access information about files</li>
+						</ul>
+						<li><code>Directory Class</code></li>
+						<ul style="font-size: 22px;">
+							<li>Provides information about directories or folders</li>
+						</ul>
+               
+				    </ul>
+				</section>
+				<section data-background="#fff">
+						<h2>Common Methods in File Class</h2>
+						<ul>
+							
+							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.file?view=netframework-4.7.1">Click here to navigte to <code>File Class</code></a></li>		   
+						</ul>
+						<img src="images/io/filemethods.png" style="box-shadow: none;" alt="Common methods in File class"/>
+				</section>
+				<section data-background="#fff">
+						<h2>File Class - code and output</h2>
+
+						<img src="images/io/filepic1.png" width="420" style="box-shadow: none; float: left;" alt="File picture example one"/>
+						<img src="images/io/filepic2.png" width="420" style="box-shadow: none; float: left;" alt="File Picture example two"/>
+				</section>
+				<section data-background="#fff">
+						<h2>Common Methods in Directory Class</h2>
+						<ul>
+
+							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.directory?view=netframework-4.7.1">Click here to navigte to <code>Directory Class</code></a></li>		   
+						</ul>
+						<img src="images/io/directorymethods.png" style="box-shadow: none;" alt="Common methods in directory class"/>
+				</section>
+				<section data-background="#fff">
+						<h2>Directory Class - code and output</h2>
+
+						<img src="images/io/directorypic1.png" width="420" style="box-shadow: none; float: left;" alt="directory picture example one"/>
+						<img src="images/io/directorypic2.png" width="420" style="box-shadow: none; float: left;" alt="directory Picture example two"/>
+				</section>
+				<section data-background="#eee">
+						<h2>Understanding File Data Organization</h2>
+						<ul>
+							<li>Businesses store data in a relationship known as the <b>data hierarchy</b></li>
+							
+							<li><b>Character</b></li> 
+							<ul style="font-size: 22px;">
+								<li>Any of the letters, numbers, or other special symbols (such as punctuation marks) that comprise data</li>
+								<li>Characters are made up of bytes containing eight (8) bits</li>
+									<ul style="font-size: 22px;">
+										<li>ASCII characters contain one (1) byte</li>
+										<li>Unicode characters contain two (2) bytes</li>				
+									</ul>
+							</ul>
+
+				   
+						</ul>
+				</section>
+				<section data-background="#fff">
+						<h2>Understanding File Data Organization Diagram</h2>
+						<img src="images/io/dataorg.png" width="750" style="box-shadow: none;" alt="File Data organization diagram"/>
+				</section>
+				<section data-background="#eee">
+						<h2>Understanding File Data Organization</h2>
+						<ul>
+							<li><b>Field</b></li>
+							<ul style="font-size: 22px;">
+								<li>A character or group of characters that has some meaning</li>
+				
+							</ul>
+							
+							<li><b>Record</b></li> 
+							<ul style="font-size: 22px;">
+								<li>A collection of related fields that contain data about an entity</li>
+								<li>Characters are made up of bytes containing eight (8) bits</li>
+
+							</ul>
+							<li><b>Sequential access file</b></li> 
+							<ul style="font-size: 22px;">
+								<li>Each record is read in order based on its relative position</li>
+								<li>Records can be stored in order based on a value in the record</li>
+								<li>The field used to uniquely identify each record in a sequential file is the<b> key field</b></li>
+							</ul>
+							<li><b>Random access file</b></li>
+							<ul style="font-size: 22px;">
+								<li>Records are not in any sequence and  can be accessed in any order</li>
+				
+							</ul>
+						</ul>
+				</section>
+				<section data-background="#fff">
+						<h2>Understanding File Data Organization cont.</h2>
+						<ul>
+							<li>A C# application <b>opens a file</b> by creating an object and associating a stream of bytes with that object</li>
+							<li>When you finish using a file, the program should <b>close the file</b></li>
+									
+							<ul style="font-size: 22px;">
+								<li>Not closing a file may make it inaccessible</li>
+								<li>Not closing an output file can result in data not being written to the file</li>
+				
+							</ul>
+
+						</ul>
+				</section>
+				<section data-background="#fff">
+						<h2>Understanding Streams</h2>
+						<ul>
+							<li><b>Stream</b></li>
+							<ul style="font-size: 22px;">
+								<li>Stream is a class that simulates a stream of bytes to be lined up in a row. Such as the transmission of data on the network, data transmited are contiguous stream of bytes from the first byte to the last byte.</li>
+								<li>Functions as a pipeline or channel between an input device and an application, and potentially an output device</li>
+
+				
+							</ul>
+
+						</ul>
+						<img src="images/io/streampic.png"  width="700" style="box-shadow: none;" alt="Stream class diagram"/>
+				</section>
+				<section data-background="#fff">
+						<h2>Stream Overview</h2>
+
+						<img src="images/io/streamoverview.png"  width="700" style="box-shadow: none;" alt="Stream class overview diagram"/>
+				</section>
+				<section data-background="#fff">
+						<h2>Stream classes</h2>
+						<ul style="font-size: 24px;">
+							<li><b>Stream</b> is an abstract class, it can not initialize an object by itself, you can initialize a Stream object from the Constructors of the subclass. <b>Stream</b> class provides the basic methods of working with data streams, namely the method of read/write a byte or an array of bytes.</li>
+							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.stream?view=netframework-4.7.1">Click here to navigte to <code>Stream Class</code></a></li>
+						</ul>
+						
+						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
+								<tbody> 
+								 <tr> 
+								  <td><strong>Class</strong></td> 
+								  <td><strong>Description</strong></td> 
+								 </tr> 
+								 <tr> 
+								  <td>BufferedStream</td> 
+								  <td>A utility stream, it wrapped another stream, which helps improve performance</td> 
+								 </tr> 
+								 <tr> 
+								  <td>FileStream</td> 
+								  <td>Stream used to read and write data to the file.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>MemoryStream</td> 
+								  <td>Creates a stream whose backing store is memory.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>UnmanagedMemoryStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								 <tr> 
+								  <td>IsolatedStorageFileStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								 <tr> 
+								  <td>PipeStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								 <tr> 
+								  <td>NetworkStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								 <tr> 
+								  <td>CryptoStream</td> 
+								  <td>Defines a stream that links data streams to cryptographic transformations.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>DeflateStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								 <tr> 
+								  <td>GZipStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								</tbody> 
+						</table>
+				</section>
+				<section data-background="#fff">
+						<h2>Properties of Stream</h2>
+						<ul style="font-size: 24px;">
+							<li>Depending on the stream, there are the stream that supports both read and write, and seek by moving the cursor on the stream, read and write data at the cursor position.</li>
+							
+						</ul>
+						
+						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
+								<tbody> 
+								 <tr> 
+								  <td><strong>Attribute</strong></td> 
+								  <td><strong>Description</strong></td> 
+								 </tr> 
+								 <tr> 
+								  <td>CanRead</td> 
+								  <td>Gets a value indicating whether the current stream supports reading.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>CanSeek</td> 
+								  <td>Gets a value indicating whether the current stream supports seeking.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>CanWrite</td> 
+								  <td>Gets a value indicating whether the current stream supports writing.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Length</td> 
+								  <td>Gets the length in bytes of the stream.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Position</td> 
+								  <td>Gets or sets the current position of this stream.</td> 
+								 </tr> 
+								</tbody> 
+						</table>
+				</section>
+				<section data-background="#fff">
+						<h2>Understanding Streams</h2>
+						<ul>
+							<li>Most streams flow in only one direction</li>
+							<li>File processing classes include:</li>
+							<ul style="font-size: 22px;">
+								<li><code>StreamReader</code> for text input from a file</li>
+								<li><code>StreamWriter</code> for text output to a file</li>
+								<li><code>FileStream</code> is used alone for bytes and with either StreamReader and StreamWriter for text, for either input from and output to a file</li>
+				
+							</ul>
+
+						</ul>
+						
+				</section>
+				<section data-background="#fff">
+						<h2>FileStream Class</h2>
+						<ul>
+							<li><b>Filestream</b> is a class which extends from the  <b>Stream</b> class, <b>FileStream</b> is used to read and write data to file, it inherits the properties, methods of Stream, and has additional functions for reading and recording data on the file.</li>
+							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.filestream?view=netframework-4.7.1">Click here to navigte to <code>FileStream Class</code></a></li>
+						</ul>
+						
+				</section>
+				<section data-background="#fff">
+						<h2>FileStream Overloaded Constructor</h2>
+
+						<img src="images/io/filestreamconstructor.PNG"  width="700" style="box-shadow: none;" alt="Stream class overview diagram"/>
+						
+				</section>
+				<section data-background="#fff">
+						<h2>FileMode Enumeration</h2>
+						<ul>
+							<li>A constant that determines how to open or create the file</li>
+						</ul>
+
+						
+						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
+								<tbody> 
+								 <tr> 
+								  <td><strong>FileMode</strong></td> 
+								  <td><strong>Description</strong></td> 
+								 </tr> 
+								 <tr> 
+								  <td>Append</td> 
+								  <td>Opens the file if it exists and seeks to the end of the file, or creates a new file</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Create</td> 
+								  <td>Specifies that the operating system should create a new file. If the file already exists, it will be overwritten.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>CreateNew</td> 
+								  <td>Specifies that the operating system should create a new file.If the file already exists, an <strong>IOException</strong> exception is thrown. This mode requires <strong>FileIOPermissionAccess.Write</strong> permission.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Open</td> 
+								  <td>Specifies that the operating system should open an existing file. A <strong>System.IO.FileNotFoundException</strong> exception is thrown if the file does not exist.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>OpenOrCreate</td> 
+								  <td>Specifies that the operating system should open a file if it exists; otherwise, a new file should be created</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Truncate</td> 
+								  <td>Specifies that the operating system should open an existing file. When the file is opened, it should be truncated so that its size is zero bytes.</td> 
+								 </tr> 
+								</tbody> 
+							   </table>
+				</section>
+				<section data-background="#fff">
+						<h2>FileAccess Enumeration</h2>
+						<ul>
+							<li>A constant that determines how the file can be accessed by the FileStream object. This also determines the values returned by the CanRead and CanWrite properties of the FileStream object. CanSeek is true if path specifies a disk file.</li>
+						</ul>
+
+						
+						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
+								<tbody> 
+								 <tr> 
+								  <td><strong>FileAccess</strong></td> 
+								  <td><strong>Description</strong></td> 
+								 </tr> 
+								 <tr> 
+								  <td>Read</td> 
+								  <td>Data can be read from the file.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>ReadWrite</td> 
+								  <td>Data can be read from and written to the file.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Write</td> 
+								  <td>Data can be written to the file.</td> 
+								 </tr>  
+								</tbody> 
+						 </table>
+				</section>
+				<section data-background="#fff">
+					<h2>Stream Example</h2>
+
+					<img src="images/io/writerexcode.png"  width="500" style="box-shadow: none; float: left;" alt="Writing to file code"/>
+					<img src="images/io/writerexconsole.png"  width="400" style="box-shadow: none; float: left;" alt="Writing to file console view"/>
+					<img src="images/io/writerextextfile.png"  width="400" style="box-shadow: none; float: left;" alt="Writing to file text output"/>
+
+					
+
+				</section>
+				<section data-background="#fff">
+					<h2>Writing and Reading a Sequential Access File</h2>
+					<ul>
+						<li>C# uses files only as streams of bytes</li>
+						<li>When you write a program to store a data file, you must dictate the form the file will take</li>
+						<li>Whether you are writing data to a file or reading data from one, you create a <code>FileStream </code>object</li>
+					</ul>
+					
+				</section>
+				<section data-background="#fff">
+					<h2 style="font-size: 36px;">Writing Data to a Sequential Access Text File Example</h2>
+					<ul>
+						
+						<li><b>Token</b></li>
+						<ul style="font-size: 22px;">
+							<li>A block of text within a string that represents an entity or field </li>
+
+						</ul>
+						<li><b>Delimiter</b></li>
+						<ul style="font-size: 22px;">
+							<li>A character used to specify the boundary between records and, potentially, fields in text files</li>
+						</ul>
+						<li>When you write data to a text file:</li>
+						<ul style="font-size: 22px;">
+							<li>You can separate the fields with a delimiter</li>
+							<li>Delimiters are needed when fields are not fixed in size and position - field size varies</li>
+							<li><b>CSV files</b> (comma-separated value files) are delimited files</li>
+						</ul>
+
+					</ul>
+					
+				</section>
+				<section data-background="#fff">
+					<h2 style="font-size: 36px;">Writing Data to Sequential Access Text File </h2>
+
+					<img src="images/io/sequentialcode.png"  width="350" style="box-shadow: none; float: left; margin-top:-10px;" alt="Sequential file access code"/>
+					<img src="images/io/sequentialconsole.png"  width="300" style="box-shadow: none; float: left; margin-top: -10px;" alt="Sequential file access console view"/>
+					<img src="images/io/sequentialoutput.png"  width="300" style="box-shadow: none; float: left; margin-top: -10px;" alt="Sequential output"/>
+					<img src="images/io/employeeclass.png"  width="300" style="box-shadow: none; float: left; margin-top: -26px;" alt="Employee class"/>
+
+				</section>
+				<section data-background="#fff">
+					<h2>Reading from a Sequential Access Text File </h2>
+
+					<img src="images/io/readingcode.png"  width="500" style="box-shadow: none; float: left; margin-top: -10px;" alt="Reading Sequential access code"/>
+					<img src="images/io/readingconsole.png"  width="500" style="box-shadow: none; float: left; margin-top: -10px;" alt="Reading Sequential file access console view"/>
+
+				</section>
+				<section data-background="#fff">
+					<h2>Search a Sequential Text File</h2>
+					<ul>
+						<li><b>File position pointer</b></li>
+						<ul style="font-size: 22px;">
+							<li>Holds the byte number of the next byte to be read</li>
+						</ul>
+						<li>Reposition the file pointer using the <code>Seek()</code> method and the <code>SeekOrigin</code> enumeration: <br/> <code style=" font-size: 28px; font-weight: 100;">inFile.Seek(0, SeekOrigin.Begin);</code></li>
+
+					</ul>
+					<img src="images/io/seekimg.png"  width="700" style="box-shadow: none; font-size: 28px; font-weight: 100;" alt="File Position Searching Sequential"/>
+				</section>
+				<section data-background="#fff">
+					<h2>Search a Sequential Text File cont.</h2>
+					<img src="images/io/seekex.png"  width="700" style="box-shadow: none;" alt="seek example code picture"/>
+					
+				</section>
+				<section data-background="#fff">
+					<h2>Search a Sequential Text File cont.</h2>
+					<img src="images/io/seekoutput.png"  width="600" style="box-shadow: none;" alt="seek example output"/>
+					
+				</section>
+				<section data-background="#fff">
+					<h2>Understanding Serialization and Deserialization</h2>
+					<ul>
+						<li>Disadvantages to writing to a text file:</li>
+						<ul style="font-size: 22px;">
+							<li>Data in a text file is easily readable in a text editor such as Notepad, which means it is not secure</li>
+							<li>It is cumbersome to convert each field to text and combine the fields with delimiters</li>	
+						</ul>
+						<li>You can write objects to and read objects from files</li>
+						<li><b>Serialization</b></li>
+						<ul style="font-size: 22px;">
+							<li>The process of converting objects into streams of bytes</li>
+						</ul>
+						<li><b>Deserialization</b></li>
+						<ul style="font-size: 22px;">
+							<li>Converts streams of bytes back into objects</li>
+						</ul>
+					</ul>
+					
+				</section>
+				<section data-background="#fff">
+					<h2>Understanding Serialization and Deserialization</h2>
+					<ul>
+						<li style="font-size: 32px">In a class marked with the [Serializable] attribute, every instance variable must also be Serializable</li>
+
+						<li style="font-size: 32px">By default, all C# simple data types are serializable, including strings</li>
+						<li style="font-size: 32px">If your class contains fields that are more complex data types, you must check the declaration of those classes to ensure they are serializable</li>
+
+					</ul>
+					<img src="images/io/serializableclassimg.png"  width="400" style="box-shadow: none; font-size: 28px; font-weight: 100;" alt="Serializable class image"/>
+				</section>
+				<section data-background="#fff">
+					<h2>Understanding Serialization and Deserialization</h2>
+					<ul>
+						<li>To create a class that can be serialized:</li>
+						<ul style="font-size: 22px;">
+							<li>Mark it with the <code>[Serializable]</code> attribute</li>	
+						</ul>
+						<li>Namespaces included in programs that employ serialization:</li>
+						<ul style="font-size: 22px;">
+							<li><code>System.Runtime.Serialization.Formatters.Binary;</code></li>
+							<li><code>System.Runtime.Serialization;</code></li>
+						</ul>
+					</ul>
+					
+				</section>
+				<section data-background="#fff">
+					<h2>Serilization Code Example </h2>
+
+					<img src="images/io/serialcode1.png"  width="425" style="box-shadow: none; float: left; margin-top: -10px;" alt="Serialization Code example one"/>
+					<img src="images/io/serialcode2.png"  width="425" style="box-shadow: none; float: left; margin-top: -10px;" alt="Serialization Code example two"/>
+
+				</section>
+				<section data-background="#fff">
+					<h2>Serilization Code Example Output </h2>
+
+					<img src="images/io/serialoutput2.png"  width="470" style="box-shadow: none; margin-top: -10px;" alt="Serialization Code example one"/>
+
+
+				</section>-->
+
+				
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+
+
+			function allowDrop(ev) {
+			  ev.preventDefault();
+			}
+			
+			function drag(ev) {
+			  ev.dataTransfer.setData("text", ev.target.id);
+			}
+			
+			function drop(ev) {
+			  ev.preventDefault();
+			  var data = ev.dataTransfer.getData("text");
+			  ev.target.appendChild(document.getElementById(data));
+			}
+		</script>
+	</body>
+</html>

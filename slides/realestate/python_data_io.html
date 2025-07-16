@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="description" content="Instructor Fulton's Python Data Input/Output Functionality">
+		<meta name="author" content="C. Fulton">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<title>Python - Data I/O | Exception Handling</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/dope.css">
+		<link rel="stylesheet" href="css/mystyle.css">
+		<link rel="icon" sizes="32x32" type="image/png" href="images/python/favicon.webp">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="css/zenburn.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/gruvbox-dark.min.css">
+		<!-- Google Font -->
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;800;900&display=swap" rel="stylesheet">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<style>
+			body{
+				font-family: 'Raleway', sans-serif;
+			}
+			.reveal {
+			  font-family: 'Raleway', sans-serif;
+ 
+				
+			}
+			ul li{
+				font-size: 80%;
+			}
+			section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
+			    color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="white">
+				    <h3>Python - Data I/O & Exception Handling</h3>
+				    <img src="images/python/data_source.png" width="320" alt="Data Sources by Becris from the Noun Project" />
+				    <h5>Instructor: Chris Fulton </h5>
+				    <a href="https://repl.it/@instructorc/iostartertemplate" target="_blank" style="font-size: .8em;">Repl.it Starter Template</a> - <a href="https://forms.gle/hNAEKK6J9eKHJebq7" target="_blank" style="font-size: .8em;">Lecture Response Form</a>
+				</section>
+				<section data-background="white">
+				    <h3>Learning Objectives</h3>
+				    <ul style="font-size: 36px;">
+						<li>Read, Write and Fetch Data using Python </li>
+						<ul>
+							<li>Perform Read and Write operations to and from file</li>
+							<li>Understand how to Fetch Data across network</li>
+							<li>Create a Program that utilizes read/write operations and make use of dictionary</li>
+						</ul>
+						<li>Understanding Exception Handling <span style="font-size: .7em; font-style: italic;">(if time permits)</span></li>
+						<ul>
+							<li>Syntax and Structure</li>
+							<li>Exception Handling Use Cases and Coded Examples</li>
+							<li>Various Exceptions</li>
+
+						</ul>
+
+				    </ul>
+				</section>
+				<section data-background="images/methods/overloaded_bg.jpg">
+					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">I/O Operations <br><span style="font-size: .7em;">Read - Write - Fetch</span></h1>
+				</section>
+				<section data-background="white">
+				    <h3>Practical Use Cases</b></h3>
+				    <p style="font-size: 28px; font-weight: 900;">Read, Write, Fetch Request within Software</p>
+
+				    <div id="flexcontain" class="fragment">
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h4 style="margin-top: 50px;">Writing Error Logs</h4></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h4 style="margin-top: 50px;">Web App Routing</h4></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h4 style="margin-top: 50px;">Mass File Creation</h4></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h4 style="margin-top: 50px;">RESTful API Connections</h4></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h4 style="margin-top: 50px;">Internal/External DataStore</h4></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h4 style="margin-top: 50px;">Basic User Input</h4></div>
+
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h4>Reading to File</h4>
+					<iframe height="350px" width="100%" src="https://repl.it/@instructorc/ioreadfile?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #eee; height: 170px; color: #111;  padding: 10px;" ><p><b style="font-size: 26px;">Read Methods</b> <br><b>read()</b> <br><b>readline()</b> <br><b>readlines()</b>  </div>
+						<div class="box green" style="font-size: 18px; margin: 10px; padding: 10px; background-color: #eee; height: 170px; color: #111; text-align: left;"><p><b style="font-size: 24px;">File Modes</b> <br>
+							<b>r</b> - Opens for reading [Default]</li><br>
+							<b>t</b> - Opens for Text mode - Creates  new text file [Default] </li><br>
+							<b>b</b> - Binary mode (e.g. images)</li><br>
+						</p></div>
+
+
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h4>Writing to File</h4>
+					<iframe height="350px" width="100%" src="https://repl.it/@instructorc/iowritefile?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #eee; height: 200px; color: #111;  padding: 10px;"><p><b style="font-size: 26px;">Read Methods</b> <br><b>write()</b> <br><b>writelines()</b> </div>
+						<div class="box green" style="font-size: 18px; margin: 10px; background-color: #eee; height: 200px; color: #111; text-align: left; padding: 10px;"><p><b style="font-size: 24px;">File Modes</b> <br>
+							<b>w</b> - Opens file for writing.  If file does not exist, it creates a new file. Overwrites if it exist [Default]</li><br>
+							<b>a</b> - Appends to file. If file does not exist, it creates a new file.</li><br>
+							<b>t</b> - Opens for Text mode - Creates  new text file [Default] </li><br>						
+						</p></div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h4>Making a request across a network</h4>
+					<iframe height="400px" width="100%" src="https://repl.it/@instructorc/pythonfetchrequest?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+				</section>
+				<section data-background="images/methods/overloaded_bg.jpg">
+					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">Exception Handling</h1>
+				</section>
+				<section data-background="#eee">
+				    <h3>Exception Handling</h3>
+				    <p style="font-size: 28px;"><b>Exception handling</b> is the process of responding to exceptions when a computer <b>program runs</b>. An exception occurs when an <b>unexpected event happens</b> that requires special processing. Examples include a user providing abnormal input, a file system error being encountered when trying to read or write a file, or a program attempting to divide by zero.</p>
+				    <p style="font-size: 28px;">The main purpose is to prevent abnormal termination of the program and to customise the exception message.</p>
+				</section>
+				<section data-background="#eee">
+						<h2>Bugs, User Errors and Exceptions</h2>
+						
+						<ul>
+							<li>Bugs - errors the programmer caused</li>
+							<ul>
+								<li>Ex. Wrong calculation, not properly handling memory alocation, variable access permission, etc..</li>
+							</ul>
+							<li>User Errors - errors the user caused</li>
+							<ul>
+								<li>Ex. Improperly formatted string text </li>
+							</ul>
+							<li>Exceptions - unexpected errors that are caused during runtime, Terminates the program unless exceptions are handled</li>
+							<ul>
+								<li>Cannot connect to a database, not able to open or read a file, etc.. </li>
+							</ul>
+
+						</ul>
+				</section>
+				<section data-background="#fff">
+					<h4>Exception Handling Syntax and Rules</h4>
+							<pre style="box-shadow: none;">
+								<code style="font-size: 14px; line-height: 20px;" width="600"  class="codebox code-example__codebox"  data-trim contenteditable>
+									# Example of IOException
+									try:
+									  # CODE TO LISTEN FOR EXCEPTION
+									  number = int(input("Input your favorite number:"))
+									  print("Your favorite number is:", number)
+									except IOError as Arg:
+									  # OUTPUT INFO REGARDING EXCEPTION
+									  print ("Please enter a numeric value", arg )
+									finally
+									  # [CODE TO EXECUTE ONCE EXCEPTION IS RAISED]
+								</code>
+							</pre>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; color: #111; text-align: left; padding: 12px;"><p><b>try</b> - block of code to listen for potential exceptions<br> <b>except</b> - do something when the exception occurs<br><b>finally</b> - code that should execute once exception is raised</div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; color: #111;"><p><b style="font-size: 28px;">Various Exceptions</b> <br>All Exceptions stem from Base Class "Exception" <br>Click here for list of builtin exceptions</p></div>
+
+
+					</div>
+				</section>
+				<section data-background="white" style="background-size: 80%;">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Built-in Exception Classes</h3>
+					<!--<p style="background-color:rgba(255, 255, 255, 0.7);  font-size: .8em; color: black;" class="fragment"> a method of providing <strong>shared computing resources</strong>, including applications, computing, storage, networking, development, and deployment platforms as well as business processes. </p>-->
+					<div id="flexcontain" class="fragment">
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">ArithmeticError</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">TypeError</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">SyntaxError</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">IOError</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">IndentationError</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">RuntimeError</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">KeyError</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">IndexError</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 150px; background-color: #eee;"><h3 style="margin-top: 50px;">ImportError</h3></div>
+
+					</div>
+				</section>
+
+				<!--<section data-background="#fff">
+					<h3>Containers vs. Virtual Machines</h3>
+					<div id="flexcontain">
+						<div>
+							<img src="images/docker/container_display.png" width="400" alt="container visual">
+						</div>
+						<div>
+							<img src="images/docker/container_vs_vm.png" width="400" alt="container verses virtual machine visual">
+						</div>
+
+					</div>
+					<p style="font-size: .6em;">Containers and virtual machines have similar resource isolation and allocation benefits, but function differently because containers virtualize the operating system instead of hardware. Containers are more <strong>portable</strong> and <strong>efficient</strong>.</p>
+				</section>
+
+				<section data-background="#fff">
+					<h3>Activity A - Running Sample Container</h3>
+															<pre>
+								<code style="font-size: 14px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
+									# Lets us know the version of docker
+									docker --version
+									
+									# Pulling the hello-world image from Docker Hub and runs the container
+									docker run hello-world
+									
+									# Command to display on the images 
+									docker image ls
+									
+									# Stops container and removes container
+									docker container stop hello-world
+									
+									docker container rm hello-world					
+	
+								</code>
+							</pre>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Open Visual Studio code and click on the extensions tab/icon.</div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Open terminal and run the various commands above.</p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Stop container and remove container</p></div>
+
+					</div>
+					
+				
+				</section>
+
+
+				<section data-background="#fff">
+					<h4>Activity B -Pulling container from docker hub</h4>
+					<img src="images/docker/docker_ghost.PNG" width="720" alt="docker hub interface">
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 16px; margin: 10px; background-color: #eee; height: 245px; color: #111;"><p><b style="font-size: 26px;">Step 1</b> <br> Navigate to hub.docker.com and make sure you create an account and complete initial walkthrough that has you create and push up a container.</div>
+						<div class="box blue" style="font-size: 16px; margin: 10px; background-color: #eee; height: 245px; color: #111;"><p><b style="font-size: 26px;">Step 2</b> <br>Navigate to the Explore tab and search for ghost image.  Click on ghost image and copy command <code>docker run -d --name some-ghost -e url=http://localhost:3001 -p 3001:2368 ghost</code>.  Open in browser and explore ghost blog platform. The <code> -p 3001:2368</code> is mapping my machines port to the containers port. </p></div>
+						<div class="box green" style="font-size: 16px; margin: 10px; background-color: #eee; height: 245px; color: #111;"><p><b style="font-size: 26px;">Step 3</b> <br>Stop container by running command [docker container stop some-ghost] and remove container by running command [docker container rm some-ghost]</p></div>
+						<aside class="notes">
+							Step 1 - Requires that you have an account created at docker hub.  When you create an account is going to have you do an initial walkthrough to publish a container.
+						</aside>
+					</div>
+	
+				</section>
+
+				<section data-background="#fff">
+					<h3>Dockerfile </h3>
+					<p><strong> What is a dockerfile</strong> - a text file that contains all commands, in order, needed to build a given image</p>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;"><b>Directives</b> - provides instructions on how the image is constructed and ran as a container. </li><br>
+								<li style="font-size: 26px;">The best way to learn how a dockerfile is constructed is to look at how other dockerfiles have been constructed.</li>	   
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<pre>
+								<code style="font-size: 16px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
+# Define from what image we want to build from
+FROM node:12
+
+# Which files would we like to copy into the construction of the image
+COPY . /app
+
+# What commands we would like to run once 
+CMD ["node", "app/docker.js"]
+					
+								</code>
+							</pre>
+						</div>
+					</div>
+				</section>
+				<section data-background="#eeeeee" style="background-size: 80%;">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Creating Dockerfile Steps</h3>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment"><strong>1. Create a file called dockerfile</strong><br> Create a folder and run the touch command to create a Dockerfile.  No file extension is needed. </p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment"><strong>2. Add Instructions in Dockerfile</strong><br> Dockerfile reference can be found at this <a href="https://docs.docker.com/engine/reference/builder/">link</a></p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment"><strong>3. Build Dockerfile to create image</strong><br> Run the <code>docker build -t newimagename:1.0</code> to construct image that is now named "newimagename" version "1.0"</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment"><strong>4. Run Image to create container</strong><br>Run the command docker container run --name to run the container.</p>
+					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .6em;" class="fragment"><strong>5. Stop and remove container</strong><br>Run the command <code>docker container stop [NAME_OF_CONTAINER]</code> and run the command <code>docker container rm [NAME_OF_CONTAINER]</code></p>
+				</section>
+				<section data-background="#fff">
+					<h4>Activity C - Generating Image from Dockerfile</h4>
+							<pre>
+								<code style="font-size: 16px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
+								# Step 1 - Defines and invokes function
+								dockerSucessOutput();
+								function dockerSucessOutput(){
+								    console.log("Dockerfile correctly constructed and image and ran program");
+								}
+								
+								# Step 2 - Including directives into Dockerfile
+								FROM node:12
+								COPY . /app
+								
+								CMD ["node", "app/docker.js"]
+								
+								# Step 3 - Stop container
+								docker container stop sample_walkthrough .
+
+								</code>
+							</pre>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 14px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Create a project folder and add a file called docker.js.  Within the docker.js file copy the code under step 1 and save.</div>
+						<div class="box blue" style="font-size: 14px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Create a Dockerfile by running command <strong>[touch Dockerfile]</strong>.  Within the docker file, copy the statements under step 2.</p></div>
+						<div class="box green" style="font-size: 14px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Build the image by running command <strong>[docker build -t sample_walkthrough .]</strong>.  Observe the output in console and stop container by running the command above under step 3.</p></div>
+
+					</div>
+					
+				
+				</section>
+
+				<section data-background="#eee">
+						<h4>Microservices</h4>
+						<iframe width="1000" class="stretch" height="585" src="https://www.youtube.com/embed/1xo-0gCVhTU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</section>
+				<section>
+					<video data-autoplay class="stretch" src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video>
+				</section>
+				<section data-background="images/docker/docker_slide_bg.png">
+				    <h1 style="background-color:rgba(255, 255, 255, 0.7); color: black;">CI/CD using Docker</h1>
+				</section>
+				<section data-background="#fff">
+					<h4>YAML File</h4>
+							<pre>
+								<code style="font-size: 16px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
+								# Step 1 - Defines and invokes function
+								dockerSucessOutput();
+								function dockerSucessOutput(){
+								    console.log("Dockerfile correctly constructed and image and ran program");
+								}
+								
+								# Step 2 - Including directives into Dockerfile
+								FROM node:12
+								COPY . /app
+								
+								CMD ["node", "app/docker.js"]
+								
+								# Step 3 - Stop container
+								docker container stop sample_walkthrough .
+
+								</code>
+							</pre>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 14px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Create a project folder and add a file called docker.js.  Within the docker.js file copy the code under step 1 and save.</div>
+						<div class="box blue" style="font-size: 14px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Create a Dockerfile by running command <strong>[touch Dockerfile]</strong>.  Within the docker file, copy the statements under step 2.</p></div>
+						<div class="box green" style="font-size: 14px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Build the image by running command <strong>[docker build -t sample_walkthrough .]</strong>.  Observe the output in console and stop container by running the command above under step 3.</p></div>
+
+					</div>
+					
+				
+				</section>			
+			
+
+
+				<section data-background-color="#fff">
+					<iframe height="600" src="https://embed.polleverywhere.com/free_text_polls/njYHOn4wxYZfpDV?controls=none&short_poll=true" width="100%" height="100%" frameBorder="0"></iframe>
+				</section>-->
+				<section data-background="#eee">
+				    <h2>References and Resources</h2>
+				    <ul style="font-size: 28px;">
+						<li>File Open Method docs - https://docs.python.org/3/library/functions.html#open</li>
+						<li>Http Request Library doc - https://requests.readthedocs.io/en/master/user/quickstart/#make-a-request</li>
+						<li>I/O Operations docs - https://docs.python.org/3/tutorial/inputoutput.html</li>
+						<li>Exception Handling docs - https://docs.python.org/3/tutorial/errors.html</li>
+				    </ul>
+				</section>
+				<!--<section data-background="#eee">
+				    <h2>File and Directory Classes</h2>
+				    <ul>
+						<li>C# provides built-in classes named File and Directory</li>
+						
+						<li>Contain methods to help you manipulate files and their directories</li> 
+						<ul style="font-size: 22px;">
+							<li>Access information about files</li>
+							<li>Create, delete or move files</li>
+						</ul>
+						  
+                        <li>Your file structure must be transferable</li>
+						<li>Use relative paths to indicate file locations</li>
+						<li><code>File Class</code></li>
+						<ul style="font-size: 22px;">
+							<li>Contians methods to access information about files</li>
+						</ul>
+						<li><code>Directory Class</code></li>
+						<ul style="font-size: 22px;">
+							<li>Provides information about directories or folders</li>
+						</ul>
+               
+				    </ul>
+				</section>
+				<section data-background="#fff">
+						<h2>Common Methods in File Class</h2>
+						<ul>
+							
+							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.file?view=netframework-4.7.1">Click here to navigte to <code>File Class</code></a></li>		   
+						</ul>
+						<img src="images/io/filemethods.png" style="box-shadow: none;" alt="Common methods in File class"/>
+				</section>
+				<section data-background="#fff">
+						<h2>File Class - code and output</h2>
+
+						<img src="images/io/filepic1.png" width="420" style="box-shadow: none; float: left;" alt="File picture example one"/>
+						<img src="images/io/filepic2.png" width="420" style="box-shadow: none; float: left;" alt="File Picture example two"/>
+				</section>
+				<section data-background="#fff">
+						<h2>Common Methods in Directory Class</h2>
+						<ul>
+
+							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.directory?view=netframework-4.7.1">Click here to navigte to <code>Directory Class</code></a></li>		   
+						</ul>
+						<img src="images/io/directorymethods.png" style="box-shadow: none;" alt="Common methods in directory class"/>
+				</section>
+				<section data-background="#fff">
+						<h2>Directory Class - code and output</h2>
+
+						<img src="images/io/directorypic1.png" width="420" style="box-shadow: none; float: left;" alt="directory picture example one"/>
+						<img src="images/io/directorypic2.png" width="420" style="box-shadow: none; float: left;" alt="directory Picture example two"/>
+				</section>
+				<section data-background="#eee">
+						<h2>Understanding File Data Organization</h2>
+						<ul>
+							<li>Businesses store data in a relationship known as the <b>data hierarchy</b></li>
+							
+							<li><b>Character</b></li> 
+							<ul style="font-size: 22px;">
+								<li>Any of the letters, numbers, or other special symbols (such as punctuation marks) that comprise data</li>
+								<li>Characters are made up of bytes containing eight (8) bits</li>
+									<ul style="font-size: 22px;">
+										<li>ASCII characters contain one (1) byte</li>
+										<li>Unicode characters contain two (2) bytes</li>				
+									</ul>
+							</ul>
+
+				   
+						</ul>
+				</section>
+
+
+
+				<section data-background="#fff">
+					<h2>Serilization Code Example Output </h2>
+
+					<img src="images/io/serialoutput2.png"  width="470" style="box-shadow: none; margin-top: -10px;" alt="Serialization Code example one"/>
+
+
+				</section>-->
+
+				
+			</div>
+		</div>
+	
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+
+			function allowDrop(ev) {
+			  ev.preventDefault();
+			}
+			
+			function drag(ev) {
+			  ev.dataTransfer.setData("text", ev.target.id);
+			}
+			
+			function drop(ev) {
+			  ev.preventDefault();
+			  var data = ev.dataTransfer.getData("text");
+			  ev.target.appendChild(document.getElementById(data));
+			}
+		</script>
+	</body>
+</html>

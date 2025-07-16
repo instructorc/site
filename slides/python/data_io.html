@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Exception Handling + I/O </title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/dope.css">
+		<link rel="stylesheet" href="css/mystyle.css">
+		<link rel="icon" sizes="32x32" type="image/png" href="images/node/favicon.png">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="css/zenburn.css">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/gruvbox-dark.min.css">
+		<!-- Google Font -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
+
+
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<style>
+			ul li{
+				font-size: 80%;
+			}
+			section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
+			    color: #2d4650;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="#eee">
+				    <h3>Java - Working with Data and Data Querying/Manipulation</h3>
+				    <img src="images/intro/java_logo.png" width="320" style="box-shadow: none; border: none;"alt="java logo">
+				    <h3>Instructor: Chris Fulton</h3>
+				</section>
+				<section data-background="#eee">
+					<h3>Learning Agenda</h3>
+				    <ul style="font-size: 28px;">
+						<li>Exception Handling</li>
+						<ul>
+							<li>What is Exception Handling?</li>
+							<li>Understanding the difference between bugs, user errors and exceptions</li>
+							<li>Discuss the hierarchical structure of exception classes - Java Error and Exception</li>
+							<li>Exception sub-classes: Checked vs. UnChecked</li>
+							<li>Learn about traditional and object-oriented error-handling methods</li>
+						</ul>
+						<li>I/O, Directory and Streams</li>
+						<ul>
+							<li>Serialization/Deserialization</li>
+							<li>Overview of <code>java.io</code> package</li>
+							<li>Files and Steams | Reading and Writing to Files</li>
+							<!--<li>Working with JSON Data using JSON.NET</li>-->
+						</ul>
+
+						<!--<li>Working with LINQ and Lambda Expressions</li>
+                       	<ul>
+                       	
+							<li>What is Linq</li>
+							<li>What can you query with Linq</li>
+							<li>What is needed for Linq</li>
+							<li>Brief overview of Lambda Expressions | Query vs. Method Syntax</li>
+
+						</ul>-->
+
+				    </ul>
+				</section>
+				<section data-background="#fff">
+						<img src="images/io/dilbert-minivan.png" width="900" style="box-shadow: none; float: left;" alt="File Picture example two"/>
+				</section>
+				<section data-background="#eee">
+				    <h3>What is <b>Exception handling</b>?</h3><br>
+				    <p style="font-size: 26px;"><b>Exception handling</b> is the process of responding to <b>exceptions</b> when a computer program runs. An exception occurs when an unexpected event happens that requires special processing. Examples include a user providing abnormal input, a file system error being encountered when trying to read or write a file, or a program attempting to divide by zero.</p>
+				    <p style="font-size: 26px;">The main purpose is to prevent abnormal termination of the program and to customise the exception message.</p>
+				</section>
+				<section data-background="#eee">
+						<h2>Bugs, User Errors and Exceptions</h2>
+						
+						<ul>
+							<li>Bugs - errors the programmer caused</li>
+							<ul>
+								<li>Ex. Wrong calculation, not properly handling memory alocation, variable access permission, etc..</li>
+							</ul>
+							<li>User Errors - errors the user caused</li>
+							<ul>
+								<li>Ex. Improperly formatted string text </li>
+							</ul>
+							<li>Exceptions - unexpected errors that are caused during runtime, Terminates the program unless exceptions are handled</li>
+							<ul>
+								<li>Cannot connect to a database, not able to open or read a file, etc.. </li>
+							</ul>
+							<li><a href="https://stackify.com/application-exception-vs-error-difference/">Ex. of Error vs. Exception</a></li>
+						</ul>
+				</section>
+				<section data-background="#fff">
+					<h3>Exceptions hierarchy</h3>
+				    <img src="images/io/exception_hierarchy.png"  style="box-shadow: none; float: left;" alt="Java exception hierarchy"/>
+				</section>
+				<section data-background="#fff">
+					<h4>Java Error vs. Exception</h4>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px; background-color: #2d4650; color: white;"><b>Java Error</b></li>
+								<ul>
+									<li style="font-size: 20px;">Exceptions that are thrown when a <strong>critical error occurs</strong>, such as an internal error in the Java Virtual Machine or running out of memory </li>
+									<li style="font-size: 20px;">Your application should not try to handle these errors because they are the result of a <strong>serious condition</strong></li>								
+								</ul>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>
+								<li style="font-size: 26px; background-color: #2d4650; color: white;"><b>Exception</b></li>
+								<ul>
+									<li style="font-size: 20px;">Exceptions that you will handle.  These exceptions inherit from <strong><code>Exception</code></strong></li>
+									<li style="font-size: 20px;">A few examples of child/sub classes </li>
+									<ul>
+										<li style="font-size: 14px;"><strong><code>EOFException and FileNotFoundException</code></strong> - inherit from the the <code>IOException class</code>.  An <code>EOFException</code> object is thrown when an applicatoin attempts to read beyond the end of a file.  A <code>FileNotFoundException</code> object is thrown when an application tries to open a file that does not exist.</li>
+									</ul>
+								</ul>
+							</ul>
+							
+						</div>
+					</div>
+					<p style="font-size: 15px; font-style:italic;">*Important to note: The exception classes are in packages in the Java API.  <code>FileNotFoundException</code> is in the <code>java.io</code> package while another exception may be in another package.  Make sure you import the correct package.</p>
+				</section>
+				<section data-background="#fff">
+					<h4>Checked vs. UnChecked</h4>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px; background-color: #2d4650; color: white;"><b>Checked</b></li>
+								<ul>
+									<li style="font-size: 18px;">Checked exceptions are also known as <strong>compile-time exceptions</strong> as these exceptions are checked by the compiler during the compilation process to confirm whether the exception is handled by the programmer or not. If not, then the system displays a compilation error.</li>
+									<li style="font-size: 18px; color: green;">For example, SQLException, IOException, InvocationTargetException, and ClassNotFoundException.</li>								
+								</ul>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>
+								<li style="font-size: 26px; background-color: #2d4650; color: white;"><b>UnChecked</b></li>
+								<ul>
+									<li style="font-size: 18px;">The unchecked exceptions are those exceptions that <strong>occur during the execution</strong> of the program. Hence they are also referred to as Runtime exceptions. These exceptions are generally ignored during the compilation process. They are not checked while compiling the program.</li>
+									<li style="font-size: 18px; color: green;">For example, programming bugs like logical errors, and using incorrect APIs.</li>
+								</ul>
+							</ul>
+							
+						</div>
+					</div>
+					<a href="" style="font-size: 15px;">Article that breaks-down checked and unchecked exceptions</a>
+				</section>
+				<section data-background="#fff">
+						<h2>Purposely Generating a <code>Exception</code></h2>
+						<ul>
+
+							<li style="font-size: 30px;">You can deliberately generate a Exception by forcing a program to contain an error</li>	
+							<ul>
+									<li>- Example: Dividing an integer by zero</li>
+							</ul>
+							<li style="font-size: 30px;">Termination of the program is abrupt and unforgiving</li>	
+							<li style="font-size: 30px;">Object-oriented error handling techniques provide more elegant solutions</li>  
+							<li style="font-size: 30px;">With exception handling,a program can continue after dealing with a problem</li> 
+							<ul>
+									<li>- Especially important in <b>mission-critical</b> applications - any process that is crucial to an organization</li>
+							</ul>
+
+						</ul>
+
+				</section>
+				<section data-background="#fff">
+					<h2>Purposely Generating an <code>Exception</code></h2>
+					<ul>
+
+						<li>Programs that can handle exceptions appropriately are said to be more fault tolerant and robust than those that do not</li>	
+						<ul>
+							<li>- <b>Fault-tolerant</b> applications are designed so that they continue to operate, possibly at a reduced level, when some part of the system fails</li>
+							<li>- <b>Robustness</b> represents the degree to which a system is resilient to stress, maintaining correct functioning</li>
+						</ul>
+
+					</ul>
+						
+				</section>
+				<section data-background="#eee">
+					<h3>Traditional and Object-Oriented Error-Handling Methods</h3>
+					<ul>
+						<li>Check a variable’s value with an if statement before attempting to divide it into another number</li>
+						<ul>
+							<li> - Prevents division by zero</li>
+							<ul>
+								<li>   However, it does not really "handle an exception"</li>			
+							</ul>
+							<li> - Is efficient if you think it will be a frequent problem</li>
+							<ul>
+								<li>   Has little "overhead"</li>		
+								<li>   Otherwise, create an <code>Exception</code> object</li>		
+							</ul>
+						</ul>
+
+				
+					</ul>
+				</section>
+				
+				<section data-background="#eee">
+					<h5>Exception handling uses three terms: try, catch, throw, finally</h5>
+					</ul>
+					<div id="flexcontain">
+						<div class="box_three red" style="font-size: 20px; margin: 10px; border-radius: 10px;"><p><b><code style="font-size: 30px;"><em>try</em></code> block</b><br/> Contains statements that can produce an error <br> Code at least one catch block or finally block immediately following a <code>try</code> block</code></p></div>
+						<div class="box_three blue" style="font-size: 20px; margin: 10px; border-radius: 10px;"><p><b><code style="font-size: 30px;"><em>catch</em></code> block</b><br/> Can "catch" one type of Exception <br> You must code at least one <code>catch</code> block or <code>finally</code> block immediately following a <code>try</code> block</code></p></div>
+						<div class="box_three green" style="font-size: 20px; margin: 10px; border-radius: 10px;"><p><b><code style="font-size: 30px;"><em>finally</em></code> block</b><br/> Contains actions to perform at the end of a <code>try…catch</code> sequence<br> Executes whether the try block identifies any Exceptions or not <br /> Used to perform clean-up tasks<br /> A <code>finally</code> block executes after 1) the <code>try</code> ends normally. 2) the <code>catch</code> executes and 3) the <code>try</code> ends abnormally and the <code>catch</code> does not execute </p></div>
+
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Exception Syntax</h3>
+					<img src="images/io/exception-handling-keywords.PNG" width="790" style="box-shadow: none; " alt="Exception Handling Syntax"/>
+				</section>
+				<section data-background="#fff">
+					<h3>Exception Example</h3>
+					<img src="images/io/Checked-Exception.png" width="480" style="box-shadow: none; " alt="Checked Exception"/>
+				</section>
+				<section data-background="#eee">
+					<section>
+						<h3>Catching Multiple <code>Exceptions</code></h3>
+						<ul>
+							<li>You can place as many statements as you need within a try block</li>	
+							<ul>
+								<li>- Only the first error-generating statement throws an Exception</li>
+							</ul>
+							<li>Multiple catch blocks are examined in sequence until a match is found for the Exception that occurred</li>
+							<li>Various <code>Exceptions</code> can be handled by the same <code>catch</code> block</li>
+						</ul>
+					</section>	
+					<section data-background="#fff">
+							<h3>Catching Multiple <code>Exceptions</code></h3>
+							<img src="images/io/java_multiple_catch.png" style="box-shadow: none;" alt="Multiple catch block first eample code"/>
+							
+					</section>
+				</section>
+				<section>
+					<section>
+					<h3>Handling Exceptions Thrown from Outside Methods</h3>
+						<ul>
+							<li>An advantage of using object-oriented exception-handling techniques:</li>	
+							<ul>
+								<li>- The ability to deal with Exceptions appropriately as you decide how to handle them</li>
+							</ul>
+							<li>When methods from other classes throw Exceptions, methods do not have to catch them</li>
+							<ul>
+								<li>- Your calling program can catch them, and you can decide what to do</li>
+							</ul>
+						</ul>
+					</section>
+					<section data-background="#fff">
+							<h4>Handling Exceptions Thrown from outside methods</h4>
+							<img src="images/io/throw_exception.png"  style="box-shadow: none;" alt="eample one code handled exception called from method"/>
+
+					</section>
+				</section>
+				<section data-background="#fff">
+					<h3>Using the  <code>Throwable</code> Class's <code>getMessage()</code> Method</h3>
+					<ul>
+						<li>Understanding the <code>getMessage()</code> method</li>	
+						<ul>
+							<li>- Provides a descriptive error message</li>
+							<li>- The user can receive percise information about the nature of any Exception that is thrown</li>
+						</ul>
+					</ul>	
+				</section>
+
+				<section data-background="#fff">
+					<h3>Tracing <code>Exception</code> Objects Through the Call Stack</h3>
+					<ul>
+						<li><b>Call Stack</b></li>	
+						<ul>
+							<li>-The memory location where the computer stores the list of locations to which the system must return</li>
+							<li>If a method throws an Exception and does not catch it, the Exception is thrown to the next method “up” the call stack</li>
+						</ul>
+						<li><code>StackTrace</code> </li>	
+						<ul>
+							<li>- Contains a list of methods in the call stack so you can determine the location of the Exception</li>
+						</ul>
+					</ul>	
+				</section>
+				<section data-background="#fff">
+					<h4>Example of try/catch block</h4>
+					
+						<pre style="box-shadow: none;">
+							<code style="font-size: 16px; height: 730px;" class="cs hljs"  data-trim contenteditable>
+								
+								import java.io.*;
+								class DivideByZero {
+								  
+									// Main Method
+									public static void main(String[] args)
+										throws Exception
+									{ 
+										try {
+											// divide the numbers
+											divide(2, 0);
+										}
+										catch (ArithmeticException e) {
+											System.out.println("Message String = " + e.getMessage());
+										}
+									}
+								  
+									// method which divide two numbers
+									public static void divide(int a, int b)
+										throws ArithmeticException
+									{
+										int c = a / b;
+										System.out.println("Result:" + c);
+									}
+								}
+
+
+							</code>
+						</pre>
+						<p>What can we replace ArithmeticException with?</p>
+				</section>
+				<section data-background="#fff">
+					<h3>Learning Activity </h3>
+					<img src="images/io/exception-handling-keywords.PNG" width="600" style="box-shadow: none; " alt="Exception Handling Syntax"/>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 24px;">Step 1</b> <br>Observing the syntax above, create a short program that catches an exception when a user inputs a data type other than what was intended</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 170px; color: #111;"><p><b style="font-size: 24px;">Step 2</b> <br>Create a general catch block and create another catch block that is specific to the exception</p></div>
+
+
+					</div>
+				
+				</section>
+				<section data-background="images/io/files.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Input/Output</h1>
+				</section>
+				<section data-background="#eee">
+						<h2>Overview of <code>java.nio</code> and <code>java.io</code>package</h2>
+						<p>The <code>java.nio </code>is a newer version of <code>java.io</code>.  </p>
+
+						
+						<ul>
+							<li><a href="https://docs.oracle.com/javase/tutorial/essential/io/dirs.html">Click here to navigte to <code>java.io package</code></a></li>
+						</ul>
+				</section>
+				<section data-background="#eee">
+				    <h2>Java File Class</h2>
+				    <ul>
+						
+						
+						<li>Contain methods to help you manipulate files and their directories</li> 
+						<ul>
+							<li>Access information about files</li>
+							<li>Create, delete or move files</li>
+						</ul>
+						  
+                        <li>Your file structure must be transferable</li>
+						<li>Use relative paths to indicate file locations</li>
+						<li><code>File Class</code></li>
+						<ul>
+							<li>Contians methods to access information about files</li>
+						</ul>
+
+               
+				    </ul>
+				</section>
+
+				<section data-background="#fff">
+						<h2>Common Methods in File Class</h2>
+						<ul>
+							
+							<li><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html">Click here to navigte to <code>File Class</code></a></li>		   
+						</ul>
+		
+				</section>
+
+
+				<!--<section data-background="images/io/data_org.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Data Organization</h1>
+				</section>
+				<section data-background="#eee">
+						<h2>Understanding File Data Organization</h2>
+						<ul>
+							<li>Businesses store data in a relationship known as the <b>data hierarchy</b></li>
+							
+							<li><b>Character</b></li> 
+							<ul>
+								<li>Any of the letters, numbers, or other special symbols (such as punctuation marks) that comprise data</li>
+								<li>Characters are made up of bytes containing eight (8) bits</li>
+									<ul>
+										<li>ASCII characters contain one (1) byte</li>
+										<li>Unicode characters contain two (2) bytes</li>				
+									</ul>
+							</ul>
+
+				   
+						</ul>
+				</section>
+				<section data-background="#fff">
+						<h2>Understanding File Data Organization Diagram</h2>
+						<img src="images/io/dataorg.png" width="750" style="box-shadow: none;" alt="File Data organization diagram"/>
+				</section>
+				<section data-background="#eee">
+						<h2>Understanding File Data Organization</h2>
+						<ul style="font-size: .7em;">
+							<li><b>Field</b></li>
+							<ul>
+								<li>A character or group of characters that has some meaning</li>
+				
+							</ul>
+							
+							<li><b>Record</b></li> 
+							<ul>
+								<li>A collection of related fields that contain data about an entity</li>
+								<li>Characters are made up of bytes containing eight (8) bits</li>
+
+							</ul>
+							<li><b>Sequential access file</b></li> 
+							<ul>
+								<li>Each record is read in order based on its relative position</li>
+								<li>Records can be stored in order based on a value in the record</li>
+								<li>The field used to uniquely identify each record in a sequential file is the<b> key field</b></li>
+							</ul>
+							<li><b>Random access file</b></li>
+							<ul>
+								<li>Records are not in any sequence and  can be accessed in any order</li>
+				
+							</ul>
+						</ul>
+				</section>
+				<section data-background="#fff">
+						<h2>Understanding File Data Organization cont.</h2>
+						<ul>
+							<li>A C# application <b>opens a file</b> by creating an object and associating a stream of bytes with that object</li>
+							<li>When you finish using a file, the program should <b>close the file</b></li>
+									
+							<ul>
+								<li>Not closing a file may make it inaccessible</li>
+								<li>Not closing an output file can result in data not being written to the file</li>
+				
+							</ul>
+
+						</ul>
+				</section>
+				<section data-background="#eee">
+					<h3>The "@" notation or thingy</h3>
+					<p style="font-size: 20px;">It means interpret the following string as literal. Meaning, the \ in the string will actually be a "\" in the output, rather than having to put "\\" to mean the literal character</p>
+
+					
+						<pre>
+							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+								string user_name = "itsme";
+								string path = $@"C:\Users\{user_name}\Desktop\myapp
+
+
+							</code>
+						</pre>
+					
+				</section>
+				<section data-background="images/io/streams.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Streams</h1>
+				</section>
+				<section data-background="#fff">
+						<h2>Understanding Streams</h2>
+						<ul>
+							<li><b>Stream</b></li>
+							<ul>
+								<li>Stream is a class that simulates a stream of bytes to be lined up in a row. Such as the transmission of data on the network, data transmited are contiguous stream of bytes from the first byte to the last byte.</li>
+								<li>Functions as a pipeline or channel between an input device and an application, and potentially an output device</li>
+
+				
+							</ul>
+
+						</ul>
+						<img src="images/io/streampic.png"  width="500" style="box-shadow: none;" alt="Stream class diagram"/>
+				</section>
+				<section data-background="#fff">
+						<h2>Stream Overview</h2>
+
+						<img src="images/io/streamoverview.png"  width="700" style="box-shadow: none;" alt="Stream class overview diagram"/>
+				</section>
+				<section data-background="#fff">
+						<h4>Stream classes</h4>
+						<ul style="font-size: .7em;">
+							<li><b>Stream</b> is an abstract class, it can not initialize an object by itself, you can initialize a Stream object from the Constructors of the subclass. <b>Stream</b> class provides the basic methods of working with data streams, namely the method of read/write a byte or an array of bytes.</li>
+							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.stream?view=netcore-2.2">Click here to navigte to <code>Stream Class</code></a></li>
+						</ul>
+						
+						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 18px; margin-top: 18px;"> 
+								<tbody> 
+								 <tr> 
+								  <td><strong>Class</strong></td> 
+								  <td><strong>Description</strong></td> 
+								 </tr> 
+								 <tr> 
+								  <td>BufferedStream</td> 
+								  <td>A utility stream, it wrapped another stream, which helps improve performance</td> 
+								 </tr> 
+								 <tr> 
+								  <td>FileStream</td> 
+								  <td>Stream used to read and write data to the file.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>MemoryStream</td> 
+								  <td>Creates a stream whose backing store is memory.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>UnmanagedMemoryStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								 <tr> 
+								  <td>IsolatedStorageFileStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								 <tr> 
+								  <td>PipeStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								 <tr> 
+								  <td>NetworkStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								 <tr> 
+								  <td>CryptoStream</td> 
+								  <td>Defines a stream that links data streams to cryptographic transformations.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>DeflateStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								 <tr> 
+								  <td>GZipStream</td> 
+								  <td>&nbsp;</td> 
+								 </tr> 
+								</tbody> 
+						</table>
+				</section>
+				<section data-background="#fff">
+						<h2>Properties of Stream</h2>
+						<ul>
+							<li>Depending on the stream, there are the stream that supports both read and write, and seek by moving the cursor on the stream, read and write data at the cursor position.</li>
+							
+						</ul>
+						
+						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
+								<tbody> 
+								 <tr> 
+								  <td><strong>Attribute</strong></td> 
+								  <td><strong>Description</strong></td> 
+								 </tr> 
+								 <tr> 
+								  <td>CanRead</td> 
+								  <td>Gets a value indicating whether the current stream supports reading.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>CanSeek</td> 
+								  <td>Gets a value indicating whether the current stream supports seeking.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>CanWrite</td> 
+								  <td>Gets a value indicating whether the current stream supports writing.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Length</td> 
+								  <td>Gets the length in bytes of the stream.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Position</td> 
+								  <td>Gets or sets the current position of this stream.</td> 
+								 </tr> 
+								</tbody> 
+						</table>
+				</section>
+				<section data-background="#fff">
+						<h2>Understanding Streams</h2>
+						<ul>
+							<li>Most streams flow in only one direction</li>
+							<li>File processing classes include:</li>
+							<ul>
+								<li><code>StreamReader</code> for text input from a file</li>
+								<li><code>StreamWriter</code> for text output to a file</li>
+								<li><code>FileStream</code> is used alone for bytes and with either StreamReader and StreamWriter for text, for either input from and output to a file</li>
+				
+							</ul>
+
+						</ul>
+						
+				</section>
+				<section data-background="#fff">
+						<h2>FileStream Class</h2>
+						<ul>
+							<li><b>Filestream</b> is a class which extends from the  <b>Stream</b> class, <b>FileStream</b> is used to read and write data to file, it inherits the properties, methods of Stream, and has additional functions for reading and recording data on the file.</li>
+							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.filestream?view=netframework-4.7.1">Click here to navigte to <code>FileStream Class</code></a></li>
+						</ul>
+						
+				</section>
+				<section data-background="#fff">
+						<h2>FileStream Overloaded Constructor</h2>
+
+						<img src="images/io/filestreamconstructor.PNG"  width="700" style="box-shadow: none;" alt="Stream class overview diagram"/>
+						
+				</section>
+				<section data-background="#fff">
+						<h2>FileMode Enumeration</h2>
+						<ul>
+							<li>A constant that determines how to open or create the file</li>
+						</ul>
+
+						
+						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
+								<tbody> 
+								 <tr> 
+								  <td><strong>FileMode</strong></td> 
+								  <td><strong>Description</strong></td> 
+								 </tr> 
+								 <tr> 
+								  <td>Append</td> 
+								  <td>Opens the file if it exists and seeks to the end of the file, or creates a new file</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Create</td> 
+								  <td>Specifies that the operating system should create a new file. If the file already exists, it will be overwritten.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>CreateNew</td> 
+								  <td>Specifies that the operating system should create a new file.If the file already exists, an <strong>IOException</strong> exception is thrown. This mode requires <strong>FileIOPermissionAccess.Write</strong> permission.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Open</td> 
+								  <td>Specifies that the operating system should open an existing file. A <strong>System.IO.FileNotFoundException</strong> exception is thrown if the file does not exist.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>OpenOrCreate</td> 
+								  <td>Specifies that the operating system should open a file if it exists; otherwise, a new file should be created</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Truncate</td> 
+								  <td>Specifies that the operating system should open an existing file. When the file is opened, it should be truncated so that its size is zero bytes.</td> 
+								 </tr> 
+								</tbody> 
+							   </table>
+				</section>
+				<section data-background="#fff">
+						<h2>FileAccess Enumeration</h2>
+						<ul>
+							<li>A constant that determines how the file can be accessed by the FileStream object. This also determines the values returned by the CanRead and CanWrite properties of the FileStream object. CanSeek is true if path specifies a disk file.</li>
+						</ul>
+
+						
+						<table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse; font-size: 20px; margin-top: 18px;"> 
+								<tbody> 
+								 <tr> 
+								  <td><strong>FileAccess</strong></td> 
+								  <td><strong>Description</strong></td> 
+								 </tr> 
+								 <tr> 
+								  <td>Read</td> 
+								  <td>Data can be read from the file.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>ReadWrite</td> 
+								  <td>Data can be read from and written to the file.</td> 
+								 </tr> 
+								 <tr> 
+								  <td>Write</td> 
+								  <td>Data can be written to the file.</td> 
+								 </tr>  
+								</tbody> 
+						 </table>
+				</section>
+				<section data-background="#fff">
+					<h2>Stream Example</h2>
+
+					<img src="images/io/writerexcode.png"  width="500" style="box-shadow: none; float: left;" alt="Writing to file code"/>
+					<img src="images/io/writerexconsole.png"  width="400" style="box-shadow: none; float: left;" alt="Writing to file console view"/>
+					<img src="images/io/writerextextfile.png"  width="400" style="box-shadow: none; float: left;" alt="Writing to file text output"/>
+
+					
+
+				</section>
+				<section data-background="#fff">
+					<h2>Writing and Reading a Sequential Access File</h2>
+					<ul>
+						<li>C# uses files only as streams of bytes</li>
+						<li>When you write a program to store a data file, you must dictate the form the file will take</li>
+						<li>Whether you are writing data to a file or reading data from one, you create a <code>FileStream </code>object</li>
+					</ul>
+					
+				</section>
+				<section data-background="#fff">
+					<h2 style="font-size: 36px;">Writing Data to a Sequential Access Text File Example</h2>
+					<ul>
+						
+						<li><b>Token</b></li>
+						<ul style="font-size: 22px;">
+							<li>A block of text within a string that represents an entity or field </li>
+
+						</ul>
+						<li><b>Delimiter</b></li>
+						<ul style="font-size: 22px;">
+							<li>A character used to specify the boundary between records and, potentially, fields in text files</li>
+						</ul>
+						<li>When you write data to a text file:</li>
+						<ul style="font-size: 22px;">
+							<li>You can separate the fields with a delimiter</li>
+							<li>Delimiters are needed when fields are not fixed in size and position - field size varies</li>
+							<li><b>CSV files</b> (comma-separated value files) are delimited files</li>
+						</ul>
+
+					</ul>
+					
+				</section>
+				<section data-background="#fff">
+					<h2 style="font-size: 36px;">Writing Data to Sequential Access Text File </h2>
+
+					<img src="images/io/sequentialcode.png"  width="350" style="box-shadow: none; float: left; margin-top:-10px;" alt="Sequential file access code"/>
+					<img src="images/io/sequentialconsole.png"  width="300" style="box-shadow: none; float: left; margin-top: -10px;" alt="Sequential file access console view"/>
+					<img src="images/io/sequentialoutput.png"  width="300" style="box-shadow: none; float: left; margin-top: -10px;" alt="Sequential output"/>
+					<img src="images/io/employeeclass.png"  width="300" style="box-shadow: none; float: left; margin-top: -26px;" alt="Employee class"/>
+
+				</section>
+				<section data-background="#fff">
+					<h2>Reading from a Sequential Access Text File </h2>
+
+					<img src="images/io/readingcode.png"  width="500" style="box-shadow: none; float: left; margin-top: -10px;" alt="Reading Sequential access code"/>
+					<img src="images/io/readingconsole.png"  width="500" style="box-shadow: none; float: left; margin-top: -10px;" alt="Reading Sequential file access console view"/>
+
+				</section>
+				<section data-background="#fff">
+					<h2>Search a Sequential Text File</h2>
+					<ul>
+						<li><b>File position pointer</b></li>
+						<ul>
+							<li>Holds the byte number of the next byte to be read</li>
+						</ul>
+						<li>Reposition the file pointer using the <code>Seek()</code> method and the <code>SeekOrigin</code> enumeration: <br/> <code style=" font-size: 28px; font-weight: 100;">inFile.Seek(0, SeekOrigin.Begin);</code></li>
+
+					</ul>
+					<img src="images/io/seekimg.png"  width="700" style="box-shadow: none; font-size: 28px; font-weight: 100;" alt="File Position Searching Sequential"/>
+				</section>
+				<section data-background="#fff">
+					<h2>Search a Sequential Text File cont.</h2>
+					<img src="images/io/seekex.png"  width="700" style="box-shadow: none;" alt="seek example code picture"/>
+					
+				</section>
+				<section data-background="#fff">
+					<h2>Search a Sequential Text File cont.</h2>
+					<img src="images/io/seekoutput.png"  width="600" style="box-shadow: none;" alt="seek example output"/>
+					
+				</section>
+				<section data-background="#fff">
+					<h2>Understanding Serialization and Deserialization</h2>
+					<ul>
+						<li>Disadvantages to writing to a text file:</li>
+						<ul style="font-size: 28px;">
+							<li>Data in a text file is easily readable in a text editor such as Notepad, which means it is not secure</li>
+							<li>It is cumbersome to convert each field to text and combine the fields with delimiters</li>	
+						</ul>
+						<li>You can write objects to and read objects from files</li>
+						<li><b>Serialization</b></li>
+						<ul>
+							<li>The process of converting objects into streams of bytes</li>
+						</ul>
+						<li><b>Deserialization</b></li>
+						<ul>
+							<li>Converts streams of bytes back into objects</li>
+						</ul>
+					</ul>
+					
+				</section>
+				<section data-background="#fff">
+					<h2>Understanding Serialization and Deserialization</h2>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>
+								<li style="font-size: 26px">In a class marked with the [Serializable] attribute, every instance variable must also be Serializable</li>
+		
+								<li style="font-size: 26px">By default, all C# simple data types are serializable, including strings</li>
+								<li style="font-size: 26px">If your class contains fields that are more complex data types, you must check the declaration of those classes to ensure they are serializable</li>
+		
+							</ul>
+						</div>
+						
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/io/serializableclassimg.png"  width="400" style="box-shadow: none; font-size: 28px; font-weight: 100;" alt="Serializable class image"/>
+						</div>
+				</section>
+				<section data-background="#fff">
+					<h2>Understanding Serialization and Deserialization</h2>
+					<ul>
+						<li>To create a class that can be serialized:</li>
+						<ul style="font-size: 22px;">
+							<li>Mark it with the <code>[Serializable]</code> attribute</li>	
+						</ul>
+						<li>Namespaces included in programs that employ serialization:</li>
+						<ul style="font-size: 22px;">
+							<li><code>System.Runtime.Serialization.Formatters.Binary;</code></li>
+							<li><code>System.Runtime.Serialization;</code></li>
+						</ul>
+					</ul>
+					
+				</section>
+				<section data-background="#fff">
+					<h2>Serilization Code Example </h2>
+
+					<img src="images/io/serialcode1.png"  width="425" style="box-shadow: none; float: left; margin-top: -10px;" alt="Serialization Code example one"/>
+					<img src="images/io/serialcode2.png"  width="425" style="box-shadow: none; float: left; margin-top: -10px;" alt="Serialization Code example two"/>
+
+				</section>
+				<section data-background="#fff">
+					<h2>Serilization Code Example Output </h2>
+
+					<img src="images/io/serialoutput2.png"  width="470" style="box-shadow: none; margin-top: -10px;" alt="Serialization Code example one"/>
+
+
+				</section>
+				<section data-background="images/io/query.jpg">
+					<h1 style="background-color: rgba(0,0,0,.5); padding: .5em;">Data Query's using Linq</h1>
+				</section>
+				<section data-background="#eee">
+						<h2 class="blue">What is Linq?</h2>
+						<p>Linq stands for Language Integrated Query. Linq provides methods to easily query data sets including objects, relational databases, XML and other data sources</p>
+						<ul>
+							<li>Linq can query a variety of data sets that are connected to your application</li>
+						</ul>
+				</section>
+				<section data-background="#fff">
+					<h3 style="color: orangeRed">What can you query?</h3>
+					<p>Arrays, Characters, List of Objects, XML, etc.</p>
+					<img src="images/io/linqarchitecture.gif" width="650" style="box-shadow: none; float: left; margin-left: 2em;" alt="Linq architecture image"/>
+
+				</section>
+				<section data-background="#eee">
+						<h3>LinQ provides extension methods to IEnumerable</h3>
+						<ul>
+							<li>Where, Order, Group, Select, GetEnumerator</li>
+							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ienumerable-1?view=netcore-2.2">Click here to navigate to IEnumerable Interface</a></li>
+						</ul>
+				</section>
+				<section data-background="#eee">
+					<h3>Query and Method Syntax</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 22px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">Query Syntax</b> <br> Many people find query syntax simpler and easier to read.</p> <p> Some queries must be expressed as method calls.</p> </div>
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 420px;"><p><b style="font-size: 32px;">Method Syntax</b> <br> If you have never used a query language like SQL before, but you have some C# experience, then you might find the method syntax easier to read</p><p>uses extension methods included in the Enumerable or Queryable static class, similar to how you would call the extension method of any class.</p><p>Method syntax comprises of extension methods and Lambda expression. The extension method Where() is defined in the Enumerable class</p></div>
+						
+					</div>
+					<a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq" style="font-size: 24px;">Query Syntax and Method Syntax in LINQ (C#)</a>
+				</section>
+				<section data-background="#eee">
+				    <h3>What's Needed for a Linq Query</h3>
+				    <ol>
+						<li>The <strong>IEnumerable Interface</strong> - utilizing properties and methods from Interface</li>
+						<li>A <strong>dataset/datasource</strong> - <code><em>"from acct in accounts"</em></code></li>
+						<li>The <strong>formated query</strong> - <code><em>"where acct.acctBalance > 8000.00"</em></code></li>
+						<li>The <strong>Execution of the query</strong> - <code><em>"Iterating over data using foreach"</em></code></li>
+				    </ol>
+				</section>
+				<section data-background="#fff">
+				    
+				    <p style="font-size: 32px;"><strong>Lambda Expressions</strong> is an anonymous function that you can use to create delegates or expression tree types.</p>
+				     <br>
+				     <p style="font-size: 32px;">By using <strong>lambda expressions</strong>, you can write local functions that can be passed as arguments or returned as the value of function calls</p>
+
+				     <pre>
+							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+
+            List&lt;string&gt; candyList = new List&lt;string&gt;(){
+            
+                "Snickers", "Twix", "Mars", "Skittles", "Starburst", "Sour Patch Kids",
+                "Big Red", "Winter fresh", "Trident"
+            };
+
+            //Three examples of using Lambda Expressions
+            candyList.ForEach(x => Console.WriteLine(x));  //Example outputing items within list
+
+
+
+							</code>
+						</pre>
+				</section>
+				<section data-background="#fff">
+					<h4>Example using Query and Method Syntax</h4>
+					
+						<pre>
+							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+								
+class Program
+    {
+        static void Main(string[] args)
+        {
+            //Two dimensional array
+            double[,] price = {
+                                 {350, 390, 435},
+                                 {400, 440, 480},
+                                 {475, 530, 575}
+                              };
+
+            string[,] selection = {
+                                     {"Snickers", "Twix", "Mars"},
+                                     {"Skittles", "Starburst", "Sour Patch Kids"},
+                                     {"Big Red", "Winter fresh", "Trident"}
+                                  };
+            List&lt;Candy&gt; candyList = new List&lt;Candy&gt;();
+
+
+            //Iterate through the multi-Array and populate the list
+            for (var i = 0; i < 3; i++)
+            {
+                for (var x = 0; x < 3; x++)
+                {
+                    Candy aCandy = new Candy(selection[i, x], price[i, x]);
+                    candyList.Add(aCandy);
+                    Console.WriteLine("{0} goes for {1}", selection[i, x], price[i, x].ToString("c"));
+                }
+            }
+            
+            //LINQ Query Syntax to select all candies greater than 450 using query syntax
+            IEnumerable&lt;Candy&gt; candyOverQuery = from candy in candyList
+                                 where candy.price > 450
+                                 orderby candy.name
+                                 select candy;
+                                 
+
+
+            //LINQ Query syntax to select all candies greater than 450 using method syntax
+            var candyOverMethod = candyList.Where&lt;Candy&gt;(x => x.price > 450).Select(x => x).ToList();
+
+           
+
+            candyOverQuery.ToList&lt;Candy&gt;().ForEach(x => Console.WriteLine(x.ToString()));
+            
+            //Decrement through the list and find the object with value "Snickers" for the name property
+            for(var i = candyList.Count -1; i >= 0; i--)
+            {
+                if (candyList[i].name.Contains("Snickers"))
+                {
+                    candyList.RemoveAt(i);    
+                }     
+            }
+            //Output the list using lambda Expression
+            candyList.ForEach(x => Console.WriteLine(x.ToString()));
+        }
+    }
+    public class Candy
+    {
+        public string name { get; set; }
+        public double price { get; set; }
+
+        public Candy(string name, double price)
+        {
+            this.name = name;
+            this.price = price;
+        }
+
+        public override string ToString()
+        {
+            return String.Format("The name of the candy is " + name + " the price for this candy " + price);
+        }
+
+    }
+
+
+							</code>
+						</pre>
+
+				</section>
+				<section data-background="#fff">
+					<img src="images/io/query_keywords.PNG" width="600" alt="query keywords using linq">
+					<h4>Linq Query Keywords </h4>
+				    <a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/query-keywords">Query Syntax Keywords and Definition</a>
+
+				</section>
+
+				<section data-background="#fff">
+					<h4>Microsoft LINQ walk through using Query Syntax</h4>
+				    <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq">Microsoft LINQ Walk through</a>
+				    <br>
+				    <ul style="font-size: 26px;">
+						<li>Using the link above, walk through the tutorial and observe the various query formats.</li>
+
+				    </ul>
+				</section>
+				<section data-background="#fff">
+					<h4>Query and Method Syntax Activity</h4>
+				    <p>Using the program on the previous slide - write a Linq query using query and method syntax</p>
+				    <br>
+				    <ol style="font-size: 26px;">
+						<li>Provide both queries for candies that cost between 400 and 500.  Order the candy alpabetically.</li>
+						<li>Provide both queries for candies that cost more than 415 and start with the letter 'S'</li>
+
+				    </ol>
+				</section>
+				<section data-background="#fff">
+					<h4>Example of LINQ Query that groups and count the candy</h4>
+					
+						<pre>
+							<code style="font-size: 16px;" class="cs hljs"  data-trim contenteditable>
+								
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Two dimensional array
+            double[,] price = { {350, 390, 435},{400, 440, 480},{475, 530, 575}};
+
+            string[,] selection = {{"Snickers", "Twix", "Mars"},{"Skittles", "Mars", "Sour Patch Kids"},{"Mars", "Mars", "Trident"}};
+
+            List&lt;Candy&gt; candyList = new List&lt;Candy&gt;();
+            //Iterate through the multi-Array and populate the list
+            for (var i = 0; i < 3; i++)
+            {
+                for (var x = 0; x < 3; x++)
+                {
+                    Candy aCandy = new Candy(selection[i, x], price[i, x]);
+                    candyList.Add(aCandy);
+                    //Console.WriteLine("{0} goes for {1}", selection[i, x], price[i, x].ToString("c"));
+                }
+            }
+            //LINQ Query Syntax to select all candies greater than 450 using query syntax
+            var candyOverQuery = from candy in candyList
+                                 group candy by candy.name into candyGroup
+                                 select new { aGroup = candyGroup.Key, Count = candyGroup.Count() }; //Creates new Object instance
+    
+          //Iterate through each instance and output candy group along with count
+          foreach(var i in candyOverQuery)
+            {
+                Console.WriteLine($"Group { i.aGroup} and Count is {i.Count}");
+            }
+            //LINQ Query syntax to select all candies greater than 415 and starts with 'S' and order
+            var newQueriedList = candyList.Where&lt;Candy&gt;(x => x.price > 415).Where&lt;Candy&gt;(x=>x.name.StartsWith('S')).Select(x => x).OrderBy(x=>x.name).ToList();
+
+            //LINQ Query syntax to select all candies greater than 450 using method syntax
+            var candyOverMethod = candyList.Where&lt;Candy&gt;(x => x.price > 450).Select(x => x).OrderBy(x=>x.name).ToList();
+            //Outputing the LINQ Method Syntax
+            //candyOverMethod.ForEach(x => Console.WriteLine(x.ToString()));
+
+        }
+    }
+    public class Candy
+    {
+        public string name { get; set; }
+        public double price { get; set; }
+
+        public Candy(string name, double price)
+        {
+            this.name = name;
+            this.price = price;
+        }
+
+        public override string ToString()
+        {
+            return String.Format("The name of the candy is " + name + " the price for this candy " + price);
+        }
+
+    }
+
+
+							</code>
+						</pre>
+
+				</section>-->
+				<section data-background="#eee">
+				    <h2>References</h2>
+				    <!--<ul style="font-size: 22px;">
+						<li>https://csharp.net-tutorials.com/linq/linq-query-syntax-vs-method-syntax/</li>
+						<li>https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods</li>
+						<li>https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq</li>
+				    	<li>https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions</li>
+				    </ul>-->
+				</section>
+				
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
