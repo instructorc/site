@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="description" content="Instructor Fulton's Introduction to NodeJs">
+		<meta name="author" content="C. Fulton">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<title>Introduction to Web Components</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/mystyle.css">
+		<link rel="icon" sizes="32x32" type="image/png" href="images/node/favicon.png">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<style>
+			ul li{
+				font-size: 80%;
+			}
+			p{
+				font-size: .7em;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="#eee">
+				    <h3>Introduction to Web Components</h3>
+				    <img src="images/web_comp/wc.png" width="420" style="box-shadow: none; border: none;"alt="Node js logo">
+				    <h3>Instructor: Chris Fulton</h3>
+				</section>
+				<section data-background="#eee">
+				    <h2>Learning Objectives</h2>
+				    <ul>
+						<li>What are Web Components?</li>
+						<li> Web Component Break-down</li>
+				        <li>Popular web component frameworks</li>
+						<li>Benefits of Web Components</li>
+
+				    </ul>
+				</section>
+				<section data-background="#eee">
+						<h2>What are Web components ?</h2>
+						<p style="text-align: left"> A collection of web standards that makes it easy to create reusable objects with regular HTML and JavaScript</p>
+						
+						<ul>
+							<li style="font-size: 26px;">We already use them in Standard HTML but natively</li>
+							<li style="font-size: 26px;">A lot of popular GUI tools are build in a component based structure</li>
+
+						</ul>
+				</section>
+				<section>
+					<section data-background="#fff">
+						<h3>Web Component Break-down</h3>
+						<p style="font-size: .7em;"> Custom Elements  &#10022;    HTML Templates &#10022;    HTML Imports  &#10022;    Shadow DOM </p>
+						<div id="flexcontain">
+
+							<div class="box_two" style="font-size: 22px; margin: 10px;">
+								<img src="images/web_comp/b_support.PNG"  style="box-shadow: none;" alt="web component browser support"/>
+							</div>
+						</div>
+	
+						
+					</section>
+					<section data-background="#fff">
+						<h2>Custom Elements</h2>
+						<p>Creating new custom elements that have propierties, behavior and attributes</p>
+						<div id="flexcontain">
+							<div class="box_two" style="font-size: 22px; margin: 10px;">
+								<ul>
+									<li style="font-size: 26px; list-style-type: none;"><a href="https://developers.google.com/web/fundamentals/web-components/customelements">Google Web Fundamentals Write-up</a></li>
+	   
+								</ul>
+							</div>
+							<div class="box_two" style="font-size: 22px; margin: 10px; width: 540px;">
+								<pre>
+									<code style="font-size: 16px;" class="hljs" data-trim contenteditable>
+										class AppDrawer extends HTMLElement {...}
+										window.customElements.define('app-drawer', AppDrawer);
+										
+										// Or use an anonymous class if you don't want a named constructor in current scope.
+										window.customElements.define('app-drawer', class extends HTMLElement {...});
+
+
+									</code>
+								</pre>
+							</div>
+
+						</div>
+					</section>
+					<section data-background="#eee">
+						<h2>HTML Templates</h2>
+						<p style="font-size: 21px;"> Defines how to declare fragment of markup that go unused at page load, but can be instantiated later at runtime. A bunch of mark-up code that you don
+							want the browser to use right away.
+						</p>
+						<div id="flexcontain">
+							<div class="box_two" style="font-size: 22px; margin: 10px;">
+								<ul>
+									<li style="font-size: 26px; list-style-type: none;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template">Mozilla Write-up</a></li>
+	   
+								</ul>
+							</div>
+			
+							<div class="box_two" style="font-size: 22px; margin: 10px; width: 540px">
+								<pre>
+									<code style="font-size: 16px;" class="hljs" data-trim contenteditable>
+										<table id="producttable">
+											<thead>
+											<tr>
+												<td>UPC_Code</td>
+												<td>Product_Name</td>
+											</tr>
+											</thead>
+											<tbody>
+											<!-- existing data could optionally be included here -->
+											</tbody>
+										</table>
+										
+										<template id="productrow">
+											<tr>
+											<td class="record"></td>
+											<td></td>
+											</tr>
+										</template>
+									</code>
+								</pre>
+							</div>
+
+						</div>
+					</section>
+					<section data-background="#eee">
+						<h2>HTML Imports</h2>
+						<p style="font-size: 22px;"> Allows HTML markup content to be defined as an external file and then included into other webpages.  Things are still moving with this standard</p>
+						<ul>
+							<li style="list-style-type: none; font-size: 26px;"><a href="https://www.sitepoint.com/introduction-html-imports-tutorial/">Sitepoint write-up</a></li>
+						</ul>
+						
+							
+							<div id="flexcontain">
+								<div class="box_two" style="font-size: 22px; width: 600px; margin: 10px;">
+									<pre>
+										<code style="font-size: 16px;" class="hljs" data-trim contenteditable>
+											<link rel="import" href="messages.html">
+		
+		
+										</code>
+									</pre>
+								</div>
+								<div class="box_two" style="font-size: 22px; margin: 10px;">
+									<pre>
+										<code style="font-size: 16px;" class="hljs" data-trim contenteditable>
+											var htmlImport = document.querySelector('link[rel="import"]');
+											var htmlDoc = htmlImport.import;
+											var htmlMessage = htmlDoc.querySelector('.message-success');
+											document.body.appendChild(htmlMessage.cloneNode(true));
+		
+		
+										</code>
+									</pre>
+								</div>
+	
+							</div>	
+
+						
+					</section>
+					<section data-background="#eee">
+							<h3>Shadow DOM</h3>
+							<p> Core/Built-in Modules   &#10022;    Third-Party Modules </p>
+							<div id="flexcontain">
+								<div class="box_two" style="font-size: 22px; margin: 10px;">
+									<ul>
+										<li style="font-size: 26px;"><b>Encapsulating styles, scripts, and content -  being able to keep the markup structure, style, and behavior hidden and separate from other code on the page so that different parts do not clash</li>
+										<!--<li style="font-size: 26px;"><b>Core modules</b> are modules that come with NodeJs.  You do not have to install them.  <a href="https://nodejs.org/api/modules.html"> Click here to see a list of core modules</a></li><br>
+										<li style="font-size: 26px;"><b>Third-Party modules</b> - pushes it to a queue and continues with the next statement. If the server returns something, it callback to whatever triggered the event.</li>-->   
+									</ul>
+									<ul>
+										<li style="list-style-type: none; font-size: 26px;"><a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM">Mozilla's write-up on shadow DOM</a></li>
+									</ul>
+								</div>
+								<pre>
+									<code style="font-size: 16px;" class="hljs" data-trim contenteditable>
+										var shadowElement = element.attachShadow({mode: "open"});
+										shadowElement.innerHTML = "<h1> The end is near</h1>"
+	
+	
+									</code>
+								</pre>
+	
+							</div>	
+					</section>
+
+				</section>
+				<!--<section data-background="#fff">
+					<h3>Web Component Break-down</h3>
+					<p> 4 Standards</p>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;"><b>Most Languages</b> - Once an event is triggered to perform a task, most languages wait until the task is complete to move onto the next statement </li><br>
+								<li style="font-size: 26px;"><b>NodeJs</b> - pushes it to a queue and continues with the next statement. If the server returns something, it callback to whatever triggered the event.</li>	   
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/node/eventloop.png" width="500" style="box-shadow: none;" alt="Nodejs event loop queue"/>
+						</div>
+					</div>
+
+					
+				</section>
+				<section data-background="#fff">
+					<h3>Installing NodeJs</h3>
+					<ul>		
+						<li><a href="https://nodejs.org/en/">Click here to navigte to <code>Nodejs website</code></a></li>	
+						<li>Click on the LTS version that is recommended for most users.</li>	   
+					</ul>
+					
+				</section>
+
+				<section>
+					<section>
+						<h3>Node Modules</h3>
+						<p> Core/Built-in Modules   &#10022;    Third-Party Modules </p>
+						<div id="flexcontain">
+							<div class="box_two" style="font-size: 22px; margin: 10px;">
+								<ul>
+									<li style="font-size: 26px;"><b>File Module</b> Including the path of file in require method</li>
+									<li style="font-size: 26px;"><b>Core modules</b> are modules that come with NodeJs.  You do not have to install them.  <a href="https://nodejs.org/api/modules.html"> Click here to see a list of core modules</a></li><br>
+									<li style="font-size: 26px;"><b>Third-Party modules</b> - pushes it to a queue and continues with the next statement. If the server returns something, it callback to whatever triggered the event.</li>	   
+								</ul>
+							</div>
+							<pre>
+								<code style="font-size: 16px;" class="hljs" data-trim contenteditable>
+								const welcome = require('./welcome'); //including a module that is a file within your program
+								const http = require('http'); //including a core module example
+								const app = require('express'); //including third-party module example
+
+
+								</code>
+							</pre>
+
+						</div>	
+					</section>
+
+					<!--<section>
+						<h3>Using a Core/Built-in Module</h3>
+						<ul>
+							<li>This example will utilize both the core http module to create a server</li>
+							<li>Create a file called server.js</li>
+							<li>Copy and add the code snippet below to your server.js file: </li>
+						</ul>
+						<pre><code class="hljs" data-trim contenteditable>
+								exports.welcome = function(){    
+									console.log("You called the welcome method");
+								}
+
+								exports.conclude = ()=>{
+									console.log("You called the conclude method");
+								}
+						</code></pre>
+						
+					</section>
+				</section>
+
+
+				<section data-background="#fff">
+					<h2>Examples of Popular web component frameworks</h2>
+
+					<img src="images/io/serialcode1.png"  width="425" style="box-shadow: none; float: left; margin-top: -10px;" alt="Serialization Code example one"/>
+					<img src="images/io/serialcode2.png"  width="425" style="box-shadow: none; float: left; margin-top: -10px;" alt="Serialization Code example two"/>
+
+				</section>
+				<section data-background="#fff">
+					<h2>Serilization Code Example Output </h2>
+
+					<img src="images/io/serialoutput2.png"  width="470" style="box-shadow: none; margin-top: -10px;" alt="Serialization Code example one"/>
+
+
+				</section>-->
+
+				
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
