@@ -41,7 +41,7 @@
 				color: #333;
 			    padding: 1em;
 			    background-color: rgba(255,255, 255, .9);
-			    border-radius: 14px;
+			    /*border-radius: 14px;*/
 			}
 			#boxstyle2{
 				color: white;
@@ -90,7 +90,7 @@
 			<div class="slides">
 				<section data-background="rgb(246, 246, 246)">
 				    <h3>Intro. to Networking</h3>
-				    <img src="images/networking_intro_image.png" width="500" style="box-shadow: none; border: none;"alt="intro slide intro to Networking image">
+				    <img src="images/networking_intro_image.png" width="480" style="box-shadow: none; border: none;"alt="intro slide intro to Networking image">
 				    <h3>Instructor: Chris Fulton</h3>
 				</section>
 				<section data-background="rgb(246, 246, 246)">
@@ -100,19 +100,19 @@
 						<ul>
 							<li>What is a Network?</li>
 							<ul>
-								<li>Understanding PAN, LAN, WAN, MAN</li>
-								<li>Advantages and Disadvantages</li>
+								<li>Understanding PAN, LAN, WAN, MAN, HAN</li>
+								
 							</ul>
 							<li>What are the different types of network topologies?</li>
 							<ul>
 								<li>Bus, Star, Ring, Mesh, Wireless, Hybrid topology</li>
+								<li>Advantages and Disadvantages</li>
 							</ul>
-						</ul>
-
-						<li>Overview of Service Providers </li>
-						<ul>
-							<li>Key Components and Concepts of Service Providers</li>
-							<li>Copper-Bounded vs. Fiber Bounded Media</li>
+							<li>Overview of Service Providers </li>
+							<ul>
+								<li>Key Components and Concepts of Service Providers</li>
+								<li>Copper-Bounded vs. Fiber Bounded Media</li>
+							</ul>
 						</ul>
 						<li>Describe and Apply conceptual networking models and explain networking devices and networked devices</li>
 						<ul>
@@ -120,6 +120,31 @@
 							<li>Discuss networking & networked devices </li>
 						</ul>
 				    </ul>
+				</section>
+				<section data-background="images/networking/networking_bg.png">
+					<h1 id="boxstyle">Networks</h1>
+					
+				</section>
+				<section data-background="white" style="background-size: 80%;">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Key Network Terminology </h3>
+					<!--<p style="background-color:rgba(255, 255, 255, 0.7);  font-size: .8em; color: black;" class="fragment"> a method of providing <strong>shared computing resources</strong>, including applications, computing, storage, networking, development, and deployment platforms as well as business processes. </p>-->
+					<div id="flexcontain" class="fragment">
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">PAN,LAN,WAN,MAN,HAN</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">Client/Server network</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">Bus, Ring, Star, <br>Mesh Topology</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">Bridge</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">Router</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">Switch</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">Packet</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">Protocols</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">TCP/IP</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">Network Address</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">MAC Address</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">IP Address</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">Network Interface Card </h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">Passive/Active Hub</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">Gateway</h3></div>
+					</div>
 				</section>
 				<section data-background="#fff">
 					<h3>Networks</h3>
@@ -143,6 +168,158 @@
 							</ul>
 						</div>
 					</div>
+				</section>
+				<section data-background="#eee">
+						<h4>WAN - How is it connected? </h4>
+						<iframe width="760" height="515" src="https://www.youtube.com/embed/yd1JhZzoS6A?si=Cpm5KLxVR2iJyfDE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+				</section>
+				<section data-background="#fff">
+					<h3>Activity - Determine the Network</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #fff; color: #111;">
+							
+							<p style="font-size: 28px">Match the network below to the correct descriptive box on the right.</p>
+							<img id="drag1" src="images/networking/han.PNG" style="margin: 2px;" width="100" draggable="true" ondragstart="drag(event)">
+							<img id="drag2" src="images/networking/lan.PNG" style="margin: 2px;" width="97" draggable="true" ondragstart="drag(event)">
+							<img id="drag3" src="images/networking/man.PNG" style="margin: 2px;" width="100" draggable="true" ondragstart="drag(event)">
+							<img id="drag4" src="images/networking/pan.PNG" style="margin: 2px;" width="97" draggable="true" ondragstart="drag(event)">
+							<img id="drag5" src="images/networking/wan.PNG" style="margin: 2px;" width="100" draggable="true" ondragstart="drag(event)">
+						</div>
+						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #fff;  color: #111;">
+							<div id="div1" ondrop="drop(event)" style=" font-size: 15px; background-position: center; border: 2px solid #333; margin-top: 5px; min-height: 50px;" ondragover="allowDrop(event)">spans a city or large campus - efficient data transfer across a metro. region. Used by businesses or government entities</div>
+							<div id="div2" ondrop="drop(event)" style=" font-size: 15px;  background-position: center; border: 2px solid #333; margin-top: 5px; min-height: 50px;" ondragover="allowDrop(event)">Connects devices within a limited area, such as a home, school, office - offers high-speed connectivity and often managed by a single org.</div>
+							<div id="div3" ondrop="drop(event)" style=" font-size: 15px;  background-position: center; border: 2px solid #333; margin-top: 5px; min-height: 50px;" ondragover="allowDrop(event)">small network within a short range - Typical devices include smartphones, tablets - transmission bia Bluetooth or USB</div>
+							<div id="div4" ondrop="drop(event)" style=" font-size: 15px; background-position: center; border: 2px solid #333; margin-top: 5px; min-height: 50px;" ondragover="allowDrop(event)">covers large geographic area such as a country or even globally - The internet is the largest example.</div>
+							<div id="div5" ondrop="drop(event)" style=" font-size: 15px; background-position: center; border: 2px solid #333; margin-top: 5px; min-height: 50px;" ondragover="allowDrop(event)">covers a single building - enables devices to share resources like files, printers and  </div>
+
+						</div>
+
+
+					</div>
+
+				</section>
+
+				<section data-background="#fff">
+					<h4>Why Different Typologies?</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 20px;"><b>Bus</b> – a single cable to connect all nodes on the network. Requires <strong>terminating resistors</strong></li>
+								<li style="font-size: 20px;"><b>Star</b> – running cables from each node to connect a single point. Requires <strong>Hub</strong>.</li>
+								<li style="font-size: 20px;"><b>Ring</b> – Consists of a single cable that runs continuously from node to node. </li>
+								<li style="font-size: 20px;"><b>Mesh</b> – each node on the network connects to every other node on the network</li>
+								<li style="font-size: 20px;"><b>Wireless </b> – does not use cabling. Uses either infrared light or radio transmission to communicate between nodes</li>
+								<li style="font-size: 20px;"><b>Hybrid </b> – a mixture of topologies connected together</li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<a href="https://www.ibm.com/think/topics/network-topology"><img src="images/networking/network_topologies.png" width="550" style="box-shadow: none; border: none;"alt="AI Gemini generated graphic of network typologies"></a>
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="rgba(248,250,253,1)" class="has-light-background present" style="top: 0px; display: block;">
+					<h3>Comparison Table </h3>
+					<img src="images/networking/topology_comparison.PNG" width="800" style="box-shadow: none; border: none;" alt="Comparison Chart"/>
+					
+				</section>
+				<section data-background="#fff">
+					<h4>Sample Quiz Questions 1</h4>
+					<div id="flexcontain">
+
+						<div class="box" style="line-height: .9; text-align: left;">
+							<p style="font-size: 22px; font-weight: 900;">Lisa wants a topology where adding or removing a device does not disrupt the entire network. Which topology best meets this requirement? </p>
+				     
+							<input type="radio" id="age1" style="transform: scale(2); " name="structure" value="A">
+							<label for="attendance1" style="font-size: 16px; align:left; line-height: .8;">A) Bus</label><br>
+							<input type="radio" id="age2" style="transform: scale(2); text-align:left;" name="structure" value="B">
+							<label for="attendance2" style="font-size: 16px; text-align:left;">B) Ring</label><br>  
+							<input type="radio" id="age3" style="transform: scale(2); text-align:left;" name="structure" value="C">
+							<label for="attendance3" style="font-size: 16px; text-align:left;">C) Star</label><br>
+							<input type="radio" id="age4" style="transform: scale(2); text-align:left;" name="structure" value="D">
+							<label for="attendance4" style="font-size: 16px; text-align:left;">D) Mesh</label><br>
+						</div>
+						
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h4>Sample Quiz Questions 2</h4>
+					<div id="flexcontain">
+
+						<div class="box" style="line-height: .9; text-align: left;">
+							<p style="font-size: 22px; font-weight: 900;">A company needs a topology that provides high fault tolerance and multiple paths for data transmission.  Which topology should they choose? </p>
+				     
+							<input type="radio" id="age1" style="transform: scale(2); " name="structure" value="A">
+							<label for="attendance1" style="font-size: 16px; align:left; line-height: .8;">A) Bus</label><br>
+							<input type="radio" id="age2" style="transform: scale(2); text-align:left;" name="structure" value="B">
+							<label for="attendance2" style="font-size: 16px; text-align:left;">B) Ring</label><br>  
+							<input type="radio" id="age3" style="transform: scale(2); text-align:left;" name="structure" value="C">
+							<label for="attendance3" style="font-size: 16px; text-align:left;">C) Star</label><br>
+							<input type="radio" id="age4" style="transform: scale(2); text-align:left;" name="structure" value="D">
+							<label for="attendance4" style="font-size: 16px; text-align:left;">D) Mesh</label><br>
+						</div>
+						
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h4>Sample Quiz Questions 3</h4>
+					<div id="flexcontain">
+
+						<div class="box" style="line-height: .9; text-align: left;">
+							<p style="font-size: 22px; font-weight: 900;">A company needs a topology where: <br> <ul><li style="font-size:16px;">Every device has a direct connection to every other device for maximum redundancy.</li><li style="font-size:16px;">The network remains operational even if multiple links fail.</li><li style="font-size:16px;">Cost and complexity are not a concern.</li></ul> </p>
+				     
+							<input type="radio" id="age1" style="transform: scale(2); " name="structure" value="A">
+							<label for="attendance1" style="font-size: 16px; align:left; line-height: .8;">A) Bus</label><br>
+							<input type="radio" id="age2" style="transform: scale(2); text-align:left;" name="structure" value="B">
+							<label for="attendance2" style="font-size: 16px; text-align:left;">B) Ring</label><br>  
+							<input type="radio" id="age3" style="transform: scale(2); text-align:left;" name="structure" value="C">
+							<label for="attendance3" style="font-size: 16px; text-align:left;">C) Star</label><br>
+							<input type="radio" id="age4" style="transform: scale(2); text-align:left;" name="structure" value="D">
+							<label for="attendance4" style="font-size: 16px; text-align:left;">D) Mesh</label><br>
+						</div>
+						
+					</div>
+				</section>
+				<!--<section data-background="#fff">
+					<h4>Service Providers</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 20px;"><b>Service Provider</b> – a vendor who provides telecommunications services, such as telephone or internet services</li>
+								<li style="font-size: 20px;"><b>Service Providers</b> – Major internet providers vary by region but globally and in the <strong>US</strong>, key players include</li>
+								<ul>
+									<li><strong>Fiber/DSL</strong>: AT&T (Fiber), Verizon Fios (Fiber), Frontier (Fiber/DSL). </li>
+									<li><strong>Cable</strong>: Xfinity (Comcast) (Cable), Spectrum (Charter) (Cable). </li>
+									<li><strong>Fixed Wireless (5G/4G)</strong>: T-Mobile Home Internet, Verizon 5G Home Internet. </li>
+									<li><strong>Satellite</strong>: Viasat, Starlink (Starlink is often seen as a newer, faster option).  </li>
+								</ul>
+								<li style="font-size: 20px;"><b>Hexadecimal Color Values</b> – Numerical values that specify the blending of the red, green, and blue color channels</li>
+								<ul>
+									<li>Base 16 number system (0-9, A-F)</li>
+									<li>Range: 00-FF (zero color to max color)</li>
+									<li>Ex. P {color: #00FFFF;}</li>
+								</ul>
+								<li style="font-size: 20px;"><b>Copper vs Fiber</b> – Numerical values that specify hue, saturation and lightness</li>
+								<ul>
+									<li>The hue value represents a color on the color wheel</li>
+									<li>Saturation and lightness values are percentages</li>
+									<li>Ex. P {color: hsl(120, 100%, 50%);}</li>
+								</ul>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/cgt/hexcode.gif" width="250" style="box-shadow: none; border: none;"alt="hexicode graphic">
+							<iframe width="320" height="300" src="https://www.youtube.com/embed/c56x1aj2CPA?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+						</div>
+
+					</div>
+
+				</section>-->
+				<section data-background="images/networking/networking_bg.png">
+					<h1 id="boxstyle">Conceptual Models <br> + <br> Devices</h1>
 				</section>
 				<!--<section data-background="images/cgt/colorbg.jpg">
 					<h3>The wide array of programming languages</h3>
@@ -179,10 +356,7 @@
 
 				</section>
 
-				<section data-background="#eee">
-						<h4>Introduction to Color </h4>
-						<iframe width="760" height="515" src="https://www.youtube.com/embed/_2LLXnUdUIc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-				</section>
+
 				<section data-background="#fff">
 					<h4>Specifying Color</h4>
 					
@@ -250,10 +424,7 @@
 					</div>
 					
 				</section>
-				<section data-background="images/cgt/image_format.png">
-					<h3 id="boxstyle">Understanding Graphics</h3>
-					
-				</section>
+
 				<section data-background="#6e6e6e">
 					<h3>File Formats</h3>
 					
@@ -762,6 +933,24 @@
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
+
+
+
+			//Logic for drag and drop slides
+
+			function allowDrop(ev) {
+			  ev.preventDefault();
+			}
+			
+			function drag(ev) {
+			  ev.dataTransfer.setData("text", ev.target.id);
+			}
+			
+			function drop(ev) {
+			  ev.preventDefault();
+			  var data = ev.dataTransfer.getData("text");
+			  ev.target.appendChild(document.getElementById(data));
+			}
 		</script>
 	</body>
 </html>
