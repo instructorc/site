@@ -173,25 +173,24 @@
 						<h4>WAN - How is it connected? </h4>
 						<iframe width="760" height="515" src="https://www.youtube.com/embed/yd1JhZzoS6A?si=Cpm5KLxVR2iJyfDE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 				</section>
-
-			<section data-background="#fff">
-				<h3>Activity - Determine the Network</h3>
-				<div id="flexcontain">
-					<div class="box red" style="font-size: 20px; margin: 10px; background-color: #fff; color: #111;">
-						
-						<p style="font-size: 28px">Match the network below to the correct descriptive box on the right.</p>
-						<img id="drag1" src="images/networking/han.PNG" style="margin: 2px;" width="100" draggable="true" ondragstart="drag(event)">
-						<img id="drag2" src="images/networking/lan.PNG" style="margin: 2px;" width="97" draggable="true" ondragstart="drag(event)">
-						<img id="drag3" src="images/networking/man.PNG" style="margin: 2px;" width="100" draggable="true" ondragstart="drag(event)">
-						<img id="drag4" src="images/networking/pan.PNG" style="margin: 2px;" width="97" draggable="true" ondragstart="drag(event)">
-						<img id="drag5" src="images/networking/wan.PNG" style="margin: 2px;" width="100" draggable="true" ondragstart="drag(event)">
-					</div>
-					<div class="box red" style="font-size: 18px; margin: 10px; background-color: #fff;  color: #111;">
-						<div id="div1" ondrop="drop(event)" style=" font-size: 15px; background-position: center; border: 2px solid #333; margin-top: 5px; min-height: 50px;" ondragover="allowDrop(event)">spans a city or large campus - efficient data transfer across a metro. region. Used by businesses or government entities</div>
-						<div id="div2" ondrop="drop(event)" style=" font-size: 15px;  background-position: center; border: 2px solid #333; margin-top: 5px; min-height: 50px;" ondragover="allowDrop(event)">Connects devices within a limited area, such as a home, school, office - offers high-speed connectivity and often managed by a single org.</div>
-						<div id="div3" ondrop="drop(event)" style=" font-size: 15px;  background-position: center; border: 2px solid #333; margin-top: 5px; min-height: 50px;" ondragover="allowDrop(event)">small network within a short range - Typical devices include smartphones, tablets - transmission bia Bluetooth or USB</div>
-						<div id="div4" ondrop="drop(event)" style=" font-size: 15px; background-position: center; border: 2px solid #333; margin-top: 5px; min-height: 50px;" ondragover="allowDrop(event)">covers large geographic area such as a country or even globally - The internet is the largest example.</div>
-						<div id="div5" ondrop="drop(event)" style=" font-size: 15px; background-position: center; border: 2px solid #333; margin-top: 5px; min-height: 50px;" ondragover="allowDrop(event)">covers a single building - enables devices to share resources like files, printers and  </div>
+				<section data-background="#fff">
+					<h3>Activity - Determine the Network</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #fff; color: #111;">
+							
+							<p style="font-size: 28px">Match the network below to the correct descriptive box on the right.</p>
+							<img id="drag1" src="images/networking/han.PNG" style="margin: 2px;" width="100" draggable="true" ondragstart="drag(event)">
+							<img id="drag2" src="images/networking/lan.PNG" style="margin: 2px;" width="97" draggable="true" ondragstart="drag(event)">
+							<img id="drag3" src="images/networking/man.PNG" style="margin: 2px;" width="100" draggable="true" ondragstart="drag(event)">
+							<img id="drag4" src="images/networking/pan.PNG" style="margin: 2px;" width="97" draggable="true" ondragstart="drag(event)">
+							<img id="drag5" src="images/networking/wan.PNG" style="margin: 2px;" width="100" draggable="true" ondragstart="drag(event)">
+						</div>
+						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #fff;  color: #111;">
+							<div id="div1" ondrop="drop(event)" style=" font-size: 15px; background-position: center; border: 2px solid #333; margin-top: 5px; min-height: 50px;" ondragover="allowDrop(event)">spans a city or large campus - efficient data transfer across a metro. region. Used by businesses or government entities</div>
+							<div id="div2" ondrop="drop(event)" style=" font-size: 15px;  background-position: center; border: 2px solid #333; margin-top: 5px; min-height: 50px;" ondragover="allowDrop(event)">Connects devices within a limited area, such as a home, school, office - offers high-speed connectivity and often managed by a single org.</div>
+							<div id="div3" ondrop="drop(event)" style=" font-size: 15px;  background-position: center; border: 2px solid #333; margin-top: 5px; min-height: 50px;" ondragover="allowDrop(event)">small network within a short range - Typical devices include smartphones, tablets - transmission bia Bluetooth or USB</div>
+							<div id="div4" ondrop="drop(event)" style=" font-size: 15px; background-position: center; border: 2px solid #333; margin-top: 5px; min-height: 50px;" ondragover="allowDrop(event)">covers large geographic area such as a country or even globally - The internet is the largest example.</div>
+							<div id="div5" ondrop="drop(event)" style=" font-size: 15px; background-position: center; border: 2px solid #333; margin-top: 5px; min-height: 50px;" ondragover="allowDrop(event)">covers a single building - enables devices to share resources like files, printers and  </div>
 
 						</div>
 
@@ -352,18 +351,18 @@
 				</section>
 				<section data-background="#fff" style="height: 100%;">
 					<h3>Activity - Match OSI Layer</h3>
-					<div style="display: flex; flex-direction: row; height: 83%; gap: 10px; margin: 10px;">
+					<div style="display: flex; flex-direction: row; height: 85%; gap: 10px; margin: 10px;">
 						<!-- Drag Source Box -->
 						<div style="flex: 0 0 15%; background-color: #f0f0f0; border: 3px solid #333; border-radius: 8px; padding: 10px; overflow-y: auto;">
 							<p style="font-size: 14px; font-weight: bold; margin: 5px 0;">Drag Layers:</p>
 							<div id="dragSourceBox" style="display: flex; flex-direction: column; gap: 5px;">
-								<img id="draglayer1" src="images/networking/osi_application.svg" style="margin: 2px; cursor: move;" width="80" draggable="true" ondragstart="drag(event)">
-								<img id="draglayer2" src="images/networking/osi_presentation.svg" style="margin: 2px; cursor: move;" width="80" draggable="true" ondragstart="drag(event)">
-								<img id="draglayer3" src="images/networking/osi_session.svg" style="margin: 2px; cursor: move;" width="80" draggable="true" ondragstart="drag(event)">
-								<img id="draglayer4" src="images/networking/osi_transport.svg" style="margin: 2px; cursor: move;" width="80" draggable="true" ondragstart="drag(event)">
-								<img id="draglayer5" src="images/networking/osi_network.svg" style="margin: 2px; cursor: move;" width="80" draggable="true" ondragstart="drag(event)">
-								<img id="draglayer6" src="images/networking/osi_datalink.svg" style="margin: 2px; cursor: move;" width="80" draggable="true" ondragstart="drag(event)">
-								<img id="draglayer7" src="images/networking/osi_physical.svg" style="margin: 2px; cursor: move;" width="80" draggable="true" ondragstart="drag(event)">
+								<img id="draglayer1" src="images/networking/osi_application.svg" style="margin: 2px; cursor: move;" width="80" draggable="true" ondragstart="osiDrag(event)">
+								<img id="draglayer2" src="images/networking/osi_presentation.svg" style="margin: 2px; cursor: move;" width="80" draggable="true" ondragstart="osiDrag(event)">
+								<img id="draglayer3" src="images/networking/osi_session.svg" style="margin: 2px; cursor: move;" width="80" draggable="true" ondragstart="osiDrag(event)">
+								<img id="draglayer4" src="images/networking/osi_transport.svg" style="margin: 2px; cursor: move;" width="80" draggable="true" ondragstart="osiDrag(event)">
+								<img id="draglayer5" src="images/networking/osi_network.svg" style="margin: 2px; cursor: move;" width="80" draggable="true" ondragstart="osiDrag(event)">
+								<img id="draglayer6" src="images/networking/osi_datalink.svg" style="margin: 2px; cursor: move;" width="80" draggable="true" ondragstart="osiDrag(event)">
+								<img id="draglayer7" src="images/networking/osi_physical.svg" style="margin: 2px; cursor: move;" width="80" draggable="true" ondragstart="osiDrag(event)">
 							</div>
 						</div>
 						<!-- Answer Boxes -->
@@ -371,38 +370,38 @@
 							<p style="font-size: 14px; font-weight: bold; margin: 5px 0;">Drop Correct Layer Here:</p>
 							<div id="osiBoxContainer" style="display: flex; flex-wrap: wrap; gap: 8px; align-content: flex-start;">
 								<!-- Q1 -->
-								<div class="osibox" ondrop="drop(event)" ondragover="allowDrop(event)" data-layer="7" style="border: 2px solid #333; border-radius: 4px; padding: 10px; min-width: 32%; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; transition: all 0.3s; max-width: 200px;">
-									<div class="question-text" style="font-size: 16px; word-wrap: break-word; flex: 1;"><strong>Q1:</strong> Ethernet cable raw bits transmission. Which layer?</div>
+								<div class="osibox" ondrop="osiDrop(event)" ondragover="osiAllowDrop(event)" data-layer="7" style="border: 2px solid #333; border-radius: 4px; padding: 10px; min-width: 32%; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; transition: all 0.3s; max-width: 200px;">
+									<div class="question-text" style="font-size: 16px; word-wrap: break-word; flex: 1;"><strong>Q1:</strong> A student opens their web browser. Which layer initiates this?</div>
 									<div id="drop-box-7" class="drop-area" style="min-height: 70px; border: 2px dashed #999; background-color: #fafafa; display: flex; align-items: center; justify-content: center; border-radius: 4px;"></div>
 								</div>
 								<!-- Q2 -->
-								<div class="osibox" ondrop="drop(event)" ondragover="allowDrop(event)" data-layer="6" style="border: 2px solid #333; border-radius: 4px; padding: 10px; min-width: 32%; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; transition: all 0.3s; max-width: 200px;">
-									<div class="question-text" style="font-size: 16px; word-wrap: break-word; flex: 1;"><strong>Q2:</strong> Large file into chunks, correct delivery. Which layer?</div>
+								<div class="osibox" ondrop="osiDrop(event)" ondragover="osiAllowDrop(event)" data-layer="6" style="border: 2px solid #333; border-radius: 4px; padding: 10px; min-width: 32%; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; transition: all 0.3s; max-width: 200px;">
+									<div class="question-text" style="font-size: 16px; word-wrap: break-word; flex: 1;"><strong>Q2:</strong> A video file needs compression. Which layer formats the data?</div>
 									<div id="drop-box-6" class="drop-area" style="min-height: 70px; border: 2px dashed #999; background-color: #fafafa; display: flex; align-items: center; justify-content: center; border-radius: 4px;"></div>
 								</div>
 								<!-- Q3 -->
-								<div class="osibox" ondrop="drop(event)" ondragover="allowDrop(event)" data-layer="5" style="border: 2px solid #333; border-radius: 4px; padding: 10px; min-width: 32%; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; transition: all 0.3s; max-width: 200px;">
+								<div class="osibox" ondrop="osiDrop(event)" ondragover="osiAllowDrop(event)" data-layer="5" style="border: 2px solid #333; border-radius: 4px; padding: 10px; min-width: 32%; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; transition: all 0.3s; max-width: 200px;">
 									<div class="question-text" style="font-size: 16px; word-wrap: break-word; flex: 1;"><strong>Q3:</strong> Videoconferencing call management. Which layer handles this?</div>
 									<div id="drop-box-5" class="drop-area" style="min-height: 70px; border: 2px dashed #999; background-color: #fafafa; display: flex; align-items: center; justify-content: center; border-radius: 4px;"></div>
 								</div>
 								<!-- Q4 -->
-								<div class="osibox" ondrop="drop(event)" ondragover="allowDrop(event)" data-layer="4" style="border: 2px solid #333; border-radius: 4px; padding: 10px; min-width: 32%; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; transition: all 0.3s; max-width: 200px;">
-									<div class="question-text" style="font-size: 16px; word-wrap: break-word; flex: 1;"><strong>Q4:</strong> A video file needs compression. Which layer formats the data?</div>
+								<div class="osibox" ondrop="osiDrop(event)" ondragover="osiAllowDrop(event)" data-layer="4" style="border: 2px solid #333; border-radius: 4px; padding: 10px; min-width: 32%; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; transition: all 0.3s; max-width: 200px;">
+									<div class="question-text" style="font-size: 16px; word-wrap: break-word; flex: 1;"><strong>Q4:</strong> Large file into chunks, correct delivery. Which layer?</div>
 									<div id="drop-box-4" class="drop-area" style="min-height: 70px; border: 2px dashed #999; background-color: #fafafa; display: flex; align-items: center; justify-content: center; border-radius: 4px;"></div>
 								</div>
 								<!-- Q5 -->
-								<div class="osibox" ondrop="drop(event)" ondragover="allowDrop(event)" data-layer="3" style="border: 2px solid #333; border-radius: 4px; padding: 10px; min-width: 32%; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; transition: all 0.3s; max-width: 200px">
+								<div class="osibox" ondrop="osiDrop(event)" ondragover="osiAllowDrop(event)" data-layer="3" style="border: 2px solid #333; border-radius: 4px; padding: 10px; min-width: 32%; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; transition: all 0.3s; max-width: 200px">
 									<div class="question-text" style="font-size: 16px; word-wrap: break-word; flex: 1;"><strong>Q5:</strong> Message routing across country with IP. Which layer?</div>
 									<div id="drop-box-3" class="drop-area" style="min-height: 70px; border: 2px dashed #999; background-color: #fafafa; display: flex; align-items: center; justify-content: center; border-radius: 4px;"></div>
 								</div>
 								<!-- Q6 -->
-								<div class="osibox" ondrop="drop(event)" ondragover="allowDrop(event)" data-layer="2" style="border: 2px solid #333; border-radius: 4px; padding: 10px; min-width: 32%; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; transition: all 0.3s; max-width: 200px">
+								<div class="osibox" ondrop="osiDrop(event)" ondragover="osiAllowDrop(event)" data-layer="2" style="border: 2px solid #333; border-radius: 4px; padding: 10px; min-width: 32%; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; transition: all 0.3s; max-width: 200px">
 									<div class="question-text" style="font-size: 16px; word-wrap: break-word; flex: 1;"><strong>Q6:</strong> Data on same LAN with MAC address. Which layer?</div>
 									<div id="drop-box-2" class="drop-area" style="min-height: 70px; border: 2px dashed #999; background-color: #fafafa; display: flex; align-items: center; justify-content: center; border-radius: 4px;"></div>
 								</div>
 								<!-- Q7 -->
-								<div class="osibox" ondrop="drop(event)" ondragover="allowDrop(event)" data-layer="1" style="border: 2px solid #333; border-radius: 4px; padding: 10px; min-width: 32%; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; transition: all 0.3s; max-width: 200px;">
-									<div class="question-text" style="font-size: 16px; word-wrap: break-word; flex: 1;"><strong>Q7:</strong> A student opens their web browser. Which layer initiates this?</div>
+								<div class="osibox" ondrop="osiDrop(event)" ondragover="osiAllowDrop(event)" data-layer="1" style="border: 2px solid #333; border-radius: 4px; padding: 10px; min-width: 32%; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; transition: all 0.3s; max-width: 200px;">
+									<div class="question-text" style="font-size: 16px; word-wrap: break-word; flex: 1;"><strong>Q7:</strong> Ethernet cable raw bits transmission. Which layer?</div>
 									<div id="drop-box-1" class="drop-area" style="min-height: 70px; border: 2px dashed #999; background-color: #fafafa; display: flex; align-items: center; justify-content: center; border-radius: 4px;"></div>
 								</div>
 							</div>
@@ -414,34 +413,27 @@
 						window.draggedImageSrc = null;
 						
 						// Randomize the order of OSI boxes on slide entry
-					function randomizeOSIBoxes() {
-						const container = document.getElementById('osiBoxContainer');
-						if (!container) return;
+						Reveal.addEventListener('slidechanged', function(event) {
+							if (event.currentSlide.querySelector('#osiBoxContainer')) {
+								randomizeOSIBoxes();
+							}
+						});
 						
-						const boxes = Array.from(container.querySelectorAll('.osibox'));
-						for (let i = boxes.length - 1; i > 0; i--) {
-							const j = Math.floor(Math.random() * (i + 1));
-							[boxes[i], boxes[j]] = [boxes[j], boxes[i]];
+						function randomizeOSIBoxes() {
+							const container = document.getElementById('osiBoxContainer');
+							if (!container) return;
+							
+							const boxes = Array.from(container.querySelectorAll('.osibox'));
+							for (let i = boxes.length - 1; i > 0; i--) {
+								const j = Math.floor(Math.random() * (i + 1));
+								[boxes[i], boxes[j]] = [boxes[j], boxes[i]];
+							}
+							
+							boxes.forEach(box => container.appendChild(box));
 						}
 						
-						boxes.forEach(box => container.appendChild(box));
-					}
-					
-					// Randomize when slide is shown
-					Reveal.addEventListener('slidechanged', function(event) {
-						if (event.currentSlide.querySelector('#osiBoxContainer')) {
-							randomizeOSIBoxes();
-						}
-					});
-					
-					// Also randomize on initial load
-					Reveal.addEventListener('ready', function(event) {
-						if (event.currentSlide.querySelector('#osiBoxContainer')) {
-							randomizeOSIBoxes();
-						}
-					});
 						// Drag handler - make it global
-						window.osiDrag = function(e) {
+						window.drag = function(e) {
 							console.log('DRAG STARTED!');
 							e.dataTransfer.effectAllowed = 'copy';
 							// Extract layer number from id (e.g., 'draglayer7' -> '7')
@@ -545,204 +537,43 @@
 							}
 						}
 					</script>
-				</section>
-				<section data-background="#fff" style="height: 100%;">
-				<h3>Activity 2 - Match OSI Layer</h3>
-				<div style="display: flex; flex-direction: row; height: 83%; gap: 10px; margin: 10px;">
-					<!-- Drag Source Box -->
-					<div style="flex: 0 0 15%; background-color: #f0f0f0; border: 3px solid #333; border-radius: 8px; padding: 10px; overflow-y: auto;">
-						<p style="font-size: 14px; font-weight: bold; margin: 5px 0;">Drag Layers:</p>
-						<div id="dragSourceBox2" style="display: flex; flex-direction: column; gap: 5px;">
-							<img id="draglayer2_1" src="images/networking/osi_application.svg" style="margin: 2px; cursor: move;" width="80" draggable="true" ondragstart="drag(event)">
-							<img id="draglayer2_2" src="images/networking/osi_presentation.svg" style="margin: 2px; cursor: move;" width="80" draggable="true" ondragstart="drag(event)">
-							<img id="draglayer2_3" src="images/networking/osi_session.svg" style="margin: 2px; cursor: move;" width="80" draggable="true" ondragstart="drag(event)">
-							<img id="draglayer2_4" src="images/networking/osi_transport.svg" style="margin: 2px; cursor: move;" width="80" draggable="true" ondragstart="drag(event)">
-							<img id="draglayer2_5" src="images/networking/osi_network.svg" style="margin: 2px; cursor: move;" width="80" draggable="true" ondragstart="drag(event)">
-							<img id="draglayer2_6" src="images/networking/osi_datalink.svg" style="margin: 2px; cursor: move;" width="80" draggable="true" ondragstart="drag(event)">
-							<img id="draglayer2_7" src="images/networking/osi_physical.svg" style="margin: 2px; cursor: move;" width="80" draggable="true" ondragstart="drag(event)">
-						</div>
-					</div>
-					<!-- Answer Boxes -->
-					<div style="flex: 1; padding: 10px;">
-						<p style="font-size: 14px; font-weight: bold; margin: 5px 0;">Drop Correct Layer Here:</p>
-						<div id="osiBoxContainer2" style="display: flex; flex-wrap: wrap; gap: 8px; align-content: flex-start;">
-							<!-- Q1 -->
-							<div class="osibox2" ondrop="drop(event)" ondragover="allowDrop(event)" data-layer="7" style="border: 2px solid #333; border-radius: 4px; padding: 10px; min-width: 32%; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; transition: all 0.3s; max-width: 200px;">
-								<div class="question-text" style="font-size: 16px; word-wrap: break-word; flex: 1;"><strong>Q1:</strong> DNS translates domain names to IP addresses. Which layer?</div>
-								<div id="drop-box2-7" class="drop-area" style="min-height: 70px; border: 2px dashed #999; background-color: #fafafa; display: flex; align-items: center; justify-content: center; border-radius: 4px;"></div>
-							</div>
-							<!-- Q2 -->
-							<div class="osibox2" ondrop="drop(event)" ondragover="allowDrop(event)" data-layer="4" style="border: 2px solid #333; border-radius: 4px; padding: 10px; min-width: 32%; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; transition: all 0.3s; max-width: 200px;">
-								<div class="question-text" style="font-size: 16px; word-wrap: break-word; flex: 1;"><strong>Q2:</strong> TCP/UDP manage data flow. Which layer?</div>
-								<div id="drop-box2-4" class="drop-area" style="min-height: 70px; border: 2px dashed #999; background-color: #fafafa; display: flex; align-items: center; justify-content: center; border-radius: 4px;"></div>
-							</div>
-							<!-- Q3 -->
-							<div class="osibox2" ondrop="drop(event)" ondragover="allowDrop(event)" data-layer="2" style="border: 2px solid #333; border-radius: 4px; padding: 10px; min-width: 32%; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; transition: all 0.3s; max-width: 200px;">
-								<div class="question-text" style="font-size: 16px; word-wrap: break-word; flex: 1;"><strong>Q3:</strong> Switches use MAC addresses. Which layer?</div>
-								<div id="drop-box2-2" class="drop-area" style="min-height: 70px; border: 2px dashed #999; background-color: #fafafa; display: flex; align-items: center; justify-content: center; border-radius: 4px;"></div>
-							</div>
-							<!-- Q4 -->
-							<div class="osibox2" ondrop="drop(event)" ondragover="allowDrop(event)" data-layer="3" style="border: 2px solid #333; border-radius: 4px; padding: 10px; min-width: 32%; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; transition: all 0.3s; max-width: 200px;">
-								<div class="question-text" style="font-size: 16px; word-wrap: break-word; flex: 1;"><strong>Q4:</strong> Routers determine best path using IP. Which layer?</div>
-								<div id="drop-box2-3" class="drop-area" style="min-height: 70px; border: 2px dashed #999; background-color: #fafafa; display: flex; align-items: center; justify-content: center; border-radius: 4px;"></div>
-							</div>
-							<!-- Q5 -->
-							<div class="osibox2" ondrop="drop(event)" ondragover="allowDrop(event)" data-layer="1" style="border: 2px solid #333; border-radius: 4px; padding: 10px; min-width: 32%; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; transition: all 0.3s; max-width: 200px">
-								<div class="question-text" style="font-size: 16px; word-wrap: break-word; flex: 1;"><strong>Q5:</strong> Fiber optic cables transmit light signals. Which layer?</div>
-								<div id="drop-box2-1" class="drop-area" style="min-height: 70px; border: 2px dashed #999; background-color: #fafafa; display: flex; align-items: center; justify-content: center; border-radius: 4px;"></div>
-							</div>
-							<!-- Q6 -->
-							<div class="osibox2" ondrop="drop(event)" ondragover="allowDrop(event)" data-layer="7" style="border: 2px solid #333; border-radius: 4px; padding: 10px; min-width: 32%; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; transition: all 0.3s; max-width: 200px">
-								<div class="question-text" style="font-size: 16px; word-wrap: break-word; flex: 1;"><strong>Q6:</strong> SMTP sends emails. Which layer?</div>
-								<div id="drop-box2-7" class="drop-area" style="min-height: 70px; border: 2px dashed #999; background-color: #fafafa; display: flex; align-items: center; justify-content: center; border-radius: 4px;"></div>
-							</div>
-							<!-- Q7 -->
-							<div class="osibox2" ondrop="drop(event)" ondragover="allowDrop(event)" data-layer="6" style="border: 2px solid #333; border-radius: 4px; padding: 10px; min-width: 32%; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; transition: all 0.3s; max-width: 200px;">
-								<div class="question-text" style="font-size: 16px; word-wrap: break-word; flex: 1;"><strong>Q7:</strong> JPEG compression encodes images. Which layer?</div>
-								<div id="drop-box2-6" class="drop-area" style="min-height: 70px; border: 2px dashed #999; background-color: #fafafa; display: flex; align-items: center; justify-content: center; border-radius: 4px;"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<script>
-					// Make functions global so inline handlers can access them
-					window.draggedLayerNumber2 = null;
-					window.draggedImageSrc2 = null;
-					
-					// Randomize the order of OSI boxes on slide entry
-				function randomizeOSIBoxes2() {
-					const container = document.getElementById('osiBoxContainer2');
-					if (!container) return;
-					
-					const boxes = Array.from(container.querySelectorAll('.osibox2'));
-					for (let i = boxes.length - 1; i > 0; i--) {
-						const j = Math.floor(Math.random() * (i + 1));
-						[boxes[i], boxes[j]] = [boxes[j], boxes[i]];
-					}
-					
-					boxes.forEach(box => container.appendChild(box));
-				}
-				
-				// Randomize when slide is shown
-				Reveal.addEventListener('slidechanged', function(event) {
-					if (event.currentSlide.querySelector('#osiBoxContainer2')) {
-						randomizeOSIBoxes2();
-					}
-				});
-				
-				// Also randomize on initial load
-				Reveal.addEventListener('ready', function(event) {
-					if (event.currentSlide.querySelector('#osiBoxContainer2')) {
-						randomizeOSIBoxes2();
-					}
-				});
-					// Drag handler - make it global
-					window.osiDrag2 = function(e) {
-						console.log('DRAG STARTED!');
-						e.dataTransfer.effectAllowed = 'copy';
-						// Extract layer number from id (e.g., 'draglayer2_7' -> '7')
-						window.draggedLayerNumber2 = e.target.id.replace('draglayer2_', '');
-						window.draggedImageSrc2 = e.target.src;
-						e.dataTransfer.setData('text/plain', window.draggedLayerNumber2);
-						console.log('Dragging layer: ' + window.draggedLayerNumber2);
-					}
-					
-					// Allow drop - make it global
-					window.allowDrop = function(e) {
-						e.preventDefault();
-						e.dataTransfer.dropEffect = 'copy';
-					}
-					
-					// Drop event handler with validation - make it global
-					window.drop = function(e) {
-						console.log('DROP EVENT TRIGGERED!');
-						e.preventDefault();
-						e.stopPropagation();
-						
-						// Get the box that received the drop - must be the osibox element
-						let droppedBox = e.currentTarget;
-						
-						// Make sure we have the osibox element
-						if (!droppedBox || (!droppedBox.classList.contains('osibox') && !droppedBox.classList.contains('osibox2'))) {
-							droppedBox = e.target.closest('.osibox, .osibox2');
-						}
-						
-						if (!droppedBox) {
-							console.log('No dropped box found');
-							return;
-						}
-						
-						const correctLayer = droppedBox.getAttribute('data-layer');
-						const draggedLayer = droppedBox.classList.contains('osibox2') ? window.draggedLayerNumber2 : window.draggedLayerNumber;
-						const draggedImageSrc = droppedBox.classList.contains('osibox2') ? window.draggedImageSrc2 : window.draggedImageSrc;
-						
-						console.log('Dropped layer: ' + draggedLayer + ', Expected layer: ' + correctLayer);
-						
-						// Find the drop box container within this osibox
-						const dropBoxContainer = droppedBox.querySelector('[id^="drop-box"]');
-						
-						// Create and display the dragged image with indicator
-						if (dropBoxContainer) {
-							dropBoxContainer.innerHTML = '';
-							
-							// Create container for image and indicator
-							const container = document.createElement('div');
-							container.style.position = 'relative';
-							container.style.display = 'inline-block';
-							
-							const img = document.createElement('img');
-							img.src = draggedImageSrc;
-							img.style.width = '70px';
-							img.style.height = 'auto';
-							container.appendChild(img);
-							
-							// Create indicator icon
-							const indicator = document.createElement('div');
-							indicator.style.position = 'absolute';
-							indicator.style.top = '-10px';
-							indicator.style.right = '-10px';
-							indicator.style.width = '30px';
-							indicator.style.height = '30px';
-							indicator.style.borderRadius = '50%';
-							indicator.style.display = 'flex';
-							indicator.style.alignItems = 'center';
-							indicator.style.justifyContent = 'center';
-							indicator.style.fontWeight = 'bold';
-							indicator.style.fontSize = '18px';
-							indicator.style.boxShadow = '0 2px 4px rgba(0,0,0,0.3)';
-							
-							// Check if correct and set indicator
-							if (draggedLayer === correctLayer) {
-								indicator.style.backgroundColor = '#228B22';
-								indicator.style.color = 'white';
-								indicator.innerHTML = '✓';
-								indicator.title = 'Correct!';
+								droppedBox.style.setProperty('background-color', '#90EE90', 'important');
+								droppedBox.style.setProperty('border-color', '#228B22', 'important');
+								droppedBox.style.setProperty('border-width', '3px', 'important');
 							} else {
-								indicator.style.backgroundColor = '#DC143C';
-								indicator.style.color = 'white';
-								indicator.innerHTML = '✗';
-								indicator.title = 'Incorrect';
+								console.log('INCORRECT MATCH!');
+								droppedBox.style.setProperty('background-color', '#FFB6C6', 'important');
+								droppedBox.style.setProperty('border-color', '#DC143C', 'important');
+								droppedBox.style.setProperty('border-width', '3px', 'important');
 							}
+						}
+					</script>
+				</section>
+				<section data-background="#fff">
+					<h3>Activity - Determine the Network</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #fff; color: #111;">
 							
-							container.appendChild(indicator);
-							dropBoxContainer.appendChild(container);
-						}
-						
-						// Check if the correct layer was dropped and apply styling with !important
-						if (draggedLayer === correctLayer) {
-							console.log('CORRECT MATCH!');
-							droppedBox.style.setProperty('background-color', '#90EE90', 'important');
-							droppedBox.style.setProperty('border-color', '#228B22', 'important');
-							droppedBox.style.setProperty('border-width', '3px', 'important');
-						} else {
-							console.log('INCORRECT MATCH!');
-							droppedBox.style.setProperty('background-color', '#FFB6C6', 'important');
-							droppedBox.style.setProperty('border-color', '#DC143C', 'important');
-							droppedBox.style.setProperty('border-width', '3px', 'important');
-						}
-					}
-				</script>
-			</section>	
+							<p style="font-size: 28px">Match the network below to the correct descriptive box on the right.</p>
+							<img id="drag1" src="images/networking/han.PNG" style="margin: 2px;" width="100" draggable="true" ondragstart="drag(event)">
+							<img id="drag2" src="images/networking/lan.PNG" style="margin: 2px;" width="97" draggable="true" ondragstart="drag(event)">
+							<img id="drag3" src="images/networking/man.PNG" style="margin: 2px;" width="100" draggable="true" ondragstart="drag(event)">
+							<img id="drag4" src="images/networking/pan.PNG" style="margin: 2px;" width="97" draggable="true" ondragstart="drag(event)">
+							<img id="drag5" src="images/networking/wan.PNG" style="margin: 2px;" width="100" draggable="true" ondragstart="drag(event)">
+						</div>
+						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #fff;  color: #111;">
+							<div id="div1" ondrop="drop(event)" style=" font-size: 15px; background-position: center; border: 2px solid #333; margin-top: 5px; min-height: 50px;" ondragover="allowDrop(event)">spans a city or large campus - efficient data transfer across a metro. region. Used by businesses or government entities</div>
+							<div id="div2" ondrop="drop(event)" style=" font-size: 15px;  background-position: center; border: 2px solid #333; margin-top: 5px; min-height: 50px;" ondragover="allowDrop(event)">Connects devices within a limited area, such as a home, school, office - offers high-speed connectivity and often managed by a single org.</div>
+							<div id="div3" ondrop="drop(event)" style=" font-size: 15px;  background-position: center; border: 2px solid #333; margin-top: 5px; min-height: 50px;" ondragover="allowDrop(event)">small network within a short range - Typical devices include smartphones, tablets - transmission bia Bluetooth or USB</div>
+							<div id="div4" ondrop="drop(event)" style=" font-size: 15px; background-position: center; border: 2px solid #333; margin-top: 5px; min-height: 50px;" ondragover="allowDrop(event)">covers large geographic area such as a country or even globally - The internet is the largest example.</div>
+							<div id="div5" ondrop="drop(event)" style=" font-size: 15px; background-position: center; border: 2px solid #333; margin-top: 5px; min-height: 50px;" ondragover="allowDrop(event)">covers a single building - enables devices to share resources like files, printers and  </div>
+
+						</div>
+
+
+					</div>
+
+				</section>			
 				<!--<section data-background="#eeeeee" style="background-size: 80%; top: 119px; display: block;" class="has-light-background present">
 					<h4>What happens at each layer?</h4>
 					<p style="background-color:rgba(255, 255, 255, 0.7); color: black; font-size: .48em;" class="fragment" data-fragment-index="0"><strong>1. Select Datasource option </strong>-> Click on the new datasource plus sign in left column and select <strong>'REST API'</strong> </p>
