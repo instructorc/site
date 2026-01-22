@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<meta name="description" content="Instructor Fulton's Introduction to Networking">
+		<meta name="description" content="Instructor Fulton's Introduction to Networking: TCP/IP ">
 		<meta name="author" content="C. Fulton">
 
 		<meta name="mobile-web-app-capable" content="yes">
@@ -96,13 +96,9 @@
 				<section data-background="rgb(246, 246, 246)">
 				    <h3>Learning Objectives</h3>
 				    <ul style="font-size: 28px;">
-						<li>Identify different types of networks and the various topologies</li>
+						<li>Analyze different types of networks addresses</li>
 						<ul>
-							<li>What is a Network?</li>
-							<ul>
-								<li>Understanding PAN, LAN, WAN, MAN, HAN</li>
-								
-							</ul>
+							<li>What is the difference between physical and logical addresses</li>
 							<li>What are the different types of network topologies?</li>
 							<ul>
 								<li>Bus, Star, Ring, Mesh, Wireless, Hybrid topology</li>
@@ -129,20 +125,20 @@
 					<h3 style="background-color:rgba(255, 255, 255, 0.7); color: black;">Key Network Terminology </h3>
 					<!--<p style="background-color:rgba(255, 255, 255, 0.7);  font-size: .8em; color: black;" class="fragment"> a method of providing <strong>shared computing resources</strong>, including applications, computing, storage, networking, development, and deployment platforms as well as business processes. </p>-->
 					<div id="flexcontain" class="fragment">
-						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">PAN,LAN,WAN,MAN,HAN </h3></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">Client/Server network</h3></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">Bus, Ring, Star, <br>Mesh Topology</h3></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">Bridge</h3></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">Router</h3></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">Switch</h3></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">Packet</h3></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">Protocols</h3></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">TCP/IP</h3></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">Network Address</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">Logical/Physical Address</h3></div>
 						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">MAC Address</h3></div>
 						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">IP Address</h3></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">Network Interface Card </h3></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">Passive/Active Hub</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">IPv4</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">IPv6</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">Well-known Port</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">Registered Port</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">Ephemeral Port</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">TCP Port</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">UDP Port</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">Socket</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">Organizationally unique identifier (OUI)</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">Device ID</h3></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">MAC table</h3></div>
 						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><h3 style="margin-top: 8px;">Gateway</h3></div>
 					</div>
 				</section>
