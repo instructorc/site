@@ -212,33 +212,83 @@
 					<h4></h4>
 					<img src="images/tcp_ip/traffic_types.PNG" width="760" style="box-shadow: none; border: none;"alt="image of IPv6 traffic types">
 				</section>
-			<!--<section data-background="#fff">
-				<h3>Activity - Determine the Network</h3>
+				<section data-background="images/networking/networking_bg.png">
+					<h1 id="boxstyle">Network Protocols</h1>
+					
+				</section>
+				<section data-background="white" style="background-size: 80%;">
+					<h3 style="background-color:rgba(255, 255, 255, 0.7); ">Key Terminology </h3>
+					<!--<p style="background-color:rgba(255, 255, 255, 0.7);  font-size: .8em; color: black;" class="fragment"> a method of providing <strong>shared computing resources</strong>, including applications, computing, storage, networking, development, and deployment platforms as well as business processes. </p>-->
+					<div id="flexcontain" class="fragment">
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Proprietary & Standard Protocol</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Port</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Socket</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">IPv4</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">IPv6</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Subnet Mask</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Distance Vector Protocol</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Classful addressing</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Static/Dynamic IP Address</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Public/Privae IP Address</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">loopback/localhost address</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Organizationally unique identifier (OUI)</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Device ID</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">MAC table</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Gateway</p></div>
+					</div>
+				</section>
+				<section data-background="rgb(242 245 249)">
+					<h3>What is a protocol?</h3>
+					<p style="font-size: 22px;">A set of agreed-upon rules and standards that define how devices communicate over a network</p>
+					<img src="images/tcp_ip/network_protocol_defined.png" width="650" style="box-shadow: none; border: none;"alt="image defining key factors that make up a network protocol">
+					<p style="font-size: 18px;">Various Tech. Orgs. define standard protocols: The Institute of Electrical and Electronics Engineers (IEEE), the Internet Engineering Task Force (IETF), the International Organization for Standardization (ISO), the International telecommunications Union (ITU), The World Wide Web Consortium (W3C)</p>
+				</section>
+				<section data-background="images/cgt/images_where.jpg">
+					<h3 style="text-shadow: 4px 7px 10px #333;">What is a port?</h3>
+					<p style="font-size: 22px;">A port is a numbered communication endpoint on a device that identifies which application or service should receive network data.</p>
+					
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 12px; padding-top: 20px; border-radius: 100px; height: 200px; background-color: white; color: #333; "><h3 style="color:red;">Range</h3><strong>Identified by numbers from 0 to 65,535</strong> <br> Well Known ports: 0 - 1023 <br>Registered ports: 1024 - 49,151 <br>Dynamic/ Private ports: 49,152 - 65,535</div>
+						<div class="box blue" style="font-size: 20px; margin: 12px; padding-top: 20px; border-radius: 100px; height: 200px; background-color: white; color: #333;"><h3 style="color:red;">Protocols</h3><strong>Works with protocols like TCP and UDP</strong> <br> IP address = street address <br> Port Number = Specific Office</div>
+
+					</div>
+					<p style="text-shadow: 4px 7px 10px #333;">a port directs incoming and outgoing network traffic to the correct application.</p> 
+				</section>
+			<section data-background="#fff">
+				<h3 style="margin-bottom: 10px;">Activity - Match Services to IP Addresses and Ports</h3>
 				<div id="flexcontain">
-					<div class="box red" style="font-size: 20px; margin: 10px; background-color: #fff; color: #111;">
+					<div class="box red" style="font-size: 18px; margin: 5px; background-color: #fff; color: #111; flex: 1;">
 						
-						<p style="font-size: 28px">Match the network below to the correct descriptive box on the right.</p>
-						<img id="drag1" src="images/networking/han.PNG" style="margin: 2px;" width="100" draggable="true" ondragstart="drag(event)">
-						<img id="drag2" src="images/networking/lan.PNG" style="margin: 2px;" width="97" draggable="true" ondragstart="drag(event)">
-						<img id="drag3" src="images/networking/man.PNG" style="margin: 2px;" width="100" draggable="true" ondragstart="drag(event)">
-						<img id="drag4" src="images/networking/pan.PNG" style="margin: 2px;" width="97" draggable="true" ondragstart="drag(event)">
-						<img id="drag5" src="images/networking/wan.PNG" style="margin: 2px;" width="100" draggable="true" ondragstart="drag(event)">
+						<p style="font-size: 18px; margin-bottom: 8px;">Drag each service to its correct IP address and port number.</p>
+						<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 5px;">
+							<img id="service1" src="images/services/ftp.svg" style="margin: 2px; cursor: move;" width="90" draggable="true" ondragstart="drag(event)">
+							<img id="service2" src="images/services/sftp.svg" style="margin: 2px; cursor: move;" width="90" draggable="true" ondragstart="drag(event)">
+							<img id="service3" src="images/services/ssh.svg" style="margin: 2px; cursor: move;" width="90" draggable="true" ondragstart="drag(event)">
+							<img id="service4" src="images/services/smtp.svg" style="margin: 2px; cursor: move;" width="90" draggable="true" ondragstart="drag(event)">
+							<img id="service5" src="images/services/dns.svg" style="margin: 2px; cursor: move;" width="90" draggable="true" ondragstart="drag(event)">
+							<img id="service6" src="images/services/http.svg" style="margin: 2px; cursor: move;" width="90" draggable="true" ondragstart="drag(event)">
+							<img id="service7" src="images/services/pop3.svg" style="margin: 2px; cursor: move;" width="90" draggable="true" ondragstart="drag(event)">
+							<img id="service8" src="images/services/imap.svg" style="margin: 2px; cursor: move;" width="90" draggable="true" ondragstart="drag(event)">
+							<img id="service9" src="images/services/https.svg" style="margin: 2px; cursor: move;" width="90" draggable="true" ondragstart="drag(event)">
+							<img id="service10" src="images/services/rdp.svg" style="margin: 2px; cursor: move;" width="90" draggable="true" ondragstart="drag(event)">
+						</div>
 					</div>
-					<div class="box red" style="font-size: 18px; margin: 10px; background-color: #fff;  color: #111;">
-						<div id="div1" ondrop="drop(event)" style=" font-size: 15px; background-position: center; border: 2px solid #333; margin-top: 5px; min-height: 50px;" ondragover="allowDrop(event)">spans a city or large campus - efficient data transfer across a metro. region. Used by businesses or government entities</div>
-						<div id="div2" ondrop="drop(event)" style=" font-size: 15px;  background-position: center; border: 2px solid #333; margin-top: 5px; min-height: 50px;" ondragover="allowDrop(event)">Connects devices within a limited area, such as a home, school, office - offers high-speed connectivity and often managed by a single org.</div>
-						<div id="div3" ondrop="drop(event)" style=" font-size: 15px;  background-position: center; border: 2px solid #333; margin-top: 5px; min-height: 50px;" ondragover="allowDrop(event)">small network within a short range - Typical devices include smartphones, tablets - transmission bia Bluetooth or USB</div>
-						<div id="div4" ondrop="drop(event)" style=" font-size: 15px; background-position: center; border: 2px solid #333; margin-top: 5px; min-height: 50px;" ondragover="allowDrop(event)">covers large geographic area such as a country or even globally - The internet is the largest example.</div>
-						<div id="div5" ondrop="drop(event)" style=" font-size: 15px; background-position: center; border: 2px solid #333; margin-top: 5px; min-height: 50px;" ondragover="allowDrop(event)">covers a single building - enables devices to share resources like files, printers and  </div>
-
+					<div class="box red" style="font-size: 13px; margin: 5px; background-color: #fff; color: #111; flex: 1; overflow-y: auto; max-height: 600px;">
+						<div id="target1" ondrop="drop(event)" style="font-size: 11px; font-weight: bold; background-color: #f0f0f0; background-position: center; border: 2px dashed #4CAF50; margin-top: 3px; min-height: 40px; padding: 5px; border-radius: 4px; display: flex; align-items: center; justify-content: center;" ondragover="allowDrop(event)">192.168.1.10:21 - File Transfer Protocol</div>
+						<div id="target2" ondrop="drop(event)" style="font-size: 11px; font-weight: bold; background-color: #f0f0f0; background-position: center; border: 2px dashed #2196F3; margin-top: 3px; min-height: 40px; padding: 5px; border-radius: 4px; display: flex; align-items: center; justify-content: center;" ondragover="allowDrop(event)">10.0.0.25:22 - Secure File Transfer Protocol</div>
+						<div id="target3" ondrop="drop(event)" style="font-size: 11px; font-weight: bold; background-color: #f0f0f0; background-position: center; border: 2px dashed #607D8B; margin-top: 3px; min-height: 40px; padding: 5px; border-radius: 4px; display: flex; align-items: center; justify-content: center;" ondragover="allowDrop(event)">172.16.5.100:22 - Secure Shell (Remote Access)</div>
+						<div id="target4" ondrop="drop(event)" style="font-size: 11px; font-weight: bold; background-color: #f0f0f0; background-position: center; border: 2px dashed #FF9800; margin-top: 3px; min-height: 40px; padding: 5px; border-radius: 4px; display: flex; align-items: center; justify-content: center;" ondragover="allowDrop(event)">192.168.0.50:25 - Simple Mail Transfer Protocol</div>
+						<div id="target5" ondrop="drop(event)" style="font-size: 11px; font-weight: bold; background-color: #f0f0f0; background-position: center; border: 2px dashed #9C27B0; margin-top: 3px; min-height: 40px; padding: 5px; border-radius: 4px; display: flex; align-items: center; justify-content: center;" ondragover="allowDrop(event)">8.8.8.8:53 - Domain Name System</div>
+						<div id="target6" ondrop="drop(event)" style="font-size: 11px; font-weight: bold; background-color: #f0f0f0; background-position: center; border: 2px dashed #F44336; margin-top: 3px; min-height: 40px; padding: 5px; border-radius: 4px; display: flex; align-items: center; justify-content: center;" ondragover="allowDrop(event)">192.168.1.1:80 - Hypertext Transfer Protocol</div>
+						<div id="target7" ondrop="drop(event)" style="font-size: 11px; font-weight: bold; background-color: #f0f0f0; background-position: center; border: 2px dashed #00BCD4; margin-top: 3px; min-height: 40px; padding: 5px; border-radius: 4px; display: flex; align-items: center; justify-content: center;" ondragover="allowDrop(event)">10.10.10.5:110 - Post Office Protocol v3</div>
+						<div id="target8" ondrop="drop(event)" style="font-size: 11px; font-weight: bold; background-color: #f0f0f0; background-position: center; border: 2px dashed #3F51B5; margin-top: 3px; min-height: 40px; padding: 5px; border-radius: 4px; display: flex; align-items: center; justify-content: center;" ondragover="allowDrop(event)">172.20.1.15:143 - Internet Message Access Protocol</div>
+						<div id="target9" ondrop="drop(event)" style="font-size: 11px; font-weight: bold; background-color: #f0f0f0; background-position: center; border: 2px dashed #E91E63; margin-top: 3px; min-height: 40px; padding: 5px; border-radius: 4px; display: flex; align-items: center; justify-content: center;" ondragover="allowDrop(event)">192.168.1.100:443 - HTTP Secure (Encrypted)</div>
+						<div id="target10" ondrop="drop(event)" style="font-size: 11px; font-weight: bold; background-color: #f0f0f0; background-position: center; border: 2px dashed #795548; margin-top: 3px; min-height: 40px; padding: 5px; border-radius: 4px; display: flex; align-items: center; justify-content: center;" ondragover="allowDrop(event)">10.0.5.20:3389 - Remote Desktop Protocol</div>
 					</div>
-
-
 				</div>
-
 			</section>
 
-			<section data-background="#fff">
+			<!--<section data-background="#fff">
 					<h4>Why Different Typologies?</h4>
 					
 					<div id="flexcontain">
