@@ -223,18 +223,18 @@
 						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Proprietary & Standard Protocol</p></div>
 						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Port</p></div>
 						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Socket</p></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">IPv4</p></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">IPv6</p></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Subnet Mask</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Encapsulation</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Segmentation</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Error Control</p></div>
 						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Distance Vector Protocol</p></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Classful addressing</p></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Static/Dynamic IP Address</p></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Public/Privae IP Address</p></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">loopback/localhost address</p></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Organizationally unique identifier (OUI)</p></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Device ID</p></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">MAC table</p></div>
-						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Gateway</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Convergence</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Interior Gateway Protocols</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Exterior Gateway Protocols</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Link State Protocol</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Internet Control Message Protocol (ICMP) </p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Communication Protocol</p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Simple network management protocol (SNMP) </p></div>
+						<div class="box" style="font-size: 24px; margin: 10px; height: 70px; background-color: #eee;"><p style="margin-top: 8px;">Address Resolution Protocol (ARP)</p></div>
 					</div>
 				</section>
 				<section data-background="rgb(242 245 249)">
@@ -255,7 +255,7 @@
 					<p style="text-shadow: 4px 7px 10px #333;">a port directs incoming and outgoing network traffic to the correct application.</p> 
 				</section>
 			<section data-background="#fff">
-				<h3 style="margin-bottom: 10px;">Activity - Match Services to IP Addresses and Ports</h3>
+				<h3 style="margin-bottom: 10px;">Activity - Match Services to Port</h3>
 				<div id="flexcontain">
 					<div class="box red" style="font-size: 18px; margin: 5px; background-color: #fff; color: #111; flex: 1;">
 						
@@ -273,17 +273,17 @@
 							<img id="service10" src="images/services/rdp.svg" style="margin: 2px; cursor: move;" width="90" draggable="true" ondragstart="drag(event)">
 						</div>
 					</div>
-					<div class="box red" style="font-size: 13px; margin: 5px; background-color: #fff; color: #111; flex: 1; overflow-y: auto; max-height: 600px;">
-						<div id="target1" ondrop="drop(event)" style="font-size: 11px; font-weight: bold; background-color: #f0f0f0; background-position: center; border: 2px dashed #4CAF50; margin-top: 3px; min-height: 40px; padding: 5px; border-radius: 4px; display: flex; align-items: center; justify-content: center;" ondragover="allowDrop(event)">192.168.1.10:21 - File Transfer Protocol</div>
-						<div id="target2" ondrop="drop(event)" style="font-size: 11px; font-weight: bold; background-color: #f0f0f0; background-position: center; border: 2px dashed #2196F3; margin-top: 3px; min-height: 40px; padding: 5px; border-radius: 4px; display: flex; align-items: center; justify-content: center;" ondragover="allowDrop(event)">10.0.0.25:22 - Secure File Transfer Protocol</div>
-						<div id="target3" ondrop="drop(event)" style="font-size: 11px; font-weight: bold; background-color: #f0f0f0; background-position: center; border: 2px dashed #607D8B; margin-top: 3px; min-height: 40px; padding: 5px; border-radius: 4px; display: flex; align-items: center; justify-content: center;" ondragover="allowDrop(event)">172.16.5.100:22 - Secure Shell (Remote Access)</div>
-						<div id="target4" ondrop="drop(event)" style="font-size: 11px; font-weight: bold; background-color: #f0f0f0; background-position: center; border: 2px dashed #FF9800; margin-top: 3px; min-height: 40px; padding: 5px; border-radius: 4px; display: flex; align-items: center; justify-content: center;" ondragover="allowDrop(event)">192.168.0.50:25 - Simple Mail Transfer Protocol</div>
-						<div id="target5" ondrop="drop(event)" style="font-size: 11px; font-weight: bold; background-color: #f0f0f0; background-position: center; border: 2px dashed #9C27B0; margin-top: 3px; min-height: 40px; padding: 5px; border-radius: 4px; display: flex; align-items: center; justify-content: center;" ondragover="allowDrop(event)">8.8.8.8:53 - Domain Name System</div>
-						<div id="target6" ondrop="drop(event)" style="font-size: 11px; font-weight: bold; background-color: #f0f0f0; background-position: center; border: 2px dashed #F44336; margin-top: 3px; min-height: 40px; padding: 5px; border-radius: 4px; display: flex; align-items: center; justify-content: center;" ondragover="allowDrop(event)">192.168.1.1:80 - Hypertext Transfer Protocol</div>
-						<div id="target7" ondrop="drop(event)" style="font-size: 11px; font-weight: bold; background-color: #f0f0f0; background-position: center; border: 2px dashed #00BCD4; margin-top: 3px; min-height: 40px; padding: 5px; border-radius: 4px; display: flex; align-items: center; justify-content: center;" ondragover="allowDrop(event)">10.10.10.5:110 - Post Office Protocol v3</div>
-						<div id="target8" ondrop="drop(event)" style="font-size: 11px; font-weight: bold; background-color: #f0f0f0; background-position: center; border: 2px dashed #3F51B5; margin-top: 3px; min-height: 40px; padding: 5px; border-radius: 4px; display: flex; align-items: center; justify-content: center;" ondragover="allowDrop(event)">172.20.1.15:143 - Internet Message Access Protocol</div>
-						<div id="target9" ondrop="drop(event)" style="font-size: 11px; font-weight: bold; background-color: #f0f0f0; background-position: center; border: 2px dashed #E91E63; margin-top: 3px; min-height: 40px; padding: 5px; border-radius: 4px; display: flex; align-items: center; justify-content: center;" ondragover="allowDrop(event)">192.168.1.100:443 - HTTP Secure (Encrypted)</div>
-						<div id="target10" ondrop="drop(event)" style="font-size: 11px; font-weight: bold; background-color: #f0f0f0; background-position: center; border: 2px dashed #795548; margin-top: 3px; min-height: 40px; padding: 5px; border-radius: 4px; display: flex; align-items: center; justify-content: center;" ondragover="allowDrop(event)">10.0.5.20:3389 - Remote Desktop Protocol</div>
+					<div class="box red" style="font-size: 13px; margin: 5px; background-color: #fff; color: #111; flex: 1; float: left;">
+						<div id="target1" ondrop="drop(event)" style="font-size: 11px; min-width: 200px; float: left; max-width: 215px; font-weight: bold; background-color: #f0f0f0; background-position: center; border: 2px dashed #4CAF50; margin-top: 3px; min-height: 40px; padding: 5px; border-radius: 4px; display: flex; align-items: center; justify-content: center;" ondragover="allowDrop(event)">192.168.1.10:21 </div>
+						<div id="target2" ondrop="drop(event)" style="font-size: 11px; min-width: 200px; float: left; max-width: 215px; font-weight: bold; background-color: #f0f0f0; background-position: center; border: 2px dashed #2196F3; margin-top: 3px; min-height: 40px; padding: 5px; border-radius: 4px; display: flex; align-items: center; justify-content: center;" ondragover="allowDrop(event)">10.0.0.25:22 </div>
+						<div id="target3" ondrop="drop(event)" style="font-size: 11px; min-width: 200px; float: left; max-width: 215px; font-weight: bold; background-color: #f0f0f0; background-position: center; border: 2px dashed #607D8B; margin-top: 3px; min-height: 40px; padding: 5px; border-radius: 4px; display: flex; align-items: center; justify-content: center;" ondragover="allowDrop(event)">172.16.5.100:22 </div>
+						<div id="target4" ondrop="drop(event)" style="font-size: 11px; min-width: 200px; float: left; max-width: 215px; font-weight: bold; background-color: #f0f0f0; background-position: center; border: 2px dashed #FF9800; margin-top: 3px; min-height: 40px; padding: 5px; border-radius: 4px; display: flex; align-items: center; justify-content: center;" ondragover="allowDrop(event)">192.168.0.50:25 </div>
+						<div id="target5" ondrop="drop(event)" style="font-size: 11px; min-width: 200px; float: left; max-width: 215px; font-weight: bold; background-color: #f0f0f0; background-position: center; border: 2px dashed #9C27B0; margin-top: 3px; min-height: 40px; padding: 5px; border-radius: 4px; display: flex; align-items: center; justify-content: center;" ondragover="allowDrop(event)">8.8.8.8:53 </div>
+						<div id="target6" ondrop="drop(event)" style="font-size: 11px; min-width: 200px; float: left; max-width: 215px; font-weight: bold; background-color: #f0f0f0; background-position: center; border: 2px dashed #F44336; margin-top: 3px; min-height: 40px; padding: 5px; border-radius: 4px; display: flex; align-items: center; justify-content: center;" ondragover="allowDrop(event)">192.168.1.1:80 </div>
+						<div id="target7" ondrop="drop(event)" style="font-size: 11px; min-width: 200px; float: left; max-width: 215px; font-weight: bold; background-color: #f0f0f0; background-position: center; border: 2px dashed #00BCD4; margin-top: 3px; min-height: 40px; padding: 5px; border-radius: 4px; display: flex; align-items: center; justify-content: center;" ondragover="allowDrop(event)">10.10.10.5:110 </div>
+						<div id="target8" ondrop="drop(event)" style="font-size: 11px; min-width: 200px; float: left; max-width: 215px; font-weight: bold; background-color: #f0f0f0; background-position: center; border: 2px dashed #3F51B5; margin-top: 3px; min-height: 40px; padding: 5px; border-radius: 4px; display: flex; align-items: center; justify-content: center;" ondragover="allowDrop(event)">172.20.1.15:143 </div>
+						<div id="target9" ondrop="drop(event)" style="font-size: 11px; min-width: 200px; float: left; max-width: 215px; font-weight: bold; background-color: #f0f0f0; background-position: center; border: 2px dashed #E91E63; margin-top: 3px; min-height: 40px; padding: 5px; border-radius: 4px; display: flex; align-items: center; justify-content: center;" ondragover="allowDrop(event)">192.168.1.100:443</div>
+						<div id="target10" ondrop="drop(event)" style="font-size: 11px; min-width: 200px; float:left; max-width: 215px; font-weight: bold; background-color: #f0f0f0; background-position: center; border: 2px dashed #795548; margin-top: 3px; min-height: 40px; padding: 5px; border-radius: 4px; display: flex; align-items: center; justify-content: center;" ondragover="allowDrop(event)">10.0.5.20:3389</div>
 					</div>
 				</div>
 			</section>

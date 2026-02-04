@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Slide Deck Search</title>
+        <style>
+            :root {
+                color-scheme: light;
+                --bg: #f7f8fb;
+                --card: #ffffff;
+                --text: #1f2937;
+                --muted: #6b7280;
+                --accent: #2563eb;
+                --accent-2: #7c3aed;
+                --shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+                --radius: 18px;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+                background: radial-gradient(circle at top, #eef2ff 0%, var(--bg) 50%, #f8fafc 100%);
+                color: var(--text);
+                min-height: 100vh;
+            }
+
+            header {
+                padding: 48px 24px 32px;
+                text-align: center;
+            }
+
+            header h1 {
+                font-size: clamp(2rem, 3vw + 1.2rem, 3.5rem);
+                margin: 0 0 10px;
+                letter-spacing: -0.02em;
+            }
+
+            header p {
+                margin: 0;
+                color: var(--muted);
+                font-size: 1.05rem;
+            }
+
+            .controls {
+                max-width: 1100px;
+                margin: 0 auto 28px;
+                padding: 0 24px;
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                gap: 16px;
+            }
+
+            .field {
+                background: var(--card);
+                border-radius: var(--radius);
+                box-shadow: var(--shadow);
+                padding: 14px 18px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .field label {
+                font-weight: 600;
+                color: var(--muted);
+                font-size: 0.95rem;
+            }
+
+            .field input,
+            .field select {
+                border: none;
+                outline: none;
+                font-size: 1rem;
+                width: 100%;
+                background: transparent;
+                color: var(--text);
+            }
+
+            .count {
+                text-align: right;
+                max-width: 1100px;
+                margin: 0 auto 8px;
+                padding: 0 24px;
+                color: var(--muted);
+                font-size: 0.95rem;
+            }
+
+            main {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 24px 48px;
+            }
+
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                gap: 20px;
+            }
+
+            .card {
+                background: var(--card);
+                border-radius: var(--radius);
+                padding: 20px;
+                box-shadow: var(--shadow);
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                text-decoration: none;
+                color: inherit;
+                position: relative;
+                overflow: hidden;
+                transform: translateY(8px);
+                opacity: 0;
+                animation: floatIn 500ms ease forwards;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                transition: background-image 300ms ease;
+            }
+
+            .card.card--image {
+                background-blend-mode: lighten;
+            }
+
+            .card::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(124, 58, 237, 0.08));
+                opacity: 0;
+                transition: opacity 250ms ease;
+            }
+
+            .card:hover::before,
+            .card:focus-visible::before {
+                opacity: 1;
+            }
+
+            .card:hover,
+            .card:focus-visible {
+                transform: translateY(-4px) scale(1.01);
+                transition: transform 250ms ease;
+                outline: 2px solid rgba(37, 99, 235, 0.35);
+                outline-offset: 2px;
+            }
+
+            .card h3 {
+                margin: 0;
+                font-size: 1.1rem;
+                z-index: 1;
+            }
+
+            .card span {
+                color: var(--muted);
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                z-index: 1;
+            }
+
+            .card .tag {
+                align-self: flex-start;
+                background: rgba(37, 99, 235, 0.1);
+                color: var(--accent);
+                padding: 4px 10px;
+                border-radius: 999px;
+                font-size: 0.75rem;
+                font-weight: 600;
+                text-transform: capitalize;
+                z-index: 1;
+            }
+
+            .empty {
+                background: var(--card);
+                border-radius: var(--radius);
+                padding: 32px;
+                text-align: center;
+                color: var(--muted);
+                box-shadow: var(--shadow);
+            }
+
+            @keyframes floatIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(18px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @media (max-width: 768px) {
+                .controls {
+                    grid-template-columns: 1fr;
+                }
+                header {
+                    padding: 36px 20px 24px;
+                }
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                .card {
+                    animation: none;
+                    opacity: 1;
+                    transform: none;
+                }
+                .card:hover,
+                .card:focus-visible {
+                    transform: none;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Slide Deck Search</h1>
+            <p>Search by name or filter by topic to find your slide presentations.</p>
+        </header>
+
+        <section class="controls" aria-label="Search controls">
+            <div class="field">
+                <label for="search">Search</label>
+                <input id="search" type="search" placeholder="Search slide titles" autocomplete="off" />
+            </div>
+            <div class="field">
+                <label for="topic">Topic</label>
+                <select id="topic">
+                    <option value="all">All topics</option>
+                    <option value="csharp">C#</option>
+                    <option value="database">Database</option>
+                    <option value="java">Java</option>
+                    <option value="logic">Logic</option>
+                    <option value="network">Network</option>
+                    <option value="overview">Overview</option>
+                    <option value="presentation">Presentation</option>
+                    <option value="python">Python</option>
+                    <option value="realestate">Real Estate</option>
+                    <option value="technology">Technology</option>
+                    <option value="webdev">Web Dev</option>
+                    <option value="webtools">Web Tools</option>
+                </select>
+            </div>
+        </section>
+
+        <div class="count" role="status" aria-live="polite" id="resultsCount"></div>
+
+        <main>
+            <div class="grid" id="deckGrid" aria-live="polite"></div>
+            <div class="empty" id="emptyState" hidden>
+                No slide decks match your search. Try a different keyword or topic.
+            </div>
+        </main>
+
+        <script>
+            const decks = [
+                { topic: "csharp", file: "data_io.html" },
+                { topic: "csharp", file: "demo.html" },
+                { topic: "csharp", file: "intro_to_csharp.html" },
+                { topic: "csharp", file: "linq.html" },
+                { topic: "csharp", file: "maui.html" },
+                { topic: "csharp", file: "oop.html" },
+                { topic: "csharp", file: "streams.html" },
+                { topic: "csharp", file: "wpf.html" },
+                { topic: "database", file: "data_modeling.html" },
+                { topic: "database", file: "firstday.html" },
+                { topic: "database", file: "normalization.html" },
+                { topic: "database", file: "nosql.html" },
+                { topic: "database", file: "sql.html" },
+                { topic: "java", file: "data_io.html" },
+                { topic: "java", file: "data_structures.html" },
+                { topic: "java", file: "demo.html" },
+                { topic: "java", file: "intro_to_java.html" },
+                { topic: "java", file: "java_basics.html" },
+                { topic: "java", file: "linq.html" },
+                { topic: "java", file: "modularization.html" },
+                { topic: "java", file: "oop.html" },
+                { topic: "java", file: "streams.html" },
+                { topic: "java", file: "structure.html" },
+                { topic: "java", file: "wpf.html" },
+                { topic: "logic", file: "cs_datastructure.html" },
+                { topic: "logic", file: "data_structures.html" },
+                { topic: "logic", file: "decisions.html" },
+                { topic: "logic", file: "demo.html" },
+                { topic: "logic", file: "exceptions.html" },
+                { topic: "logic", file: "logic_fundamentals.html" },
+                { topic: "logic", file: "modularization.html" },
+                { topic: "logic", file: "nodejs.html" },
+                { topic: "logic", file: "npm.html" },
+                { topic: "logic", file: "python_data_io.html" },
+                { topic: "logic", file: "web_components.html" },
+                { topic: "network", file: "cs_datastructure.html" },
+                { topic: "network", file: "data_structures.html" },
+                { topic: "network", file: "decisions.html" },
+                { topic: "network", file: "demo.html" },
+                { topic: "network", file: "exceptions.html" },
+                { topic: "network", file: "intro_to_networking.html" },
+                { topic: "network", file: "modularization.html" },
+                { topic: "network", file: "python_data_io.html" },
+                { topic: "network", file: "tcp_ip.html" },
+                { topic: "network", file: "web_components.html" },
+                { topic: "overview", file: "cpst242.html" },
+                { topic: "presentation", file: "api.html" },
+                { topic: "presentation", file: "covid19.html" },
+                { topic: "presentation", file: "emerging_tech.html" },
+                { topic: "presentation", file: "firstday.html" },
+                { topic: "presentation", file: "firstday_uic.html" },
+                { topic: "presentation", file: "frontend.html" },
+                { topic: "presentation", file: "lucfirstweek.html" },
+                { topic: "python", file: "data_io.html" },
+                { topic: "python", file: "data_structures.html" },
+                { topic: "python", file: "demo.html" },
+                { topic: "python", file: "intro_to_python.html" },
+                { topic: "python", file: "linq.html" },
+                { topic: "python", file: "modularization.html" },
+                { topic: "python", file: "oop.html" },
+                { topic: "python", file: "python_basics.html" },
+                { topic: "python", file: "streams.html" },
+                { topic: "python", file: "structure.html" },
+                { topic: "python", file: "wpf.html" },
+                { topic: "realestate", file: "cs_datastructure.html" },
+                { topic: "realestate", file: "data_structures.html" },
+                { topic: "realestate", file: "decisions.html" },
+                { topic: "realestate", file: "demo.html" },
+                { topic: "realestate", file: "exceptions.html" },
+                { topic: "realestate", file: "logic_fundamentals.html" },
+                { topic: "realestate", file: "modularization.html" },
+                { topic: "realestate", file: "nodejs.html" },
+                { topic: "realestate", file: "npm.html" },
+                { topic: "realestate", file: "python_data_io.html" },
+                { topic: "realestate", file: "web_components.html" },
+                { topic: "technology", file: "emergin_tech_one.html" },
+                { topic: "technology", file: "emergin_tech_three.html" },
+                { topic: "technology", file: "emergin_tech_two.html" },
+                { topic: "technology", file: "emerging_technology.html" },
+                { topic: "technology", file: "nosql.html" },
+                { topic: "technology", file: "sql.html" },
+                { topic: "webdev", file: "ab.html" },
+                { topic: "webdev", file: "analytics.html" },
+                { topic: "webdev", file: "animation.html" },
+                { topic: "webdev", file: "animation_transition_ex.html" },
+                { topic: "webdev", file: "cgt.html" },
+                { topic: "webdev", file: "css.html" },
+                { topic: "webdev", file: "demo.html" },
+                { topic: "webdev", file: "html5.html" },
+                { topic: "webdev", file: "js_one.html" },
+                { topic: "webdev", file: "js_three.html" },
+                { topic: "webdev", file: "js_two.html" },
+                { topic: "webdev", file: "layout.html" },
+                { topic: "webdev", file: "practicum.html" },
+                { topic: "webdev", file: "react.html" },
+                { topic: "webdev", file: "responsive.html" },
+                { topic: "webdev", file: "something.html" },
+                { topic: "webdev", file: "testing.html" },
+                { topic: "webdev", file: "ux.html" },
+                { topic: "webdev", file: "vuejs.html" },
+                { topic: "webdev", file: "webtools.html" },
+                { topic: "webtools", file: "ci_cd.html" },
+                { topic: "webtools", file: "cloudcomputing.html" },
+                { topic: "webtools", file: "demo.html" },
+                { topic: "webtools", file: "docker.html" },
+                { topic: "webtools", file: "git.html" },
+                { topic: "webtools", file: "something.html" },
+                { topic: "webtools", file: "testing.html" },
+                { topic: "webtools", file: "uml.html" },
+                { topic: "webtools", file: "webtools.html" }
+            ];
+
+            const topicLabels = {
+                csharp: "C#",
+                database: "Database",
+                java: "Java",
+                logic: "Logic",
+                network: "Network",
+                overview: "Overview",
+                presentation: "Presentation",
+                python: "Python",
+                realestate: "Real Estate",
+                technology: "Technology",
+                webdev: "Web Dev",
+                webtools: "Web Tools"
+            };
+
+            const grid = document.getElementById("deckGrid");
+            const searchInput = document.getElementById("search");
+            const topicSelect = document.getElementById("topic");
+            const resultsCount = document.getElementById("resultsCount");
+            const emptyState = document.getElementById("emptyState");
+            const backgroundCache = new Map();
+
+            const toTitle = (value) =>
+                value
+                    .replace(/_/g, " ")
+                    .replace(/\.html$/i, "")
+                    .replace(/\b\w/g, (char) => char.toUpperCase());
+
+            const resolveDeckUrl = (deck, assetPath) => {
+                const deckUrl = new URL(`${deck.topic}/${deck.file}`, window.location.href);
+                return new URL(assetPath, deckUrl).href;
+            };
+
+            const extractBackgroundImage = (documentBody) => {
+                const firstSection = documentBody.querySelector("section");
+                if (!firstSection) {
+                    return null;
+                }
+
+                const dataBackground =
+                    firstSection.getAttribute("data-background-image") ||
+                    firstSection.getAttribute("data-background");
+                if (dataBackground) {
+                    return dataBackground;
+                }
+
+                const inlineStyle = firstSection.getAttribute("style") || "";
+                const styleMatch = inlineStyle.match(/url\(["']?(.*?)["']?\)/i);
+                if (styleMatch && styleMatch[1]) {
+                    return styleMatch[1];
+                }
+
+                const image = firstSection.querySelector("img");
+                return image ? image.getAttribute("src") : null;
+            };
+
+            const applyCardBackground = async (deck, card) => {
+                const key = `${deck.topic}/${deck.file}`;
+                if (backgroundCache.has(key)) {
+                    const cached = backgroundCache.get(key);
+                    if (cached) {
+                        card.style.backgroundImage = `linear-gradient(rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.84)), url('${cached}')`;
+                        card.classList.add("card--image");
+                    }
+                    return;
+                }
+
+                try {
+                    const response = await fetch(`${deck.topic}/${deck.file}`);
+                    if (!response.ok) {
+                        backgroundCache.set(key, null);
+                        return;
+                    }
+
+                    const html = await response.text();
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, "text/html");
+                    const imagePath = extractBackgroundImage(doc);
+                    if (!imagePath) {
+                        backgroundCache.set(key, null);
+                        return;
+                    }
+
+                    const resolved = resolveDeckUrl(deck, imagePath);
+                    backgroundCache.set(key, resolved);
+                    card.style.backgroundImage = `linear-gradient(rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.84)), url('${resolved}')`;
+                    card.classList.add("card--image");
+                } catch (error) {
+                    backgroundCache.set(key, null);
+                }
+            };
+
+            const renderCards = (items) => {
+                grid.innerHTML = "";
+                items.forEach((deck, index) => {
+                    const link = document.createElement("a");
+                    link.href = `${deck.topic}/${deck.file}`;
+                    link.className = "card";
+                    link.style.animationDelay = `${Math.min(index * 40, 240)}ms`;
+                    link.setAttribute("data-topic", deck.topic);
+                    link.setAttribute("data-file", deck.file);
+                    link.setAttribute("data-title", toTitle(deck.file).toLowerCase());
+                    link.innerHTML = `
+                        <span class="tag">${topicLabels[deck.topic] || deck.topic}</span>
+                        <h3>${toTitle(deck.file)}</h3>
+                        <span>Open slide deck</span>
+                    `;
+                    grid.appendChild(link);
+                    applyCardBackground(deck, link);
+                });
+            };
+
+            const filterDecks = () => {
+                const query = searchInput.value.trim().toLowerCase();
+                const topic = topicSelect.value;
+                const filtered = decks.filter((deck) => {
+                    const matchesTopic = topic === "all" || deck.topic === topic;
+                    const matchesQuery = toTitle(deck.file).toLowerCase().includes(query);
+                    return matchesTopic && matchesQuery;
+                });
+
+                renderCards(filtered);
+                resultsCount.textContent = `${filtered.length} slide deck${
+                    filtered.length === 1 ? "" : "s"
+                } found`;
+                emptyState.hidden = filtered.length !== 0;
+            };
+
+            renderCards(decks);
+            resultsCount.textContent = `${decks.length} slide decks available`;
+
+            searchInput.addEventListener("input", filterDecks);
+            topicSelect.addEventListener("change", filterDecks);
+        </script>
+    </body>
+</html>
