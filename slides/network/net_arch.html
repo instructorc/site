@@ -583,7 +583,7 @@
 
 				<!-- Drag and Drop: Encryption Matching -->
 				<section data-background="rgb(240, 248, 255)">
-					<h3>🎯 Activity: Match Security Features</h3>
+					<h3>Activity: Match Security Features</h3>
 					<p style="font-size: 18px;">Drag each security feature to the correct protocol:</p>
 					<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px;">
 						<div style="background-color: rgba(255, 255, 255, 0.9); padding: 15px; border-radius: 10px;">
@@ -642,7 +642,7 @@
 
 				<!-- Discussion: Defense Strategy -->
 				<section data-background="rgb(246, 246, 246)">
-					<h3>💭 Discussion Question</h3>
+					<h3>Discussion Question</h3>
 					<div style="background-color: rgba(255, 255, 255, 0.9); padding: 30px; border-radius: 10px; margin: 20px;">
 						<p style="font-size: 26px; color: #333; margin-bottom: 30px;">
 							<strong>Is wireless security always playing catch-up?</strong>
@@ -672,30 +672,6 @@
 					</div>
 				</section>
 
-				<!-- Final Activity: Design Your Network -->
-				<section data-background="rgb(240, 248, 255)">
-					<h3>🏗️ Final Project Activity: Design Your Wireless Network</h3>
-					<div style="background-color: rgba(255, 255, 255, 0.9); padding: 30px; border-radius: 10px; margin: 20px; text-align: left;">
-						<p style="font-size: 22px; margin-bottom: 20px;"><strong>Scenario:</strong></p>
-						<p style="font-size: 20px; color: #555; margin-bottom: 20px;">
-							You are designing a wireless network for a 3-story office building with 200 employees. 
-							The building has a mix of conference rooms, open office spaces, and individual offices.
-						</p>
-						<p style="font-size: 22px; margin-bottom: 15px; color: #d63031;"><strong>Requirements:</strong></p>
-						<ol style="font-size: 18px; color: #555; line-height: 1.8;">
-							<li>Select appropriate frequency bands for different areas</li>
-							<li>Determine AP placement and antenna types</li>
-							<li>Choose security protocols and authentication methods</li>
-							<li>Plan for guest network isolation</li>
-							<li>Consider IoT device requirements</li>
-							<li>Address potential security threats</li>
-						</ol>
-						<p style="font-size: 20px; margin-top: 20px; color: #0984e3;">
-							<strong>Deliverable:</strong> Create a network diagram and justify your design choices.
-						</p>
-					</div>
-					<p style="font-size: 20px; margin-top: 20px;"><em>Groups of 4: 20 minutes + 5 min presentation</em></p>
-				</section>
 
 				<!-- Comprehension Check -->
 				<section data-background="#17191f">
@@ -712,43 +688,206 @@
 						</ol>
 					</div>
 				</section>
+				<section data-background="images/networking/networking_bg.png">
+					<h1 id="boxstyle">Network Security</h1>
+					
+				</section>
+				<!-- Secure Network Module Intro -->
+				<section data-background="#17191f">
+					<h2>Secure Network Architecture</h2>
+					<div style="background-color: rgba(255,255,255,0.95); padding: 28px; border-radius: 10px; margin: 20px; color: #333;">
+						<p style="font-size: 24px; margin-bottom: 20px;"><strong>Guiding Analogy:</strong> Build security like protecting a school campus.</p>
+						<ul style="font-size: 21px; text-align: left; line-height: 1.8;">
+							<li><strong>Core framework:</strong> Safety goals + identity checks (CIA + AAA)</li>
+							<li><strong>Controls:</strong> Guards, gates, cameras, alarms (firewalls, IDS/IPS, DMZ)</li>
+							<li><strong>Threat response:</strong> Detect, contain, and recover quickly</li>
+							<li><strong>Access management:</strong> Give each person only the keys they need (least privilege + RBAC)</li>
+						</ul>
+					</div>
+				</section>
 
-				<!-- Resources and Next Steps -->
+				<!-- Objective 1: CIA + AAA -->
 				<section data-background="rgb(246, 246, 246)">
-					<h3>📚 Additional Resources & Next Steps</h3>
-					<div style="background-color: rgba(255, 255, 255, 0.9); padding: 30px; border-radius: 10px; margin: 20px;">
-						<div style="text-align: left; font-size: 20px;">
-							<p style="margin-bottom: 20px;"><strong>Recommended Tools for Learning:</strong></p>
-							<ul style="line-height: 1.8;">
-								<li><strong>Wireshark:</strong> Packet analysis and protocol understanding</li>
-								<li><strong>inSSIDer:</strong> Wi-Fi network scanner and analyzer</li>
-								<li><strong>Ekahau:</strong> Professional site survey software</li>
-								<li><strong>Aircrack-ng:</strong> Wireless security auditing (ethical use only)</li>
+					<h3>Core Security Frameworks (CIA + AAA)</h3>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 18px; margin: 10px;">
+							<img src="images/secure_network/cia_pyramid.png" width="430" style="box-shadow:none; border:none;" alt="CIA Triad pyramid">
+							<p style="font-size: 18px;"><strong>CIA Triad = School Protection Goals</strong></p>
+							<ul style="font-size: 16px; text-align: left; line-height: 1.6;">
+								<li><strong>Confidentiality:</strong> Locked gradebook cabinet</li>
+								<li><strong>Integrity:</strong> Report cards cannot be altered</li>
+								<li><strong>Availability:</strong> Learning platform stays online</li>
 							</ul>
-							<p style="margin-top: 25px; margin-bottom: 15px;"><strong>Further Study Topics:</strong></p>
-							<ul style="line-height: 1.8;">
-								<li>Wi-Fi 7 (802.11be) features and deployment</li>
-								<li>Enterprise RADIUS authentication</li>
-								<li>Wireless mesh networking</li>
-								<li>5G and Wi-Fi convergence</li>
-								<li>IoT security in wireless environments</li>
+						</div>
+						<div class="box_two" style="font-size: 18px; margin: 10px;">
+							<img src="images/secure_network/triple_a_framework.png" width="430" style="box-shadow:none; border:none;" alt="AAA framework">
+							<p style="font-size: 18px;"><strong>AAA = Front Desk Process</strong></p>
+							<ul style="font-size: 16px; text-align: left; line-height: 1.6;">
+								<li><strong>Authentication:</strong> "Who are you?" (ID check)</li>
+								<li><strong>Authorization:</strong> "What rooms can you enter?"</li>
+								<li><strong>Accounting:</strong> Visitor log for auditing</li>
 							</ul>
 						</div>
 					</div>
 				</section>
 
-				<!-- Summary Slide -->
+				<!-- Activity 1: Drag and Drop Framework Match -->
+				<section data-background="rgb(240, 248, 255)">
+					<h3>Drag & Drop — CIA/AAA Matching</h3>
+					<p style="font-size: 18px;">Drag each card to the matching security concept.</p>
+					<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px;">
+						<div style="background: rgba(255,255,255,0.95); padding: 14px; border-radius: 10px;">
+							<div id="sn_card1" draggable="true" ondragstart="drag(event)" style="background:#74b9ff;color:white;padding:10px;margin:8px 0;border-radius:5px;cursor:move;font-size:14px;">Only HR can view salary records</div>
+							<div id="sn_card2" draggable="true" ondragstart="drag(event)" style="background:#a29bfe;color:white;padding:10px;margin:8px 0;border-radius:5px;cursor:move;font-size:14px;">Server must stay reachable during finals week</div>
+							<div id="sn_card3" draggable="true" ondragstart="drag(event)" style="background:#fd79a8;color:white;padding:10px;margin:8px 0;border-radius:5px;cursor:move;font-size:14px;">User logs in with password + token</div>
+							<div id="sn_card4" draggable="true" ondragstart="drag(event)" style="background:#55efc4;padding:10px;margin:8px 0;border-radius:5px;cursor:move;font-size:14px;">Track who accessed payroll at 10:32 AM</div>
+							<div id="sn_card5" draggable="true" ondragstart="drag(event)" style="background:#ffeaa7;padding:10px;margin:8px 0;border-radius:5px;cursor:move;font-size:14px;">Prevent unauthorized edits to patient data</div>
+						</div>
+						<div>
+							<div ondrop="drop(event)" ondragover="allowDrop(event)" style="background:#e3f2fd;padding:12px;margin:8px 0;border-radius:10px;min-height:58px;border:2px dashed #1e88e5;font-size:14px;"><strong>Confidentiality</strong></div>
+							<div ondrop="drop(event)" ondragover="allowDrop(event)" style="background:#f3e5f5;padding:12px;margin:8px 0;border-radius:10px;min-height:58px;border:2px dashed #8e24aa;font-size:14px;"><strong>Integrity</strong></div>
+							<div ondrop="drop(event)" ondragover="allowDrop(event)" style="background:#e8f5e9;padding:12px;margin:8px 0;border-radius:10px;min-height:58px;border:2px dashed #43a047;font-size:14px;"><strong>Availability</strong></div>
+							<div ondrop="drop(event)" ondragover="allowDrop(event)" style="background:#fff3e0;padding:12px;margin:8px 0;border-radius:10px;min-height:58px;border:2px dashed #fb8c00;font-size:14px;"><strong>Authentication</strong></div>
+							<div ondrop="drop(event)" ondragover="allowDrop(event)" style="background:#efebe9;padding:12px;margin:8px 0;border-radius:10px;min-height:58px;border:2px dashed #6d4c41;font-size:14px;"><strong>Accounting</strong></div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Objective 2: Protocols and Controls -->
+				<section data-background="rgb(243, 242, 237)">
+					<h3>Compare Security Protocols & Controls</h3>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 17px; margin: 10px;">
+							<img src="images/secure_network/rad_tac.png" width="430" style="box-shadow:none; border:none;" alt="RADIUS vs TACACS+ comparison">
+							<ul style="text-align:left; font-size:16px; line-height:1.6;">
+								<li><strong>RADIUS:</strong> Uses UDP and encrypts only password field</li>
+								<li><strong>TACACS+:</strong> Uses TCP and encrypts entire packet body</li>
+								<li><strong>Analogy:</strong> Postcard (partial privacy) vs sealed courier envelope (full privacy)</li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 17px; margin: 10px;">
+							<img src="images/secure_network/firewalls.png" width="430" style="box-shadow:none; border:none;" alt="Stateful vs Stateless firewall comparison">
+							<ul style="text-align:left; font-size:16px; line-height:1.6;">
+								<li><strong>Stateless Firewall:</strong> Checks each packet independently</li>
+								<li><strong>Stateful Firewall:</strong> Tracks conversation/session context</li>
+								<li><strong>Analogy:</strong> Turnstile counter vs security guard with memory</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<!-- Activity 2: Quiz -->
+				<section data-background="#fff">
+					<h3>Activity 2: Quick Quiz (Think-Pair-Share)</h3>
+					<div style="background: rgba(255,255,255,0.95); padding: 26px; border-radius: 10px; margin: 20px; text-align: left;">
+						<p style="font-size: 24px;"><strong>Question:</strong> Which option best explains why TACACS+ is often preferred for device administration?</p>
+						<ul style="font-size: 21px; line-height: 1.8;">
+							<li>A) It uses UDP and is always faster</li>
+							<li>B) It encrypts the full payload and separates authN/authZ/accounting control</li>
+							<li>C) It cannot log admin commands</li>
+							<li>D) It replaces firewalls automatically</li>
+						</ul>
+						<p class="fragment" style="font-size: 22px; color: #2e7d32;"><strong>Answer: B</strong> — stronger privacy and finer control for admin sessions.</p>
+					</div>
+				</section>
+
+				<!-- Objective 3: Threats and Vulnerabilities -->
+				<section data-background="rgb(246, 246, 246)">
+					<h3>Identify & Mitigate Threats</h3>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 17px; margin: 10px;">
+							<img src="images/secure_network/ids_ips.png" width="420" style="box-shadow:none; border:none;" alt="IDS versus IPS">
+							<ul style="text-align:left; font-size:16px; line-height:1.6;">
+								<li><strong>IDS:</strong> Alarm system (detect and alert)</li>
+								<li><strong>IPS:</strong> Alarm + automatic lockout (detect and block)</li>
+							</ul>
+							<img src="images/secure_network/dmz.png" width="420" style="box-shadow:none; border:none; margin-top:10px;" alt="DMZ network segment">
+						</div>
+						<div class="box_two" style="font-size: 17px; margin: 10px;">
+							<img src="images/secure_network/data_in_transit.png" width="420" style="box-shadow:none; border:none;" alt="Data in transit protection">
+							<ul style="text-align:left; font-size:16px; line-height:1.6;">
+								<li><strong>Data in Transit:</strong> Use encryption tunnels like a locked armored truck</li>
+								<li><strong>DMZ:</strong> Visitor lobby between the street and staff offices</li>
+								<li><strong>Mitigation:</strong> Segment, inspect, encrypt, and monitor continuously</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<!-- Activity 3: Sort the Cards -->
+				<section data-background="rgb(240, 248, 255)">
+					<h3>Activity 3: Sort the Cards — Prevent / Detect / Contain</h3>
+					<p style="font-size: 18px;">Drag each control card into the incident-response stage where it helps most.</p>
+					<div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; margin-top:18px;">
+						<div style="background:#fff; padding:14px; border-radius:10px;">
+							<div id="sn_sort1" draggable="true" ondragstart="drag(event)" style="background:#4fc3f7;padding:10px;margin:8px 0;border-radius:5px;cursor:move;font-size:14px;">MFA enforcement on admin logins</div>
+							<div id="sn_sort2" draggable="true" ondragstart="drag(event)" style="background:#f48fb1;padding:10px;margin:8px 0;border-radius:5px;cursor:move;font-size:14px;">IDS alert on unusual lateral movement</div>
+							<div id="sn_sort3" draggable="true" ondragstart="drag(event)" style="background:#aed581;padding:10px;margin:8px 0;border-radius:5px;cursor:move;font-size:14px;">IPS auto-blocks malicious command-and-control traffic</div>
+							<div id="sn_sort4" draggable="true" ondragstart="drag(event)" style="background:#ffcc80;padding:10px;margin:8px 0;border-radius:5px;cursor:move;font-size:14px;">Place public web server in a DMZ</div>
+							<div id="sn_sort5" draggable="true" ondragstart="drag(event)" style="background:#ce93d8;padding:10px;margin:8px 0;border-radius:5px;cursor:move;font-size:14px;">Enable encrypted tunnel for branch-office traffic</div>
+						</div>
+						<div>
+							<div ondrop="drop(event)" ondragover="allowDrop(event)" style="background:#e8f5e9;padding:12px;margin:8px 0;border-radius:10px;min-height:70px;border:2px dashed #2e7d32;font-size:14px;"><strong>Prevent</strong></div>
+							<div ondrop="drop(event)" ondragover="allowDrop(event)" style="background:#e3f2fd;padding:12px;margin:8px 0;border-radius:10px;min-height:70px;border:2px dashed #1565c0;font-size:14px;"><strong>Detect</strong></div>
+							<div ondrop="drop(event)" ondragover="allowDrop(event)" style="background:#fff3e0;padding:12px;margin:8px 0;border-radius:10px;min-height:70px;border:2px dashed #ef6c00;font-size:14px;"><strong>Contain / Mitigate</strong></div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Objective 4: Access Management + Compliance -->
+				<section data-background="rgb(243, 242, 237)">
+					<h3>Access Mgt. & Compliance Strategy</h3>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 17px; margin: 10px;">
+							<img src="images/secure_network/multi_factor.png" width="420" style="box-shadow:none; border:none;" alt="Multi-factor authentication model">
+							<ul style="text-align:left; font-size:16px; line-height:1.6;">
+								<li><strong>MFA:</strong> Badge + PIN + fingerprint = stronger identity proof</li>
+								<li><strong>Least Privilege:</strong> Give users only the minimum keys needed</li>
+								<li><strong>RBAC:</strong> Keys issued by role (nurse, cashier, admin)</li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 17px; margin: 10px;">
+							<img src="images/secure_network/zero_trust.png" width="420" style="box-shadow:none; border:none;" alt="Zero trust security model">
+							<img src="images/secure_network/asy_sym_encryption.png" width="420" style="box-shadow:none; border:none; margin-top:10px;" alt="Asymmetric and symmetric encryption overview">
+							<ul style="text-align:left; font-size:16px; line-height:1.6;">
+								<li><strong>Zero Trust:</strong> "Never trust, always verify" at every doorway</li>
+								<li><strong>Encryption Strategy:</strong> Public-key handshake, then fast symmetric session</li>
+								<li><strong>Compliance:</strong> Audit logs prove who accessed what and why</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<!-- Activity 4: Sequencing / Ordering -->
+				<section data-background="#fff">
+					<h3>Activity 4: Sequence the Secure Access Workflow</h3>
+					<p style="font-size: 18px;">Drag the cards into the most secure order for granting access to a sensitive application.</p>
+					<div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; margin-top:16px;">
+						<div style="background:#fafafa; padding:14px; border-radius:10px;">
+							<div id="sn_seq1" draggable="true" ondragstart="drag(event)" style="background:#90caf9;padding:10px;margin:8px 0;border-radius:5px;cursor:move;font-size:14px;">Apply role policy (RBAC) to requested resource</div>
+							<div id="sn_seq2" draggable="true" ondragstart="drag(event)" style="background:#ffab91;padding:10px;margin:8px 0;border-radius:5px;cursor:move;font-size:14px;">Collect audit log entry for request and decision</div>
+							<div id="sn_seq3" draggable="true" ondragstart="drag(event)" style="background:#a5d6a7;padding:10px;margin:8px 0;border-radius:5px;cursor:move;font-size:14px;">Verify identity with MFA</div>
+							<div id="sn_seq4" draggable="true" ondragstart="drag(event)" style="background:#ce93d8;padding:10px;margin:8px 0;border-radius:5px;cursor:move;font-size:14px;">Grant least-privilege session token</div>
+						</div>
+						<div>
+							<div ondrop="drop(event)" ondragover="allowDrop(event)" style="background:#f1f8e9;padding:12px;margin:8px 0;border-radius:10px;min-height:60px;border:2px dashed #689f38;font-size:14px;"><strong>Step 1</strong></div>
+							<div ondrop="drop(event)" ondragover="allowDrop(event)" style="background:#e8eaf6;padding:12px;margin:8px 0;border-radius:10px;min-height:60px;border:2px dashed #3949ab;font-size:14px;"><strong>Step 2</strong></div>
+							<div ondrop="drop(event)" ondragover="allowDrop(event)" style="background:#fff8e1;padding:12px;margin:8px 0;border-radius:10px;min-height:60px;border:2px dashed #f9a825;font-size:14px;"><strong>Step 3</strong></div>
+							<div ondrop="drop(event)" ondragover="allowDrop(event)" style="background:#fce4ec;padding:12px;margin:8px 0;border-radius:10px;min-height:60px;border:2px dashed #c2185b;font-size:14px;"><strong>Step 4</strong></div>
+						</div>
+					</div>
+					<p class="fragment" style="font-size: 20px; margin-top: 14px;"><strong>Debrief:</strong> Compare your order with another team and justify where accounting/compliance fits best.</p>
+				</section>
+
+				<!-- Secure Network Summary -->
 				<section data-background="#17191f">
-					<h2>🎯 Key Takeaways</h2>
-					<div style="background-color: rgba(255, 255, 255, 0.95); padding: 30px; border-radius: 10px; margin: 20px; color: #333;">
-						<ul style="font-size: 22px; text-align: left; line-height: 2;">
-							<li>✅ Wireless networks operate across multiple frequency bands (2.4GHz, 5GHz, 6GHz)</li>
-							<li>✅ RF planning and site surveys are critical for optimal performance</li>
-							<li>✅ Wireless security is fundamentally different from wired networks</li>
-							<li>✅ The "invisibility" of wireless creates unique vulnerabilities</li>
-							<li>✅ Multiple layers of defense are essential (Defense in Depth)</li>
-							<li>✅ WPA3 and modern protocols address legacy vulnerabilities</li>
-							<li>✅ Understanding the physics of RF is crucial for network design</li>
+					<h2>Secure Network Takeaways</h2>
+					<div style="background-color: rgba(255,255,255,0.95); padding: 30px; border-radius: 10px; margin: 20px; color: #333;">
+						<ul style="font-size: 21px; text-align: left; line-height: 1.9;">
+							<li>✅ <strong>CIA + AAA</strong> provide the foundation for secure system goals and identity control</li>
+							<li>✅ Protocol choices matter: <strong>RADIUS vs TACACS+</strong> and <strong>stateful vs stateless</strong> affect risk</li>
+							<li>✅ Use layered controls: <strong>IDS/IPS, DMZ, encryption in transit</strong>, and segmentation</li>
+							<li>✅ Enforce <strong>MFA, least privilege, RBAC, zero trust</strong> with auditable compliance evidence</li>
 						</ul>
 					</div>
 				</section>
