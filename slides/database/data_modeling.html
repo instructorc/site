@@ -109,7 +109,7 @@
 						<div class="box" style="font-size: 24px; margin: 10px; height: 120px; background-color: #eee;"><h3 style="margin-top: 50px;">Intelligence / Insight / Wisdom</h3></div>
 					</div>
 				</section>
-				<section data-background="#fff">
+				<!--<section data-background="#fff">
 					<h3>Learning Activity</h3>
 					<p style="font-size: .6em;">Assume you want to create a database for a community that is looking to start a neighborhood watch program. The community would like to have information on volunteers, incidents that occur, meeting agendas and an evening watch schedule.  The community will ultimately have a website that displays the name, phone number and email of those on the watch list, a list of all incidents and a page that displays a URL linking to upcoming and previous meeting agenda's. </p>
 					<div id="flexcontain">
@@ -118,6 +118,110 @@
 						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Grouping Data</b> <br>How would you organize/group the data?  What data can we remove? What data is essential and provides strategic insight?</p></div>
 
 					</div>
+				</section>-->
+				<section>
+				  	<section>
+						<h3>Learning Activity: Neighborhood Watch</h3>
+						<p style="font-size:0.7em;text-align:left;">
+						A neighborhood wants to launch a watch program and has hired your team to design its database.
+						They need to track <strong>volunteers</strong>, <strong>incidents</strong>, <strong>meeting agendas</strong>,
+						and an <strong>evening watch schedule</strong>.
+						</p>
+						<p style="font-size:0.7em;text-align:left;">Their website will show three pages:</p>
+						<ol style="font-size:0.65em;">
+						<li>A watch list with each volunteer's name, phone, and email</li>
+						<li>A list of all incidents</li>
+						<li>Links to upcoming and past meeting agendas</li>
+						</ol>
+						<p style="font-size:0.65em;"><strong>Your goal:</strong> turn this request into the first draft of an ERD in four rounds.</p>
+						<p style="font-size:0.55em;">Teams of 3 or 4 &nbsp;|&nbsp; Roles: Interviewer, Recorder, Organizer, Presenter &nbsp;|&nbsp; About 35 minutes</p>
+						<aside class="notes">
+						Form teams and assign roles before showing round 1. Each team needs sticky notes in three colors
+						(or a shared FigJam, Miro, or draw.io board for online sections).
+						</aside>
+					</section>
+						<!-- 2. Round 1 -->
+				
+						<section>
+							<h3>Round 1: Interview the Client <span style="font-size:0.6em;">(8 min)</span></h3>
+							<p style="font-size:0.7em;text-align:left;">I am the president of the neighborhood association. Write your questions first, then you get to ask me <strong>3</strong>.</p>
+							<h4> WHO | WHAT | WHEN | RULES | PRIVACY </h4>
+
+							<p style="font-size:0.6em;">Write down every answer. Each one is a design decision.</p>
+							<aside class="notes">
+							CLIENT ANSWER CARD (give the same answer to any team that asks):
+							Volunteers must be residents of the neighborhood; a few local business owners also volunteer.
+							Only volunteers can log an incident; residents call or email a volunteer.
+							Incident types: suspicious activity, theft, vandalism, noise, other. One incident can have more than one type.
+							We need date, time, location (nearest address or intersection), description, and who logged it.
+							Watch runs 6 PM to midnight, every evening, in two shifts (6 to 9 and 9 to midnight).
+							Each shift needs 2 volunteers. Volunteers can sign up for as many shifts as they want.
+							Volunteers choose whether their phone number shows on the public site. Email always shows.
+							Agendas are PDFs in our Google Drive. We just need the meeting date, a title, and the link.
+							Meetings are monthly at the library. Only the site administrator (also a volunteer) posts agendas.
+							Keep incidents for two years. We would love to know which blocks have the most incidents.
+							If asked something not listed: "Good question, we have not decided. What would you recommend?"
+							</aside>
+						</section>
+
+						<!-- 3. Round 2 -->
+						<section>
+							<h3>Round 2: Data Dump <span style="font-size:0.6em;">(7 min)</span></h3>
+							<p style="font-size:0.7em;text-align:left;">Write <strong>one piece of data per sticky note</strong>; teams can use one text box per item in draw.io. Aim for at least 25.</p>
+							<ul style="font-size:0.6em;">
+							<li><strong>Start from the website.</strong> Look at each of the three pages and list every value it shows.</li>
+							<li><strong>Then use the interview.</strong> Every answer you got should produce at least one note.</li>
+							<li><strong>Be specific.</strong> Write <code>first name</code> and <code>last name</code>, not just <code>name</code>.</li>
+							</ul>
+							<p style="font-size:0.6em;">No grouping yet. Quantity first.</p>
+						</section>
+
+						<!-- 4. Round 3 -->
+						<section>
+							<h3>Round 3: Group and Cut <span style="font-size:0.6em;">(10 min)</span></h3>
+							<ol style="font-size:0.6em;text-align:left;">
+							<li><strong>Cluster</strong> notes that describe the same thing.</li>
+							<li><strong>Name</strong> each cluster with a singular noun in caps: <code>VOLUNTEER</code>, not <code>Volunteers</code>. These are your candidate <strong>entities</strong>. The notes inside are <strong>attributes</strong>.</li>
+							<li><strong>Sort</strong> every note:
+								<ul>
+								<li><span style="color:#2e7d32;">&#9632;</span> <strong>Keep</strong>: the site or the client needs it</li>
+								<li><span style="color:#c62828;">&#9632;</span> <strong>Cut</strong>: nice to know, but nobody asked for it</li>
+								<li><span style="color:#f9a825;">&#9632;</span> <strong>Insight</strong>: helps the community make decisions</li>
+								</ul>
+							</li>
+							<li><strong>Mark</strong> the one attribute in each entity that makes every row unique.</li>
+							</ol>
+							<p style="font-size:0.55em;"><strong>Minimum data rule:</strong> all that is needed is there, and all that is there is needed.</p>
+						</section>
+
+						<!-- 5. Round 4 -->
+						<section>
+							<h3>Round 4: Connect and Defend <span style="font-size:0.6em;">(8 min)</span></h3>
+							<p style="font-size:0.65em;text-align:left;">Draw a line between entities that relate. For each line, write one sentence:</p>
+							<p style="font-size:0.65em;"><code>A [ENTITY] can [verb] one or more [ENTITY].</code></p>
+							<p style="font-size:0.6em;text-align:left;">Example: <code>A VOLUNTEER can log one or more INCIDENTS.</code></p>
+					
+							<aside class="notes">
+							Expected entities: VOLUNTEER, INCIDENT, INCIDENT_TYPE, SHIFT, MEETING (agenda link can live here or in AGENDA).
+							Watch for teams that put "volunteer 1, volunteer 2" columns on SHIFT, or a list of types on INCIDENT.
+							Those are the hooks for the bridge entity discussion later (same idea as PROP_AMEN_LIST in the MPLS Renters example).
+							Common cuts: home address, birth date, emergency contact (unless the client asked).
+							Insight examples: incident location plus date (which blocks, which nights), shift fill rate.
+							The relationship sentences lead straight into the Business Rules slides.
+							</aside>
+						</section>
+
+						<!-- 6. Debrief -->
+						<section>
+							<h3>Debrief</h3>
+							<ol style="font-size:0.65em;text-align:left;">
+							<li>Which client answer changed your design the most?</li>
+							<li>Where did two teams disagree? Who was right, or does it depend?</li>
+							<li>Which group was hardest to name, and what does that tell you?</li>
+							</ol>
+							<p style="font-size:0.6em;"><strong>Exit ticket:</strong> List your final entities, the unique attribute for each, and your two best relationship sentences.</p>
+							<p style="font-size:0.55em;">Keep your board. We will turn it into business rules and a conceptual model next.</p>
+						</section>
 				</section>
 				<section data-background="images/data/data_bg.jpg">
 					<h2 style="color: white; font-style: italic; background-color: rgba(0, 0, 0, 0.664); padding: 3px;">Why is it important to think of data in this structure?</h2>
